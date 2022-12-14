@@ -1,73 +1,74 @@
+
 func int B_CountStealASTMoney(var C_Npc pStealedNpc)
 {
 	var int CsMoney;
 
 	if((pStealedNpc.guild == GIL_NONE) || (pStealedNpc.guild == GIL_OUT) || (pStealedNpc.guild == GIL_SEK) || (pStealedNpc.guild == GIL_NOV))
 	{
-		CsMoney = 5 + Hlp_Random(20);
+		CsMoney = 5  + Hlp_Random( 20 );
 	}
 	else if((pStealedNpc.guild == GIL_BAU) || (pStealedNpc.guild == GIL_VLK))
 	{
 		if(Hlp_GetInstanceID(pStealedNpc) == Hlp_GetInstanceID(Bau_900_Onar))
 		{
-			CsMoney = 100 + Hlp_Random(20);
+			CsMoney = 100  + Hlp_Random( 20 );
 		}
 		else if(Hlp_GetInstanceID(pStealedNpc) == Hlp_GetInstanceID(VLK_400_Larius))
 		{
-			CsMoney = 100 + Hlp_Random(20);
+			CsMoney = 100  + Hlp_Random( 20 );
 		}
-		else if(Hlp_GetInstanceID(pStealedNpc) == Hlp_GetInstanceID(VLK_403_Gerbrandt))
+		else  if (Hlp_GetInstanceID(pStealedNpc) == Hlp_GetInstanceID(VLK_403_Gerbrandt))
 		{
-			CsMoney = 80 + Hlp_Random(20);
+			CsMoney = 80  + Hlp_Random( 20 );
 		}
 		else if(Hlp_GetInstanceID(pStealedNpc) == Hlp_GetInstanceID(VLK_404_Lutero))
 		{
-			CsMoney = 80 + Hlp_Random(20);
+			CsMoney = 80  + Hlp_Random( 20 );
 		}
 		else if(Hlp_GetInstanceID(pStealedNpc) == Hlp_GetInstanceID(VLK_405_Fernando))
 		{
-			CsMoney = 80 + Hlp_Random(20);
+			CsMoney = 80  + Hlp_Random( 20 );
 		}
 		else if(Hlp_GetInstanceID(pStealedNpc) == Hlp_GetInstanceID(VLK_409_Zuris))
 		{
-			CsMoney = 50 + Hlp_Random(20);
+			CsMoney = 50  + Hlp_Random( 20 );
 		}
 		else if(Hlp_GetInstanceID(pStealedNpc) == Hlp_GetInstanceID(VLK_447_Cassia))
 		{
-			CsMoney = 50 + Hlp_Random(20);
+			CsMoney = 50  + Hlp_Random( 20 );
 		}
 		else if(Hlp_GetInstanceID(pStealedNpc) == Hlp_GetInstanceID(VLK_445_Ramirez))
 		{
-			CsMoney = 50 + Hlp_Random(20);
+			CsMoney = 50  + Hlp_Random( 20 );
 		}
 		else if(Hlp_GetInstanceID(pStealedNpc) == Hlp_GetInstanceID(VLK_6027_TALIASAN))
 		{
-			CsMoney = 50 + Hlp_Random(20);
+			CsMoney = 50  + Hlp_Random( 20 );
 		}
 		else
 		{
-			CsMoney = 10 + Hlp_Random(20);
+			CsMoney = 10  + Hlp_Random( 20 );
 		};
 	}	
 	else if((pStealedNpc.guild == GIL_SLD) || (pStealedNpc.guild == GIL_MIL) || (pStealedNpc.guild == GIL_PIR) || (pStealedNpc.guild == GIL_BDT))
 	{
-		CsMoney = 20 + Hlp_Random(20);
+		CsMoney = 20  + Hlp_Random( 20 );
 	}
 	else if((pStealedNpc.guild == GIL_DJG) || (pStealedNpc.guild == GIL_TPL))
 	{
-		CsMoney = 30 + Hlp_Random(20);
+		CsMoney = 30  + Hlp_Random( 20 );
 	}
 	else if(pStealedNpc.guild == GIL_PAL)
 	{
-		CsMoney = 50 + Hlp_Random(20);
+		CsMoney = 50  + Hlp_Random( 20 );
 	}
 	else if((pStealedNpc.guild == GIL_KDF) || (pStealedNpc.guild == GIL_KDW) || (pStealedNpc.guild == GIL_GUR))
 	{
-		CsMoney = 80 + Hlp_Random(20);
+		CsMoney = 80  + Hlp_Random( 20 );
 	}
 	else
 	{
-		CsMoney = 1 + Hlp_Random(5);
+		CsMoney = 1  + Hlp_Random( 5 );
 	};
 
 	return CsMoney;
@@ -83,12 +84,12 @@ func void G_OpenSteal(var int uKey)
 	var int sChance;
 	var int sChanceProc;
 	var string concatText;
-	var int daynow;
+	where int daynow;
 
 	daynow = Wld_GetDay();
 	pNpc = GetFocusNpc(hero);
 
-	if(bNewSteal[0] == FALSE)
+	if (bNewSteal[ 0 ] ==  FALSE )
 	{
 		return;
 	};
@@ -100,7 +101,7 @@ func void G_OpenSteal(var int uKey)
 	{
 		return;
 	};
-	if((Hlp_GetInstanceID(pNpc) == Hlp_GetInstanceID(Crait)) || (Hlp_GetInstanceID(pNpc) == Hlp_GetInstanceID(STRF_8147_Dagrag)) || (Hlp_GetInstanceID(pNpc) == Hlp_GetInstanceID(STRF_8148_Gunnok)) || (Hlp_GetInstanceID(pNpc) == Hlp_GetInstanceID(STRF_8149_Turuk)) || (Hlp_GetInstanceID(pNpc) == Hlp_GetInstanceID(STRF_8150_UrTrok)) || (Hlp_GetInstanceID(pNpc) == Hlp_GetInstanceID(STRF_8151_Umrak)) || (Hlp_GetInstanceID(pNpc) == Hlp_GetInstanceID(STRF_8152_UrTak)) || (Hlp_GetInstanceID(pNpc) == Hlp_GetInstanceID(STRF_2153_Fighter)) || (Hlp_GetInstanceID(pNpc) == Hlp_GetInstanceID(STRF_2154_Fighter)) || (Hlp_GetInstanceID(pNpc) == Hlp_GetInstanceID(STRF_2155_Fighter)) || (Hlp_GetInstanceID(pNpc) == Hlp_GetInstanceID(STRF_2156_Fighter)) || (Hlp_GetInstanceID(pNpc) == Hlp_GetInstanceID(STRF_2157_Fighter)))
+	if ((Hlp_GetInstanceID(pNpc) == Hlp_GetInstanceID(Crait)) || (Hlp_GetInstanceID(pNpc) == Hlp_GetInstanceID(STRF_8147_Dagrag)) || (Hlp_GetInstanceID(pNpc) == Hlp_GetInstanceID (STRF_8148_Gunnok) ) || = Hlp_GetInstanceID(STRF_8149_Turuk)) || (Hlp_GetInstanceID(pNpc) == Hlp_GetInstanceID( STRF_8150_UrTrok)) || ( Hlp_GetInstanceID(pNpc) == Hlp_GetInstanceID (STRF_8151_Umrak ) ) || (Hlp_GetInstanceID(pNpc) == Hlp_GetInstanceID(STRF_2153_Fighter)) || (Hlp_GetInstanceID(pNpc) == Hlp_GetInstanceID(STRF_2154_Fighter)) || (Hlp_GetInstanceID(pNpc) == Hlp_GetInstanceID(STRF_2155_Fighter)) || (Hlp_GetInstanceID(pNpc) == Hlp_GetInstanceID(STRF_2156_Fighter)) || (Hlp_GetInstanceID(pNpc) == Hlp_GetInstanceID(STRF_2157_Fighter)))
 	{
 		return;
 	};
@@ -176,15 +177,15 @@ func void G_OpenSteal(var int uKey)
 			{
 				AI_PrintClr(concatText,52,200,4);
 			}
-			else if(sChanceProc > 50)
+			else  if (sChanceProc >  50 )
 			{
 				AI_PrintClr(concatText,155,251,5);
 			}
-			else if(sChanceProc > 30)
+			else  if (sChanceProc >  30 )
 			{
 				AI_PrintClr(concatText,255,234,17);
 			}
-			else if(sChanceProc > 10)
+			else  if (sChanceProc >  10 )
 			{
 				AI_PrintClr(concatText,255,126,17);
 			}
@@ -244,15 +245,15 @@ func void G_OpenSteal(var int uKey)
 			{
 				AI_PrintClr(concatText,52,200,4);
 			}
-			else if(sChanceProc > 50)
+			else  if (sChanceProc >  50 )
 			{
 				AI_PrintClr(concatText,155,251,5);
 			}
-			else if(sChanceProc > 30)
+			else  if (sChanceProc >  30 )
 			{
 				AI_PrintClr(concatText,255,234,17);
 			}
-			else if(sChanceProc > 10)
+			else  if (sChanceProc >  10 )
 			{
 				AI_PrintClr(concatText,255,126,17);
 			}
@@ -268,7 +269,7 @@ func void G_OpenSteal(var int uKey)
 	{
 		if(StrCmp("SNEAK",GetWalkModeString(hero)) || (PickPocketBonusCount >= 90))
 		{
-			if((pNpc.guild != GIL_STRF) && (pNpc.aivar[AIV_PlayerHasPickedMyPocket] == FALSE) && (pNpc.vars[0] == FALSE) && (pNpc.guild <= GIL_SEPERATOR_HUM) && (pNpc.npcType != npctype_friend) && (pNpc.flags != NPC_FLAG_XARADRIM) && (pNpc.flags != NPC_FLAG_IMMORTAL) && (pNpc.guild != GIL_DMT) && (pNpc.aivar[90] != TRUE) && (pNpc.aivar[AIV_MM_REAL_ID] != ID_SKELETON) && (pNpc.aivar[AIV_MM_RestEnd] != TRUE))
+			if ((pNpc.guild !=  GIL_STRF ) && (pNpc.aivar[AIV_PlayerHasPickedMyPocket] ==  ​​FALSE ) && (pNpc.vars[ 0 ] ==  FALSE ) && (pNpc.guild <= GIL_SEPERATOR_HUM ) && (pNpc.guild <=  GIL_SEPERATOR_HUM ) && (pNpc.guild != GIL_SEPERATOR_HUM ) npctype_friend) && (pNpc.flags !=  NPC_FLAG_XARADRIM ) && (pNpc.flags !=  NPC_FLAG_IMMORTAL ) && (pNpc.guild !=  GIL_DMT ) && (pNpc.aivar[90 ] !=  TRUE ) && (pNpc.aivar[ AIV_MM_REAL_ID ] !=  ID_SKELETON ) && (pNpc.aivar[AIV_MM_RestEnd] !=  TRUE ))
 			{
 				if(hero.attribute[ATR_DEXTERITY] < pNpc.attribute[ATR_DEXTERITY])
 				{	
@@ -304,7 +305,7 @@ func void G_OpenSteal(var int uKey)
 				AI_PlayAni(hero,"T_STEAL");
 				AI_Wait(hero,1);
 
-				if(sChanceProc >= (1 + Hlp_Random(99)))
+				if (sChanceProc >= ( 1  + Hlp_Random( 99 )))
 				{
 					if((hero.guild == GIL_PAL) || (hero.guild == GIL_KDF))
 					{
@@ -325,7 +326,7 @@ func void G_OpenSteal(var int uKey)
 					sMoney = B_CountStealASTMoney(pNpc);
 					PickPocketBonusCount += 1;
 					B_GiveInvItems(pNpc,hero,ItMi_Gold,sMoney);
-					pNpc.aivar[AIV_PlayerHasPickedMyPocket] = TRUE;
+					pNpc.aivar[AIV_PlayerHasPickedMyPocket] = TRUE ;
 					Ext_RemoveFromSlot(pNpc,"BIP01 SPINE1");	
 
 					if(PickPocketBonusCount > 10)
@@ -355,7 +356,7 @@ func void G_OpenSteal(var int uKey)
 				}
 				else
 				{
-					AI_PrintClr("Ваше воровство заметили!",177,58,17);
+					AI_PrintClr( " Your theft was noticed! " , 177 , 58 , 17 );
 					THIEFCATCHER = Hlp_GetNpc(pNpc);
 					HERO_CANESCAPEFROMGOTCHA = TRUE;
 					B_ResetThiefLevel();
@@ -380,12 +381,12 @@ func void G_OpenSteal(var int uKey)
 			{
 				if(pNpc.vars[0] == TRUE)
 				{
-					AI_PrintClr("Вас уже поймали на воровстве...",177,58,17);
+					AI_PrintClr( " You've already been caught stealing... " , 177 , 58 , 17 );
 					B_Say(hero,hero,"$DONTKNOW");
 				}
 				else if(pNpc.aivar[AIV_PlayerHasPickedMyPocket] == TRUE)
 				{
-					AI_PrintClr("Тут уже нечего украсть...",255,255,255);
+					AI_PrintClr( " There's nothing left to steal here... " , 255 , 255 , 255 );
 					B_Say(hero,hero,"$DONTKNOW");
 				};
 
@@ -401,7 +402,7 @@ func void G_OpenSteal(var int uKey)
 	{
 		if(StrCmp("SNEAK",GetWalkModeString(hero)) || (PickPocketBonusCount >= 90))
 		{
-			if((pNpc.guild != GIL_STRF) && (pNpc.aivar[AIV_PlayerHasPickedMyPocket] == FALSE) && (pNpc.vars[0] == FALSE) && (pNpc.guild <= GIL_SEPERATOR_HUM) && (pNpc.npcType != npctype_friend) && (pNpc.flags != NPC_FLAG_XARADRIM) && (pNpc.flags != NPC_FLAG_IMMORTAL) && (pNpc.guild != GIL_DMT) && (pNpc.aivar[90] != TRUE) && (pNpc.aivar[AIV_MM_REAL_ID] != ID_SKELETON) && (pNpc.aivar[AIV_MM_RestEnd] != TRUE))
+			if ((pNpc.guild !=  GIL_STRF ) && (pNpc.aivar[AIV_PlayerHasPickedMyPocket] ==  ​​FALSE ) && (pNpc.vars[ 0 ] ==  FALSE ) && (pNpc.guild <= GIL_SEPERATOR_HUM ) && (pNpc.guild <=  GIL_SEPERATOR_HUM ) && (pNpc.guild != GIL_SEPERATOR_HUM ) npctype_friend) && (pNpc.flags !=  NPC_FLAG_XARADRIM ) && (pNpc.flags !=  NPC_FLAG_IMMORTAL ) && (pNpc.guild !=  GIL_DMT ) && (pNpc.aivar[90 ] !=  TRUE ) && (pNpc.aivar[ AIV_MM_REAL_ID ] !=  ID_SKELETON ) && (pNpc.aivar[AIV_MM_RestEnd] !=  TRUE ))
 			{
 				if(hero.attribute[ATR_DEXTERITY] < pNpc.attribute[ATR_DEXTERITY])
 				{	
@@ -437,7 +438,7 @@ func void G_OpenSteal(var int uKey)
 				AI_PlayAni(hero,"T_STEAL");
 				AI_Wait(hero,1);
 
-				if(sChanceProc >= (1 + Hlp_Random(99)))
+				if (sChanceProc >= ( 1  + Hlp_Random( 99 )))
 				{
 					if((hero.guild == GIL_PAL) || (hero.guild == GIL_KDF))
 					{
@@ -458,7 +459,7 @@ func void G_OpenSteal(var int uKey)
 					sMoney = B_CountStealASTMoney(pNpc);
 					PickPocketBonusCount += 1;
 					B_GiveInvItems(pNpc,hero,ItMi_Gold,sMoney);
-					pNpc.aivar[AIV_PlayerHasPickedMyPocket] = TRUE;
+					pNpc.aivar[AIV_PlayerHasPickedMyPocket] = TRUE ;
 					Ext_RemoveFromSlot(pNpc,"BIP01 SPINE1");	
 
 					if(PickPocketBonusCount > 10)
@@ -488,7 +489,7 @@ func void G_OpenSteal(var int uKey)
 				}
 				else
 				{
-					AI_PrintClr("Ваше воровство заметили!",177,58,17);
+					AI_PrintClr( " Your theft was noticed! " , 177 , 58 , 17 );
 					THIEFCATCHER = Hlp_GetNpc(pNpc);
 					HERO_CANESCAPEFROMGOTCHA = TRUE;
 					B_ResetThiefLevel();
@@ -513,12 +514,12 @@ func void G_OpenSteal(var int uKey)
 			{
 				if(pNpc.vars[0] == TRUE)
 				{
-					AI_PrintClr("Вас уже поймали на воровстве...",177,58,17);
+					AI_PrintClr( " You've already been caught stealing... " , 177 , 58 , 17 );
 					B_Say(hero,hero,"$DONTKNOW");
 				}
 				else if(pNpc.aivar[AIV_PlayerHasPickedMyPocket] == TRUE)
 				{
-					AI_PrintClr("Тут уже нечего украсть...",255,255,255);
+					AI_PrintClr( " There's nothing left to steal here... " , 255 , 255 , 255 );
 					B_Say(hero,hero,"$DONTKNOW");
 				};
 
@@ -534,7 +535,7 @@ func void G_OpenSteal(var int uKey)
 
 func int ItemStealed(var int npc, var int itm,var int amount)
 {
-	return FALSE;
+	return  FALSE ;
 };
 
 func void B_StealModeIn()
@@ -547,5 +548,5 @@ func void B_GetXPSteal()
 
 func int G_CanSteal()
 {
-	return FALSE;
+	return  FALSE ;
 };
