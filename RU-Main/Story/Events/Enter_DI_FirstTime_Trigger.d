@@ -1,5 +1,6 @@
 
-var int EnterDI_Kapitel6;
+
+var int EnterDI_Chapter6;
 
 func void enter_di_firsttime_trigger()
 {
@@ -11,7 +12,7 @@ func void enter_di_firsttime_trigger()
 	{
 		Wld_InsertItem(ItPo_Perm_DEX,"FP_ITEM_DI_ENTER_05");
 	};
-	if(EnterDI_Kapitel6 == FALSE)
+	if (EnterDI_Chapter6 ==  FALSE )
 	{
 		if(hero.guild == GIL_PAL)
 		{
@@ -25,79 +26,79 @@ func void enter_di_firsttime_trigger()
 
 		if(JorgenIsCaptain == TRUE)
 		{
-			Log_AddEntry(TOPIC_MyCrew,"Йорген, мой капитан, будет ждать на корабле пока я не вернусь. ");
+			Log_AddEntry(TOPIC_MyCrew, " Jorgen, my captain, will be waiting on the ship until I return. " );
 		};
 		if(TorlofIsCaptain == TRUE)
 		{
-			Log_AddEntry(TOPIC_MyCrew,"Торлоф, мой капитан, останется на корабле и будет его защищать, пока я буду на острове. Он поможет мне увеличить силу и ловкость. ");
+			Log_AddEntry(TOPIC_MyCrew, " Torlof, my captain, will stay on the ship and protect it while I'm on the island. He will help me increase my strength and agility. " );
 		};
 		if(JackIsCaptain == TRUE)
 		{
-			Log_AddEntry(TOPIC_MyCrew,"Джек, мой капитан, будет ждать на корабле пока я не вернусь. Он немного напуган. Но он нужен мне. ");
+			Log_AddEntry(TOPIC_MyCrew, " Jack, my captain, will be waiting on the ship until I get back. He's a little scared. But I need him. " );
 		};
 		if(Lee_IsOnBoard == LOG_SUCCESS)
 		{
-			Log_AddEntry(TOPIC_MyCrew,"Ли будет командовать на корабле в мое отсутствие. У него я смогу улучшить свои навыки в борьбе с одноручным и двуручным оружием.");
+			Log_AddEntry(TOPIC_MyCrew, " Lee will be in command of the ship in my absence. With him, I can improve my skills in combat with one-handed and two-handed weapons. " );
 		};
 		if(MiltenNW_IsOnBoard == LOG_SUCCESS)
 		{
-			Log_AddEntry(TOPIC_MyCrew,"У Милтена я смогу увеличить свою магическую энергию.");
+			Log_AddEntry(TOPIC_MyCrew, " At Milten's, I can increase my magical energy. " );
 			if(hero.guild == GIL_KDF)
 			{
-				Log_AddEntry(TOPIC_MyCrew,"Милтен может научить меня создавать руны.");
+				Log_AddEntry(TOPIC_MyCrew, " Milten can teach me how to make runes. " );
 			};
 		};
 		if(Lester_IsOnBoard == LOG_SUCCESS)
 		{
-			Log_AddEntry(TOPIC_MyCrew,"У меня такое впечатление, что состояние Лестера еще больше ухудшилось на этом странном острове.");
+			Log_AddEntry(TOPIC_MyCrew, " I have the impression that Leicester's condition has worsened further on this strange island. " );
 		};
 		if(Mario_IsOnBoard == LOG_SUCCESS)
 		{
-			Log_AddEntry(TOPIC_MyCrew,"Марио немного странен. Он сидел весь путь в хвостовой части корабля и не сказал с тех пор еще ни слова. ");
+			Log_AddEntry(TOPIC_MyCrew, " Mario is a little weird. He sat all the way at the back of the ship and hasn't said a word since. " );
 		};
 		if(Wolf_IsOnBoard == LOG_SUCCESS)
 		{
-			Log_AddEntry(TOPIC_MyCrew,"Вольф сможет научить меня стрелять из лука и арбалета. ");
+			Log_AddEntry(TOPIC_MyCrew, " Wolf can teach me how to shoot a bow and crossbow. " );
 		};
 		if(Vatras_IsOnBoard == LOG_SUCCESS)
 		{
-			Log_AddEntry(TOPIC_MyCrew,"Ватрас удалился в каюту магов. У него я смогу вылечиться, а также научиться приготовлению разных напитков. ");
+			Log_AddEntry(TOPIC_MyCrew, " Vatras has retired to the mages' quarters. He can heal me and teach me how to make various drinks. " );
 			if(hero.guild == GIL_KDF)
 			{
-				Log_AddEntry(TOPIC_MyCrew,"Ватрас также сможет увеличить мой Круг магии. ");
+				Log_AddEntry(TOPIC_MyCrew, " Vatras will also be able to increase my Circle of Magic. " );
 			};
 		};
 		if(Bennet_IsOnBoard == LOG_SUCCESS)
 		{
-			Log_AddEntry(TOPIC_MyCrew,"Беннет обучит меня ковке, если я это захочу.");
+			Log_AddEntry(TOPIC_MyCrew, " Bennet will teach me how to forge if I want to. " );
 		};
 		if(Diego_IsOnBoard == LOG_SUCCESS)
 		{
-			Log_AddEntry(TOPIC_MyCrew,"Диего научит меня, если я чего-то еще не знаю, также у него есть снаряжение. У него я смогу научиться взламывать замки и увеличить свои навыки обращения с луком и арбалетом. ");
+			Log_AddEntry(TOPIC_MyCrew, " Diego will teach me if I don't already know something, he also has equipment. From him I can learn how to pick locks and increase my bow and crossbow skills. " );
 		};
 		if(Gorn_IsOnBoard == LOG_SUCCESS)
 		{
-			Log_AddEntry(TOPIC_MyCrew,"Горн так и не спал за время нашего плавания. Он будет присматривать за кораблем. Я думаю, что теперь корабль в хороших руках.");
-			Log_AddEntry(TOPIC_MyCrew,"У Горна я смогу научиться сражаться с двуручным оружием. ");
+			Log_AddEntry(TOPIC_MyCrew, "The horn hasn't slept during our voyage. He'll look after the ship. I think the ship is in good hands now. " );
+			Log_AddEntry(TOPIC_MyCrew, " From Gorn I can learn how to fight with two-handed weapons. " );
 		};
 		if(Lares_IsOnBoard == LOG_SUCCESS)
 		{
-			Log_AddEntry(TOPIC_MyCrew,"Ларес пообещал, что научит меня подкрадываться и борьбе с одноручным оружием. Кроме того, он сможет увеличить мою ловкость. ");
+			Log_AddEntry(TOPIC_MyCrew, " Lares promised that he would teach me how to sneak and fight with one-handed weapons. In addition, he could increase my dexterity. " );
 		};
 		if(Biff_IsOnBoard == LOG_SUCCESS)
 		{
-			Log_AddEntry(TOPIC_MyCrew,"Бифф так помешан на деньгах, что его уже ничто не остановит. Мне будет трудно удержать его в узде.");
+			Log_AddEntry(TOPIC_MyCrew, " Biff is so money addicted that nothing will stop him. I'll have a hard time keeping him in line. " );
 		};
 		if(Angar_IsOnBoard == LOG_SUCCESS)
 		{
-			Log_AddEntry(TOPIC_MyCrew,"Ангар выглядит очень неспокойно. У меня такое ощущение, что он скоро пойдет сражаться в одиночку.");
+			Log_AddEntry(TOPIC_MyCrew, " The hangar looks very unsettled. I have a feeling that he will soon go to fight alone. " );
 		};
 		if(Girion_IsOnBoard == LOG_SUCCESS)
 		{
-			Log_AddEntry(TOPIC_MyCrew,"Гирион как всегда спокоен, его терпение достойно удивления. Все-таки он боевой преподаватель. Но это мне только на пользу.");
+			Log_AddEntry(TOPIC_MyCrew, " Girion is as calm as ever, his patience is admirable. He's a combat trainer after all. But it's only good for me. " );
 		};
 
-		EnterDI_Kapitel6 = TRUE;
+		EnterDI_Chapter6 = TRUE ;
 		IntroduceCH_06 = TRUE;
 	};
 };
