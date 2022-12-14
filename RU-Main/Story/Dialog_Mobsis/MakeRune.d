@@ -1,10 +1,11 @@
+
 var int CountRunesOverallBonus;
 var int CountRunesOverallBonusDay;
 var int OverallBonusRunes;
 
 func void B_RaiseIntRuneSkill()
 {
-	var int daynow;
+	where int daynow;
 
 	daynow = Wld_GetDay();
 
@@ -18,7 +19,7 @@ func void B_RaiseIntRuneSkill()
 			{
 				ATR_INTELLECT = ATR_INTELLECT + 1;
 				Npc_SetTalentSkill(hero,NPC_TALENT_INTELLECT,ATR_INTELLECT);
-				AI_Print("Интеллект + 1");
+				AI_Print( " Intelligence + 1 " );
 			};
 
 			CountRunesOverallBonus = FALSE;
@@ -37,13 +38,13 @@ func int B_CheckRuneSkill(var int skill)
 	}
 	else
 	{
-		concatText = ConcatStrings("Необходим навык в создании рун не менее ",IntToString(Skill));
+		concatText = ConcatStrings( " You need at least skill in creating runes " ,IntToString(Skill));
 		AI_PrintClr(concatText,177,58,17);
 		B_Say(self,self,"$NOLEARNNOPOINTS");
-		return FALSE;
+		return  FALSE ;
 	};
 
-	return FALSE;
+	return  FALSE ;
 };
 
 func void makerune_s1()
@@ -52,14 +53,14 @@ func void makerune_s1()
 	her = Hlp_GetNpc(PC_Hero);
 	if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(her))
 	{
-		//print_percent_bar_none(ATR_STAMINA[0],ATR_STAMINA_MAX[0] * 10,"Выносливость",42,97);
+		// print_percent_bar_none(ATR_STAMINA[0],ATR_STAMINA_MAX[0] * 10,"Stamina",42,97);
 
 		if(CinemaMod == TRUE)
 		{
 			Wld_PlayEffect("DIALOGSCOPE_FX",hero,hero,0,0,0,FALSE);
 		};
 
-		self.aivar[AIV_INVINCIBLE] = TRUE;
+		self.aivar[ AIV_INVINCIBLE ] = TRUE ;
 		PLAYER_MOBSI_PRODUCTION = MOBSI_MakeRune;
 		AI_ProcessInfos(her);
 	};
@@ -391,7 +392,7 @@ instance PC_Circle(C_Info)
 	condition = PC_Circle_Condition;
 	information = PC_Circle_Info;
 	permanent = TRUE;
-	description = "Создать магическую руну";
+	description = " Create a magic rune " ;
 };
 
 func int PC_Circle_Condition()
@@ -445,7 +446,7 @@ instance PC_Make_RuneBlank(C_Info)
 	condition = PC_Make_RuneBlank_Condition;
 	information = PC_Make_RuneBlank_Info;
 	permanent = TRUE;
-	description = "Создание рунных камней";
+	description = " Creating Runestones " ;
 };
 
 func int PC_Make_RuneBlank_Condition()
@@ -460,13 +461,13 @@ func void PC_Make_RuneBlank_Info()
 {
 	Info_ClearChoices(PC_Make_RuneBlank);
 	Info_AddChoice(PC_Make_RuneBlank,Dialog_Back,PC_Make_RuneBlank_BACK);
-	Info_AddChoice(PC_Make_RuneBlank,"Обычный рунный камень (5 кусков рунного камня)",PC_Make_RuneBlank_01);
-	Info_AddChoice(PC_Make_RuneBlank,"Старший рунный камень (10 кусков рунного камня, 1 рудный слиток)",PC_Make_RuneBlank_02);
-	Info_AddChoice(PC_Make_RuneBlank,"Высший рунный камень (20 кусков рунного камня, 2 рудных слитка)",PC_Make_RuneBlank_03);
+	Info_AddChoice(PC_Make_RuneBlank, " Regular Runestone (5 Runestone) " ,PC_Make_RuneBlank_01);
+	Info_AddChoice(PC_Make_RuneBlank, " Elder Runestone (10 Runestone, 1 Ore Ingot) " ,PC_Make_RuneBlank_02);
+	Info_AddChoice(PC_Make_RuneBlank, " Ultimate Runestone (20 Runestone, 2 Ore Ingots) " ,PC_Make_RuneBlank_03);
 
 	if(Npc_HasItems(hero,ItMi_RuneBlank) >= 1)
 	{
-		Info_AddChoice(PC_Make_RuneBlank,"Разобрать все обычные рунные камни",PC_Make_RuneBlank_04);
+		Info_AddChoice(PC_Make_RuneBlank, " Dismantle all normal runestones " ,PC_Make_RuneBlank_04);
 	};
 };
 
@@ -479,14 +480,14 @@ func void PC_Make_RuneBlank_01()
 		CreateInvItems(hero,ItMi_RuneBlank,1);
 		TalentCount_Rune[0] += 5;
 		B_RaiseIntRuneSkill();
-		AI_PrintClr("Изготовлен обычный рунный камень!",83,152,48);
+		AI_PrintClr( " Regular runestone made! " , 83 , 152 , 48 );
 		//B_Say(self,self,"$ITEMREADY");
 		PC_Make_RuneBlank_Info();
 	}
 	else
 	{
-		//Print(PRINT_ProdItemsMissing);
-		AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+		// Print(PRINT_ProdItemsMissing);
+		AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 		B_Say(self,self,"$MISSINGINGREDIENTS");
 		PC_Make_RuneBlank_Info();
 	};
@@ -504,14 +505,14 @@ func void PC_Make_RuneBlank_02()
 			CreateInvItems(hero,ItMi_UpRuneBlank,1);
 			TalentCount_Rune[0] += 5;
 			B_RaiseIntRuneSkill();
-			AI_PrintClr("Изготовлен старший рунный камень!",83,152,48);
+			AI_PrintClr( " Major runestone produced! " , 83 , 152 , 48 );
 			//B_Say(self,self,"$ITEMREADY");
 			PC_Make_RuneBlank_Info();
 		}
 		else
 		{
-			//Print(PRINT_ProdItemsMissing);
-			AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+			// Print(PRINT_ProdItemsMissing);
+			AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 			B_Say(self,self,"$MISSINGINGREDIENTS");
 			PC_Make_RuneBlank_Info();
 		};
@@ -534,14 +535,14 @@ func void PC_Make_RuneBlank_03()
 			CreateInvItems(hero,ItMi_HighRuneBlank,1);
 			TalentCount_Rune[0] += 5;
 			B_RaiseIntRuneSkill();
-			AI_PrintClr("Изготовлен высший рунный камень!",83,152,48);
+			AI_PrintClr( " Print runestone produced! " , 83 , 152 , 48 );
 			//B_Say(self,self,"$ITEMREADY");
 			PC_Make_RuneBlank_Info();
 		}
 		else
 		{
-			//Print(PRINT_ProdItemsMissing);
-			AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+			// Print(PRINT_ProdItemsMissing);
+			AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 			B_Say(self,self,"$MISSINGINGREDIENTS");
 			PC_Make_RuneBlank_Info();
 		};
@@ -561,7 +562,7 @@ func void PC_Make_RuneBlank_04()
 	Npc_RemoveInvItems(hero,ItMi_RuneBlank,Npc_HasItems(hero,ItMi_RuneBlank));
 	CreateInvItems(hero,ItMi_StoneGuardianPiece,CountPieces * 2);
 	concatText = ConcatStrings("Получено ",IntToString(CountPieces * 2));
-	concatText = ConcatStrings(concatText," рунных кусков...");
+	concatText = ConcatStrings(concatText, " rune pieces... " );
 	AI_PrintClr(concatText,83,152,48);
 	//B_Say(self,self,"$ITEMREADY");
 	PC_Make_RuneBlank_Info();
@@ -579,12 +580,12 @@ instance PC_MAKERUNE_DESTROYGUARDIANS(C_Info)
 	condition = pc_makerune_destroyguardians_condition;
 	information = pc_makerune_destroyguardians_info;
 	permanent = TRUE;
-	description = "Создать руну 'Гнев Создателей'.";
+	description = " Create a 'Wrath of the Creators' rune. " ;
 };
 
 func int pc_makerune_destroyguardians_condition()
 {
-	if((PLAYER_MOBSI_PRODUCTION == MOBSI_MakeRune) && (NETBEKLEADME_STEP2 == TRUE) && (NETBEKLEADME_STEP2DONE == FALSE) && (HOWCANMAKERUNE == TRUE) && (Npc_HasItems(hero,ItMi_Avatar_Dark) >= 1) && (Npc_HasItems(hero,ItMi_Avatar_Fire) >= 1) && (Npc_HasItems(hero,ItMi_Avatar_Water) >= 1) && (Npc_HasItems(hero,ItMi_Avatar_Stone) >= 1)  && ((Npc_HasItems(hero,ItMi_Focus) >= 1) || (Npc_HasItems(hero,ItMi_MagicCrystal) >= 1)))
+	if (( PLAYER_MOBSI_PRODUCTION  == MOBSI_MakeRune) && ( NETBEKLEADME_STEP2  ==  TRUE ) && ( NETBEKLEADME_STEP2DONE  ==  FALSE ) && ( HOWCANMAKERUNE  ==  TRUE ) && (Npc_HasItems(hero,ItMi_Avatar_Dark) >=  1 ) && (Npc_HasItems(hero ,ItMi_Avatar_Dark) > = 1 ) =  1 ) && (Npc_HasItems(hero,ItMi_Avatar_Water) >=  1 ) && (Npc_HasItems(hero,ItMi_Avatar_Stone) >= 1)  && ((Npc_HasItems(hero,ItMi_Focus) >= 1) || (Npc_HasItems(hero,ItMi_MagicCrystal) >= 1)))
 	{
 		return TRUE;
 	};
@@ -617,7 +618,7 @@ func void pc_makerune_destroyguardians_info()
 		B_RaiseIntRuneSkill();
 		AI_Print(PRINT_MAKESUPERRUNE);
 		//B_Say(self,self,"$ITEMREADY");
-		B_LogEntry(TOPIC_GUARDIANS,"Я создал руну, сила которой способна уничтожить Хранителей. Теперь, думаю пришло время нанести визит и им!");
+		B_LogEntry( TOPIC_GUARDIANS , " I've created a rune with the power to destroy the Guardians. Now I think it's time to pay them a visit! " );
 		b_endproductiondialog();
 	}
 	else
@@ -634,7 +635,7 @@ instance PC_SPL_MasterOfDisaster(C_Info)
 	condition = PC_SPL_MasterOfDisaster_Condition;
 	information = PC_SPL_MasterOfDisaster_Info;
 	permanent = TRUE;
-	description = "Создать руну 'Взор Инноса'";
+	description = " Create Rune 'Gaze of Innos' " ;
 };
 
 func int PC_SPL_MasterOfDisaster_Condition()
@@ -649,14 +650,14 @@ func void PC_SPL_MasterOfDisaster_Info()
 {
 	if(B_CheckRuneSkill(90))
 	{
-		if((Npc_HasItems(hero,ItMi_HolyWater) >= 1) && (Npc_HasItems(hero,ItMi_HighRuneBlank) >= 1) && ((Npc_HasItems(hero,ItPo_PotionOfDeath_01_Mis) >= 1) || (Npc_HasItems(hero,ItPo_PotionOfDeath_02_Mis) >= 1)))
+		if ((Npc_HasItems(hero,ItMi_HolyWater) >=  1 ) && (Npc_HasItems(hero,ItMi_HighRuneBlank) >=  1 ) && ((Npc_HasItems(hero,ItPo_PotionOfDeath_01_Mis) >=  1 ) || (Npc_HasItems(hero,ItPo_PotionOfDeath_02_Mis) >=  1 )))
 		{
 			B_GivePlayerXP(XP_HandMade_Rune);
 			Npc_RemoveInvItems(hero,ItPo_PotionOfDeath_01_Mis,1);
 			Npc_RemoveInvItems(hero,ItPo_PotionOfDeath_02_Mis,1);
 			Npc_RemoveInvItems(hero,ItMi_HolyWater,1);
 			Npc_RemoveInvItems(hero,ItMi_HighRuneBlank,1);
-			CreateInvItems(hero,ItRu_MasterOfDisaster,1);
+			CreateInvItems(hero,ItRu_MasterOfDisaster, 1 );
 			PLAYER_MAKE_RUNES[SPL_MasterOfDisaster] = TRUE;
 			//Print(PRINT_RuneSuccess);
 			TalentCount_Rune[0] += 5;
@@ -666,8 +667,8 @@ func void PC_SPL_MasterOfDisaster_Info()
 		}
 		else
 		{
-			//Print(PRINT_ProdItemsMissing);
-			AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+			// Print(PRINT_ProdItemsMissing);
+			AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 			B_Say(self,self,"$MISSINGINGREDIENTS");
 			CreateInvItems(self,ItMi_RuneBlank,1);
 		};
@@ -689,7 +690,7 @@ instance PC_SPL_PalTeleportSecret(C_Info)
 	condition = PC_SPL_PalTeleportSecret_Condition;
 	information = PC_SPL_PalTeleportSecret_Info;
 	permanent = TRUE;
-	description = "Создать руну телепортации";
+	description = " Create a teleportation rune " ;
 };
 
 func int PC_SPL_PalTeleportSecret_Condition()
@@ -706,7 +707,7 @@ func void PC_SPL_PalTeleportSecret_Info()
 	{
 		B_GivePlayerXP(XP_HandMade_Rune);
 		Npc_RemoveInvItems(hero,ItMi_HolyWater,1);
-		CreateInvItems(hero,ItRu_PalTeleportSecret,1);
+		CreateInvItems(hero,ItRu_PalTeleportSecret, 1 );
 		PLAYER_MAKE_RUNES[SPL_PalTeleportSecret] = TRUE;
 		//Print(PRINT_RuneSuccess);
 		TalentCount_Rune[0] += 5;
@@ -716,8 +717,8 @@ func void PC_SPL_PalTeleportSecret_Info()
 	}
 	else
 	{
-		//Print(PRINT_ProdItemsMissing);
-		AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+		// Print(PRINT_ProdItemsMissing);
+		AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 		B_Say(self,self,"$MISSINGINGREDIENTS");
 		CreateInvItems(self,ItMi_RuneBlank,1);
 	};
@@ -732,7 +733,7 @@ instance PC_MAKERUNE_CRESTMAKE(C_Info)
 	condition = pc_makerune_crestmake_condition;
 	information = pc_makerune_crestmake_info;
 	permanent = TRUE;
-	description = "Создать руну 'Крест Стихий'.";
+	description = " Create a 'Cross of Elements' rune. " ;
 };
 
 
@@ -746,7 +747,7 @@ func int pc_makerune_crestmake_condition()
 
 func void pc_makerune_crestmake_info()
 {
-	if((Npc_HasItems(hero,itmi_fireshpere) >= 1) && (Npc_HasItems(hero,itmi_watershpere) >= 1) && (Npc_HasItems(hero,itmi_stoneshpere) >= 1) && (Npc_HasItems(hero,itmi_darkshpere) >= 1) && (Npc_HasItems(hero,itat_golddragonheart) >= 1))
+	if ((Npc_HasItems(hero,itmi_fireshpere) >=  1 ) && (Npc_HasItems(hero,itmi_watershpere) >=  1 ) && (Npc_HasItems(hero,itmi_stoneshpere) >=  1 ) && (Npc_HasItems(hero,itmi_darkshpere) >=  1 ) && (Npc_HasItems(hero,itat_golddragonheart) >=  1 ))
 	{
 		B_GivePlayerXP(XP_HandMade_Rune);
 		Npc_RemoveInvItems(hero,itmi_fireshpere,1);
@@ -758,13 +759,13 @@ func void pc_makerune_crestmake_info()
 		//Print(PRINT_RuneSuccess);
 		AI_PrintClr(PRINT_RuneSuccess,83,152,48);
 		//B_Say(self,self,"$ITEMREADY");
-		B_LogEntry(TOPIC_GOLDDRAGONPORTAL,"Я сделал Крест Стихий! Теперь стоит подумать и о встрече с архидемоном.");
+		B_LogEntry( TOPIC_GOLDDRAGONPORTAL , " I've made an Elemental Cross! Now it's time to think about meeting the archdemon. " );
 		CRESTNATUREISDONE = TRUE;
 	}
 	else
 	{
-		//Print(PRINT_ProdItemsMissing);
-		AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+		// Print(PRINT_ProdItemsMissing);
+		AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 		B_Say(self,self,"$MISSINGINGREDIENTS");
 		CreateInvItems(self,ItMi_RuneBlank,1);
 	};
@@ -773,7 +774,7 @@ func void pc_makerune_crestmake_info()
 };
 
 
-//------------------------------------создание------------------------------------------------------
+// ----------------------create----------- -------------------------------------------------
 
 func void PC_ItRu_Light_Info()
 {
@@ -808,14 +809,14 @@ func void PC_ItRu_Light_Info()
 	}
 	else
 	{
-		//Print(PRINT_ProdItemsMissing);
-		AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+		// Print(PRINT_ProdItemsMissing);
+		AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 		B_Say(self,self,"$MISSINGINGREDIENTS");
 		B_Circle_01();
 	};
 };
 
-func void PC_ItRu_LightHeal_Info()
+func void PC_ItRu_LightHeal_Info ()
 {
 	if((Npc_HasItems(hero,ItSc_LightHeal) >= 1) && (Npc_HasItems(hero,ItPl_Health_Herb_03) >= 1))
 	{
@@ -847,8 +848,8 @@ func void PC_ItRu_LightHeal_Info()
 	}
 	else
 	{
-		//Print(PRINT_ProdItemsMissing);
-		AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+		// Print(PRINT_ProdItemsMissing);
+		AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 		B_Say(self,self,"$MISSINGINGREDIENTS");
 		B_Circle_01();
 	};
@@ -886,21 +887,21 @@ func void PC_ItRu_Unlock_Info()
 	}
 	else
 	{
-		//Print(PRINT_ProdItemsMissing);
-		AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+		// Print(PRINT_ProdItemsMissing);
+		AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 		B_Say(self,self,"$MISSINGINGREDIENTS");
 		B_Circle_01();
 	};
 };
 
-func void PC_ItRu_Firebolt_Info()
+func void PC_ItRu_Firebolt_Info ()
 {
 	if((Npc_HasItems(hero,ItSc_Firebolt) >= 1) && (Npc_HasItems(hero,ItMi_Sulfur) >= 1))
 	{
 		B_GivePlayerXP(XP_HandMade_Rune);
 		Npc_RemoveInvItems(hero,ItSc_Firebolt,1);
 		Npc_RemoveInvItems(hero,ItMi_Sulfur,1);
-		CreateInvItems(hero,ItRu_FireBolt,1);
+		CreateInvItems(hero,ItRu_FireBolt, 1 );
 		//Print(PRINT_RuneSuccess);
 
 		if(PLAYER_MAKE_RUNES[SPL_Firebolt] == FALSE)
@@ -925,21 +926,21 @@ func void PC_ItRu_Firebolt_Info()
 	}
 	else
 	{
-		//Print(PRINT_ProdItemsMissing);
-		AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+		// Print(PRINT_ProdItemsMissing);
+		AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 		B_Say(self,self,"$MISSINGINGREDIENTS");
 		B_Circle_01();
 	};
 };
 
-func void PC_ItRu_Zap_Info()
+func void PC_ItRu_Zap_Info ()
 {
 	if((Npc_HasItems(hero,ItSc_Zap) >= 1) && (Npc_HasItems(hero,ItMi_Rockcrystal) >= 1))
 	{
 		B_GivePlayerXP(XP_HandMade_Rune);
 		Npc_RemoveInvItems(hero,ItSc_Zap,1);
 		Npc_RemoveInvItems(hero,ItMi_Rockcrystal,1);
-		CreateInvItems(hero,ItRu_Zap,1);
+		CreateInvItems(hero,ItRu_Zap, 1 );
 		//Print(PRINT_RuneSuccess);
 
 		if(PLAYER_MAKE_RUNES[SPL_Zap] == FALSE)
@@ -964,8 +965,8 @@ func void PC_ItRu_Zap_Info()
 	}
 	else
 	{
-		//Print(PRINT_ProdItemsMissing);
-		AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+		// Print(PRINT_ProdItemsMissing);
+		AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 		B_Say(self,self,"$MISSINGINGREDIENTS");
 		B_Circle_01();
 	};
@@ -1003,14 +1004,14 @@ func void PC_ItRu_Sleep_Info()
 	}
 	else
 	{
-		//Print(PRINT_ProdItemsMissing);
-		AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+		// Print(PRINT_ProdItemsMissing);
+		AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 		B_Say(self,self,"$MISSINGINGREDIENTS");
 		B_Circle_01();
 	};
 };
 
-func void pc_itru_berzerk_info()
+func void pc_itru_berzerk_info ()
 {
 	if((Npc_HasItems(hero,itsc_berzerk) >= 1) && (Npc_HasItems(hero,ItPl_SwampHerb) >= 1) && (Npc_HasItems(hero,ItMi_Quartz) >= 1))
 	{
@@ -1018,7 +1019,7 @@ func void pc_itru_berzerk_info()
 		Npc_RemoveInvItems(hero,itsc_berzerk,1);
 		Npc_RemoveInvItems(hero,ItPl_SwampHerb,1);
 		Npc_RemoveInvItems(hero,ItMi_Quartz,1);
-		CreateInvItems(hero,itru_berzerk,1);
+		CreateInvItems(hero,itru_berzerk, 1 );
 		//Print(PRINT_RuneSuccess);
 
 		if(PLAYER_MAKE_RUNES[95] == FALSE)
@@ -1043,14 +1044,14 @@ func void pc_itru_berzerk_info()
 	}
 	else
 	{
-		//Print(PRINT_ProdItemsMissing);
-		AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+		// Print(PRINT_ProdItemsMissing);
+		AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 		B_Say(self,self,"$MISSINGINGREDIENTS");
 		B_Circle_01();
 	};
 };
 
-func void pc_itru_deathbolt_info()
+func void pc_itru_deathbolt_info ()
 {
 	if((Npc_HasItems(hero,itsc_deathbolt) >= 1) && (Npc_HasItems(hero,ItMi_DarkPearl) >= 1))
 	{
@@ -1082,14 +1083,14 @@ func void pc_itru_deathbolt_info()
 	}
 	else
 	{
-		//Print(PRINT_ProdItemsMissing);
-		AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+		// Print(PRINT_ProdItemsMissing);
+		AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 		B_Say(self,self,"$MISSINGINGREDIENTS");
 		B_Circle_01();
 	};
 };
 
-func void PC_ItRu_SumGobSkel_Info()
+func void PC_ItRu_SumGobSkel_Info ()
 {
 	if((Npc_HasItems(hero,ItSc_SumGobSkel) >= 1) && (Npc_HasItems(hero,ItAt_SkeletonBone) >= 1))
 	{
@@ -1121,16 +1122,16 @@ func void PC_ItRu_SumGobSkel_Info()
 	}
 	else
 	{
-		//Print(PRINT_ProdItemsMissing);
-		AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+		// Print(PRINT_ProdItemsMissing);
+		AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 		B_Say(self,self,"$MISSINGINGREDIENTS");
 		B_Circle_01();
 	};
 };
 
-func void PC_ItRu_Rage_Info()
+func void PC_ItRu_Rage_Info ()
 {
-	if((Npc_HasItems(hero,ItSc_Rage) >= 1) && (Npc_HasItems(hero,ItAt_SkeletonBone) >= 1) && (Npc_HasItems(hero,ITMI_PLAZMA) >= 1) && (Npc_HasItems(hero,ItMi_Sulfur) >= 1) && (Npc_HasItems(hero,ItMi_Pitch) >= 1))
+	if ((Npc_HasItems(hero,ItSc_Rage) >=  1 ) && (Npc_HasItems(hero,ItAt_SkeletonBone) >=  1 ) && (Npc_HasItems(hero, ITMI_PLAZMA ) >=  1 ) && (Npc_HasItems(hero,ItMi_Sulfur) >=  1 ) && (Npc_HasItems(hero,ItMi_Pitch) >=  1 ))
 	{
 		B_GivePlayerXP(XP_HandMade_Rune);
 		Npc_RemoveInvItems(hero,ItSc_Rage,1);
@@ -1163,14 +1164,14 @@ func void PC_ItRu_Rage_Info()
 	}
 	else
 	{
-		//Print(PRINT_ProdItemsMissing);
-		AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+		// Print(PRINT_ProdItemsMissing);
+		AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 		B_Say(self,self,"$MISSINGINGREDIENTS");
 		B_Circle_01();
 	};
 };
 
-func void PC_ItRu_SumWolf_Info()
+func void PC_ItRu_SumWolf_Info ()
 {
 	if(B_CheckRuneSkill(15))
 	{
@@ -1179,7 +1180,7 @@ func void PC_ItRu_SumWolf_Info()
 			B_GivePlayerXP(XP_HandMade_Rune);
 			Npc_RemoveInvItems(hero,ItSc_SumWolf,1);
 			Npc_RemoveInvItems(hero,ItAt_WargFur,1);
-			CreateInvItems(hero,ItRu_SumWolf,1);
+			CreateInvItems(hero,ItRu_SumWolf, 1 );
 			//Print(PRINT_RuneSuccess);
 
 			if(PLAYER_MAKE_RUNES[SPL_SummonWolf] == FALSE)
@@ -1204,8 +1205,8 @@ func void PC_ItRu_SumWolf_Info()
 		}
 		else
 		{
-			//Print(PRINT_ProdItemsMissing);
-			AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+			// Print(PRINT_ProdItemsMissing);
+			AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 			B_Say(self,self,"$MISSINGINGREDIENTS");
 			B_Circle_02();
 		};
@@ -1216,7 +1217,7 @@ func void PC_ItRu_SumWolf_Info()
 	};
 };
 
-func void PC_ItRu_InstFireball_Info()
+func void PC_ItRu_InstFireball_Info ()
 {
 	if(B_CheckRuneSkill(15))
 	{
@@ -1225,7 +1226,7 @@ func void PC_ItRu_InstFireball_Info()
 			B_GivePlayerXP(XP_HandMade_Rune);
 			Npc_RemoveInvItems(hero,ItSc_InstantFireball,1);
 			Npc_RemoveInvItems(hero,ItMi_Pitch,1);
-			CreateInvItems(hero,ItRu_InstantFireball,1);
+			CreateInvItems(hero,ItRu_InstantFireball, 1 );
 			//Print(PRINT_RuneSuccess);
 
 			if(PLAYER_MAKE_RUNES[SPL_InstantFireball] == FALSE)
@@ -1250,8 +1251,8 @@ func void PC_ItRu_InstFireball_Info()
 		}
 		else
 		{
-			//Print(PRINT_ProdItemsMissing);
-			AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+			// Print(PRINT_ProdItemsMissing);
+			AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 			B_Say(self,self,"$MISSINGINGREDIENTS");
 			B_Circle_02();
 		};
@@ -1262,11 +1263,11 @@ func void PC_ItRu_InstFireball_Info()
 	};
 };
 
-func void PC_ItRu_Lacerate_Info()
+func void PC_ItRu_Lacerate_Info ()
 {
 	if(B_CheckRuneSkill(15))
 	{
-		if((Npc_HasItems(hero,ItSc_Lacerate) >= 1) && (Npc_HasItems(hero,ItAt_SkeletonBone) >= 1) && (Npc_HasItems(hero,ItMi_Sulfur) >= 1) && (Npc_HasItems(hero,ItMi_Rockcrystal) >= 1) && (Npc_HasItems(hero,ItMi_Quartz) >= 1))
+		if ((Npc_HasItems(hero,ItSc_Lacerate) >=  1 ) && (Npc_HasItems(hero,ItAt_SkeletonBone) >=  1 ) && (Npc_HasItems(hero,ItMi_Sulfur) >=  1 ) && (Npc_HasItems(hero,ItMi_Rockcrystal) >=  1 ) && (Npc_HasItems(hero,ItMi_Quartz) >=  1 ))
 		{
 			B_GivePlayerXP(XP_HandMade_Rune);
 			Npc_RemoveInvItems(hero,ItSc_Lacerate,1);
@@ -1299,8 +1300,8 @@ func void PC_ItRu_Lacerate_Info()
 		}
 		else
 		{
-			//Print(PRINT_ProdItemsMissing);
-			AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+			// Print(PRINT_ProdItemsMissing);
+			AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 			B_Say(self,self,"$MISSINGINGREDIENTS");
 			B_Circle_02();
 		};
@@ -1311,7 +1312,7 @@ func void PC_ItRu_Lacerate_Info()
 	};
 };
 
-func void PC_ItRu_RapidIcebolt_Info()
+func void PC_ItRu_RapidIcebolt_Info ()
 {
 	if(B_CheckRuneSkill(15))
 	{
@@ -1346,8 +1347,8 @@ func void PC_ItRu_RapidIcebolt_Info()
 		}
 		else
 		{
-			//Print(PRINT_ProdItemsMissing);
-			AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+			// Print(PRINT_ProdItemsMissing);
+			AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 			B_Say(self,self,"$MISSINGINGREDIENTS");
 			B_Circle_02();
 		};
@@ -1358,7 +1359,7 @@ func void PC_ItRu_RapidIcebolt_Info()
 	};
 };
 
-func void PC_ItRu_RapidFirebolt_Info()
+func void PC_ItRu_RapidFirebolt_Info ()
 {
 	if(B_CheckRuneSkill(15))
 	{
@@ -1368,7 +1369,7 @@ func void PC_ItRu_RapidFirebolt_Info()
 			Npc_RemoveInvItems(hero,ItSc_RapidFirebolt,1);
 			Npc_RemoveInvItems(hero,ItMi_Sulfur,1);
 			Npc_RemoveInvItems(hero,ItMi_Pitch,1);
-			CreateInvItems(hero,ItRu_RapidFirebolt,1);
+			CreateInvItems(hero,ItRu_RapidFirebolt, 1 );
 			//Print(PRINT_RuneSuccess);
 
 			if(PLAYER_MAKE_RUNES[SPL_RapidFirebolt] == FALSE)
@@ -1393,8 +1394,8 @@ func void PC_ItRu_RapidFirebolt_Info()
 		}
 		else
 		{
-			//Print(PRINT_ProdItemsMissing);
-			AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+			// Print(PRINT_ProdItemsMissing);
+			AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 			B_Say(self,self,"$MISSINGINGREDIENTS");
 			B_Circle_02();
 		};
@@ -1405,7 +1406,7 @@ func void PC_ItRu_RapidFirebolt_Info()
 	};
 };
 
-func void PC_ItRu_Icelance_Info()
+func void PC_ItRu_Icelance_Info ()
 {
 	if(B_CheckRuneSkill(15))
 	{
@@ -1440,8 +1441,8 @@ func void PC_ItRu_Icelance_Info()
 		}
 		else
 		{
-			//Print(PRINT_ProdItemsMissing);
-			AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+			// Print(PRINT_ProdItemsMissing);
+			AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 			B_Say(self,self,"$MISSINGINGREDIENTS");
 			B_Circle_02();
 		};
@@ -1452,14 +1453,14 @@ func void PC_ItRu_Icelance_Info()
 	};
 };
 
-func void PC_ItRu_Icebolt_Info()
+func void PC_ItRu_Icebolt_Info ()
 {
 	if((Npc_HasItems(hero,ItSc_Icebolt) >= 1) && (Npc_HasItems(hero,ItMi_Quartz) >= 1))
 	{
 		B_GivePlayerXP(XP_HandMade_Rune);
 		Npc_RemoveInvItems(hero,ItSc_Icebolt,1);
 		Npc_RemoveInvItems(hero,ItMi_Quartz,1);
-		CreateInvItems(hero,ItRu_Icebolt,1);
+		CreateInvItems(hero,ItRu_Icebolt, 1 );
 		//Print(PRINT_RuneSuccess);
 
 		if(PLAYER_MAKE_RUNES[SPL_Icebolt] == FALSE)
@@ -1484,14 +1485,14 @@ func void PC_ItRu_Icebolt_Info()
 	}
 	else
 	{
-		//Print(PRINT_ProdItemsMissing);
-		AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+		// Print(PRINT_ProdItemsMissing);
+		AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 		B_Say(self,self,"$MISSINGINGREDIENTS");
 		B_Circle_01();
 	};
 };
 
-func void PC_ItRu_Windfist_Info()
+func void PC_ItRu_Windfist_Info ()
 {
 	if(B_CheckRuneSkill(15))
 	{
@@ -1525,8 +1526,8 @@ func void PC_ItRu_Windfist_Info()
 		}
 		else
 		{
-			//Print(PRINT_ProdItemsMissing);
-			AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+			// Print(PRINT_ProdItemsMissing);
+			AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 			B_Say(self,self,"$MISSINGINGREDIENTS");
 			B_Circle_02();
 		};
@@ -1537,7 +1538,7 @@ func void PC_ItRu_Windfist_Info()
 	};
 };
 
-func void pc_itru_telekinesis_info()
+func void pc_itru_telekinesis_info ()
 {
 	if(B_CheckRuneSkill(15))
 	{
@@ -1573,8 +1574,8 @@ func void pc_itru_telekinesis_info()
 		}
 		else
 		{
-			//Print(PRINT_ProdItemsMissing);
-			AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+			// Print(PRINT_ProdItemsMissing);
+			AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 			B_Say(self,self,"$MISSINGINGREDIENTS");
 			B_Circle_02();
 		};
@@ -1620,8 +1621,8 @@ func void pc_itru_suckenergy_info()
 		}
 		else
 		{
-			//Print(PRINT_ProdItemsMissing);
-			AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+			// Print(PRINT_ProdItemsMissing);
+			AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 			B_Say(self,self,"$MISSINGINGREDIENTS");
 			B_Circle_02();
 		};
@@ -1632,7 +1633,7 @@ func void pc_itru_suckenergy_info()
 	};
 };
 
-func void pc_itru_summonzombie_info()
+func void pc_itru_summonzombie_info ()
 {
 	if(B_CheckRuneSkill(15))
 	{
@@ -1642,7 +1643,7 @@ func void pc_itru_summonzombie_info()
 			Npc_RemoveInvItems(hero,itsc_sumzombie,1);
 			Npc_RemoveInvItems(hero,ItMi_Coal,1);
 			Npc_RemoveInvItems(hero,itmi_zombiecorpse,1);
-			CreateInvItems(hero,ItRu_SummonZombie,1);
+			CreateInvItems(hero,ItRu_SummonZombie, 1 );
 			//Print(PRINT_RuneSuccess);
 
 			if(PLAYER_MAKE_RUNES[SPL_SummonZombie] == FALSE)
@@ -1667,8 +1668,8 @@ func void pc_itru_summonzombie_info()
 		}
 		else
 		{
-			//Print(PRINT_ProdItemsMissing);
-			AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+			// Print(PRINT_ProdItemsMissing);
+			AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 			B_Say(self,self,"$MISSINGINGREDIENTS");
 			B_Circle_02();
 		};
@@ -1679,7 +1680,7 @@ func void pc_itru_summonzombie_info()
 	};
 };
 
-func void PC_ItRu_MediumHeal_Info()
+func void PC_ItRu_MediumHeal_Info ()
 {
 	if(B_CheckRuneSkill(15))
 	{
@@ -1714,8 +1715,8 @@ func void PC_ItRu_MediumHeal_Info()
 		}
 		else
 		{
-			//Print(PRINT_ProdItemsMissing);
-			AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+			// Print(PRINT_ProdItemsMissing);
+			AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 			B_Say(self,self,"$MISSINGINGREDIENTS");
 			B_Circle_02();
 		};
@@ -1726,7 +1727,7 @@ func void PC_ItRu_MediumHeal_Info()
 	};
 };
 
-func void pc_itru_summonshoal_info()
+func void pc_itru_summonshoal_info ()
 {
 	if(B_CheckRuneSkill(15))
 	{
@@ -1762,8 +1763,8 @@ func void pc_itru_summonshoal_info()
 		}
 		else
 		{
-			//Print(PRINT_ProdItemsMissing);
-			AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+			// Print(PRINT_ProdItemsMissing);
+			AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 			B_Say(self,self,"$MISSINGINGREDIENTS");
 			B_Circle_02();
 		};
@@ -1800,8 +1801,8 @@ func void PC_ItRu_Firestorm_Info()
 		}
 		else
 		{
-			//Print(PRINT_ProdItemsMissing);
-			AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+			// Print(PRINT_ProdItemsMissing);
+			AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 			B_Say(self,self,"$MISSINGINGREDIENTS");
 		};
 
@@ -1818,11 +1819,11 @@ func void PC_ItRu_Firestorm_Info()
 
 
 
-func void PC_ItRu_MagicCage_Info()
+func void PC_ItRu_MagicCage_Info ()
 {
 	if(B_CheckRuneSkill(30))
 	{
-		if((Npc_HasItems(hero,ItSc_MagicCage) >= 1) && (Npc_HasItems(hero,ItMi_UpRuneBlank) >= 1) && (Npc_HasItems(hero,ItMi_Pitch) >= 1) && (Npc_HasItems(hero,ItMi_Sulfur) >= 1) && (Npc_HasItems(hero,ItAt_WaranFiretongue) >= 1))
+		if ((Npc_HasItems(hero,ItSc_MagicCage) >=  1 ) && (Npc_HasItems(hero,ItMi_UpRuneBlank) >=  1 ) && (Npc_HasItems(hero,ItMi_Pitch) >=  1 ) && (Npc_HasItems(hero,ItMi_Sulfur) >=  1 ) && (Npc_HasItems(hero,ItAt_WaranFiretongue) >=  1 ))
 		{
 			B_GivePlayerXP(XP_HandMade_Rune);
 			Npc_RemoveInvItems(hero,ItSc_MagicCage,1);
@@ -1830,7 +1831,7 @@ func void PC_ItRu_MagicCage_Info()
 			Npc_RemoveInvItems(hero,ItMi_Sulfur,1);
 			Npc_RemoveInvItems(hero,ItAt_WaranFiretongue,1);
 			Npc_RemoveInvItems(hero,ItMi_UpRuneBlank,1);
-			CreateInvItems(hero,ItRu_MagicCage,1);
+			CreateInvItems(hero,ItRu_MagicCage, 1 );
 			//Print(PRINT_RuneSuccess);
 
 			if(PLAYER_MAKE_RUNES[SPL_MagicCage] == FALSE)
@@ -1845,8 +1846,8 @@ func void PC_ItRu_MagicCage_Info()
 		}
 		else
 		{
-			//Print(PRINT_ProdItemsMissing);
-			AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+			// Print(PRINT_ProdItemsMissing);
+			AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 			B_Say(self,self,"$MISSINGINGREDIENTS");
 		};
 
@@ -1858,11 +1859,11 @@ func void PC_ItRu_MagicCage_Info()
 	};
 };
 
-func void PC_ItRu_AdanosBall_Info()
+func void PC_ItRu_AdanosBall_Info ()
 {
 	if(B_CheckRuneSkill(30))
 	{
-		if((Npc_HasItems(hero,ItSc_AdanosBall) >= 1) && (Npc_HasItems(hero,ItMi_UpRuneBlank) >= 1) && (Npc_HasItems(hero,ItMi_Rockcrystal) >= 1) && (Npc_HasItems(hero,ItMi_DarkPearl) >= 1) && (Npc_HasItems(hero,ItMi_Aquamarine) >= 1))
+		if ((Npc_HasItems(hero,ItSc_AdanosBall) >=  1 ) && (Npc_HasItems(hero,ItMi_UpRuneBlank) >=  1 ) && (Npc_HasItems(hero,ItMi_Rockcrystal) >=  1 ) && (Npc_HasItems(hero,ItMi_DarkPearl) >=  1 ) && (Npc_HasItems(hero,ItMi_Aquamarine) >=  1 ))
 		{
 			B_GivePlayerXP(XP_HandMade_Rune);
 			Npc_RemoveInvItems(hero,ItSc_AdanosBall,1);
@@ -1885,8 +1886,8 @@ func void PC_ItRu_AdanosBall_Info()
 		}
 		else
 		{
-			//Print(PRINT_ProdItemsMissing);
-			AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+			// Print(PRINT_ProdItemsMissing);
+			AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 			B_Say(self,self,"$MISSINGINGREDIENTS");
 		};
 
@@ -1925,8 +1926,8 @@ func void PC_ItRu_Extricate_Info()
 		}
 		else
 		{
-			//Print(PRINT_ProdItemsMissing);
-			AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+			// Print(PRINT_ProdItemsMissing);
+			AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 			B_Say(self,self,"$MISSINGINGREDIENTS");
 		};
 
@@ -1938,7 +1939,7 @@ func void PC_ItRu_Extricate_Info()
 	};
 };
 
-func void PC_ItRu_IceCube_Info()
+func void PC_ItRu_IceCube_Info ()
 {
 	if(B_CheckRuneSkill(30))
 	{
@@ -1964,8 +1965,8 @@ func void PC_ItRu_IceCube_Info()
 		}
 		else
 		{
-			//Print(PRINT_ProdItemsMissing);
-			AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+			// Print(PRINT_ProdItemsMissing);
+			AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 			B_Say(self,self,"$MISSINGINGREDIENTS");
 		};
 
@@ -1977,7 +1978,7 @@ func void PC_ItRu_IceCube_Info()
 	};
 };
 
-func void PC_ItRu_ThunderBall_Info()
+func void PC_ItRu_ThunderBall_Info ()
 {
 	if(B_CheckRuneSkill(30))
 	{
@@ -1988,7 +1989,7 @@ func void PC_ItRu_ThunderBall_Info()
 			Npc_RemoveInvItems(hero,ItMi_Rockcrystal,1);
 			Npc_RemoveInvItems(hero,ItMi_Sulfur,1);
 			Npc_RemoveInvItems(hero,ItMi_UpRuneBlank,1);
-			CreateInvItems(hero,ItRu_ThunderBall,1);
+			CreateInvItems(hero,ItRu_ThunderBall, 1 );
 			//Print(PRINT_RuneSuccess);
 
 			if(PLAYER_MAKE_RUNES[SPL_ChargeZap] == FALSE)
@@ -2003,8 +2004,8 @@ func void PC_ItRu_ThunderBall_Info()
 		}
 		else
 		{
-			//Print(PRINT_ProdItemsMissing);
-			AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+			// Print(PRINT_ProdItemsMissing);
+			AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 			B_Say(self,self,"$MISSINGINGREDIENTS");
 		};
 
@@ -2016,11 +2017,11 @@ func void PC_ItRu_ThunderBall_Info()
 	};
 };
 
-func void PC_ItRu_Fear_Info()
+func void PC_ItRu_Fear_Info ()
 {
 	if(B_CheckRuneSkill(30))
 	{
-		if((Npc_HasItems(hero,ItSc_Fear) >= 1) && (Npc_HasItems(hero,ItMi_UpRuneBlank) >= 1) && (Npc_HasItems(hero,ItMi_DarkPearl) >= 1))
+		if ((Npc_HasItems(hero,ItSc_Fear) >=  1 ) && (Npc_HasItems(hero,ItMi_UpRuneBlank) >=  1 ) && (Npc_HasItems(hero,ItMi_DarkPearl) >=  1 ))
 		{
 			B_GivePlayerXP(XP_HandMade_Rune);
 			Npc_RemoveInvItems(hero,ItSc_Fear,1);
@@ -2041,8 +2042,8 @@ func void PC_ItRu_Fear_Info()
 		}
 		else
 		{
-			//Print(PRINT_ProdItemsMissing);
-			AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+			// Print(PRINT_ProdItemsMissing);
+			AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 			B_Say(self,self,"$MISSINGINGREDIENTS");
 		};
 
@@ -2054,7 +2055,7 @@ func void PC_ItRu_Fear_Info()
 	};
 };
 
-func void pc_itru_charm_info()
+func void pc_itru_charm_info ()
 {
 	if(B_CheckRuneSkill(30))
 	{
@@ -2080,8 +2081,8 @@ func void pc_itru_charm_info()
 		}
 		else
 		{
-			//Print(PRINT_ProdItemsMissing);
-			AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+			// Print(PRINT_ProdItemsMissing);
+			AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 			B_Say(self,self,"$MISSINGINGREDIENTS");
 		};
 
@@ -2093,11 +2094,11 @@ func void pc_itru_charm_info()
 	};
 };
 
-func void pc_itru_swarm_info()
+func void pc_itru_swarm_info ()
 {
 	if(B_CheckRuneSkill(30))
 	{
-		if((Npc_HasItems(hero,itsc_swarm) >= 1) && (Npc_HasItems(hero,ItMi_UpRuneBlank) >= 1) && (Npc_HasItems(hero,ItPl_SwampHerb) >= 1) && (Npc_HasItems(hero,ItMi_Aquamarine) >= 1) && (Npc_HasItems(hero,ItMi_Pitch) >= 1))
+		if ((Npc_HasItems(hero,itsc_swarm) >=  1 ) && (Npc_HasItems(hero,ItMi_UpRuneBlank) >=  1 ) && (Npc_HasItems(hero,ItPl_SwampHerb) >=  1 ) && (Npc_HasItems(hero,ItMi_Aquamarine) >=  1 ) && (Npc_HasItems(hero,ItMi_Pitch) >=  1 ))
 		{
 			B_GivePlayerXP(XP_HandMade_Rune);
 			Npc_RemoveInvItems(hero,itsc_swarm,1);
@@ -2105,7 +2106,7 @@ func void pc_itru_swarm_info()
 			Npc_RemoveInvItems(hero,ItMi_Aquamarine,1);
 			Npc_RemoveInvItems(hero,ItMi_Pitch,1);
 			Npc_RemoveInvItems(hero,ItMi_UpRuneBlank,1);
-			CreateInvItems(hero,ItRu_Swarm,1);
+			CreateInvItems(hero,ItRu_Swarm, 1 );
 			//Print(PRINT_RuneSuccess);
 
 			if(PLAYER_MAKE_RUNES[SPL_Swarm] == FALSE)
@@ -2120,8 +2121,8 @@ func void pc_itru_swarm_info()
 		}
 		else
 		{
-			//Print(PRINT_ProdItemsMissing);
-			AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+			// Print(PRINT_ProdItemsMissing);
+			AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 			B_Say(self,self,"$MISSINGINGREDIENTS");
 		};
 
@@ -2133,18 +2134,18 @@ func void pc_itru_swarm_info()
 	};
 };
 
-func void PC_ItRu_SumSkel_Info()
+func void PC_ItRu_SumSkel_Info ()
 {
 	if(B_CheckRuneSkill(30))
 	{
-		if((Npc_HasItems(hero,ItSc_SumSkel) >= 1) && (Npc_HasItems(hero,ItMi_UpRuneBlank) >= 1) && (Npc_HasItems(hero,ItAt_SkeletonBone) >= 1) && (Npc_HasItems(hero,ItMi_DarkPearl) >= 1))
+		if ((Npc_HasItems(hero,ItSc_SumSkel) >=  1 ) && (Npc_HasItems(hero,ItMi_UpRuneBlank) >=  1 ) && (Npc_HasItems(hero,ItAt_SkeletonBone) >=  1 ) && (Npc_HasItems(hero,ItMi_DarkPearl) >=  1 ))
 		{
 			B_GivePlayerXP(XP_HandMade_Rune);
 			Npc_RemoveInvItems(hero,ItSc_SumSkel,1);
 			Npc_RemoveInvItems(hero,ItAt_SkeletonBone,1);
 			Npc_RemoveInvItems(hero,ItMi_DarkPearl,1);
 			Npc_RemoveInvItems(hero,ItMi_UpRuneBlank,1);
-			CreateInvItems(hero,ItRu_SumSkel,1);
+			CreateInvItems(hero,ItRu_SumSkel, 1 );
 			//Print(PRINT_RuneSuccess);
 
 			if(PLAYER_MAKE_RUNES[SPL_SummonSkeleton] == FALSE)
@@ -2159,8 +2160,8 @@ func void PC_ItRu_SumSkel_Info()
 		}
 		else
 		{
-			//Print(PRINT_ProdItemsMissing);
-			AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+			// Print(PRINT_ProdItemsMissing);
+			AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 			B_Say(self,self,"$MISSINGINGREDIENTS");
 		};
 
@@ -2172,7 +2173,7 @@ func void PC_ItRu_SumSkel_Info()
 	};
 };
 
-func void PC_ItRu_HarmUndead_Info()
+func void PC_ItRu_HarmUndead_Info ()
 {
 	if(B_CheckRuneSkill(15))
 	{
@@ -2206,8 +2207,8 @@ func void PC_ItRu_HarmUndead_Info()
 		}
 		else
 		{
-			//Print(PRINT_ProdItemsMissing);
-			AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+			// Print(PRINT_ProdItemsMissing);
+			AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 			B_Say(self,self,"$MISSINGINGREDIENTS");
 			B_Circle_02();
 		};
@@ -2218,7 +2219,7 @@ func void PC_ItRu_HarmUndead_Info()
 	};
 };
 
-func void PC_ItRu_ChargeFireball_Info()
+func void PC_ItRu_ChargeFireball_Info ()
 {
 	if(B_CheckRuneSkill(50))
 	{
@@ -2244,8 +2245,8 @@ func void PC_ItRu_ChargeFireball_Info()
 		}
 		else
 		{
-			//Print(PRINT_ProdItemsMissing);
-			AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+			// Print(PRINT_ProdItemsMissing);
+			AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 			B_Say(self,self,"$MISSINGINGREDIENTS");
 		};
 
@@ -2257,11 +2258,11 @@ func void PC_ItRu_ChargeFireball_Info()
 	};
 };
 
-func void PC_ItRu_Elevate_Info()
+func void PC_ItRu_Elevate_Info ()
 {
 	if(B_CheckRuneSkill(50))
 	{
-		if((Npc_HasItems(hero,ItSc_Elevate) >= 1) && (Npc_HasItems(hero,ItMi_UpRuneBlank) >= 1) && (Npc_HasItems(hero,ItMi_Sulfur) >= 1) && (Npc_HasItems(hero,ItPl_SwampHerb) >= 1) && (Npc_HasItems(hero,ItMi_Quartz) >= 1) && (Npc_HasItems(hero,ItMi_Coal) >= 1))
+		if ((Npc_HasItems(hero,ItSc_Elevate) >=  1 ) && (Npc_HasItems(hero,ItMi_UpRuneBlank) >=  1 ) && (Npc_HasItems(hero,ItMi_Sulfur) >=  1 ) && (Npc_HasItems(hero,ItMi_SwampHerb) >=  1 ) && (Npc_HasItems(hero,ItMi_Quartz) >=  1 ) && (Npc_HasItems(hero,ItMi_Coal) >=  1 ))
 		{
 			B_GivePlayerXP(XP_HandMade_Rune);
 			Npc_RemoveInvItems(hero,ItSc_Elevate,1);
@@ -2285,8 +2286,8 @@ func void PC_ItRu_Elevate_Info()
 		}
 		else
 		{
-			//Print(PRINT_ProdItemsMissing);
-			AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+			// Print(PRINT_ProdItemsMissing);
+			AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 			B_Say(self,self,"$MISSINGINGREDIENTS");
 		};
 
@@ -2298,7 +2299,7 @@ func void PC_ItRu_Elevate_Info()
 	};
 };
 
-func void pc_itru_firelight_info()
+func void pc_itru_firelight_info ()
 {
 	if(B_CheckRuneSkill(50))
 	{
@@ -2326,8 +2327,8 @@ func void pc_itru_firelight_info()
 		}
 		else
 		{
-			//Print(PRINT_ProdItemsMissing);
-			AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+			// Print(PRINT_ProdItemsMissing);
+			AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 			B_Say(self,self,"$MISSINGINGREDIENTS");
 		};
 
@@ -2365,8 +2366,8 @@ func void PC_ItRu_Waterfist_Info()
 		}
 		else
 		{
-			//Print(PRINT_ProdItemsMissing);
-			AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+			// Print(PRINT_ProdItemsMissing);
+			AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 			B_Say(self,self,"$MISSINGINGREDIENTS");
 		};
 
@@ -2379,11 +2380,11 @@ func void PC_ItRu_Waterfist_Info()
 };
 
 
-func void PC_ItRu_Explosion_Info()
+func void PC_ItRu_Explosion_Info ()
 {
 	if(B_CheckRuneSkill(70))
 	{
-		if((Npc_HasItems(hero,ItSc_Explosion) >= 1) && (Npc_HasItems(hero,ItMi_HighRuneBlank) >= 1) && (Npc_HasItems(hero,ItMi_Pitch) >= 1) && (Npc_HasItems(hero,ItMi_Sulfur) >= 1) && (Npc_HasItems(hero,ItMi_Aquamarine) >= 1) && (Npc_HasItems(hero,ItAt_WaranFiretongue) >= 1))
+		if ((Npc_HasItems(hero,ItSc_Explosion) >=  1 ) && (Npc_HasItems(hero,ItMi_HighRuneBlank) >=  1 ) && (Npc_HasItems(hero,ItMi_Pitch) >=  1 ) && (Npc_HasItems(hero,ItMi_Sulfur) >=  1 ) && (Npc_HasItems(hero,ItMi_Aquamarine) >=  1 ) && (Npc_HasItems(hero,ItAt_WaranFiretongue) >=  1 ))
 		{
 			B_GivePlayerXP(XP_HandMade_Rune);
 			Npc_RemoveInvItems(hero,ItSc_Explosion,1);
@@ -2407,8 +2408,8 @@ func void PC_ItRu_Explosion_Info()
 		}
 		else
 		{
-			//Print(PRINT_ProdItemsMissing);
-			AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+			// Print(PRINT_ProdItemsMissing);
+			AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 			B_Say(self,self,"$MISSINGINGREDIENTS");
 		};
 
@@ -2420,7 +2421,7 @@ func void PC_ItRu_Explosion_Info()
 	};
 };
 
-func void PC_ItRu_LightningFlash_Info()
+func void PC_ItRu_LightningFlash_Info ()
 {
 	if(B_CheckRuneSkill(50))
 	{
@@ -2446,8 +2447,8 @@ func void PC_ItRu_LightningFlash_Info()
 		}
 		else
 		{
-			//Print(PRINT_ProdItemsMissing);
-			AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+			// Print(PRINT_ProdItemsMissing);
+			AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 			B_Say(self,self,"$MISSINGINGREDIENTS");
 		};
 
@@ -2459,7 +2460,7 @@ func void PC_ItRu_LightningFlash_Info()
 	};
 };
 
-func void pc_itru_greententacle_info()
+func void pc_itru_greententacle_info ()
 {
 	if(B_CheckRuneSkill(15))
 	{
@@ -2494,8 +2495,8 @@ func void pc_itru_greententacle_info()
 		}
 		else
 		{
-			//Print(PRINT_ProdItemsMissing);
-			AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+			// Print(PRINT_ProdItemsMissing);
+			AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 			B_Say(self,self,"$MISSINGINGREDIENTS");
 			B_Circle_02();
 		};
@@ -2506,17 +2507,17 @@ func void pc_itru_greententacle_info()
 	};
 };
 
-func void PC_ItRu_SumGol_Info()
+func void PC_ItRu_SumGol_Info ()
 {
 	if(B_CheckRuneSkill(30))
 	{
-		if((Npc_HasItems(hero,ItSc_SumGol) >= 1) && (Npc_HasItems(hero,ItMi_UpRuneBlank) >= 1) && (Npc_HasItems(hero,ItAt_StoneGolemHeart) >= 1))
+		if ((Npc_HasItems(hero,ItSc_SumGol) >=  1 ) && (Npc_HasItems(hero,ItMi_UpRuneBlank) >=  1 ) && (Npc_HasItems(hero,ItAt_StoneGolemHeart) >=  1 ))
 		{
 			B_GivePlayerXP(XP_HandMade_Rune);
 			Npc_RemoveInvItems(hero,ItSc_SumGol,1);
 			Npc_RemoveInvItems(hero,ItAt_StoneGolemHeart,1);
 			Npc_RemoveInvItems(hero,ItMi_UpRuneBlank,1);
-			CreateInvItems(hero,ItRu_SumGol,1);
+			CreateInvItems(hero,ItRu_SumGol, 1 );
 			//Print(PRINT_RuneSuccess);
 
 			if(PLAYER_MAKE_RUNES[SPL_SummonGolem] == FALSE)
@@ -2531,8 +2532,8 @@ func void PC_ItRu_SumGol_Info()
 		}
 		else
 		{
-			//Print(PRINT_ProdItemsMissing);
-			AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+			// Print(PRINT_ProdItemsMissing);
+			AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 			B_Say(self,self,"$MISSINGINGREDIENTS");
 		};
 
@@ -2544,7 +2545,7 @@ func void PC_ItRu_SumGol_Info()
 	};
 };
 
-func void pc_itru_sumfiregol_info()
+func void pc_itru_sumfiregol_info ()
 {
 	if(B_CheckRuneSkill(30))
 	{
@@ -2556,7 +2557,7 @@ func void pc_itru_sumfiregol_info()
 			Npc_RemoveInvItems(hero,ItAt_WaranFiretongue,1);
 			Npc_RemoveInvItems(hero,ItMi_Sulfur,1);
 			Npc_RemoveInvItems(hero,ItMi_UpRuneBlank,1);
-			CreateInvItems(hero,itru_sumfiregol,1);
+			CreateInvItems(hero,itru_sumfiregol, 1 );
 			//Print(PRINT_RuneSuccess);
 
 			if(PLAYER_MAKE_RUNES[80] == FALSE)
@@ -2571,8 +2572,8 @@ func void pc_itru_sumfiregol_info()
 		}
 		else
 		{
-			//Print(PRINT_ProdItemsMissing);
-			AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+			// Print(PRINT_ProdItemsMissing);
+			AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 			B_Say(self,self,"$MISSINGINGREDIENTS");
 		};
 
@@ -2584,11 +2585,11 @@ func void pc_itru_sumfiregol_info()
 	};
 };
 
-func void pc_itru_sumicegol_info()
+func void pc_itru_sumicegol_info ()
 {
 	if(B_CheckRuneSkill(50))
 	{
-		if((Npc_HasItems(hero,itsc_sumicegol) >= 1) && (Npc_HasItems(hero,ItMi_UpRuneBlank) >= 1) && (Npc_HasItems(hero,ItAt_IceGolemHeart) >= 1) && (Npc_HasItems(hero,ItMi_Quartz) >= 1) && (Npc_HasItems(hero,ItMi_Aquamarine) >= 1))
+		if ((Npc_HasItems(hero,itsc_sumicegol) >=  1 ) && (Npc_HasItems(hero,ItMi_UpRuneBlank) >=  1 ) && (Npc_HasItems(hero,ItAt_IceGolemHeart) >=  1 ) && (Npc_HasItems(hero,ItMi_Quartz) >=  1 ) && (Npc_HasItems(hero,ItMi_Aquamarine) >=  1 ))
 		{
 			B_GivePlayerXP(XP_HandMade_Rune);
 			Npc_RemoveInvItems(hero,itsc_sumicegol,1);
@@ -2596,7 +2597,7 @@ func void pc_itru_sumicegol_info()
 			Npc_RemoveInvItems(hero,ItMi_Quartz,1);
 			Npc_RemoveInvItems(hero,ItMi_Aquamarine,1);
 			Npc_RemoveInvItems(hero,ItMi_UpRuneBlank,1);
-			CreateInvItems(hero,itru_sumicegol,1);
+			CreateInvItems(hero,itru_sumicegol, 1 );
 			//Print(PRINT_RuneSuccess);
 
 			if(PLAYER_MAKE_RUNES[89] == FALSE)
@@ -2611,8 +2612,8 @@ func void pc_itru_sumicegol_info()
 		}
 		else
 		{
-			//Print(PRINT_ProdItemsMissing);
-			AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+			// Print(PRINT_ProdItemsMissing);
+			AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 			B_Say(self,self,"$MISSINGINGREDIENTS");
 		};
 
@@ -2624,18 +2625,18 @@ func void pc_itru_sumicegol_info()
 	};
 };
 
-func void pc_itru_sumswpgol_info()
+func void pc_itru_sumswpgol_info ()
 {
 	if(B_CheckRuneSkill(50))
 	{
-		if((Npc_HasItems(hero,itsc_sumswpgol) >= 1) && (Npc_HasItems(hero,ItMi_UpRuneBlank) >= 1) && (Npc_HasItems(hero,itat_swampgolemheart) >= 1) && (Npc_HasItems(hero,ItPl_SwampHerb) >= 3))
+		if ((Npc_HasItems(hero,itsc_sumswpgol) >=  1 ) && (Npc_HasItems(hero,ItMi_UpRuneBlank) >=  1 ) && (Npc_HasItems(hero,itat_swampgolemheart) >=  1 ) && (Npc_HasItems(hero,ItMi_UpRuneBlank) >=  3 ))
 		{
 			B_GivePlayerXP(XP_HandMade_Rune);
 			Npc_RemoveInvItems(hero,itsc_sumswpgol,1);
 			Npc_RemoveInvItems(hero,itat_swampgolemheart,1);
 			Npc_RemoveInvItems(hero,ItPl_SwampHerb,3);
 			Npc_RemoveInvItems(hero,ItMi_UpRuneBlank,1);
-			CreateInvItems(hero,itru_sumswpgol,1);
+			CreateInvItems(hero,itru_sumswpgol, 1 );
 			//Print(PRINT_RuneSuccess);
 
 			if(PLAYER_MAKE_RUNES[100] == FALSE)
@@ -2650,8 +2651,8 @@ func void pc_itru_sumswpgol_info()
 		}
 		else
 		{
-			//Print(PRINT_ProdItemsMissing);
-			AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+			// Print(PRINT_ProdItemsMissing);
+			AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 			B_Say(self,self,"$MISSINGINGREDIENTS");
 		};
 
@@ -2663,11 +2664,11 @@ func void pc_itru_sumswpgol_info()
 	};
 };
 
-func void PC_ItRu_Acid_Info()
+func void PC_ItRu_Acid_Info ()
 {
 	if(B_CheckRuneSkill(50))
 	{
-		if((Npc_HasItems(hero,ItSc_Acid) >= 1) && (Npc_HasItems(hero,ItMi_UpRuneBlank) >= 1) && (Npc_HasItems(hero,ItMi_Pitch) >= 1) && (Npc_HasItems(hero,ItMi_DarkPearl) >= 1) && (Npc_HasItems(hero,ITPO_POISON) >= 1) && (Npc_HasItems(hero,ItPl_SwampHerb) >= 1) && (Npc_HasItems(hero,ItAt_SkeletonBone) >= 1))
+		if ((Npc_HasItems(hero,ItSc_Acid) >=  1 ) && (Npc_HasItems(hero,ItMi_UpRuneBlank) >=  1 ) && (Npc_HasItems(hero,ItMi_Pitch) >=  1 ) && (Npc_HasItems(hero,ItMi_DarkPearl) >=  1 ) && (Npc_HasItems(hero, ITPO_POISON ) >=  1 ) && (Npc_HasItems(hero,ItPl_SwampHerb) >=  1 ) && (Npc_HasItems(hero,ItAt_SkeletonBone) >=  1 ))
 		{
 			B_GivePlayerXP(XP_HandMade_Rune);
 			Npc_RemoveInvItems(hero,ItSc_Acid,1);
@@ -2677,7 +2678,7 @@ func void PC_ItRu_Acid_Info()
 			Npc_RemoveInvItems(hero,ItPl_SwampHerb,1);
 			Npc_RemoveInvItems(hero,ItAt_SkeletonBone,1);
 			Npc_RemoveInvItems(hero,ItMi_UpRuneBlank,1);
-			CreateInvItems(hero,ItRu_Acid,1);
+			CreateInvItems(hero,ItRu_Acid, 1 );
 			//Print(PRINT_RuneSuccess);
 
 			if(PLAYER_MAKE_RUNES[SPL_Acid] == FALSE)
@@ -2692,8 +2693,8 @@ func void PC_ItRu_Acid_Info()
 		}
 		else
 		{
-			//Print(PRINT_ProdItemsMissing);
-			AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+			// Print(PRINT_ProdItemsMissing);
+			AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 			B_Say(self,self,"$MISSINGINGREDIENTS");
 		};
 
@@ -2706,11 +2707,11 @@ func void PC_ItRu_Acid_Info()
 };
 
 
-func void pc_itru_energyball_info()
+func void pc_itru_energyball_info ()
 {
 	if(B_CheckRuneSkill(30))
 	{
-		if((Npc_HasItems(hero,itsc_energyball) >= 1) && (Npc_HasItems(hero,ItMi_UpRuneBlank) >= 1) && (Npc_HasItems(hero,ItMi_DarkPearl) >= 1) && (Npc_HasItems(hero,ItMi_Quartz) >= 1) && (Npc_HasItems(hero,ItMi_Rockcrystal) >= 1) && (Npc_HasItems(hero,ItMi_Sulfur) >= 1))
+		if ((Npc_HasItems(hero,itsc_energyball) >=  1 ) && (Npc_HasItems(hero,ItMi_UpRuneBlank) >=  1 ) && (Npc_HasItems(hero,ItMi_DarkPearl) >=  1 ) && (Npc_HasItems(hero,ItMi_Quartz) >=  1 ) && (Npc_HasItems(hero,ItMi_Rockcrystal) >=  1 ) && (Npc_HasItems(hero,ItMi_Sulfur) >=  1 ))
 		{
 			B_GivePlayerXP(XP_HandMade_Rune);
 			Npc_RemoveInvItems(hero,itsc_energyball,1);
@@ -2734,8 +2735,8 @@ func void pc_itru_energyball_info()
 		}
 		else
 		{
-			//Print(PRINT_ProdItemsMissing);
-			AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+			// Print(PRINT_ProdItemsMissing);
+			AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 			B_Say(self,self,"$MISSINGINGREDIENTS");
 		};
 
@@ -2747,7 +2748,7 @@ func void pc_itru_energyball_info()
 	};
 };
 
-func void PC_ItRu_FullHeal_Info()
+func void PC_ItRu_FullHeal_Info ()
 {
 	if(B_CheckRuneSkill(30))
 	{
@@ -2774,8 +2775,8 @@ func void PC_ItRu_FullHeal_Info()
 		}
 		else
 		{
-			//Print(PRINT_ProdItemsMissing);
-			AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+			// Print(PRINT_ProdItemsMissing);
+			AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 			B_Say(self,self,"$MISSINGINGREDIENTS");
 		};
 
@@ -2787,7 +2788,7 @@ func void PC_ItRu_FullHeal_Info()
 	};
 };
 
-func void PC_ItRu_Pyrokinesis_Info()
+func void PC_ItRu_Pyrokinesis_Info ()
 {
 	if(B_CheckRuneSkill(70))
 	{
@@ -2813,8 +2814,8 @@ func void PC_ItRu_Pyrokinesis_Info()
 		}
 		else
 		{
-			//Print(PRINT_ProdItemsMissing);
-			AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+			// Print(PRINT_ProdItemsMissing);
+			AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 			B_Say(self,self,"$MISSINGINGREDIENTS");
 		};
 
@@ -2826,7 +2827,7 @@ func void PC_ItRu_Pyrokinesis_Info()
 	};
 };
 
-func void PC_ItRu_Geyser_Info()
+func void PC_ItRu_Geyser_Info ()
 {
 	if(B_CheckRuneSkill(90))
 	{
@@ -2851,8 +2852,8 @@ func void PC_ItRu_Geyser_Info()
 		}
 		else
 		{
-			//Print(PRINT_ProdItemsMissing);
-			AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+			// Print(PRINT_ProdItemsMissing);
+			AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 			B_Say(self,self,"$MISSINGINGREDIENTS");
 		};
 
@@ -2868,7 +2869,7 @@ func void PC_ItRu_Quake_Info()
 {
 	if(B_CheckRuneSkill(90))
 	{
-		if((Npc_HasItems(hero,ItSc_Quake) >= 1) && (Npc_HasItems(hero,ItMi_HighRuneBlank) >= 1) && (Npc_HasItems(hero,ItMi_DarkPearl) >= 1) && (Npc_HasItems(hero,ItAt_StoneGolemHeart) >= 1) && (Npc_HasItems(hero,ItMi_Pitch) >= 1) && (Npc_HasItems(hero,ItPl_SwampHerb) >= 1) && (Npc_HasItems(hero,ItMi_Aquamarine) >= 1))
+		if ((Npc_HasItems(hero,ItSc_Quake) >=  1 ) && (Npc_HasItems(hero,ItMi_HighRuneBlank) >=  1 ) && (Npc_HasItems(hero,ItMi_DarkPearl) >=  1 ) && (Npc_HasItems(hero,ItAt_StoneGolemHeart) >=  1 ) && (Npc_HasItems(hero,ItMi_Pitch) >=  1 ) && (Npc_HasItems(hero,ItPl_SwampHerb) >=  1 ) && (Npc_HasItems(hero,ItMi_Aquamarine) >=  1 ))
 		{
 			B_GivePlayerXP(XP_HandMade_Rune);
 			Npc_RemoveInvItems(hero,ItSc_Quake,1);
@@ -2893,8 +2894,8 @@ func void PC_ItRu_Quake_Info()
 		}
 		else
 		{
-			//Print(PRINT_ProdItemsMissing);
-			AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+			// Print(PRINT_ProdItemsMissing);
+			AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 			B_Say(self,self,"$MISSINGINGREDIENTS");
 		};
 
@@ -2906,7 +2907,7 @@ func void PC_ItRu_Quake_Info()
 	};
 };
 
-func void PC_ItRu_IceWave_Info()
+func void PC_ItRu_IceWave_Info ()
 {
 	if(B_CheckRuneSkill(70))
 	{
@@ -2932,8 +2933,8 @@ func void PC_ItRu_IceWave_Info()
 		}
 		else
 		{
-			//Print(PRINT_ProdItemsMissing);
-			AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+			// Print(PRINT_ProdItemsMissing);
+			AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 			B_Say(self,self,"$MISSINGINGREDIENTS");
 		};
 
@@ -2949,7 +2950,7 @@ func void pc_itru_severefetidity_info()
 {
 	if(B_CheckRuneSkill(70))
 	{
-		if((Npc_HasItems(hero,itsc_severefetidity) >= 1) && (Npc_HasItems(hero,ItMi_HighRuneBlank) >= 1) && (Npc_HasItems(hero,ItPl_SwampHerb) >= 1) && (Npc_HasItems(hero,ItMi_Sulfur) >= 1) && (Npc_HasItems(hero,ItMi_Coal) >= 1))
+		if ((Npc_HasItems(hero,itsc_severefetidity) >=  1 ) && (Npc_HasItems(hero,ItMi_HighRuneBlank) >=  1 ) && (Npc_HasItems(hero,ItPl_SwampHerb) >=  1 ) && (Npc_HasItems(hero,ItMi_Sulfur) >=  1 ) && (Npc_HasItems(hero,ItMi_Coal) >=  1 ))
 		{
 			B_GivePlayerXP(XP_HandMade_Rune);
 			Npc_RemoveInvItems(hero,itsc_severefetidity,1);
@@ -2972,8 +2973,8 @@ func void pc_itru_severefetidity_info()
 		}
 		else
 		{
-			//Print(PRINT_ProdItemsMissing);
-			AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+			// Print(PRINT_ProdItemsMissing);
+			AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 			B_Say(self,self,"$MISSINGINGREDIENTS");
 		};
 
@@ -2985,7 +2986,7 @@ func void pc_itru_severefetidity_info()
 	};
 };
 
-func void PC_ItRu_Whirlwind_Info()
+func void PC_ItRu_Whirlwind_Info ()
 {
 	if(B_CheckRuneSkill(70))
 	{
@@ -3012,8 +3013,8 @@ func void PC_ItRu_Whirlwind_Info()
 		}
 		else
 		{
-			//Print(PRINT_ProdItemsMissing);
-			AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+			// Print(PRINT_ProdItemsMissing);
+			AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 			B_Say(self,self,"$MISSINGINGREDIENTS");
 		};
 
@@ -3052,8 +3053,8 @@ func void pc_itru_deathball_info()
 		}
 		else
 		{
-			//Print(PRINT_ProdItemsMissing);
-			AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+			// Print(PRINT_ProdItemsMissing);
+			AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 			B_Say(self,self,"$MISSINGINGREDIENTS");
 		};
 
@@ -3065,11 +3066,11 @@ func void pc_itru_deathball_info()
 	};
 };
 
-func void pc_itru_control_info()
+func void pc_itru_control_info ()
 {
 	if(B_CheckRuneSkill(70))
 	{
-		if((Npc_HasItems(hero,itwr_control) >= 1) && (Npc_HasItems(hero,ItMi_HighRuneBlank) >= 1) && (Npc_HasItems(hero,ItPl_SwampHerb) >= 1) && (Npc_HasItems(hero,ItMi_DarkPearl) >= 1) && (Npc_HasItems(hero,ItMi_Coal) >= 1))
+		if ((Npc_HasItems(hero,itwr_control) >=  1 ) && (Npc_HasItems(hero,ItMi_HighRuneBlank) >=  1 ) && (Npc_HasItems(hero,ItPl_SwampHerb) >=  1 ) && (Npc_HasItems(hero,ItMi_DarkPearl) >=  1 ) && (Npc_HasItems(hero,ItMi_Coal) >=  1 ))
 		{
 			B_GivePlayerXP(XP_HandMade_Rune);
 			Npc_RemoveInvItems(hero,itwr_control,1);
@@ -3092,8 +3093,8 @@ func void pc_itru_control_info()
 		}
 		else
 		{
-			//Print(PRINT_ProdItemsMissing);
-			AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+			// Print(PRINT_ProdItemsMissing);
+			AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 			B_Say(self,self,"$MISSINGINGREDIENTS");
 		};
 
@@ -3105,11 +3106,11 @@ func void pc_itru_control_info()
 	};
 };
 
-func void PC_ItRu_ArmyOfDarkness_Info()
+func void PC_ItRu_ArmyOfDarkness_Info ()
 {
 	if(B_CheckRuneSkill(70))
 	{
-		if((Npc_HasItems(hero,ItSc_ArmyOfDarkness) >= 1) && (Npc_HasItems(hero,ItMi_HighRuneBlank) >= 1) && (Npc_HasItems(hero,ItAt_SkeletonBone) >= 1) && (Npc_HasItems(hero,ItMi_DarkPearl) >= 1) && (Npc_HasItems(hero,ItAt_StoneGolemHeart) >= 1) && (Npc_HasItems(hero,ItAt_DemonHeart) >= 1))
+		if ((Npc_HasItems(hero,ItSc_ArmyOfDarkness) >=  1 ) && (Npc_HasItems(hero,ItMi_HighRuneBlank) >=  1 ) && (Npc_HasItems(hero,ItAt_SkeletonBone) >=  1 ) && (Npc_HasItems(hero,ItMi_DarkPearl) >=  1 ) && (Npc_HasItems(hero,ItAt_StoneGolemHeart) >=  1 ) && (Npc_HasItems(hero,ItAt_DemonHeart) >=  1 ))
 		{
 			B_GivePlayerXP(XP_HandMade_Rune);
 			Npc_RemoveInvItems(hero,ItSc_ArmyOfDarkness,1);
@@ -3118,7 +3119,7 @@ func void PC_ItRu_ArmyOfDarkness_Info()
 			Npc_RemoveInvItems(hero,ItAt_StoneGolemHeart,1);
 			Npc_RemoveInvItems(hero,ItAt_DemonHeart,1);
 			Npc_RemoveInvItems(hero,ItMi_HighRuneBlank,1);
-			CreateInvItems(hero,ItRu_ArmyOfDarkness,1);
+			CreateInvItems(hero,ItRu_ArmyOfDarkness, 1 );
 			//Print(PRINT_RuneSuccess);
 
 			if(PLAYER_MAKE_RUNES[SPL_ArmyOfDarkness] == FALSE)
@@ -3133,8 +3134,8 @@ func void PC_ItRu_ArmyOfDarkness_Info()
 		}
 		else
 		{
-			//Print(PRINT_ProdItemsMissing);
-			AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+			// Print(PRINT_ProdItemsMissing);
+			AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 			B_Say(self,self,"$MISSINGINGREDIENTS");
 		};
 
@@ -3146,11 +3147,11 @@ func void PC_ItRu_ArmyOfDarkness_Info()
 	};
 };
 
-func void PC_ItRu_FireMeteor_Info()
+func void PC_ItRu_FireMeteor_Info ()
 {
 	if(B_CheckRuneSkill(90))
 	{
-		if((Npc_HasItems(hero,ItWr_FireMeteor) >= 1) && (Npc_HasItems(hero,ItMi_HighRuneBlank) >= 1) && (Npc_HasItems(hero,ItMi_Rockcrystal) >= 1) && (Npc_HasItems(hero,ItMi_Pitch) >= 1) && (Npc_HasItems(hero,ItMi_Sulfur) >= 1) && (Npc_HasItems(hero,ItAt_WaranFiretongue) >= 1))
+		if ((Npc_HasItems(hero,ItWr_FireMeteor) >=  1 ) && (Npc_HasItems(hero,ItMi_HighRuneBlank) >=  1 ) && (Npc_HasItems(hero,ItMi_Rockcrystal) >=  1 ) && (Npc_HasItems(hero,ItMi_Pitch) >=  1 ) && (Npc_HasItems(hero,ItMi_Sulfur) >=  1 ) && (Npc_HasItems(hero,ItAt_WaranFiretongue) >=  1 ))
 		{
 			B_GivePlayerXP(XP_HandMade_Rune);
 			Npc_RemoveInvItems(hero,ItWr_FireMeteor,1);
@@ -3174,8 +3175,8 @@ func void PC_ItRu_FireMeteor_Info()
 		}
 		else
 		{
-			//Print(PRINT_ProdItemsMissing);
-			AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+			// Print(PRINT_ProdItemsMissing);
+			AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 			B_Say(self,self,"$MISSINGINGREDIENTS");
 		};
 
@@ -3187,11 +3188,11 @@ func void PC_ItRu_FireMeteor_Info()
 	};
 };
 
-func void PC_ItRu_Firerain_Info()
+func void PC_ItRu_Firerain_Info ()
 {
 	if(B_CheckRuneSkill(90))
 	{
-		if((Npc_HasItems(hero,ItSc_Firerain) >= 1) && (Npc_HasItems(hero,ItMi_HighRuneBlank) >= 1) && (Npc_HasItems(hero,ItMi_Pitch) >= 1) && (Npc_HasItems(hero,ItMi_Sulfur) >= 1) && (Npc_HasItems(hero,ItAt_WaranFiretongue) >= 1))
+		if ((Npc_HasItems(hero,ItSc_Firerain) >=  1 ) && (Npc_HasItems(hero,ItMi_HighRuneBlank) >=  1 ) && (Npc_HasItems(hero,ItMi_Pitch) >=  1 ) && (Npc_HasItems(hero,ItMi_Sulfur) >=  1 ) && (Npc_HasItems(hero,ItAt_WaranFiretongue) >=  1 ))
 		{
 			B_GivePlayerXP(XP_HandMade_Rune);
 			Npc_RemoveInvItems(hero,ItSc_Firerain,1);
@@ -3214,8 +3215,8 @@ func void PC_ItRu_Firerain_Info()
 		}
 		else
 		{
-			//Print(PRINT_ProdItemsMissing);
-			AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+			// Print(PRINT_ProdItemsMissing);
+			AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 			B_Say(self,self,"$MISSINGINGREDIENTS");
 		};
 
@@ -3227,7 +3228,7 @@ func void PC_ItRu_Firerain_Info()
 	};
 };
 
-func void PC_ItRu_thunderstorm_Info()
+func void PC_ItRu_thunderstorm_Info ()
 {
 	if(B_CheckRuneSkill(90))
 	{
@@ -3253,8 +3254,8 @@ func void PC_ItRu_thunderstorm_Info()
 		}
 		else
 		{
-			//Print(PRINT_ProdItemsMissing);
-			AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+			// Print(PRINT_ProdItemsMissing);
+			AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 			B_Say(self,self,"$MISSINGINGREDIENTS");
 		};
 
@@ -3266,11 +3267,11 @@ func void PC_ItRu_thunderstorm_Info()
 	};
 };
 
-func void PC_ItRu_MassDeath_Info()
+func void PC_ItRu_MassDeath_Info ()
 {
 	if(B_CheckRuneSkill(90))
 	{
-		if((Npc_HasItems(hero,ItSc_MassDeath) >= 1) && (Npc_HasItems(hero,ItMi_HighRuneBlank) >= 1) && (Npc_HasItems(hero,ItAt_SkeletonBone) >= 1) && (Npc_HasItems(hero,ItMi_DarkPearl) >= 1) && (Npc_HasItems(hero,itmi_plazma) >= 1))
+		if ((Npc_HasItems(hero,ItSc_MassDeath) >=  1 ) && (Npc_HasItems(hero,ItMi_HighRuneBlank) >=  1 ) && (Npc_HasItems(hero,ItAt_SkeletonBone) >=  1 ) && (Npc_HasItems(hero,ItMi_DarkPearl) >=  1 ) && (Npc_HasItems(hero,itmi_plazma) >=  1 ))
 		{
 			B_GivePlayerXP(XP_HandMade_Rune);
 			Npc_RemoveInvItems(hero,ItSc_MassDeath,1);
@@ -3293,8 +3294,8 @@ func void PC_ItRu_MassDeath_Info()
 		}
 		else
 		{
-			//Print(PRINT_ProdItemsMissing);
-			AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+			// Print(PRINT_ProdItemsMissing);
+			AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 			B_Say(self,self,"$MISSINGINGREDIENTS");
 		};
 
@@ -3306,11 +3307,11 @@ func void PC_ItRu_MassDeath_Info()
 	};
 };
 
-func void pc_itru_skull_info()
+func void pc_itru_skull_info ()
 {
 	if(B_CheckRuneSkill(90))
 	{
-		if((Npc_HasItems(hero,itsc_skull) >= 1) && (Npc_HasItems(hero,ItMi_HighRuneBlank) >= 1) && (Npc_HasItems(hero,ItMi_Skull) >= 1) && (Npc_HasItems(hero,ItMi_DarkPearl) >= 1) && (Npc_HasItems(hero,ItAt_DemonHeart) >= 1) && (Npc_HasItems(hero,ItMi_Pitch) >= 1) && (Npc_HasItems(hero,ItMi_Sulfur) >= 1))
+		if ((Npc_HasItems(hero,itsc_skull) >=  1 ) && (Npc_HasItems(hero,ItMi_HighRuneBlank) >=  1 ) && (Npc_HasItems(hero,ItMi_Skull) >=  1 ) && (Npc_HasItems(hero,ItMi_DarkPearl) >=  1 ) && (Npc_HasItems(hero,ItAt_DemonHeart) >=  1 ) && (Npc_HasItems(hero,ItMi_Pitch) >=  1 ) && (Npc_HasItems(hero,ItMi_Sulfur) >=  1 ))
 		{
 			B_GivePlayerXP(XP_HandMade_Rune);
 			Npc_RemoveInvItems(hero,itsc_skull,1);
@@ -3320,7 +3321,7 @@ func void pc_itru_skull_info()
 			Npc_RemoveInvItems(hero,ItMi_Pitch,1);
 			Npc_RemoveInvItems(hero,ItMi_Sulfur,1);
 			Npc_RemoveInvItems(hero,ItMi_HighRuneBlank,1);
-			CreateInvItems(hero,ItRu_Skull,1);
+			CreateInvItems(hero,ItRu_Skull, 1 );
 			//Print(PRINT_RuneSuccess);
 
 			if(PLAYER_MAKE_RUNES[SPL_Skull] == FALSE)
@@ -3335,8 +3336,8 @@ func void pc_itru_skull_info()
 		}
 		else
 		{
-			//Print(PRINT_ProdItemsMissing);
-			AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+			// Print(PRINT_ProdItemsMissing);
+			AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 			B_Say(self,self,"$MISSINGINGREDIENTS");
 		};
 
@@ -3348,7 +3349,7 @@ func void pc_itru_skull_info()
 	};
 };
 
-func void pc_ItRu_GuruWrath()
+func void pc_ItRu_GuruWrath ()
 {
 	if(B_CheckRuneSkill(90))
 	{
@@ -3361,7 +3362,7 @@ func void pc_ItRu_GuruWrath()
 			Npc_RemoveInvItems(hero,itat_swampgolemheart,1);
 			Npc_RemoveInvItems(hero,ItWr_GuruWrath,1);
 			Npc_RemoveInvItems(hero,ItMi_HighRuneBlank,1);
-			CreateInvItems(hero,ItRu_GuruWrath,1);
+			CreateInvItems(hero,ItRu_GuruWrath, 1 );
 			//Print(PRINT_RuneSuccess);
 
 			if(PLAYER_MAKE_RUNES[SPL_GuruWrath] == FALSE)
@@ -3376,8 +3377,8 @@ func void pc_ItRu_GuruWrath()
 		}
 		else
 		{
-			//Print(PRINT_ProdItemsMissing);
-			AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+			// Print(PRINT_ProdItemsMissing);
+			AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 			B_Say(self,self,"$MISSINGINGREDIENTS");
 		};
 
@@ -3389,7 +3390,7 @@ func void pc_ItRu_GuruWrath()
 	};
 };
 
-//---------------------------------------перенос и ювелирка---------------------------------
+// ---------------------------------------transfer and jewelry ------ ----------------------------
 
 func void trfmagic_s1()
 {
@@ -3398,14 +3399,14 @@ func void trfmagic_s1()
 
 	if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(her))
 	{
-		//print_percent_bar_none(ATR_STAMINA[0],ATR_STAMINA_MAX[0] * 10,"Выносливость",42,97);
+		// print_percent_bar_none(ATR_STAMINA[0],ATR_STAMINA_MAX[0] * 10,"Stamina",42,97);
 
 		if(CinemaMod == TRUE)
 		{
 			Wld_PlayEffect("DIALOGSCOPE_FX",hero,hero,0,0,0,FALSE);
 		};
 
-		self.aivar[AIV_INVINCIBLE] = TRUE;
+		self.aivar[ AIV_INVINCIBLE ] = TRUE ;
 		PLAYER_MOBSI_PRODUCTION = MOBSI_TRFMAGIC;
 		AI_ProcessInfos(her);
 
@@ -3436,13 +3437,13 @@ func int PC_TrfMagic_End_Condition()
 
 func void PC_TrfMagic_End_Info()
 {
-	if(CurrentLevel == ADDONWORLD_ZEN)
+	if (CurrentLevel ==  ADDONWORLD_ZEN )
 	{
 		CreateInvItems(self,ItRu_SummonGuardian,1);
 	}
 	else
 	{
-		CreateInvItems(self,ItMi_SteelForm,1);
+		CreateInvItems(self,ItMi_SteelForm, 1 );
 	};
 
 	b_endproductiondialog();
@@ -3455,12 +3456,12 @@ instance PC_TrfMagic_ADANMAKE(C_Info)
 	condition = PC_TrfMagic_ADANMAKE_condition;
 	information = PC_TrfMagic_ADANMAKE_info;
 	permanent = TRUE;
-	description = "Перенести магию руны в скрижаль.";
+	description = " Transfer rune magic to tablet. " ;
 };
 
 func int PC_TrfMagic_ADANMAKE_condition()
 {
-	if((PLAYER_MOBSI_PRODUCTION == MOBSI_TRFMAGIC) && (CurrentLevel == ADDONWORLD_ZEN) && (KnowsMakeOldMgic == TRUE) && (Npc_HasItems(hero,ItWr_CroneAdanos) >= 1))
+	if (( PLAYER_MOBSI_PRODUCTION  ==  MOBSI_TRFMAGIC ) && ( CurrentLevel ==  ADDONWORLD_ZEN ) && ( KnowsMakeOldMagic ==  TRUE ) && ( Npc_HasItems ( hero , ItWr_CroneAdanos ) >=  1 )) ;
 	{
 		return TRUE;
 	};
@@ -3475,7 +3476,7 @@ func void PC_TrfMagic_ADANMAKE_info()
 	//Print(PRINT_RuneSuccess);
 	AI_PrintClr(PRINT_RuneSuccess,83,152,48);
 	//B_Say(self,self,"$ITEMREADY");
-	B_LogEntry(TOPIC_AdanosCrone,"Я перенес магию руны Зодчих в древнюю скрижаль. Теперь необходимо найти место вызова Стражей!");
+	B_LogEntry(TOPIC_AdanosCrone, " I transferred the magic of the Builders rune into an ancient tablet. Now I need to find a place to summon Guardians! " );
 	b_endproductiondialog();
 };
 
@@ -3485,7 +3486,7 @@ instance PC_TrfMagic_SteelRings(C_Info)
 	condition = PC_TrfMagic_SteelRings_Condition;
 	information =PC_TrfMagic_SteelRings_Info;
 	permanent = TRUE;
-	description = "Изготовить стальное кольцо";
+	description = " Craft a steel ring " ;
 };
 
 func int PC_TrfMagic_SteelRings_Condition()
@@ -3503,27 +3504,27 @@ func void PC_TrfMagic_SteelRings_Info()
 
 	if(Npc_HasItems(hero,ItMi_Diamod) >= 1)
 	{
-		Info_AddChoice(PC_TrfMagic_SteelRings,"...с алмазом (защита от всего: 10)",PC_TrfMagic_SteelRings_Diamod);
+		Info_AddChoice(PC_TrfMagic_SteelRings, " ...with diamond (protection against everything: 10) " ,PC_TrfMagic_SteelRings_Diamod);
 	};
 	if(Npc_HasItems(hero,ItMi_Emerald) >= 1)
 	{
-		Info_AddChoice(PC_TrfMagic_SteelRings,"...с изумрудом (ловкость: 10, защита от колющего урона: 5)",PC_TrfMagic_SteelRings_Emerald);
+		Info_AddChoice(PC_TrfMagic_SteelRings, " ...with emerald (agility: 10, piercing damage: 5) " ,PC_TrfMagic_SteelRings_Emerald);
 	};
 	if(Npc_HasItems(hero,ItMi_Ruby) >= 1)
 	{
-		Info_AddChoice(PC_TrfMagic_SteelRings,"...с рубином (сила: 10, защита от физического урона: 5)",PC_TrfMagic_SteelRings_Ruby);
+		Info_AddChoice(PC_TrfMagic_SteelRings, " ...with ruby ​​(strength: 10, physical damage resistance: 5) " ,PC_TrfMagic_SteelRings_Ruby);
 	};
 	if(Npc_HasItems(hero,ItMi_Sapphire) >= 1)
 	{
-		Info_AddChoice(PC_TrfMagic_SteelRings,"...с сапфиром (магическая энергия: 15, защита от магии: 5, интеллект: 5)",PC_TrfMagic_SteelRings_Sapphire);
+		Info_AddChoice(PC_TrfMagic_SteelRings, " ...with Sapphire (Magic Energy: 15, Magic Defense: 5, Intelligence: 5) " ,PC_TrfMagic_SteelRings_Sapphire);
 	};
 	if(Npc_HasItems(hero,ItMi_Opal) >= 1)
 	{
-		Info_AddChoice(PC_TrfMagic_SteelRings,"...с опалом (жизненная энергия: 25, защита от огня: 5)",PC_TrfMagic_SteelRings_Opal);
+		Info_AddChoice(PC_TrfMagic_SteelRings, " ...with opal (vitality: 25, fire resistance: 5) " ,PC_TrfMagic_SteelRings_Opal);
 	};
 	if(Npc_HasItems(hero,ItMi_Topaz) >= 1)
 	{
-		Info_AddChoice(PC_TrfMagic_SteelRings,"...с топазом (выносливость: 5, стойкость: 2)",PC_TrfMagic_SteelRings_Topaz);
+		Info_AddChoice(PC_TrfMagic_SteelRings, " ...with topaz (stamina: 5, durability: 2) " ,PC_TrfMagic_SteelRings_Topaz);
 	};
 };
 
@@ -3544,16 +3545,16 @@ func void PC_TrfMagic_SteelRings_Diamod()
 		Npc_RemoveInvItems(hero,ItMi_Sulfur,1);
 		Npc_RemoveInvItems(hero,ItMi_Coal,1);
 		CreateInvItems(hero,ItRi_Steel_Diam,1);
-		CreateInvItems(hero,ItMi_SteelForm,1);
+		CreateInvItems(hero,ItMi_SteelForm, 1 );
 		Print(PRINT_Success);
 		//B_Say(self,self,"$ITEMREADY");
 	}
 	else
 	{
-		//Print(PRINT_ProdItemsMissing);
-		AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+		// Print(PRINT_ProdItemsMissing);
+		AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 		B_Say(self,self,"$MISSINGINGREDIENTS");
-		CreateInvItems(hero,ItMi_SteelForm,1);
+		CreateInvItems(hero,ItMi_SteelForm, 1 );
 	};
 
 	b_endproductiondialog();
@@ -3571,16 +3572,16 @@ func void PC_TrfMagic_SteelRings_Emerald()
 		Npc_RemoveInvItems(hero,ItMi_Sulfur,1);
 		Npc_RemoveInvItems(hero,ItMi_Coal,1);
 		CreateInvItems(hero,ItRi_Steel_Emer,1);
-		CreateInvItems(hero,ItMi_SteelForm,1);
+		CreateInvItems(hero,ItMi_SteelForm, 1 );
 		Print(PRINT_Success);
 		//B_Say(self,self,"$ITEMREADY");
 	}
 	else
 	{
-		//Print(PRINT_ProdItemsMissing);
-		AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+		// Print(PRINT_ProdItemsMissing);
+		AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 		B_Say(self,self,"$MISSINGINGREDIENTS");
-		CreateInvItems(hero,ItMi_SteelForm,1);
+		CreateInvItems(hero,ItMi_SteelForm, 1 );
 	};
 
 	b_endproductiondialog();
@@ -3598,16 +3599,16 @@ func void PC_TrfMagic_SteelRings_Ruby()
 		Npc_RemoveInvItems(hero,ItMi_Sulfur,1);
 		Npc_RemoveInvItems(hero,ItMi_Coal,1);
 		CreateInvItems(hero,ItRi_Steel_Ruby,1);
-		CreateInvItems(hero,ItMi_SteelForm,1);
+		CreateInvItems(hero,ItMi_SteelForm, 1 );
 		Print(PRINT_Success);
 		//B_Say(self,self,"$ITEMREADY");
 	}
 	else
 	{
-		//Print(PRINT_ProdItemsMissing);
-		AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+		// Print(PRINT_ProdItemsMissing);
+		AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 		B_Say(self,self,"$MISSINGINGREDIENTS");
-		CreateInvItems(hero,ItMi_SteelForm,1);
+		CreateInvItems(hero,ItMi_SteelForm, 1 );
 	};
 
 	b_endproductiondialog();
@@ -3625,16 +3626,16 @@ func void PC_TrfMagic_SteelRings_Sapphire()
 		Npc_RemoveInvItems(hero,ItMi_Sulfur,1);
 		Npc_RemoveInvItems(hero,ItMi_Coal,1);
 		CreateInvItems(hero,ItRi_Steel_Sapp,1);
-		CreateInvItems(hero,ItMi_SteelForm,1);
+		CreateInvItems(hero,ItMi_SteelForm, 1 );
 		Print(PRINT_Success);
 		//B_Say(self,self,"$ITEMREADY");
 	}
 	else
 	{
-		//Print(PRINT_ProdItemsMissing);
-		AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+		// Print(PRINT_ProdItemsMissing);
+		AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 		B_Say(self,self,"$MISSINGINGREDIENTS");
-		CreateInvItems(hero,ItMi_SteelForm,1);
+		CreateInvItems(hero,ItMi_SteelForm, 1 );
 	};
 
 	b_endproductiondialog();
@@ -3652,16 +3653,16 @@ func void PC_TrfMagic_SteelRings_Opal()
 		Npc_RemoveInvItems(hero,ItMi_Sulfur,1);
 		Npc_RemoveInvItems(hero,ItMi_Coal,1);
 		CreateInvItems(hero,ItRi_Steel_Opal,1);
-		CreateInvItems(hero,ItMi_SteelForm,1);
+		CreateInvItems(hero,ItMi_SteelForm, 1 );
 		Print(PRINT_Success);
 		//B_Say(self,self,"$ITEMREADY");
 	}
 	else
 	{
-		//Print(PRINT_ProdItemsMissing);
-		AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+		// Print(PRINT_ProdItemsMissing);
+		AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 		B_Say(self,self,"$MISSINGINGREDIENTS");
-		CreateInvItems(hero,ItMi_SteelForm,1);
+		CreateInvItems(hero,ItMi_SteelForm, 1 );
 	};
 
 	b_endproductiondialog();
@@ -3679,16 +3680,16 @@ func void PC_TrfMagic_SteelRings_Topaz()
 		Npc_RemoveInvItems(hero,ItMi_Sulfur,1);
 		Npc_RemoveInvItems(hero,ItMi_Coal,1);
 		CreateInvItems(hero,ItRi_Steel_Topa,1);
-		CreateInvItems(hero,ItMi_SteelForm,1);
+		CreateInvItems(hero,ItMi_SteelForm, 1 );
 		Print(PRINT_Success);
 		//B_Say(self,self,"$ITEMREADY");
 	}
 	else
 	{
-		//Print(PRINT_ProdItemsMissing);
-		AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+		// Print(PRINT_ProdItemsMissing);
+		AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 		B_Say(self,self,"$MISSINGINGREDIENTS");
-		CreateInvItems(hero,ItMi_SteelForm,1);
+		CreateInvItems(hero,ItMi_SteelForm, 1 );
 	};
 
 	b_endproductiondialog();
@@ -3700,12 +3701,12 @@ instance PC_TrfMagic_GoldRings(C_Info)
 	condition = PC_TrfMagic_GoldRings_Condition;
 	information =PC_TrfMagic_GoldRings_Info;
 	permanent = TRUE;
-	description = "Изготовить золотое кольцо";
+	description = " Craft a golden ring " ;
 };
 
 func int PC_TrfMagic_GoldRings_Condition()
 {
-	if((PLAYER_MOBSI_PRODUCTION == MOBSI_TRFMAGIC) && (CurrentLevel == NEWWORLD_ZEN) && (JEWERLY_LEVEL_L2 == TRUE) && (Npc_HasItems(hero,ItMi_StuckGold) >= 1))
+	if (( PLAYER_MOBSI_PRODUCTION  ==  MOBSI_TRFMAGIC ) && ( CurrentLevel ==  NEWWORLD_ZEN ) && ( JEWERLY_LEVEL_L2  ==  TRUE ) && ( Npc_HasItems ( hero , ItMi_StuckGold ) >=  1 )) ;
 	{
 		return TRUE;
 	};
@@ -3718,27 +3719,27 @@ func void PC_TrfMagic_GoldRings_Info()
 
 	if(Npc_HasItems(hero,ItMi_Diamod) >= 1)
 	{
-		Info_AddChoice(PC_TrfMagic_GoldRings,"...с алмазом (защита от всего: 20)",PC_TrfMagic_GoldRings_Diamod);
+		Info_AddChoice(PC_TrfMagic_GoldRings, " ...with diamond (protection against everything: 20) " ,PC_TrfMagic_GoldRings_Diamod);
 	};
 	if(Npc_HasItems(hero,ItMi_Emerald) >= 1)
 	{
-		Info_AddChoice(PC_TrfMagic_GoldRings,"...с изумрудом (ловкость: 15, защита от колющего урона: 10)",PC_TrfMagic_GoldRings_Emerald);
+		Info_AddChoice(PC_TrfMagic_GoldRings, " ...with emerald (agility: 15, piercing damage: 10) " ,PC_TrfMagic_GoldRings_Emerald);
 	};
 	if(Npc_HasItems(hero,ItMi_Ruby) >= 1)
 	{
-		Info_AddChoice(PC_TrfMagic_GoldRings,"...с рубином (сила: 15, защита от физического урона: 10)",PC_TrfMagic_GoldRings_Ruby);
+		Info_AddChoice(PC_TrfMagic_GoldRings, " ...with ruby ​​(strength: 15, physical defense: 10) " ,PC_TrfMagic_GoldRings_Ruby);
 	};
 	if(Npc_HasItems(hero,ItMi_Sapphire) >= 1)
 	{
-		Info_AddChoice(PC_TrfMagic_GoldRings,"...с сапфиром (магическая энергия: 30, защита от магии: 10, интеллект: 10)",PC_TrfMagic_GoldRings_Sapphire);
+		Info_AddChoice(PC_TrfMagic_GoldRings, " ...with Sapphire (Magic Energy: 30, Magic Defense: 10, Intelligence: 10) " ,PC_TrfMagic_GoldRings_Sapphire);
 	};
 	if(Npc_HasItems(hero,ItMi_Opal) >= 1)
 	{
-		Info_AddChoice(PC_TrfMagic_GoldRings,"...с опалом (жизненная энергия: 50, защита от огня: 10)",PC_TrfMagic_GoldRings_Opal);
+		Info_AddChoice(PC_TrfMagic_GoldRings, " ...with opal (vitality: 50, fire resistance: 10) " ,PC_TrfMagic_GoldRings_Opal);
 	};
 	if(Npc_HasItems(hero,ItMi_Topaz) >= 1)
 	{
-		Info_AddChoice(PC_TrfMagic_GoldRings,"...с топазом (выносливость: 10, стойкость: 3)",PC_TrfMagic_GoldRings_Topaz);
+		Info_AddChoice(PC_TrfMagic_GoldRings, " ...with Topaz (stamina: 10, durability: 3) " ,PC_TrfMagic_GoldRings_Topaz);
 	};
 };
 
@@ -3758,17 +3759,17 @@ func void PC_TrfMagic_GoldRings_Diamod()
 		Npc_RemoveInvItems(hero,ItMi_Pitch,2);
 		Npc_RemoveInvItems(hero,ItMi_Sulfur,2);
 		Npc_RemoveInvItems(hero,ItMi_Coal,2);
-		CreateInvItems(hero,ItRi_Gold_Diam,1);
-		CreateInvItems(hero,ItMi_SteelForm,1);
+		CreateInvItems(hero,ItRi_Gold_Silent, 1 );
+		CreateInvItems(hero,ItMi_SteelForm, 1 );
 		Print(PRINT_Success);
 		//B_Say(self,self,"$ITEMREADY");
 	}
 	else
 	{
-		//Print(PRINT_ProdItemsMissing);
-		AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+		// Print(PRINT_ProdItemsMissing);
+		AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 		B_Say(self,self,"$MISSINGINGREDIENTS");
-		CreateInvItems(hero,ItMi_SteelForm,1);
+		CreateInvItems(hero,ItMi_SteelForm, 1 );
 	};
 
 	b_endproductiondialog();
@@ -3786,16 +3787,16 @@ func void PC_TrfMagic_GoldRings_Emerald()
 		Npc_RemoveInvItems(hero,ItMi_Sulfur,2);
 		Npc_RemoveInvItems(hero,ItMi_Coal,2);
 		CreateInvItems(hero,ItRi_Gold_Emer,1);
-		CreateInvItems(hero,ItMi_SteelForm,1);
+		CreateInvItems(hero,ItMi_SteelForm, 1 );
 		Print(PRINT_Success);
 		//B_Say(self,self,"$ITEMREADY");
 	}
 	else
 	{
-		//Print(PRINT_ProdItemsMissing);
-		AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+		// Print(PRINT_ProdItemsMissing);
+		AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 		B_Say(self,self,"$MISSINGINGREDIENTS");
-		CreateInvItems(hero,ItMi_SteelForm,1);
+		CreateInvItems(hero,ItMi_SteelForm, 1 );
 	};
 
 	b_endproductiondialog();
@@ -3813,16 +3814,16 @@ func void PC_TrfMagic_GoldRings_Ruby()
 		Npc_RemoveInvItems(hero,ItMi_Sulfur,2);
 		Npc_RemoveInvItems(hero,ItMi_Coal,2);
 		CreateInvItems(hero,ItRi_Gold_Ruby,1);
-		CreateInvItems(hero,ItMi_SteelForm,1);
+		CreateInvItems(hero,ItMi_SteelForm, 1 );
 		Print(PRINT_Success);
 		//B_Say(self,self,"$ITEMREADY");
 	}
 	else
 	{
-		//Print(PRINT_ProdItemsMissing);
-		AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+		// Print(PRINT_ProdItemsMissing);
+		AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 		B_Say(self,self,"$MISSINGINGREDIENTS");
-		CreateInvItems(hero,ItMi_SteelForm,1);
+		CreateInvItems(hero,ItMi_SteelForm, 1 );
 	};
 
 	b_endproductiondialog();
@@ -3840,16 +3841,16 @@ func void PC_TrfMagic_GoldRings_Sapphire()
 		Npc_RemoveInvItems(hero,ItMi_Sulfur,2);
 		Npc_RemoveInvItems(hero,ItMi_Coal,2);
 		CreateInvItems(hero,ItRi_Gold_Sapp,1);
-		CreateInvItems(hero,ItMi_SteelForm,1);
+		CreateInvItems(hero,ItMi_SteelForm, 1 );
 		Print(PRINT_Success);
 		//B_Say(self,self,"$ITEMREADY");
 	}
 	else
 	{
-		//Print(PRINT_ProdItemsMissing);
-		AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+		// Print(PRINT_ProdItemsMissing);
+		AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 		B_Say(self,self,"$MISSINGINGREDIENTS");
-		CreateInvItems(hero,ItMi_SteelForm,1);
+		CreateInvItems(hero,ItMi_SteelForm, 1 );
 	};
 
 	b_endproductiondialog();
@@ -3867,16 +3868,16 @@ func void PC_TrfMagic_GoldRings_Opal()
 		Npc_RemoveInvItems(hero,ItMi_Sulfur,2);
 		Npc_RemoveInvItems(hero,ItMi_Coal,2);
 		CreateInvItems(hero,ItRi_Gold_Opal,1);
-		CreateInvItems(hero,ItMi_SteelForm,1);
+		CreateInvItems(hero,ItMi_SteelForm, 1 );
 		Print(PRINT_Success);
 		//B_Say(self,self,"$ITEMREADY");
 	}
 	else
 	{
-		//Print(PRINT_ProdItemsMissing);
-		AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+		// Print(PRINT_ProdItemsMissing);
+		AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 		B_Say(self,self,"$MISSINGINGREDIENTS");
-		CreateInvItems(hero,ItMi_SteelForm,1);
+		CreateInvItems(hero,ItMi_SteelForm, 1 );
 	};
 
 	b_endproductiondialog();
@@ -3894,16 +3895,16 @@ func void PC_TrfMagic_GoldRings_Topaz()
 		Npc_RemoveInvItems(hero,ItMi_Sulfur,2);
 		Npc_RemoveInvItems(hero,ItMi_Coal,2);
 		CreateInvItems(hero,ItRi_Gold_Topa,1);
-		CreateInvItems(hero,ItMi_SteelForm,1);
+		CreateInvItems(hero,ItMi_SteelForm, 1 );
 		Print(PRINT_Success);
 		//B_Say(self,self,"$ITEMREADY");
 	}
 	else
 	{
-		//Print(PRINT_ProdItemsMissing);
-		AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+		// Print(PRINT_ProdItemsMissing);
+		AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 		B_Say(self,self,"$MISSINGINGREDIENTS");
-		CreateInvItems(hero,ItMi_SteelForm,1);
+		CreateInvItems(hero,ItMi_SteelForm, 1 );
 	};
 
 	b_endproductiondialog();
@@ -3915,12 +3916,12 @@ instance PC_TrfMagic_OreRings(C_Info)
 	condition = PC_TrfMagic_OreRings_Condition;
 	information =PC_TrfMagic_OreRings_Info;
 	permanent = TRUE;
-	description = "Изготовить кольцо из магической руды";
+	description = " Craft a ring from magic ore " ;
 };
 
 func int PC_TrfMagic_OreRings_Condition()
 {
-	if((PLAYER_MOBSI_PRODUCTION == MOBSI_TRFMAGIC) && (CurrentLevel == NEWWORLD_ZEN) && (JEWERLY_LEVEL_L3 == TRUE) && (Npc_HasItems(hero,ItMi_OreStuck) >= 1))
+	if (( PLAYER_MOBSI_PRODUCTION  ==  MOBSI_TRFMAGIC ) && ( CurrentLevel ==  NEWWORLD_ZEN ) && ( JEWERLY_LEVEL_L3  ==  TRUE ) && ( Npc_HasItems ( hero , ItMi_OreStuck ) >=  1 )) ;
 	{
 		return TRUE;
 	};
@@ -3933,27 +3934,27 @@ func void PC_TrfMagic_OreRings_Info()
 
 	if(Npc_HasItems(hero,ItMi_Diamod) >= 1)
 	{
-		Info_AddChoice(PC_TrfMagic_OreRings,"...с алмазом (защита от всего: 30)",PC_TrfMagic_OreRings_Diamod);
+		Info_AddChoice(PC_TrfMagic_OreRings, " ...with diamond (protection against everything: 30) " ,PC_TrfMagic_OreRings_Diamod);
 	};
 	if(Npc_HasItems(hero,ItMi_Emerald) >= 1)
 	{
-		Info_AddChoice(PC_TrfMagic_OreRings,"...с изумрудом (ловкость: 20, защита от колющего урона: 15)",PC_TrfMagic_OreRings_Emerald);
+		Info_AddChoice(PC_TrfMagic_OreRings, " ...with emerald (agility: 20, piercing damage: 15) " ,PC_TrfMagic_OreRings_Emerald);
 	};
 	if(Npc_HasItems(hero,ItMi_Ruby) >= 1)
 	{
-		Info_AddChoice(PC_TrfMagic_OreRings,"...с рубином (сила: 20, защита от физического урона: 15)",PC_TrfMagic_OreRings_Ruby);
+		Info_AddChoice(PC_TrfMagic_OreRings, " ...with ruby ​​(strength: 20, physical damage resistance: 15) " ,PC_TrfMagic_OreRings_Ruby);
 	};
 	if(Npc_HasItems(hero,ItMi_Sapphire) >= 1)
 	{
-		Info_AddChoice(PC_TrfMagic_OreRings,"...с сапфиром (магическая энергия: 45, защита от магии: 15, интеллект: 15)",PC_TrfMagic_OreRings_Sapphire);
+		Info_AddChoice(PC_TrfMagic_OreRings, " ...with Sapphire (Magic Energy: 45, Magic Defense: 15, Intelligence: 15) " ,PC_TrfMagic_OreRings_Sapphire);
 	};
 	if(Npc_HasItems(hero,ItMi_Opal) >= 1)
 	{
-		Info_AddChoice(PC_TrfMagic_OreRings,"...с опалом (жизненная энергия: 100, защита от огня: 15)",PC_TrfMagic_OreRings_Opal);
+		Info_AddChoice(PC_TrfMagic_OreRings, " ...with opal (vitality: 100, fire resistance: 15) " ,PC_TrfMagic_OreRings_Opal);
 	};
 	if(Npc_HasItems(hero,ItMi_Topaz) >= 1)
 	{
-		Info_AddChoice(PC_TrfMagic_OreRings,"...с топазом (выносливость: 15, стойкость: 4)",PC_TrfMagic_OreRings_Topaz);
+		Info_AddChoice(PC_TrfMagic_OreRings, " ...with topaz (stamina: 15, durability: 4) " ,PC_TrfMagic_OreRings_Topaz);
 	};
 };
 
@@ -3973,17 +3974,17 @@ func void PC_TrfMagic_OreRings_Diamod()
 		Npc_RemoveInvItems(hero,ItMi_Pitch,3);
 		Npc_RemoveInvItems(hero,ItMi_Sulfur,3);
 		Npc_RemoveInvItems(hero,ItMi_Coal,3);
-		CreateInvItems(hero,ItRi_Ore_Diam,1);
-		CreateInvItems(hero,ItMi_SteelForm,1);
+		CreateInvItems(hero,ItRi_Ore_Diam, 1 );
+		CreateInvItems(hero,ItMi_SteelForm, 1 );
 		Print(PRINT_Success);
 		//B_Say(self,self,"$ITEMREADY");
 	}
 	else
 	{
-		//Print(PRINT_ProdItemsMissing);
-		AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+		// Print(PRINT_ProdItemsMissing);
+		AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 		B_Say(self,self,"$MISSINGINGREDIENTS");
-		CreateInvItems(hero,ItMi_SteelForm,1);
+		CreateInvItems(hero,ItMi_SteelForm, 1 );
 	};
 
 	b_endproductiondialog();
@@ -4000,17 +4001,17 @@ func void PC_TrfMagic_OreRings_Emerald()
 		Npc_RemoveInvItems(hero,ItMi_Pitch,3);
 		Npc_RemoveInvItems(hero,ItMi_Sulfur,3);
 		Npc_RemoveInvItems(hero,ItMi_Coal,3);
-		CreateInvItems(hero,ItRi_Ore_Emer,1);
-		CreateInvItems(hero,ItMi_SteelForm,1);
+		CreateInvItems(hero,ItRi_Ore_Emer, 1 );
+		CreateInvItems(hero,ItMi_SteelForm, 1 );
 		Print(PRINT_Success);
 		//B_Say(self,self,"$ITEMREADY");
 	}
 	else
 	{
-		//Print(PRINT_ProdItemsMissing);
-		AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+		// Print(PRINT_ProdItemsMissing);
+		AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 		B_Say(self,self,"$MISSINGINGREDIENTS");
-		CreateInvItems(hero,ItMi_SteelForm,1);
+		CreateInvItems(hero,ItMi_SteelForm, 1 );
 	};
 
 	b_endproductiondialog();
@@ -4027,17 +4028,17 @@ func void PC_TrfMagic_OreRings_Ruby()
 		Npc_RemoveInvItems(hero,ItMi_Pitch,3);
 		Npc_RemoveInvItems(hero,ItMi_Sulfur,3);
 		Npc_RemoveInvItems(hero,ItMi_Coal,3);
-		CreateInvItems(hero,ItRi_Ore_Ruby,1);
-		CreateInvItems(hero,ItMi_SteelForm,1);
+		CreateInvItems(hero,ItRi_Ore_Ruby, 1 );
+		CreateInvItems(hero,ItMi_SteelForm, 1 );
 		Print(PRINT_Success);
 		//B_Say(self,self,"$ITEMREADY");
 	}
 	else
 	{
-		//Print(PRINT_ProdItemsMissing);
-		AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+		// Print(PRINT_ProdItemsMissing);
+		AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 		B_Say(self,self,"$MISSINGINGREDIENTS");
-		CreateInvItems(hero,ItMi_SteelForm,1);
+		CreateInvItems(hero,ItMi_SteelForm, 1 );
 	};
 
 	b_endproductiondialog();
@@ -4054,17 +4055,17 @@ func void PC_TrfMagic_OreRings_Sapphire()
 		Npc_RemoveInvItems(hero,ItMi_Pitch,3);
 		Npc_RemoveInvItems(hero,ItMi_Sulfur,3);
 		Npc_RemoveInvItems(hero,ItMi_Coal,3);
-		CreateInvItems(hero,ItRi_Ore_Sapp,1);
-		CreateInvItems(hero,ItMi_SteelForm,1);
+		CreateInvItems(hero,ItRi_Ore_Sapp, 1 );
+		CreateInvItems(hero,ItMi_SteelForm, 1 );
 		Print(PRINT_Success);
 		//B_Say(self,self,"$ITEMREADY");
 	}
 	else
 	{
-		//Print(PRINT_ProdItemsMissing);
-		AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+		// Print(PRINT_ProdItemsMissing);
+		AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 		B_Say(self,self,"$MISSINGINGREDIENTS");
-		CreateInvItems(hero,ItMi_SteelForm,1);
+		CreateInvItems(hero,ItMi_SteelForm, 1 );
 	};
 
 	b_endproductiondialog();
@@ -4082,16 +4083,16 @@ func void PC_TrfMagic_OreRings_Opal()
 		Npc_RemoveInvItems(hero,ItMi_Sulfur,3);
 		Npc_RemoveInvItems(hero,ItMi_Coal,3);
 		CreateInvItems(hero,ItRi_Ore_Opal,1);
-		CreateInvItems(hero,ItMi_SteelForm,1);
+		CreateInvItems(hero,ItMi_SteelForm, 1 );
 		Print(PRINT_Success);
 		//B_Say(self,self,"$ITEMREADY");
 	}
 	else
 	{
-		//Print(PRINT_ProdItemsMissing);
-		AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+		// Print(PRINT_ProdItemsMissing);
+		AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 		B_Say(self,self,"$MISSINGINGREDIENTS");
-		CreateInvItems(hero,ItMi_SteelForm,1);
+		CreateInvItems(hero,ItMi_SteelForm, 1 );
 	};
 
 	b_endproductiondialog();
@@ -4108,17 +4109,17 @@ func void PC_TrfMagic_OreRings_Topaz()
 		Npc_RemoveInvItems(hero,ItMi_Pitch,3);
 		Npc_RemoveInvItems(hero,ItMi_Sulfur,3);
 		Npc_RemoveInvItems(hero,ItMi_Coal,3);
-		CreateInvItems(hero,ItRi_Ore_Topa,1);
-		CreateInvItems(hero,ItMi_SteelForm,1);
+		CreateInvItems(hero,ItRi_Ore_Topa, 1 );
+		CreateInvItems(hero,ItMi_SteelForm, 1 );
 		Print(PRINT_Success);
 		//B_Say(self,self,"$ITEMREADY");
 	}
 	else
 	{
-		//Print(PRINT_ProdItemsMissing);
-		AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+		// Print(PRINT_ProdItemsMissing);
+		AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 		B_Say(self,self,"$MISSINGINGREDIENTS");
-		CreateInvItems(hero,ItMi_SteelForm,1);
+		CreateInvItems(hero,ItMi_SteelForm, 1 );
 	};
 
 	b_endproductiondialog();
@@ -4130,12 +4131,12 @@ instance PC_TrfMagic_Amulets(C_Info)
 	condition = PC_TrfMagic_Amulets_Condition;
 	information =PC_TrfMagic_Amulets_Info;
 	permanent = TRUE;
-	description = "Изготовить амулет из магической руды";
+	description = " Craft an amulet from magic ore " ;
 };
 
 func int PC_TrfMagic_Amulets_Condition()
 {
-	if((PLAYER_MOBSI_PRODUCTION == MOBSI_TRFMAGIC) && (CurrentLevel == NEWWORLD_ZEN) && (JEWERLY_LEVEL_AMUL == TRUE) && (Npc_HasItems(hero,ItMi_OreStuck) >= 1))
+	if (( PLAYER_MOBSI_PRODUCTION  ==  MOBSI_TRFMAGIC ) && ( CurrentLevel ==  NEWWORLD_ZEN ) && ( JEWERLY_LEVEL_AMUL  ==  TRUE ) && ( Npc_HasItems ( hero , ItMi_OreStuck ) >=  1 )) ;
 	{
 		return TRUE;
 	};
@@ -4148,27 +4149,27 @@ func void PC_TrfMagic_Amulets_Info()
 
 	if(Npc_HasItems(hero,ItMi_Diamod) >= 1)
 	{
-		Info_AddChoice(PC_TrfMagic_Amulets,"...с алмазом (защита от всего: 40)",PC_TrfMagic_Amulets_Diamond);
+		Info_AddChoice(PC_TrfMagic_Amulets, " ...with diamond (protection against everything: 40) " ,PC_TrfMagic_Amulets_Diamond);
 	};
 	if(Npc_HasItems(hero,ItMi_Emerald) >= 1)
 	{
-		Info_AddChoice(PC_TrfMagic_Amulets,"...с изумрудом (ловкость: 25, защита от колющего урона: 20)",PC_TrfMagic_Amulets_Emerald);
+		Info_AddChoice(PC_TrfMagic_Amulets, " ...with emerald (agility: 25, piercing damage: 20) " ,PC_TrfMagic_Amulets_Emerald);
 	};
 	if(Npc_HasItems(hero,ItMi_Ruby) >= 1)
 	{
-		Info_AddChoice(PC_TrfMagic_Amulets,"...с рубином (сила: 25, защита от физического урона: 20)",PC_TrfMagic_Amulets_Ruby);
+		Info_AddChoice(PC_TrfMagic_Amulets, " ...with ruby ​​(strength: 25, physical damage resistance: 20) " ,PC_TrfMagic_Amulets_Ruby);
 	};
 	if(Npc_HasItems(hero,ItMi_Sapphire) >= 1)
 	{
-		Info_AddChoice(PC_TrfMagic_Amulets,"...с сапфиром (магическая энергия: 60, интеллект: 20)",PC_TrfMagic_Amulets_Sapphire);
+		Info_AddChoice(PC_TrfMagic_Amulets, " ...with sapphire (magic energy: 60, intelligence: 20) " ,PC_TrfMagic_Amulets_Sapphire);
 	};
 	if(Npc_HasItems(hero,ItMi_Opal) >= 1)
 	{
-		Info_AddChoice(PC_TrfMagic_Amulets,"...с опалом (жизненная энергия: 150, защита от огня: 20)",PC_TrfMagic_Amulets_Opal);
+		Info_AddChoice(PC_TrfMagic_Amulets, " ...with opal (vitality: 150, fire resistance: 20) " ,PC_TrfMagic_Amulets_Opal);
 	};
 	if(Npc_HasItems(hero,ItMi_Topaz) >= 1)
 	{
-		Info_AddChoice(PC_TrfMagic_Amulets,"...с топазом (выносливость: 20, стойкость: 6)",PC_TrfMagic_Amulets_Topaz);
+		Info_AddChoice(PC_TrfMagic_Amulets, " ...with topaz (stamina: 20, durability: 6) " ,PC_TrfMagic_Amulets_Topaz);
 	};
 };
 
@@ -4189,16 +4190,16 @@ func void PC_TrfMagic_Amulets_Diamond()
 		Npc_RemoveInvItems(hero,ItMi_Sulfur,2);
 		Npc_RemoveInvItems(hero,ItMi_Coal,2);
 		CreateInvItems(hero,ItAm_Diamond,1);
-		CreateInvItems(hero,ItMi_SteelForm,1);
+		CreateInvItems(hero,ItMi_SteelForm, 1 );
 		Print(PRINT_Success);
 		//B_Say(self,self,"$ITEMREADY");
 	}
 	else
 	{
-		//Print(PRINT_ProdItemsMissing);
-		AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+		// Print(PRINT_ProdItemsMissing);
+		AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 		B_Say(self,self,"$MISSINGINGREDIENTS");
-		CreateInvItems(hero,ItMi_SteelForm,1);
+		CreateInvItems(hero,ItMi_SteelForm, 1 );
 	};
 
 	b_endproductiondialog();
@@ -4216,16 +4217,16 @@ func void PC_TrfMagic_Amulets_Emerald()
 		Npc_RemoveInvItems(hero,ItMi_Sulfur,2);
 		Npc_RemoveInvItems(hero,ItMi_Coal,2);
 		CreateInvItems(hero,ItAm_Emerald,1);
-		CreateInvItems(hero,ItMi_SteelForm,1);
+		CreateInvItems(hero,ItMi_SteelForm, 1 );
 		Print(PRINT_Success);
 		//B_Say(self,self,"$ITEMREADY");
 	}
 	else
 	{
-		//Print(PRINT_ProdItemsMissing);
-		AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+		// Print(PRINT_ProdItemsMissing);
+		AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 		B_Say(self,self,"$MISSINGINGREDIENTS");
-		CreateInvItems(hero,ItMi_SteelForm,1);
+		CreateInvItems(hero,ItMi_SteelForm, 1 );
 	};
 
 	b_endproductiondialog();
@@ -4243,16 +4244,16 @@ func void PC_TrfMagic_Amulets_Ruby()
 		Npc_RemoveInvItems(hero,ItMi_Sulfur,2);
 		Npc_RemoveInvItems(hero,ItMi_Coal,2);
 		CreateInvItems(hero,ItAm_Ruby,1);
-		CreateInvItems(hero,ItMi_SteelForm,1);
+		CreateInvItems(hero,ItMi_SteelForm, 1 );
 		Print(PRINT_Success);
 		//B_Say(self,self,"$ITEMREADY");
 	}
 	else
 	{
-		//Print(PRINT_ProdItemsMissing);
-		AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+		// Print(PRINT_ProdItemsMissing);
+		AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 		B_Say(self,self,"$MISSINGINGREDIENTS");
-		CreateInvItems(hero,ItMi_SteelForm,1);
+		CreateInvItems(hero,ItMi_SteelForm, 1 );
 	};
 
 	b_endproductiondialog();
@@ -4270,16 +4271,16 @@ func void PC_TrfMagic_Amulets_Sapphire()
 		Npc_RemoveInvItems(hero,ItMi_Sulfur,2);
 		Npc_RemoveInvItems(hero,ItMi_Coal,2);
 		CreateInvItems(hero,ItAm_Sapphire,1);
-		CreateInvItems(hero,ItMi_SteelForm,1);
+		CreateInvItems(hero,ItMi_SteelForm, 1 );
 		Print(PRINT_Success);
 		//B_Say(self,self,"$ITEMREADY");
 	}
 	else
 	{
-		//Print(PRINT_ProdItemsMissing);
-		AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+		// Print(PRINT_ProdItemsMissing);
+		AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 		B_Say(self,self,"$MISSINGINGREDIENTS");
-		CreateInvItems(hero,ItMi_SteelForm,1);
+		CreateInvItems(hero,ItMi_SteelForm, 1 );
 	};
 
 	b_endproductiondialog();
@@ -4297,16 +4298,16 @@ func void PC_TrfMagic_Amulets_Opal()
 		Npc_RemoveInvItems(hero,ItMi_Sulfur,2);
 		Npc_RemoveInvItems(hero,ItMi_Coal,2);
 		CreateInvItems(hero,ItAm_Opal,1);
-		CreateInvItems(hero,ItMi_SteelForm,1);
+		CreateInvItems(hero,ItMi_SteelForm, 1 );
 		Print(PRINT_Success);
 		//B_Say(self,self,"$ITEMREADY");
 	}
 	else
 	{
-		//Print(PRINT_ProdItemsMissing);
-		AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+		// Print(PRINT_ProdItemsMissing);
+		AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 		B_Say(self,self,"$MISSINGINGREDIENTS");
-		CreateInvItems(hero,ItMi_SteelForm,1);
+		CreateInvItems(hero,ItMi_SteelForm, 1 );
 	};
 
 	b_endproductiondialog();
@@ -4324,16 +4325,16 @@ func void PC_TrfMagic_Amulets_Topaz()
 		Npc_RemoveInvItems(hero,ItMi_Sulfur,2);
 		Npc_RemoveInvItems(hero,ItMi_Coal,2);
 		CreateInvItems(hero,ItAm_Topaz,1);
-		CreateInvItems(hero,ItMi_SteelForm,1);
+		CreateInvItems(hero,ItMi_SteelForm, 1 );
 		Print(PRINT_Success);
 		//B_Say(self,self,"$ITEMREADY");
 	}
 	else
 	{
-		//Print(PRINT_ProdItemsMissing);
-		AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+		// Print(PRINT_ProdItemsMissing);
+		AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 		B_Say(self,self,"$MISSINGINGREDIENTS");
-		CreateInvItems(hero,ItMi_SteelForm,1);
+		CreateInvItems(hero,ItMi_SteelForm, 1 );
 	};
 
 	b_endproductiondialog();
@@ -4345,7 +4346,7 @@ instance PC_TransRune(C_Info)
 	condition = PC_TransRune_Condition;
 	information = PC_TransRune_Info;
 	permanent = TRUE;
-	description = "Создать камень трансформации";
+	description = " Create a transformation stone " ;
 };
 
 func int PC_TransRune_Condition()
@@ -4363,23 +4364,23 @@ func void PC_TransRune_Info()
 
 	if(HeroKnownTrans_BloodFly == TRUE)
 	{
-		Info_AddChoice(PC_TransRune,"Превращение в кровяного шершня",PC_TransRune_BloodFly);
+		Info_AddChoice(PC_TransRune, " Transform into Blood Hornet " ,PC_TransRune_BloodFly);
 	};
 	if(HeroKnownTrans_FireWaran == TRUE)
 	{
-		Info_AddChoice(PC_TransRune,"Превращение в огненного варана",PC_TransRune_FireWaran);
+		Info_AddChoice(PC_TransRune, " Fire Dragon Transformation " ,PC_TransRune_FireWaran);
 	};
 	if(HeroKnownTrans_Warg == TRUE)
 	{
-		Info_AddChoice(PC_TransRune,"Превращение в варга",PC_TransRune_Warg);
+		Info_AddChoice(PC_TransRune, " Transform into Warg " ,PC_TransRune_Warg);
 	};
 	if(HeroKnownTrans_ShadowBeast == TRUE)
 	{
-		Info_AddChoice(PC_TransRune,"Превращение в мракориса",PC_TransRune_ShadowBeast);
+		Info_AddChoice(PC_TransRune, " ShadowBeast Transformation " , PC_TransRune_ShadowBeast);
 	};
 	if(HeroKnownTrans_DragonSnapper == TRUE)
 	{
-		Info_AddChoice(PC_TransRune,"Превращение в драконьего снеппера",PC_TransRune_DragonSnapper);
+		Info_AddChoice(PC_TransRune, " Transform into Dragon Snapper " ,PC_TransRune_DragonSnapper);
 	};
 };
 
@@ -4413,8 +4414,8 @@ func void PC_TransRune_BloodFly()
 	}
 	else
 	{
-		//Print(PRINT_ProdItemsMissing);
-		AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+		// Print(PRINT_ProdItemsMissing);
+		AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 		B_Say(self,self,"$MISSINGINGREDIENTS");
 		PC_TransRune_Info();
 	};
@@ -4430,7 +4431,7 @@ func void PC_TransRune_FireWaran()
 			Npc_RemoveInvItems(hero,ItAt_WaranFiretongue,1);
 			Npc_RemoveInvItems(hero,ItMi_Sulfur,1);
 			Npc_RemoveInvItems(hero,itat_LurkerSkin,1);
-			CreateInvItems(hero,ItRu_TrfFireWaran,1);
+			CreateInvItems(hero,ItRu_TrfFireWaran, 1 );
 			//Print(PRINT_RuneSuccess);
 			AI_PrintClr(PRINT_RuneSuccess,83,152,48);
 			//B_Say(self,self,"$ITEMREADY");
@@ -4446,8 +4447,8 @@ func void PC_TransRune_FireWaran()
 		}
 		else
 		{
-			//Print(PRINT_ProdItemsMissing);
-			AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+			// Print(PRINT_ProdItemsMissing);
+			AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 			B_Say(self,self,"$MISSINGINGREDIENTS");
 			PC_TransRune_Info();
 		};
@@ -4468,7 +4469,7 @@ func void PC_TransRune_Warg()
 			Npc_RemoveInvItems(hero,ItAt_Teeth,2);
 			Npc_RemoveInvItems(hero,ItMi_DarkPearl,1);
 			Npc_RemoveInvItems(hero,ItAt_WargFur,1);
-			CreateInvItems(hero,ItRu_TrfWarg,1);
+			CreateInvItems(hero,ItRu_TrfWarg, 1 );
 			//Print(PRINT_RuneSuccess);
 			AI_PrintClr(PRINT_RuneSuccess,83,152,48);
 			//B_Say(self,self,"$ITEMREADY");
@@ -4484,8 +4485,8 @@ func void PC_TransRune_Warg()
 		}
 		else
 		{
-			//Print(PRINT_ProdItemsMissing);
-			AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+			// Print(PRINT_ProdItemsMissing);
+			AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 			B_Say(self,self,"$MISSINGINGREDIENTS");
 			PC_TransRune_Info();
 		};
@@ -4522,8 +4523,8 @@ func void PC_TransRune_ShadowBeast()
 		}
 		else
 		{
-			//Print(PRINT_ProdItemsMissing);
-			AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+			// Print(PRINT_ProdItemsMissing);
+			AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 			B_Say(self,self,"$MISSINGINGREDIENTS");
 			PC_TransRune_Info();
 		};
@@ -4538,13 +4539,13 @@ func void PC_TransRune_DragonSnapper()
 {
 	if(B_CheckRuneSkill(70))
 	{
-		if((Npc_HasItems(hero,ItAt_DrgSnapperHorn) >= 1) && (Npc_HasItems(hero,ItMi_Quartz) >= 1) && (Npc_HasItems(hero,ItMi_Nugget) >= 1))
+		if ((Npc_HasItems(hero, It's_DrgSnapperHorn) >=  1 ) && (Npc_HasItems(hero, It'sMy_Quartz) >=  1 ) && (Npc_HasItems(hero, It'sMy_Nugget) >=  1 )) ;
 		{
 			B_GivePlayerXP(XP_HandMade_Rune);
 			Npc_RemoveInvItems(hero,ItAt_DrgSnapperHorn,1);
 			Npc_RemoveInvItems(hero,ItMi_Quartz,1);
 			Npc_RemoveInvItems(hero,ItMi_Nugget,1);
-			CreateInvItems(hero,ItRu_TrfDragonSnapper,1);
+			CreateInvItems(hero,ItRu_TrfDragonSnapper, 1 );
 			//Print(PRINT_RuneSuccess);
 			AI_PrintClr(PRINT_RuneSuccess,83,152,48);
 			//B_Say(self,self,"$ITEMREADY");
@@ -4560,8 +4561,8 @@ func void PC_TransRune_DragonSnapper()
 		}
 		else
 		{
-			//Print(PRINT_ProdItemsMissing);
-			AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+			// Print(PRINT_ProdItemsMissing);
+			AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 			B_Say(self,self,"$MISSINGINGREDIENTS");
 			PC_TransRune_Info();
 		};
@@ -4572,7 +4573,7 @@ func void PC_TransRune_DragonSnapper()
 	};
 };
 
-//---------------------------------------перенос и ювелирка---------------------------------
+// ---------------------------------------transfer and jewelry ------ ----------------------------
 
 func void MAKESCROLLS_s1()
 {
@@ -4581,14 +4582,14 @@ func void MAKESCROLLS_s1()
 
 	if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(her))
 	{
-		//print_percent_bar_none(ATR_STAMINA[0],ATR_STAMINA_MAX[0] * 10,"Выносливость",42,97);
+		// print_percent_bar_none(ATR_STAMINA[0],ATR_STAMINA_MAX[0] * 10,"Stamina",42,97);
 
 		if(CinemaMod == TRUE)
 		{
 			Wld_PlayEffect("DIALOGSCOPE_FX",hero,hero,0,0,0,FALSE);
 		};
 
-		self.aivar[AIV_INVINCIBLE] = TRUE;
+		self.aivar[ AIV_INVINCIBLE ] = TRUE ;
 		PLAYER_MOBSI_PRODUCTION = MOBSI_MEMORIES;
 		AI_ProcessInfos(her);
 	};
@@ -4626,7 +4627,7 @@ instance PC_MAKESCROLLS_ITSC(C_Info)
 	condition = PC_MAKESCROLLS_ITSC_condition;
 	information = PC_MAKESCROLLS_ITSC_info;
 	permanent = TRUE;
-	description = "Создать магические свитки";
+	description = " Create magic scrolls " ;
 };
 
 func int PC_MAKESCROLLS_ITSC_condition()
@@ -4644,27 +4645,27 @@ func void PC_MAKESCROLLS_ITSC_info()
 
 	if(HOWCANMAKERUNE_ITSC1 == TRUE)
 	{
-		Info_AddChoice(PC_MAKESCROLLS_itsc,"Создать свиток 'Огненный дождь'",PC_MAKESCROLLS_itsc_firerain);
+		Info_AddChoice(PC_MAKESCROLLS_itsc, " Create Firerain Scroll " ,PC_MAKESCROLLS_itsc_firerain);
 	};
 	if(HOWCANMAKERUNE_ITSC2 == TRUE)
 	{
-		Info_AddChoice(PC_MAKESCROLLS_itsc,"Создать свиток 'Уничтожение нежити'",PC_MAKESCROLLS_itsc_hurmundead);
+		Info_AddChoice(PC_MAKESCROLLS_itsc, " Create Undead Kill Scroll " ,PC_MAKESCROLLS_itsc_hurmundead);
 	};
 	if(HOWCANMAKERUNE_ITSC4 == TRUE)
 	{
-		Info_AddChoice(PC_MAKESCROLLS_itsc,"Создать свиток 'Ледяная глыба'",PC_MAKESCROLLS_itsc_icecube);
+		Info_AddChoice(PC_MAKESCROLLS_itsc, " Create Ice Block Scroll " ,PC_MAKESCROLLS_itsc_icecube);
 	};
 	if(HOWCANMAKERUNE_ITSC5 == TRUE)
 	{
-		Info_AddChoice(PC_MAKESCROLLS_itsc,"Создать свиток 'Ледяная волна'",PC_MAKESCROLLS_itsc_icewave);
+		Info_AddChoice(PC_MAKESCROLLS_itsc, " Create Ice Wave Scroll " ,PC_MAKESCROLLS_itsc_icewave);
 	};
 	if(HOWCANMAKERUNE_ITSC6 == TRUE)
 	{
-		Info_AddChoice(PC_MAKESCROLLS_itsc,"Создать свиток 'Смерч'",PC_MAKESCROLLS_itsc_tornado);
+		Info_AddChoice(PC_MAKESCROLLS_itsc, " Create 'Tornado' Scroll " ,PC_MAKESCROLLS_itsc_tornado);
 	};
 	if(HOWCANMAKERUNE_ITSC7 == TRUE)
 	{
-		Info_AddChoice(PC_MAKESCROLLS_itsc,"Создать свиток 'Взлом замка'",PC_MAKESCROLLS_itsc_unlock);
+		Info_AddChoice(PC_MAKESCROLLS_itsc, " Create 'Pick Lock' Scroll " ,PC_MAKESCROLLS_itsc_unlock);
 	};
 };
 
@@ -4680,14 +4681,14 @@ func void PC_MAKESCROLLS_itsc_unlock()
 		B_GivePlayerXP(XP_HandMade);
 		Npc_RemoveInvItems(hero,itwr_magicpaper,1);
 		CreateInvItem(hero,ItSc_Unlock);
-		AI_PrintClr("Создан магический свиток",83,152,48);
+		AI_PrintClr( " Magic scroll created " , 83 , 152 , 48 );
 		//B_Say(self,self,"$ITEMREADY");
 		PC_MAKESCROLLS_ITSC_info();
 	}
 	else
 	{
-		//Print(PRINT_ProdItemsMissing);
-		AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+		// Print(PRINT_ProdItemsMissing);
+		AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 		B_Say(self,self,"$MISSINGINGREDIENTS");
 		PC_MAKESCROLLS_ITSC_info();
 	};
@@ -4700,14 +4701,14 @@ func void PC_MAKESCROLLS_itsc_firerain()
 		B_GivePlayerXP(XP_HandMade);
 		Npc_RemoveInvItems(hero,itwr_magicpaper,1);
 		CreateInvItem(hero,ItSc_Firerain);
-		AI_PrintClr("Создан магический свиток",83,152,48);
+		AI_PrintClr( " Magic scroll created " , 83 , 152 , 48 );
 		//B_Say(self,self,"$ITEMREADY");
 		PC_MAKESCROLLS_ITSC_info();
 	}
 	else
 	{
-		//Print(PRINT_ProdItemsMissing);
-		AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+		// Print(PRINT_ProdItemsMissing);
+		AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 		B_Say(self,self,"$MISSINGINGREDIENTS");
 		PC_MAKESCROLLS_ITSC_info();
 	};
@@ -4720,14 +4721,14 @@ func void PC_MAKESCROLLS_itsc_hurmundead()
 		B_GivePlayerXP(XP_HandMade);
 		Npc_RemoveInvItems(hero,itwr_magicpaper,1);
 		CreateInvItem(hero,ItSc_HarmUndead);
-		AI_PrintClr("Создан магический свиток",83,152,48);
+		AI_PrintClr( " Magic scroll created " , 83 , 152 , 48 );
 		//B_Say(self,self,"$ITEMREADY");
 		PC_MAKESCROLLS_ITSC_info();
 	}
 	else
 	{
-		//Print(PRINT_ProdItemsMissing);
-		AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+		// Print(PRINT_ProdItemsMissing);
+		AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 		B_Say(self,self,"$MISSINGINGREDIENTS");
 		PC_MAKESCROLLS_ITSC_info();
 	};
@@ -4740,14 +4741,14 @@ func void PC_MAKESCROLLS_itsc_icecube()
 		B_GivePlayerXP(XP_HandMade);
 		Npc_RemoveInvItems(hero,itwr_magicpaper,1);
 		CreateInvItem(hero,ItSc_IceCube);
-		AI_PrintClr("Создан магический свиток",83,152,48);
+		AI_PrintClr( " Magic scroll created " , 83 , 152 , 48 );
 		//B_Say(self,self,"$ITEMREADY");
 		PC_MAKESCROLLS_ITSC_info();
 	}
 	else
 	{
-		//Print(PRINT_ProdItemsMissing);
-		AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+		// Print(PRINT_ProdItemsMissing);
+		AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 		B_Say(self,self,"$MISSINGINGREDIENTS");
 		PC_MAKESCROLLS_ITSC_info();
 	};
@@ -4760,14 +4761,14 @@ func void PC_MAKESCROLLS_itsc_icewave()
 		B_GivePlayerXP(XP_HandMade);
 		Npc_RemoveInvItems(hero,itwr_magicpaper,1);
 		CreateInvItem(hero,ItSc_IceWave);
-		AI_PrintClr("Создан магический свиток",83,152,48);
+		AI_PrintClr( " Magic scroll created " , 83 , 152 , 48 );
 		//B_Say(self,self,"$ITEMREADY");
 		PC_MAKESCROLLS_ITSC_info();
 	}
 	else
 	{
-		//Print(PRINT_ProdItemsMissing);
-		AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+		// Print(PRINT_ProdItemsMissing);
+		AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 		B_Say(self,self,"$MISSINGINGREDIENTS");
 		PC_MAKESCROLLS_ITSC_info();
 	};
@@ -4780,14 +4781,14 @@ func void PC_MAKESCROLLS_itsc_tornado()
 		B_GivePlayerXP(XP_HandMade);
 		Npc_RemoveInvItems(hero,itwr_magicpaper,1);
 		CreateInvItem(hero,ItSc_Whirlwind);
-		AI_PrintClr("Создан магический свиток",83,152,48);
+		AI_PrintClr( " Magic scroll created " , 83 , 152 , 48 );
 		//B_Say(self,self,"$ITEMREADY");
 		PC_MAKESCROLLS_ITSC_info();
 	}
 	else
 	{
-		//Print(PRINT_ProdItemsMissing);
-		AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+		// Print(PRINT_ProdItemsMissing);
+		AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 		B_Say(self,self,"$MISSINGINGREDIENTS");
 		PC_MAKESCROLLS_ITSC_info();
 	};
@@ -4800,7 +4801,7 @@ func int CANONE_FIRE_COND()
 		return TRUE;
 	};
 
-	return FALSE;	
+	return  FALSE ;	
 };
 
 func void CANONE_FIRE_s1()
@@ -4811,14 +4812,14 @@ func void CANONE_FIRE_s1()
 
 	if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(her))
 	{
-		//print_percent_bar_none(ATR_STAMINA[0],ATR_STAMINA_MAX[0] * 10,"Выносливость",42,97);
+		// print_percent_bar_none(ATR_STAMINA[0],ATR_STAMINA_MAX[0] * 10,"Stamina",42,97);
 
 		if(CinemaMod == TRUE)
 		{
 			Wld_PlayEffect("DIALOGSCOPE_FX",hero,hero,0,0,0,FALSE);
 		};
 
-		self.aivar[AIV_INVINCIBLE] = TRUE;
+		self.aivar[ AIV_INVINCIBLE ] = TRUE ;
 		PLAYER_MOBSI_PRODUCTION = MOBSI_MEMORIES;
 		AI_ProcessInfos(her);
 	};
@@ -4855,7 +4856,7 @@ instance PC_CANONE_FIRE_SHOOT(C_Info)
 	condition = PC_CANONE_FIRE_SHOOT_Condition;
 	information = PC_CANONE_FIRE_SHOOT_Info;
 	permanent = TRUE;
-	description = "Произвести выстрел.";
+	description = " Fire a shot. " ;
 };
 
 func int PC_CANONE_FIRE_SHOOT_Condition()
@@ -4885,19 +4886,19 @@ func void PC_CANONE_FIRE_SHOOT_Info()
 		if((MIS_MagicPowder == LOG_Running) && (CanonIsFire == FALSE))
 		{
 			B_GivePlayerXP(300);
-			B_LogEntry(TOPIC_MagicPowder,"Судя по всему, магический порошок Галлахада для стрельбы из пушек работает. Надо сообщить ему об этом!");
+			B_LogEntry(TOPIC_MagicPowder, " It looks like Gallahad 's magic cannon powder is working. We should tell him about it! " );
 			CanonIsFire = TRUE;
 		};
 	}
 	else
 	{
-		//Print(PRINT_ProdItemsMissing);
-		AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+		// Print(PRINT_ProdItemsMissing);
+		AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 		B_Say(self,self,"$MISSINGINGREDIENTS");
 	};
 };
 
-//-----------------------------демонология--------------------------------------------------------
+// -----------------------demonology------------------ --------------------------------------
 
 func void DEMONCASTER_s1()
 {
@@ -4906,14 +4907,14 @@ func void DEMONCASTER_s1()
 
 	if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(her))
 	{
-		//print_percent_bar_none(ATR_STAMINA[0],ATR_STAMINA_MAX[0] * 10,"Выносливость",42,97);
+		// print_percent_bar_none(ATR_STAMINA[0],ATR_STAMINA_MAX[0] * 10,"Stamina",42,97);
 
 		if(CinemaMod == TRUE)
 		{
 			Wld_PlayEffect("DIALOGSCOPE_FX",hero,hero,0,0,0,FALSE);
 		};
 
-		self.aivar[AIV_INVINCIBLE] = TRUE;
+		self.aivar[ AIV_INVINCIBLE ] = TRUE ;
 		PLAYER_MOBSI_PRODUCTION = MOBSI_MEMORIES;
 		AI_ProcessInfos(her);
 	};
@@ -4949,7 +4950,7 @@ instance PC_DemonCaster_Rune(C_Info)
 	condition = PC_DemonCaster_Rune_Condition;
 	information = PC_DemonCaster_Rune_Info;
 	permanent = TRUE;
-	description = "Создать руну демонолога";
+	description = " Create a demonologist rune " ;
 };
 
 func int PC_DemonCaster_Rune_Condition()
@@ -4962,7 +4963,7 @@ func int PC_DemonCaster_Rune_Condition()
 
 func void PC_DemonCaster_Rune_Info()
 {
-	if((Npc_HasItems(hero,ItSc_SumDemon) >= 1) && (Npc_HasItems(hero,ItAt_DemonHeart) >= 1) && (Npc_HasItems(hero,ItMi_HighRuneBlank) >= 1) && (Npc_HasItems(hero,ItMi_Sulfur) >= 2) && (Npc_HasItems(hero,ItMi_Pitch) >= 3) && (Npc_HasItems(hero,ItMi_Coal) >= 1) && (Npc_HasItems(hero,ItMi_DarkPearl) >= 3))
+	if ((Npc_HasItems(hero,ItSc_SumDemon) >=  1 ) && (Npc_HasItems(hero,ItAt_DemonHeart) >=  1 ) && (Npc_HasItems(hero,ItMi_HighRuneBlank) >=  1 ) && (Npc_HasItems(hero,ItMi_Sulfur) >=  2 ) && (Npc_HasItems(hero,ItMi_Pitch) >=  3 ) && (Npc_HasItems(hero,ItMi_Coal) >=  1 ) && (Npc_HasItems(hero,ItMi_DarkPearl) >=  3 ))
 	{
 		B_GivePlayerXP(XP_HandMade_Rune);
 		Npc_RemoveInvItems(hero,ItSc_SumDemon,1);
@@ -4972,7 +4973,7 @@ func void PC_DemonCaster_Rune_Info()
 		Npc_RemoveInvItems(hero,ItMi_Coal,1);
 		Npc_RemoveInvItems(hero,ItMi_DarkPearl,3);
 		Npc_RemoveInvItems(hero,ItMi_HighRuneBlank,1);
-		CreateInvItems(hero,ItRu_SumDemon,1);
+		CreateInvItems(hero,ItRu_SumDemon, 1 );
 		AI_PrintClr(PRINT_RuneSuccess,83,152,48);
 		//B_Say(self,self,"$ITEMREADY");
 		SummonRuneDone = TRUE;
@@ -4981,7 +4982,7 @@ func void PC_DemonCaster_Rune_Info()
 	}
 	else
 	{
-		AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+		AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 		B_Say(self,self,"$MISSINGINGREDIENTS");
 	};
 };
@@ -4993,7 +4994,7 @@ instance PC_DemonCaster_UpRune(C_Info)
 	condition = PC_DemonCaster_UpRune_Condition;
 	information = PC_DemonCaster_UpRune_Info;
 	permanent = TRUE;
-	description = "Улучшить руну демонолога";
+	description = " Upgrade Demonologist Rune " ;
 };
 
 func int PC_DemonCaster_UpRune_Condition()
@@ -5011,27 +5012,27 @@ func void PC_DemonCaster_UpRune_Info()
 
 	if(DemonologSkill[0] == 0)
 	{
-		Info_AddChoice(PC_DemonCaster_UpRune,"Руна 1 круга демонологии (Очки обучения: 5, малая эссенция демона)",PC_DemonCaster_UpRune_01);
+		Info_AddChoice(PC_DemonCaster_UpRune, " Rune 1st Demonology Circle (Training Points: 5, Lesser Demon Essence) " ,PC_DemonCaster_UpRune_01);
 	};
 	if(DemonologSkill[0] == 1)
 	{
-		Info_AddChoice(PC_DemonCaster_UpRune,"Руна 2 круга демонологии (Очки обучения: 10, эссенция демона)",PC_DemonCaster_UpRune_02);
+		Info_AddChoice(PC_DemonCaster_UpRune, " Rune 2nd Demonology Circle (Training Points: 10, Demon Essence) " ,PC_DemonCaster_UpRune_02);
 	};
 	if(DemonologSkill[0] == 2)
 	{
-		Info_AddChoice(PC_DemonCaster_UpRune,"Руна 3 круга демонологии (Очки обучения: 15, сильная эссенция демона)",PC_DemonCaster_UpRune_03);
+		Info_AddChoice(PC_DemonCaster_UpRune, " Rune 3rd Demonology Circle (Training Points: 15, Strong Demon Essence) " ,PC_DemonCaster_UpRune_03);
 	};
 	if((DemonologSkill[0] == 3) && (XARDASTEACHCASTDEMON_LORD == TRUE))
 	{
-		Info_AddChoice(PC_DemonCaster_UpRune,"Руна 4 круга демонологии (Очки обучения: 20, малая эссенция архидемона)",PC_DemonCaster_UpRune_04);
+		Info_AddChoice(PC_DemonCaster_UpRune, " Rune 4 Demonology Circles (Training Points: 20, Lesser Archdemon Essence) " ,PC_DemonCaster_UpRune_04);
 	};
 	if((DemonologSkill[0] == 4) && (XARDASTEACHCASTDEMON_LORD == TRUE))
 	{
-		Info_AddChoice(PC_DemonCaster_UpRune,"Руна 5 круга демонологии (Очки обучения: 25, эссенция архидемона)",PC_DemonCaster_UpRune_05);
+		Info_AddChoice(PC_DemonCaster_UpRune, " Rune 5th Demonology Circle (Training Points: 25, Archdemon Essence) " ,PC_DemonCaster_UpRune_05);
 	};
 	if((DemonologSkill[0] == 5) && (XARDASTEACHCASTDEMON_LORD == TRUE))
 	{
-		Info_AddChoice(PC_DemonCaster_UpRune,"Руна 6 круга демонологии (Очки обучения: 30, сильная эссенция архидемона)",PC_DemonCaster_UpRune_06);
+		Info_AddChoice(PC_DemonCaster_UpRune, " Rune 6th Demonology Circle (Training Points: 30, Strong Arch Demon Essence) " ,PC_DemonCaster_UpRune_06);
 	};
 };
 
@@ -5049,7 +5050,7 @@ func void PC_DemonCaster_UpRune_01()
 		DemonologSkill[0] = 1;
 		hero.lp = hero.lp - 5;
 		Npc_RemoveInvItems(hero,ItRu_SumDemon,1);
-		CreateInvItems(hero,ItRu_SumDemon_01,1);
+		CreateInvItems(hero,ItRu_SumDemon_01, 1 );
 		Npc_RemoveInvItems(hero,ItMi_SMD_Mutagen,1);
 		Wld_PlayEffect("SPELLFX_BELIARSHRINE",hero,hero,0,0,0,FALSE);
 		Wld_PlayEffect("spellFX_INCOVATION_VIOLET",self,self,0,0,0,FALSE);
@@ -5065,7 +5066,7 @@ func void PC_DemonCaster_UpRune_01()
 		}
 		else
 		{
-			AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+			AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 		};
 	};
 
@@ -5074,18 +5075,18 @@ func void PC_DemonCaster_UpRune_01()
 
 func void PC_DemonCaster_UpRune_02()
 {
-	if((hero.lp >= 10) && (Npc_HasItems(hero,ItMi_MD_Mutagen) >= 1) && (Npc_HasItems(hero,ItRu_SumDemon_01) >= 1))
+	if (( hero . lp >=  10 ) && ( Npc_HasItems ( hero , ItMi_MD_Mutagen ) >=  1 ) && ( Npc_HasItems ( hero , ItRu_SumDemon_01 ) >=  1 )) ;
 	{
 		AI_Wait(hero,1);
 		Snd_Play("DEM_AMBIENT");
 		DemonologSkill[0] = 2;
 		hero.lp = hero.lp - 10;
 		Npc_RemoveInvItems(hero,ItRu_SumDemon_01,1);
-		CreateInvItems(hero,ItRu_SumDemon_02,1);
+		CreateInvItems(hero,ItRu_SumDemon_02, 1 );
 		Npc_RemoveInvItems(hero,ItMi_MD_Mutagen,1);
 		Wld_PlayEffect("SPELLFX_BELIARSHRINE",hero,hero,0,0,0,FALSE);
 		Wld_PlayEffect("spellFX_INCOVATION_VIOLET",self,self,0,0,0,FALSE);
-		AI_Print(PRINT_LEARNDEMONOLOGFC2);
+		AI_Print( PRINT_LEARNDEMONOLOGFC2 );
 		AI_PrintClr(PRINT_UpRuneSuccess,83,152,48);
 		Npc_SetTalentSkill(self,NPC_TALENT_DEMONOLOG,3);
 	}
@@ -5097,7 +5098,7 @@ func void PC_DemonCaster_UpRune_02()
 		}
 		else
 		{
-			AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+			AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 		};
 	};
 
@@ -5106,14 +5107,14 @@ func void PC_DemonCaster_UpRune_02()
 
 func void PC_DemonCaster_UpRune_03()
 {
-	if((hero.lp >= 15) && (Npc_HasItems(hero,ItMi_LMD_Mutagen) >= 1) && (Npc_HasItems(hero,ItRu_SumDemon_02) >= 1))
+	if ((hero.lp >=  15 ) && (Npc_HasItems(hero,ItMy_LMD_Mutagen) >=  1 ) && (Npc_HasItems(hero,ItRu_SumDemon_02) >=  1 )) ;
 	{
 		AI_Wait(hero,1);
 		Snd_Play("DEM_AMBIENT");
 		DemonologSkill[0] = 3;
 		hero.lp = hero.lp - 15;
 		Npc_RemoveInvItems(hero,ItRu_SumDemon_02,1);
-		CreateInvItems(hero,ItRu_SumDemon_03,1);
+		CreateInvItems(hero,ItRu_SumDemon_03, 1 );
 		Npc_RemoveInvItems(hero,ItMi_LMD_Mutagen,1);
 		Wld_PlayEffect("SPELLFX_BELIARSHRINE",hero,hero,0,0,0,FALSE);
 		Wld_PlayEffect("spellFX_INCOVATION_VIOLET",self,self,0,0,0,FALSE);
@@ -5129,7 +5130,7 @@ func void PC_DemonCaster_UpRune_03()
 		}
 		else
 		{
-			AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+			AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 		};
 	};
 
@@ -5138,7 +5139,7 @@ func void PC_DemonCaster_UpRune_03()
 
 func void PC_DemonCaster_UpRune_04()
 {
-	if((hero.lp >= 20) && (Npc_HasItems(hero,ItMi_SMAD_Mutagen) >= 1) && (Npc_HasItems(hero,ItRu_SumDemon_03) >= 1))
+	if ((hero.lp >=  20 ) && (Npc_HasItems(hero,ItMy_SMAD_Mutagen) >=  1 ) && (Npc_HasItems(hero,ItRu_SumDemon_03) >=  1 )) ;
 	{
 		AI_Wait(hero,1);
 		Snd_Play("DEM_AMBIENT");
@@ -5146,7 +5147,7 @@ func void PC_DemonCaster_UpRune_04()
 		hero.lp = hero.lp - 20;
 		Npc_RemoveInvItems(hero,ItRu_SumDemon_03,1);
 		Npc_RemoveInvItems(hero,ItMi_SMAD_Mutagen,1);
-		CreateInvItems(hero,ItRu_SumDemon_04,1);
+		CreateInvItems(hero,ItRu_SumDemon_04, 1 );
 		Wld_PlayEffect("SPELLFX_BELIARSHRINE",hero,hero,0,0,0,FALSE);
 		Wld_PlayEffect("spellFX_INCOVATION_VIOLET",self,self,0,0,0,FALSE);
 		AI_Print(PRINT_LEARNDEMONOLOGFC4);
@@ -5161,7 +5162,7 @@ func void PC_DemonCaster_UpRune_04()
 		}
 		else
 		{
-			AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+			AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 		};
 	};
 
@@ -5170,7 +5171,7 @@ func void PC_DemonCaster_UpRune_04()
 
 func void PC_DemonCaster_UpRune_05()
 {
-	if((hero.lp >= 25) && (Npc_HasItems(hero,ItMi_MAD_Mutagen) >= 1) && (Npc_HasItems(hero,ItRu_SumDemon_04) >= 1))
+	if ((hero.lp >=  25 ) && (Npc_HasItems(hero,ItMy_MAD_Mutagen) >=  1 ) && (Npc_HasItems(hero,ItRu_SumDemon_04) >=  1 )) ;
 	{
 		AI_Wait(hero,1);
 		Snd_Play("DEM_AMBIENT");
@@ -5178,7 +5179,7 @@ func void PC_DemonCaster_UpRune_05()
 		hero.lp = hero.lp - 25;
 		Npc_RemoveInvItems(hero,ItMi_MAD_Mutagen,1);
 		Npc_RemoveInvItems(hero,ItRu_SumDemon_04,1);
-		CreateInvItems(hero,ItRu_SumDemon_05,1);
+		CreateInvItems(hero,ItRu_SumDemon_05, 1 );
 		Wld_PlayEffect("SPELLFX_BELIARSHRINE",hero,hero,0,0,0,FALSE);
 		Wld_PlayEffect("spellFX_INCOVATION_VIOLET",self,self,0,0,0,FALSE);
 		AI_Print(PRINT_LEARNDEMONOLOGFC5);
@@ -5193,7 +5194,7 @@ func void PC_DemonCaster_UpRune_05()
 		}
 		else
 		{
-			AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+			AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 		};
 	};
 
@@ -5202,7 +5203,7 @@ func void PC_DemonCaster_UpRune_05()
 
 func void PC_DemonCaster_UpRune_06()
 {
-	if((hero.lp >= 30) && (Npc_HasItems(hero,ItMi_LMAD_Mutagen) >= 1) && (Npc_HasItems(hero,ItRu_SumDemon_05) >= 1))
+	if (( hero . lp >=  30 ) && ( Npc_HasItems ( hero , ItMi_LMAD_Mutagen ) >=  1 ) && ( Npc_HasItems ( hero , ItRu_SumDemon_05 ) >=  1 )) ;
 	{
 		AI_Wait(hero,1);
 		Snd_Play("DEM_AMBIENT");
@@ -5210,7 +5211,7 @@ func void PC_DemonCaster_UpRune_06()
 		hero.lp = hero.lp - 30;
 		Npc_RemoveInvItems(hero,ItMi_LMAD_Mutagen,1);
 		Npc_RemoveInvItems(hero,ItRu_SumDemon_05,1);
-		CreateInvItems(hero,ItRu_SumDemon_06,1);
+		CreateInvItems(hero,ItRu_SumDemon_06, 1 );
 		Wld_PlayEffect("SPELLFX_BELIARSHRINE",hero,hero,0,0,0,FALSE);
 		Wld_PlayEffect("spellFX_INCOVATION_VIOLET",self,self,0,0,0,FALSE);
 		AI_Print(PRINT_LEARNDEMONOLOGFC6);
@@ -5225,7 +5226,7 @@ func void PC_DemonCaster_UpRune_06()
 		}
 		else
 		{
-			AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+			AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 		};
 	};
 
