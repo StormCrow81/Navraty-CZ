@@ -1,4 +1,5 @@
 
+
 func void Use_Runemaking_KDW_CIRC1_S1()
 {
 	var C_Npc her;
@@ -13,17 +14,17 @@ func void Use_Runemaking_KDW_CIRC1_S1()
 		Doc_SetPage(nDocID,1,"Book_Mage_R.tga",0);
 		Doc_SetFont(nDocID,-1,FONT_Book);
 		Doc_SetMargins(nDocID,0,275,20,30,20,1);
-		Doc_PrintLine(nDocID,0,"ПЕРВЫЙ КРУГ");
+		Doc_PrintLine(nDocID, 0 , " FIRST CIRCLE " );
 		Doc_PrintLine(nDocID,0,"");
-		Doc_PrintLines(nDocID,0,"Руны первого Круга и необходимые для их изготовления ингредиенты: ");
+		Doc_PrintLines(nDocID, 0 , " Runes of the first Circle and the ingredients needed to make them: " );
 		Doc_PrintLine(nDocID,0,"");
-		Doc_PrintLine(nDocID,0,"- Молния -");
-		Doc_PrintLine(nDocID,0,"Горный хрусталь");
+		Doc_PrintLine(nDocID, 0 , " - Lightning - " );
+		Doc_PrintLine(nDocID, 0 , " Rhinestone " );
 		Doc_PrintLine(nDocID,0,"");
 		Doc_PrintLine(nDocID,0,"");
 		Doc_PrintLine(nDocID,0,"");
-		Doc_PrintLine(nDocID,0,"- Ледяная стрела -");
-		Doc_PrintLine(nDocID,0,"Ледяной кварц");
+		Doc_PrintLine(nDocID, 0 , " - Frostbolt - " );
+		Doc_PrintLine(nDocID, 0 , " Ice Quartz " );
 		Doc_PrintLine(nDocID,0,"");
 		Doc_PrintLine(nDocID,0,"");
 		Doc_PrintLine(nDocID,0,"");
@@ -35,11 +36,11 @@ func void Use_Runemaking_KDW_CIRC1_S1()
 		Doc_PrintLine(nDocID,0,"");
 		Doc_SetMargins(nDocID,-1,30,20,275,20,1);
 		Doc_PrintLine(nDocID,1,"");
-		Doc_PrintLines(nDocID,1,"Для изготовления руны необходимы ВСЕ указанные ингредиенты.");
+		Doc_PrintLines(nDocID, 1 , " ALL of the listed ingredients are required to make a rune. " );
 		Doc_PrintLine(nDocID,1,"");
-		Doc_PrintLines(nDocID,1,"Изготовителю должна быть известна формула магии, он должен иметь рунический камень, а также свиток заклинания.");
+		Doc_PrintLines(nDocID, 1 , " The maker must know the magic formula, he must have a runestone, as well as a spell scroll. " );
 		Doc_PrintLine(nDocID,1,"");
-		Doc_PrintLines(nDocID,1,"Только если эти условия выполнены он может приступить к изготовлению руны.");
+		Doc_PrintLines(nDocID, 1 , " Only if these conditions are met, can he start crafting the rune. " );
 		Doc_PrintLine(nDocID,1,"");
 		Doc_PrintLine(nDocID,1,"");
 		Doc_PrintLine(nDocID,1,"");
@@ -56,7 +57,7 @@ func void Use_Runemaking_KDW_CIRC1_S1()
 		}
 		else
 		{
-			rnd = Hlp_Random(100);
+			rnd = Hlp_Random( 100 );
 			if(rnd <= 30)
 			{
 				B_Say(self,self,"$NOTHINGNEW");
@@ -74,8 +75,8 @@ func void Use_Runemaking_KDW_CIRC1_S1()
 		{
 			ATR_INTELLECT += 1;
 			Npc_SetTalentSkill(self,NPC_TALENT_INTELLECT,ATR_INTELLECT);
-			AI_Print("Интеллект + 1");
-			BookBonus_96 = TRUE;
+			AI_Print( " Intelligence + 1 " );
+			BookBonus_96 = TRUE ;
 		};
 	};
 };
@@ -94,36 +95,36 @@ func void Use_Runemaking_KDW_CIRC2_S1()
 		Doc_SetPage(nDocID,1,"Book_Mage_R.tga",0);
 		Doc_SetFont(nDocID,-1,FONT_Book);
 		Doc_SetMargins(nDocID,0,275,20,30,20,1);
-		Doc_PrintLine(nDocID,0,"ВТОРОЙ КРУГ");
+		Doc_PrintLine(nDocID, 0 , " SECOND CIRCLE " );
 		Doc_PrintLine(nDocID,0,"");
-		Doc_PrintLines(nDocID,0,"Руны второго Круга и необходимые для их изготовления ингредиенты: ");
+		Doc_PrintLines(nDocID, 0 , " Runes of the second Circle and the ingredients needed to make them: " );
 		Doc_PrintLine(nDocID,0,"");
-		Doc_PrintLine(nDocID,0,"- Ледяное копье -");
-		Doc_PrintLine(nDocID,0,"Ледяной кварц");
-		Doc_PrintLine(nDocID,0,"Горный хрусталь");
+		Doc_PrintLine(nDocID, 0 , " - Ice Lance - " );
+		Doc_PrintLine(nDocID, 0 , " Ice Quartz " );
+		Doc_PrintLine(nDocID, 0 , " Rhinestone " );
 		Doc_PrintLine(nDocID,0,"");
 		Doc_PrintLine(nDocID,0,"");
-		Doc_PrintLine(nDocID,0,"- Призыв снежной стаи -");
-		Doc_PrintLine(nDocID,0,"Шкура волка");
-		Doc_PrintLine(nDocID,0,"Ледяной кварц");
+		Doc_PrintLine(nDocID, 0 , " - Summon snow pack - " );
+		Doc_PrintLine(nDocID, 0 , " Wolf Skin " );
+		Doc_PrintLine(nDocID, 0 , " Ice Quartz " );
 		Doc_PrintLine(nDocID,0,"");
 		Doc_PrintLine(nDocID,0,"");
 
 		if(LegoSpells == TRUE)
 		{
-			Doc_PrintLine(nDocID,0,"- Ледяная вспышка -");
-			Doc_PrintLine(nDocID,0,"Горный хрусталь");
-			Doc_PrintLine(nDocID,0,"Ледяной кварц");
+			Doc_PrintLine(nDocID, 0 , " - Ice Flash - " );
+			Doc_PrintLine(nDocID, 0 , " Rhinestone " );
+			Doc_PrintLine(nDocID, 0 , " Ice Quartz " );
 		};
 
 		Doc_PrintLine(nDocID,0,"");
 		Doc_SetMargins(nDocID,-1,30,20,275,20,1);
 		Doc_PrintLine(nDocID,1,"");
-		Doc_PrintLines(nDocID,1,"Для изготовления руны необходимы ВСЕ указанные ингредиенты.");
+		Doc_PrintLines(nDocID, 1 , " ALL of the listed ingredients are required to make a rune. " );
 		Doc_PrintLine(nDocID,1,"");
-		Doc_PrintLines(nDocID,1,"Изготовителю должна быть известна формула магии, он должен иметь рунический камень, а также свиток заклинания.");
+		Doc_PrintLines(nDocID, 1 , " The maker must know the magic formula, he must have a runestone, as well as a spell scroll. " );
 		Doc_PrintLine(nDocID,1,"");
-		Doc_PrintLines(nDocID,1,"Только если эти условия выполнены он может приступить к изготовлению руны.");
+		Doc_PrintLines(nDocID, 1 , " Only if these conditions are met, can he start crafting the rune. " );
 		Doc_PrintLine(nDocID,1,"");
 		Doc_PrintLine(nDocID,1,"");
 		Doc_PrintLine(nDocID,1,"");
@@ -140,7 +141,7 @@ func void Use_Runemaking_KDW_CIRC2_S1()
 		}
 		else
 		{
-			rnd = Hlp_Random(100);
+			rnd = Hlp_Random( 100 );
 			if(rnd <= 30)
 			{
 				B_Say(self,self,"$NOTHINGNEW");
@@ -158,8 +159,8 @@ func void Use_Runemaking_KDW_CIRC2_S1()
 		{
 			ATR_INTELLECT += 1;
 			Npc_SetTalentSkill(self,NPC_TALENT_INTELLECT,ATR_INTELLECT);
-			AI_Print("Интеллект + 1");
-			BookBonus_97 = TRUE;
+			AI_Print( " Intelligence + 1 " );
+			BookBonus_97 = TRUE ;
 		};
 	};
 };
@@ -178,28 +179,28 @@ func void Use_Runemaking_KDW_CIRC3_S1()
 		Doc_SetPage(nDocID,1,"Book_Mage_R.tga",0);
 		Doc_SetFont(nDocID,-1,FONT_Book);
 		Doc_SetMargins(nDocID,0,275,20,30,20,1);
-		Doc_PrintLine(nDocID,0,"ТРЕТИЙ КРУГ");
+		Doc_PrintLine(nDocID, 0 , " THIRD CIRCLE " );
 		Doc_PrintLine(nDocID,0,"");
-		Doc_PrintLines(nDocID,0,"Руны третьего Круга и необходимые для их изготовления ингредиенты: ");
+		Doc_PrintLines(nDocID, 0 , " Runes of the third Circle and the ingredients needed to make them: " );
 		Doc_PrintLine(nDocID,0,"");
-		Doc_PrintLine(nDocID,0,"- Ледяная глыба -");
-		Doc_PrintLine(nDocID,0,"Ледяной кварц");
-		Doc_PrintLine(nDocID,0,"Аквамарин");
+		Doc_PrintLine(nDocID, 0 , " - Ice block - " );
+		Doc_PrintLine(nDocID, 0 , " Ice Quartz " );
+		Doc_PrintLine(nDocID, 0 , " Aquamarine " );
 		Doc_PrintLine(nDocID,0,"");
 		Doc_PrintLine(nDocID,0,"");
-		Doc_PrintLine(nDocID,0,"- Шаровая молния -");
-		Doc_PrintLine(nDocID,0,"Горный хрусталь");
+		Doc_PrintLine(nDocID, 0 , " - Fireball - " );
+		Doc_PrintLine(nDocID, 0 , " Rhinestone " );
 		Doc_PrintLine(nDocID,0,"Сера");
 		Doc_PrintLine(nDocID,0,"");
 		Doc_PrintLine(nDocID,0,"");
 		Doc_PrintLine(nDocID,0,"");
 		Doc_SetMargins(nDocID,-1,30,20,275,20,1);
 		Doc_PrintLine(nDocID,1,"");
-		Doc_PrintLines(nDocID,1,"Для изготовления руны необходимы ВСЕ указанные ингредиенты.");
+		Doc_PrintLines(nDocID, 1 , " ALL of the listed ingredients are required to make a rune. " );
 		Doc_PrintLine(nDocID,1,"");
-		Doc_PrintLines(nDocID,1,"Изготовителю должна быть известна формула магии, он должен иметь рунический камень, а также свиток заклинания.");
+		Doc_PrintLines(nDocID, 1 , " The maker must know the magic formula, he must have a runestone, as well as a spell scroll. " );
 		Doc_PrintLine(nDocID,1,"");
-		Doc_PrintLines(nDocID,1,"Только если эти условия выполнены он может приступить к изготовлению руны.");
+		Doc_PrintLines(nDocID, 1 , " Only if these conditions are met, can he start crafting the rune. " );
 		Doc_PrintLine(nDocID,1,"");
 		Doc_PrintLine(nDocID,1,"");
 		Doc_PrintLine(nDocID,1,"");
@@ -216,7 +217,7 @@ func void Use_Runemaking_KDW_CIRC3_S1()
 		}
 		else
 		{
-			rnd = Hlp_Random(100);
+			rnd = Hlp_Random( 100 );
 			if(rnd <= 30)
 			{
 				B_Say(self,self,"$NOTHINGNEW");
@@ -234,8 +235,8 @@ func void Use_Runemaking_KDW_CIRC3_S1()
 		{
 			ATR_INTELLECT += 1;
 			Npc_SetTalentSkill(self,NPC_TALENT_INTELLECT,ATR_INTELLECT);
-			AI_Print("Интеллект + 1");
-			BookBonus_98 = TRUE;
+			AI_Print( " Intelligence + 1 " );
+			BookBonus_98 = TRUE ;
 		};
 	};
 };
@@ -254,20 +255,20 @@ func void Use_Runemaking_KDW_CIRC4_S1()
 		Doc_SetPage(nDocID,1,"Book_Mage_R.tga",0);
 		Doc_SetFont(nDocID,-1,FONT_Book);
 		Doc_SetMargins(nDocID,0,275,20,30,20,1);
-		Doc_PrintLine(nDocID,0,"ЧЕТВЕРТЫЙ КРУГ");
+		Doc_PrintLine(nDocID, 0 , " FOURTH CIRCLE " );
 		Doc_PrintLine(nDocID,0,"");
-		Doc_PrintLines(nDocID,0,"Руны четвертого Круга и необходимые для их изготовления ингредиенты: ");
+		Doc_PrintLines(nDocID, 0 , " Runes of the fourth Circle and the ingredients needed to make them: " );
 		Doc_PrintLine(nDocID,0,"");
-		Doc_PrintLine(nDocID,0,"- Удар молнии -");
-		Doc_PrintLine(nDocID,0,"Горный хрусталь");
-		Doc_PrintLine(nDocID,0,"Ледяной кварц");
+		Doc_PrintLine(nDocID, 0 , " - Lightning strike - " );
+		Doc_PrintLine(nDocID, 0 , " Rhinestone " );
+		Doc_PrintLine(nDocID, 0 , " Ice Quartz " );
 		Doc_PrintLine(nDocID,0,"");
 		Doc_PrintLine(nDocID,0,"");
 		Doc_PrintLine(nDocID,0,"");
-		Doc_PrintLine(nDocID,0,"- Призыв ледяного голема -");
-		Doc_PrintLine(nDocID,0,"Сердце ледяного голема");
-		Doc_PrintLine(nDocID,0,"Ледяной кварц");
-		Doc_PrintLine(nDocID,0,"Аквамарин");
+		Doc_PrintLine(nDocID, 0 , " - Summon Ice Golem - " );
+		Doc_PrintLine(nDocID, 0 , " Ice Golem Heart " );
+		Doc_PrintLine(nDocID, 0 , " Ice Quartz " );
+		Doc_PrintLine(nDocID, 0 , " Aquamarine " );
 		Doc_PrintLine(nDocID,0,"");
 		Doc_PrintLine(nDocID,0,"");
 		Doc_PrintLine(nDocID,0,"");
@@ -275,11 +276,11 @@ func void Use_Runemaking_KDW_CIRC4_S1()
 		Doc_PrintLine(nDocID,0,"");
 		Doc_SetMargins(nDocID,-1,30,20,275,20,1);
 		Doc_PrintLine(nDocID,1,"");
-		Doc_PrintLines(nDocID,1,"Для изготовления руны необходимы ВСЕ указанные ингредиенты.");
+		Doc_PrintLines(nDocID, 1 , " ALL of the listed ingredients are required to make a rune. " );
 		Doc_PrintLine(nDocID,1,"");
-		Doc_PrintLines(nDocID,1,"Изготовителю должна быть известна формула магии, он должен иметь рунический камень, а также свиток заклинания.");
+		Doc_PrintLines(nDocID, 1 , " The maker must know the magic formula, he must have a runestone, as well as a spell scroll. " );
 		Doc_PrintLine(nDocID,1,"");
-		Doc_PrintLines(nDocID,1,"Только если эти условия выполнены он может приступить к изготовлению руны.");
+		Doc_PrintLines(nDocID, 1 , " Only if these conditions are met, can he start crafting the rune. " );
 		Doc_PrintLine(nDocID,1,"");
 		Doc_PrintLine(nDocID,1,"");
 		Doc_PrintLine(nDocID,1,"");
@@ -296,7 +297,7 @@ func void Use_Runemaking_KDW_CIRC4_S1()
 		}
 		else
 		{
-			rnd = Hlp_Random(100);
+			rnd = Hlp_Random( 100 );
 			if(rnd <= 30)
 			{
 				B_Say(self,self,"$NOTHINGNEW");
@@ -314,8 +315,8 @@ func void Use_Runemaking_KDW_CIRC4_S1()
 		{
 			ATR_INTELLECT += 1;
 			Npc_SetTalentSkill(self,NPC_TALENT_INTELLECT,ATR_INTELLECT);
-			AI_Print("Интеллект + 1");
-			BookBonus_99 = TRUE;
+			AI_Print( " Intelligence + 1 " );
+			BookBonus_99 = TRUE ;
 		};
 	};
 };
@@ -334,19 +335,19 @@ func void Use_Runemaking_KDW_CIRC5_S1()
 		Doc_SetPage(nDocID,1,"Book_Mage_R.tga",0);
 		Doc_SetFont(nDocID,-1,FONT_Book);
 		Doc_SetMargins(nDocID,0,275,20,30,20,1);
-		Doc_PrintLine(nDocID,0,"ПЯТЫЙ КРУГ");
+		Doc_PrintLine(nDocID, 0 , " FIFTH CIRCLE " );
 		Doc_PrintLine(nDocID,0,"");
-		Doc_PrintLines(nDocID,0,"Руны пятого Круга и необходимые для их изготовления ингредиенты: ");
+		Doc_PrintLines(nDocID, 0 , " Runes of the fifth Circle and the ingredients needed to make them: " );
 		Doc_PrintLine(nDocID,0,"");
-		Doc_PrintLine(nDocID,0,"- Ледяная волна -");
-		Doc_PrintLine(nDocID,0,"Ледяной кварц");
-		Doc_PrintLine(nDocID,0,"Аквамарин");
+		Doc_PrintLine(nDocID, 0 , " - Ice wave - " );
+		Doc_PrintLine(nDocID, 0 , " Ice Quartz " );
+		Doc_PrintLine(nDocID, 0 , " Aquamarine " );
 		Doc_PrintLine(nDocID,0,"");
 		Doc_PrintLine(nDocID,0,"");
 		Doc_PrintLine(nDocID,0,"");
-		Doc_PrintLine(nDocID,0,"- Кулак воды -");
-		Doc_PrintLine(nDocID,0,"Аквамарин");
-		Doc_PrintLine(nDocID,0,"Горный хрусталь");
+		Doc_PrintLine(nDocID, 0 , " - Water Fist - " );
+		Doc_PrintLine(nDocID, 0 , " Aquamarine " );
+		Doc_PrintLine(nDocID, 0 , " Rhinestone " );
 		Doc_PrintLine(nDocID,0,"");
 		Doc_PrintLine(nDocID,0,"");
 		Doc_PrintLine(nDocID,0,"");
@@ -354,11 +355,11 @@ func void Use_Runemaking_KDW_CIRC5_S1()
 		Doc_PrintLine(nDocID,0,"");
 		Doc_SetMargins(nDocID,-1,30,20,275,20,1);
 		Doc_PrintLine(nDocID,1,"");
-		Doc_PrintLines(nDocID,1,"Для изготовления руны необходимы ВСЕ указанные ингредиенты.");
+		Doc_PrintLines(nDocID, 1 , " ALL of the listed ingredients are required to make a rune. " );
 		Doc_PrintLine(nDocID,1,"");
-		Doc_PrintLines(nDocID,1,"Изготовителю должна быть известна формула магии, он должен иметь рунический камень, а также свиток заклинания.");
+		Doc_PrintLines(nDocID, 1 , " The maker must know the magic formula, he must have a runestone, as well as a spell scroll. " );
 		Doc_PrintLine(nDocID,1,"");
-		Doc_PrintLines(nDocID,1,"Только если эти условия выполнены он может приступить к изготовлению руны.");
+		Doc_PrintLines(nDocID, 1 , " Only if these conditions are met, can he start crafting the rune. " );
 		Doc_PrintLine(nDocID,1,"");
 		Doc_PrintLine(nDocID,1,"");
 		Doc_PrintLine(nDocID,1,"");
@@ -375,7 +376,7 @@ func void Use_Runemaking_KDW_CIRC5_S1()
 		}
 		else
 		{
-			rnd = Hlp_Random(100);
+			rnd = Hlp_Random( 100 );
 			if(rnd <= 30)
 			{
 				B_Say(self,self,"$NOTHINGNEW");
@@ -393,8 +394,8 @@ func void Use_Runemaking_KDW_CIRC5_S1()
 		{
 			ATR_INTELLECT += 1;
 			Npc_SetTalentSkill(self,NPC_TALENT_INTELLECT,ATR_INTELLECT);
-			AI_Print("Интеллект + 1");
-			BookBonus_100 = TRUE;
+			AI_Print( " Intelligence + 1 " );
+			BookBonus_100 = TRUE ;
 		};
 	};
 };
@@ -413,18 +414,18 @@ func void Use_Runemaking_KDW_CIRC6_S1()
 		Doc_SetPage(nDocID,1,"Book_Mage_R.tga",0);
 		Doc_SetFont(nDocID,-1,FONT_Book);
 		Doc_SetMargins(nDocID,0,275,20,30,20,1);
-		Doc_PrintLine(nDocID,0,"ШЕСТОЙ КРУГ");
+		Doc_PrintLine(nDocID, 0 , " SIXTH CIRCLE " );
 		Doc_PrintLine(nDocID,0,"");
-		Doc_PrintLines(nDocID,0,"Руны шестого Круга и необходимые для их изготовления ингредиенты: ");
+		Doc_PrintLines(nDocID, 0 , " Runes of the sixth Circle and the ingredients needed to make them: " );
 		Doc_PrintLine(nDocID,0,"");
 		Doc_PrintLine(nDocID,0,"- Шторм -");
-		Doc_PrintLine(nDocID,0,"Ледяной кварц");
-		Doc_PrintLine(nDocID,0,"Крыло кровавого шершня");
+		Doc_PrintLine(nDocID, 0 , " Ice Quartz " );
+		Doc_PrintLine(nDocID, 0 , " Blood Hornet Wing " );
 		Doc_PrintLine(nDocID,0,"");
 		Doc_PrintLine(nDocID,0,"");
 		Doc_PrintLine(nDocID,0,"");
-		Doc_PrintLine(nDocID,0,"- Гейзер -");
-		Doc_PrintLine(nDocID,0,"Аквамарин");
+		Doc_PrintLine(nDocID, 0 , " - Geyser - " );
+		Doc_PrintLine(nDocID, 0 , " Aquamarine " );
 		Doc_PrintLine(nDocID,0,"");
 		Doc_PrintLine(nDocID,0,"");
 		Doc_PrintLine(nDocID,0,"");
@@ -434,11 +435,11 @@ func void Use_Runemaking_KDW_CIRC6_S1()
 		Doc_PrintLine(nDocID,0,"");
 		Doc_SetMargins(nDocID,-1,30,20,275,20,1);
 		Doc_PrintLine(nDocID,1,"");
-		Doc_PrintLines(nDocID,1,"Для изготовления руны необходимы ВСЕ указанные ингредиенты.");
+		Doc_PrintLines(nDocID, 1 , " ALL of the listed ingredients are required to make a rune. " );
 		Doc_PrintLine(nDocID,1,"");
-		Doc_PrintLines(nDocID,1,"Изготовителю должна быть известна формула магии, он должен иметь рунический камень, а также свиток заклинания.");
+		Doc_PrintLines(nDocID, 1 , " The maker must know the magic formula, he must have a runestone, as well as a spell scroll. " );
 		Doc_PrintLine(nDocID,1,"");
-		Doc_PrintLines(nDocID,1,"Только если эти условия выполнены он может приступить к изготовлению руны.");
+		Doc_PrintLines(nDocID, 1 , " Only if these conditions are met, can he start crafting the rune. " );
 		Doc_PrintLine(nDocID,1,"");
 		Doc_PrintLine(nDocID,1,"");
 		Doc_PrintLine(nDocID,1,"");
@@ -455,7 +456,7 @@ func void Use_Runemaking_KDW_CIRC6_S1()
 		}
 		else
 		{
-			rnd = Hlp_Random(100);
+			rnd = Hlp_Random( 100 );
 			if(rnd <= 30)
 			{
 				B_Say(self,self,"$NOTHINGNEW");
@@ -473,8 +474,8 @@ func void Use_Runemaking_KDW_CIRC6_S1()
 		{
 			ATR_INTELLECT += 1;
 			Npc_SetTalentSkill(self,NPC_TALENT_INTELLECT,ATR_INTELLECT);
-			AI_Print("Интеллект + 1");
-			BookBonus_101 = TRUE;
+			AI_Print( " Intelligence + 1 " );
+			BookBonus_101 = TRUE ;
 		};
 	};
 };
