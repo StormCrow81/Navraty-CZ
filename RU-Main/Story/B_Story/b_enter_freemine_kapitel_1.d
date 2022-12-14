@@ -1,4 +1,5 @@
 
+
 func void b_enter_freemine_kapitel_1()
 {
 };
@@ -120,46 +121,46 @@ func void b_enter_freemine()
 	{
 		b_enter_freemine_kapitel_2();
 	};
-	if(Kapitel >= 3)
+	if (Chapter >=  3 )
 	{
 		b_enter_freemine_kapitel_3();
 	};
-	if(Kapitel >= 4)
+	if (Chapter >=  4 )
 	{
 		b_enter_freemine_kapitel_4();
 	};
-	if(Kapitel >= 5)
+	if (Chapter >=  5 )
 	{
 		b_enter_freemine_kapitel_5();
 	};
-	if(Kapitel >= 6)
+	if (Chapter >=  6 )
 	{
 		b_enter_freemine_kapitel_6();
 	};
 	if((MIS_ScoutNewMine == LOG_Running) && (ScoutFreeMine == FALSE))
 	{
 		ScoutFreeMine = TRUE;
-		B_LogEntry(TOPIC_ScoutNewMine,"Шахта захвачена орками! Навряд ли они дадут паладинам добывать тут руду. Надо сообщить об этом Гаронду. Или быть может сначала зачистить саму шахту?");
+		B_LogEntry(TOPIC_ScoutNewMine, " The mine has been taken over by the orcs! I don't think they'll let the paladins mine here. Garond should be informed. Or maybe clear the mine first? " );
 	};
 
-	HelmIsUpTemp = FALSE;
-	CraitIsUp = FALSE;
+	HelmIsUpTemp = FALSE ;
+	CraitIsUp = FALSE ;
 	CraitCanUp = FALSE;
 	CurrentLevel = FREEMINE_ZEN;
 	B_InitNpcGlobals();
 };
 
-var int ENTERORCMOUNTAIN_kapitel1;
+var int ENTERORCMOUNTAIN_chapter1;
 
 func void b_enter_orcmountain_kapitel_1()
 {
-	if(ENTERORCMOUNTAIN_KAPITEL1 == FALSE)
+	if ( ENTERORCMOUNTAIN_KAPITEL1  ==  FALSE )
 	{
 		ENTERORCMOUNTAIN_KAPITEL1 = TRUE;
 	};
 };
 
-var int ENTERORCMOUNTAIN_kapitel2;
+var int ENTERORCMOUNTAIN_chapter2;
 
 func void b_enter_orcmountain_kapitel_2()
 {
@@ -176,18 +177,18 @@ func void b_enter_orcmountain_kapitel_2()
 };
 
 
-var int ENTERORCMOUNTAIN_kapitel3;
+var int ENTERORCMOUNTAIN_chapter3;
 
 func void b_enter_orcmountain_kapitel_3()
 {
-	if(ENTERORCMOUNTAIN_KAPITEL3 == FALSE)
+	if ( ENTERORCMOUNTAIN_KAPITEL3  ==  FALSE )
 	{
 		ENTERORCMOUNTAIN_KAPITEL3 = TRUE;
 	};
 };
 
 
-var int ENTERORCMOUNTAIN_kapitel4;
+var int ENTERORCMOUNTAIN_chapter4;
 
 func void b_enter_orcmountain_kapitel_4()
 {
@@ -198,7 +199,7 @@ func void b_enter_orcmountain_kapitel_4()
 };
 
 
-var int ENTERORCMOUNTAIN_kapitel5;
+var int ENTERORCMOUNTAIN_chapter5;
 
 func void b_enter_orcmountain_kapitel_5()
 {
@@ -209,7 +210,7 @@ func void b_enter_orcmountain_kapitel_5()
 };
 
 
-var int ENTERORCMOUNTAIN_kapitel6;
+var int ENTERORCMOUNTAIN_chapter6;
 
 func void b_enter_orcmountain_kapitel_6()
 {
@@ -223,27 +224,27 @@ func void b_enter_orcmountain()
 {
 	B_InitNpcGlobals();
 
-	if(Kapitel >= 1)
+	if (Chapter >=  1 )
 	{
 		b_enter_orcmountain_kapitel_1();
 	};
-	if(Kapitel >= 2)
+	if (Chapter >=  2 )
 	{
 		b_enter_orcmountain_kapitel_2();
 	};
-	if(Kapitel >= 3)
+	if (Chapter >=  3 )
 	{
 		b_enter_orcmountain_kapitel_3();
 	};
-	if(Kapitel >= 4)
+	if (Chapter >=  4 )
 	{
 		b_enter_orcmountain_kapitel_4();
 	};
-	if(Kapitel >= 5)
+	if (Chapter >=  5 )
 	{
 		b_enter_orcmountain_kapitel_5();
 	};
-	if(Kapitel >= 6)
+	if (Chapter >=  6 )
 	{
 		b_enter_orcmountain_kapitel_6();
 	};
@@ -265,8 +266,8 @@ func void b_enter_orcmountain()
 		AvabulWar = TRUE;
 	};
 
-	HelmIsUpTemp = FALSE;
-	CraitIsUp = FALSE;
+	HelmIsUpTemp = FALSE ;
+	CraitIsUp = FALSE ;
 	CraitCanUp = FALSE;
 	CurrentLevel = ORCMOUNTAIN_ZEN;
 	B_InitNpcGlobals();
