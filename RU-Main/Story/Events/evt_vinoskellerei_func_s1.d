@@ -1,4 +1,5 @@
 
+
 var int FoundVinosKellerei;
 
 func void evt_vinoskellerei_func_s1()
@@ -10,7 +11,7 @@ func void evt_vinoskellerei_func_s1()
 
 		if(MIS_FindKillPlace == LOG_Running)
 		{
-			B_LogEntry(TOPIC_FindKillPlace,"Отличное местечко, подальше от посторонних глаз! Думаю стоит навестить Шарлотту и расказать ей об этом месте.");
+			B_LogEntry(TOPIC_FindKillPlace, " Great place, away from prying eyes! I think I should visit Charlotte and tell her about this place. " );
 		};
 	};
 };
