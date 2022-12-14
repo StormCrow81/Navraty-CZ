@@ -1,3 +1,4 @@
+
 var int Stone_LV_01;
 var int Stone_LV_02;
 var int Stone_LV_03;
@@ -178,7 +179,7 @@ func void event_demoncave_entrance_func()
 	{
 		Wld_SendTrigger("EVT_OW_DEMONCAVE_GATE");
 		DEMONCAVEGATEOPENED = TRUE;
-		B_LogEntry(TOPIC_RESCUEGOMEZ,"Как и говорил Корристо, проход в склеп открылся. Осталось лишь войти туда и очистить его от всей нечисти, что я там встречу.");
+		B_LogEntry( TOPIC_RESCUEGOMEZ , " As Corristo said, the passage to the crypt has opened. All that remains is to enter it and cleanse it of all the evil spirits that I meet there. " );
 	};
 };
 
@@ -201,23 +202,23 @@ func void event_orctempel_entrance_func()
 		{
 			Wld_SendTrigger("EVT_OW_ORCTEMPEL_GATE");
 			ORCTEMPLEGATEOPENED = TRUE;
-			B_LogEntry(TOPIC_ORCTEMPLE,"Проход открыт! Теперь путь в храм Спящего свободен.");
+			B_LogEntry( TOPIC_ORCTEMPLE , " The passage is open! Now the way to the temple of the Sleeper is clear. " );
 		};
 	}
 	else if(ORCTEMPLEONETIME == FALSE)
 	{
-		if(Kapitel >= 5)
+		if (Chapter >=  5 )
 		{
 			if(URSHAK_SUCKED == FALSE)
 			{
-				B_LogEntry(TOPIC_ORCTEMPLE,"Я обнаружил странные вещи в районе бывшего храма Спящего. Орки-призраки и перекрытый огнем ход вглубь горы. Интересно, что орки знают об этом?");
+				B_LogEntry( TOPIC_ORCTEMPLE , " I've found strange things in the area of ​​the former Temple of the Sleeper. Ghost orcs and a fire-blocked passage deep into the mountain. I wonder what the orcs know about this? " );
 				MIS_ORCTEMPLE = LOG_Running;
 				ORCTEMPLEONETIME = TRUE;
 				ORCTEMPLEGATEINFO = TRUE;
 			}
 			else
 			{
-				B_LogEntry(TOPIC_ORCTEMPLE,"Я обнаружил странные вещи в районе бывшего храма Спящего. Орки-призраки и перекрытый огнем ход вглубь горы. Боюсь, посоветоваться мне не с кем. Ксардас загадочно исчез, а единственный орк, с которым я как-то смог бы пообщаться на эту тему - это Ур-Шак, который обозлен на меня за убийство своего учителя Хош-Пака... И что делать?");
+				B_LogEntry( TOPIC_ORCTEMPLE , " I found strange things in the area of ​​the former Temple of the Sleeper. Ghost orcs and a fire-blocked passage deep into the mountain. I'm afraid I have no one to consult with. Xardas mysteriously disappeared, and the only orc with whom I could somehow communicate on this subject - this is Ur-Shak, who is angry with me for the murder of his teacher Hosh-Pak ... And what to do? " );
 				MIS_ORCTEMPLE = LOG_Running;
 				ORCTEMPLEONETIME = TRUE;
 				ORCTEMPLEGATEINFO = TRUE;
@@ -225,7 +226,7 @@ func void event_orctempel_entrance_func()
 		}
 		else
 		{
-			B_LogEntry(TOPIC_ORCTEMPLE,"Я обнаружил странные вещи в районе бывшего храма Спящего. Орки-призраки и перекрытый огнем ход вглубь горы. Надо бы посоветоваться с Ксардасом.");
+			B_LogEntry( TOPIC_ORCTEMPLE , " I've found strange things in the area of ​​the former Temple of the Sleeper. Ghost orcs and a fire-blocked entrance into the mountain. I should consult with Xardas. " );
 			MIS_ORCTEMPLE = LOG_Running;
 			ORCTEMPLEONETIME = TRUE;
 			ORCTEMPLEGATEINFO = FALSE;
@@ -274,7 +275,7 @@ func void EVENT_HROMANIN_ENTRANCE_FUNC()
 
 var int dmt_1298_ready;
 
-func void dia_extro_avi()
+func void dia_extra_avi()
 {
 	if(DMT_1298_READY == FALSE)
 	{
@@ -372,7 +373,7 @@ func void evt_firemages_teleport_func()
 	if((GOMEZISFREE == TRUE) && (FIREMAGESAWAY == FALSE))
 	{
 		Wld_PlayEffect("FX_EarthQuake",hero,hero,0,0,0,FALSE);
-		AI_Teleport(none_105_corristo,"TOT");
+		AI_Teleport(none_105_paid, " TOT " );
 		AI_Teleport(none_106_rodriguez,"TOT");
 		AI_Teleport(none_107_damarok,"TOT");
 		AI_Teleport(none_108_drago,"TOT");
@@ -387,7 +388,7 @@ func void evt_gomez_teleport_func()
 	{
 		Wld_PlayEffect("FX_EarthQuake",hero,hero,0,0,0,FALSE);
 		AI_Teleport(none_104_gomez,"TOT");
-		GOMEZAWAY = TRUE;
+		GOMEZAWAY = TRUE ;
 	};
 };
 
@@ -400,7 +401,7 @@ func void evt_benchelvsbandits_func()
 		b_changeguild(bdt_9002_bandit,GIL_BDT);
 		b_changeguild(bdt_9003_bandit,GIL_BDT);
 		b_changeguild(bdt_9004_bandit,GIL_BDT);
-		B_LogEntry(TOPIC_BLACKBRENDI,"Я нашел Бенчела - кажется, он попал в беду! Надо помочь ему.");
+		B_LogEntry( TOPIC_BLACKBRENDI , " I found Benchel - looks like he's in trouble! We need to help him. " );
 		BENCHELSEE = TRUE;
 	};
 };
@@ -1109,7 +1110,7 @@ func void evt_kapitelorcattack_02_func()
 		Wld_InsertNpc(OrcWarrior_Roam,"FP_ROAM_NW_ATC_ORC_TAVERNE_03");
 		Wld_InsertNpc(OrcWarrior_Roam,"FP_ROAM_NW_ATC_ORC_TAVERNE_02");
 		Wld_InsertNpc(OrcWarrior_Roam,"FP_ROAM_NW_ATC_ORC_TAVERNE_01");
-		if(Npc_IsDead(orkelite_addon3_chkflg_26))
+		if (Npc_IsDead(orkelite_addon3_chkflg_26))
 		{
 			Wld_InsertNpc(OrcShaman_Sit,"NW_PASS_ORKS_02");
 			Wld_InsertNpc(OrcShaman_Sit,"NW_PASS_ORKS_13");
@@ -1172,14 +1173,14 @@ func void evt_kapitelorcattack_02_func()
 		Wld_InsertNpc(orkelite_addon4_nwchkflg_03,"FP_ROAM_NW_ATC_ELITEORCCOLONEL_03");
 		Wld_InsertNpc(orkelite_general_nw,"FP_ROAM_NW_ATC_ELITEORCGENERAL_01");
 		Wld_InsertNpc(orkelite_addon3_nwchkflg_26,"FP_ROAM_NW_ATC_ELITEORC_26");
-		KAPITELORCATCISSTARTNW = TRUE;
-		Wld_SetTime(23,0);
+		KAPITELORCATCISSTARTNW = TRUE ;
+		Wld_SetTime( 23 , 0 );
 	};
 };
 
 func void evt_kaporcatc_opengate_01_func()
 {
-	if((KAPITELORCATC == TRUE) && (KAPITELORCATCISSTARTOW == FALSE))
+	if (( CAPITALCATC  ==  TRUE ) && ( CAPITALCATCISSTARTOW  ==  FALSE ))
 	{
 		KAPITELORCATCISSTARTOW = TRUE;
 		Wld_SendTrigger("EVT_OC_MAINGATE_TRIGGER");
@@ -1193,7 +1194,7 @@ func void evt_kaporcatc_opengate_01_func()
 
 func void evt_kaporcatc_opengate_02_func()
 {
-	if((KAPITELORCATC == TRUE) && (KAPITELORCATCISSTARTOW == FALSE))
+	if (( CAPITALCATC  ==  TRUE ) && ( CAPITALCATCISSTARTOW  ==  FALSE ))
 	{
 		Wld_SendTrigger("EVT_OC_MAINGATE_TRIGGER");
 		KAPITELORCATCISSTARTOW = TRUE;
@@ -1220,7 +1221,7 @@ func void evt_observecapturetown_01_func()
 
 func void evt_clawrecovermake_func()
 {
-	var int daynow;
+	where int daynow;
 	var C_Npc dog;
 	daynow = Wld_GetDay();
 	if((CLAWTIMERRECOVER < (daynow - 2)) && (CLAWHEALTHOK == FALSE) && (CLAWBEGINRECOVER == TRUE))
@@ -1239,8 +1240,8 @@ func void evt_clawrecovermake_func()
 		dog.protection[PROT_FIRE] = 0;
 		dog.protection[PROT_FLY] = 100;
 		dog.protection[PROT_MAGIC] = 0;
-		dog.aivar[AIV_MM_SleepStart] = 0;
-		dog.aivar[AIV_MM_SleepEnd] = 0;
+		dog.aivar[AIV_MM_SleepStart] = 0 ;
+		dog.aivar[AIV_MM_SleepEnd] = 0 ;
 		dog.aivar[AIV_MM_RoamStart] = OnlyRoutine;
 		CLAWHEALTHOK = TRUE;
 	};
@@ -1268,13 +1269,13 @@ func void li_missmygold_func()
 		MIS_MISSMYGOLD = LOG_Running;
 		Log_CreateTopic(TOPIC_MISSMYGOLD,LOG_MISSION);
 		Log_SetTopicStatus(TOPIC_MISSMYGOLD,LOG_Running);
-		B_LogEntry(TOPIC_MISSMYGOLD,"Спустившись в трюм нашего корабля, я обнаружил, что золото, которое я забрал с острова Ирдорат, куда-то невероятным образом исчезло! Надо бы расспросить об этом парней.");
+		) ; _ _ _ _ _
 	};
 };
 
 func void li_trigger_findbigore_01_func()
 {
-	if(FINDLIORE_CAVE_01 == FALSE)
+	if ( FINDLIORE_CAVE_01  ==  FALSE )
 	{
 		FINDLIORE_CAVE_01 = TRUE;
 		if(MIS_FINDMAGICORECAVE == FALSE)
@@ -1282,18 +1283,18 @@ func void li_trigger_findbigore_01_func()
 			MIS_FINDMAGICORECAVE = LOG_Running;
 			Log_CreateTopic(TOPIC_FINDMAGICORECAVE,LOG_MISSION);
 			Log_SetTopicStatus(TOPIC_FINDMAGICORECAVE,LOG_Running);
-			B_LogEntry(TOPIC_FINDMAGICORECAVE,"В одной из пещер на острове я обнаружил огромные залежи магической руды. Думаю, об этой находке стоит рассказать и другим парням.");
+			) ; _ _ _ _ _
 		}
 		else
 		{
-			B_LogEntry(TOPIC_FINDMAGICORECAVE,"Я нашел еще одну пещеру с внушительными запасами магической руды! Теперь у меня не осталось никаких сомнений, что на этом острове сокрыты богатые месторождения этой ценной породы.");
+			) ; _ _ _ _ _
 		};
 	};
 };
 
 func void li_trigger_findbigore_02_func()
 {
-	if(FINDLIORE_CAVE_02 == FALSE)
+	if ( FINDLIORE_CAVE_02  ==  FALSE )
 	{
 		FINDLIORE_CAVE_02 = TRUE;
 		if(MIS_FINDMAGICORECAVE == FALSE)
@@ -1301,11 +1302,11 @@ func void li_trigger_findbigore_02_func()
 			MIS_FINDMAGICORECAVE = LOG_Running;
 			Log_CreateTopic(TOPIC_FINDMAGICORECAVE,LOG_MISSION);
 			Log_SetTopicStatus(TOPIC_FINDMAGICORECAVE,LOG_Running);
-			B_LogEntry(TOPIC_FINDMAGICORECAVE,"В одной из пещер на острове я обнаружил огромные залежи магической руды. Думаю, об этой находке стоит рассказать и другим парням.");
+			) ; _ _ _ _ _
 		}
 		else
 		{
-			B_LogEntry(TOPIC_FINDMAGICORECAVE,"Я нашел еще одну пещеру с внушительными запасами магической руды! Теперь у меня не осталось никаких сомнений, что на этом острове сокрыты богатые месторождения этой ценной породы.");
+			) ; _ _ _ _ _
 		};
 	};
 };
@@ -1321,95 +1322,95 @@ func void evt_changeleveltrggerscript_02_func()
 
 func void b_drakarlevercomplete()
 {
-	if((LEVERCOUNT == 4) && (DRAKARISBROKEN == FALSE))
+	if (( LEVERCOUNT  ==  4 ) && ( DRAKARISBROKEN  ==  FALSE ))
 	{
-		if((DRAKARLEVER01 == 3) && (DRAKARLEVER02 == 1) && (DRAKARLEVER03 == 4) && (DRAKARLEVER04 == 2))
+		if (( DRAGON LIVER01  ==  3 ) && ( DRAGON LIVER02  ==  1 ) && ( DRAGON LIVER03  ==  4 ) && ( DRAGON LIVER04  ==  2 ))
 		{
 			B_GivePlayerXP(200);
-			LEVERCOUNT = 0;
-			DRAKARLEVER01 = FALSE;
-			DRAKARLEVER02 = FALSE;
-			DRAKARLEVER03 = FALSE;
-			DRAKARLEVER04 = FALSE;
-			DRAKARISBROKEN = TRUE;
+			DELIVERY COUNT = 0 ;
+			DRAGON LIVER01 = FALSE ;
+			DRAGON LIVER02 = FALSE ;
+			DRAGON LIVER03 = FALSE ;
+			DRAGON LIVER04 = FALSE ;
+			DRAKARISBROKEN = TRUE ;
 			Snd_Play("MESH_BROKE");
 			ULUMULUISEQUIP = FALSE;
-			AI_Print(PRINT_DRAKARREPORT02);
-			B_LogEntry(TOPIC_DRAKARBROKE,"Мне удалось сломать механизм управления на дракаре орков. Думаю, пора возвращаться в лагерь Альберта и сообщить ему об этом.");
+			AI_Print( PRINT_DRAKARREPORT02 );
+			B_LogEntry( TOPIC_DRAKARBROKE , " I managed to break the controls on the orc drakar. I think it's time to head back to Albert's camp and let him know. " );
 		}
 		else
 		{
-			DRAKARLEVER01 = FALSE;
-			DRAKARLEVER02 = FALSE;
-			DRAKARLEVER03 = FALSE;
-			DRAKARLEVER04 = FALSE;
-			DRAKARLEVER01_FLG = FALSE;
-			DRAKARLEVER02_FLG = FALSE;
-			DRAKARLEVER03_FLG = FALSE;
-			DRAKARLEVER04_FLG = FALSE;
-			Wld_SendUntrigger("DRAKAR_TRIGGER_LEVER_01");
-			Wld_SendUntrigger("DRAKAR_TRIGGER_LEVER_02");
-			Wld_SendUntrigger("DRAKAR_TRIGGER_LEVER_03");
-			Wld_SendUntrigger("DRAKAR_TRIGGER_LEVER_04");
-			AI_Print(PRINT_DRAKARREPORT01);
+			DRAGON LIVER01 = FALSE ;
+			DRAGON LIVER02 = FALSE ;
+			DRAGON LIVER03 = FALSE ;
+			DRAGON LIVER04 = FALSE ;
+			DRAGON LEVER01_FLG = FALSE ;
+			DRAGON LEVER02_FLG = FALSE ;
+			DRAGON LEVER03_FLG = FALSE ;
+			DRAGON LEVER04_FLG = FALSE ;
+			Wld_SendUntrigger( " DRAKAR_TRIGGER_LEVER_01 " );
+			Wld_SendUntrigger( " DRAKAR_TRIGGER_LEVER_02 " );
+			Wld_SendUntrigger( " DRAKAR_TRIGGER_LEVER_03 " );
+			Wld_SendUntrigger( " DRAKAR_TRIGGER_LEVER_04 " );
+			AI_Print( PRINT_DRAKARREPORT01 );
 		};
-		LEVERCOUNT = 0;
+		DELIVERY COUNT = 0 ;
 	};
 };
 
 func void darkar_lever_maker_func_01_s1()
 {
-	if(DRAKARLEVER01_FLG == FALSE)
+	if ( DRAKARLEVER01_FLG  ==  FALSE )
 	{
-		LEVERCOUNT = LEVERCOUNT + 1;
-		Wld_SendTrigger("DRAKAR_TRIGGER_LEVER_01");
+		DELIVERYCOUNT = DELIVERYCOUNT  +  1 ;
+		Wld_SendTrigger( " DRAKAR_TRIGGER_LEVER_01 " );
 		Wld_SendTrigger("EVT_TRIGERR_MESHCAM");
-		DRAKARLEVER01 = LEVERCOUNT;
-		DRAKARLEVER01_FLG = TRUE;
+		DRAGON LEVER01 = LEVERCOUNT ;
+		DRAGON LEVER01_FLG = TRUE ;
 		ULUMULUISEQUIP = FALSE;
-		b_drakarlevercomplete();
+		b_drakarlivercomplete();
 	};
 };
 
 func void darkar_lever_maker_func_02_s1()
 {
-	if(DRAKARLEVER02_FLG == FALSE)
+	if ( DRAKARLEVER02_FLG  ==  FALSE )
 	{
-		LEVERCOUNT = LEVERCOUNT + 1;
-		Wld_SendTrigger("DRAKAR_TRIGGER_LEVER_02");
+		DELIVERYCOUNT = DELIVERYCOUNT  +  1 ;
+		Wld_SendTrigger( " DRAKAR_TRIGGER_LEVER_02 " );
 		Wld_SendTrigger("EVT_TRIGERR_MESHCAM");
-		DRAKARLEVER02 = LEVERCOUNT;
-		DRAKARLEVER02_FLG = TRUE;
+		DRAGON LEVER02 = LEVERCOUNT ;
+		DRAGON LEVER02_FLG = TRUE ;
 		ULUMULUISEQUIP = FALSE;
-		b_drakarlevercomplete();
+		b_drakarlivercomplete();
 	};
 };
 
 func void darkar_lever_maker_func_03_s1()
 {
-	if(DRAKARLEVER03_FLG == FALSE)
+	if ( DRAKARLEVER03_FLG  ==  FALSE )
 	{
-		LEVERCOUNT = LEVERCOUNT + 1;
-		Wld_SendTrigger("DRAKAR_TRIGGER_LEVER_03");
+		DELIVERYCOUNT = DELIVERYCOUNT  +  1 ;
+		Wld_SendTrigger( " DRAKAR_TRIGGER_LEVER_03 " );
 		Wld_SendTrigger("EVT_TRIGERR_MESHCAM");
-		DRAKARLEVER03 = LEVERCOUNT;
-		DRAKARLEVER03_FLG = TRUE;
+		DRAGON LEVER03 = LEVERCOUNT ;
+		DRAGON LEVER03_FLG = TRUE ;
 		ULUMULUISEQUIP = FALSE;
-		b_drakarlevercomplete();
+		b_drakarlivercomplete();
 	};
 };
 
 func void darkar_lever_maker_func_04_s1()
 {
-	if(DRAKARLEVER04_FLG == FALSE)
+	if ( DRAKARLEVER04_FLG  ==  FALSE )
 	{
-		LEVERCOUNT = LEVERCOUNT + 1;
-		Wld_SendTrigger("DRAKAR_TRIGGER_LEVER_04");
+		DELIVERYCOUNT = DELIVERYCOUNT  +  1 ;
+		Wld_SendTrigger( " DRAKAR_TRIGGER_LEVER_04 " );
 		Wld_SendTrigger("EVT_TRIGERR_MESHCAM");
-		DRAKARLEVER04 = LEVERCOUNT;
-		DRAKARLEVER04_FLG = TRUE;
+		DRAGON LEVER04 = LEVERCOUNT ;
+		DRAGON LEVER04_FLG = TRUE ;
 		ULUMULUISEQUIP = FALSE;
-		b_drakarlevercomplete();
+		b_drakarlivercomplete();
 	};
 };
 
@@ -1446,7 +1447,7 @@ func void evt_li_teleport_frdc_func()
 	if(LIDEMONISDEAD == TRUE)
 	{
 		outter = Hlp_GetNpc(pc_mage_li);
-		outter.aivar[AIV_PARTYMEMBER] = FALSE;
+		outer.aivar[ AIV_PARTYMEMBER ] = FALSE ;
 		Npc_ExchangeRoutine(outter,"Start");
 		Wld_PlayEffect("spellFX_Teleport_RING",hero,hero,0,0,0,FALSE);
 		Snd_Play("MFX_TELEPORT_CAST");
@@ -1454,7 +1455,7 @@ func void evt_li_teleport_frdc_func()
 		AI_Teleport(hero,"DEM_CAVE_EXIT");
 		AI_Teleport(outter,"LI_MAN_03");
 		LIDEMCAVEAWAY = TRUE;
-		B_LogEntry(TOPIC_MILTENANCIENT,"Портал пропустил нас, и мы вернулись на поверхность этого загадочного острова.");
+		B_LogEntry( TOPIC_MILTENANCIENT , " The portal let us through and we returned to the surface of this mysterious island. " );
 	}
 	else if(Npc_IsDead(sleeper))
 	{
@@ -1463,8 +1464,8 @@ func void evt_li_teleport_frdc_func()
 		if(outter1.aivar[AIV_VictoryXPGiven] != TRUE)
 		{
 			permvaluexp = outter1.level * XP_PER_VICTORY;
-			outter1.aivar[AIV_VictoryXPGiven] = TRUE;
-			outter1.aivar[95] = TRUE;
+			outer1.aivar[AIV_VictoryXPGiven] = TRUE ;
+			outer1.aivar[ 95 ] = TRUE ;
 			b_giveplayerxpsemiquietwithbonus(permvaluexp,50);
 			hero.attribute[ATR_HITPOINTS_MAX] += 50;
 			hero.attribute[ATR_HITPOINTS] += 50;
@@ -1472,7 +1473,7 @@ func void evt_li_teleport_frdc_func()
 
 		LIDEMONISDEAD = TRUE;
 		outter = Hlp_GetNpc(pc_mage_li);
-		outter.aivar[AIV_PARTYMEMBER] = FALSE;
+		outer.aivar[ AIV_PARTYMEMBER ] = FALSE ;
 		Npc_ExchangeRoutine(outter,"Start");
 		Wld_PlayEffect("spellFX_Teleport_RING",hero,hero,0,0,0,FALSE);
 		Snd_Play("MFX_TELEPORT_CAST");
@@ -1480,7 +1481,7 @@ func void evt_li_teleport_frdc_func()
 		AI_Teleport(hero,"DEM_CAVE_EXIT");
 		AI_Teleport(outter,"LI_MAN_03");
 		LIDEMCAVEAWAY = TRUE;
-		B_LogEntry(TOPIC_MILTENANCIENT,"Портал пропустил нас, и мы вернулись на поверхность этого загадочного острова.");
+		B_LogEntry( TOPIC_MILTENANCIENT , " The portal let us through and we returned to the surface of this mysterious island. " );
 	}
 	else
 	{
@@ -1524,7 +1525,7 @@ func void evt_gader_01_func_s1()
 	if((PLACEGADERSTONNES == FALSE) && (GADERSTONE_ONE == TRUE) && (GADERSTONE_ONE == TRUE) && (GADERSTONE_TWO == TRUE) && (GADERSTONE_THREE == TRUE) && (GADERSTONE_FOUR == TRUE) && (GADERSTONE_FIVE == TRUE))
 	{
 		PLACEGADERSTONNES = TRUE;
-		Log_AddEntry(TOPIC_GADERTEST,"Я возложил все магические камни на алтари в храмах зодчих. Пора возвращаться обратно!");
+		Log_AddEntry( TOPIC_GADERTEST , " I have placed all the magic stones on the altars in the temples of the builders. It's time to go back! " );
 	};
 };
 
@@ -1535,7 +1536,7 @@ func int EVT_ILARAH_01_COND_FUNC()
 		return TRUE;
 	};
 
-	return FALSE;
+	return  FALSE ;
 };
 
 func void EVT_ILARAH_01_FUNC_s1()
@@ -1550,7 +1551,7 @@ func void EVT_ILARAH_01_FUNC_s1()
 		Wld_PlayEffect("spellFX_INCOVATION_RED",self,self,0,0,0,FALSE);
 		Npc_RemoveInvItems(hero,ItAt_KratukHeart,1);
 		Wld_InsertNpc(ILARAH,"KRATUK");
-		PLACEKRATUKHEART = TRUE;
+		PLACEKRATUKHEART = TRUE ;
 	};
 };
 
@@ -1560,7 +1561,7 @@ func int evt_gader_01_cond_func()
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func void evt_gader_02_func_s1()
@@ -1568,14 +1569,14 @@ func void evt_gader_02_func_s1()
 	if((MIS_GADERTEST == LOG_Running) && (PLACEGADERSTONNES == FALSE) && (GADERSTONE_TWO == FALSE))
 	{
 		B_GivePlayerXP(100);
-		B_LogEntry(TOPIC_GADERTEST,"Я возложил магический камень на алтарь в храме Жрецов.");
+		B_LogEntry( TOPIC_GADERTEST , " I placed the magic stone on the altar in the Temple of the Priests. " );
 		GADERSTONE_TWO = TRUE;
 		RemoveStoneGader = TRUE;		
 	};
 	if((PLACEGADERSTONNES == FALSE) && (GADERSTONE_ONE == TRUE) && (GADERSTONE_ONE == TRUE) && (GADERSTONE_TWO == TRUE) && (GADERSTONE_THREE == TRUE) && (GADERSTONE_FOUR == TRUE) && (GADERSTONE_FIVE == TRUE))
 	{
 		PLACEGADERSTONNES = TRUE;
-		Log_AddEntry(TOPIC_GADERTEST,"Я возложил все магические камни на алтари в храмах зодчих. Пора возвращаться обратно!");
+		Log_AddEntry( TOPIC_GADERTEST , " I have placed all the magic stones on the altars in the temples of the builders. It's time to go back! " );
 	};
 };
 
@@ -1585,7 +1586,7 @@ func int evt_gader_02_cond_func()
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func void evt_gader_03_func_s1()
@@ -1593,14 +1594,14 @@ func void evt_gader_03_func_s1()
 	if((MIS_GADERTEST == LOG_Running) && (PLACEGADERSTONNES == FALSE) && (GADERSTONE_THREE == FALSE))
 	{
 		B_GivePlayerXP(100);
-		B_LogEntry(TOPIC_GADERTEST,"Я возложил магический камень на алтарь в библиотеке ученых.");
+		B_LogEntry( TOPIC_GADERTEST , " I placed a magic stone on the altar in the scientists' library. " );
 		GADERSTONE_THREE = TRUE;
 		RemoveStoneGader = TRUE;		
 	};
 	if((PLACEGADERSTONNES == FALSE) && (GADERSTONE_ONE == TRUE) && (GADERSTONE_ONE == TRUE) && (GADERSTONE_TWO == TRUE) && (GADERSTONE_THREE == TRUE) && (GADERSTONE_FOUR == TRUE) && (GADERSTONE_FIVE == TRUE))
 	{
 		PLACEGADERSTONNES = TRUE;
-		Log_AddEntry(TOPIC_GADERTEST,"Я возложил все магические камни на алтари в храмах зодчих. Пора возвращаться обратно!");
+		Log_AddEntry( TOPIC_GADERTEST , " I have placed all the magic stones on the altars in the temples of the builders. It's time to go back! " );
 	};
 };
 
@@ -1610,7 +1611,7 @@ func int evt_gader_03_cond_func()
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func void evt_gader_04_func_s1()
@@ -1618,14 +1619,14 @@ func void evt_gader_04_func_s1()
 	if((MIS_GADERTEST == LOG_Running) && (PLACEGADERSTONNES == FALSE) && (GADERSTONE_FOUR == FALSE))
 	{
 		B_GivePlayerXP(100);
-		B_LogEntry(TOPIC_GADERTEST,"Я возложил магический камень на алтарь в храме Аданоса.");
+		B_LogEntry( TOPIC_GADERTEST , " I placed the magic stone on the altar in the Temple of Adanos. " );
 		GADERSTONE_FOUR = TRUE;
 		RemoveStoneGader = TRUE;		
 	};
 	if((PLACEGADERSTONNES == FALSE) && (GADERSTONE_ONE == TRUE) && (GADERSTONE_ONE == TRUE) && (GADERSTONE_TWO == TRUE) && (GADERSTONE_THREE == TRUE) && (GADERSTONE_FOUR == TRUE) && (GADERSTONE_FIVE == TRUE))
 	{
 		PLACEGADERSTONNES = TRUE;
-		Log_AddEntry(TOPIC_GADERTEST,"Я возложил все магические камни на алтари в храмах зодчих. Пора возвращаться обратно!");
+		Log_AddEntry( TOPIC_GADERTEST , " I have placed all the magic stones on the altars in the temples of the builders. It's time to go back! " );
 	};
 };
 
@@ -1635,7 +1636,7 @@ func int evt_gader_04_cond_func()
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func void evt_gader_05_func_s1()
@@ -1643,14 +1644,14 @@ func void evt_gader_05_func_s1()
 	if((MIS_GADERTEST == LOG_Running) && (PLACEGADERSTONNES == FALSE) && (GADERSTONE_FIVE == FALSE))
 	{
 		B_GivePlayerXP(100);
-		B_LogEntry(TOPIC_GADERTEST,"Я возложил магический камень на алтарь в храме Целителей.");
+		B_LogEntry( TOPIC_GADERTEST , " I placed the magic stone on the altar in the temple of the Healers. " );
 		GADERSTONE_FIVE = TRUE;
 		RemoveStoneGader = TRUE;		
 	};
 	if((PLACEGADERSTONNES == FALSE) && (GADERSTONE_ONE == TRUE) && (GADERSTONE_ONE == TRUE) && (GADERSTONE_TWO == TRUE) && (GADERSTONE_THREE == TRUE) && (GADERSTONE_FOUR == TRUE) && (GADERSTONE_FIVE == TRUE))
 	{
 		PLACEGADERSTONNES = TRUE;
-		Log_AddEntry(TOPIC_GADERTEST,"Я возложил все магические камни на алтари в храмах зодчих. Пора возвращаться обратно!");
+		Log_AddEntry( TOPIC_GADERTEST , " I have placed all the magic stones on the altars in the temples of the builders. It's time to go back! " );
 	};
 };
 
@@ -1660,7 +1661,7 @@ func int evt_gader_05_cond_func()
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func void evt_dagot_appear_func()
@@ -1681,9 +1682,9 @@ func void evt_dagot_appear_func()
 func void evt_morius_appear_func()
 {
 	var C_Npc outterg2;
-	if((MIS_GUARDIANS == LOG_Running) && (MIS_GUARDIANSTEST == LOG_Running) && (DAGOT_AGREE == TRUE) && (MORIUSREADYTESTME == FALSE) && (DAGOTTELLALL == FALSE))
+	if (( MY_GUARDIAN  == LOG_Running) && ( MY_GUARDIANTEST  == LOG_Running) && ( DAGOT_AGREE  ==  TRUE ) && ( MORIUSREADYTESTME  ==  FALSE ) && ( DAGOTTELLALL  ==  FALSE )) ;
 	{
-		outterg2 = Hlp_GetNpc(dmt_1213_morius);
+		outerg2 = Hlp_GetNpc(dmt_1213_morius);
 		Npc_ExchangeRoutine(outterg2,"Start");
 		AI_Teleport(outterg2,"NW_DMT_1213_MORIUS");
 		Wld_PlayEffect("spellFX_INCOVATION_VIOLET",outterg2,outterg2,0,0,0,FALSE);
@@ -1696,7 +1697,7 @@ func void evt_morius_appear_func()
 func void evt_tegon_appear_func()
 {
 	var C_Npc outterg3;
-	if((MIS_GUARDIANS == LOG_Running) && (MIS_GUARDIANSTEST == LOG_Running) && (MORIUS_AGREE == TRUE) && (TEGONREADYTESTME == FALSE) && (DAGOTTELLALL == FALSE))
+	if (( MY_GUARDIAN  == LOG_Running) && ( MY_GUARDIANTEST  == LOG_Running) && ( MORIUS_AGREE  ==  TRUE ) && ( TEGONREADYTESTME  ==  FALSE ) && ( DAGOTTELLALL  ==  FALSE )) ;
 	{
 		outterg3 = Hlp_GetNpc(dmt_1214_tegon);
 		Npc_ExchangeRoutine(outterg3,"Start");
@@ -1711,7 +1712,7 @@ func void evt_tegon_appear_func()
 func void evt_kelios_appear_func()
 {
 	var C_Npc outterg4;
-	if((MIS_GUARDIANS == LOG_Running) && (MIS_GUARDIANSTEST == LOG_Running) && (TEGON_AGREE == TRUE) && (KELIOSREADYTESTME == FALSE) && (DAGOTTELLALL == FALSE) && (Kapitel >= 3))
+	if (( MY_GUARDIAN  == LOG_Running) && ( MY_GUARDIANTEST  == LOG_Running) && ( TEGON_AGREE  ==  TRUE ) && ( KELIOSREADYTESTME  ==  FALSE ) && ( DAGOTTELLALL  ==  FALSE ) && (Chapter >=  3 )) ;
 	{
 		outterg4 = Hlp_GetNpc(dmt_1215_kelios);
 		Npc_ExchangeRoutine(outterg4,"Start");
@@ -1726,7 +1727,7 @@ func void evt_kelios_appear_func()
 func void evt_demos_appear_func()
 {
 	var C_Npc outterg5;
-	if((MIS_GUARDIANS == LOG_Running) && (MIS_GUARDIANSTEST == LOG_Running) && (KELIOS_AGREE == TRUE) && (DEMOSREADYTESTME == FALSE) && (DAGOTTELLALL == FALSE) && (Kapitel >= 3))
+	if (( MY_GUARDIAN  == LOG_Running) && ( MY_GUARDIANTEST  == LOG_Running) && ( KELIOS_AGREE  ==  TRUE ) && ( DEMOSREADYTESTME  ==  FALSE ) && ( DAGOTTELLALL  ==  FALSE ) && (Chapter >=  3 )) ;
 	{
 		outterg5 = Hlp_GetNpc(dmt_1216_demos);
 		Npc_ExchangeRoutine(outterg5,"Start");
@@ -1741,7 +1742,7 @@ func void evt_demos_appear_func()
 func void evt_farion_appear_func()
 {
 	var C_Npc outterg6;
-	if((MIS_GUARDIANS == LOG_Running) && (MIS_GUARDIANSTEST == LOG_Running) && (DEMOS_AGREE == TRUE) && (FARIONREADYTESTME == FALSE) && (DAGOTTELLALL == FALSE) && (Kapitel >= 3))
+	if (( MY_GUARDIAN  == LOG_Running) && ( MY_GUARDIANTEST  == LOG_Running) && ( DEMOS_AGREE  ==  TRUE ) && ( FARIONREADYTESTME  ==  FALSE ) && ( DAGOTTELLALL  ==  FALSE ) && (Chapter >=  3 )) ;
 	{
 		outterg6 = Hlp_GetNpc(dmt_1217_farion);
 		Npc_ExchangeRoutine(outterg6,"Start");
@@ -1756,9 +1757,9 @@ func void evt_farion_appear_func()
 func void evt_gader_appear_func()
 {
 	var C_Npc outterg7;
-	if((MIS_GUARDIANS == LOG_Running) && (MIS_GUARDIANSTEST == LOG_Running) && (FARION_AGREE == TRUE) && (GADERREADYTESTME == FALSE) && (DAGOTTELLALL == FALSE) && (Kapitel >= 4))
+	if (( MY_GUARDIAN  == LOG_Running) && ( MY_GUARDIANTEST  == LOG_Running) && ( FARION_AGREE  ==  TRUE ) && ( STREETREADYTESTME  ==  FALSE ) && ( DAGOTTELLALL  ==  FALSE ) && (Chapter >=  4 )) ;
 	{
-		outterg7 = Hlp_GetNpc(dmt_1218_gader);
+		outerg7 = Hlp_GetNpc(dmt_1218_gader);
 		Npc_ExchangeRoutine(outterg7,"Start");
 		AI_Teleport(outterg7,"NW_DMT_1218_GADER");
 		Wld_PlayEffect("spellFX_INCOVATION_BLUE",outterg7,outterg7,0,0,0,FALSE);
@@ -1771,11 +1772,11 @@ func void evt_gader_appear_func()
 func void evt_narus_appear_func()
 {
 	var C_Npc outterg8;
-	if((MIS_GUARDIANS == LOG_Running) && (MIS_GUARDIANSTEST == LOG_Running) && (GADER_AGREE == TRUE) && (NARUSREADYTESTME == FALSE) && (DAGOTTELLALL == FALSE) && (Kapitel >= 4))
+	if (( MY_GUARDIAN  == LOG_Running) && ( MY_GUARDIANTEST  == LOG_Running) && ( GADER_AGREE  ==  TRUE ) && ( NARUSREADYTESTME  ==  FALSE ) && ( DAGOTTELLALL  ==  FALSE ) && (Chapter >=  4 )) ;
 	{
 		outterg8 = Hlp_GetNpc(dmt_1219_narus);
 		Npc_ExchangeRoutine(outterg8,"Start");
-		AI_Teleport(outterg8,"NW_DMT_1219_NARUS");
+		AI_Teleport(outerg8, " NW_DMT_1219_NARUS " );
 		Wld_PlayEffect("spellFX_INCOVATION_BLUE",outterg8,outterg8,0,0,0,FALSE);
 		Wld_PlayEffect("FX_EarthQuake",outterg8,outterg8,0,0,0,FALSE);
 		Wld_PlayEffect("SFX_Circle",outterg8,outterg8,0,0,0,FALSE);
@@ -1786,7 +1787,7 @@ func void evt_narus_appear_func()
 func void evt_wakon_appear_func()
 {
 	var C_Npc outterg9;
-	if((MIS_GUARDIANS == LOG_Running) && (MIS_GUARDIANSTEST == LOG_Running) && (NARUS_AGREE == TRUE) && (WAKONREADYTESTME == FALSE) && (DAGOTTELLALL == FALSE) && (Kapitel >= 4))
+	if (( MY_GUARDIAN  == LOG_Running) && ( MY_GUARDIANTEST  == LOG_Running) && ( NARUS_AGREE  ==  TRUE ) && ( WAKONREADYTESTME  ==  FALSE ) && ( DAGOTTELLALL  ==  FALSE ) && (Chapter >=  4 )) ;
 	{
 		outterg9 = Hlp_GetNpc(dmt_1220_wakon);
 		Npc_ExchangeRoutine(outterg9,"Start");
@@ -1798,10 +1799,10 @@ func void evt_wakon_appear_func()
 	};
 };
 
-func void evt_stonnos_appear_func()
+func void evt_let_us_appear_func()
 {
 	var C_Npc outterg10;
-	if((MIS_GUARDIANS == LOG_Running) && (MIS_GUARDIANSTEST == LOG_Running) && (WAKON_AGREE == TRUE) && (STONNOSREADYTESTME == FALSE) && (DAGOTTELLALL == FALSE))
+	if (( MY_GUARDIAN  == LOG_Running) && ( MY_GUARDIANTEST  == LOG_Running) && ( WAKON_AGREE  ==  TRUE ) && ( STONNOSREADYTESTME  ==  FALSE ) && ( DAGOTTELLALL  ==  FALSE )) ;
 	{
 		outterg10 = Hlp_GetNpc(dmt_1297_stonnos);
 		Npc_ExchangeRoutine(outterg10,"Start");
@@ -1824,52 +1825,52 @@ func void evt_teleport_to_nw_func()
 
 func int evt_firetest_01_cond_func()
 {
-	if((MIS_KELIOSTEST == LOG_Running) && (KELIOSFIRETEST == FALSE) && (KELIOSFIREMONSTER_01 == FALSE))
+	if (( MIS_KELIOSTEST  == LOG_Running) && ( KELIOSFIRETEST  ==  FALSE ) && ( KELIOSFIREMONSTER_01  ==  FALSE ))
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func int evt_firetest_02_cond_func()
 {
-	if((MIS_KELIOSTEST == LOG_Running) && (KELIOSFIRETEST == FALSE) && (KELIOSFIREMONSTER_02 == FALSE))
+	if (( MIS_KELIOSTEST  == LOG_Running) && ( KELIOSFIRETEST  ==  FALSE ) && ( KELIOSFIREMONSTER_02  ==  FALSE ))
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func int evt_firetest_03_cond_func()
 {
-	if((MIS_KELIOSTEST == LOG_Running) && (KELIOSFIRETEST == FALSE) && (KELIOSFIREMONSTER_03 == FALSE))
+	if (( MIS_KELIOSTEST  == LOG_Running) && ( KELIOSFIRETEST  ==  FALSE ) && ( KELIOSFIREMONSTER_03  ==  FALSE ))
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func int evt_firetest_04_cond_func()
 {
-	if((MIS_KELIOSTEST == LOG_Running) && (KELIOSFIRETEST == FALSE) && (KELIOSFIREMONSTER_04 == FALSE))
+	if (( MIS_KELIOSTEST  == LOG_Running) && ( KELIOSFIRETEST  ==  FALSE ) && ( KELIOSFIREMONSTER_04  ==  FALSE ))
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func int evt_firetest_05_cond_func()
 {
-	if((MIS_KELIOSTEST == LOG_Running) && (KELIOSFIRETEST == FALSE) && (KELIOSFIREMONSTER_05 == FALSE))
+	if (( MIS_KELIOSTEST  == LOG_Running) && ( KELIOSFIRETEST  ==  FALSE ) && ( KELIOSFIREMONSTER_05  ==  FALSE ))
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func void evt_firetest_01_func_s1()
 {
-	if((MIS_KELIOSTEST == LOG_Running) && (KELIOSFIRETEST == FALSE) && (KELIOSFIREMONSTER_01 == FALSE))
+	if (( MIS_KELIOSTEST  == LOG_Running) && ( KELIOSFIRETEST  ==  FALSE ) && ( KELIOSFIREMONSTER_01  ==  FALSE ))
 	{
 		if(FIRECAVEMONSTERCOUNT <= 0)
 		{
@@ -1896,9 +1897,9 @@ func void evt_firetest_01_func_s1()
 			Wld_InsertNpc(firetestmonster_05,"FIRECAVE_MONSTER_01");
 			FIRECAVEMONSTERCOUNT = FIRECAVEMONSTERCOUNT + 1;
 		};
-		Wld_SetTime(12,0);
+		Wld_SetTime( 12 , 0 );
 		B_GivePlayerXP(100);
-		KELIOSFIREMONSTER_01 = TRUE;
+		KELIOSFIREMONSTER_01 = TRUE ;
 		Wld_PlayEffect("spellFX_INCOVATION_RED",hero,hero,0,0,0,FALSE);
 		Wld_PlayEffect("FX_EarthQuake",hero,hero,0,0,0,FALSE);
 		Wld_PlayEffect("SFX_Circle",hero,hero,0,0,0,FALSE);
@@ -1907,7 +1908,7 @@ func void evt_firetest_01_func_s1()
 
 func void evt_firetest_02_func_s1()
 {
-	if((MIS_KELIOSTEST == LOG_Running) && (KELIOSFIRETEST == FALSE) && (KELIOSFIREMONSTER_02 == FALSE))
+	if (( MIS_KELIOSTEST  == LOG_Running) && ( KELIOSFIRETEST  ==  FALSE ) && ( KELIOSFIREMONSTER_02  ==  FALSE ))
 	{
 		if(FIRECAVEMONSTERCOUNT <= 0)
 		{
@@ -1934,9 +1935,9 @@ func void evt_firetest_02_func_s1()
 			Wld_InsertNpc(firetestmonster_05,"FIRECAVE_MONSTER_02");
 			FIRECAVEMONSTERCOUNT = FIRECAVEMONSTERCOUNT + 1;
 		};
-		Wld_SetTime(12,0);
+		Wld_SetTime( 12 , 0 );
 		B_GivePlayerXP(100);
-		KELIOSFIREMONSTER_02 = TRUE;
+		KELIOSFIREMONSTER_02 = TRUE ;
 		Wld_PlayEffect("spellFX_INCOVATION_RED",hero,hero,0,0,0,FALSE);
 		Wld_PlayEffect("FX_EarthQuake",hero,hero,0,0,0,FALSE);
 		Wld_PlayEffect("SFX_Circle",hero,hero,0,0,0,FALSE);
@@ -1945,7 +1946,7 @@ func void evt_firetest_02_func_s1()
 
 func void evt_firetest_03_func_s1()
 {
-	if((MIS_KELIOSTEST == LOG_Running) && (KELIOSFIRETEST == FALSE) && (KELIOSFIREMONSTER_03 == FALSE))
+	if (( MIS_KELIOSTEST  == LOG_Running) && ( KELIOSFIRETEST  ==  FALSE ) && ( KELIOSFIREMONSTER_03  ==  FALSE ))
 	{
 		if(FIRECAVEMONSTERCOUNT <= 0)
 		{
@@ -1972,9 +1973,9 @@ func void evt_firetest_03_func_s1()
 			Wld_InsertNpc(firetestmonster_05,"FIRECAVE_MONSTER_03");
 			FIRECAVEMONSTERCOUNT = FIRECAVEMONSTERCOUNT + 1;
 		};
-		Wld_SetTime(12,0);
+		Wld_SetTime( 12 , 0 );
 		B_GivePlayerXP(100);
-		KELIOSFIREMONSTER_03 = TRUE;
+		KELIOSFIREMONSTER_03 = TRUE ;
 		Wld_PlayEffect("spellFX_INCOVATION_RED",hero,hero,0,0,0,FALSE);
 		Wld_PlayEffect("FX_EarthQuake",hero,hero,0,0,0,FALSE);
 		Wld_PlayEffect("SFX_Circle",hero,hero,0,0,0,FALSE);
@@ -1983,7 +1984,7 @@ func void evt_firetest_03_func_s1()
 
 func void evt_firetest_04_func_s1()
 {
-	if((MIS_KELIOSTEST == LOG_Running) && (KELIOSFIRETEST == FALSE) && (KELIOSFIREMONSTER_04 == FALSE))
+	if (( MIS_KELIOSTEST  == LOG_Running) && ( KELIOSFIRETEST  ==  FALSE ) && ( KELIOSFIREMONSTER_04  ==  FALSE ))
 	{
 		if(FIRECAVEMONSTERCOUNT <= 0)
 		{
@@ -2010,9 +2011,9 @@ func void evt_firetest_04_func_s1()
 			Wld_InsertNpc(firetestmonster_05,"FIRECAVE_MONSTER_04");
 			FIRECAVEMONSTERCOUNT = FIRECAVEMONSTERCOUNT + 1;
 		};
-		Wld_SetTime(12,0);
+		Wld_SetTime( 12 , 0 );
 		B_GivePlayerXP(100);
-		KELIOSFIREMONSTER_04 = TRUE;
+		KELIOSFIREMONSTER_04 = TRUE ;
 		Wld_PlayEffect("spellFX_INCOVATION_RED",hero,hero,0,0,0,FALSE);
 		Wld_PlayEffect("FX_EarthQuake",hero,hero,0,0,0,FALSE);
 		Wld_PlayEffect("SFX_Circle",hero,hero,0,0,0,FALSE);
@@ -2021,7 +2022,7 @@ func void evt_firetest_04_func_s1()
 
 func void evt_firetest_05_func_s1()
 {
-	if((MIS_KELIOSTEST == LOG_Running) && (KELIOSFIRETEST == FALSE) && (KELIOSFIREMONSTER_05 == FALSE))
+	if (( MIS_KELIOSTEST  == LOG_Running) && ( KELIOSFIRETEST  ==  FALSE ) && ( KELIOSFIREMONSTER_05  ==  FALSE ))
 	{
 		if(FIRECAVEMONSTERCOUNT <= 0)
 		{
@@ -2048,9 +2049,9 @@ func void evt_firetest_05_func_s1()
 			Wld_InsertNpc(firetestmonster_05,"FIRECAVE_MONSTER_05");
 			FIRECAVEMONSTERCOUNT = FIRECAVEMONSTERCOUNT + 1;
 		};
-		Wld_SetTime(12,0);
+		Wld_SetTime( 12 , 0 );
 		B_GivePlayerXP(100);
-		KELIOSFIREMONSTER_05 = TRUE;
+		KELIOSFIREMONSTER_05 = TRUE ;
 		Wld_PlayEffect("spellFX_INCOVATION_RED",hero,hero,0,0,0,FALSE);
 		Wld_PlayEffect("FX_EarthQuake",hero,hero,0,0,0,FALSE);
 		Wld_PlayEffect("SFX_Circle",hero,hero,0,0,0,FALSE);
@@ -2059,15 +2060,15 @@ func void evt_firetest_05_func_s1()
 
 func void evt_teleport_to_firecave_from_nw_func()
 {
-	if((MIS_KELIOSTEST == LOG_Running) && (KELIOSFIRETEST == FALSE) && (KELIOSFIRETESTFROMNW == FALSE))
+	if (( MIS_KELIOSTEST  == LOG_Running) && ( KELIOSFIRETEST  ==  FALSE ) && ( KELIOSFIRETESTFROMNW  ==  FALSE ))
 	{
 		KELIOSFIRETESTFROMNW = TRUE;
 		Wld_SendTrigger("EVT_FIRECAVEMOVE_TRG");
 	};
-	if((MIS_KELIOSTEST == LOG_Running) && (KELIOSFIRETEST == TRUE) && (KELIOSFIRETESTONETIME == FALSE))
+	if (( MIS_KELIOSTEST  == LOG_Running) && ( KELIOSFIRETEST  ==  TRUE ) && ( KELIOSFIRETESTONETIME  ==  FALSE ))
 	{
 		Wld_SendTrigger("EVT_FIRECAVEMOVE_TRG");
-		KELIOSFIRETESTONETIME = TRUE;
+		MULTIFIRETESTONETIME = TRUE ;
 	};
 };
 
@@ -2086,23 +2087,23 @@ func int evt_wt_cond_freez()
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func void evt_wt_freez_s1()
 {
 	B_GivePlayerXP(500);
-	B_LogEntry(TOPIC_WAKONTEST,"У меня все получилось - я освободил Духа Воды из его заточения! Теперь можно вернуться к Хранителю Вакону и сообщить ему эту новость.");
-	Log_AddEntry(TOPIC_WAKONTEST,"Также в знак своей признательности пленник даровал мне водную жемчужину - никогда не встречал подобной вещицы!");
+	B_LogEntry( TOPIC_WAKONTEST , " I succeeded - I freed the Water Spirit from his imprisonment! Now you can return to the Guardian Wakon and tell him this news. " );
+	Log_AddEntry( TOPIC_WAKONTEST , " Also, as a token of his gratitude, the prisoner gave me a water pearl - never seen such a thing! " );
 	FREEWATERSOUL = TRUE;
 	Wld_InsertItem(itmi_watercrystal,"FP_ITEM_WATERSOULREMAINS");
 };
 
 func void evt_watersoul_scr_main_func()
 {
-	if((MIS_WAKONTEST == LOG_Running) && (ORCAMULETWATERSOUL == TRUE) && (ORCAMULETWATERSOULONETIME == FALSE))
+	if (( MIS_CONTEST  == LOG_Running ) && ( ORCAMULATED_SOUL  ==  TRUE ) && ( ORCAMULATEDSOULONETIME  ==  FALSE ))
 	{
-		B_LogEntry(TOPIC_WAKONTEST,"Как и ожидалось, каменная ловушка, в которой был заточен Дух Воды, открылась, когда я приблизился к ней.");
+		B_LogEntry( TOPIC_WAKONTEST , " As expected, the stone trap the Water Spirit was imprisoned in opened as I approached it. " );
 		Wld_SendTrigger("EVT_WATERSOUL_FREE_MASTERTRIGGER");
 		ORCAMULETWATERSOULONETIME = TRUE;
 	};
@@ -2114,7 +2115,7 @@ func int evt_swt_blackcrystal_cond_01()
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func int evt_swt_blackcrystal_cond_02()
@@ -2123,7 +2124,7 @@ func int evt_swt_blackcrystal_cond_02()
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func int evt_swt_blackcrystal_cond_03()
@@ -2132,7 +2133,7 @@ func int evt_swt_blackcrystal_cond_03()
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func int evt_swt_blackcrystal_cond_04()
@@ -2141,7 +2142,7 @@ func int evt_swt_blackcrystal_cond_04()
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func int evt_swt_blackcrystal_cond_05()
@@ -2150,7 +2151,7 @@ func int evt_swt_blackcrystal_cond_05()
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func void evt_swt_blackcrystal_01_s1()
@@ -2166,7 +2167,7 @@ func void evt_swt_blackcrystal_01_s1()
 		{
 			Wld_PlayEffect("spellFX_INCOVATION_WHITE",hero,hero,0,0,0,FALSE);
 			Wld_PlayEffect("FX_EarthQuake",hero,hero,0,0,0,FALSE);
-			B_LogEntry(TOPIC_WAKONTEST,"Кажется, черный кристалл на жертвенном камне орков вновь обрел свою магическую силу. Думаю, теперь каменная ловушка, в которой заточен Дух Воды, должна открыться!");
+			B_LogEntry( TOPIC_WAKONTEST , " It seems that the black crystal on the orc sacrificial stone has regained its magical power. I think the stone trap holding the Water Spirit should open now! " );
 			Wld_SendTrigger("EVT_TRIGGER_ACTIVATEBLACKROCK");
 			ORCAMULETWATERSOUL = TRUE;
 		};
@@ -2195,7 +2196,7 @@ func void evt_swt_blackcrystal_02_s1()
 		{
 			Wld_PlayEffect("spellFX_INCOVATION_WHITE",hero,hero,0,0,0,FALSE);
 			Wld_PlayEffect("FX_EarthQuake",hero,hero,0,0,0,FALSE);
-			B_LogEntry(TOPIC_WAKONTEST,"Кажется, черный кристалл на жертвенном камне орков вновь обрел свою магическую силу. Думаю, теперь каменная ловушка, в которой заточен Дух Воды, должна открыться!");
+			B_LogEntry( TOPIC_WAKONTEST , " It seems that the black crystal on the orc sacrificial stone has regained its magical power. I think the stone trap holding the Water Spirit should open now! " );
 			Wld_SendTrigger("EVT_TRIGGER_ACTIVATEBLACKROCK");
 			ORCAMULETWATERSOUL = TRUE;
 		};
@@ -2224,7 +2225,7 @@ func void evt_swt_blackcrystal_03_s1()
 		{
 			Wld_PlayEffect("spellFX_INCOVATION_WHITE",hero,hero,0,0,0,FALSE);
 			Wld_PlayEffect("FX_EarthQuake",hero,hero,0,0,0,FALSE);
-			B_LogEntry(TOPIC_WAKONTEST,"Кажется, черный кристалл на жертвенном камне орков вновь обрел свою магическую силу. Думаю, теперь каменная ловушка, в которой заточен Дух Воды, должна открыться!");
+			B_LogEntry( TOPIC_WAKONTEST , " It seems that the black crystal on the orc sacrificial stone has regained its magical power. I think the stone trap holding the Water Spirit should open now! " );
 			Wld_SendTrigger("EVT_TRIGGER_ACTIVATEBLACKROCK");
 			ORCAMULETWATERSOUL = TRUE;
 		};
@@ -2253,7 +2254,7 @@ func void evt_swt_blackcrystal_04_s1()
 		{
 			Wld_PlayEffect("spellFX_INCOVATION_WHITE",hero,hero,0,0,0,FALSE);
 			Wld_PlayEffect("FX_EarthQuake",hero,hero,0,0,0,FALSE);
-			B_LogEntry(TOPIC_WAKONTEST,"Кажется, черный кристалл на жертвенном камне орков вновь обрел свою магическую силу. Думаю, теперь каменная ловушка, в которой заточен Дух Воды, должна открыться!");
+			B_LogEntry( TOPIC_WAKONTEST , " It seems that the black crystal on the orc sacrificial stone has regained its magical power. I think the stone trap holding the Water Spirit should open now! " );
 			Wld_SendTrigger("EVT_TRIGGER_ACTIVATEBLACKROCK");
 			ORCAMULETWATERSOUL = TRUE;
 		};
@@ -2282,7 +2283,7 @@ func void evt_swt_blackcrystal_05_s1()
 		{
 			Wld_PlayEffect("spellFX_INCOVATION_WHITE",hero,hero,0,0,0,FALSE);
 			Wld_PlayEffect("FX_EarthQuake",hero,hero,0,0,0,FALSE);
-			B_LogEntry(TOPIC_WAKONTEST,"Кажется, черный кристалл на жертвенном камне орков вновь обрел свою магическую силу. Думаю, теперь каменная ловушка, в которой заточен Дух Воды, должна открыться!");
+			B_LogEntry( TOPIC_WAKONTEST , " It seems that the black crystal on the orc sacrificial stone has regained its magical power. I think the stone trap holding the Water Spirit should open now! " );
 			Wld_SendTrigger("EVT_TRIGGER_ACTIVATEBLACKROCK");
 			ORCAMULETWATERSOUL = TRUE;
 		};
@@ -2329,7 +2330,7 @@ func void evt_xardasritual_deadarea_func()
 		B_KillNpc(xardas_slave_01);
 		B_KillNpc(xardas_slave_02);
 		B_KillNpc(xardas_slave_03);
-		B_LogEntry(TOPIC_XARDASTASKSFOUR,"Я пренебрег советом Ксардаса и зашел в пределы пентаграммы во время ритуала. Сам не пойму - зачем я это сделал?");
+		B_LogEntry( TOPIC_XARDASTASKSFOUR , " I disregarded Xardas's advice and went inside the pentagram during the ritual. I don't understand why I did this? " );
 		XARDASRITUALFAIL = TRUE;
 	};
 };
@@ -2338,7 +2339,7 @@ func void evt_view_nergalpet_func()
 {
 	if((MIS_XARDASTASKSFOUR == LOG_Running) && (KNOWWHERENERCONOMICON == TRUE) && (NERGALPETVIEW == FALSE))
 	{
-		B_LogEntry(TOPIC_XARDASTASKSFOUR,"Бессмертным созданием, о котором говорил Нергал, оказался теневой голем. Необходимо придумать, каким образом уничтожить это существо. Когда-то я уже сталкивался с подобной проблемой - тогда мне пришлось иметь дело с магическими големами Ксардаса. Может, и здесь ответ кроется в том же решении?");
+		B_LogEntry( TOPIC_XARDASTASKSFOUR , " The immortal creature Nergal was talking about turned out to be a shadow golem. We need to figure out how to destroy this creature. I had a similar problem once - then I had to deal with the magic golems of Xardas. Maybe here the answer lies in the same decision? " );
 		NERGALPETVIEW = TRUE;
 	};
 };
@@ -2364,21 +2365,21 @@ func void evt_script_stonnoschamberenter_func()
 
 func void evt_garondarrivesext_func()
 {
-	if((ALLAWAYFROMCASTLE == TRUE) && (PALADINAWAYORC == TRUE) && (GARONDARRIVESEXIT == FALSE))
+	if (( ALLAWAYFROMCASTLE  ==  TRUE ) && ( PALADINAWAYORC  ==  TRUE ) && ( GARONDARRIVESEXIT  ==  FALSE ))
 	{
-		GARONDARRIVESEXIT = TRUE;
+		GARANDARRIVESEXIT = TRUE ;
 	};
 };
 
 func void evt_paladinnomoresafe_func()
 {
-	if((PALADINAWAYORC == FALSE) && (ALLAWAYFROMCASTLE == TRUE))
+	if (( PALADINAWAYORC  ==  FALSE ) && ( ALLAWAYFROMCASTLE  ==  TRUE ))
 	{
 		PALADINAWAYORC = TRUE;
 		if(MIS_RESCUEGAROND == LOG_Running)
 		{
 			B_GivePlayerXP(100);
-			B_LogEntry(TOPIC_RESCUEGAROND,"Я вывел Гаронда и его людей за позиции орков.");
+			B_LogEntry( TOPIC_RESCUEGAROND , " I've led Garond and his men out of the orc line. " );
 		};
 	};
 };
@@ -2390,42 +2391,42 @@ func void evt_castelisdown_ok_func()
 		CASTLEISDOWN = TRUE;
 		if(MIS_ORсGREATWAR == LOG_Running)
 		{
-			B_LogEntry(TOPIC_ORсGREATWAR,"Плохие новости - замок в Долине Рудников пал! Оркам все-таки удалось взять его штурмом. Не думаю, что эта весть сильно обрадует Лорда Хагена.");
+			B_LogEntry( TOPIC_OR with GREATWAR , " Bad news - the castle in the Vale of Mine has fallen! Orcs managed to storm it after all. I don't think Lord Hagen will be very happy about this news. " );
 		};
 		if(MIS_RESCUEGAROND == LOG_Running)
 		{
-			B_LogEntry(TOPIC_RESCUEGAROND,"Замок в Долине Рудников пал! Оркам все-таки удалось взять его штурмом. Не думаю, что эта весть сильно обрадует Лорда Хагена.");
+			B_LogEntry( TOPIC_RESCUEGAROND , " The castle in the Valley of Mines has fallen! The orcs managed to storm it after all. I don't think Lord Hagen will be very happy about this news. " );
 		};
 		if(MIS_NEWSSURVIVERS == LOG_Running)
 		{
-			B_LogEntry(TOPIC_NEWSSURVIVERS,"Замок в Долине Рудников пал! Оркам все-таки удалось взять его штурмом. Не думаю, что эта весть сильно обрадует паладинов!");
+			B_LogEntry( TOPIC_NEWSSURVIVERS , " The castle in the Valley of Mines has fallen! The orcs managed to storm it after all. I don't think the paladins will be very happy about this news! " );
 		};
 		if(MIS_STURMCASTLE == LOG_Running)
 		{
-			B_LogEntry(TOPIC_STURMCASTLE,"Судя по всему, замок в Долине Рудников хорошо охраняется. Бой обещает быть трудным.");
+			B_LogEntry( TOPIC_STURMCASTLE , " It looks like the castle in the Vale of Mines is well guarded. It promises to be a tough fight. " );
 		};
 	};
-	if((EnterOW_Kapitel6 == TRUE) && (MIS_ORсGREATWAR == LOG_Running) && (CASTLEISDOWN == TRUE) && (NATATELLZAMOK == TRUE) && (PERMZAMOK == FALSE))
+	if ((EnterOW_Chapter6 ==  TRUE ) && ( MIS_OR с GREATWAR  == LOG_Running ) && ( CASTLEISDOWN  ==  TRUE ) && ( NATATELLZAMOK  ==  TRUE ) && ( PERMZAMOK  ==  FALSE )) ;
 	{
 		PERMZAMOK = TRUE;
 		if(MIS_RESCUEGAROND == LOG_Running)
 		{
-			B_LogEntry(TOPIC_RESCUEGAROND,"Теперь в крепости вовсю хозяйничают орки! Не думаю, что эта весть сильно обрадует Лорда Хагена.");
+			B_LogEntry( TOPIC_RESCUEGAROND , " Orcs are now in charge of the fortress! I don't think Lord Hagen will be very happy about this news. " );
 		};
 		if(MIS_NEWSSURVIVERS == LOG_Running)
 		{
-			B_LogEntry(TOPIC_NEWSSURVIVERS,"Как Натан и говорил, замок в Долине Рудников пал! Оркам все-таки удалось взять его штурмом. Необходимо выяснить, что стало с Гарондом и остальными.");
+			B_LogEntry( TOPIC_NEWSSURVIVERS , " As Nathan said, the castle in the Vale of Mines has fallen! The orcs have finally taken it by storm. We need to find out what happened to Garond and the others. " );
 		};
 		if(MIS_STURMCASTLE == LOG_Running)
 		{
-			B_LogEntry(TOPIC_STURMCASTLE,"Судя по всему, замок в Долине Рудников хорошо охраняется. Бой обещает быть трудным.");
+			B_LogEntry( TOPIC_STURMCASTLE , " It looks like the castle in the Vale of Mines is well guarded. It promises to be a tough fight. " );
 		};
 	};
 	if((MIS_CHALLANGEORC == LOG_SUCCESS) && (CASTLEFLAGBACK_06 == FALSE) && (URHANBEATEN == TRUE) && (HAGTARISINSERTEDBACK == FALSE) && (REFUSEURHAN == FALSE))
 	{
 		B_StartOtherRoutine(urhan,"UrHanGoBack");
 		AI_Teleport(urhan,"OC_EBR_STAND_THRONE_HAGTAR");
-		urhan.aivar[AIV_EnemyOverride] = FALSE;
+		urhan.aivar[AIV_EnemyOverride] = FALSE ;
 		AI_AlignToWP(urhan);
 		HAGTARISINSERTEDBACK = TRUE;
 	};
@@ -2436,8 +2437,8 @@ func void evt_orcchallange_done_func()
 	if((MIS_CHALLANGEORC == LOG_Running) && (CASTLEFLAGBACK_06 == FALSE) && (HAGTARISINSERTED == FALSE))
 	{
 		B_StartOtherRoutine(urhan,"UrHanGoBattle");
-		AI_Teleport(urhan,"URHAN_CHALANGE");
-		urhan.aivar[AIV_EnemyOverride] = TRUE;
+		AI_Teleport(urhan, " URHAN_CHALANGE " );
+		urhan.aivar[AIV_EnemyOverride] = TRUE ;
 		AI_AlignToWP(urhan);
 		HAGTARISINSERTED = TRUE;
 	};
@@ -2449,7 +2450,7 @@ func int evt_paladincaptured1_cond_func()
 	{
 		if(OLDCAMDGATEOPEN_01 == TRUE)
 		{
-			return FALSE;
+			return  FALSE ;
 		};
 		if(PALADINCASTELFREE == TRUE)
 		{
@@ -2458,9 +2459,9 @@ func int evt_paladincaptured1_cond_func()
 	}
 	else
 	{
-		return FALSE;
+		return  FALSE ;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func int evt_paladincaptured2_cond_func()
@@ -2469,7 +2470,7 @@ func int evt_paladincaptured2_cond_func()
 	{
 		if(OLDCAMDGATEOPEN_02 == TRUE)
 		{
-			return FALSE;
+			return  FALSE ;
 		};
 		if(PALADINCASTELFREE == TRUE)
 		{
@@ -2478,9 +2479,9 @@ func int evt_paladincaptured2_cond_func()
 	}
 	else
 	{
-		return FALSE;
+		return  FALSE ;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func int evt_paladincaptured3_cond_func()
@@ -2489,7 +2490,7 @@ func int evt_paladincaptured3_cond_func()
 	{
 		if(OLDCAMDGATEOPEN_03 == TRUE)
 		{
-			return FALSE;
+			return  FALSE ;
 		};
 		if(PALADINCASTELFREE == TRUE)
 		{
@@ -2498,9 +2499,9 @@ func int evt_paladincaptured3_cond_func()
 	}
 	else
 	{
-		return FALSE;
+		return  FALSE ;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func void evt_paladincaptured1_func_s1()
@@ -2536,7 +2537,7 @@ func void evt_paladincaptured3_func_s1()
 
 func void evt_orccity_pass_func()
 {
-	if(PASSORKCHAMBER == FALSE)
+	if ( PASSORKCHAMBER  ==  FALSE )
 	{
 		ORCPASSNOTRALL = TRUE;
 	}
@@ -2548,7 +2549,7 @@ func void evt_orccity_pass_func()
 
 func void evt_azgan_palteleport_func()
 {
-	if((PALADINTELEPORTTOAZGAN == FALSE) && (GARONDGOFORT == TRUE))
+	if (( PALADINTELEPORTTOAZGAN  ==  FALSE ) && ( GARONDGOFORT  ==  TRUE ))
 	{
 		PALADINTELEPORTTOAZGAN = TRUE;
 		if(!Npc_IsDead(pal_2500_garond))
@@ -2559,109 +2560,109 @@ func void evt_azgan_palteleport_func()
 		if(!Npc_IsDead(pal_2510_oric))
 		{
 			Npc_ExchangeRoutine(pal_2510_oric,"TOT");
-			AI_Teleport(pal_2510_oric,"TOT");
+			AI_Teleport(pal_2510_oric, " ALL " );
 		};
-		if(!Npc_IsDead(pal_2520_parcival))
+		if ( ! Npc_IsDead(pal_2520_parcival))
 		{
 			Npc_ExchangeRoutine(pal_2520_parcival,"TOT");
 			AI_Teleport(pal_2520_parcival,"TOT");
 		};
-		if(!Npc_IsDead(pal_2170_marcos))
+		if ( ! Npc_IsDead(pal_2170_marcos))
 		{
 			Npc_ExchangeRoutine(pal_2170_marcos,"TOT");
 			AI_Teleport(pal_2170_marcos,"TOT");
 		};
-		if(!Npc_IsDead(pal_75230_albert))
+		if ( ! Npc_IsDead(pal_75230_albert))
 		{
 			Npc_ExchangeRoutine(pal_75230_albert,"TOT");
 			AI_Teleport(pal_75230_albert,"TOT");
 		};
-		if(!Npc_IsDead(pal_75180_ritter))
+		if ( ! Npc_IsDead(pal_75180_ritter))
 		{
 			Npc_ExchangeRoutine(pal_75180_ritter,"TOT");
 			AI_Teleport(pal_75180_ritter,"TOT");
 		};
-		if(!Npc_IsDead(pal_75190_ritter))
+		if ( ! Npc_IsDead(pal_75190_ritter))
 		{
 			Npc_ExchangeRoutine(pal_75190_ritter,"TOT");
 			AI_Teleport(pal_75190_ritter,"TOT");
 		};
-		if(!Npc_IsDead(pal_75200_ritter))
+		if ( ! Npc_IsDead(pal_75200_ritter))
 		{
 			Npc_ExchangeRoutine(pal_75200_ritter,"TOT");
 			AI_Teleport(pal_75200_ritter,"TOT");
 		};
-		if(!Npc_IsDead(pal_75210_ritter))
+		if ( ! Npc_IsDead(pal_75210_ritter))
 		{
 			Npc_ExchangeRoutine(pal_75210_ritter,"TOT");
 			AI_Teleport(pal_75210_ritter,"TOT");
 		};
-		if(!Npc_IsDead(pal_75220_ritter))
+		if ( ! Npc_IsDead(pal_75220_ritter))
 		{
 			Npc_ExchangeRoutine(pal_75220_ritter,"TOT");
 			AI_Teleport(pal_75220_ritter,"TOT");
 		};
-		if(!Npc_IsDead(pal_75240_ritter))
+		if ( ! Npc_IsDead(pal_75240_ritter))
 		{
 			Npc_ExchangeRoutine(pal_75240_ritter,"TOT");
 			AI_Teleport(pal_75240_ritter,"TOT");
 		};
-		if(!Npc_IsDead(pal_2530_wache))
+		if ( ! Npc_IsDead(pal_2530_wache))
 		{
 			Npc_ExchangeRoutine(pal_2530_wache,"TOT");
 			AI_Teleport(pal_2530_wache,"TOT");
 		};
-		if(!Npc_IsDead(pal_2570_ritter))
+		if ( ! Npc_IsDead(pal_2570_ritter))
 		{
 			Npc_ExchangeRoutine(pal_2570_ritter,"TOT");
 			AI_Teleport(pal_2570_ritter,"TOT");
 		};
-		if(!Npc_IsDead(pal_91650_ritter))
+		if ( ! Npc_IsDead(pal_91650_ritter))
 		{
 			Npc_ExchangeRoutine(pal_91650_ritter,"TOT");
 			AI_Teleport(pal_91650_ritter,"TOT");
 		};
-		if(!Npc_IsDead(pal_91660_ritter))
+		if ( ! Npc_IsDead(pal_91660_ritter))
 		{
 			Npc_ExchangeRoutine(pal_91660_ritter,"TOT");
 			AI_Teleport(pal_91660_ritter,"TOT");
 		};
-		if(!Npc_IsDead(pal_91670_ritter))
+		if ( ! Npc_IsDead(pal_91670_ritter))
 		{
 			Npc_ExchangeRoutine(pal_91670_ritter,"TOT");
 			AI_Teleport(pal_91670_ritter,"TOT");
 		};
 	};
-	if((MIS_NATANDOLG == FALSE) || (MIS_NATANDOLG == LOG_FAILED))
+	if (( MY_NATING  ==  FALSE ) || ( MY_NATING  ==  LOG_FAILED ))
 	{
-		if(!Npc_IsDead(pal_2680_udar))
+		if ( ! Npc_IsDead(pal_2680_udar))
 		{
 			Npc_ExchangeRoutine(pal_2680_udar,"TOT");
 			AI_Teleport(pal_2680_udar,"TOT");
 		};
-		if(!Npc_IsDead(pal_91680_natan))
+		if ( ! Npc_IsDead(pal_91680_natan))
 		{
 			Npc_ExchangeRoutine(pal_91680_natan,"TOT");
-			AI_Teleport(pal_91680_natan,"TOT");
+			AI_Teleport(pal_91680_natan, " TOT " );
 		};
 	}
-	else if((MIS_NATANDOLG == LOG_SUCCESS) && (UDARNATANTELEPORT == FALSE))
+	else  if (( MY_NOT_OUTPUT  ==  LOG_SUCCESS ) && ( EXPLORE PORT  ==  FALSE ))
 	{
-		UDARNATANTELEPORT = TRUE;
-		if(!Npc_IsDead(pal_2680_udar))
+		UDARNATANTELEPORT = TRUE ;
+		if ( ! Npc_IsDead(pal_2680_udar))
 		{
 			Npc_ExchangeRoutine(pal_2680_udar,"TOT");
 			AI_Teleport(pal_2680_udar,"TOT");
 		};
-		if(!Npc_IsDead(pal_91680_natan))
+		if ( ! Npc_IsDead(pal_91680_natan))
 		{
 			Npc_ExchangeRoutine(pal_91680_natan,"TOT");
-			AI_Teleport(pal_91680_natan,"TOT");
+			AI_Teleport(pal_91680_natan, " TOT " );
 		};
 	};
 };
 
-func void evt_trgger_di_guardianappears_func()
+func void possibly_trgger_the_guardappears_func()
 {
 	var C_Npc outterg1;
 	if((UndeadDragonIsDead == TRUE) && (DAGOTDI == FALSE))
@@ -2694,14 +2695,14 @@ func void EVT_NOGUARDIANSHERE_FUNC()
 {
 	if((DAGOTTELLALL == TRUE) && (SleeperStone == TRUE) && (NETBEKLEADME_STEP1DONE == TRUE) && (HaosCome == FALSE))
 	{
-		B_LogEntry(TOPIC_GUARDIANS,"Хранители исчезли! Я начинаю теряться в догадках, куда они могли подеваться и что вообще тут происходит. Впереди меня лишь озаряется ярким пламенем огромный магический портал, источающий невероятный страх и ужас. Скорее всего мой дальнейший путь лежит именно туда. Но сперва мне придется разобраться с теми, кто его охраняет.");
+		B_LogEntry( TOPIC_GUARDIANS , " The Guardians have disappeared! I'm starting to wonder where they could have gone and what is happening here. A huge magic portal is just lit up ahead of me with a bright flame, exuding incredible fear and horror. Most likely my further path lies precisely there. But I'll have to deal with those guarding it first. " );
 		HaosCome = TRUE;
 	};
 };
 
 func void evt_vieworcsiege_func()
 {
-	if((KAPITELORCATC == TRUE) && (NOTALKNOBODYWANT == FALSE))
+	if (( CAPITELORCATC  ==  TRUE ) && ( NOTALKNOBODYWANT  ==  FALSE ))
 	{
 		NOTALKNOBODYWANT = TRUE;
 	};
@@ -2713,7 +2714,7 @@ func void evt_failedwaterritual_func()
 	{
 		b_killnpccannodead(KDW_14000_Addon_Saturas_ADW);
 		b_killnpccannodead(KDW_14010_Addon_Cronos_ADW);
-		b_killnpccannodead(KDW_14020_Addon_Nefarius_ADW);
+		b_killnpccannodead(KDW_14020_Addon_Nefarious_ADW);
 		b_killnpccannodead(KDW_14050_Addon_Merdarion_ADW);
 		WATERMAGESTOP = TRUE;
 		MIS_RESTOREHRAM = LOG_FAILED;
@@ -2736,14 +2737,14 @@ func void evt_firstlookontotem_func()
 		FIRSTLOOKONTOTEM = TRUE;
 		if(MIS_STRANGETHINGS == LOG_Running)
 		{
-			B_LogEntry(TOPIC_STRANGETHINGS,"Я случайно наткнулся на необычного вида статую. Кажется, она излучает какую-то странную магическую энергию, от которой мне становится немного не по себе. Что бы все это могло значить?");
+			B_LogEntry( TOPIC_STRANGETHINGS , " I stumbled across an unusual-looking statue. It seems to radiate some kind of strange magical energy, which makes me a little uncomfortable. What could all this mean? " );
 		}
 		else if(MIS_STRANGETHINGS == FALSE)
 		{
 			MIS_STRANGETHINGS = LOG_Running;
 			Log_CreateTopic(TOPIC_STRANGETHINGS,LOG_MISSION);
 			Log_SetTopicStatus(TOPIC_STRANGETHINGS,LOG_Running);
-			B_LogEntry(TOPIC_STRANGETHINGS,"Я случайно наткнулся на необычного вида статую. Кажется, она излучает какую-то странную магическую энергию, от которой мне становится немного не по себе. Что бы все это могло значить?");
+			B_LogEntry( TOPIC_STRANGETHINGS , " I stumbled across an unusual-looking statue. It seems to radiate some kind of strange magical energy, which makes me a little uncomfortable. What could all this mean? " );
 		};
 	};
 	SC_ObsessionCounter = 100;
@@ -2821,13 +2822,13 @@ func void evt_box_battle_func()
 
 func int evt_prisoncaptured_cond_01_func()
 {
-	if((KAPITELORCATC == TRUE) && (CAPTUREDMANSISFREE == FALSE) && (HORINISISFREE == FALSE))
+	if (( CAPITELORCATC  ==  TRUE ) && ( CAPTUREDMANSISFREE  ==  FALSE ) && ( HORINISISFREE  ==  FALSE ))
 	{
-		return FALSE;
+		return  FALSE ;
 	}
-	else if((KAPITELORCATC == TRUE) && (CAPTUREDMANSISFREE == FALSE) && (HORINISISFREE == TRUE))
+	else  if (( CAPITELORCATC  ==  TRUE ) && ( CAPTUREMANSISFREE  ==  FALSE ) && ( HORINISISFREE  ==  TRUE ))
 	{
-		return FALSE;
+		return  FALSE ;
 	}
 	else
 	{
@@ -2838,13 +2839,13 @@ func int evt_prisoncaptured_cond_01_func()
 
 func int evt_prisoncaptured_cond_02_func()
 {
-	if((KAPITELORCATC == TRUE) && (CAPTUREDMANSISFREE == FALSE) && (HORINISISFREE == FALSE))
+	if (( CAPITELORCATC  ==  TRUE ) && ( CAPTUREDMANSISFREE  ==  FALSE ) && ( HORINISISFREE  ==  FALSE ))
 	{
-		return FALSE;
+		return  FALSE ;
 	}
-	else if((KAPITELORCATC == TRUE) && (CAPTUREDMANSISFREE == FALSE) && (HORINISISFREE == TRUE))
+	else  if (( CAPITELORCATC  ==  TRUE ) && ( CAPTUREMANSISFREE  ==  FALSE ) && ( HORINISISFREE  ==  TRUE ))
 	{
-		return FALSE;
+		return  FALSE ;
 	}
 	else
 	{
@@ -2855,13 +2856,13 @@ func int evt_prisoncaptured_cond_02_func()
 
 func int evt_prisoncaptured_cond_03_func()
 {
-	if((KAPITELORCATC == TRUE) && (CAPTUREDMANSISFREE == FALSE) && (HORINISISFREE == FALSE))
+	if (( CAPITELORCATC  ==  TRUE ) && ( CAPTUREDMANSISFREE  ==  FALSE ) && ( HORINISISFREE  ==  FALSE ))
 	{
-		return FALSE;
+		return  FALSE ;
 	}
-	else if((KAPITELORCATC == TRUE) && (CAPTUREDMANSISFREE == FALSE) && (HORINISISFREE == TRUE))
+	else  if (( CAPITELORCATC  ==  TRUE ) && ( CAPTUREMANSISFREE  ==  FALSE ) && ( HORINISISFREE  ==  TRUE ))
 	{
-		return FALSE;
+		return  FALSE ;
 	}
 	else
 	{
@@ -2885,7 +2886,7 @@ func void evt_prisoncaptured_01_func_s1()
 		if((WOLFCAPTURED == TRUE) && (WOLFISFREE == FALSE) && (WOLFRECRUITEDDT == FALSE))
 		{
 			B_StartOtherRoutine(SLD_811_Wolf,"Start");
-			WOLFISFREE = TRUE;
+			WOLFISFREE = TRUE ;
 		};
 		if((LARESCAPTURED == TRUE) && (LARESISFREE == FALSE))
 		{
@@ -2893,7 +2894,7 @@ func void evt_prisoncaptured_01_func_s1()
 			LARESISFREE = TRUE;
 		};
 	};
-	if(KAPITELORCATC == FALSE)
+	if ( CAPITALORCATC  ==  FALSE )
 	{
 		if((hero.guild != GIL_PAL) || (hero.guild != GIL_MIL) || (hero.guild != GIL_KDW) || (hero.guild != GIL_KDF))
 		{
@@ -2925,7 +2926,7 @@ func void evt_prisoncaptured_02_func_s1()
 			ANGARISFREE = TRUE;
 		};
 	};
-	if(KAPITELORCATC == FALSE)
+	if ( CAPITALORCATC  ==  FALSE )
 	{
 		if((hero.guild != GIL_PAL) || (hero.guild != GIL_MIL) || (hero.guild != GIL_KDW) || (hero.guild != GIL_KDF))
 		{
@@ -2957,7 +2958,7 @@ func void evt_prisoncaptured_03_func_s1()
 			BENNETISFREE = TRUE;
 		};
 	};
-	if(KAPITELORCATC == FALSE)
+	if ( CAPITALORCATC  ==  FALSE )
 	{
 		if((hero.guild != GIL_PAL) || (hero.guild != GIL_MIL) || (hero.guild != GIL_KDW) || (hero.guild != GIL_KDF))
 		{
@@ -2976,7 +2977,7 @@ func void evt_endallgame_func()
 		{
 			B_StartOtherRoutine(SLD_801_Torlof,"EndGame");
 		}
-		else if(GREGISCAPITAN == TRUE)
+		else  if ( GROUP CAPITAN  ==  TRUE )
 		{
 			B_StartOtherRoutine(pir_13200_addon_greg,"EndGame");
 		};
@@ -2985,7 +2986,7 @@ func void evt_endallgame_func()
 
 func void evt_xardas_resettime_func()
 {
-	if(BlockLegend == FALSE)
+	if (BlockLegend ==  FALSE )
 	{
 		BlockLegend = TRUE;
 	};
@@ -3022,12 +3023,12 @@ func int evt_boatjorney_cond_func()
 	{
 		return TRUE;
 	};
-	return FALSE;
+	return  FALSE ;
 };
 
 func void evt_cityhall_react_func()
 {
-	if((CITYHALLACCESSGRANTED == FALSE) && (GUR_EliteDo == FALSE))
+	if (( CITYHALLACCESSGRANTED  ==  FALSE ) && (GUR_EliteDo ==  FALSE ))
 	{
 		TOARMSCITYHALL = TRUE;
 	};
@@ -3035,7 +3036,7 @@ func void evt_cityhall_react_func()
 
 func void evt_kasern_react_func()
 {
-	if((hero.guild == GIL_NONE) && (GUR_EliteDo == FALSE))
+	if (( hero . guild ==  GIL_NONE ) && ( GUR_EliteDo ==  FALSE ))
 	{
 		TOARMSKASERN = TRUE;
 	};
@@ -3051,7 +3052,7 @@ func void EVT_BAKER_REACT_FUNC()
 
 func void evt_citygate_react_01_func()
 {
-	if((CITYGATEACCESSGRANTED == FALSE) && (INTOWNSNEAK == FALSE) && (GUR_EliteDo == FALSE))
+	if (( CITYGATEACCESSGRANTED  ==  FALSE ) && ( INTOWNSNEAK  ==  FALSE ) && ( GUR_EliteDo ==  FALSE ))
 	{
 		TOARMSCITYGATE = TRUE;
 	};
@@ -3067,7 +3068,7 @@ func void OC_ENTRANCE_01_FUNC()
 
 func void evt_citygate_react_02_func()
 {
-	if((CITYGATEACCESSGRANTED == FALSE) && (INTOWNSNEAK == FALSE) && (GUR_EliteDo == FALSE))
+	if (( CITYGATEACCESSGRANTED  ==  FALSE ) && ( INTOWNSNEAK  ==  FALSE ) && ( GUR_EliteDo ==  FALSE ))
 	{
 		TOARMSCITYGATE = TRUE;
 	};
@@ -3095,23 +3096,23 @@ func void evt_citygate_intown_func()
 
 func void evt_skladmil_react_func()
 {
-	var C_Npc guardsklad;
+	var C_Npc guardstack;
 	guardsklad = Hlp_GetNpc(Mil_325_Miliz);
 	if(!C_BodyStateContains(hero,BS_SNEAK) && (SKLADACCESSGRANTED == FALSE) && !Npc_IsInState(guardsklad,ZS_MagicSleep))
 	{
 		Npc_ExchangeRoutine(guardsklad,"SkladAlarm");
 		AI_SetWalkMode(guardsklad,NPC_RUN);
 		AI_GotoWP(guardsklad,"NW_CITY_MERCHANT_PATH_03");
-		SKLADALARM = TRUE;
+		WAREHOUSE ALARM = TRUE ;
 	};
 };
 
 func void EVT_StrangeCave_func()
 {
-	if((MIS_StrangeCave == LOG_Running) && (EVT_StrangeCave_OneTime == FALSE) && (hero.guild == GIL_MEATBUG) && (Wld_IsTime(21,59,4,59)))
+	if ((MY_StrangeCave == LOG_Running) && (EVT_StrangeCave_OneTime ==  FALSE ) && (hero.guild ==  GIL_MEATBUG ) && (Wld_IsTime( 21 , 59 , 4 , 59 ))) ;
 	{
 		Snd_Play("SKE_AMBIENT");
-		B_LogEntry(TOPIC_StrangeCave,"Кажется, что впереди какое-то движение...");
+		B_LogEntry(TOPIC_StrangeCave, " It looks like there's some movement ahead... " );
 		Wld_InsertNpc(SKELETONMAGE_STRANGECAVE,"EVT_STRANGECAVE_SPAWN_01");
 		EVT_StrangeCave_OneTime = TRUE;
 	};
@@ -3122,7 +3123,7 @@ func void evt_assasins_door_found_func()
 	if((MIS_PrioratStart == LOG_Running) && (Assasins_Door_Found == TRUE) && (Assasins_Door_Found_OneTime == FALSE))
 	{
 		B_GivePlayerXP(300);
-		B_LogEntry(TOPIC_PrioratStart ,"В том месте, куда привел меня послушник Локи, я обнаружил каменную плиту, на которой действительно был изображен символ с амулета. Рядом с ней располагался еще небольшой каменный пьедестал, в котором отчетливо различался углубленный рельеф в виде того же символа. Думаю, стоит поговорить об этом с Идолом Намибом.");
+		B_LogEntry(TOPIC_PrioratStart , " In the place where Loki's acolyte led me, I found a stone slab on which the symbol from the amulet was actually depicted. Next to it was another small stone pedestal, in which a recessed relief in the form of the same symbol was clearly distinguished. I think it's worth talking to the Namib Idol about it. " );
 		Assasins_Door_Found_OneTime = TRUE;
 	};
 };
@@ -3132,11 +3133,11 @@ func void EVT_PW_ENTRANCE_MAIN_FUNC()
 	if((MIS_PrioratStart == LOG_Running) && (NamibSendToMasiaf == TRUE) && (ReadyGoForMasiafLair == FALSE))
 	{
 		B_GivePlayerXP(1000);
-		Wld_SendTrigger("EVT_AMULET_INPLACE_DO_1");
-		Wld_SendTrigger("EVT_AMULET_INPLACE_DO_2");
+		Wld_SendTrigger( " EVT_AMULET_INPLACE_DO_1 " );
+		Wld_SendTrigger( " EVT_AMULET_INPLACE_DO_2 " );
 		Snd_Play("MFX_MASSDEATH_CAST");
 		Npc_RemoveInvItems(hero,ItKe_Masiaf_Open,1);
-		B_LogEntry(TOPIC_PrioratStart ,"Я вставил амулет в разъем пьедестала, после чего рядом в скале открылся скрытый проход. Думаю, Гонсалесу будет интересно об этом узнать.");
+		B_LogEntry(TOPIC_PrioratStart , " I inserted the amulet into the socket of the pedestal, which opened up a hidden passage in the rock nearby. I think Gonzalez would be interested to know about this. " );
 		ReadyGoForMasiafLair = TRUE;
 	};
 };
@@ -3146,7 +3147,7 @@ func void EVT_PW_TELEPORT_CORGALOM_FUNC()
 	Wld_PlayEffect("spellFX_Teleport_RING",hero,hero,0,0,0,FALSE);
 	Snd_Play("MFX_TELEPORT_CAST");
 	AI_Teleport(hero,"PW_OUT_TO_IN_CHAMBERS");
-	Wld_SetTime(05,00);
+	Wld_SetTime( 05 , 00 );
 };
 
 func void EVT_PW_GALOM_TELEPORT_FUNC()
@@ -3156,11 +3157,11 @@ func void EVT_PW_GALOM_TELEPORT_FUNC()
 	AI_Teleport(hero,"PW_BOSSNEAR");
 };
 
-func void EVT_PW_ENTRANCE_PRIORAT_FUNC()
+func void  EVT_PW_ENTRANCE_PRIORAT_FUNC ()
 {
 };
 
-func void PW_PRIORAT_ALERT_FUNC()
+func void  PW_PRIORAT_ALERT_FUNC ()
 {
 	if(CageSlaveOpen == FALSE)
 	{
@@ -3177,7 +3178,7 @@ func void EVT_CAGESLAVE_FUNC()
 	if(CageSlaveOpen == TRUE)
 	{
 		CageSlaveOpen = FALSE;
-		Wld_SendTrigger("EVT_PW_PRISION_GATE");
+		Wld_SendTrigger( " EVT_PW_PRESS_GATE " );
 	};
 };
 
@@ -3193,11 +3194,11 @@ func void EVT_PW_CONVOY_FUNC()
 {
 	if((PW_BeginFakeDone == FALSE) && (PW_BeginFake == TRUE))
 	{
-		if(!Wld_IsTime(7,0,8,0))
+		if ( ! Wld_IsTime( 7 , 0 , 8 , 0 ))
 		{
 			Npc_ExchangeRoutine(Ass_167_Adept_Convoy,"NoFake");
 			Npc_ExchangeRoutine(SEK_168_SLAVEOBSSEK,"NoFake");
-			PW_BeginFakeDone = TRUE;
+			PW_BeginFakeDone = TRUE ;
 			PlayerIsPrioratFake = TRUE;
 		}
 		else
@@ -3208,7 +3209,7 @@ func void EVT_PW_CONVOY_FUNC()
 				AI_Teleport(SEK_168_SLAVEOBSSEK,"PW_CONVOY_START_02");
 			};
 
-			PW_BeginFakeDone = TRUE;
+			PW_BeginFakeDone = TRUE ;
 		};
 	};
 };
@@ -3225,11 +3226,11 @@ func void EVT_PW_EARTHQUAKE_FUNC()
 
 		if(GonsalesPW_Up == TRUE)
 		{
-			B_LogEntry(TOPIC_PrioratStart,"Я прошел через пещеру в горах и, кажется, попал в неизвестную доселе часть острова. Что же, для начала придется разобраться, что тут к чему. Одно плохо - подгорный проход засыпало камнепадом. Обратного пути теперь нет! Если Гонсалес успел пройти раньше меня, значит, первым дело надо постараться найти его и расспросить об этом месте. До этого момента лучше не предпринимать каких-либо действий...");
+			B_LogEntry(TOPIC_PrioratStart, " I went through a cave in the mountains and, it seems, got into a hitherto unknown part of the island. Well, first I have to figure out what's what. One bad thing - the foothill passage was covered with rockfall. There is no turning back now! If Gonzalez managed to pass before me, which means that the first thing to do is to try to find him and ask about this place. Until this moment, it is better not to take any action ... " );
 		}
 		else
 		{
-			B_LogEntry(TOPIC_PrioratStart,"Я прошел через пещеру в горах и, кажется, попал в неизвестную доселе часть острова. Что же, для начала придется разобраться, что тут к чему. Одно плохо - подгорный проход засыпало камнепадом. Обратного пути теперь нет!");
+			B_LogEntry(TOPIC_PrioratStart, " I went through a cave in the mountains and, it seems, got into a hitherto unknown part of the island. Well, first I have to figure out what's what. One bad thing - the foothill passage was covered with rockfall. There is no turning back now! " ) ;
 			PlayerIsPrioratFake = TRUE;
 			PlayerChooseFight_PW = TRUE;
 			Wld_InsertNpc(Ass_129_DeadNrozas,"PW_INNER_DEMON_SPAWN");
@@ -3248,12 +3249,12 @@ func void EVT_ASS_DEMON_ENTER_FUNC()
 		NrozasDemon = Hlp_GetNpc(Ass_129_DeadNrozas);
 		Wld_SendTrigger("EVT_CAM_01");
 		//Wld_SendTrigger("EVT_ASS_DEMON_FIRSTLOCK_HIDE");
-		NrozasDemon.aivar[AIV_EnemyOverride] = FALSE;
+		NrozasDemon.aivar[AIV_EnemyOverride] = FALSE ;
 		DemonTrap_Blocked = TRUE;
 	};
 };
 
-func void EVT_MASIAFRITUAL_FUNC()
+func void  EVT_MASIAFRITUAL_FUNC ()
 {
 	var C_Npc Tiamant_Prior;
 	var C_Npc Haniar_Prior;
@@ -3288,13 +3289,13 @@ func void EVT_ARRIVEGOLDSHAHT_FUNC()
 
 	if((MIS_PW_FollowGoldOre == LOG_Running) && (OsairWarriorWait == FALSE) && (HoakinIsDead == TRUE) && (OsairInRage == FALSE) && (PW_FollowGoldOre_OneTime == FALSE))
 	{
-		if(GoldSlave_01_IsDead == FALSE)
+		if (GoldSlave_01_IsDead ==  FALSE )
 		{
 			XP_Count = XP_Count + 1;
 			SlaveArrived_01 = TRUE;
 			B_StartOtherRoutine(SEK_186_SLAVEOBSSEK,"GoldOre");
 		};
-		if(GoldSlave_02_IsDead == FALSE)
+		if (GoldSlave_02_IsDead ==  FALSE )
 		{
 			XP_Count = XP_Count + 1;
 			SlaveArrived_02 = TRUE;
@@ -3302,7 +3303,7 @@ func void EVT_ARRIVEGOLDSHAHT_FUNC()
 		};
 		if((SlaveArrived_01 == TRUE) || (SlaveArrived_02 == TRUE))
 		{
-			B_LogEntry(TOPIC_PW_FollowGoldOre,"Я привел рабов в шахту. Теперь надо дождаться людей Осаира, а после доложить об этом ему самому. Думаю, не стоит бросать рабов одних. Если они погибнут до прихода охраны шахты - это будет только моя вина. И тогда мне точно не поздоровится...");
+			B_LogEntry(TOPIC_PW_FollowGoldOre, " I brought the slaves to the mine. Now I need to wait for Osair's people, and then report to him himself. I think you shouldn't leave the slaves alone. If they die before the mine guards arrive, it will only be my fault. And then I definitely not good ... " );
 			XP_Count = 500 + (XP_Count * 500);
 			B_GivePlayerXP(XP_Count);
 		};
@@ -3335,7 +3336,7 @@ func void EVT_ARRIVEGOLDSHAHT_GONE_FUNC()
 		Wld_InsertNpc(MinecrawlerWarrior,"PW_GOLD_CAVEORE_GUARD_01");
 		B_KillNpc(SEK_387_SLAVEOBSSEK);
 		B_KillNpc(SEK_186_SLAVEOBSSEK);
-		B_LogEntry(TOPIC_PW_FollowGoldOre,"Позади послышались крики и какая-то возня...");
+		B_LogEntry(TOPIC_PW_FollowGoldOre, " Screams and some fuss were heard behind... " );
 		OsairInRage = TRUE;
 	};
 };
@@ -3355,7 +3356,7 @@ func void EVT_TROLL_GOTOEAT_FUNC()
 {
 	if((TrollEatMeat == FALSE) && ((PoisonDoneFull == TRUE) || (PoisonDoneHalf == TRUE) || (PoisonDoneOneTear == TRUE)))
 	{
-		B_LogEntry(TOPIC_PW_PoisonNrozas,"Кажется, тварь клюнула на наживку. Вот теперь и посмотрим, чего стоит яд Нрозаса!");
+		B_LogEntry(TOPIC_PW_PoisonNrozas, " It looks like the creature took the bait. Now let's see what Nrozas' poison is worth! " );
 		TrollEatMeat = TRUE;
 	};
 };
@@ -3365,7 +3366,7 @@ func void EVT_PW_ENTRANCE_PRIORAT_ALARM_FUNC()
 	if((PW_WelcomeToHram == FALSE) && (PlayerIsAssNow == FALSE) && (PlayerIsPrioratFake == FALSE))
 	{
 		PlayerIsPrioratFake = TRUE;
-		AI_Print("Кажется, меня заметили...");
+		AI_Print( " I think I've been noticed... " );
 	};
 };
 
@@ -3379,7 +3380,7 @@ func void EVT_TRUBATTLE_FUNC()
 
 func void EVT_OSAIRFIGHT_FUNC()
 {
-	var int daynow;
+	where int daynow;
 
 	daynow = Wld_GetDay();
 
@@ -3402,7 +3403,7 @@ func void EVT_OSAIRFIGHT_FUNC()
 	};
 };
 
-func void EVT_HIDEMEET_FUNC()
+void  func EVT_HIDEMEET_FUNC ()
 {
 	var C_Npc Haniar_Demon;
 
@@ -3412,8 +3413,8 @@ func void EVT_HIDEMEET_FUNC()
 
 		Wld_SendTrigger("EVT_CAM_HIDEMEET");
 		Haniar_Demon.flags = NPC_FLAG_IMMORTAL;
-		Haniar_Demon.aivar[AIV_EnemyOverride] = TRUE;
-		Haniar_Demon.aivar[AIV_IgnoresArmor] = TRUE;
+		Haniar_Demon.aivar[AIV_EnemyOverride] = TRUE ;
+		Haniar_Demon.aivar[AIV_IgnoresArmor] = TRUE ;
 		Haniar_Demon.aivar[AIV_INVINCIBLE] = TRUE;
 		AI_Wait(Haniar_Demon,4);
 		AI_PlayAni(Haniar_Demon,"T_MAGRUN_2_HEASHOOT");
@@ -3445,7 +3446,7 @@ func void EVT_PW_RESETHANIAR_FUNC()
 {
 	if((ResetHaniar == FALSE) && (DemonTrap_Blocked == TRUE))
 	{
-		Wld_SetTime(18,30);
+		Wld_SetTime( 18 , 30 );
 		ResetHaniar = TRUE;
 	};
 };
@@ -3521,7 +3522,7 @@ var int InsMod_04;
 
 FUNC VOID EVT_OPENSMALLPYROMID_01_S1()
 {
-	if((Npc_HasItems(hero,ItMi_XoD_01) >= 1) && (InsMod_01 == FALSE))
+	if ((Npc_HasItems(here,ItMi_XoD_01) >=  1 ) && (InsMod_01 ==  FALSE ))
 	{
 		Wld_PlayEffect("spellFX_LIGHTSTAR_RingRitual",hero,hero,0,0,0,FALSE);
 		Npc_RemoveInvItems(hero,ItMi_XoD_01,1);
@@ -3529,9 +3530,9 @@ FUNC VOID EVT_OPENSMALLPYROMID_01_S1()
 
 		if((InsMod_01 == TRUE) && (InsMod_02 == TRUE) && (InsMod_03 == TRUE) && (InsMod_04 == TRUE))
 		{
-			Wld_InsertNpc(Skeleton_Mage_AV,"FP_ROAM_AV_SCIPGUARD_20");
-			Wld_InsertNpc(SKELETON_WARRIOR_AV_ELITE,"FP_ROAM_AV_SCIPGUARD_02");
-			Wld_InsertNpc(SKELETON_WARRIOR_AV_ELITE,"FP_ROAM_AV_SCIPGUARD_01");
+			Wld_InsertNpc(Skeleton_Mage_AV, " FP_ROAM_AV_SCIPGUARD_20 " );
+			Wld_InsertNpc( SKELETON_WARRIOR_WITH_ELITE , " FP_ROAM_WITH_SCIPGUARD_02 " );
+			Wld_InsertNpc( SKELETON_WARRIOR_WITH_ELITE , " FP_ROAM_WITH_SCIPGUARD_01 " );
 			Wld_InsertNpc(Mummy,"TALL_DES_TODES_444");
 			Wld_InsertNpc(SKELETON_WARRIOR_AV,"TALL_DES_TODES_442");
 			Wld_InsertNpc(Mummy,"TALL_DES_TODES_441");
@@ -3554,7 +3555,7 @@ FUNC VOID EVT_OPENSMALLPYROMID_01_S1()
 
 FUNC VOID EVT_OPENSMALLPYROMID_02_S1()
 {
-	if((Npc_HasItems(hero,ItMi_YoD_02) >= 1) && (InsMod_02 == FALSE))
+	if ((Npc_HasItems(hero,ItMi_YoD_02) >=  1 ) && (InsMod_02 ==  FALSE ))
 	{
 		Wld_PlayEffect("spellFX_LIGHTSTAR_RingRitual",hero,hero,0,0,0,FALSE);
 		Npc_RemoveInvItems(hero,ItMi_YoD_02,1);
@@ -3562,9 +3563,9 @@ FUNC VOID EVT_OPENSMALLPYROMID_02_S1()
 
 		if((InsMod_01 == TRUE) && (InsMod_02 == TRUE) && (InsMod_03 == TRUE) && (InsMod_04 == TRUE))
 		{
-			Wld_InsertNpc(Skeleton_Mage_AV,"FP_ROAM_AV_SCIPGUARD_20");
-			Wld_InsertNpc(SKELETON_WARRIOR_AV_ELITE,"FP_ROAM_AV_SCIPGUARD_02");
-			Wld_InsertNpc(SKELETON_WARRIOR_AV_ELITE,"FP_ROAM_AV_SCIPGUARD_01");
+			Wld_InsertNpc(Skeleton_Mage_AV, " FP_ROAM_AV_SCIPGUARD_20 " );
+			Wld_InsertNpc( SKELETON_WARRIOR_WITH_ELITE , " FP_ROAM_WITH_SCIPGUARD_02 " );
+			Wld_InsertNpc( SKELETON_WARRIOR_WITH_ELITE , " FP_ROAM_WITH_SCIPGUARD_01 " );
 			Wld_InsertNpc(Mummy,"TALL_DES_TODES_444");
 			Wld_InsertNpc(SKELETON_WARRIOR_AV,"TALL_DES_TODES_442");
 			Wld_InsertNpc(Mummy,"TALL_DES_TODES_441");
@@ -3587,7 +3588,7 @@ FUNC VOID EVT_OPENSMALLPYROMID_02_S1()
 
 FUNC VOID EVT_OPENSMALLPYROMID_03_S1()
 {
-	if((Npc_HasItems(hero,ItMi_ZoD_03) >= 1) && (InsMod_03 == FALSE))
+	if ((Npc_HasItems(here,ItMi_ZoD_03) >=  1 ) && (InsMod_03 ==  FALSE ))
 	{
 		Wld_PlayEffect("spellFX_LIGHTSTAR_RingRitual",hero,hero,0,0,0,FALSE);
 		Npc_RemoveInvItems(hero,ItMi_ZoD_03,1);
@@ -3595,9 +3596,9 @@ FUNC VOID EVT_OPENSMALLPYROMID_03_S1()
 
 		if((InsMod_01 == TRUE) && (InsMod_02 == TRUE) && (InsMod_03 == TRUE) && (InsMod_04 == TRUE))
 		{
-			Wld_InsertNpc(Skeleton_Mage_AV,"FP_ROAM_AV_SCIPGUARD_20");
-			Wld_InsertNpc(SKELETON_WARRIOR_AV_ELITE,"FP_ROAM_AV_SCIPGUARD_02");
-			Wld_InsertNpc(SKELETON_WARRIOR_AV_ELITE,"FP_ROAM_AV_SCIPGUARD_01");
+			Wld_InsertNpc(Skeleton_Mage_AV, " FP_ROAM_AV_SCIPGUARD_20 " );
+			Wld_InsertNpc( SKELETON_WARRIOR_WITH_ELITE , " FP_ROAM_WITH_SCIPGUARD_02 " );
+			Wld_InsertNpc( SKELETON_WARRIOR_WITH_ELITE , " FP_ROAM_WITH_SCIPGUARD_01 " );
 			Wld_InsertNpc(Mummy,"TALL_DES_TODES_444");
 			Wld_InsertNpc(SKELETON_WARRIOR_AV,"TALL_DES_TODES_442");
 			Wld_InsertNpc(Mummy,"TALL_DES_TODES_441");
@@ -3620,7 +3621,7 @@ FUNC VOID EVT_OPENSMALLPYROMID_03_S1()
 
 FUNC VOID EVT_OPENSMALLPYROMID_04_S1()
 {
-	if((Npc_HasItems(hero,ItMi_UoD_04) >= 1) && (InsMod_04 == FALSE))
+	if ((Npc_HasItems(here,ItMi_UoD_04) >=  1 ) && (InsMod_04 ==  FALSE ))
 	{
 		Wld_PlayEffect("spellFX_LIGHTSTAR_RingRitual",hero,hero,0,0,0,FALSE);
 		Npc_RemoveInvItems(hero,ItMi_UoD_04,1);
@@ -3628,9 +3629,9 @@ FUNC VOID EVT_OPENSMALLPYROMID_04_S1()
 
 		if((InsMod_01 == TRUE) && (InsMod_02 == TRUE) && (InsMod_03 == TRUE) && (InsMod_04 == TRUE))
 		{
-			Wld_InsertNpc(Skeleton_Mage_AV,"FP_ROAM_AV_SCIPGUARD_20");
-			Wld_InsertNpc(SKELETON_WARRIOR_AV_ELITE,"FP_ROAM_AV_SCIPGUARD_02");
-			Wld_InsertNpc(SKELETON_WARRIOR_AV_ELITE,"FP_ROAM_AV_SCIPGUARD_01");
+			Wld_InsertNpc(Skeleton_Mage_AV, " FP_ROAM_AV_SCIPGUARD_20 " );
+			Wld_InsertNpc( SKELETON_WARRIOR_WITH_ELITE , " FP_ROAM_WITH_SCIPGUARD_02 " );
+			Wld_InsertNpc( SKELETON_WARRIOR_WITH_ELITE , " FP_ROAM_WITH_SCIPGUARD_01 " );
 			Wld_InsertNpc(Mummy,"TALL_DES_TODES_444");
 			Wld_InsertNpc(SKELETON_WARRIOR_AV,"TALL_DES_TODES_442");
 			Wld_InsertNpc(Mummy,"TALL_DES_TODES_441");
@@ -3655,7 +3656,7 @@ func void EVT_CRYSTAL_DAM()
 {
 };
 
-FUNC VOID EVT_AWAKEANCIENTHRAM_01_S1()
+FUNC  VOID  EVT_AWAKEANCIENTHRAM_01_S1 ()
 {
 };
 
@@ -3669,52 +3670,52 @@ FUNC VOID EVT_KOLONA_DEEP_FUNC_S1()
 
 func int EVT_CANACCESSALTAR_01()
 {
-	if((TaskHram_04 == TRUE) && (ANCIENTALTAR01IsAwake == FALSE) && (Npc_HasItems(hero,ItMi_MagicCrystal) >= 1))
+	if ((Task_04 ==  TRUE ) && (ANCIENTALTAR01IsAwake ==  FALSE ) && (Npc_HasItems(hero,ItMy_MagicCrystal) >=  1 )) ;
 	{
 		return TRUE;
 	};
 
-	return FALSE;
+	return  FALSE ;
 };
 
 func int EVT_CANACCESSALTAR_02()
 {
-	if((TaskHram_04 == TRUE) && (ANCIENTALTAR02IsAwake == FALSE) && (Npc_HasItems(hero,ItMi_MagicCrystal) >= 1))
+	if ((Task_04 ==  TRUE ) && (ANCIENTALTAR02IsAwake ==  FALSE ) && (Npc_HasItems(hero,ItMy_MagicCrystal) >=  1 )) ;
 	{
 		return TRUE;
 	};
 
-	return FALSE;
+	return  FALSE ;
 };
 
 func int EVT_CANACCESSALTAR_03()
 {
-	if((TaskHram_04 == TRUE) && (ANCIENTALTAR03IsAwake == FALSE) && (Npc_HasItems(hero,ItMi_MagicCrystal) >= 1))
+	if ((Task_04 ==  TRUE ) && (ANCIENTALTAR03IsAwake ==  FALSE ) && (Npc_HasItems(hero,ItMy_MagicCrystal) >=  1 )) ;
 	{
 		return TRUE;
 	};
 
-	return FALSE;
+	return  FALSE ;
 };
 
 func int EVT_CANACCESSALTAR_04()
 {
-	if((TaskHram_04 == TRUE) && (ANCIENTALTAR04IsAwake == FALSE) && (Npc_HasItems(hero,ItMi_MagicCrystal) >= 1))
+	if ((TaskFailure_04 ==  TRUE ) && (ANCIENTALTAR04IsAwake ==  FALSE ) && (Npc_HasItems(hero,ItMy_MagicCrystal) >=  1 )) ;
 	{
 		return TRUE;
 	};
 
-	return FALSE;
+	return  FALSE ;
 };
 
 func int EVT_CANACCESSALTAR_05()
 {
-	if((TaskHram_04 == TRUE) && (ANCIENTALTAR05IsAwake == FALSE) && (Npc_HasItems(hero,ItMi_MagicCrystal) >= 1))
+	if ((Task_04 ==  TRUE ) && (ANCIENTALTAR05IsAwake ==  FALSE ) && (Npc_HasItems(hero,ItMy_MagicCrystal) >=  1 )) ;
 	{
 		return TRUE;
 	};
 
-	return FALSE;
+	return  FALSE ;
 };
 
 
@@ -3725,7 +3726,7 @@ func int EVT_CANACCESSCHAN_01()
 		return TRUE;
 	};
 
-	return FALSE;
+	return  FALSE ;
 };
 
 func int EVT_CANACCESSCHAN_02()
@@ -3735,7 +3736,7 @@ func int EVT_CANACCESSCHAN_02()
 		return TRUE;
 	};
 
-	return FALSE;
+	return  FALSE ;
 };
 
 func int EVT_CANACCESSCHAN_03()
@@ -3745,7 +3746,7 @@ func int EVT_CANACCESSCHAN_03()
 		return TRUE;
 	};
 
-	return FALSE;
+	return  FALSE ;
 };
 
 func int EVT_CANACCESSCHAN_04()
@@ -3755,17 +3756,17 @@ func int EVT_CANACCESSCHAN_04()
 		return TRUE;
 	};
 
-	return FALSE;
+	return  FALSE ;
 };
 
 func int EVT_CANACCESSDRAGON()
 {
-	if((TaskHram_02 == TRUE) && (DragEggPray == FALSE) && (Npc_HasItems(hero,ItAt_DragonEgg_MIS) >= 1))
+	if ((Task_02 ==  TRUE ) && (DragEggPray ==  FALSE ) && (Npc_HasItems(hero,It_Dragon_Egg_MY) >=  1 ))
 	{
 		return TRUE;
 	};
 
-	return FALSE;
+	return  FALSE ;
 };
 
 func int EVT_CANACCESSPASSTEXT()
@@ -3775,7 +3776,7 @@ func int EVT_CANACCESSPASSTEXT()
 		return TRUE;
 	};
 
-	return FALSE;
+	return  FALSE ;
 };
 
 func int EVT_CANACCESSTREE()
@@ -3785,15 +3786,15 @@ func int EVT_CANACCESSTREE()
 		return TRUE;
 	};
 
-	return FALSE;
+	return  FALSE ;
 };
 
 FUNC VOID EVT_AVSTART_FUNC()
 {
-	if((MIS_AdanosCrone == LOG_Running) && (AV_ENTER == FALSE))
+	if ((MIS_AdanosCrone == LOG_Running) && ( AV_ENTER  ==  FALSE ))
 	{
-		B_LogEntry(TOPIC_AdanosCrone,"Я прошел через магический портал и оказался в месте, которое Аш'Тар называл Великим плато Древних! Хммм... кажется, он немного приукрасил свой рассказ, говоря о нем как о вечнозеленом рае на земле, поскольку меня повстречала лишь выжженная солнцем пустыня и куча радушных мерзких тварей, готовых при первой же возможности убить меня. Что же, надеюсь, продолжение этого путешествия окажется более обнадеживающим.");
-		AV_ENTER = TRUE;
+		B_LogEntry(TOPIC_AdanosCrone, " I went through a magical portal and ended up in what Ash'Thar called the Great Plateau of the Ancients! Hmmm... he seems to have embellished his story a bit, talking about it as an evergreen paradise on earth, since I was only met by sun-scorched desert and a bunch of hospitable vile creatures ready to kill me at the first opportunity.Well, I hope the continuation of this journey will be more encouraging. " );
+		OFF_ENTER = TRUE ;
 	};
 };
 
@@ -3818,7 +3819,7 @@ func void EVT_TELEPORT_UPHRAM_DOWN_FUNC()
 	AI_Teleport(hero,"AV_PYRAMIDE_IN");
 };
 
-FUNC VOID EVT_KOLONA_DEEPCARACUST_FUNC_S1()
+FUNC  VOID  EVT_KOLONA_DEEPCARACUST_FUNC_S1 ()
 {
 	var C_Npc MineKing;
 
@@ -3838,12 +3839,12 @@ FUNC VOID EVT_KOLONA_DEEPCARACUST_FUNC_S1()
 
 func int EVT_CANACCESSTELEPORT_UP()
 {
-	if((DragEggPray == TRUE) && (HolyChanDone == TRUE) && (ANCIENTALTARSIsAwake == TRUE) && (MagolemusIsDead == TRUE) && (LastAdanosTaskDone == FALSE))
+	if ((DragEggPray ==  TRUE ) && (HolyChanDone ==  TRUE ) && (ANCIENTALTARSIsAwake ==  TRUE ) && (MagolemusIsDead ==  TRUE ) && (LastAdanosTaskDone ==  FALSE ))
 	{
 		return TRUE;
 	};
 
-	return FALSE;
+	return  FALSE ;
 };
 
 func void EVT_TEARS_DEATH_01_S1()
@@ -3915,7 +3916,7 @@ func void EVT_ACTIVATE_DEATH_WAY_01_FUNC()
 	if((TT_Way_02 == FALSE) && (TT_Way_01 == FALSE))
 	{
 		ADANOSRAGE = TRUE;
-		AI_Print(PRINT_ADANOSRAGE);
+		AI_Print( PRINT_ADANOSRAGE );
 		Wld_PlayEffect("SPELLFX_THUNDERSTORM_RAIN",hero,hero,0,0,0,FALSE);
 		Wld_PlayEffect("spellFX_BELIARSRAGE",hero,hero,0,0,0,FALSE);
 		Wld_PlayEffect("SPELLFX_BLOODDEAD1",hero,hero,0,0,0,FALSE);
@@ -3926,7 +3927,7 @@ func void EVT_ACTIVATE_DEATH_WAY_01_FUNC()
 	if((TT_Way_02 == TRUE) && (TT_Way_01 == FALSE))
 	{
 		ADANOSRAGE = TRUE;
-		AI_Print(PRINT_ADANOSRAGE);
+		AI_Print( PRINT_ADANOSRAGE );
 		Wld_PlayEffect("SPELLFX_THUNDERSTORM_RAIN",hero,hero,0,0,0,FALSE);
 		Wld_PlayEffect("spellFX_BELIARSRAGE",hero,hero,0,0,0,FALSE);
 		Wld_PlayEffect("SPELLFX_BLOODDEAD1",hero,hero,0,0,0,FALSE);
@@ -3941,7 +3942,7 @@ func void EVT_ACTIVATE_DEATH_WAY_02_FUNC()
 	if((TT_Way_01 == FALSE) && (TT_Way_02 == FALSE))
 	{
 		ADANOSRAGE = TRUE;
-		AI_Print(PRINT_ADANOSRAGE);
+		AI_Print( PRINT_ADANOSRAGE );
 		Wld_PlayEffect("SPELLFX_THUNDERSTORM_RAIN",hero,hero,0,0,0,FALSE);
 		Wld_PlayEffect("spellFX_BELIARSRAGE",hero,hero,0,0,0,FALSE);
 		Wld_PlayEffect("SPELLFX_BLOODDEAD1",hero,hero,0,0,0,FALSE);
@@ -3952,7 +3953,7 @@ func void EVT_ACTIVATE_DEATH_WAY_02_FUNC()
 	if((TT_Way_01 == TRUE) && (TT_Way_02 == FALSE))
 	{
 		ADANOSRAGE = TRUE;
-		AI_Print(PRINT_ADANOSRAGE);
+		AI_Print( PRINT_ADANOSRAGE );
 		Wld_PlayEffect("SPELLFX_THUNDERSTORM_RAIN",hero,hero,0,0,0,FALSE);
 		Wld_PlayEffect("spellFX_BELIARSRAGE",hero,hero,0,0,0,FALSE);
 		Wld_PlayEffect("SPELLFX_BLOODDEAD1",hero,hero,0,0,0,FALSE);
@@ -3969,17 +3970,17 @@ func int CANACCESS_WAY_01()
 		return TRUE;
 	};
 
-	return FALSE;
+	return  FALSE ;
 };
 
 func int CANACCESS_WAY_02()
 {
-	if((Npc_IsDead(Skeleton_Mage_TT) == TRUE) && (TT_WayClear == FALSE))
+	if (( Npc_IsDead( Skeleton_Mage_TT ) ==  TRUE ) && ( TT_WayClear ==  FALSE ))
 	{
 		return TRUE;
 	};
 
-	return FALSE;
+	return  FALSE ;
 };
 
 func void EVT_ACTIVATE_ANTIHERO_FUNC()
@@ -4008,7 +4009,7 @@ func void EVT_PYRA_OPENLASTDOOR_FUNC()
 	if((AdanosQuestPass == TRUE) && (AdanosQuestPassDone == FALSE))
 	{
 		Wld_SendTrigger("EVT_PYRAMIDE_SECRETPLACE");
-		B_LogEntry(TOPIC_AdanosCrone,"Мне открылся скрытый проход в полу пирамиды. Интересно, что скрывали там древние?");
+		B_LogEntry(TOPIC_AdanosCrone, " I have discovered a hidden passage in the floor of the pyramid. I wonder what the ancients were hiding there? " );
 		AdanosQuestPassDone = TRUE;
 	};
 };
@@ -4048,11 +4049,11 @@ func void EVT_ORCMINE_FIGHT_FUNC()
 
 var int KvarhodronArmyUp;
 
-func void EVT_AV_QVARHODRON_UP_FUNC()
+func void  EVT_AV_QVARHODRON_UP_FUNC ()
 {
-	if(Wld_IsTime(23,0,3,0) && (MIS_CurseAncient == LOG_Success) && (KvarhodronArmyUp == FALSE))
+	if ( Wld_IsTime ( 23 , 0 , 3 , 0 ) && ( MIS_CurseAncient == LOG_Success ) && ( QuarterHodronArmyUp ==  FALSE )) ;
 	{
-		Wld_SendTrigger("EVT_KVARHADRON_PLACEFIRE");
+		Wld_SendTrigger( " EVT_KVARHADRON_PLACEFIRE " );
 		Wld_InsertNpc(NONE_ADDON_1158_Quarhodron,"AV_UNDEADTHRONE");
 		Wld_InsertNpc(Ancient_Warrior_Q1,"FP_ROAM_SANDGOLEM_017");
 		Wld_InsertNpc(Ancient_Warrior_Q2,"FP_STAND_KVARHADRON_ARMY_02");
@@ -4104,24 +4105,24 @@ func void EVT_AV_QVARHODRON_UP_FUNC()
 		Wld_InsertNpc(Skeleton_Shadow_Priest_Q6,"FP_STAND_KVARHADRON_ARMY_33");
 		Wld_InsertNpc(Skeleton_Shadow_Priest_Q7,"FP_STAND_KVARHADRON_ARMY_39");
 		Wld_InsertNpc(Skeleton_Shadow_Priest_Q8,"FP_STAND_KVARHADRON_ARMY_45");
-		KvarhodronArmyUp = TRUE;
+		KvarhodronArmyUp = TRUE ;
 	};
 };
 
-func void EVT_AV_HOT_DOWN_FUNC()
+func void  EVT_AV_HOT_DOWN_FUNC ()
 {
 };
 
-//------------телопорты--------------------------
+// ------------bodyports--------------------
 
 func int EVT_TP_XARDAS_COND()
 {
-	if((XARDAS_TP == FALSE) && (Npc_HasItems(hero,ItMi_TeleportStone) >= 1))
+	if (( XARDAS_TP  ==  FALSE ) && ( Npc_HasItems ( hero , ItMy_TeleportStone ) >=  1 )) .
 	{
 		return TRUE;
 	};
 
-	return FALSE;	
+	return  FALSE ;	
 };
 
 func void EVT_TP_XARDAS_FUNC_s1()
@@ -4141,7 +4142,7 @@ func void EVT_TP_XARDAS_FUNC_s1()
 
 		if((MIS_OldTeleports == LOG_Running) && (XarSeekDruidArt == TRUE) && (ActivateDruidStone == FALSE))
 		{
-			B_LogEntry(TOPIC_OldTeleports,"Я нашел способ активировать рунический камень.");
+			B_LogEntry(TOPIC_OldTeleports, " I found a way to activate the runestone. " );
 			ActivateDruidStone = TRUE;
 		};
 
@@ -4156,7 +4157,7 @@ func int EVT_TP_TOWN_COND()
 		return TRUE;
 	};
 
-	return FALSE;	
+	return  FALSE ;	
 };
 
 func void EVT_TP_TOWN_FUNC_s1()
@@ -4176,7 +4177,7 @@ func void EVT_TP_TOWN_FUNC_s1()
 
 		if((MIS_OldTeleports == LOG_Running) && (XarSeekDruidArt == TRUE) && (ActivateDruidStone == FALSE))
 		{
-			B_LogEntry(TOPIC_OldTeleports,"Я нашел способ активировать рунический камень.");
+			B_LogEntry(TOPIC_OldTeleports, " I found a way to activate the runestone. " );
 			ActivateDruidStone = TRUE;
 		};
 
@@ -4191,7 +4192,7 @@ func int EVT_TP_TAVERNE_COND()
 		return TRUE;
 	};
 
-	return FALSE;	
+	return  FALSE ;	
 };
 
 func void EVT_TP_TAVERNE_FUNC_s1()
@@ -4199,19 +4200,19 @@ func void EVT_TP_TAVERNE_FUNC_s1()
 	var C_Npc her;
 	her = Hlp_GetNpc(PC_Hero);
 
-	if(TAVERNE_TP == FALSE)
+	if ( TAVERNE_TP  ==  FALSE )
 	{
 		B_GivePlayerXP(250);
 		AI_PlayAni(hero,"T_MAGRUN_2_HEASHOOT");
 		Snd_Play("MFX_SLEEP_CAST");
-		TAVERNE_TP = TRUE;
+		TAVERNE_TP = TRUE ;
 		AI_Wait(hero,3);
 		AI_PlayAni(hero,"T_HEASHOOT_2_STAND");
 		Npc_RemoveInvItems(her,ItMi_TeleportStone,1);
 
 		if((MIS_OldTeleports == LOG_Running) && (XarSeekDruidArt == TRUE) && (ActivateDruidStone == FALSE))
 		{
-			B_LogEntry(TOPIC_OldTeleports,"Я нашел способ активировать рунический камень.");
+			B_LogEntry(TOPIC_OldTeleports, " I found a way to activate the runestone. " );
 			ActivateDruidStone = TRUE;
 		};
 
@@ -4226,7 +4227,7 @@ func int EVT_TP_PSI_COND()
 		return TRUE;
 	};
 
-	return FALSE;	
+	return  FALSE ;	
 };
 
 func void EVT_TP_PSI_FUNC_s1()
@@ -4246,7 +4247,7 @@ func void EVT_TP_PSI_FUNC_s1()
 
 		if((MIS_OldTeleports == LOG_Running) && (XarSeekDruidArt == TRUE) && (ActivateDruidStone == FALSE))
 		{
-			B_LogEntry(TOPIC_OldTeleports,"Я нашел способ активировать рунический камень.");
+			B_LogEntry(TOPIC_OldTeleports, " I found a way to activate the runestone. " );
 			ActivateDruidStone = TRUE;
 		};
 
@@ -4256,12 +4257,12 @@ func void EVT_TP_PSI_FUNC_s1()
 
 func int EVT_TP_PASSOW_COND()
 {
-	if((PASSOW_TP == FALSE) && (Npc_HasItems(hero,ItMi_TeleportStone) >= 1))
+	if (( PASSOW_TP  ==  FALSE ) && ( Npc_HasItems ( hero , ItMy_TeleportStone ) >=  1 )) ;
 	{
 		return TRUE;
 	};
 
-	return FALSE;	
+	return  FALSE ;	
 };
 
 func void EVT_TP_PASSOW_FUNC_s1()
@@ -4281,7 +4282,7 @@ func void EVT_TP_PASSOW_FUNC_s1()
 
 		if((MIS_OldTeleports == LOG_Running) && (XarSeekDruidArt == TRUE) && (ActivateDruidStone == FALSE))
 		{
-			B_LogEntry(TOPIC_OldTeleports,"Я нашел способ активировать рунический камень.");
+			B_LogEntry(TOPIC_OldTeleports, " I found a way to activate the runestone. " );
 			ActivateDruidStone = TRUE;
 		};
 
@@ -4296,7 +4297,7 @@ func int EVT_TP_BIGFARM_COND()
 		return TRUE;
 	};
 
-	return FALSE;	
+	return  FALSE ;	
 };
 
 func void EVT_TP_BIGFARM_FUNC_s1()
@@ -4316,7 +4317,7 @@ func void EVT_TP_BIGFARM_FUNC_s1()
 
 		if((MIS_OldTeleports == LOG_Running) && (XarSeekDruidArt == TRUE) && (ActivateDruidStone == FALSE))
 		{
-			B_LogEntry(TOPIC_OldTeleports,"Я нашел способ активировать рунический камень.");
+			B_LogEntry(TOPIC_OldTeleports, " I found a way to activate the runestone. " );
 			ActivateDruidStone = TRUE;
 		};
 
@@ -4326,12 +4327,12 @@ func void EVT_TP_BIGFARM_FUNC_s1()
 
 func int EVT_TP_KLOSTER_COND()
 {
-	if((KLOSTER_TP == FALSE) && (Npc_HasItems(hero,ItMi_TeleportStone) >= 1))
+	if (( CLOSE_TP  ==  FALSE ) && (Npc_HasItems(hero,ItMy_TeleportStone) >=  1 )) ;
 	{
 		return TRUE;
 	};
 
-	return FALSE;	
+	return  FALSE ;	
 };
 
 func void EVT_TP_KLOSTER_FUNC_s1()
@@ -4351,7 +4352,7 @@ func void EVT_TP_KLOSTER_FUNC_s1()
 
 		if((MIS_OldTeleports == LOG_Running) && (XarSeekDruidArt == TRUE) && (ActivateDruidStone == FALSE))
 		{
-			B_LogEntry(TOPIC_OldTeleports,"Я нашел способ активировать рунический камень.");
+			B_LogEntry(TOPIC_OldTeleports, " I found a way to activate the runestone. " );
 			ActivateDruidStone = TRUE;
 		};
 
@@ -4359,34 +4360,34 @@ func void EVT_TP_KLOSTER_FUNC_s1()
 	};
 };
 
-func int EVT_TP_SAGITTA_COND()
+func int  EVT_TP_SAGITTA_COND ()
 {
-	if((SAGITTA_TP == FALSE) && (Npc_HasItems(hero,ItMi_TeleportStone) >= 1))
+	if (( SAGITTA_TP  ==  FALSE ) && (Npc_HasItems(hero,ItMy_TeleportStone) >=  1 ))
 	{
 		return TRUE;
 	};
 
-	return FALSE;	
+	return  FALSE ;	
 };
 
-func void EVT_TP_SAGITTA_FUNC_s1()
+func void EVT_TP_SETTING_FUNC_s1()
 {
 	var C_Npc her;
 	her = Hlp_GetNpc(PC_Hero);
 
-	if(SAGITTA_TP == FALSE)
+	if ( ARROW_TP  ==  FALSE )
 	{
 		B_GivePlayerXP(250);
 		AI_PlayAni(hero,"T_MAGRUN_2_HEASHOOT");
 		Snd_Play("MFX_SLEEP_CAST");
-		SAGITTA_TP = TRUE;
+		ARROW_TP = TRUE ;
 		AI_Wait(hero,3);
 		AI_PlayAni(hero,"T_HEASHOOT_2_STAND");
 		Npc_RemoveInvItems(her,ItMi_TeleportStone,1);
 
 		if((MIS_OldTeleports == LOG_Running) && (XarSeekDruidArt == TRUE) && (ActivateDruidStone == FALSE))
 		{
-			B_LogEntry(TOPIC_OldTeleports,"Я нашел способ активировать рунический камень.");
+			B_LogEntry(TOPIC_OldTeleports, " I found a way to activate the runestone. " );
 			ActivateDruidStone = TRUE;
 		};
 
@@ -4401,7 +4402,7 @@ func int EVT_TP_HUNT_COND()
 		return TRUE;
 	};
 
-	return FALSE;	
+	return  FALSE ;	
 };
 
 func void EVT_TP_HUNT_FUNC_s1()
@@ -4421,7 +4422,7 @@ func void EVT_TP_HUNT_FUNC_s1()
 
 		if((MIS_OldTeleports == LOG_Running) && (XarSeekDruidArt == TRUE) && (ActivateDruidStone == FALSE))
 		{
-			B_LogEntry(TOPIC_OldTeleports,"Я нашел способ активировать рунический камень.");
+			B_LogEntry(TOPIC_OldTeleports, " I found a way to activate the runestone. " );
 			ActivateDruidStone = TRUE;
 		};
 
@@ -4436,7 +4437,7 @@ func int EVT_TP_VINOCAVE_COND()
 		return TRUE;
 	};
 
-	return FALSE;	
+	return  FALSE ;	
 };
 
 func void EVT_TP_VINOCAVE_FUNC_s1()
@@ -4456,7 +4457,7 @@ func void EVT_TP_VINOCAVE_FUNC_s1()
 
 		if((MIS_OldTeleports == LOG_Running) && (XarSeekDruidArt == TRUE) && (ActivateDruidStone == FALSE))
 		{
-			B_LogEntry(TOPIC_OldTeleports,"Я нашел способ активировать рунический камень.");
+			B_LogEntry(TOPIC_OldTeleports, " I found a way to activate the runestone. " );
 			ActivateDruidStone = TRUE;
 		};
 
@@ -4471,7 +4472,7 @@ func int EVT_TP_SUNCIRCLE_COND()
 		return TRUE;
 	};
 
-	return FALSE;	
+	return  FALSE ;	
 };
 
 func void EVT_TP_SUNCIRCLE_FUNC_s1()
@@ -4491,7 +4492,7 @@ func void EVT_TP_SUNCIRCLE_FUNC_s1()
 
 		if((MIS_OldTeleports == LOG_Running) && (XarSeekDruidArt == TRUE) && (ActivateDruidStone == FALSE))
 		{
-			B_LogEntry(TOPIC_OldTeleports,"Я нашел способ активировать рунический камень.");
+			B_LogEntry(TOPIC_OldTeleports, " I found a way to activate the runestone. " );
 			ActivateDruidStone = TRUE;
 		};
 
@@ -4506,7 +4507,7 @@ func int EVT_TP_ADWRUINS_COND()
 		return TRUE;
 	};
 
-	return FALSE;	
+	return  FALSE ;	
 };
 
 func void EVT_TP_ADWRUINS_FUNC_s1()
@@ -4526,7 +4527,7 @@ func void EVT_TP_ADWRUINS_FUNC_s1()
 
 		if((MIS_OldTeleports == LOG_Running) && (XarSeekDruidArt == TRUE) && (ActivateDruidStone == FALSE))
 		{
-			B_LogEntry(TOPIC_OldTeleports,"Я нашел способ активировать рунический камень.");
+			B_LogEntry(TOPIC_OldTeleports, " I found a way to activate the runestone. " );
 			ActivateDruidStone = TRUE;
 		};
 
@@ -4541,7 +4542,7 @@ func int EVT_TP_BLACKTROLL_COND()
 		return TRUE;
 	};
 
-	return FALSE;	
+	return  FALSE ;	
 };
 
 func void EVT_TP_BLACKTROLL_FUNC_s1()
@@ -4561,7 +4562,7 @@ func void EVT_TP_BLACKTROLL_FUNC_s1()
 
 		if((MIS_OldTeleports == LOG_Running) && (XarSeekDruidArt == TRUE) && (ActivateDruidStone == FALSE))
 		{
-			B_LogEntry(TOPIC_OldTeleports,"Я нашел способ активировать рунический камень.");
+			B_LogEntry(TOPIC_OldTeleports, " I found a way to activate the runestone. " );
 			ActivateDruidStone = TRUE;
 		};
 
@@ -4576,7 +4577,7 @@ func int EVT_TP_CASTLE_COND()
 		return TRUE;
 	};
 
-	return FALSE;	
+	return  FALSE ;	
 };
 
 func void EVT_TP_CASTLE_FUNC_s1()
@@ -4596,7 +4597,7 @@ func void EVT_TP_CASTLE_FUNC_s1()
 
 		if((MIS_OldTeleports == LOG_Running) && (XarSeekDruidArt == TRUE) && (ActivateDruidStone == FALSE))
 		{
-			B_LogEntry(TOPIC_OldTeleports,"Я нашел способ активировать рунический камень.");
+			B_LogEntry(TOPIC_OldTeleports, " I found a way to activate the runestone. " );
 			ActivateDruidStone = TRUE;
 		};
 
@@ -4611,7 +4612,7 @@ func int EVT_TP_ICE_COND()
 		return TRUE;
 	};
 
-	return FALSE;	
+	return  FALSE ;	
 };
 
 func void EVT_TP_ICE_FUNC_s1()
@@ -4631,7 +4632,7 @@ func void EVT_TP_ICE_FUNC_s1()
 
 		if((MIS_OldTeleports == LOG_Running) && (XarSeekDruidArt == TRUE) && (ActivateDruidStone == FALSE))
 		{
-			B_LogEntry(TOPIC_OldTeleports,"Я нашел способ активировать рунический камень.");
+			B_LogEntry(TOPIC_OldTeleports, " I found a way to activate the runestone. " );
 			ActivateDruidStone = TRUE;
 		};
 
@@ -4641,12 +4642,12 @@ func void EVT_TP_ICE_FUNC_s1()
 
 func int EVT_TP_SKLEP_COND()
 {
-	if((SKLEP_TP == FALSE) && (Npc_HasItems(hero,ItMi_TeleportStone) >= 1))
+	if (( SKLEP_TP  ==  FALSE ) && (Npc_HasItems(hero,ItMi_TeleportStone) >=  1 ))
 	{
 		return TRUE;
 	};
 
-	return FALSE;	
+	return  FALSE ;	
 };
 
 func void EVT_TP_SKLEP_FUNC_s1()
@@ -4654,7 +4655,7 @@ func void EVT_TP_SKLEP_FUNC_s1()
 	var C_Npc her;
 	her = Hlp_GetNpc(PC_Hero);
 
-	if(SKLEP_TP == FALSE)
+	if ( STORE_TP  ==  FALSE )
 	{
 		B_GivePlayerXP(250);
 		AI_PlayAni(hero,"T_MAGRUN_2_HEASHOOT");
@@ -4666,7 +4667,7 @@ func void EVT_TP_SKLEP_FUNC_s1()
 
 		if((MIS_OldTeleports == LOG_Running) && (XarSeekDruidArt == TRUE) && (ActivateDruidStone == FALSE))
 		{
-			B_LogEntry(TOPIC_OldTeleports,"Я нашел способ активировать рунический камень.");
+			B_LogEntry(TOPIC_OldTeleports, " I found a way to activate the runestone. " );
 			ActivateDruidStone = TRUE;
 		};
 
@@ -4751,7 +4752,7 @@ func int EVT_TP_OLDPSI_COND()
 		return TRUE;
 	};
 
-	return FALSE;	
+	return  FALSE ;	
 };
 
 func void EVT_TP_OLDPSI_FUNC_s1()
@@ -4771,7 +4772,7 @@ func void EVT_TP_OLDPSI_FUNC_s1()
 
 		if((MIS_OldTeleports == LOG_Running) && (XarSeekDruidArt == TRUE) && (ActivateDruidStone == FALSE))
 		{
-			B_LogEntry(TOPIC_OldTeleports,"Я нашел способ активировать рунический камень.");
+			B_LogEntry(TOPIC_OldTeleports, " I found a way to activate the runestone. " );
 			ActivateDruidStone = TRUE;
 		};
 
@@ -4786,7 +4787,7 @@ func int EVT_TP_NETBEK_COND()
 		return TRUE;
 	};
 
-	return FALSE;	
+	return  FALSE ;	
 };
 
 func void EVT_TP_NETBEK_FUNC_s1()
@@ -4806,7 +4807,7 @@ func void EVT_TP_NETBEK_FUNC_s1()
 
 		if((MIS_OldTeleports == LOG_Running) && (XarSeekDruidArt == TRUE) && (ActivateDruidStone == FALSE))
 		{
-			B_LogEntry(TOPIC_OldTeleports,"Я нашел способ активировать рунический камень.");
+			B_LogEntry(TOPIC_OldTeleports, " I found a way to activate the runestone. " );
 			ActivateDruidStone = TRUE;
 		};
 
@@ -4816,12 +4817,12 @@ func void EVT_TP_NETBEK_FUNC_s1()
 
 func int EVT_TP_PASSNW_COND()
 {
-	if((PASSNW_TP == FALSE) && (Npc_HasItems(hero,ItMi_TeleportStone) >= 1))
+	if (( PASSNW_TP  ==  FALSE ) && ( Npc_HasItems ( hero , ItMy_TeleportStone ) >=  1 )) ;
 	{
 		return TRUE;
 	};
 
-	return FALSE;	
+	return  FALSE ;	
 };
 
 func void EVT_TP_PASSNW_FUNC_s1()
@@ -4841,7 +4842,7 @@ func void EVT_TP_PASSNW_FUNC_s1()
 
 		if((MIS_OldTeleports == LOG_Running) && (XarSeekDruidArt == TRUE) && (ActivateDruidStone == FALSE))
 		{
-			B_LogEntry(TOPIC_OldTeleports,"Я нашел способ активировать рунический камень.");
+			B_LogEntry(TOPIC_OldTeleports, " I found a way to activate the runestone. " );
 			ActivateDruidStone = TRUE;
 		};
 
@@ -4856,7 +4857,7 @@ func int EVT_TP_COMPLEX_COND()
 		return TRUE;
 	};
 
-	return FALSE;	
+	return  FALSE ;	
 };
 
 func void EVT_TP_COMPLEX_FUNC_s1()
@@ -4876,7 +4877,7 @@ func void EVT_TP_COMPLEX_FUNC_s1()
 
 		if((MIS_OldTeleports == LOG_Running) && (XarSeekDruidArt == TRUE) && (ActivateDruidStone == FALSE))
 		{
-			B_LogEntry(TOPIC_OldTeleports,"Я нашел способ активировать рунический камень.");
+			B_LogEntry(TOPIC_OldTeleports, " I found a way to activate the runestone. " );
 			ActivateDruidStone = TRUE;
 		};
 
@@ -4891,7 +4892,7 @@ func int EVT_TP_LIFECIRCLE_COND()
 		return TRUE;
 	};
 
-	return FALSE;	
+	return  FALSE ;	
 };
 
 func void EVT_TP_LIFECIRCLE_FUNC_s1()
@@ -4911,7 +4912,7 @@ func void EVT_TP_LIFECIRCLE_FUNC_s1()
 
 		if((MIS_OldTeleports == LOG_Running) && (XarSeekDruidArt == TRUE) && (ActivateDruidStone == FALSE))
 		{
-			B_LogEntry(TOPIC_OldTeleports,"Я нашел способ активировать рунический камень.");
+			B_LogEntry(TOPIC_OldTeleports, " I found a way to activate the runestone. " );
 			ActivateDruidStone = TRUE;
 		};
 
@@ -4921,12 +4922,12 @@ func void EVT_TP_LIFECIRCLE_FUNC_s1()
 
 func int EVT_TP_PASSAV_COND()
 {
-	if((PASSAV_TP == FALSE) && (Npc_HasItems(hero,ItMi_TeleportStone) >= 1))
+	if (( PASSAV_TP  ==  FALSE ) && ( Npc_HasItems ( hero , ItMy_TeleportStone ) >=  1 )) ;
 	{
 		return TRUE;
 	};
 
-	return FALSE;	
+	return  FALSE ;	
 };
 
 func void EVT_TP_PASSAV_FUNC_s1()
@@ -4934,7 +4935,7 @@ func void EVT_TP_PASSAV_FUNC_s1()
 	var C_Npc her;
 	her = Hlp_GetNpc(PC_Hero);
 
-	if(PASSAV_TP == FALSE)
+	if ( PASSAV_TP  ==  FALSE )
 	{
 		B_GivePlayerXP(250);
 		AI_PlayAni(hero,"T_MAGRUN_2_HEASHOOT");
@@ -4946,7 +4947,7 @@ func void EVT_TP_PASSAV_FUNC_s1()
 
 		if((MIS_OldTeleports == LOG_Running) && (XarSeekDruidArt == TRUE) && (ActivateDruidStone == FALSE))
 		{
-			B_LogEntry(TOPIC_OldTeleports,"Я нашел способ активировать рунический камень.");
+			B_LogEntry(TOPIC_OldTeleports, " I found a way to activate the runestone. " );
 			ActivateDruidStone = TRUE;
 		};
 
@@ -4961,7 +4962,7 @@ func int EVT_TP_PYRAMIDE_COND()
 		return TRUE;
 	};
 
-	return FALSE;	
+	return  FALSE ;	
 };
 
 func void EVT_TP_PYRAMIDE_FUNC_s1()
@@ -4981,7 +4982,7 @@ func void EVT_TP_PYRAMIDE_FUNC_s1()
 
 		if((MIS_OldTeleports == LOG_Running) && (XarSeekDruidArt == TRUE) && (ActivateDruidStone == FALSE))
 		{
-			B_LogEntry(TOPIC_OldTeleports,"Я нашел способ активировать рунический камень.");
+			B_LogEntry(TOPIC_OldTeleports, " I found a way to activate the runestone. " );
 			ActivateDruidStone = TRUE;
 		};
 
@@ -4991,12 +4992,12 @@ func void EVT_TP_PYRAMIDE_FUNC_s1()
 
 func int EVT_TP_TEARHRAM_COND()
 {
-	if((TEARHRAM_TP == FALSE) && (Npc_HasItems(hero,ItMi_TeleportStone) >= 1))
+	if (( TEARHRAM_TP  ==  FALSE ) && ( Npc_HasItems ( hero , ItMi_TeleportStone ) >=  1 )) ;
 	{
 		return TRUE;
 	};
 
-	return FALSE;	
+	return  FALSE ;	
 };
 
 func void EVT_TP_TEARHRAM_FUNC_s1()
@@ -5016,7 +5017,7 @@ func void EVT_TP_TEARHRAM_FUNC_s1()
 
 		if((MIS_OldTeleports == LOG_Running) && (XarSeekDruidArt == TRUE) && (ActivateDruidStone == FALSE))
 		{
-			B_LogEntry(TOPIC_OldTeleports,"Я нашел способ активировать рунический камень.");
+			B_LogEntry(TOPIC_OldTeleports, " I found a way to activate the runestone. " );
 			ActivateDruidStone = TRUE;
 		};
 
@@ -5031,7 +5032,7 @@ func int EVT_TP_ORCMOUNTAIN_COND()
 		return TRUE;
 	};
 
-	return FALSE;	
+	return  FALSE ;	
 };
 
 func void EVT_TP_ORCMOUNTAIN_FUNC_s1()
@@ -5051,7 +5052,7 @@ func void EVT_TP_ORCMOUNTAIN_FUNC_s1()
 
 		if((MIS_OldTeleports == LOG_Running) && (XarSeekDruidArt == TRUE) && (ActivateDruidStone == FALSE))
 		{
-			B_LogEntry(TOPIC_OldTeleports,"Я нашел способ активировать рунический камень.");
+			B_LogEntry(TOPIC_OldTeleports, " I found a way to activate the runestone. " );
 			ActivateDruidStone = TRUE;
 		};
 
@@ -5061,12 +5062,12 @@ func void EVT_TP_ORCMOUNTAIN_FUNC_s1()
 
 func int EVT_ENTEREGEZART_COND()
 {
-	if((PashalQuestEgezartStep == TRUE) && (EGEZARTDOOROPEN == FALSE) && (Npc_HasItems(hero,ItAt_UndeadDragonSoulStone) >= 1))
+	if ((PashalQuestExezartStep ==  TRUE ) && ( EXECUTEDEUROPE  ==  FALSE ) && (Npc_HasItems(hero,It_UndeadDragonSoulStone) >=  1 )) ;
 	{
 		return TRUE;
 	};
 
-	return FALSE;	
+	return  FALSE ;	
 };
 
 func void EVT_ENTEREGEZART_FUNC_s1()
@@ -5084,12 +5085,12 @@ func void EVT_ENTEREGEZART_FUNC_s1()
 
 func int EVT_DEMONSKULLUP_COND()
 {
-	if((summonavabul_once == TRUE) && (Npc_HasItems(hero,ItAt_DemonSkull) >= 1) && (AvabulIsUp == FALSE))
+	if ((summonavabul_once ==  TRUE ) && (Npc_HasItems(hero,ItAt_DemonSkull) >=  1 ) && (summonvabul_once ==  FALSE ))
 	{
 		return TRUE;
 	};
 
-	return FALSE;	
+	return  FALSE ;	
 };
 
 func void EVT_DEMONSKULLUP_FUNC_s1()
@@ -5115,50 +5116,50 @@ func int BAKECOND()
 		return TRUE;
 	};
 
-	return FALSE;	
+	return  FALSE ;	
 };
 
 func void EVT_PASHAL_CAM_01_FUNC()
 {
-	if(PASHAL_CAM_01 == FALSE)
+	if ( PASHAL_CAM_01  ==  FALSE )
 	{
 		Wld_SendTrigger("VIEW_TO_FIRST_ATTACK");
-		PASHAL_CAM_01 = TRUE;
+		PASSAL_CAM_01 = TRUE ;
 	};
 };
 
 func void EVT_PASHAL_CAM_02_FUNC()
 {
-	if(PASHAL_CAM_02 == FALSE)
+	if ( PASHAL_CAM_02  ==  FALSE )
 	{
 		Wld_SendTrigger("SHOW_TROLL");
-		PASHAL_CAM_02 = TRUE;
+		PASSAL_CAM_02 = TRUE ;
 	};
 };
 
 func int EVT_SUMMON_ITAR_COND()
 {
-	if((SUMMON_ITAR == FALSE) && (Npc_HasItems(hero,ItMi_BeliarPowerStone) >= 1))
+	if (( SUMMON_ITAR  ==  FALSE ) && (Npc_HasItems(hero,ItMy_BeliarPowerStone) >=  1 )) ;
 	{
 		return TRUE;
 	};
 
-	return FALSE;	
+	return  FALSE ;	
 };
 
 func int EVT_SUMMON_YELA_COND()
 {
-	if((SUMMON_YELA == FALSE) && (Npc_HasItems(hero,ItMi_BeliarPowerStone) >= 1))
+	if (( SUMMON_YELA  ==  FALSE ) && (Npc_HasItems(hero,ItMy_BeliarPowerStone) >=  1 ))
 	{
 		return TRUE;
 	};
 
-	return FALSE;	
+	return  FALSE ;	
 };
 
 func void EVT_SUMMON_YELA_FUNC_s1()
 {
-	if((SUMMON_YELA == FALSE) && (Npc_HasItems(hero,ItMi_BeliarPowerStone) >= 1))
+	if (( SUMMON_YELA  ==  FALSE ) && (Npc_HasItems(hero,ItMy_BeliarPowerStone) >=  1 ))
 	{
 		Snd_Play("DEM_AMBIENT");
 		Wld_InsertNpc(UndeadWolf,"FP_ROAM_BOSS");
@@ -5178,7 +5179,7 @@ func void EVT_SUMMON_YELA_FUNC_s1()
 
 func void EVT_SUMMON_ITAR_FUNC_s1()
 {
-	if((SUMMON_ITAR == FALSE) && (Npc_HasItems(hero,ItMi_BeliarPowerStone) >= 1))
+	if (( SUMMON_ITAR  ==  FALSE ) && (Npc_HasItems(hero,ItMy_BeliarPowerStone) >=  1 )) ;
 	{
 		Snd_Play("DEM_AMBIENT");
 		Wld_InsertNpc(Draconian_Elite_Boss,"FP_ROAM_BOSS");
@@ -5202,7 +5203,7 @@ func int EVT_SLEEPERHEART_01_COND()
 		return TRUE;
 	};
 
-	return FALSE;	
+	return  FALSE ;	
 };
 
 func void  EVT_SLEEPERHEART_01_FUNC_s1()
@@ -5224,7 +5225,7 @@ func int EVT_SLEEPERHEART_02_COND()
 		return TRUE;
 	};
 
-	return FALSE;	
+	return  FALSE ;	
 };
 
 func void  EVT_SLEEPERHEART_02_FUNC_s1()
@@ -5246,7 +5247,7 @@ func int EVT_SLEEPERHEART_03_COND()
 		return TRUE;
 	};
 
-	return FALSE;	
+	return  FALSE ;	
 };
 
 func void  EVT_SLEEPERHEART_03_FUNC_s1()
@@ -5274,7 +5275,7 @@ func void EVT_BIGFARM_AIM_01_FUNC()
 
 			if(MIS_AppleTest == LOG_Running)
 			{
-				B_LogEntry(TOPIC_AppleTest,"Я поразил все три мишени на стрельбище.");
+				B_LogEntry(TOPIC_AppleTest, " I hit all three targets on the shooting range. " );
 			};
 		};
 	};
@@ -5293,7 +5294,7 @@ func void EVT_BIGFARM_AIM_02_FUNC()
 
 			if(MIS_AppleTest == LOG_Running)
 			{
-				B_LogEntry(TOPIC_AppleTest,"Я поразил все три мишени на стрельбище.");
+				B_LogEntry(TOPIC_AppleTest, " I hit all three targets on the shooting range. " );
 			};
 		};
 	};
@@ -5312,13 +5313,13 @@ func void EVT_BIGFARM_AIM_03_FUNC()
 
 			if(MIS_AppleTest == LOG_Running)
 			{
-				B_LogEntry(TOPIC_AppleTest,"Я поразил все три мишени на стрельбище.");
+				B_LogEntry(TOPIC_AppleTest, " I hit all three targets on the shooting range. " );
 			};
 		};
 	};
 };
 
-func void EVT_LOALOVESC_FUNC()
+func void  EVT_LOALOVESC_FUNC ()
 {
 	if((CanSayLoaStay == TRUE) && (LoaLoveScene == FALSE) && (LoaLoveSceneFailed == FALSE))
 	{
@@ -5326,7 +5327,7 @@ func void EVT_LOALOVESC_FUNC()
 		{
 			LoaLoveScene = TRUE;
 			PlayVideo("RET2_LoveSceneLoa.BIK");
-			AI_Teleport(SLD_10920_Loa,"NW_LIGHTHOUSE_IN_LOA_LOVE_01");
+			AI_Teleport(SLD_10920_Loa, " NW_LIGHTHOUSE_IN_LOA_LOVE_01 " );
 			AI_Teleport(hero,"NW_LIGHTHOUSE_IN_LOA_LOVE_02");
 			B_StartOtherRoutine(SLD_10920_Loa,"Start");
 		}
@@ -5338,66 +5339,66 @@ func void EVT_LOALOVESC_FUNC()
 	};
 };
 
-var int EVT_TREEFALING_01;
-var int EVT_TREEFALING_02;
-var int EVT_TREEFALING_03;
-var int EVT_TREEFALING_04;
-var int EVT_TREEFALING_05;
-var int EVT_TREEFALING_06;
-var int EVT_TREEFALING_07;
-var int EVT_TREEFALING_08;
-var int EVT_TREEFALING_09;
-var int EVT_TREEFALING_10;
-var int EVT_TREEFALING_11;
-var int EVT_TREEFALING_12;
-var int EVT_TREEFALING_13;
-var int EVT_TREEFALING_14;
-var int EVT_TREEFALING_15;
-var int EVT_TREEFALING_16;
-var int EVT_TREEFALING_17;
-var int EVT_TREEFALING_18;
-var int EVT_TREEFALING_19;
-var int EVT_TREEFALING_20;
-var int EVT_TREEFALING_21;
-var int EVT_TREEFALING_22;
-var int EVT_TREEFALING_23;
-var int EVT_TREEFALING_24;
-var int EVT_TREEFALING_25;
-var int EVT_TREEFALING_26;
-var int EVT_TREEFALING_27;
-var int EVT_TREEFALING_28;
-var int EVT_TREEFALING_29;
-var int EVT_TREEFALING_30;
-var int EVT_TREEFALING_31;
-var int EVT_TREEFALING_32;
-var int EVT_TREEFALING_33;
-var int EVT_TREEFALING_34;
-var int EVT_TREEFALING_35;
-var int EVT_TREEFALING_36;
-var int EVT_TREEFALING_37;
-var int EVT_TREEFALING_38;
-var int EVT_TREEFALING_39;
-var int EVT_TREEFALING_40;
-var int EVT_TREEFALING_41;
-var int EVT_TREEFALING_42;
-var int EVT_TREEFALING_43;
-var int EVT_TREEFALING_44;
-var int EVT_TREEFALING_45;
-var int EVT_TREEFALING_46;
-var int EVT_TREEFALING_47;
-var int EVT_TREEFALING_48;
-var int EVT_TREEFALING_49;
-var int EVT_TREEFALING_50;
-var int EVT_TREEFALING_51;
-var int EVT_TREEFALING_52;
-var int EVT_TREEFALING_53;
-var int EVT_TREEFALING_54;
-var int EVT_TREEFALING_55;
-var int EVT_TREEFALING_56;
-var int EVT_TREEFALING_57;
-var int EVT_TREEFALING_58;
-var int EVT_TREEFALING_59;
-var int EVT_TREEFALING_60;
+var int  EVT_TREEFALING_01 ;
+var int  EVT_TREEFALING_02 ;
+var int  EVT_TREEFALING_03 ;
+var int  EVT_TREEFALING_04 ;
+var int  EVT_TREEFALING_05 ;
+var int  EVT_TREEFALING_06 ;
+var int  EVT_TREEFALING_07 ;
+var int  EVT_TREEFALING_08 ;
+var int  EVT_TREEFALING_09 ;
+var int  EVT_TREEFALING_10 ;
+var int  EVT_TREEFALING_11 ;
+var int  EVT_TREEFALING_12 ;
+var int  EVT_TREEFALING_13 ;
+var int  EVT_TREEFALING_14 ;
+var int  EVT_TREEFALING_15 ;
+var int  EVT_TREEFALING_16 ;
+var int  EVT_TREEFALING_17 ;
+var int  EVT_TREEFALING_18 ;
+var int  EVT_TREEFALING_19 ;
+var int  EVT_TREEFALING_20 ;
+var int  EVT_TREEFALING_21 ;
+var int  EVT_TREEFALING_22 ;
+var int  EVT_TREEFALING_23 ;
+var int  EVT_TREEFALING_24 ;
+var int  EVT_TREEFALING_25 ;
+var int  EVT_TREEFALING_26 ;
+var int  EVT_TREEFALING_27 ;
+var int  EVT_TREEFALING_28 ;
+var int  EVT_TREEFALING_29 ;
+var int  EVT_TREEFALING_30 ;
+var int  EVT_TREEFALING_31 ;
+var int  EVT_TREEFALING_32 ;
+var int  EVT_TREEFALING_33 ;
+var int  EVT_TREEFALING_34 ;
+var int  EVT_TREEFALING_35 ;
+var int  EVT_TREEFALING_36 ;
+var int  EVT_TREEFALING_37 ;
+var int  EVT_TREEFALING_38 ;
+var int  EVT_TREEFALING_39 ;
+var int  EVT_TREEFALING_40 ;
+var int  EVT_TREEFALING_41 ;
+var int  EVT_TREEFALING_42 ;
+var int  EVT_TREEFALING_43 ;
+var int  EVT_TREEFALING_44 ;
+var int  EVT_TREEFALING_45 ;
+var int  EVT_TREEFALING_46 ;
+var int  EVT_TREEFALING_47 ;
+var int  EVT_TREEFALING_48 ;
+var int  EVT_TREEFALING_49 ;
+var int  EVT_TREEFALING_50 ;
+var int  EVT_TREEFALING_51 ;
+var int  EVT_TREEFALING_52 ;
+var int  EVT_TREEFALING_53 ;
+var int  EVT_TREEFALING_54 ;
+var int  EVT_TREEFALING_55 ;
+var int  EVT_TREEFALING_56 ;
+var int  EVT_TREEFALING_57 ;
+var int  EVT_TREEFALING_58 ;
+var int  EVT_TREEFALING_59 ;
+var int  EVT_TREEFALING_60 ;
 
 
 func int EVT_TREEFALING_01_COND()
@@ -5705,13 +5706,13 @@ func void EVT_TREEFALING_01_FUNC_s1()
 	if(EVT_TREEFALING_01 < (Wld_GetDay() - 1))
 	{
 		CreateInvItems(hero,ItMi_JustTree,2);
-		AI_Print("Добыто две заготовки древесины...");
+		AI_Print( " Two pieces of wood harvested... " );
 		EVT_TREEFALING_01 = Wld_GetDay();
 		CreateInvItems(hero,ItMi_Chopper,1);
 	}
 	else
 	{
-		AI_PrintClr("Ничего...",177,58,17);
+		AI_PrintClr( " Nothing... " , 177 , 58 , 17 );
 		CreateInvItems(hero,ItMi_Chopper,1);
 	};
 };
@@ -5721,13 +5722,13 @@ func void EVT_TREEFALING_02_FUNC_s1()
 	if(EVT_TREEFALING_02 < (Wld_GetDay() - 1))
 	{
 		CreateInvItems(hero,ItMi_YsuoTree,2);
-		AI_Print("Добыто две заготовки ясеневой древесины...");
+		AI_Print( " Two pieces of ash wood harvested... " );
 		EVT_TREEFALING_02 = Wld_GetDay();
 		CreateInvItems(hero,ItMi_Chopper,1);
 	}
 	else
 	{
-		AI_PrintClr("Ничего...",177,58,17);
+		AI_PrintClr( " Nothing... " , 177 , 58 , 17 );
 		CreateInvItems(hero,ItMi_Chopper,1);
 	};
 };
@@ -5737,13 +5738,13 @@ func void EVT_TREEFALING_03_FUNC_s1()
 	if(EVT_TREEFALING_03 < (Wld_GetDay() - 1))
 	{
 		CreateInvItems(hero,ItMi_VyzTree,2);
-		AI_Print("Добыто две заготовки вязовой древесины...");
+		AI_Print( " Two pieces of elm wood harvested... " );
 		EVT_TREEFALING_03 = Wld_GetDay();
 		CreateInvItems(hero,ItMi_Chopper,1);
 	}
 	else
 	{
-		AI_PrintClr("Ничего...",177,58,17);
+		AI_PrintClr( " Nothing... " , 177 , 58 , 17 );
 		CreateInvItems(hero,ItMi_Chopper,1);
 	};
 };
@@ -5753,13 +5754,13 @@ func void EVT_TREEFALING_04_FUNC_s1()
 	if(EVT_TREEFALING_04 < (Wld_GetDay() - 1))
 	{
 		CreateInvItems(hero,ItMi_JustTree,2);
-		AI_Print("Добыто две заготовки древесины...");
+		AI_Print( " Two pieces of wood harvested... " );
 		EVT_TREEFALING_04 = Wld_GetDay();
 		CreateInvItems(hero,ItMi_Chopper,1);
 	}
 	else
 	{
-		AI_PrintClr("Ничего...",177,58,17);
+		AI_PrintClr( " Nothing... " , 177 , 58 , 17 );
 		CreateInvItems(hero,ItMi_Chopper,1);
 	};
 };
@@ -5769,13 +5770,13 @@ func void EVT_TREEFALING_05_FUNC_s1()
 	if(EVT_TREEFALING_05 < (Wld_GetDay() - 1))
 	{
 		CreateInvItems(hero,ItMi_EveTree,2);
-		AI_Print("Добыто две заготовки ивовой древесины...");
+		AI_Print( " Two pieces of willow wood harvested... " );
 		EVT_TREEFALING_05 = Wld_GetDay();
 		CreateInvItems(hero,ItMi_Chopper,1);
 	}
 	else
 	{
-		AI_PrintClr("Ничего...",177,58,17);
+		AI_PrintClr( " Nothing... " , 177 , 58 , 17 );
 		CreateInvItems(hero,ItMi_Chopper,1);
 	};
 };
@@ -5785,13 +5786,13 @@ func void EVT_TREEFALING_06_FUNC_s1()
 	if(EVT_TREEFALING_06 < (Wld_GetDay() - 1))
 	{
 		CreateInvItems(hero,ItMi_VyzTree,2);
-		AI_Print("Добыто две заготовки вязовой древесины...");
+		AI_Print( " Two pieces of elm wood harvested... " );
 		EVT_TREEFALING_06 = Wld_GetDay();
 		CreateInvItems(hero,ItMi_Chopper,1);
 	}
 	else
 	{
-		AI_PrintClr("Ничего...",177,58,17);
+		AI_PrintClr( " Nothing... " , 177 , 58 , 17 );
 		CreateInvItems(hero,ItMi_Chopper,1);
 	};
 };
@@ -5801,13 +5802,13 @@ func void EVT_TREEFALING_07_FUNC_s1()
 	if(EVT_TREEFALING_07 < (Wld_GetDay() - 1))
 	{
 		CreateInvItems(hero,ItMi_BokTree,2);
-		AI_Print("Добыто две заготовки буковой древесины...");
+		AI_Print( " Two pieces of beech wood harvested... " );
 		EVT_TREEFALING_07 = Wld_GetDay();
 		CreateInvItems(hero,ItMi_Chopper,1);
 	}
 	else
 	{
-		AI_PrintClr("Ничего...",177,58,17);
+		AI_PrintClr( " Nothing... " , 177 , 58 , 17 );
 		CreateInvItems(hero,ItMi_Chopper,1);
 	};
 };
@@ -5817,13 +5818,13 @@ func void EVT_TREEFALING_08_FUNC_s1()
 	if(EVT_TREEFALING_08 < (Wld_GetDay() - 1))
 	{
 		CreateInvItems(hero,ItMi_YsuoTree,2);
-		AI_Print("Добыто две заготовки ясеневой древесины...");
+		AI_Print( " Two pieces of ash wood harvested... " );
 		EVT_TREEFALING_08 = Wld_GetDay();
 		CreateInvItems(hero,ItMi_Chopper,1);
 	}
 	else
 	{
-		AI_PrintClr("Ничего...",177,58,17);
+		AI_PrintClr( " Nothing... " , 177 , 58 , 17 );
 		CreateInvItems(hero,ItMi_Chopper,1);
 	};
 };
@@ -5833,13 +5834,13 @@ func void EVT_TREEFALING_09_FUNC_s1()
 	if(EVT_TREEFALING_09 < (Wld_GetDay() - 1))
 	{
 		CreateInvItems(hero,ItMi_VyzTree,2);
-		AI_Print("Добыто две заготовки вязовой древесины...");
+		AI_Print( " Two pieces of elm wood harvested... " );
 		EVT_TREEFALING_09 = Wld_GetDay();
 		CreateInvItems(hero,ItMi_Chopper,1);
 	}
 	else
 	{
-		AI_PrintClr("Ничего...",177,58,17);
+		AI_PrintClr( " Nothing... " , 177 , 58 , 17 );
 		CreateInvItems(hero,ItMi_Chopper,1);
 	};
 };
@@ -5849,13 +5850,13 @@ func void EVT_TREEFALING_10_FUNC_s1()
 	if(EVT_TREEFALING_10 < (Wld_GetDay() - 1))
 	{
 		CreateInvItems(hero,ItMi_EveTree,2);
-		AI_Print("Добыто две заготовки ивовой древесины...");
+		AI_Print( " Two pieces of willow wood harvested... " );
 		EVT_TREEFALING_10 = Wld_GetDay();
 		CreateInvItems(hero,ItMi_Chopper,1);
 	}
 	else
 	{
-		AI_PrintClr("Ничего...",177,58,17);
+		AI_PrintClr( " Nothing... " , 177 , 58 , 17 );
 		CreateInvItems(hero,ItMi_Chopper,1);
 	};
 };
@@ -5864,13 +5865,13 @@ func void EVT_TREEFALING_11_FUNC_s1()
 	if(EVT_TREEFALING_11 < (Wld_GetDay() - 1))
 	{
 		CreateInvItems(hero,ItMi_JustTree,2);
-		AI_Print("Добыто две заготовки древесины...");
+		AI_Print( " Two pieces of wood harvested... " );
 		EVT_TREEFALING_11 = Wld_GetDay();
 		CreateInvItems(hero,ItMi_Chopper,1);
 	}
 	else
 	{
-		AI_PrintClr("Ничего...",177,58,17);
+		AI_PrintClr( " Nothing... " , 177 , 58 , 17 );
 		CreateInvItems(hero,ItMi_Chopper,1);
 	};
 };
@@ -5880,13 +5881,13 @@ func void EVT_TREEFALING_12_FUNC_s1()
 	if(EVT_TREEFALING_12 < (Wld_GetDay() - 1))
 	{
 		CreateInvItems(hero,ItMi_YsuoTree,2);
-		AI_Print("Добыто две заготовки ясеневой древесины...");
+		AI_Print( " Two pieces of ash wood harvested... " );
 		EVT_TREEFALING_12 = Wld_GetDay();
 		CreateInvItems(hero,ItMi_Chopper,1);
 	}
 	else
 	{
-		AI_PrintClr("Ничего...",177,58,17);
+		AI_PrintClr( " Nothing... " , 177 , 58 , 17 );
 		CreateInvItems(hero,ItMi_Chopper,1);
 	};
 };
@@ -5896,13 +5897,13 @@ func void EVT_TREEFALING_13_FUNC_s1()
 	if(EVT_TREEFALING_13 < (Wld_GetDay() - 1))
 	{
 		CreateInvItems(hero,ItMi_VyzTree,2);
-		AI_Print("Добыто две заготовки вязовой древесины...");
+		AI_Print( " Two pieces of elm wood harvested... " );
 		EVT_TREEFALING_13 = Wld_GetDay();
 		CreateInvItems(hero,ItMi_Chopper,1);
 	}
 	else
 	{
-		AI_PrintClr("Ничего...",177,58,17);
+		AI_PrintClr( " Nothing... " , 177 , 58 , 17 );
 		CreateInvItems(hero,ItMi_Chopper,1);
 	};
 };
@@ -5912,13 +5913,13 @@ func void EVT_TREEFALING_14_FUNC_s1()
 	if(EVT_TREEFALING_14 < (Wld_GetDay() - 1))
 	{
 		CreateInvItems(hero,ItMi_JustTree,2);
-		AI_Print("Добыто две заготовки древесины...");
+		AI_Print( " Two pieces of wood harvested... " );
 		EVT_TREEFALING_14 = Wld_GetDay();
 		CreateInvItems(hero,ItMi_Chopper,1);
 	}
 	else
 	{
-		AI_PrintClr("Ничего...",177,58,17);
+		AI_PrintClr( " Nothing... " , 177 , 58 , 17 );
 		CreateInvItems(hero,ItMi_Chopper,1);
 	};
 };
@@ -5928,13 +5929,13 @@ func void EVT_TREEFALING_15_FUNC_s1()
 	if(EVT_TREEFALING_15 < (Wld_GetDay() - 1))
 	{
 		CreateInvItems(hero,ItMi_EveTree,2);
-		AI_Print("Добыто две заготовки ивовой древесины...");
+		AI_Print( " Two pieces of willow wood harvested... " );
 		EVT_TREEFALING_15 = Wld_GetDay();
 		CreateInvItems(hero,ItMi_Chopper,1);
 	}
 	else
 	{
-		AI_PrintClr("Ничего...",177,58,17);
+		AI_PrintClr( " Nothing... " , 177 , 58 , 17 );
 		CreateInvItems(hero,ItMi_Chopper,1);
 	};
 };
@@ -5944,13 +5945,13 @@ func void EVT_TREEFALING_16_FUNC_s1()
 	if(EVT_TREEFALING_16 < (Wld_GetDay() - 1))
 	{
 		CreateInvItems(hero,ItMi_VyzTree,2);
-		AI_Print("Добыто две заготовки вязовой древесины...");
+		AI_Print( " Two pieces of elm wood harvested... " );
 		EVT_TREEFALING_16 = Wld_GetDay();
 		CreateInvItems(hero,ItMi_Chopper,1);
 	}
 	else
 	{
-		AI_PrintClr("Ничего...",177,58,17);
+		AI_PrintClr( " Nothing... " , 177 , 58 , 17 );
 		CreateInvItems(hero,ItMi_Chopper,1);
 	};
 };
@@ -5960,13 +5961,13 @@ func void EVT_TREEFALING_17_FUNC_s1()
 	if(EVT_TREEFALING_17 < (Wld_GetDay() - 1))
 	{
 		CreateInvItems(hero,ItMi_BokTree,2);
-		AI_Print("Добыто две заготовки буковой древесины...");
+		AI_Print( " Two pieces of beech wood harvested... " );
 		EVT_TREEFALING_17 = Wld_GetDay();
 		CreateInvItems(hero,ItMi_Chopper,1);
 	}
 	else
 	{
-		AI_PrintClr("Ничего...",177,58,17);
+		AI_PrintClr( " Nothing... " , 177 , 58 , 17 );
 		CreateInvItems(hero,ItMi_Chopper,1);
 	};
 };
@@ -5976,13 +5977,13 @@ func void EVT_TREEFALING_18_FUNC_s1()
 	if(EVT_TREEFALING_18 < (Wld_GetDay() - 1))
 	{
 		CreateInvItems(hero,ItMi_YsuoTree,2);
-		AI_Print("Добыто две заготовки ясеневой древесины...");
+		AI_Print( " Two pieces of ash wood harvested... " );
 		EVT_TREEFALING_18 = Wld_GetDay();
 		CreateInvItems(hero,ItMi_Chopper,1);
 	}
 	else
 	{
-		AI_PrintClr("Ничего...",177,58,17);
+		AI_PrintClr( " Nothing... " , 177 , 58 , 17 );
 		CreateInvItems(hero,ItMi_Chopper,1);
 	};
 };
@@ -5992,13 +5993,13 @@ func void EVT_TREEFALING_19_FUNC_s1()
 	if(EVT_TREEFALING_19 < (Wld_GetDay() - 1))
 	{
 		CreateInvItems(hero,ItMi_VyzTree,2);
-		AI_Print("Добыто две заготовки вязовой древесины...");
+		AI_Print( " Two pieces of elm wood harvested... " );
 		EVT_TREEFALING_19 = Wld_GetDay();
 		CreateInvItems(hero,ItMi_Chopper,1);
 	}
 	else
 	{
-		AI_PrintClr("Ничего...",177,58,17);
+		AI_PrintClr( " Nothing... " , 177 , 58 , 17 );
 		CreateInvItems(hero,ItMi_Chopper,1);
 	};
 };
@@ -6008,13 +6009,13 @@ func void EVT_TREEFALING_20_FUNC_s1()
 	if(EVT_TREEFALING_20 < (Wld_GetDay() - 1))
 	{
 		CreateInvItems(hero,ItMi_EveTree,2);
-		AI_Print("Добыто две заготовки ивовой древесины...");
+		AI_Print( " Two pieces of willow wood harvested... " );
 		EVT_TREEFALING_20 = Wld_GetDay();
 		CreateInvItems(hero,ItMi_Chopper,1);
 	}
 	else
 	{
-		AI_PrintClr("Ничего...",177,58,17);
+		AI_PrintClr( " Nothing... " , 177 , 58 , 17 );
 		CreateInvItems(hero,ItMi_Chopper,1);
 	};
 };
@@ -6023,13 +6024,13 @@ func void EVT_TREEFALING_21_FUNC_s1()
 	if(EVT_TREEFALING_21 < (Wld_GetDay() - 1))
 	{
 		CreateInvItems(hero,ItMi_JustTree,2);
-		AI_Print("Добыто две заготовки древесины...");
+		AI_Print( " Two pieces of wood harvested... " );
 		EVT_TREEFALING_21 = Wld_GetDay();
 		CreateInvItems(hero,ItMi_Chopper,1);
 	}
 	else
 	{
-		AI_PrintClr("Ничего...",177,58,17);
+		AI_PrintClr( " Nothing... " , 177 , 58 , 17 );
 		CreateInvItems(hero,ItMi_Chopper,1);
 	};
 };
@@ -6039,13 +6040,13 @@ func void EVT_TREEFALING_22_FUNC_s1()
 	if(EVT_TREEFALING_22 < (Wld_GetDay() - 1))
 	{
 		CreateInvItems(hero,ItMi_YsuoTree,2);
-		AI_Print("Добыто две заготовки ясеневой древесины...");
+		AI_Print( " Two pieces of ash wood harvested... " );
 		EVT_TREEFALING_22 = Wld_GetDay();
 		CreateInvItems(hero,ItMi_Chopper,1);
 	}
 	else
 	{
-		AI_PrintClr("Ничего...",177,58,17);
+		AI_PrintClr( " Nothing... " , 177 , 58 , 17 );
 		CreateInvItems(hero,ItMi_Chopper,1);
 	};
 };
@@ -6055,13 +6056,13 @@ func void EVT_TREEFALING_23_FUNC_s1()
 	if(EVT_TREEFALING_23 < (Wld_GetDay() - 1))
 	{
 		CreateInvItems(hero,ItMi_VyzTree,2);
-		AI_Print("Добыто две заготовки вязовой древесины...");
+		AI_Print( " Two pieces of elm wood harvested... " );
 		EVT_TREEFALING_23 = Wld_GetDay();
 		CreateInvItems(hero,ItMi_Chopper,1);
 	}
 	else
 	{
-		AI_PrintClr("Ничего...",177,58,17);
+		AI_PrintClr( " Nothing... " , 177 , 58 , 17 );
 		CreateInvItems(hero,ItMi_Chopper,1);
 	};
 };
@@ -6071,13 +6072,13 @@ func void EVT_TREEFALING_24_FUNC_s1()
 	if(EVT_TREEFALING_24 < (Wld_GetDay() - 1))
 	{
 		CreateInvItems(hero,ItMi_JustTree,2);
-		AI_Print("Добыто две заготовки древесины...");
+		AI_Print( " Two pieces of wood harvested... " );
 		EVT_TREEFALING_24 = Wld_GetDay();
 		CreateInvItems(hero,ItMi_Chopper,1);
 	}
 	else
 	{
-		AI_PrintClr("Ничего...",177,58,17);
+		AI_PrintClr( " Nothing... " , 177 , 58 , 17 );
 		CreateInvItems(hero,ItMi_Chopper,1);
 	};
 };
@@ -6087,13 +6088,13 @@ func void EVT_TREEFALING_25_FUNC_s1()
 	if(EVT_TREEFALING_25 < (Wld_GetDay() - 1))
 	{
 		CreateInvItems(hero,ItMi_EveTree,2);
-		AI_Print("Добыто две заготовки ивовой древесины...");
+		AI_Print( " Two pieces of willow wood harvested... " );
 		EVT_TREEFALING_25 = Wld_GetDay();
 		CreateInvItems(hero,ItMi_Chopper,1);
 	}
 	else
 	{
-		AI_PrintClr("Ничего...",177,58,17);
+		AI_PrintClr( " Nothing... " , 177 , 58 , 17 );
 		CreateInvItems(hero,ItMi_Chopper,1);
 	};
 };
@@ -6103,13 +6104,13 @@ func void EVT_TREEFALING_26_FUNC_s1()
 	if(EVT_TREEFALING_26 < (Wld_GetDay() - 1))
 	{
 		CreateInvItems(hero,ItMi_VyzTree,2);
-		AI_Print("Добыто две заготовки вязовой древесины...");
+		AI_Print( " Two pieces of elm wood harvested... " );
 		EVT_TREEFALING_26 = Wld_GetDay();
 		CreateInvItems(hero,ItMi_Chopper,1);
 	}
 	else
 	{
-		AI_PrintClr("Ничего...",177,58,17);
+		AI_PrintClr( " Nothing... " , 177 , 58 , 17 );
 		CreateInvItems(hero,ItMi_Chopper,1);
 	};
 };
@@ -6119,13 +6120,13 @@ func void EVT_TREEFALING_27_FUNC_s1()
 	if(EVT_TREEFALING_27 < (Wld_GetDay() - 1))
 	{
 		CreateInvItems(hero,ItMi_BokTree,2);
-		AI_Print("Добыто две заготовки буковой древесины...");
+		AI_Print( " Two pieces of beech wood harvested... " );
 		EVT_TREEFALING_27 = Wld_GetDay();
 		CreateInvItems(hero,ItMi_Chopper,1);
 	}
 	else
 	{
-		AI_PrintClr("Ничего...",177,58,17);
+		AI_PrintClr( " Nothing... " , 177 , 58 , 17 );
 		CreateInvItems(hero,ItMi_Chopper,1);
 	};
 };
@@ -6135,13 +6136,13 @@ func void EVT_TREEFALING_28_FUNC_s1()
 	if(EVT_TREEFALING_28 < (Wld_GetDay() - 1))
 	{
 		CreateInvItems(hero,ItMi_YsuoTree,2);
-		AI_Print("Добыто две заготовки ясеневой древесины...");
+		AI_Print( " Two pieces of ash wood harvested... " );
 		EVT_TREEFALING_28 = Wld_GetDay();
 		CreateInvItems(hero,ItMi_Chopper,1);
 	}
 	else
 	{
-		AI_PrintClr("Ничего...",177,58,17);
+		AI_PrintClr( " Nothing... " , 177 , 58 , 17 );
 		CreateInvItems(hero,ItMi_Chopper,1);
 	};
 };
@@ -6151,13 +6152,13 @@ func void EVT_TREEFALING_29_FUNC_s1()
 	if(EVT_TREEFALING_29 < (Wld_GetDay() - 1))
 	{
 		CreateInvItems(hero,ItMi_VyzTree,2);
-		AI_Print("Добыто две заготовки вязовой древесины...");
+		AI_Print( " Two pieces of elm wood harvested... " );
 		EVT_TREEFALING_29 = Wld_GetDay();
 		CreateInvItems(hero,ItMi_Chopper,1);
 	}
 	else
 	{
-		AI_PrintClr("Ничего...",177,58,17);
+		AI_PrintClr( " Nothing... " , 177 , 58 , 17 );
 		CreateInvItems(hero,ItMi_Chopper,1);
 	};
 };
@@ -6167,13 +6168,13 @@ func void EVT_TREEFALING_30_FUNC_s1()
 	if(EVT_TREEFALING_30 < (Wld_GetDay() - 1))
 	{
 		CreateInvItems(hero,ItMi_EveTree,2);
-		AI_Print("Добыто две заготовки ивовой древесины...");
+		AI_Print( " Two pieces of willow wood harvested... " );
 		EVT_TREEFALING_30 = Wld_GetDay();
 		CreateInvItems(hero,ItMi_Chopper,1);
 	}
 	else
 	{
-		AI_PrintClr("Ничего...",177,58,17);
+		AI_PrintClr( " Nothing... " , 177 , 58 , 17 );
 		CreateInvItems(hero,ItMi_Chopper,1);
 	};
 };
@@ -6182,13 +6183,13 @@ func void EVT_TREEFALING_31_FUNC_s1()
 	if(EVT_TREEFALING_31 < (Wld_GetDay() - 1))
 	{
 		CreateInvItems(hero,ItMi_EveTree,2);
-		AI_Print("Добыто две заготовки ивовой древесины...");
+		AI_Print( " Two pieces of willow wood harvested... " );
 		EVT_TREEFALING_31 = Wld_GetDay();
 		CreateInvItems(hero,ItMi_Chopper,1);
 	}
 	else
 	{
-		AI_PrintClr("Ничего...",177,58,17);
+		AI_PrintClr( " Nothing... " , 177 , 58 , 17 );
 		CreateInvItems(hero,ItMi_Chopper,1);
 	};
 };
@@ -6198,13 +6199,13 @@ func void EVT_TREEFALING_32_FUNC_s1()
 	if(EVT_TREEFALING_32 < (Wld_GetDay() - 1))
 	{
 		CreateInvItems(hero,ItMi_YsuoTree,2);
-		AI_Print("Добыто две заготовки ясеневой древесины...");
+		AI_Print( " Two pieces of ash wood harvested... " );
 		EVT_TREEFALING_32 = Wld_GetDay();
 		CreateInvItems(hero,ItMi_Chopper,1);
 	}
 	else
 	{
-		AI_PrintClr("Ничего...",177,58,17);
+		AI_PrintClr( " Nothing... " , 177 , 58 , 17 );
 		CreateInvItems(hero,ItMi_Chopper,1);
 	};
 };
@@ -6214,13 +6215,13 @@ func void EVT_TREEFALING_33_FUNC_s1()
 	if(EVT_TREEFALING_33 < (Wld_GetDay() - 1))
 	{
 		CreateInvItems(hero,ItMi_VyzTree,2);
-		AI_Print("Добыто две заготовки вязовой древесины...");
+		AI_Print( " Two pieces of elm wood harvested... " );
 		EVT_TREEFALING_33 = Wld_GetDay();
 		CreateInvItems(hero,ItMi_Chopper,1);
 	}
 	else
 	{
-		AI_PrintClr("Ничего...",177,58,17);
+		AI_PrintClr( " Nothing... " , 177 , 58 , 17 );
 		CreateInvItems(hero,ItMi_Chopper,1);
 	};
 };
@@ -6230,13 +6231,13 @@ func void EVT_TREEFALING_34_FUNC_s1()
 	if(EVT_TREEFALING_34 < (Wld_GetDay() - 1))
 	{
 		CreateInvItems(hero,ItMi_JustTree,2);
-		AI_Print("Добыто две заготовки древесины...");
+		AI_Print( " Two pieces of wood harvested... " );
 		EVT_TREEFALING_34 = Wld_GetDay();
 		CreateInvItems(hero,ItMi_Chopper,1);
 	}
 	else
 	{
-		AI_PrintClr("Ничего...",177,58,17);
+		AI_PrintClr( " Nothing... " , 177 , 58 , 17 );
 		CreateInvItems(hero,ItMi_Chopper,1);
 	};
 };
@@ -6246,13 +6247,13 @@ func void EVT_TREEFALING_35_FUNC_s1()
 	if(EVT_TREEFALING_35 < (Wld_GetDay() - 1))
 	{
 		CreateInvItems(hero,ItMi_EveTree,2);
-		AI_Print("Добыто две заготовки ивовой древесины...");
+		AI_Print( " Two pieces of willow wood harvested... " );
 		EVT_TREEFALING_35 = Wld_GetDay();
 		CreateInvItems(hero,ItMi_Chopper,1);
 	}
 	else
 	{
-		AI_PrintClr("Ничего...",177,58,17);
+		AI_PrintClr( " Nothing... " , 177 , 58 , 17 );
 		CreateInvItems(hero,ItMi_Chopper,1);
 	};
 };
@@ -6262,13 +6263,13 @@ func void EVT_TREEFALING_36_FUNC_s1()
 	if(EVT_TREEFALING_36 < (Wld_GetDay() - 1))
 	{
 		CreateInvItems(hero,ItMi_VyzTree,2);
-		AI_Print("Добыто две заготовки вязовой древесины...");
+		AI_Print( " Two pieces of elm wood harvested... " );
 		EVT_TREEFALING_36 = Wld_GetDay();
 		CreateInvItems(hero,ItMi_Chopper,1);
 	}
 	else
 	{
-		AI_PrintClr("Ничего...",177,58,17);
+		AI_PrintClr( " Nothing... " , 177 , 58 , 17 );
 		CreateInvItems(hero,ItMi_Chopper,1);
 	};
 };
@@ -6278,13 +6279,13 @@ func void EVT_TREEFALING_37_FUNC_s1()
 	if(EVT_TREEFALING_37 < (Wld_GetDay() - 1))
 	{
 		CreateInvItems(hero,ItMi_BokTree,2);
-		AI_Print("Добыто две заготовки буковой древесины...");
+		AI_Print( " Two pieces of beech wood harvested... " );
 		EVT_TREEFALING_37 = Wld_GetDay();
 		CreateInvItems(hero,ItMi_Chopper,1);
 	}
 	else
 	{
-		AI_PrintClr("Ничего...",177,58,17);
+		AI_PrintClr( " Nothing... " , 177 , 58 , 17 );
 		CreateInvItems(hero,ItMi_Chopper,1);
 	};
 };
@@ -6294,13 +6295,13 @@ func void EVT_TREEFALING_38_FUNC_s1()
 	if(EVT_TREEFALING_38 < (Wld_GetDay() - 1))
 	{
 		CreateInvItems(hero,ItMi_YsuoTree,2);
-		AI_Print("Добыто две заготовки ясеневой древесины...");
+		AI_Print( " Two pieces of ash wood harvested... " );
 		EVT_TREEFALING_38 = Wld_GetDay();
 		CreateInvItems(hero,ItMi_Chopper,1);
 	}
 	else
 	{
-		AI_PrintClr("Ничего...",177,58,17);
+		AI_PrintClr( " Nothing... " , 177 , 58 , 17 );
 		CreateInvItems(hero,ItMi_Chopper,1);
 	};
 };
@@ -6310,13 +6311,13 @@ func void EVT_TREEFALING_39_FUNC_s1()
 	if(EVT_TREEFALING_39 < (Wld_GetDay() - 1))
 	{
 		CreateInvItems(hero,ItMi_VyzTree,2);
-		AI_Print("Добыто две заготовки вязовой древесины...");
+		AI_Print( " Two pieces of elm wood harvested... " );
 		EVT_TREEFALING_39 = Wld_GetDay();
 		CreateInvItems(hero,ItMi_Chopper,1);
 	}
 	else
 	{
-		AI_PrintClr("Ничего...",177,58,17);
+		AI_PrintClr( " Nothing... " , 177 , 58 , 17 );
 		CreateInvItems(hero,ItMi_Chopper,1);
 	};
 };
@@ -6326,13 +6327,13 @@ func void EVT_TREEFALING_40_FUNC_s1()
 	if(EVT_TREEFALING_40 < (Wld_GetDay() - 1))
 	{
 		CreateInvItems(hero,ItMi_EveTree,2);
-		AI_Print("Добыто две заготовки ивовой древесины...");
+		AI_Print( " Two pieces of willow wood harvested... " );
 		EVT_TREEFALING_40 = Wld_GetDay();
 		CreateInvItems(hero,ItMi_Chopper,1);
 	}
 	else
 	{
-		AI_PrintClr("Ничего...",177,58,17);
+		AI_PrintClr( " Nothing... " , 177 , 58 , 17 );
 		CreateInvItems(hero,ItMi_Chopper,1);
 	};
 };
@@ -6341,13 +6342,13 @@ func void EVT_TREEFALING_41_FUNC_s1()
 	if(EVT_TREEFALING_41 < (Wld_GetDay() - 1))
 	{
 		CreateInvItems(hero,ItMi_JustTree,2);
-		AI_Print("Добыто две заготовки древесины...");
+		AI_Print( " Two pieces of wood harvested... " );
 		EVT_TREEFALING_41 = Wld_GetDay();
 		CreateInvItems(hero,ItMi_Chopper,1);
 	}
 	else
 	{
-		AI_PrintClr("Ничего...",177,58,17);
+		AI_PrintClr( " Nothing... " , 177 , 58 , 17 );
 		CreateInvItems(hero,ItMi_Chopper,1);
 	};
 };
@@ -6357,7 +6358,7 @@ func void EVT_TREEFALING_42_FUNC_s1()
 	if(EVT_TREEFALING_42 < (Wld_GetDay() - 1))
 	{
 		CreateInvItems(hero,ItMi_YsuoTree,2);
-		AI_Print("Добыто две заготовки ясеневой древесины...");
+		AI_Print( " Two pieces of ash wood harvested... " );
 		EVT_TREEFALING_42 = Wld_GetDay();
 		CreateInvItems(hero,ItMi_Chopper,1);
 	};
@@ -6368,13 +6369,13 @@ func void EVT_TREEFALING_43_FUNC_s1()
 	if(EVT_TREEFALING_43 < (Wld_GetDay() - 1))
 	{
 		CreateInvItems(hero,ItMi_VyzTree,2);
-		AI_Print("Добыто две заготовки вязовой древесины...");
+		AI_Print( " Two pieces of elm wood harvested... " );
 		EVT_TREEFALING_43 = Wld_GetDay();
 		CreateInvItems(hero,ItMi_Chopper,1);
 	}
 	else
 	{
-		AI_PrintClr("Ничего...",177,58,17);
+		AI_PrintClr( " Nothing... " , 177 , 58 , 17 );
 		CreateInvItems(hero,ItMi_Chopper,1);
 	};
 };
@@ -6384,13 +6385,13 @@ func void EVT_TREEFALING_44_FUNC_s1()
 	if(EVT_TREEFALING_44 < (Wld_GetDay() - 1))
 	{
 		CreateInvItems(hero,ItMi_JustTree,2);
-		AI_Print("Добыто две заготовки древесины...");
+		AI_Print( " Two pieces of wood harvested... " );
 		EVT_TREEFALING_44 = Wld_GetDay();
 		CreateInvItems(hero,ItMi_Chopper,1);
 	}
 	else
 	{
-		AI_PrintClr("Ничего...",177,58,17);
+		AI_PrintClr( " Nothing... " , 177 , 58 , 17 );
 		CreateInvItems(hero,ItMi_Chopper,1);
 	};
 };
@@ -6400,13 +6401,13 @@ func void EVT_TREEFALING_45_FUNC_s1()
 	if(EVT_TREEFALING_45 < (Wld_GetDay() - 1))
 	{
 		CreateInvItems(hero,ItMi_EveTree,2);
-		AI_Print("Добыто две заготовки ивовой древесины...");
+		AI_Print( " Two pieces of willow wood harvested... " );
 		EVT_TREEFALING_45 = Wld_GetDay();
 		CreateInvItems(hero,ItMi_Chopper,1);
 	}
 	else
 	{
-		AI_PrintClr("Ничего...",177,58,17);
+		AI_PrintClr( " Nothing... " , 177 , 58 , 17 );
 		CreateInvItems(hero,ItMi_Chopper,1);
 	};
 };
@@ -6416,13 +6417,13 @@ func void EVT_TREEFALING_46_FUNC_s1()
 	if(EVT_TREEFALING_46 < (Wld_GetDay() - 1))
 	{
 		CreateInvItems(hero,ItMi_VyzTree,2);
-		AI_Print("Добыто две заготовки вязовой древесины...");
+		AI_Print( " Two pieces of elm wood harvested... " );
 		EVT_TREEFALING_46 = Wld_GetDay();
 		CreateInvItems(hero,ItMi_Chopper,1);
 	}
 	else
 	{
-		AI_PrintClr("Ничего...",177,58,17);
+		AI_PrintClr( " Nothing... " , 177 , 58 , 17 );
 		CreateInvItems(hero,ItMi_Chopper,1);
 	};
 };
@@ -6432,13 +6433,13 @@ func void EVT_TREEFALING_47_FUNC_s1()
 	if(EVT_TREEFALING_47 < (Wld_GetDay() - 1))
 	{
 		CreateInvItems(hero,ItMi_BokTree,2);
-		AI_Print("Добыто две заготовки буковой древесины...");
+		AI_Print( " Two pieces of beech wood harvested... " );
 		EVT_TREEFALING_47 = Wld_GetDay();
 		CreateInvItems(hero,ItMi_Chopper,1);
 	}
 	else
 	{
-		AI_PrintClr("Ничего...",177,58,17);
+		AI_PrintClr( " Nothing... " , 177 , 58 , 17 );
 		CreateInvItems(hero,ItMi_Chopper,1);
 	};
 };
@@ -6448,13 +6449,13 @@ func void EVT_TREEFALING_48_FUNC_s1()
 	if(EVT_TREEFALING_48 < (Wld_GetDay() - 1))
 	{
 		CreateInvItems(hero,ItMi_YsuoTree,2);
-		AI_Print("Добыто две заготовки ясеневой древесины...");
+		AI_Print( " Two pieces of ash wood harvested... " );
 		EVT_TREEFALING_48 = Wld_GetDay();
 		CreateInvItems(hero,ItMi_Chopper,1);
 	}
 	else
 	{
-		AI_PrintClr("Ничего...",177,58,17);
+		AI_PrintClr( " Nothing... " , 177 , 58 , 17 );
 		CreateInvItems(hero,ItMi_Chopper,1);
 	};
 };
@@ -6464,13 +6465,13 @@ func void EVT_TREEFALING_49_FUNC_s1()
 	if(EVT_TREEFALING_49 < (Wld_GetDay() - 1))
 	{
 		CreateInvItems(hero,ItMi_VyzTree,2);
-		AI_Print("Добыто две заготовки вязовой древесины...");
+		AI_Print( " Two pieces of elm wood harvested... " );
 		EVT_TREEFALING_49 = Wld_GetDay();
 		CreateInvItems(hero,ItMi_Chopper,1);
 	}
 	else
 	{
-		AI_PrintClr("Ничего...",177,58,17);
+		AI_PrintClr( " Nothing... " , 177 , 58 , 17 );
 		CreateInvItems(hero,ItMi_Chopper,1);
 	};
 };
@@ -6480,13 +6481,13 @@ func void EVT_TREEFALING_50_FUNC_s1()
 	if(EVT_TREEFALING_50 < (Wld_GetDay() - 1))
 	{
 		CreateInvItems(hero,ItMi_EveTree,2);
-		AI_Print("Добыто две заготовки ивовой древесины...");
+		AI_Print( " Two pieces of willow wood harvested... " );
 		EVT_TREEFALING_50 = Wld_GetDay();
 		CreateInvItems(hero,ItMi_Chopper,1);
 	}
 	else
 	{
-		AI_PrintClr("Ничего...",177,58,17);
+		AI_PrintClr( " Nothing... " , 177 , 58 , 17 );
 		CreateInvItems(hero,ItMi_Chopper,1);
 	};
 };
@@ -6495,13 +6496,13 @@ func void EVT_TREEFALING_51_FUNC_s1()
 	if(EVT_TREEFALING_51 < (Wld_GetDay() - 1))
 	{
 		CreateInvItems(hero,ItMi_JustTree,2);
-		AI_Print("Добыто две заготовки древесины...");
+		AI_Print( " Two pieces of wood harvested... " );
 		EVT_TREEFALING_51 = Wld_GetDay();
 		CreateInvItems(hero,ItMi_Chopper,1);
 	}
 	else
 	{
-		AI_PrintClr("Ничего...",177,58,17);
+		AI_PrintClr( " Nothing... " , 177 , 58 , 17 );
 		CreateInvItems(hero,ItMi_Chopper,1);
 	};
 };
@@ -6511,13 +6512,13 @@ func void EVT_TREEFALING_52_FUNC_s1()
 	if(EVT_TREEFALING_52 < (Wld_GetDay() - 1))
 	{
 		CreateInvItems(hero,ItMi_YsuoTree,2);
-		AI_Print("Добыто две заготовки ясеневой древесины...");
+		AI_Print( " Two pieces of ash wood harvested... " );
 		EVT_TREEFALING_52 = Wld_GetDay();
 		CreateInvItems(hero,ItMi_Chopper,1);
 	}
 	else
 	{
-		AI_PrintClr("Ничего...",177,58,17);
+		AI_PrintClr( " Nothing... " , 177 , 58 , 17 );
 		CreateInvItems(hero,ItMi_Chopper,1);
 	};
 };
@@ -6527,13 +6528,13 @@ func void EVT_TREEFALING_53_FUNC_s1()
 	if(EVT_TREEFALING_53 < (Wld_GetDay() - 1))
 	{
 		CreateInvItems(hero,ItMi_VyzTree,2);
-		AI_Print("Добыто две заготовки вязовой древесины...");
+		AI_Print( " Two pieces of elm wood harvested... " );
 		EVT_TREEFALING_53 = Wld_GetDay();
 		CreateInvItems(hero,ItMi_Chopper,1);
 	}
 	else
 	{
-		AI_PrintClr("Ничего...",177,58,17);
+		AI_PrintClr( " Nothing... " , 177 , 58 , 17 );
 		CreateInvItems(hero,ItMi_Chopper,1);
 	};
 };
@@ -6543,13 +6544,13 @@ func void EVT_TREEFALING_54_FUNC_s1()
 	if(EVT_TREEFALING_54 < (Wld_GetDay() - 1))
 	{
 		CreateInvItems(hero,ItMi_JustTree,2);
-		AI_Print("Добыто две заготовки древесины...");
+		AI_Print( " Two pieces of wood harvested... " );
 		EVT_TREEFALING_54 = Wld_GetDay();
 		CreateInvItems(hero,ItMi_Chopper,1);
 	}
 	else
 	{
-		AI_PrintClr("Ничего...",177,58,17);
+		AI_PrintClr( " Nothing... " , 177 , 58 , 17 );
 		CreateInvItems(hero,ItMi_Chopper,1);
 	};
 };
@@ -6559,13 +6560,13 @@ func void EVT_TREEFALING_55_FUNC_s1()
 	if(EVT_TREEFALING_55 < (Wld_GetDay() - 1))
 	{
 		CreateInvItems(hero,ItMi_EveTree,2);
-		AI_Print("Добыто две заготовки ивовой древесины...");
+		AI_Print( " Two pieces of willow wood harvested... " );
 		EVT_TREEFALING_55 = Wld_GetDay();
 		CreateInvItems(hero,ItMi_Chopper,1);
 	}
 	else
 	{
-		AI_PrintClr("Ничего...",177,58,17);
+		AI_PrintClr( " Nothing... " , 177 , 58 , 17 );
 		CreateInvItems(hero,ItMi_Chopper,1);
 	};
 };
@@ -6575,13 +6576,13 @@ func void EVT_TREEFALING_56_FUNC_s1()
 	if(EVT_TREEFALING_56 < (Wld_GetDay() - 1))
 	{
 		CreateInvItems(hero,ItMi_VyzTree,2);
-		AI_Print("Добыто две заготовки вязовой древесины...");
+		AI_Print( " Two pieces of elm wood harvested... " );
 		EVT_TREEFALING_56 = Wld_GetDay();
 		CreateInvItems(hero,ItMi_Chopper,1);
 	}
 	else
 	{
-		AI_PrintClr("Ничего...",177,58,17);
+		AI_PrintClr( " Nothing... " , 177 , 58 , 17 );
 		CreateInvItems(hero,ItMi_Chopper,1);
 	};
 };
@@ -6591,13 +6592,13 @@ func void EVT_TREEFALING_57_FUNC_s1()
 	if(EVT_TREEFALING_57 < (Wld_GetDay() - 1))
 	{
 		CreateInvItems(hero,ItMi_BokTree,2);
-		AI_Print("Добыто две заготовки буковой древесины...");
+		AI_Print( " Two pieces of beech wood harvested... " );
 		EVT_TREEFALING_57 = Wld_GetDay();
 		CreateInvItems(hero,ItMi_Chopper,1);
 	}
 	else
 	{
-		AI_PrintClr("Ничего...",177,58,17);
+		AI_PrintClr( " Nothing... " , 177 , 58 , 17 );
 		CreateInvItems(hero,ItMi_Chopper,1);
 	};
 };
@@ -6607,13 +6608,13 @@ func void EVT_TREEFALING_58_FUNC_s1()
 	if(EVT_TREEFALING_58 < (Wld_GetDay() - 1))
 	{
 		CreateInvItems(hero,ItMi_YsuoTree,2);
-		AI_Print("Добыто две заготовки ясеневой древесины...");
+		AI_Print( " Two pieces of ash wood harvested... " );
 		EVT_TREEFALING_58 = Wld_GetDay();
 		CreateInvItems(hero,ItMi_Chopper,1);
 	}
 	else
 	{
-		AI_PrintClr("Ничего...",177,58,17);
+		AI_PrintClr( " Nothing... " , 177 , 58 , 17 );
 		CreateInvItems(hero,ItMi_Chopper,1);
 	};
 };
@@ -6623,13 +6624,13 @@ func void EVT_TREEFALING_59_FUNC_s1()
 	if(EVT_TREEFALING_59 < (Wld_GetDay() - 1))
 	{
 		CreateInvItems(hero,ItMi_VyzTree,2);
-		AI_Print("Добыто две заготовки вязовой древесины...");
+		AI_Print( " Two pieces of elm wood harvested... " );
 		EVT_TREEFALING_59 = Wld_GetDay();
 		CreateInvItems(hero,ItMi_Chopper,1);
 	}
 	else
 	{
-		AI_PrintClr("Ничего...",177,58,17);
+		AI_PrintClr( " Nothing... " , 177 , 58 , 17 );
 		CreateInvItems(hero,ItMi_Chopper,1);
 	};
 };
@@ -6639,13 +6640,13 @@ func void EVT_TREEFALING_60_FUNC_s1()
 	if(EVT_TREEFALING_60 < (Wld_GetDay() - 1))
 	{
 		CreateInvItems(hero,ItMi_EveTree,2);
-		AI_Print("Добыто две заготовки ивовой древесины...");
+		AI_Print( " Two pieces of willow wood harvested... " );
 		EVT_TREEFALING_60 = Wld_GetDay();
 		CreateInvItems(hero,ItMi_Chopper,1);
 	}
 	else
 	{
-		AI_PrintClr("Ничего...",177,58,17);
+		AI_PrintClr( " Nothing... " , 177 , 58 , 17 );
 		CreateInvItems(hero,ItMi_Chopper,1);
 	};
 };
@@ -6657,7 +6658,7 @@ func int EVT_TP_ADW_COND()
 		return TRUE;
 	};
 
-	return FALSE;	
+	return  FALSE ;	
 };
 
 func void EVT_TP_ADW_FUNC_s1()
@@ -6665,7 +6666,7 @@ func void EVT_TP_ADW_FUNC_s1()
 	var C_Npc her;
 	her = Hlp_GetNpc(PC_Hero);
 
-	if(ADW_TP == FALSE)
+	if ( ADW_TP  ==  FALSE )
 	{
 		B_GivePlayerXP(250);
 		AI_PlayAni(hero,"T_MAGRUN_2_HEASHOOT");
@@ -6677,7 +6678,7 @@ func void EVT_TP_ADW_FUNC_s1()
 
 		if((MIS_OldTeleports == LOG_Running) && (XarSeekDruidArt == TRUE) && (ActivateDruidStone == FALSE))
 		{
-			B_LogEntry(TOPIC_OldTeleports,"Я нашел способ активировать рунический камень.");
+			B_LogEntry(TOPIC_OldTeleports, " I found a way to activate the runestone. " );
 			ActivateDruidStone = TRUE;
 		};
 
@@ -6687,12 +6688,12 @@ func void EVT_TP_ADW_FUNC_s1()
 
 func int EVT_TP_PIRATCAMP_COND()
 {
-	if((PIRATCAMP_TP == FALSE) && (Npc_HasItems(hero,ItMi_TeleportStone) >= 1))
+	if (( PIRATCAMP_TP  ==  FALSE ) && (Npc_HasItems(hero,ItMy_TeleportStone) >=  1 ))
 	{
 		return TRUE;
 	};
 
-	return FALSE;	
+	return  FALSE ;	
 };
 
 func void EVT_TP_PIRATCAMP_FUNC_s1()
@@ -6712,7 +6713,7 @@ func void EVT_TP_PIRATCAMP_FUNC_s1()
 
 		if((MIS_OldTeleports == LOG_Running) && (XarSeekDruidArt == TRUE) && (ActivateDruidStone == FALSE))
 		{
-			B_LogEntry(TOPIC_OldTeleports,"Я нашел способ активировать рунический камень.");
+			B_LogEntry(TOPIC_OldTeleports, " I found a way to activate the runestone. " );
 			ActivateDruidStone = TRUE;
 		};
 
@@ -6720,7 +6721,7 @@ func void EVT_TP_PIRATCAMP_FUNC_s1()
 	};
 };
 
-//----------------------------------эпик------------------------------------
+// ----------------------------------epic------------- -----------------------
 
 var int Active3Boss;
 var int Active4Boss;
@@ -6732,7 +6733,7 @@ func int EVT_LV_ACTIVATETHIRDBOSS_COND()
 		return TRUE;
 	};
 	
-	return FALSE;
+	return  FALSE ;
 };
 
 func int EVT_LV_ACTIVATEFORTHBOSS_COND()
@@ -6742,17 +6743,17 @@ func int EVT_LV_ACTIVATEFORTHBOSS_COND()
 		return TRUE;
 	};
 	
-	return FALSE;
+	return  FALSE ;
 };
 
 func void EVT_LV_ACTIVATEFORTHBOSS_s1()
 {
-	if((Npc_HasItems(hero,ItMi_FiarasHeart) >= 1) && (WaitForHero == TRUE) && (FiarasIsDead == TRUE) && (FiarasHeartInPlace == FALSE))
+	if ((Npc_HasItems(hero,ItMy_FiarasHeart) >=  1 ) && (WaitForHero ==  TRUE ) && (FiarasIsDead ==  TRUE ) && (FiarasHeartInPlace ==  FALSE )) ;
 	{
 		if(MIS_Miss_Brother == LOG_Running)
 		{
-			B_LogEntry(TOPIC_Miss_Brother,"Я возложил сердце могущественного огненного голема, Фиораса, на алтарь Вечного Пламени и проход в горе открылся. Надо идти дальше...Иле'Силь наверняка меня уже заждался.");
-			Wld_SendTrigger("EVT_FIREGOLEM");
+			B_LogEntry(TOPIC_Miss_Brother, " I placed the heart of the mighty fire golem, Fioras, on the altar of the Eternal Flame, and a passage in the mountain opened up. We must move on...Ile'Sil must have been waiting for me. " );
+			Wld_SendTrigger( " EVT_FIREGOLEM " );
 			Wld_SendTrigger("EVT_FIRECAVEDOOR_TRIGGER");
 			Wld_PlayEffect("spellFX_INCOVATION_FIRE",hero,hero,2,0,0,FALSE);
 			Npc_RemoveInvItems(hero,ItMi_FiarasHeart,1);
@@ -6763,7 +6764,7 @@ func void EVT_LV_ACTIVATEFORTHBOSS_s1()
 	{
 		if(MIS_Miss_Brother == LOG_Running)
 		{
-			B_LogEntry(TOPIC_Miss_Brother,"Я попробовал использовать алтарь Вечного Пламени, но ничего не произошло. Только взади, где то высоко, послышался отзвук разгарающегося пламени.");
+			B_LogEntry(TOPIC_Miss_Brother, " I tried to use the Altar of Eternal Flame, but nothing happened. Only in the distance, somewhere high up, I heard the echo of a blazing flame. " );
 			Wld_InsertNpc(FireGolem_LV,"WDS_LAVA_DEADTREE_01");
 			Wld_SendTrigger("EVT_FIRETREE");
 			FiarasInserted = TRUE;
@@ -6778,7 +6779,7 @@ func int EVT_LV_DAMNDRUID_01_COND()
 		return TRUE;
 	};
 	
-	return FALSE;
+	return  FALSE ;
 };
 
 func void EVT_LV_DAMNDRUID_01_s1()
@@ -6802,7 +6803,7 @@ func int EVT_LV_DAMNDRUID_02_COND()
 		return TRUE;
 	};
 	
-	return FALSE;
+	return  FALSE ;
 };
 
 func void EVT_LV_DAMNDRUID_02_s1()
@@ -6826,7 +6827,7 @@ func int EVT_LV_DAMNDRUID_03_COND()
 		return TRUE;
 	};
 	
-	return FALSE;
+	return  FALSE ;
 };
 
 func void EVT_LV_DAMNDRUID_03_s1()
@@ -6850,16 +6851,16 @@ func int EVT_LV_ACTIVATETREEGOLEM_COND()
 		return TRUE;
 	};
 	
-	return FALSE;
+	return  FALSE ;
 };
 
 func void EVT_LV_ACTIVATETREEGOLEM_s1()
 {
-	if((Npc_HasItems(hero,ItMi_Seed_Agony) >= 1) && (Npc_HasItems(hero,ItMi_Seed_Despair) >= 1) && (Npc_HasItems(hero,ItMi_Seed_Doom) >= 1) && (TreeGolemInserted == FALSE))
+	if ((Npc_HasItems(hero,ItMi_Seed_Agony) >=  1 ) && (Npc_HasItems(hero,ItMi_Seed_Despair) >=  1 ) && (Npc_HasItems(hero,ItMi_Seed_Doom) >=  1 ) && (TreeGolemInserted ==  FALSE )) ;
 	{
 		if(MIS_Miss_Brother == LOG_Running)
 		{
-			B_LogEntry(TOPIC_Miss_Brother,"Я положил семена на алтарь в центре каменного круга. Внезапно они вспыхнули огнем и раздался ужасающий скрежет дерева. Кажется, меня ожидает интересная встреча...");
+			B_LogEntry(TOPIC_Miss_Brother, " I placed the seeds on the altar in the center of the stone circle. Suddenly, they burst into flames and there was a terrifying screech of wood. I think I have an interesting meeting ahead of me... " );
 			Npc_RemoveInvItems(hero,ItMi_Seed_Agony,1);
 			Npc_RemoveInvItems(hero,ItMi_Seed_Despair,1);
 			Npc_RemoveInvItems(hero,ItMi_Seed_Doom,1);
@@ -6889,27 +6890,27 @@ func void EVT_LV_ACTIVATETHIRDBOSS_s1()
 	{
 		if(MIS_Miss_Brother == LOG_Running)
 		{
-			B_LogEntry(TOPIC_Miss_Brother,"Этот магический алтарь, который охраняли призрачные стражи, наверняка должен был для чего-то использоваться. Если присмотреться понимательнее, то не трудно заметить, что он весь исписчрен надписями на непонятном мне языке, а в самом его центре расположена круглая выемка в виде жертвенной чаши. Думаю мне стоит поговорить с Иле'Силем. Возможно, он подскажет решение...");
+			B_LogEntry(TOPIC_Miss_Brother, " This magical altar, which was guarded by ghostly guardians, must have been used for something. If you look closely, it's not hard to see that it's all covered with inscriptions in a language I don't understand, and in its very center there is a round recess in the form of a sacrificial bowl. I think I should talk to Ile'Sil. Perhaps he will suggest a solution... " );
 		};
 
 		LookAtDemonAltar = TRUE;
 	};
-	if((Npc_HasItems(hero,ItMi_ArahArEye) >= 1) && (LookAtDemonAltar == TRUE) && (ReadyForBoss4 == TRUE) && (Active4Boss == FALSE))
+	if ((Npc_HasItems(hero,ItMi_ArahArEye) >=  1 ) && (LookAtDemonAltar ==  TRUE ) && (ReadyForBoss4 ==  TRUE ) && (Active4Boss ==  FALSE )) ;
 	{
 		Wld_SendTrigger("EVT_LICHEYE");
-		Npc_RemoveInvItems(hero,ItMi_ArahArEye,1);
+		Npc_RemoveInvItems(here,ItMi_ArahArEye, 1 );
 		Wld_PlayEffect("spellFX_INCOVATION_WHITE",hero,hero,2,0,0,FALSE);
 		Wld_InsertNpc(Ghost_SoulKeeper,"LOSTVALLEY_SOULKEEPER_01");
 		Active4Boss = TRUE;
 
 		if(MIS_Miss_Brother == LOG_Running)
 		{
-			B_LogEntry(TOPIC_Miss_Brother,"Я возложил таинственное око лича в жертвенный сосуд алтаря и судя по реакции алтаря жертва была принята. Немного поодаль, слева, на возвышении, вспыхнул яркий свет. Думаю стоит теперь осмотреть то место...");
+			B_LogEntry(TOPIC_Miss_Brother, " I placed the lich's mysterious eye in the sacrificial vessel of the altar, and judging by the reaction of the altar, the sacrifice was accepted. A little further away, on a raised platform, a bright light flashed. I think it's worth examining that place now... " );
 		};
 	};
 };
 
-func void EVT_AV_TO_LOSTVALLEY_FUNC()
+func void  EVT_AV_TO_LOSTVALLEY_FUNC ()
 {
 	if(IlesilIsDead == FALSE)
 	{
@@ -6928,7 +6929,7 @@ instance PC_CHECKLV_END(C_Info)
 	condition = PC_CHECKLV_end_condition;
 	information = PC_CHECKLV_end_info;
 	permanent = TRUE;
-	description = "(...закрыть)";
+	description = " (...close) " ;
 };
 
 func int PC_CHECKLV_end_condition()
@@ -6957,7 +6958,7 @@ instance PC_CHECKLV_ON(C_Info)
 	condition = PC_CHECKLV_ON_condition;
 	information = PC_CHECKLV_ON_info;
 	permanent = TRUE;
-	description = "Войти в портал...";
+	description = " Enter the portal... " ;
 };
 
 func int PC_CHECKLV_ON_condition()
@@ -6974,23 +6975,23 @@ func void PC_CHECKLV_ON_info()
 	{
 		if(hero.attribute[ATR_HITPOINTS_MAX] <= 7500) && (hero.attribute[ATR_STRENGTH] <= 850) && (hero.attribute[ATR_DEXTERITY] <= 850) && (hero.attribute[ATR_MANA_MAX] <= 2500)
 		{
-			AI_Print("Сила портала начинает затягивать вас... Вы готовы?");
+			AI_Print( " The power of the portal is starting to pull you in... Are you ready? " );
 			LVStatsCheck[4] = hero.attribute[ATR_STRENGTH];
 			LVStatsCheck[5] = hero.attribute[ATR_DEXTERITY];
 			LVStatsCheck[6] = hero.attribute[ATR_MANA_MAX];
 			LVStatsCheck[7] = hero.attribute[ATR_HITPOINTS_MAX];
 			Info_ClearChoices(PC_CHECKLV_ON);
 			Info_AddChoice(PC_CHECKLV_ON,"Да, войти.",PC_CHECKLV_ON_YES);
-			Info_AddChoice(PC_CHECKLV_ON,"Нет, остаться.",PC_CHECKLV_ON_NO);
+			Info_AddChoice( PC_CHECKLV_ON , " No, stay. " , PC_CHECKLV_ON_NO );
 		}
 		else
 		{
-			AI_Print("Вы слишком могущественны, чтобы пройти через портал!");
+			AI_Print( " You are too powerful to pass through the portal! " );
 		};
 	}
 	else
 	{
-		AI_Print("Вы слишком слабы, чтобы пройти через портал...");
+		AI_Print( " You are too weak to pass through the portal... " );
 	};
 };
 
@@ -7017,7 +7018,7 @@ func void EVT_Dobar_Find_Func()
 	if((MIS_DobarOut == LOG_Running) && (DobarOnPlace == FALSE))
 	{
 		B_GivePlayerXP(150);
-		B_LogEntry(TOPIC_DobarOut,"Я нашел Добара. Он мертв.");
+		B_LogEntry(TOPIC_DobarOut, " I found Dobar. He's dead. " );
 		DobarOnPlace = TRUE;
 	};
 };
@@ -7027,7 +7028,7 @@ func void EVT_Parlaf_Find_Func()
 	if((MIS_DobarOut == LOG_Running) && (ParlafIsDead == TRUE) && (ParlafOnPlaceDead == FALSE))
 	{
 		B_GivePlayerXP(100);
-		B_LogEntry(TOPIC_DobarOut,"Я нашел Парлафа. Он мертв.");
+		B_LogEntry(TOPIC_DobarOut, " I found Parlaf. He's dead. " );
 		ParlafOnPlaceDead = TRUE;
 	};
 };
@@ -7036,7 +7037,7 @@ func void EVT_ENTER_LH_FUNC()
 {
 	if((MIS_HauntedLighthouse == LOG_Running) && (FindDamnLH == FALSE))
 	{
-		B_LogEntry(TOPIC_HauntedLighthouse,"Я приплыл на маяк, но ничего необычного здесь не обнаружил. Возможно тут стоит лучше осмотреться...");
+		B_LogEntry(TOPIC_HauntedLighthouse, " I came to the lighthouse, but I didn't find anything unusual here. Maybe it's better to look around here... " );
 		FindDamnLH = TRUE;
 	};
 };
@@ -7046,7 +7047,7 @@ func void EVT_FINDOLDSKELETON_LH_FUNC()
 	if((MIS_HauntedLighthouse == LOG_Running) && (FindOldSkeleton == FALSE))
 	{
 		B_GivePlayerXP(100);
-		B_LogEntry(TOPIC_HauntedLighthouse,"Внутри маяка я обнаружил старый человеческий скелет. Трудно сказать, как умер этот человек, но его тело застыло в какой-то явно неестественной позе. Интересно, что тут произошло?... Надо еще тут осмотреться.");
+		B_LogEntry(TOPIC_HauntedLighthouse, " I found an old human skeleton inside the lighthouse. It's hard to say how this man died, but his body was frozen in some obviously unnatural pose. I wonder what happened here?... We still need to look around here. " );
 		FindOldSkeleton = TRUE;
 		Wld_InsertItem(ItMi_StafanRing,"FP_ITEM_CURSE_01");
 	};
@@ -7059,7 +7060,7 @@ func int EVT_FINDDAMNSIGH_LH_COND()
 		return TRUE;
 	};
 	
-	return FALSE;
+	return  FALSE ;
 };
 
 func void EVT_FINDDAMNSIGH_LH_FUNC_s1()
@@ -7067,7 +7068,7 @@ func void EVT_FINDDAMNSIGH_LH_FUNC_s1()
 	if((MIS_HauntedLighthouse == LOG_Running) && (FindDamnSigh == FALSE))
 	{
 		B_GivePlayerXP(300);
-		B_LogEntry(TOPIC_HauntedLighthouse,"На одной из стен маяка я обнаружил какой-то странный и почти еле незаметный магический знак. Думаю стоит запомнить, как он выглядел, и потом поинтересоваться на счет него у кого-нибудь из магов.");
+		) ; _ _ _
 		FindDamnSigh = TRUE;
 	};
 };
@@ -7079,7 +7080,7 @@ func int EVT_STONE_LV_01_COND()
 		return TRUE;
 	};
 	
-	return FALSE;
+	return  FALSE ;
 };
 
 func void EVT_STONE_LV_01_FUNC_s1()
@@ -7129,7 +7130,7 @@ func void EVT_STONE_LV_01_FUNC_s1()
 				LVCountTurnBlocks = FALSE;
 				GlobalConcatText = "";
 				B_Say(hero,hero,"$DONTKNOW");
-				AI_Print("Что-то не так...");
+				AI_Print( " Something's wrong... " );
 			};
 		};
 	};
@@ -7142,7 +7143,7 @@ func int EVT_STONE_LV_02_COND()
 		return TRUE;
 	};
 	
-	return FALSE;
+	return  FALSE ;
 };
 
 func void EVT_STONE_LV_02_FUNC_s1()
@@ -7192,7 +7193,7 @@ func void EVT_STONE_LV_02_FUNC_s1()
 				LVCountTurnBlocks = FALSE;
 				GlobalConcatText = "";
 				B_Say(hero,hero,"$DONTKNOW");
-				AI_Print("Что-то не так...");
+				AI_Print( " Something's wrong... " );
 			};
 		};
 	};
@@ -7205,7 +7206,7 @@ func int EVT_STONE_LV_03_COND()
 		return TRUE;
 	};
 	
-	return FALSE;
+	return  FALSE ;
 };
 
 func void EVT_STONE_LV_03_FUNC_s1()
@@ -7255,7 +7256,7 @@ func void EVT_STONE_LV_03_FUNC_s1()
 				LVCountTurnBlocks = FALSE;
 				GlobalConcatText = "";
 				B_Say(hero,hero,"$DONTKNOW");
-				AI_Print("Что-то не так...");
+				AI_Print( " Something's wrong... " );
 			};
 		};
 	};
@@ -7268,7 +7269,7 @@ func int EVT_STONE_LV_04_COND()
 		return TRUE;
 	};
 	
-	return FALSE;
+	return  FALSE ;
 };
 
 func void EVT_STONE_LV_04_FUNC_s1()
@@ -7318,7 +7319,7 @@ func void EVT_STONE_LV_04_FUNC_s1()
 				LVCountTurnBlocks = FALSE;
 				GlobalConcatText = "";
 				B_Say(hero,hero,"$DONTKNOW");
-				AI_Print("Что-то не так...");
+				AI_Print( " Something's wrong... " );
 			};
 		};
 	};
@@ -7331,7 +7332,7 @@ func int EVT_STONE_LV_05_COND()
 		return TRUE;
 	};
 	
-	return FALSE;
+	return  FALSE ;
 };
 
 func void EVT_STONE_LV_05_FUNC_s1()
@@ -7381,7 +7382,7 @@ func void EVT_STONE_LV_05_FUNC_s1()
 				LVCountTurnBlocks = FALSE;
 				GlobalConcatText = "";
 				B_Say(hero,hero,"$DONTKNOW");
-				AI_Print("Что-то не так...");
+				AI_Print( " Something's wrong... " );
 			};
 		};
 	};
@@ -7394,7 +7395,7 @@ func int EVT_STONE_LV_06_COND()
 		return TRUE;
 	};
 	
-	return FALSE;
+	return  FALSE ;
 };
 
 func void EVT_STONE_LV_06_FUNC_s1()
@@ -7445,7 +7446,7 @@ func void EVT_STONE_LV_06_FUNC_s1()
 				GlobalConcatText = "";
 				B_Say(hero,hero,"$DONTKNOW");
 
-				AI_Print("Что-то не так...");
+				AI_Print( " Something's wrong... " );
 			};
 		};
 	};
@@ -7458,7 +7459,7 @@ func int EVT_STONE_LV_07_COND()
 		return TRUE;
 	};
 	
-	return FALSE;
+	return  FALSE ;
 };
 
 func void EVT_STONE_LV_07_FUNC_s1()
@@ -7508,7 +7509,7 @@ func void EVT_STONE_LV_07_FUNC_s1()
 				LVCountTurnBlocks = FALSE;
 				GlobalConcatText = "";
 				B_Say(hero,hero,"$DONTKNOW");
-				AI_Print("Что-то не так...");
+				AI_Print( " Something's wrong... " );
 			};
 		};
 	};
@@ -7521,7 +7522,7 @@ func int EVT_STONE_LV_08_COND()
 		return TRUE;
 	};
 	
-	return FALSE;
+	return  FALSE ;
 };
 
 func void EVT_STONE_LV_08_FUNC_s1()
@@ -7571,7 +7572,7 @@ func void EVT_STONE_LV_08_FUNC_s1()
 				LVCountTurnBlocks = FALSE;
 				GlobalConcatText = "";
 				B_Say(hero,hero,"$DONTKNOW");
-				AI_Print("Что-то не так...");
+				AI_Print( " Something's wrong... " );
 			};
 		};
 	};
@@ -7587,7 +7588,7 @@ func void EVT_LV_FINALDIALOGE_FUNC()
 	{
 		Wld_SendTrigger("EVT_MAINBOSSFIGHT_TRIGGER");	
 		Wld_SendTrigger("EVT_HIDDENPASS_TRIGGER");	
-		SkLv.aivar[AIV_EnemyOverride] = FALSE;
+		SkLv.aivar[AIV_EnemyOverride] = FALSE ;
 		SkLv.noFocus = FALSE;
 		SkLv.flags = 0;
 		ReadyForBoss7 = TRUE;
@@ -7596,13 +7597,13 @@ func void EVT_LV_FINALDIALOGE_FUNC()
 
 func void EVT_MAINBOSS_START_FUNC()
 {
-	if(FinalDialogeLv == FALSE)
+	if (FinalDialogueLv ==  FALSE )
 	{
 		Wld_SendTrigger("EVT_BOSSBROTHER_TRIGGER");	
 		Npc_ExchangeRoutine(NONE_1813_Ilesil,"TOT");
 		AI_Teleport(NONE_1813_Ilesil,"TOT");
 		Wld_InsertNpc(Ilesil_Evil,"WDS_LAVA_CASTLE_27");
-		FinalDialogeLv = TRUE;
+		FinalDialogueLv = TRUE ;
 		IlesilCantExit = TRUE;
 	};
 };
@@ -7614,7 +7615,7 @@ func int EVT_LHFIREISON_COND()
 		return TRUE;
 	};
 	
-	return FALSE;
+	return  FALSE ;
 };
 
 func void EVT_LHFIREISON_FUNC_s1()
@@ -7631,7 +7632,7 @@ func void EVT_JACKISDEAD_FUNC()
 	{
 		MIS_HauntedLighthouse = LOG_Success;
 		Log_SetTopicStatus(TOPIC_HauntedLighthouse,LOG_Success);
-		B_LogEntry(TOPIC_HauntedLighthouse,"Пока я зажигал маяк, призрак Стефана убил Джека. Проклятие снято с маяка, хотя и довольно дорогой ценой... ");
+		) ; _ _ _
 	};
 };
 
