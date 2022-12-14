@@ -1,3 +1,4 @@
+
 var int RitualShaman_01;
 var int RitualShaman_02;
 var int RitualShaman_03;
@@ -35,33 +36,33 @@ func void B_LogBeast(var C_Npc Beast)
 {
 	var string concatText;
 
-	if(Beast.aivar[AIV_MM_REAL_ID] == ID_GOBBO_GREEN)
+	if ( Beast . aivar [ AIV_MM_REAL_ID ] ==  GREEN_ROPE_ID ) .
 	{
-		if(Gobbo_Green_B1 == FALSE)
+		if ( Green_B1 ==  FALSE )
 		{
-			concatText = "Добавлена запись в бестиарий - '";
+			concatText = " Added entry to the bestiary - ' " ;
 			concatText = ConcatStrings(concatText,"Гоблин'");
 			Log_CreateTopic(TOPIC_BEAST_GOBBO_GREEN,LOG_MISSION);
 			Log_SetTopicStatus(TOPIC_BEAST_GOBBO_GREEN,LOG_FAILED);
-			Log_AddEntry(TOPIC_BEAST_GOBBO_GREEN,"Едва ли вы найдете существо злее гоблина. Эти маленькие сволочи всегда ходят толпами и нападают сразу всем скопом. Если вы наткнулись на отряд таких существ, а вашим оружием является палка, - лучше скрыться из виду этих существ, поскольку, нападая толпой, они не оставляют шансов никому...");
+			Log_AddEntry( TOPIC_BEAST_GOBBO_GREEN , " You can hardly find a creature angrier than a goblin. These little bastards always go in droves and attack all at once. If you stumble upon a group of such creatures, and your weapon is a stick, it is better to hide from view of these creatures, because, attacking crowd, they leave no chance to anyone ... " );
 			AI_Print(concatText);
 		}
 		else
 		{
-			if((Gobbo_Green_B1 >= 15) && (Gobbo_Green_B2 == FALSE))
+			if ((Green_B1 >=  15 ) && (Green_B2 ==  FALSE ))
 			{
-				concatText = "Добавлена запись в бестиарий - '";
+				concatText = " Added entry to the bestiary - ' " ;
 				concatText = ConcatStrings(concatText,"Гоблин'");
-				Log_AddEntry(TOPIC_BEAST_GOBBO_GREEN,"Основные преимущества: крайне ловок, вследствие чего по нему очень трудно попасть оружием ближнего боя");
-				Log_AddEntry(TOPIC_BEAST_GOBBO_GREEN,"Уязвимые места: имеет очень слабую защиту против оружия дальнего боя, магии и огня");
+				Log_AddEntry( TOPIC_BEAST_GOBBO_GREEN , " Primary Benefits: Extremely agile, making him very hard to hit with melee weapons " );
+				Log_AddEntry( TOPIC_BEAST_GOBBO_GREEN , " Weak Points : Has very weak defense against ranged, magic and fire weapons " );
 				AI_Print(concatText);
 				Gobbo_Green_B2 = TRUE;
 			}
-			else if((Gobbo_Green_B1 >= 30) && (Gobbo_Green_B3 == FALSE))
+			else  if ((Green_B1 >=  30 ) && (Green_B3 ==  FALSE ))
 			{
-				concatText = "Добавлена запись в бестиарий - '";
+				concatText = " Added entry to the bestiary - ' " ;
 				concatText = ConcatStrings(concatText,"Гоблин'");
-				Log_AddEntry(TOPIC_BEAST_GOBBO_GREEN,"Тактика боя: гоблины часто сбиваются в стаи, особенно поселяясь в больших пещерах, и в таких случаях становятся особенно опасными. Выманивать их лучше всего по одному, а отстреливать издалека из лука или арбалета, поскольку они хоть и маленькие, но в количестве большем трех представляют совсем немаленькую силу.");
+				Log_AddEntry( TOPIC_BEAST_GOBBO_GREEN , " Combat Tactics: Goblins often form packs, especially when they settle in large caves, and in such cases they become especially dangerous. It is best to lure them out one at a time, and shoot them from afar with a bow or crossbow, since they are small, but in an amount greater than three, they represent quite a rather big force. " );
 				AI_Print(concatText);
 				B_RaiseAttribute(hero,ATR_DEXTERITY,1);
 				Gobbo_Green_B3 = TRUE;
@@ -74,29 +75,29 @@ func void B_LogBeast(var C_Npc Beast)
 	{
 		if(Scavenger_B1 == FALSE)
 		{
-			concatText = "Добавлена запись в бестиарий - '";
+			concatText = " Added entry to the bestiary - ' " ;
 			concatText = ConcatStrings(concatText,"Падальщик'");
 			Log_CreateTopic(TOPIC_BEAST_SCAVENGER,LOG_MISSION);
 			Log_SetTopicStatus(TOPIC_BEAST_SCAVENGER,LOG_FAILED);
-			Log_AddEntry(TOPIC_BEAST_SCAVENGER,"Эти огромные и свирепые бескрылые птицы на деле одни из слабейших обитателей Миртаны. Несмотря на название, эти птицы всеядны и в основном питаются травой, если поблизости нет мертвой туши. В основном падальщики обитают на лугах, неподалеку от людских поселений, в лесах и возле болот. Единственное, что может вызвать затруднения у начинающего путешественника – это кучность падальщиков, которые обычно сбиваются в стаи. Однако почти полное отсутствие интеллекта позволяет выманивать падальщиков поодиночке. Тактика борьбы с этими птицами незамысловата – подойдут любые виды оружия.");
+			Log_AddEntry(TOPIC_BEAST_SCAVENGER,"These huge and ferocious wingless birds are actually one of the weakest inhabitants of Myrtana. Despite the name, these birds are omnivores and mainly feed on grass if there is no dead carcass nearby. They mainly live in the grasslands, near human settlements, in forests and near swamps. The only thing that can cause difficulties for a novice traveler is the grouping of scavengers, which usually huddle in flocks. However, the almost complete lack of intelligence allows you to lure the scavengers one by one. The tactics of fighting these birds are simple - any kind of weapon will do.") ;
 			AI_Print(concatText);
 		}
 		else
 		{
 			if((Scavenger_B1 >= 15) && (Scavenger_B2 == FALSE))
 			{
-				concatText = "Добавлена запись в бестиарий - '";
+				concatText = " Added entry to the bestiary - ' " ;
 				concatText = ConcatStrings(concatText,"Падальщик'");
-				Log_AddEntry(TOPIC_BEAST_SCAVENGER,"Основные преимущества: способен быстро бегать и наносить сильные удары клювом");
-				Log_AddEntry(TOPIC_BEAST_SCAVENGER,"Уязвимые места: имеет очень слабую защиту против любого оружия, магии и огня");
+				Log_AddEntry( TOPIC_BEAST_SCAVENGER , " Main advantages: able to run fast and deliver strong beak strikes " );
+				Log_AddEntry( TOPIC_BEAST_SCAVENGER , " Weak Points : Has very weak defense against all weapons, magic and fire " );
 				AI_Print(concatText);
 				Scavenger_B2 = TRUE;
 			}
 			else if((Scavenger_B1 >= 30) && (Scavenger_B3 == FALSE))
 			{
-				concatText = "Добавлена запись в бестиарий - '";
+				concatText = " Added entry to the bestiary - ' " ;
 				concatText = ConcatStrings(concatText,"Падальщик'");
-				Log_AddEntry(TOPIC_BEAST_SCAVENGER,"Тактика боя: падальщики держатся стаями, но общение между особями не налажено. Поэтому легко выманить одного из стаи.");
+				Log_AddEntry( TOPIC_BEAST_SCAVENGER , " Combat tactics: scavengers stay in packs, but communication between individuals is not established. Therefore, it is easy to lure one out of the pack. " );
 				AI_Print(concatText);
 				B_RaiseAttribute(hero,ATR_HITPOINTS_MAX,10);
 				Npc_ChangeAttribute(hero,ATR_HITPOINTS,10);
@@ -106,33 +107,33 @@ func void B_LogBeast(var C_Npc Beast)
 
 		Scavenger_B1 += 1;	
 	}
-	else if(Beast.aivar[AIV_MM_REAL_ID] == ID_WOLF)
+	else  if (Beast.aivar[ AIV_MM_REAL_ID ] ==  ID_WOLF )
 	{
 		if(Wolf_B1 == FALSE)
 		{
-			concatText = "Добавлена запись в бестиарий - '";
+			concatText = " Added entry to the bestiary - ' " ;
 			concatText = ConcatStrings(concatText,"Волк'");
 			Log_CreateTopic(TOPIC_BEAST_WOLF,LOG_MISSION);
 			Log_SetTopicStatus(TOPIC_BEAST_WOLF,LOG_FAILED);
-			Log_AddEntry(TOPIC_BEAST_WOLF,"Волки - одни из самых привычных животных в мире. Они обитают практически повсеместно: от скалистых гор и дремучих лесов до травянистых равнин. Их шерсть обычно окрашена в светло-серый цвет, с грязно-белыми и черными пятнами. Волки - животные, обладающие социальной структурой, они живут в сообществах, называемых стаями. В каждой стае есть вожак - самый сильный и смелый волк. В охоте их сила заключается в их командной работе. Одинокого волка можно спокойно убить, но целую стаю будет очень сложно победить даже опытному бойцу. Волка сородичи никогда не оставят погибать, но придут ему на помощь всей стаей. Волки нападают группами, атакуя противника острыми клыками. Волки питаются мясом и охотятся на добычу, которую им удастся поймать - чаще всего мясом овец или падальщиков. Охотники ценят волков за их мех и клыки.");
+			Log_AddEntry(TOPIC_BEAST_WOLF,"Wolves are one of the most familiar animals in the world. They live almost everywhere, from rocky mountains and dense forests to grassy plains. Their coat is usually light gray, with dirty white and black spots. Wolves - animals with a social structure, they live in communities called packs.Each pack has a leader - the strongest and most courageous wolf.In hunting, their strength lies in their teamwork.A lone wolf can be safely killed, but a whole pack will be very difficult to defeat even wolf will never be left to perish, but will come to its aid as a pack of wolves. for their fur and fangs.");
 			AI_Print(concatText);
 		}
 		else
 		{
-			if((Wolf_B1 >= 10) && (Wolf_B2 == FALSE))
+			if (( Wolf_B1 >=  10 ) && ( Wolf_B2 ==  FALSE ))
 			{
-				concatText = "Добавлена запись в бестиарий - '";
+				concatText = " Added entry to the bestiary - ' " ;
 				concatText = ConcatStrings(concatText,"Волк'");
-				Log_AddEntry(TOPIC_BEAST_WOLF,"Основные преимущества: способен быстро бегать, имеет неплохую защиту от оружия ближнего боя, кроме этого волки охотятся и нападают стаями");
-				Log_AddEntry(TOPIC_BEAST_WOLF,"Уязвимые места: имеет очень слабую защиту против оружия дальнего боя, магии и огня");
+				Log_AddEntry( TOPIC_BEAST_WOLF , " Main advantages: able to run fast, has a good defense against melee weapons, in addition, wolves hunt and attack in packs " );
+				Log_AddEntry( TOPIC_BEAST_WOLF , " Weakness : Very weak defense against ranged, magic and fire weapons " );
 				AI_Print(concatText);
 				Wolf_B2 = TRUE;
 			}
 			else if((Wolf_B1 >= 20) && (Wolf_B3 == FALSE))
 			{
-				concatText = "Добавлена запись в бестиарий - '";
+				concatText = " Added entry to the bestiary - ' " ;
 				concatText = ConcatStrings(concatText,"Волк'");
-				Log_AddEntry(TOPIC_BEAST_WOLF,"Тактика боя: для начала следует приманить одного волка из стаи, а затем убить всю группу одного за другим.");
+				Log_AddEntry( TOPIC_BEAST_WOLF , " Combat tactics: First, you should lure one wolf from the pack, and then kill the entire group one by one. " );
 				AI_Print(concatText);
 				B_RaiseAttribute(hero,ATR_HITPOINTS_MAX,10);
 				Npc_ChangeAttribute(hero,ATR_HITPOINTS,10);
@@ -140,36 +141,36 @@ func void B_LogBeast(var C_Npc Beast)
 			};
 		};
 
-		Wolf_B1 += 1;	
+		Wolf_B1 +=  1 ;	
 	}
-	else if(Beast.aivar[AIV_MM_REAL_ID] == ID_SNAPPER)
+	else  if (Beast.aivar[ AIV_MM_REAL_ID ] ==  ID_SNAPPER )
 	{
 		if(Snapper_B1 == FALSE)
 		{
-			concatText = "Добавлена запись в бестиарий - '";
+			concatText = " Added entry to the bestiary - ' " ;
 			concatText = ConcatStrings(concatText,"Глорх'");
 			Log_CreateTopic(TOPIC_BEAST_SNAPPER,LOG_MISSION);
 			Log_SetTopicStatus(TOPIC_BEAST_SNAPPER,LOG_FAILED);
-			Log_AddEntry(TOPIC_BEAST_SNAPPER,"Глорхи - хищные создания, древние реликты давно ушедших эпох. Их отличительной чертой является отсутствие передних лап. Вместо этого у них очень сильные задние лапы, позволяющие глорхам быстро бежать и безжалостно нападать. Они атакуют на скорости, разрывая жертву большой, усеянной острыми зубами пастью. Глорхи обитают на границе лесов, травянистых равнинах и гористых территориях с каменной почвой. Главное их преимущество перед соперниками - охота стаями. Глорхи всегда держатся по 3-5 особей. Если один из них подвергся нападению, сородичи придут ему на помощь, поэтому шанс отступить очень мал. Они питаются всем, что сумеют поймать. Их охота весьма эффективна, так как охотятся они группами. Овцы, падальщики, а также молодые волки - в их рационе.");
-			Log_AddEntry(TOPIC_BEAST_SNAPPER,"Существует также еще одна разновидность глорхов - так называемый 'черный глорх'. Это идеальная машина для убийства! Их клыки острее бритвы, мышцы крепче скальной породы, а их хвост одним ударом может сломать вам все кости. Будьте осторожны, если вы решили на них поохотиться...");
+			Log_AddEntry(TOPIC_BEAST_SNAPPER,"Glorchs are predatory creatures, ancient relics of bygone eras. Their distinguishing feature is the absence of front legs. Instead, they have very strong hind legs, allowing glorchs to run fast and ruthlessly attack. They attack at speed, ripping through a large, mouth full of sharp teeth.Glorchs live on the edge of forests, grassy plains and mountainous areas with stony soil.Their main advantage over rivals is hunting in packs.Glorchs always keep in groups of 3-5 individuals.If one of them is attacked, relatives will come to his aid , so the chance of retreat is very low. They feed on anything they can catch. Their hunting is quite efficient, as they hunt in groups. Sheep, scavengers, and young wolves are all in their diet.");
+			Log_AddEntry( TOPIC_BEAST_SNAPPER , " There is also another variety of Glorch called the 'Black Glorch'. This is the perfect killing machine! Their fangs are sharper than razors, their muscles are stronger than rock, and their tail can break all your bones with one blow. Be careful if you decided to hunt them ... " );
 			AI_Print(concatText);
 		}
 		else
 		{
 			if((Snapper_B1 >= 10) && (Snapper_B2 == FALSE))
 			{
-				concatText = "Добавлена запись в бестиарий - '";
+				concatText = " Added entry to the bestiary - ' " ;
 				concatText = ConcatStrings(concatText,"Глорх'");
-				Log_AddEntry(TOPIC_BEAST_SNAPPER,"Основные преимущества: способен очень быстро бегать, имеет хорошую защиту от оружия ближнего и дальнего боя, глорхи охотятся и нападают стаями");
-				Log_AddEntry(TOPIC_BEAST_SNAPPER,"Уязвимые места: имеет слабую защиту против магии");
+				Log_AddEntry( TOPIC_BEAST_SNAPPER , " Main advantages: able to run very fast, has good protection against melee and ranged weapons, glorchs hunt and attack in packs " );
+				Log_AddEntry( TOPIC_BEAST_SNAPPER , " Vulnerability: has weak protection against magic " );
 				AI_Print(concatText);
 				Snapper_B2 = TRUE;
 			}
 			else if((Snapper_B1 >= 20) && (Snapper_B3 == FALSE))
 			{
-				concatText = "Добавлена запись в бестиарий - '";
+				concatText = " Added entry to the bestiary - ' " ;
 				concatText = ConcatStrings(concatText,"Глорх'");
-				Log_AddEntry(TOPIC_BEAST_SNAPPER,"Тактика боя: отстреливать их из лука нелегко — они чересчур быстро передвигаются, к тому же предпочитают двигаться стаей, поэтому в бою с ними более предпочтительны мечи и топоры, чем больше — тем лучше.");
+				Log_AddEntry( TOPIC_BEAST_SNAPPER , " Combat tactics: shooting them with a bow is not easy - they move too fast, besides, they prefer to move in a pack, so swords and axes are more preferable in combat with them, the more the better. " );
 				AI_Print(concatText);
 				B_RaiseAttribute(hero,ATR_DEXTERITY,1);
 				Snapper_B3 = TRUE;
@@ -178,33 +179,33 @@ func void B_LogBeast(var C_Npc Beast)
 
 		Snapper_B1 += 1;	
 	}
-	else if(Beast.aivar[AIV_MM_REAL_ID] == ID_SHADOWBEAST)
+	else  if (Beast.aivar[ AIV_MM_REAL_ID ] ==  ID_SHADOWBEAST )
 	{
 		if(ShadowBeast_B1 == FALSE)
 		{
-			concatText = "Добавлена запись в бестиарий - '";
+			concatText = " Added entry to the bestiary - ' " ;
 			concatText = ConcatStrings(concatText,"Мракорис'");
 			Log_CreateTopic(TOPIC_BEAST_SHADOWBEAST,LOG_MISSION);
 			Log_SetTopicStatus(TOPIC_BEAST_SHADOWBEAST,LOG_FAILED);
-			Log_AddEntry(TOPIC_BEAST_SHADOWBEAST,"Мракорисы - порождения тьмы, настоящий ужас дремучих лесов и пещер. Эти огромные мохнатые монстры с рогом появляются из ниоткуда и исчезают в никуда. Поистине мракорисы – одни из самых грозных хищников Миртаны, сильнейшие из которых дадут фору даже молодым троллям. Мракорисы любят жить в пещерах, куда стаскивают свою добычу, отчего пещера становится настоящим кладбищем как четвероногим, так и двуногим созданиям. Другое излюбленное место обитания мракориса – дремучие леса и болота, куда не проникает солнечный свет, что делает этих монстров вдвойне опасными. Обладая прочнейшей шкурой, лапами, от удара которых не спасут практически никакие доспехи, эти создания не оставляют шансов на выживание простому смертному.");
+			Log_AddEntry(TOPIC_BEAST_SHADOWBEAST,"Shadowbeests are the creatures of darkness, a real horror of dense forests and caves. These huge furry monsters with a horn appear from nowhere and disappear into nowhere. Truly, obscurantists are one of the most formidable predators of Myrtana, the strongest of which will give odds even to young trolls. The obscurantists love to live in caves where they drag their prey, which makes the cave a real cemetery for both four-legged and bipedal creatures.Another favorite habitat of the obscurantist is dense forests and swamps where sunlight does not penetrate, which makes these monsters doubly dangerous. skin, paws, from the blow of which almost no armor can save, these creatures leave no chance of survival for a mere mortal.");
 			AI_Print(concatText);
 		}
 		else
 		{
 			if((ShadowBeast_B1 >= 5) && (ShadowBeast_B2 == FALSE))
 			{
-				concatText = "Добавлена запись в бестиарий - '";
+				concatText = " Added entry to the bestiary - ' " ;
 				concatText = ConcatStrings(concatText,"Мракорис'");
-				Log_AddEntry(TOPIC_BEAST_SHADOWBEAST,"Основные преимущества: имеет огромную силу удара, очень хорошую защиту от оружия ближнего боя и большой запас здоровья");
-				Log_AddEntry(TOPIC_BEAST_SHADOWBEAST,"Уязвимые места: имеет слабую защиту против оружия дальнего боя и магии, не любит дневной свет");
+				Log_AddEntry( TOPIC_BEAST_SHADOWBEAST , " Main advantages: has a huge hitting power, very good protection against melee weapons and a large amount of health " );
+				Log_AddEntry( TOPIC_BEAST_SHADOWBEAST , " Weak Points: Poor defense against ranged weapons and magic, dislikes daylight " );
 				AI_Print(concatText);
 				ShadowBeast_B2 = TRUE;
 			}
 			else if((ShadowBeast_B1 >= 10) && (ShadowBeast_B3 == FALSE))
 			{
-				concatText = "Добавлена запись в бестиарий - '";
+				concatText = " Added entry to the bestiary - ' " ;
 				concatText = ConcatStrings(concatText,"Мракорис'");
-				Log_AddEntry(TOPIC_BEAST_SHADOWBEAST,"Тактика боя: длина и сила используемого вами оружия, а также несомненно ваша реакция - вот основные пункты, которые решают в бою с мракорисом. Кроме того, без хороших доспехов также не стоит становиться на пути этого чудовища.");
+				Log_AddEntry( TOPIC_BEAST_SHADOWBEAST , " Combat tactics: the length and strength of the weapon you use, as well as undoubtedly your reaction - these are the main points that decide in a battle with the obscurantist. In addition, without good armor, you should also not get in the way of this monster. " );
 				AI_Print(concatText);
 				hero.protection[PROT_EDGE] += 1;
 				REALPROTEDGE += 1;
@@ -215,33 +216,33 @@ func void B_LogBeast(var C_Npc Beast)
 
 		ShadowBeast_B1 += 1;	
 	}
-	else if(Beast.aivar[AIV_MM_REAL_ID] == ID_ALLIGATOR)
+	else  if (Beast.aivar[ AIV_MM_REAL_ID ] ==  ID_ALLIGATOR )
 	{
 		if(Alligator_B1 == FALSE)
 		{
-			concatText = "Добавлена запись в бестиарий - '";
+			concatText = " Added entry to the bestiary - ' " ;
 			concatText = ConcatStrings(concatText,"Аллигатор'");
 			Log_CreateTopic(TOPIC_BEAST_ALLIGATOR,LOG_MISSION);
 			Log_SetTopicStatus(TOPIC_BEAST_ALLIGATOR,LOG_FAILED);
-			Log_AddEntry(TOPIC_BEAST_ALLIGATOR,"Аллигаторы обитают неподалеку от водоемов или же прямо в них, так что не удивляйтесь, если рядом с какой-нибудь рекой или оазисом внезапно нападет эта рептилия. Обычно аллигатора трудно заметить издалека, так как он прячется либо в воде, либо в каком-нибудь ином природном укрытии - траве, например. Встретить более одного крокодила в одном месте достаточно тяжело.");
+			Log_AddEntry( TOPIC_BEAST_ALLIGATOR , " Alligators live near or in bodies of water, so don't be surprised if this reptile suddenly attacks near a river or oasis. Usually an alligator is difficult to spot from afar, as it hides either in water or in some other natural shelter - grass, for example. It is quite difficult to meet more than one crocodile in one place. " );
 			AI_Print(concatText);
 		}
 		else
 		{
-			if((Alligator_B1 >= 3) && (Alligator_B2 == FALSE))
+			if (( Alligator_B1 >=  3 ) && ( Alligator_B2 ==  FALSE ))
 			{
-				concatText = "Добавлена запись в бестиарий - '";
+				concatText = " Added entry to the bestiary - ' " ;
 				concatText = ConcatStrings(concatText,"Аллигатор'");
-				Log_AddEntry(TOPIC_BEAST_ALLIGATOR,"Основные преимущества: хорошая защита от всех видов оружия ближнего боя, его мощные челюсти способны прокусить почти любую броню, довольно живуч");
-				Log_AddEntry(TOPIC_BEAST_ALLIGATOR,"Уязвимые места: имеет слабую защиту против магии и огня");
+				Log_AddEntry( TOPIC_BEAST_ALLIGATOR , " Main advantages: good protection against all types of melee weapons, its powerful jaws can bite through almost any armor, quite tenacious " );
+				Log_AddEntry( TOPIC_BEAST_ALLIGATOR , " Weak Points : Has weak defense against magic and fire " );
 				AI_Print(concatText);
 				Alligator_B2 = TRUE;
 			}
 			else if((Alligator_B1 >= 5) && (Alligator_B3 == FALSE))
 			{
-				concatText = "Добавлена запись в бестиарий - '";
+				concatText = " Added entry to the bestiary - ' " ;
 				concatText = ConcatStrings(concatText,"Аллигатор'");
-				Log_AddEntry(TOPIC_BEAST_ALLIGATOR,"Тактика боя: лучше всего против аллигатора использовать огонь или магию. А также не стоит тратить на него драгоценные болты и стрелы, поскольку его толстая кожа практически непробиваема для них.");
+				Log_AddEntry( TOPIC_BEAST_ALLIGATOR , " Combat Tactics: It's best to use fire or magic against the alligator. Also, don't waste precious bolts and arrows on it, since its thick skin is almost impenetrable to them. " );
 				AI_Print(concatText);
 
 				if(ATR_STAMINA_MAX[0] < 100)
@@ -258,33 +259,33 @@ func void B_LogBeast(var C_Npc Beast)
 
 		Alligator_B1 += 1;	
 	}
-	else if(Beast.aivar[AIV_MM_REAL_ID] == ID_BLATTCRAWLER)
+	else  if (Beast.aivar[ AIV_MM_REAL_ID ] ==  ID_BLATTCRAWLER )
 	{
 		if(Blattcrawler_B1 == FALSE)
 		{
-			concatText = "Добавлена запись в бестиарий - '";
+			concatText = " Added entry to the bestiary - ' " ;
 			concatText = ConcatStrings(concatText,"Богомол'");
 			Log_CreateTopic(TOPIC_BEAST_BLATTCRAWLER,LOG_MISSION);
 			Log_SetTopicStatus(TOPIC_BEAST_BLATTCRAWLER,LOG_FAILED);
-			Log_AddEntry(TOPIC_BEAST_BLATTCRAWLER,"Гигантский богомол чаще всего встречается в южной части остров Хоринис. Он очень опасен из-за длины своих лап, которые без труда могут пробить даже хорошо укрепленный доспех. Поодиночке их встретить практически невозможно, что само по себе превращает это насекомое в еще более опасного противника.");
+			Log_AddEntry( TOPIC_BEAST_BLATTCRAWLER , "The giant praying mantis is most often found in the southern part of the island of Khorinis. It is very dangerous due to the length of its legs, which can easily penetrate even well-fortified armor. It is almost impossible to meet them alone, which in itself turns this insect into even more dangerous adversary. " );
 			AI_Print(concatText);
 		}
 		else
 		{
-			if((Blattcrawler_B1 >= 10) && (Blattcrawler_B2 == FALSE))
+			if (( Blattcrawler_B1 >=  10 ) && ( Blattcrawler_B2 ==  FALSE ))
 			{
-				concatText = "Добавлена запись в бестиарий - '";
+				concatText = " Added entry to the bestiary - ' " ;
 				concatText = ConcatStrings(concatText,"Богомол'");
-				Log_AddEntry(TOPIC_BEAST_BLATTCRAWLER,"Основные преимущества: хорошая защита от всех видов оружия ближнего боя");
-				Log_AddEntry(TOPIC_BEAST_BLATTCRAWLER,"Уязвимые места: имеет слабую защиту против оружия дальнего боя, огня и магии");
+				Log_AddEntry( TOPIC_BEAST_BLATTCRAWLER , " Main benefits: good defense against all melee weapons " );
+				Log_AddEntry( TOPIC_BEAST_BLATTCRAWLER , " Weak Spots : Has weak defense against ranged weapons, fire, and magic " );
 				AI_Print(concatText);
 				Blattcrawler_B2 = TRUE;
 			}
-			else if((Blattcrawler_B1 >= 20) && (Blattcrawler_B3 == FALSE))
+			else  if (( Blattcrawler_B1 >=  20 ) && ( Blattcrawler_B3 ==  FALSE ))
 			{
-				concatText = "Добавлена запись в бестиарий - '";
+				concatText = " Added entry to the bestiary - ' " ;
 				concatText = ConcatStrings(concatText,"Богомол'");
-				Log_AddEntry(TOPIC_BEAST_BLATTCRAWLER,"Тактика боя: проще и безопаснее всего расстреливать богомолов из лука или арбалета, однако, если дело дошло до ближнего боя, - лучше стараться удерживать богомола на расстоянии, подальше от его мощных лап.");
+				Log_AddEntry( TOPIC_BEAST_BLATTCRAWLER , " Combat Tactics: It is easiest and safest to shoot the praying mantis with a bow or crossbow, however, if it comes to close combat, it is better to try to keep the praying mantis at a distance, away from its powerful paws. " );
 				AI_Print(concatText);
 				B_RaiseAttribute(hero,ATR_HITPOINTS_MAX,10);
 				Npc_ChangeAttribute(hero,ATR_HITPOINTS,10);
@@ -298,29 +299,29 @@ func void B_LogBeast(var C_Npc Beast)
 	{
 		if(Bloodhound_B1 == FALSE)
 		{
-			concatText = "Добавлена запись в бестиарий - '";
+			concatText = " Added entry to the bestiary - ' " ;
 			concatText = ConcatStrings(concatText,"Гул'");
 			Log_CreateTopic(TOPIC_BEAST_BLOODHOUND,LOG_MISSION);
 			Log_SetTopicStatus(TOPIC_BEAST_BLOODHOUND,LOG_FAILED);
-			Log_AddEntry(TOPIC_BEAST_BLOODHOUND,"Создание, обитающее строго в отдаленных местностях, таких как горные пещеры или пустынные скалы. Очень агрессивный и решительный, этот зверь заставляет быть крайне внимательным и осторожным всякого, кто имеет с ним дело. Внешность гула может показаться немного причудливой из-за тонкого строения тела и низкорасположенной головы на длинной шее. Но, несмотря на особенности телосложения, у них очень сильные ноги, позволяющие им быстро бегать и далеко прыгать. Цвет кожи - коричневый с оттенками серого и черного. Гула сложно убить из-за его скорости, которая дает ему огромное преимущество.");
+			Log_AddEntry(TOPIC_BEAST_BLOODHOUND,"A creature that lives strictly in remote areas, such as mountain caves or desert cliffs. Very aggressive and determined, this beast makes everyone who deals with it extremely attentive and cautious. due to their thin body structure and low-lying head on a long neck.But despite their physique, they have very strong legs, allowing them to run fast and jump far.The skin color is brown with shades of gray and black.The ghoul is difficult to kill due to its speed , which gives him a huge advantage.");
 			AI_Print(concatText);
 		}
 		else
 		{
 			if((Bloodhound_B1 >= 3) && (Bloodhound_B2 == FALSE))
 			{
-				concatText = "Добавлена запись в бестиарий - '";
+				concatText = " Added entry to the bestiary - ' " ;
 				concatText = ConcatStrings(concatText,"Гул'");
-				Log_AddEntry(TOPIC_BEAST_BLOODHOUND,"Основные преимущества: имеет невероятную силу удара и довольно неплохую защиту от оружия ближнего боя, магии и огня.");
-				Log_AddEntry(TOPIC_BEAST_BLOODHOUND,"Уязвимые места: небольшой запас здоровья");
+				Log_AddEntry( TOPIC_BEAST_BLOODHOUND , " Main advantages: has incredible hitting power and pretty good protection against melee weapons, magic and fire. " );
+				Log_AddEntry( TOPIC_BEAST_BLOODHOUND , " Weaknesses : low health " );
 				AI_Print(concatText);
 				Bloodhound_B2 = TRUE;
 			}
 			else if((Bloodhound_B1 >= 5) && (Bloodhound_B3 == FALSE))
 			{
-				concatText = "Добавлена запись в бестиарий - '";
+				concatText = " Added entry to the bestiary - ' " ;
 				concatText = ConcatStrings(concatText,"Гул'");
-				Log_AddEntry(TOPIC_BEAST_BLOODHOUND,"Тактика боя: следует использовать тактику 'удар-отступление', так как гул не даст вам шанса нанести удар дважды.");
+				Log_AddEntry( TOPIC_BEAST_BLOODHOUND , " Combat Tactics: You should use 'hit-and-run' tactics as the hum won't give you a chance to hit twice. " );
 				AI_Print(concatText);
 				B_RaiseAttribute(hero,ATR_HITPOINTS_MAX,10);
 				Npc_ChangeAttribute(hero,ATR_HITPOINTS,10);
@@ -330,33 +331,33 @@ func void B_LogBeast(var C_Npc Beast)
 
 		Bloodhound_B1 += 1;	
 	}
-	else if(Beast.aivar[AIV_MM_REAL_ID] == ID_GOBBO_BLACK)
+	else  if (Beast.aivar[ AIV_MM_REAL_ID ] ==  ID_GOBBO_BLACK )
 	{
 		if(Gobbo_Black_B1 == FALSE)
 		{
-			concatText = "Добавлена запись в бестиарий - '";
-			concatText = ConcatStrings(concatText,"Черный гоблин'");
+			concatText = " Added entry to the bestiary - ' " ;
+			concatText = ConcatStrings(concatText, " Black Goblin' " );
 			Log_CreateTopic(TOPIC_BEAST_GOBBO_BLACK,LOG_MISSION);
 			Log_SetTopicStatus(TOPIC_BEAST_GOBBO_BLACK,LOG_FAILED);
-			Log_AddEntry(TOPIC_BEAST_GOBBO_BLACK,"Черные гоблины сильнее, умнее, хитрее обычных гоблинов и часто занимают лучшие места — самые теплые пещеры и самые выгодные дороги. Нередко встреча с гоблинами происходит неожиданно - выскакивая из темного угла, они, всей гурьбой и с дикими боевыми воплями, нападают на ошеломленного путника. В единственном числе не являются серьезными противниками, но еще никто и никогда не встречал одинокого черного гоблина. Как и обычные гоблины, они превратили свой маленький рост из недостатка в достоинство, и в бою стараются окружить противника. А поскольку движутся они очень быстро, все время стремясь зайти за спину, - попасть в них довольно нелегко. К тому же пока вы бьете того гоблина, что волею случая оказался перед вами, другие наносят удары вам в спину! Нередко в бандах черных гоблинов появляются так называемые 'гоблины-воины', выполняющие, судя по всему, роль вожаков в черно-гоблинских кодлах. Обладая телосложением крепче, чем у остальных сородичей, они вооружаются более смертоносным оружием и иногда даже облачаются в нечто похожее на доспехи.");
+			It is not uncommon for so-called 'goblin warriors' to appear in gangs of black goblins, apparently performing the role of leaders in black goblin kodles. Stronger in constitution than the rest of their Kindred, they carry more lethal weapons and sometimes even wear something that looks like armor.");
 			AI_Print(concatText);
 		}
 		else
 		{
 			if((Gobbo_Black_B1 >= 15) && (Gobbo_Black_B2 == FALSE))
 			{
-				concatText = "Добавлена запись в бестиарий - '";
-				concatText = ConcatStrings(concatText,"Черный гоблин'");
-				Log_AddEntry(TOPIC_BEAST_GOBBO_BLACK,"Основные преимущества: быстрота и проворство делают из черного гоблина очень трудную мишень для оружия как ближнего, так и дальнего боя; вооружены лучше, чем простые гоблины, некоторых из них защищают легкие доспехи");
-				Log_AddEntry(TOPIC_BEAST_GOBBO_BLACK,"Уязвимые места: имеет довольно слабую защиту против оружия дальнего боя, магии и огня");
+				concatText = " Added entry to the bestiary - ' " ;
+				concatText = ConcatStrings(concatText, " Black Goblin' " );
+				Log_AddEntry( TOPIC_BEAST_GOBBO_BLACK , " Main advantages: speed and agility make the black goblin a very difficult target for both melee and ranged weapons; better armed than ordinary goblins, some of them protected by light armor " );
+				Log_AddEntry( TOPIC_BEAST_GOBBO_BLACK , " Weak Points : Has fairly weak defense against ranged weapons, magic, and fire " );
 				AI_Print(concatText);
 				Gobbo_Black_B2 = TRUE;
 			}
 			else if((Gobbo_Black_B1 >= 30) && (Gobbo_Black_B3 == FALSE))
 			{
-				concatText = "Добавлена запись в бестиарий - '";
-				concatText = ConcatStrings(concatText,"Черный гоблин'");
-				Log_AddEntry(TOPIC_BEAST_GOBBO_BLACK,"Тактика боя: тактика боя с черными гоблинами ничем не отличается от тактики с обычными.");
+				concatText = " Added entry to the bestiary - ' " ;
+				concatText = ConcatStrings(concatText, " Black Goblin' " );
+				Log_AddEntry( TOPIC_BEAST_GOBBO_BLACK , " Combat Tactics: Combat Tactics with Black Goblins is no different from regular Goblins. " );
 				AI_Print(concatText);
 				B_RaiseAttribute(hero,ATR_DEXTERITY,1);
 				Gobbo_Black_B3 = TRUE;
@@ -365,33 +366,33 @@ func void B_LogBeast(var C_Npc Beast)
 
 		Gobbo_Black_B1 += 1;	
 	}
-	else if(Beast.aivar[AIV_MM_REAL_ID] == ID_ICEWOLF)
+	else  if (Beast.aivar[ AIV_MM_REAL_ID ] ==  ID_ICEWOLF )
 	{
 		if(Icewolf_B1 == FALSE)
 		{
-			concatText = "Добавлена запись в бестиарий - '";
+			concatText = " Added entry to the bestiary - ' " ;
 			concatText = ConcatStrings(concatText,"Белый волк'");
 			Log_CreateTopic(TOPIC_BEAST_ICEWOLF,LOG_MISSION);
 			Log_SetTopicStatus(TOPIC_BEAST_ICEWOLF,LOG_FAILED);
-			Log_AddEntry(TOPIC_BEAST_ICEWOLF,"В отличие от обычных волков, эти звери живут исключительно в ледяных и снежных районах. У них строго белый цвет шерсти, иногда с оттенками серого, что придает им защитный цвет в их естественном окружении. Их красные глаза особенно пугающие. Как и другие волки, снежные волки живут большими стаями, за редкими исключениями. Охота стаей дает им основное преимущество против их добычи. Снежные волки значительно сильнее обычных волков, а их пасти полны острых клыков. Благодаря их силе и навыкам охоты они могут охотиться на любое животное, какое захотят. Почти каждое снежное животное входит в их меню, в основном олени и дикие вепри. Эти звери - сложные соперники для бойцов из-за того, что они почти никогда не встречаются поодиночке. Если на одного представителя стаи нападают - другие сразу же бросятся ему на помощь.");
+			Log_AddEntry(TOPIC_BEAST_ICEWOLF,"Unlike normal wolves, these beasts live exclusively in icy and snowy areas. They have a strictly white coat color, sometimes with shades of gray, which gives them a protective color in their natural environment. Their red eyes are especially frightening. Like and other wolves, snow wolves live in large packs with rare exceptions. Hunting in packs gives them a major advantage against their prey. Snow wolves are much stronger than normal wolves, and their mouths are full of sharp fangs. Thanks to their strength and hunting skills, they can hunt any animal Almost every snow animal is on their menu, mostly deer and wild boar, these beasts are difficult opponents for fighters due to the fact that they are almost never seen alone.If one member of the pack is attacked, the others will immediately rush to his aid.");
 			AI_Print(concatText);
 		}
 		else
 		{
 			if((Icewolf_B1 >= 5) && (Icewolf_B2 == FALSE))
 			{
-				concatText = "Добавлена запись в бестиарий - '";
+				concatText = " Added entry to the bestiary - ' " ;
 				concatText = ConcatStrings(concatText,"Белый волк'");
-				Log_AddEntry(TOPIC_BEAST_ICEWOLF,"Основные преимущества: способен быстро бегать, имеет хорошую защиту от оружия ближнего боя и больший запас здоровья по сравнению с обычными волками");
-				Log_AddEntry(TOPIC_BEAST_ICEWOLF,"Уязвимые места: имеет слабую защиту против оружия дальнего боя, магии и огня");
+				Log_AddEntry( TOPIC_BEAST_ICEWOLF , " Main advantages: able to run fast, have good protection against melee weapons and more health than normal wolves " );
+				Log_AddEntry( TOPIC_BEAST_ICEWOLF , " Weak Spots : Has weak defense against ranged weapons, magic, and fire " );
 				AI_Print(concatText);
 				Icewolf_B2 = TRUE;
 			}
 			else if((Icewolf_B1 >= 10) && (Icewolf_B3 == FALSE))
 			{
-				concatText = "Добавлена запись в бестиарий - '";
+				concatText = " Added entry to the bestiary - ' " ;
 				concatText = ConcatStrings(concatText,"Белый волк'");
-				Log_AddEntry(TOPIC_BEAST_ICEWOLF,"Тактика боя: снежных волков лучше убивать поодиночке, поскольку в стае они представляют огромную опасность.");
+				Log_AddEntry( TOPIC_BEAST_ICEWOLF , " Combat tactics: Snow wolves are best killed one by one, because in a pack they are a huge danger. " );
 				AI_Print(concatText);
 				B_RaiseAttribute(hero,ATR_HITPOINTS_MAX,10);
 				Npc_ChangeAttribute(hero,ATR_HITPOINTS,10);
@@ -401,68 +402,68 @@ func void B_LogBeast(var C_Npc Beast)
 
 		Icewolf_B1 += 1;	
 	}
-	else if(Beast.aivar[AIV_MM_REAL_ID] == ID_KEILER)
+	else  if (Beast.aivar[ AIV_MM_REAL_ID ] ==  ID_KEILER )
 	{
-		if(Keiler_B1 == FALSE)
+		if (Boar_B1 ==  FALSE )
 		{
-			concatText = "Добавлена запись в бестиарий - '";
+			concatText = " Added entry to the bestiary - ' " ;
 			concatText = ConcatStrings(concatText,"Дикий кабан'");
-			Log_CreateTopic(TOPIC_BEAST_KEILER,LOG_MISSION);
+			Log_CreateTopic( TOPIC_BEAST_KEILER , LOG_MISSION );
 			Log_SetTopicStatus(TOPIC_BEAST_KEILER,LOG_FAILED);
-			Log_AddEntry(TOPIC_BEAST_KEILER,"Диких кабанов можно встретить практически везде - на дорогах, в лесах, в горной местности, в пещерах, у водоемов и в прочих местах. Как в песочной пустыне, так и в снежной не встречаются. Острые, как клинок, клыки увенчивают морду кабанов - у самцов они достигают поистине ужасающих размеров, способных просто-напросто разорвать противника. Дикие кабаны крайне агрессивны и нападают, как только видят цель. Встречаются как стаями, так и поодиночке.");
+			Log_AddEntry( TOPIC_BEAST_KEILER , " Wild boars can be found almost everywhere - on roads, in forests, in mountains, in caves, near water bodies and in other places. They are not found both in the sandy desert and in the snowy one. Sharp, like a blade, fangs they crown the muzzle of wild boars - in males they reach truly terrifying sizes, capable of simply tearing apart the enemy. Wild boars are extremely aggressive and attack as soon as they see the target. They are found both in packs and singly. " );
 			AI_Print(concatText);
 		}
 		else
 		{
-			if((Keiler_B1 >= 10) && (Keiler_B2 == FALSE))
+			if ((Boar_B1 >=  10 ) && (Boar_B2 ==  FALSE ))
 			{
-				concatText = "Добавлена запись в бестиарий - '";
+				concatText = " Added entry to the bestiary - ' " ;
 				concatText = ConcatStrings(concatText,"Дикий кабан'");
-				Log_AddEntry(TOPIC_BEAST_KEILER,"Основные преимущества: хорошая защита от оружия ближнего боя, при атаке впадает в безудержную ярость");
-				Log_AddEntry(TOPIC_BEAST_KEILER,"Уязвимые места: имеет довольно слабую защиту против оружия дальнего боя, магии и огня");
+				Log_AddEntry( TOPIC_BEAST_KEILER , " Primary benefits: good defense against melee weapons, goes into unbridled rage when attacked " );
+				Log_AddEntry( TOPIC_BEAST_KEILER , " Weaknesses : Has fairly weak defense against ranged weapons, magic, and fire " );
 				AI_Print(concatText);
-				Keiler_B2 = TRUE;
+				Keiler_B2 = TRUE ;
 			}
-			else if((Keiler_B1 >= 20) && (Keiler_B3 == FALSE))
+			else  if ((Keiler_B1 >=  20 ) && (Keiler_B3 ==  FALSE ))
 			{
-				concatText = "Добавлена запись в бестиарий - '";
+				concatText = " Added entry to the bestiary - ' " ;
 				concatText = ConcatStrings(concatText,"Дикий кабан'");
-				Log_AddEntry(TOPIC_BEAST_KEILER,"Тактика боя: лучше использовать луки или арбалеты в бою с дикими кабанами. В ближнем бою это монстры довольно-таки сильны и могут мгновенно нанести вам смертельный удар.");
+				Log_AddEntry( TOPIC_BEAST_KEILER , " Combat Tactics: It's better to use bows or crossbows when fighting wild boars. In close combat, these monsters are pretty strong and can instantly kill you. " );
 				AI_Print(concatText);
 				B_RaiseAttribute(hero,ATR_DEXTERITY,1);
-				Keiler_B3 = TRUE;
+				Keiler_B3 = TRUE ;
 			};
 		};
 
-		Keiler_B1 += 1;	
+		Boar_B1 +=  1 ;	
 	}
-	else if(Beast.aivar[AIV_MM_REAL_ID] == ID_ZOMBIE)
+	else  if (Beast.aivar[ AIV_MM_REAL_ID ] ==  ID_ZOMBIE )
 	{
 		if(Zombie_B1 == FALSE)
 		{
-			concatText = "Добавлена запись в бестиарий - '";
+			concatText = " Added entry to the bestiary - ' " ;
 			concatText = ConcatStrings(concatText,"Зомби'");
 			Log_CreateTopic(TOPIC_BEAST_ZOMBIE,LOG_MISSION);
 			Log_SetTopicStatus(TOPIC_BEAST_ZOMBIE,LOG_FAILED);
-			Log_AddEntry(TOPIC_BEAST_ZOMBIE,"Зомби – белиаровы псы – незавидное будущее тех, кто при жизни сделал грязных дел больше, чем праведных. Их дух насильно возвращен из Тьмы и помещен в наказание существованием в гниющей плоти. Муки продлятся до тех пор, пока цела поддерживаемая темной магией оболочка. Зомби обладают потрясающим нюхом, легко ориентируются в темных помещениях. Они безразличны к любым повреждениям - их плоть давно уже ничего не чувствует. Остановить их можно, отрубив голову, расчленив тело, уничтожить тушу магией или сжечь в жарком костре. Крик души при уничтожении вместилища подскажет борцу с тьмой, что узы, связывающие плоть и дух зомби – пали.");
+			Log_AddEntry(TOPIC_BEAST_ZOMBIE,"Zombies - beliar dogs - the unenviable future of those who during their lifetime did more dirty deeds than righteous ones. Their spirit is forcibly returned from Darkness and placed in punishment by existence in rotting flesh. The torment will last as long as the dark shell magic. Zombies have an amazing sense of smell, easily navigate in dark rooms. They are indifferent to any damage - their flesh has long felt nothing. You can stop them by cutting off their heads, dismembering the body, destroying the carcass with magic or burning them in a hot fire. The cry of the soul when the destruction of the receptacle will tell the fighter against darkness that the bonds that bind the flesh and spirit of the zombie have fallen.");
 			AI_Print(concatText);
 		}
 		else
 		{
 			if((Zombie_B1 >= 10) && (Zombie_B2 == FALSE))
 			{
-				concatText = "Добавлена запись в бестиарий - '";
+				concatText = " Added entry to the bestiary - ' " ;
 				concatText = ConcatStrings(concatText,"Зомби'");
-				Log_AddEntry(TOPIC_BEAST_ZOMBIE,"Основные преимущества: абсолютно не чувствует боли, что позволяет им безостановочно атаковать свою жертву");
-				Log_AddEntry(TOPIC_BEAST_ZOMBIE,"Уязвимые места: имеет крайне слабую защиту от огня");
+				Log_AddEntry( TOPIC_BEAST_ZOMBIE , " Main benefits: Feel no pain at all, allowing them to relentlessly attack their prey " );
+				Log_AddEntry( TOPIC_BEAST_ZOMBIE , " Vulnerable Points: Has extremely weak fire resistance " );
 				AI_Print(concatText);
 				Zombie_B2 = TRUE;
 			}
 			else if((Zombie_B1 >= 20) && (Zombie_B3 == FALSE))
 			{
-				concatText = "Добавлена запись в бестиарий - '";
+				concatText = " Added entry to the bestiary - ' " ;
 				concatText = ConcatStrings(concatText,"Зомби'");
-				Log_AddEntry(TOPIC_BEAST_ZOMBIE,"Тактика боя: самое главное учитывать то, что зомби не чувствуют боли. Их ужасающий напор может вначале вас поставить в тупик. Поэтому ваша реакция и молниеносные контратаки - основной залог успеха в бою с этими монстрами.");
+				Log_AddEntry( TOPIC_BEAST_ZOMBIE , " Combat Tactics: The most important thing to consider is that zombies don't feel pain. Their terrifying pressure can confuse you at first. Therefore, your reaction and lightning-fast counterattacks are the main key to success in combat with these monsters. " );
 				AI_Print(concatText);
 				B_RaiseAttribute(hero,ATR_HITPOINTS_MAX,10);
 				Npc_ChangeAttribute(hero,ATR_HITPOINTS,10);
@@ -472,33 +473,33 @@ func void B_LogBeast(var C_Npc Beast)
 
 		Zombie_B1 += 1;	
 	}
-	else if(Beast.aivar[AIV_MM_REAL_ID] == ID_ORCBITER)
+	else  if (Beast.aivar[ AIV_MM_REAL_ID ] ==  ID_ORCBITER )
 	{
 		if(OrcBiter_B1 == FALSE)
 		{
-			concatText = "Добавлена запись в бестиарий - '";
+			concatText = " Added entry to the bestiary - ' " ;
 			concatText = ConcatStrings(concatText,"Орочий кусач'");
 			Log_CreateTopic(TOPIC_BEAST_ORCBITER,LOG_MISSION);
 			Log_SetTopicStatus(TOPIC_BEAST_ORCBITER,LOG_FAILED);
-			Log_AddEntry(TOPIC_BEAST_ORCBITER,"Маленькие быстрые охотники, дальние родственники глорхов и остеров, они живут по большей части в небольших горных долинах, поросших зеленой сочной травой, хотя маленькие стайки этих монстров могут встретиться вам где угодно. Поодиночке они не очень опасны, но предпочитают держаться стайками, и тем самым исходящая от них опасность увеличивается многократно. Больше всего на свете они любят падальщиков, и иногда можно увидеть, как кусачи гоняются за ними, правда, чаще всего просто ради забавы, но при случае не откажутся и от человеческого мяса. К тому же в стае они чувствуют себя явно намного более смелыми, чем поодиночке.");
+			Log_AddEntry(TOPIC_BEAST_ORCBITER,"Small, fast hunters, distant relatives of glorchs and osters, they live mostly in small mountain valleys overgrown with green lush grass, although small packs of these monsters can be found anywhere. Alone they are not very dangerous, but they prefer to stay flocks, and thus the danger emanating from them increases many times.More than anything, they love scavengers, and sometimes you can see how biters chase them, however, most often just for fun, but on occasion they will not refuse human meat. besides, in a flock they clearly feel much more courageous than one by one. ");
 			AI_Print(concatText);
 		}
 		else
 		{
 			if((OrcBiter_B1 >= 5) && (OrcBiter_B2 == FALSE))
 			{
-				concatText = "Добавлена запись в бестиарий - '";
+				concatText = " Added entry to the bestiary - ' " ;
 				concatText = ConcatStrings(concatText,"Орочий кусач'");
-				Log_AddEntry(TOPIC_BEAST_ORCBITER,"Основные преимущества: способен довольно быстро бегать");
-				Log_AddEntry(TOPIC_BEAST_ORCBITER,"Уязвимые места: имеет крайне слабую защиту от всех видов оружия и магии");
+				Log_AddEntry( TOPIC_BEAST_ORCBITER , " Key Benefits: Can run pretty fast " );
+				Log_AddEntry( TOPIC_BEAST_ORCBITER , " Weaknesses : Very weak protection against all weapons and magic " );
 				AI_Print(concatText);
 				OrcBiter_B2 = TRUE;
 			}
 			else if((OrcBiter_B1 >= 10) && (OrcBiter_B3 == FALSE))
 			{
-				concatText = "Добавлена запись в бестиарий - '";
+				concatText = " Added entry to the bestiary - ' " ;
 				concatText = ConcatStrings(concatText,"Орочий кусач'");
-				Log_AddEntry(TOPIC_BEAST_ORCBITER,"Тактика боя: когда кусач бежит вам навстречу, нужно держать оружие наготове. От его удара можно либо уклониться, после чего атаковать самому, либо контратаковать.");
+				Log_AddEntry( TOPIC_BEAST_ORCBITER , " Combat tactics: when the biter runs towards you, you need to keep your weapon ready. You can either dodge its blow, then attack yourself, or counterattack. " );
 				AI_Print(concatText);
 
 				if(ATR_STAMINA_MAX[0] < 100)
@@ -515,68 +516,68 @@ func void B_LogBeast(var C_Npc Beast)
 
 		OrcBiter_B1 += 1;	
 	}
-	else if(Beast.aivar[AIV_MM_REAL_ID] == ID_RAZOR)
+	else  if (Beast.aivar[ AIV_MM_REAL_ID ] ==  ID_RAZOR )
 	{
 		if(Razor_B1 == FALSE)
 		{
-			concatText = "Добавлена запись в бестиарий - '";
+			concatText = " Added entry to the bestiary - ' " ;
 			concatText = ConcatStrings(concatText,"Бритвозуб'");
 			Log_CreateTopic(TOPIC_BEAST_RAZOR,LOG_MISSION);
 			Log_SetTopicStatus(TOPIC_BEAST_RAZOR,LOG_FAILED);
-			Log_AddEntry(TOPIC_BEAST_RAZOR,"Бритвозубы — родственный глорхам вид. И, как и глорхи, эти звери охотятся стаями. Однако они намного страшнее, и не только для новичков, но и для опытных воинов. Превосходя глорхов в скорости, силе и неистовстве, бритвозубы постоянно ослеплены яростью и нападают на все, что движется, будь то зверь, человек или просто дерево. Они охотятся даже когда не голодны, - просто чтобы удовлетворить свою страсть к убийству, а опасность, исходящая от стаи этих тварей, возрастает согласно квадрату числа монстров в стае.");
+			Log_AddEntry( TOPIC_BEAST_RAZOR , " Razorteeth are a related species to the glorchs. And, like the glorchs, these beasts hunt in packs. However, they are much more fearsome, and not only for beginners, but also for experienced warriors. are blinded by rage and attack anything that moves, be it a beast, a person, or just a tree.They hunt even when they are not hungry - just to satisfy their passion for killing, and the danger posed by a pack of these creatures increases according to the square of the number of monsters in flock. " );
 			AI_Print(concatText);
 		}
 		else
 		{
 			if((Razor_B1 >= 5) && (Razor_B2 == FALSE))
 			{
-				concatText = "Добавлена запись в бестиарий - '";
+				concatText = " Added entry to the bestiary - ' " ;
 				concatText = ConcatStrings(concatText,"Бритвозуб'");
-				Log_AddEntry(TOPIC_BEAST_RAZOR,"Основные преимущества: превосходно защищены от оружия ближнего боя и огня");
-				Log_AddEntry(TOPIC_BEAST_RAZOR,"Уязвимые места: имеет слабую защиту от магии");
+				Log_AddEntry( TOPIC_BEAST_RAZOR , " Main benefits: excellent protection against melee weapons and fire " );
+				Log_AddEntry( TOPIC_BEAST_RAZOR , " Weakness: Poor magic resistance " );
 				AI_Print(concatText);
 				Razor_B2 = TRUE;
 			}
 			else if((Razor_B1 >= 10) && (Razor_B3 == FALSE))
 			{
-				concatText = "Добавлена запись в бестиарий - '";
+				concatText = " Added entry to the bestiary - ' " ;
 				concatText = ConcatStrings(concatText,"Бритвозуб'");
-				Log_AddEntry(TOPIC_BEAST_RAZOR,"Тактика боя: бритвозубы уязвимы для выстрелов из лука и арбалета, чувствительны к магии Воды. Но не рассчитывайте на легкую победу и заранее готовьтесь к трудному и молниеносному бою! Если за четверть минуты вы не уложите всех тварей стаи, они съедят на завтрак пришедшую к ним добычу. И даже не подавятся доспехами и оружием.");
+				Log_AddEntry( TOPIC_BEAST_RAZOR , " Combat Tactics: Razortooths are vulnerable to bow and crossbow shots, sensitive to Water magic. But don't count on an easy victory and prepare in advance for a difficult and lightning-fast battle! If you don't kill all the creatures of the pack in a quarter of a minute, they will eat for breakfast the prey that came to them. And they won’t even choke on armor and weapons. " );
 				AI_Print(concatText);
 				B_RaiseAttribute(hero,ATR_DEXTERITY,1);
-				Razor_B3 = TRUE;
+				Razor_B3 = TRUE ;
 			};
 		};
 
-		Razor_B1 += 1;	
+		Razor_B1 +=  1 ;	
 	}
-	else if(Beast.aivar[AIV_MM_REAL_ID] == ID_GHOST)
+	else  if (Beast.aivar[ AIV_MM_REAL_ID ] ==  ID_GHOST )
 	{
 		if(Ghost_B1 == FALSE)
 		{
-			concatText = "Добавлена запись в бестиарий - '";
+			concatText = " Added entry to the bestiary - ' " ;
 			concatText = ConcatStrings(concatText,"Призрак'");
 			Log_CreateTopic(TOPIC_BEAST_GHOST,LOG_MISSION);
 			Log_SetTopicStatus(TOPIC_BEAST_GHOST,LOG_FAILED);
-			Log_AddEntry(TOPIC_BEAST_GHOST,"В призрака превращаются умершие насильственной смертью. Можно встретить на кладбищах или домах, в которых они жили при жизни. Маги и ученые неустанно спорят о том, действительно ли души отравляются после смерти в мир иной, где их ждут вечная радость или страдание. Обе группы, однако, согласны с тем, что происходит с душами, которые по каким-то причинам остаются в нашем мире: они становятся призраками. Судя по причитаниям этих созданий, завидовать их судьбе не стоит.");
+			Log_AddEntry( TOPIC_BEAST_GHOST , " Those who died violent deaths turn into ghosts. Can be found in cemeteries or houses in which they lived during life. Magicians and scientists tirelessly argue about whether souls are really poisoned after death to another world, where eternal joy awaits them or suffering. Both groups, however, agree on what happens to souls that for some reason remain in our world: they become ghosts. Judging by the lamentations of these creatures, it is not worth envying their fate. " );
 			AI_Print(concatText);
 		}
 		else
 		{
 			if((Ghost_B1 >= 3) && (Ghost_B2 == FALSE))
 			{
-				concatText = "Добавлена запись в бестиарий - '";
+				concatText = " Added entry to the bestiary - ' " ;
 				concatText = ConcatStrings(concatText,"Призрак'");
-				Log_AddEntry(TOPIC_BEAST_GHOST,"Основные преимущества: абсолютно невосприимчив к оружию ближнего или дальнего боя, если только оно не сделано из серебра");
-				Log_AddEntry(TOPIC_BEAST_GHOST,"Уязвимые места: имеет довольно слабую защиту от магии и огня");
+				Log_AddEntry( TOPIC_BEAST_GHOST , " Primary Benefits: Completely immune to melee or ranged weapons unless they are made of silver " );
+				Log_AddEntry( TOPIC_BEAST_GHOST , " Weaknesses : Has fairly weak protection against magic and fire " );
 				AI_Print(concatText);
 				Ghost_B2 = TRUE;
 			}
 			else if((Ghost_B1 >= 5) && (Ghost_B3 == FALSE))
 			{
-				concatText = "Добавлена запись в бестиарий - '";
+				concatText = " Added entry to the bestiary - ' " ;
 				concatText = ConcatStrings(concatText,"Призрак'");
-				Log_AddEntry(TOPIC_BEAST_GHOST,"Тактика боя: против призрака лучше всего использовать оружие, сделанное из серебра, или же обычную магию.");
+				Log_AddEntry( TOPIC_BEAST_GHOST , " Combat Tactics: It's best to use weapons made of silver or use normal magic against the ghost. " );
 				AI_Print(concatText);
 				B_RaiseAttribute(hero,ATR_HITPOINTS_MAX,10);
 				Npc_ChangeAttribute(hero,ATR_HITPOINTS,10);
@@ -586,33 +587,33 @@ func void B_LogBeast(var C_Npc Beast)
 
 		Ghost_B1 += 1;	
 	}
-	else if(Beast.aivar[AIV_MM_REAL_ID] == ID_STONEGUARDIAN)
+	else  if (Beast.aivar[ AIV_MM_REAL_ID ] ==  ID_STONEGUARDIAN )
 	{
 		if(Stoneguardian_B1 == FALSE)
 		{
-			concatText = "Добавлена запись в бестиарий - '";
-			concatText = ConcatStrings(concatText,"Каменный страж'");
+			concatText = " Added entry to the bestiary - ' " ;
+			concatText = ConcatStrings(concatText, " Stoneguard ' " );
 			Log_CreateTopic(TOPIC_BEAST_STONEGUARDIAN,LOG_MISSION);
 			Log_SetTopicStatus(TOPIC_BEAST_STONEGUARDIAN,LOG_FAILED);
-			Log_AddEntry(TOPIC_BEAST_STONEGUARDIAN,"Каменные статуи, оживленные с помощью магии, чтобы защищать храмы и жилища народа Зодчих от вторжения незваных гостей. Один только их облик отпугивает большую часть взломщиков. Те же, кто не пугается при виде этих грозных чудовищ, обычно умирают вскоре после, разорванные каменными когтями.");
+			Log_AddEntry( TOPIC_BEAST_STONEGUARDIAN , " Stone statues animated with magic to protect the temples and dwellings of the Builders from intruders. Their appearance alone deters most burglars. Those who are not frightened by the sight of these formidable monsters usually die shortly after , torn apart by stone claws. " );
 			AI_Print(concatText);
 		}
 		else
 		{
-			if((Stoneguardian_B1 >= 10) && (Stoneguardian_B2 == FALSE))
+			if ((Stoneguardian_B1 >=  10 ) && (Stoneguardian_B2 ==  FALSE ))
 			{
-				concatText = "Добавлена запись в бестиарий - '";
-				concatText = ConcatStrings(concatText,"Каменный страж'");
-				Log_AddEntry(TOPIC_BEAST_STONEGUARDIAN,"Основные преимущества: практически невосприимчив к оружию дальнего боя, имеет хорошую защиту от магии и огня");
-				Log_AddEntry(TOPIC_BEAST_STONEGUARDIAN,"Уязвимые места: имеет очень слабую защиту против любого вида дробящего оружия");
+				concatText = " Added entry to the bestiary - ' " ;
+				concatText = ConcatStrings(concatText, " Stoneguard ' " );
+				Log_AddEntry( TOPIC_BEAST_STONEGUARDIAN , " Main benefits: Nearly immune to ranged weapons, good protection against magic and fire " );
+				Log_AddEntry( TOPIC_BEAST_STONEGUARDIAN , " Weak Points : Has very weak defense against any kind of blunt weapon " );
 				AI_Print(concatText);
 				Stoneguardian_B2 = TRUE;
 			}
 			else if((Stoneguardian_B1 >= 20) && (Stoneguardian_B3 == FALSE))
 			{
-				concatText = "Добавлена запись в бестиарий - '";
-				concatText = ConcatStrings(concatText,"Каменный страж'");
-				Log_AddEntry(TOPIC_BEAST_STONEGUARDIAN,"Тактика боя: не стоит ждать, пока этот каменный гигант нанесет удар первым, поскольку он может стать для вас и последним. Атакуйте монстра без остановки, либо же используйте магию, чтобы быстро его уничтожить.");
+				concatText = " Added entry to the bestiary - ' " ;
+				concatText = ConcatStrings(concatText, " Stoneguard ' " );
+				Log_AddEntry( TOPIC_BEAST_STONEGUARDIAN , " Combat Tactics: Don't wait for this stone giant to strike first as it could be your last. Attack the monster non-stop, or use magic to quickly destroy it. " );
 				AI_Print(concatText);
 
 				if(ATR_STAMINA_MAX[0] < 100)
@@ -629,69 +630,69 @@ func void B_LogBeast(var C_Npc Beast)
 
 		Stoneguardian_B1 += 1;	
 	}
-	else if(Beast.aivar[AIV_MM_REAL_ID] == ID_STONEPUMA)
+	else  if (Beast.aivar[ AIV_MM_REAL_ID ] ==  ID_STONEPUMA )
 	{
 		if(StonePuma_B1 == FALSE)
 		{
-			concatText = "Добавлена запись в бестиарий - '";
+			concatText = " Added entry to the bestiary - ' " ;
 			concatText = ConcatStrings(concatText,"Пума'");
 			Log_CreateTopic(TOPIC_BEAST_STONEPUMA,LOG_MISSION);
 			Log_SetTopicStatus(TOPIC_BEAST_STONEPUMA,LOG_FAILED);
-			Log_AddEntry(TOPIC_BEAST_STONEPUMA,"Как правило, пумы обитают в южных землях Хориниса. У них практически нет врагов в окружающей среде. Острые клыки и когти пумы, вкупе с огромной скоростью передвижения, не оставляют врагам почти ни единого шанса на спасение. Все это надо учитывать, чтобы не стать ее очередной жертвой. Пумы редко живут в стаях и предпочитают охотиться в одиночку.");
+			Log_AddEntry( TOPIC_BEAST_STONEPUMA , " As a rule, cougars live in the southern lands of Khorinis. They have practically no enemies in the environment. The sharp fangs and claws of the cougar, coupled with the huge speed of movement, leave almost no chance for enemies to escape. All this must be taken into account , so as not to become her next victim. Cougars rarely live in packs and prefer to hunt alone. " );
 			AI_Print(concatText);
 		}
 		else
 		{
-			if((StonePuma_B1 >= 3) && (StonePuma_B2 == FALSE))
+			if ((StonePuma_B1 >=  3 ) && (StonePuma_B2 ==  FALSE ))
 			{
-				concatText = "Добавлена запись в бестиарий - '";
+				concatText = " Added entry to the bestiary - ' " ;
 				concatText = ConcatStrings(concatText,"Пума'");
-				Log_AddEntry(TOPIC_BEAST_STONEPUMA,"Основные преимущества: огромная скорость передвижения, хорошая защита от оружия ближнего боя");
-				Log_AddEntry(TOPIC_BEAST_STONEPUMA,"Уязвимые места: имеет очень слабую защиту от оружия дальнего боя, огня и магии");
+				Log_AddEntry( TOPIC_BEAST_STONEPUMA , " Main advantages: huge movement speed, good protection against melee weapons " );
+				Log_AddEntry( TOPIC_BEAST_STONEPUMA , " Weakness : Very weak against ranged, fire, and magic " );
 				AI_Print(concatText);
 				StonePuma_B2 = TRUE;
 			}
-			else if((StonePuma_B1 >= 5) && (StonePuma_B3 == FALSE))
+			else  if ((StonePuma_B1 >=  5 ) && (StonePuma_B3 ==  FALSE ))
 			{
-				concatText = "Добавлена запись в бестиарий - '";
+				concatText = " Added entry to the bestiary - ' " ;
 				concatText = ConcatStrings(concatText,"Пума'");
-				Log_AddEntry(TOPIC_BEAST_STONEPUMA,"Тактика боя: лучше всего воспользоваться луком или арбалетом, чтобы расстрелять пуму издалека, прежде чем она до вас доберется.");
+				Log_AddEntry( TOPIC_BEAST_STONEPUMA , " Combat Tactics: It's best to use a bow or crossbow to shoot the cougar from afar before it gets to you. " );
 				AI_Print(concatText);
 				B_RaiseAttribute(hero,ATR_HITPOINTS_MAX,10);
 				Npc_ChangeAttribute(hero,ATR_HITPOINTS,10);
-				StonePuma_B3 = TRUE;
+				StonePuma_B3 = TRUE ;
 			};
 		};
 
-		StonePuma_B1 += 1;	
+		StonePuma_B1 +=  1 ;	
 	}
-	else if(Beast.aivar[AIV_MM_REAL_ID] == ID_SWAMPDRONE)
+	else  if (Beast.aivar[ AIV_MM_REAL_ID ] ==  ID_SWAMPDRONE )
 	{
 		if(SwampDrone_B1 == FALSE)
 		{
-			concatText = "Добавлена запись в бестиарий - '";
-			concatText = ConcatStrings(concatText,"Болотная муха'");
+			concatText = " Added entry to the bestiary - ' " ;
+			concatText = ConcatStrings(concatText, " Swamp fly' " );
 			Log_CreateTopic(TOPIC_BEAST_SWAMPDRONE,LOG_MISSION);
 			Log_SetTopicStatus(TOPIC_BEAST_SWAMPDRONE,LOG_FAILED);
-			Log_AddEntry(TOPIC_BEAST_SWAMPDRONE,"Болотные мухи - крупные летающие насекомые зеленого цвета с ядовитым жалом. Обычно они обитают на больших болотах. Глаза у болотных мух недоразвитые, зато обоняние очень острое, так что добычу они чуют издалека. Обнаружив подходящую жертву, рой болотных мух окружает ее и безжалостно жалит, чтобы лишить возможности сопротивляться.");
+			Log_AddEntry( TOPIC_BEAST_SWAMPDRONE , " Swamp flies are large flying green insects with a venomous sting. They usually live in large swamps. The eyes of swamp flies are underdeveloped, but the sense of smell is very acute, so they smell their prey from afar. Having found a suitable victim, a swarm of swamp flies surrounds and stings her mercilessly to make it impossible to resist. " );
 			AI_Print(concatText);
 		}
 		else
 		{
 			if((SwampDrone_B1 >= 5) && (SwampDrone_B2 == FALSE))
 			{
-				concatText = "Добавлена запись в бестиарий - '";
-				concatText = ConcatStrings(concatText,"Болотная муха'");
-				Log_AddEntry(TOPIC_BEAST_SWAMPDRONE,"Основные преимущества: способна вызвать сильное отравление");
-				Log_AddEntry(TOPIC_BEAST_SWAMPDRONE,"Уязвимые места: имеет очень слабую защиту от любого типа оружия, магии и огня");
+				concatText = " Added entry to the bestiary - ' " ;
+				concatText = ConcatStrings(concatText, " Swamp fly' " );
+				Log_AddEntry( TOPIC_BEAST_SWAMPDRONE , " Key Benefits: Can cause severe poisoning " );
+				Log_AddEntry( TOPIC_BEAST_SWAMPDRONE , " Weak Points : Has very weak defense against any type of weapons, magic and fire " );
 				AI_Print(concatText);
 				SwampDrone_B2 = TRUE;
 			}
 			else if((SwampDrone_B1 >= 10) && (SwampDrone_B3 == FALSE))
 			{
-				concatText = "Добавлена запись в бестиарий - '";
-				concatText = ConcatStrings(concatText,"Болотная муха'");
-				Log_AddEntry(TOPIC_BEAST_SWAMPDRONE,"Тактика боя: уничтожать болотных мух проще всего с помощью лука, арбалета или магии.");
+				concatText = " Added entry to the bestiary - ' " ;
+				concatText = ConcatStrings(concatText, " Swamp fly' " );
+				Log_AddEntry( TOPIC_BEAST_SWAMPDRONE , " Combat Tactics: The easiest way to destroy swamp flies is with a bow, crossbow, or magic. " );
 				AI_Print(concatText);
 				B_RaiseAttribute(hero,ATR_HITPOINTS_MAX,10);
 				Npc_ChangeAttribute(hero,ATR_HITPOINTS,10);
@@ -699,35 +700,35 @@ func void B_LogBeast(var C_Npc Beast)
 			};
 		};
 
-		SwampDrone_B1 += 1;	
+		SwampDrone_B1 +=  1 ;	
 	}
-	else if(Beast.aivar[AIV_MM_REAL_ID] == ID_SWAMPGOLEM)
+	else  if (Beast.aivar[ AIV_MM_REAL_ID ] ==  ID_SWAMPGOLEM )
 	{
 		if(Swampgolem_B1 == FALSE)
 		{
-			concatText = "Добавлена запись в бестиарий - '";
-			concatText = ConcatStrings(concatText,"Болотный голем'");
+			concatText = " Added entry to the bestiary - ' " ;
+			concatText = ConcatStrings(concatText, " Swamp Golem' " );
 			Log_CreateTopic(TOPIC_BEAST_SWAMPGOLEM,LOG_MISSION);
 			Log_SetTopicStatus(TOPIC_BEAST_SWAMPGOLEM,LOG_FAILED);
-			Log_AddEntry(TOPIC_BEAST_SWAMPGOLEM,"Эти зловонные порождения болот обладают невероятной силой, и способны использовать магию. Подчас их довольно трудно заметить среди болотных зарослей, что делает этих великанов более опасными противниками по сравнению с другими големами.");
+			Log_AddEntry( TOPIC_BEAST_SWAMPGOLEM , " These foul-smelling swamp creatures are incredibly powerful and capable of using magic. They can sometimes be hard to spot in the swamp, making these giants more dangerous foes than other golems. " );
 			AI_Print(concatText);
 		}
 		else
 		{
 			if((Swampgolem_B1 >= 5) && (Swampgolem_B2 == FALSE))
 			{
-				concatText = "Добавлена запись в бестиарий - '";
-				concatText = ConcatStrings(concatText,"Болотный голем'");
-				Log_AddEntry(TOPIC_BEAST_SWAMPGOLEM,"Основные преимущества: имеет превосходную защиту от стрел и болтов, хорошую защиту от дробящего оружия, огня и магии");
-				Log_AddEntry(TOPIC_BEAST_SWAMPGOLEM,"Уязвимые места: имеет очень слабую защиту от режущего типа оружия");
+				concatText = " Added entry to the bestiary - ' " ;
+				concatText = ConcatStrings(concatText, " Swamp Golem' " );
+				Log_AddEntry( TOPIC_BEAST_SWAMPGOLEM , " Main advantages: has excellent protection against arrows and bolts, good protection against blunt weapons, fire and magic " );
+				Log_AddEntry( TOPIC_BEAST_SWAMPGOLEM , " Weak Points : Has very little protection against cutting weapons " );
 				AI_Print(concatText);
 				Swampgolem_B2 = TRUE;
 			}
 			else if((Swampgolem_B1 >= 10) && (Swampgolem_B3 == FALSE))
 			{
-				concatText = "Добавлена запись в бестиарий - '";
-				concatText = ConcatStrings(concatText,"Болотный голем'");
-				Log_AddEntry(TOPIC_BEAST_SWAMPGOLEM,"Тактика боя: ближний бой - почти единственный способ одолеть эту груду земли и корней. Наиболее эффективно использование режущего оружия.");
+				concatText = " Added entry to the bestiary - ' " ;
+				concatText = ConcatStrings(concatText, " Swamp Golem' " );
+				Log_AddEntry( TOPIC_BEAST_SWAMPGOLEM , " Combat Tactics: Melee combat is almost the only way to get through this pile of dirt and roots. Cutting weapons are most effective. " );
 				AI_Print(concatText);
 				B_RaiseAttribute(hero,ATR_HITPOINTS_MAX,10);
 				Npc_ChangeAttribute(hero,ATR_HITPOINTS,10);
@@ -735,35 +736,35 @@ func void B_LogBeast(var C_Npc Beast)
 			};
 		};
 
-		Swampgolem_B1 += 1;	
+		Swampgolem_B1 +=  1 ;	
 	}
-	else if(Beast.aivar[AIV_MM_REAL_ID] == ID_BLOODFLY)
+	else  if (Beast.aivar[ AIV_MM_REAL_ID ] ==  ID_BLOODFLY )
 	{
 		if(BloodFly_B1 == FALSE)
 		{
-			concatText = "Добавлена запись в бестиарий - '";
-			concatText = ConcatStrings(concatText,"Кровяной шершень'");
+			concatText = " Added entry to the bestiary - ' " ;
+			concatText = ConcatStrings(concatText, " Bloodhornet ' " );
 			Log_CreateTopic(TOPIC_BEAST_BLOODFLY,LOG_MISSION);
 			Log_SetTopicStatus(TOPIC_BEAST_BLOODFLY,LOG_FAILED);
-			Log_AddEntry(TOPIC_BEAST_BLOODFLY,"Кровяные шершни — злобные летающие дьяволы, во множестве собирающиеся у любого источника воды, какой они только смогут найти. Своими длинными изогнутыми жалами они высасывают кровь у любого, осмелившегося подойти достаточно близко, а характерный стрекот их полупрозрачных крыльев повергает в бегство многих мелких животных. Шершни не очень сильные противники, однако, как правило, нападают на жертву всем роем, предварительно окружив ее со всех сторон.");
+			Log_AddEntry( TOPIC_BEAST_BLOODFLY , " Bloodhornets are vicious flying devils that congregate at any source of water they can find. With their long, curved stingers, they suck the blood of anyone who dares to get close enough, and the characteristic chirp of their translucent wings sends them flying many small animals. Hornets are not very strong opponents, however, as a rule, they attack the victim with the whole swarm, having previously surrounded it from all sides. " );
 			AI_Print(concatText);
 		}
 		else
 		{
 			if((BloodFly_B1 >= 15) && (BloodFly_B2 == FALSE))
 			{
-				concatText = "Добавлена запись в бестиарий - '";
-				concatText = ConcatStrings(concatText,"Кровяной шершень'");
-				Log_AddEntry(TOPIC_BEAST_BLOODFLY,"Основные преимущества: способен вызвать отравление");
-				Log_AddEntry(TOPIC_BEAST_BLOODFLY,"Уязвимые места: имеет очень слабую защиту от любого типа оружия, магии и огня");
+				concatText = " Added entry to the bestiary - ' " ;
+				concatText = ConcatStrings(concatText, " Bloodhornet ' " );
+				Log_AddEntry( TOPIC_BEAST_BLOODFLY , " Main Benefits: Can cause poisoning " );
+				Log_AddEntry( TOPIC_BEAST_BLOODFLY , " Weak Points : Has very weak defense against any type of weapons, magic and fire " );
 				AI_Print(concatText);
 				BloodFly_B2 = TRUE;
 			}
 			else if((BloodFly_B1 >= 30) && (BloodFly_B3 == FALSE))
 			{
-				concatText = "Добавлена запись в бестиарий - '";
-				concatText = ConcatStrings(concatText,"Кровяной шершень'");
-				Log_AddEntry(TOPIC_BEAST_BLOODFLY,"Тактика боя: лучше всего уничтожать шершней из лука, арбалета или с помощью магии. Вступать с ними в близкий контакт и пытаться насадить на острие меча не рекомендуется, по крайней мере, пока у вас не появятся тяжелые доспехи, надежно защищающие от их смертоносных жал.");
+				concatText = " Added entry to the bestiary - ' " ;
+				concatText = ConcatStrings(concatText, " Bloodhornet ' " );
+				Log_AddEntry( TOPIC_BEAST_BLOODFLY , " Combat Tactics: It is best to destroy the hornets with a bow, crossbow or magic. It is not recommended to come into close contact with them and try to stick them on the edge of the sword, at least until you have heavy armor that reliably protects from their deadly stings. " );
 				AI_Print(concatText);
 				hero.protection[PROT_POINT] += 1;
 				REALPROTPO += 1;
@@ -774,33 +775,33 @@ func void B_LogBeast(var C_Npc Beast)
 
 		BloodFly_B1 += 1;	
 	}
-	else if(Beast.aivar[AIV_MM_REAL_ID] == ID_DEMON)
+	else  if (Beast.aivar[ AIV_MM_REAL_ID ] ==  ID_DEMON )
 	{
 		if(Demon_B1 == FALSE)
 		{
-			concatText = "Добавлена запись в бестиарий - '";
+			concatText = " Added entry to the bestiary - ' " ;
 			concatText = ConcatStrings(concatText,"Демон'");
 			Log_CreateTopic(TOPIC_BEAST_DEMON,LOG_MISSION);
 			Log_SetTopicStatus(TOPIC_BEAST_DEMON,LOG_FAILED);
-			Log_AddEntry(TOPIC_BEAST_DEMON,"Демоны — порождения загробного мира, мира смерти и страха Белиара. Есть много разновидностей демонов, но лишь самые маленькие и слабые позволяют людям призывать себя и верой и правдой служат своим хозяевам. Они серьезные противники и способны доставить немало неприятностей даже сильному и смелому герою. Демоны являются одними из самых опасных и могущественных жителей этого мира. Являясь магическими созданиями, они очень хорошо защищены и наделены мощью, опасной почти для всех видов противников.");
+			Log_AddEntry( TOPIC_BEAST_DEMON , " Demons are creatures of the underworld, the world of death and the fear of Beliar. There are many varieties of demons, but only the smallest and weakest ones allow people to summon themselves and faithfully serve their masters. They are serious opponents and can cause a lot of trouble even to the strong and a brave hero. Demons are one of the most dangerous and powerful inhabitants of this world. Being magical creatures, they are very well protected and endowed with power that is dangerous for almost all kinds of opponents. " );
 			AI_Print(concatText);
 		}
 		else
 		{
-			if((Demon_B1 >= 5) && (Demon_B2 == FALSE))
+			if (( Demon_B1 >=  5 ) && ( Demon_B2 ==  FALSE ))
 			{
-				concatText = "Добавлена запись в бестиарий - '";
+				concatText = " Added entry to the bestiary - ' " ;
 				concatText = ConcatStrings(concatText,"Демон'");
-				Log_AddEntry(TOPIC_BEAST_DEMON,"Основные преимущества: невероятная сила, отличная защита от любого вида оружия, магии и огня, огромный запас здоровья, имеет дистанционную атаку магией");
-				Log_AddEntry(TOPIC_BEAST_DEMON,"Уязвимые места: - нет -");
+				Log_AddEntry( TOPIC_BEAST_DEMON , " Main advantages: incredible strength, excellent protection against any kind of weapons, magic and fire, huge health pool, has a ranged magic attack " );
+				Log_AddEntry( TOPIC_BEAST_DEMON , " Vulnerabilities: - none - " );
 				AI_Print(concatText);
 				Demon_B2 = TRUE;
 			}
 			else if((Demon_B1 >= 10) && (Demon_B3 == FALSE))
 			{
-				concatText = "Добавлена запись в бестиарий - '";
+				concatText = " Added entry to the bestiary - ' " ;
 				concatText = ConcatStrings(concatText,"Демон'");
-				Log_AddEntry(TOPIC_BEAST_DEMON,"Тактика боя: главное, не дать ему вас ударить или задеть магией, иначе исход боя будет практически предрешен.");
+				Log_AddEntry( TOPIC_BEAST_DEMON , " Combat tactics: the main thing is not to let him hit you or hit you with magic, otherwise the outcome of the battle will be almost a foregone conclusion. " );
 				AI_Print(concatText);
 				hero.protection[PROT_MAGIC] += 1;
 				REALPROTMAGIC += 1;
@@ -815,29 +816,29 @@ func void B_LogBeast(var C_Npc Beast)
 	{
 		if(DemonLord_B1 == FALSE)
 		{
-			concatText = "Добавлена запись в бестиарий - '";
+			concatText = " Added entry to the bestiary - ' " ;
 			concatText = ConcatStrings(concatText,"Архидемон'");
 			Log_CreateTopic(TOPIC_BEAST_DEMON_LORD,LOG_MISSION);
 			Log_SetTopicStatus(TOPIC_BEAST_DEMON_LORD,LOG_FAILED);
-			Log_AddEntry(TOPIC_BEAST_DEMON_LORD,"Архидемоны стоят во главе демонических орд и являются своего рода элитой потустороннего мира. Они слишком сильны, чтобы кто-то из людей осмеливался иметь с ними дело иначе, как в сражении, но из такого боя победителем выходит чаще всего не человек. Они страшные бойцы — сильные, ловкие, живучие и совершенно неуязвимые для обычного оружия. Мечи, топоры, булавы — все это просто ломается, едва коснувшись их, а стрелы и арбалетные болты сгорают еще в полете. Лишь у могущественного воина или мага есть шанс выйти живым из смертельной схватки с архидемоном.");
+			Log_AddEntry(TOPIC_BEAST_DEMON_LORD,"Archidemons are at the head of the demonic hordes and are a kind of elite of the other world. They are too strong for any of the people to dare to deal with them except in battle, but in such a battle, the winner is most often not a person "They are terrible fighters - strong, agile, tenacious and completely invulnerable to conventional weapons. Swords, axes, maces - all this just breaks as soon as they touch them, and arrows and crossbow bolts burn out even in flight. Only a powerful warrior or magician has a chance come out alive from a deadly fight with an archdemon.");
 			AI_Print(concatText);
 		}
 		else
 		{
-			if((DemonLord_B1 >= 5) && (DemonLord_B2 == FALSE))
+			if (( DemonLord_B1 >=  5 ) && ( DemonLord_B2 ==  FALSE ))
 			{
-				concatText = "Добавлена запись в бестиарий - '";
+				concatText = " Added entry to the bestiary - ' " ;
 				concatText = ConcatStrings(concatText,"Архидемон'");
-				Log_AddEntry(TOPIC_BEAST_DEMON_LORD,"Основные преимущества: невероятная сила, отличная защита от любого вида оружия, магии и огня, огромный запас здоровья, имеет дистанционную атаку магией");
-				Log_AddEntry(TOPIC_BEAST_DEMON_LORD,"Уязвимые места: - нет -");
+				Log_AddEntry( TOPIC_BEAST_DEMON_LORD , " Main advantages: incredible strength, excellent protection against any kind of weapons, magic and fire, huge health pool, has a ranged magic attack " );
+				Log_AddEntry( TOPIC_BEAST_DEMON_LORD , " Vulnerabilities: - none - " );
 				AI_Print(concatText);
 				DemonLord_B2 = TRUE;
 			}
 			else if((DemonLord_B1 >= 10) && (DemonLord_B3 == FALSE))
 			{
-				concatText = "Добавлена запись в бестиарий - '";
+				concatText = " Added entry to the bestiary - ' " ;
 				concatText = ConcatStrings(concatText,"Архидемон'");
-				Log_AddEntry(TOPIC_BEAST_DEMON_LORD,"Тактика боя: любая ошибка в бою с архидемоном будет стоить вам жизни. Так что постарайтесь не допускать их!");
+				Log_AddEntry( TOPIC_BEAST_DEMON_LORD , " Combat Tactics: Any mistake you make while fighting an archdemon will cost you your life. So try not to make them! " );
 				AI_Print(concatText);
 				hero.protection[PROT_MAGIC] += 1;
 				REALPROTMAGIC += 1;
@@ -852,29 +853,29 @@ func void B_LogBeast(var C_Npc Beast)
 	{
 		if(Draconian_B1 == FALSE)
 		{
-			concatText = "Добавлена запись в бестиарий - '";
+			concatText = " Added entry to the bestiary - ' " ;
 			concatText = ConcatStrings(concatText,"Звероящер'");
 			Log_CreateTopic(TOPIC_BEAST_DRACONIAN,LOG_MISSION);
 			Log_SetTopicStatus(TOPIC_BEAST_DRACONIAN,LOG_FAILED);
-			Log_AddEntry(TOPIC_BEAST_DRACONIAN,"Звероящеры — это раса двуногих человекоподобных рептилий схожих с ящерицами. Они носят самодельные доспехи красного, как и их чешуя, цвета и вооружены большими клинками, которыми орудуют в бою. Их язык непостижим для людей, так как состоит из шипения и хрипа. Они также чрезвычайно агрессивны в отношении врагов и нападают на них схожим с орками образом. Высокоразумны — способны даже ковать свое собственное оружие и доспехи, а также выполнять сложные обязанности, такие как наблюдение за яйцами дракона или накапливание сокровищ для своих хозяев.");
+			Log_AddEntry(TOPIC_BEAST_DRACONIAN,"Beast Lizards are a race of bipedal humanoid reptiles similar to lizards. They wear makeshift armor that is red like their scales and are armed with large blades that they wield in combat. Their language is incomprehensible to humans, as it consists of hisses and wheezing. They are also extremely aggressive towards enemies and attack them in a manner similar to orcs. Highly intelligent - able to even forge their own weapons and armor, as well as perform complex duties such as watching dragon eggs or amassing treasures for their masters.") ;
 			AI_Print(concatText);
 		}
 		else
 		{
 			if((Draconian_B1 >= 15) && (Draconian_B2 == FALSE))
 			{
-				concatText = "Добавлена запись в бестиарий - '";
+				concatText = " Added entry to the bestiary - ' " ;
 				concatText = ConcatStrings(concatText,"Звероящер'");
-				Log_AddEntry(TOPIC_BEAST_DRACONIAN,"Основные преимущества: огромная сила, отличная защита от любого вида оружия, магии и огня, разумны");
-				Log_AddEntry(TOPIC_BEAST_DRACONIAN,"Уязвимые места: - нет -");
+				Log_AddEntry( TOPIC_BEAST_DRACONIAN , " Main benefits: huge strength, excellent protection against any kind of weapons, magic and fire, reasonable " );
+				Log_AddEntry( TOPIC_BEAST_DRACONIAN , " Vulnerabilities: - none - " );
 				AI_Print(concatText);
 				Draconian_B2 = TRUE;
 			}
 			else if((Draconian_B1 >= 30) && (Draconian_B3 == FALSE))
 			{
-				concatText = "Добавлена запись в бестиарий - '";
+				concatText = " Added entry to the bestiary - ' " ;
 				concatText = ConcatStrings(concatText,"Звероящер'");
-				Log_AddEntry(TOPIC_BEAST_DRACONIAN,"Тактика боя: ваша реакция и высокая степень владения оружием ближнего боя - единственный ключ к победе над этими тварями.");
+				Log_AddEntry( TOPIC_BEAST_DRACONIAN , " Combat Tactics: Your reflexes and high proficiency with melee weapons is the only key to defeating these creatures. " );
 				AI_Print(concatText);
 
 				if(hero.HitChance[NPC_TALENT_1H] >= hero.HitChance[NPC_TALENT_2H])
@@ -896,33 +897,33 @@ func void B_LogBeast(var C_Npc Beast)
 
 		Draconian_B1 += 1;	
 	}
-	else if((Beast.aivar[AIV_MM_REAL_ID] == ID_DRAGON_FIRE) || (Beast.aivar[AIV_MM_REAL_ID] == ID_DRAGON_BLACK) || (Beast.aivar[AIV_MM_REAL_ID] == ID_DRAGON_RED) || (Beast.aivar[AIV_MM_REAL_ID] == ID_DRAGON_ICE) || (Beast.aivar[AIV_MM_REAL_ID] == ID_DRAGON_ROCK) || (Beast.aivar[AIV_MM_REAL_ID] == ID_DRAGON_SWAMP) || (Beast.aivar[AIV_MM_REAL_ID] == ID_DRAGON_UNDEAD))
+	else  if ((Beast.aivar[ AIV_MM_REAL_ID ] ==  ID_DRAGON_FIRE ) || (Beast.aivar[ AIV_MM_REAL_ID ] ==  ID_DRAGON_BLACK ) || (Beast.aivar[ AIV_MM_REAL_ID ] ==  ID_DRAGON_RED ) || ( Beast.aivar[ AIV_MM_REAL_ID ] == ID_DRAGON_RED ) =  ID_DRAGON_ICE ) || (Beast.aivar[ AIV_MM_REAL_ID ] ==  ID_DRAGON_ROCK ) || (Beast.aivar[ AIV_MM_REAL_ID ] ==  ID_DRAGON_SWAMP) || (Beast.aivar[ AIV_MM_REAL_ID ] ==  ID_DRAGON_UNDEAD ))
 	{
 		if(Dragon_B1 == FALSE)
 		{
-			concatText = "Добавлена запись в бестиарий - '";
+			concatText = " Added entry to the bestiary - ' " ;
 			concatText = ConcatStrings(concatText,"Дракон'");
 			Log_CreateTopic(TOPIC_BEAST_DRAGON_FIRE,LOG_MISSION);
 			Log_SetTopicStatus(TOPIC_BEAST_DRAGON_FIRE,LOG_FAILED);
-			Log_AddEntry(TOPIC_BEAST_DRAGON_FIRE,"Драконы - древние существа, которые являются чуть ли не полубогами. Некогда их были тысячи, но постепенно, по причине веков, природных бедствий или битв, они исчезли до отметки, при которой стали чуть более, чем легендой по мнению народа. Это крайне опасные существа, способные быстро восстанавливать свое здоровье, а также владеющие безмерными магическими способностями, могуществом и таинственной силой вдобавок к умственным способностям.");
+			Log_AddEntry( TOPIC_BEAST_DRAGON_FIRE , " Dragons are ancient creatures that are almost demigods. There were once thousands of them, but gradually, due to centuries, natural disasters or battles, they disappeared to a point where they became little more than a legend according to the people .These are extremely dangerous creatures that can quickly restore their health, as well as possessing immense magical abilities, power and mysterious strength in addition to mental abilities. " );
 			AI_Print(concatText);
 		}
 		else
 		{
-			if((Dragon_B1 >= 3) && (Dragon_B2 == FALSE))
+			if (( Dragon_B1 >=  3 ) && ( Dragon_B2 ==  FALSE ))
 			{
-				concatText = "Добавлена запись в бестиарий - '";
+				concatText = " Added entry to the bestiary - ' " ;
 				concatText = ConcatStrings(concatText,"Дракон'");
-				Log_AddEntry(TOPIC_BEAST_DRAGON_FIRE,"Основные преимущества: колоссальный урон магией и огнем, невероятная защита от любого вида оружия, магии и огня, драконы разумны");
-				Log_AddEntry(TOPIC_BEAST_DRAGON_FIRE,"Уязвимые места: - нет -");
+				Log_AddEntry( TOPIC_BEAST_DRAGON_FIRE , " Main advantages: colossal magic and fire damage, incredible protection against any kind of weapons, magic and fire, dragons are intelligent " );
+				Log_AddEntry( TOPIC_BEAST_DRAGON_FIRE , " Vulnerabilities: - none - " );
 				AI_Print(concatText);
 				Dragon_B2 = TRUE;
 			}
 			else if((Dragon_B1 >= 5) && (Dragon_B3 == FALSE))
 			{
-				concatText = "Добавлена запись в бестиарий - '";
+				concatText = " Added entry to the bestiary - ' " ;
 				concatText = ConcatStrings(concatText,"Дракон'");
-				Log_AddEntry(TOPIC_BEAST_DRAGON_FIRE,"Тактика боя: хорошая защита от огня и магии - единственный способ остаться в живых после встречи с драконом.");
+				Log_AddEntry( TOPIC_BEAST_DRAGON_FIRE , " Combat Tactics: Good defense against fire and magic is the only way to stay alive after encountering a dragon. " );
 				AI_Print(concatText);
 				Dragon_B3 = TRUE;
 			};
@@ -930,33 +931,33 @@ func void B_LogBeast(var C_Npc Beast)
 
 		Dragon_B1 += 1;	
 	}
-	else if(Beast.aivar[AIV_MM_REAL_ID] == ID_DRAGONSNAPPER)
+	else  if (Beast.aivar[ AIV_MM_REAL_ID ] ==  ID_DRAGONSNAPPER )
 	{
 		if(DragonSnapper_B1 == FALSE)
 		{
-			concatText = "Добавлена запись в бестиарий - '";
-			concatText = ConcatStrings(concatText,"Драконий снеппер'");
+			concatText = " Added entry to the bestiary - ' " ;
+			concatText = ConcatStrings(concatText, " Dragon Snapper' " );
 			Log_CreateTopic(TOPIC_BEAST_DRAGONSNAPPER,LOG_MISSION);
 			Log_SetTopicStatus(TOPIC_BEAST_DRAGONSNAPPER,LOG_FAILED);
-			Log_AddEntry(TOPIC_BEAST_DRAGONSNAPPER,"Драконий снеппер - одно из самых ужасных существ и идеальная машина для убийств, способная стремительно бегать, далеко прыгать и сокрушительно атаковать. Они напоминают настоящих драконов, которые, конечно же, больше драконьих снепперов. Они, в общем виде, выглядят так же, как обычные снепперы, но имеют несколько отличительных особенностей. К примеру, острые рога на голове и много длинных когтей на лапах. Как и простые снепперы, драконьи бегают на сильных задних лапах. Цвет кожи драконьих снепперов темно-коричневый, рога - грязно-желтые. Встречаются драконьи снепперы практически повсюду: и в скалистых горах, и на зеленых равнинах; держатся обычно группами по нескольку особей, но одиночки тоже не редкость. Их пищей становится все, что попадется у них на пути, - чаще всего падальщики, волки и овцы. Главным оружием этих рептилий является пасть, полная острых зубов. Эти твари очень быстры: сперва своей стремительностью они застают противника врасплох, а затем наносят единственный смертельный удар.");
+			The main weapon of these reptiles is a mouth full of sharp teeth. These creatures are very fast, first taking their opponents by surprise with their swiftness, and then delivering a single fatal blow.");
 			AI_Print(concatText);
 		}
 		else
 		{
 			if((DragonSnapper_B1 >= 10) && (DragonSnapper_B2 == FALSE))
 			{
-				concatText = "Добавлена запись в бестиарий - '";
-				concatText = ConcatStrings(concatText,"Драконий снеппер'");
-				Log_AddEntry(TOPIC_BEAST_DRAGONSNAPPER,"Основные преимущества: огромная скорость передвижения и сила атаки, отличная защита от любого вида оружия и огня, огромный запас здоровья");
-				Log_AddEntry(TOPIC_BEAST_DRAGONSNAPPER,"Уязвимые места: имеет слабую защиту от магии");
+				concatText = " Added entry to the bestiary - ' " ;
+				concatText = ConcatStrings(concatText, " Dragon Snapper' " );
+				Log_AddEntry( TOPIC_BEAST_DRAGONSNAPPER , " Main advantages: huge movement speed and attack power, excellent protection against any kind of weapons and fire, huge health pool " );
+				Log_AddEntry( TOPIC_BEAST_DRAGONSNAPPER , " Weakness: Poor magic resistance " );
 				AI_Print(concatText);
 				DragonSnapper_B2 = TRUE;
 			}
 			else if((DragonSnapper_B1 >= 20) && (DragonSnapper_B3 == FALSE))
 			{
-				concatText = "Добавлена запись в бестиарий - '";
-				concatText = ConcatStrings(concatText,"Драконий снеппер'");
-				Log_AddEntry(TOPIC_BEAST_DRAGONSNAPPER,"Тактика боя: благодаря невероятным силе и скорости они - одни из самых опасных врагов! Поэтому неопытному воину лучше бежать прежде, чем драконий снеппер увидит его, иначе будет уже поздно спасаться.");
+				concatText = " Added entry to the bestiary - ' " ;
+				concatText = ConcatStrings(concatText, " Dragon Snapper' " );
+				Log_AddEntry( TOPIC_BEAST_DRAGONSNAPPER , " Combat tactics: due to their incredible strength and speed, they are one of the most dangerous enemies! Therefore, it is better for an inexperienced warrior to run before the dragon snapper sees him, otherwise it will be too late to escape. " );
 				AI_Print(concatText);
 				hero.protection[PROT_EDGE] += 1;
 				REALPROTEDGE += 1;
@@ -967,33 +968,33 @@ func void B_LogBeast(var C_Npc Beast)
 
 		DragonSnapper_B1 += 1;	
 	}
-	else if(Beast.aivar[AIV_MM_REAL_ID] == ID_FIREGOLEM)
+	else  if (Beast.aivar[ AIV_MM_REAL_ID ] ==  ID_FIREGOLEM )
 	{
 		if(FireGolem_B1 == FALSE)
 		{
-			concatText = "Добавлена запись в бестиарий - '";
-			concatText = ConcatStrings(concatText,"Огненный голем'");
+			concatText = " Added entry to the bestiary - ' " ;
+			concatText = ConcatStrings(concatText, " Fire Golem' " );
 			Log_CreateTopic(TOPIC_BEAST_FIREGOLEM,LOG_MISSION);
 			Log_SetTopicStatus(TOPIC_BEAST_FIREGOLEM,LOG_FAILED);
-			Log_AddEntry(TOPIC_BEAST_FIREGOLEM,"Состоящие из расплавленных скал и чистейшего огня, неуязвимые для обычного оружия, не знающие усталости и не умеющие отступать, — эти создания были бы идеальными солдатами, если бы хоть одному магу удалось заставить их выполнять его приказы. Они наполовину состоят из магии, и только магия поддерживает и скрепляет их жидкое тело, а стихия огня, причудливо переплетенная с дымящимся камнем, позволяет им использовать в сражении фрагменты первородного пламени, превращающие противника в дымящиеся останки. Они далеко не так сильны и выносливы, как их каменные собратья, и не очень хороши в ближнем бою. Но еще никто не прожил достаточно долго, чтобы сойтись с ними в рукопашной и победить — пламя, покрывающее их, чересчур горячо, чтобы можно было надеяться на победу.");
+			Log_AddEntry(TOPIC_BEAST_FIREGOLEM,"Composed of molten rock and purest fire, invulnerable to conventional weapons, never tired, and unable to retreat, these creatures would make perfect soldiers if only one mage could force them to do his bidding. They are half made up of magic, and only magic supports and holds together their liquid body, and the element of fire, whimsically intertwined with smoking stone, allows them to use fragments of the original flame in battle, turning the enemy into smoking remains.They are nowhere near as strong and hardy as their stone counterparts, and not very good at close combat, but no one has lived long enough to meet them in hand-to-hand combat and win - the flames covering them are too hot to hope for victory. ");
 			AI_Print(concatText);
 		}
 		else
 		{
 			if((FireGolem_B1 >= 3) && (FireGolem_B2 == FALSE))
 			{
-				concatText = "Добавлена запись в бестиарий - '";
-				concatText = ConcatStrings(concatText,"Огненный голем'");
-				Log_AddEntry(TOPIC_BEAST_FIREGOLEM,"Основные преимущества: огромный урон, большой запас здоровья, невосприимчивы к урону огнем");
-				Log_AddEntry(TOPIC_BEAST_FIREGOLEM,"Уязвимые места: имеет слабую защиту от магии");
+				concatText = " Added entry to the bestiary - ' " ;
+				concatText = ConcatStrings(concatText, " Fire Golem' " );
+				Log_AddEntry( TOPIC_BEAST_FIREGOLEM , " Primary benefits: high damage, high health, immune to fire damage " );
+				Log_AddEntry( TOPIC_BEAST_FIREGOLEM , " Weakness: Poor Magic Protection " );
 				AI_Print(concatText);
 				FireGolem_B2 = TRUE;
 			}
 			else if((FireGolem_B1 >= 6) && (FireGolem_B3 == FALSE))
 			{
-				concatText = "Добавлена запись в бестиарий - '";
-				concatText = ConcatStrings(concatText,"Огненный голем'");
-				Log_AddEntry(TOPIC_BEAST_FIREGOLEM,"Тактика боя: быстрые контратаки — основной и почти что единственный способ справиться с големами. Кроме того, когда вам придется столкнуться с огненным големом, не забудьте запастись мощными заклинаниями магии Воды.");
+				concatText = " Added entry to the bestiary - ' " ;
+				concatText = ConcatStrings(concatText, " Fire Golem' " );
+				Log_AddEntry( TOPIC_BEAST_FIREGOLEM , " Combat Tactics: Quick counter-attacks are the main and almost the only way to deal with golems. Also, when you have to face a fire golem, don't forget to stock up on powerful Water magic spells. " );
 				AI_Print(concatText);
 				hero.protection[PROT_FIRE] += 1;
 				REALPROTFIRE += 1;
@@ -1002,35 +1003,35 @@ func void B_LogBeast(var C_Npc Beast)
 			};
 		};
 
-		FireGolem_B1 += 1;	
+		FireGolem_B1 +=  1 ;	
 	}
-	else if(Beast.aivar[AIV_MM_REAL_ID] == ID_FIREWARAN)
+	else  if (Beast.aivar[ AIV_MM_REAL_ID ] ==  ID_FIREWARAN )
 	{
 		if(FireWaran_B1 == FALSE)
 		{
-			concatText = "Добавлена запись в бестиарий - '";
-			concatText = ConcatStrings(concatText,"Огненная ящерица'");
+			concatText = " Added entry to the bestiary - ' " ;
+			concatText = ConcatStrings(concatText, " Fire Lizard' " );
 			Log_CreateTopic(TOPIC_BEAST_FIREWARAN,LOG_MISSION);
 			Log_SetTopicStatus(TOPIC_BEAST_FIREWARAN,LOG_FAILED);
-			Log_AddEntry(TOPIC_BEAST_FIREWARAN,"Эти рептилии любят тепло и покой, и наиболее вероятно встретить их на песчаном берегу моря, хотя другие хорошо прогревающиеся днем места не менее приятны для этих удивительных животных. В отличие от своих простых сородичей, огненные ящерицы — весьма серьезные противники. И дело не только в прочной коже и почти абсолютном иммунитете к магии Огня. Дело в том, что огненные ящерицы умеют делать то, что не умеет делать больше ни одно существо на всем Хоринисе — они дышат огнем, за считанные секунды превращая противника в дымящиеся угольки.");
+			Log_AddEntry(TOPIC_BEAST_FIREWARAN,"These reptiles love warmth and serenity and are most likely to be found on sandy seashores, though other warm daytime spots are no less pleasant for these amazing animals. Unlike their simpler cousins, fire lizards are quite formidable opponents. And it's not just about strong skin and almost absolute immunity to Fire magic, but the fact that fire lizards can do what no other creature in all of Khorinis can do - they breathe fire, turning the enemy into smoking embers in a matter of seconds .");
 			AI_Print(concatText);
 		}
 		else
 		{
 			if((FireWaran_B1 >= 5) && (FireWaran_B2 == FALSE))
 			{
-				concatText = "Добавлена запись в бестиарий - '";
-				concatText = ConcatStrings(concatText,"Огненная ящерица'");
-				Log_AddEntry(TOPIC_BEAST_FIREWARAN,"Основные преимущества: почти невосприимчивы к урону огнем, наносят урон огнем");
-				Log_AddEntry(TOPIC_BEAST_FIREWARAN,"Уязвимые места: имеет слабую защиту от оружия дальнего боя и магии");
+				concatText = " Added entry to the bestiary - ' " ;
+				concatText = ConcatStrings(concatText, " Fire Lizard' " );
+				Log_AddEntry( TOPIC_BEAST_FIREWARAN , " Primary Benefits: Almost immune to fire damage, deal fire damage " );
+				Log_AddEntry( TOPIC_BEAST_FIREWARAN , " Weak Spots : Has weak defense against ranged weapons and magic " );
 				AI_Print(concatText);
 				FireWaran_B2 = TRUE;
 			}
 			else if((FireWaran_B1 >= 10) && (FireWaran_B3 == FALSE))
 			{
-				concatText = "Добавлена запись в бестиарий - '";
-				concatText = ConcatStrings(concatText,"Огненная ящерица'");
-				Log_AddEntry(TOPIC_BEAST_FIREWARAN,"Тактика боя: не подходите к ним близко, по крайней мере, ближе, чем нужно для того, чтобы дыхнуть на вас пламенем — вы попросту сгорите! Отстреливайте их издалека из лука, или воспользуйтесь отсутствием защиты против магии Воды и уничтожьте их соответствующими заклинаниями.");
+				concatText = " Added entry to the bestiary - ' " ;
+				concatText = ConcatStrings(concatText, " Fire Lizard' " );
+				Log_AddEntry( TOPIC_BEAST_FIREWARAN , " Combat Tactics: Don't get close to them, at least not close enough to breathe fire on you - you'll just burn! Shoot them from afar with your bow, or take advantage of the lack of protection against Water magic and destroy their respective spells. " );
 				AI_Print(concatText);
 				hero.protection[PROT_FIRE] += 1;
 				REALPROTFIRE += 1;
@@ -1045,29 +1046,29 @@ func void B_LogBeast(var C_Npc Beast)
 	{
 		if(Giant_Bug_B1 == FALSE)
 		{
-			concatText = "Добавлена запись в бестиарий - '";
+			concatText = " Added entry to the bestiary - ' " ;
 			concatText = ConcatStrings(concatText,"Полевой жук'");
 			Log_CreateTopic(TOPIC_BEAST_GIANT_BUG,LOG_MISSION);
 			Log_SetTopicStatus(TOPIC_BEAST_GIANT_BUG,LOG_FAILED);
-			Log_AddEntry(TOPIC_BEAST_GIANT_BUG,"Эти шестиногие насекомые получили свое название от пшеничных полей, которые являются их природным местом обитания. Фермеры находятся в постоянной борьбе с полевыми хищниками, которые уничтожают их урожай. Полевые хищники обычно светло-коричневого цвета, но их панцирь немного более темный. У них овальное тело, высокий и толстый панцирь, а щупальца длинные и тонкие. Количество этих существ зависит, как правило, от размеров поля, на котором они живут. Чем больше территория - тем больше полевых хищников. Питаются в основном злаковыми культурами, но некоторые травы не исключены. Полевые хищники атакуют своими передними лапами. Они пытаются запутать жертву, перемещаясь из стороны в сторону.");
+			Log_AddEntry(TOPIC_BEAST_GIANT_BUG,"These six-legged insects get their name from the wheat fields that are their natural habitat. Farmers are in a constant struggle with field predators that destroy their crops. Field predators are usually light brown in color, but their carapace is slightly darker "They have an oval body, a high and thick shell, and the tentacles are long and thin. The number of these creatures depends, as a rule, on the size of the field in which they live. The larger the territory, the more field predators. They feed mainly on cereals, but some herbs are not excluded. Field predators attack with their front paws. They try to confuse the prey by moving from side to side.");
 			AI_Print(concatText);
 		}
 		else
 		{
 			if((Giant_Bug_B1 >= 10) && (Giant_Bug_B2 == FALSE))
 			{
-				concatText = "Добавлена запись в бестиарий - '";
+				concatText = " Added entry to the bestiary - ' " ;
 				concatText = ConcatStrings(concatText,"Полевой жук'");
-				Log_AddEntry(TOPIC_BEAST_GIANT_BUG,"Основные преимущества: - нет -");
-				Log_AddEntry(TOPIC_BEAST_GIANT_BUG,"Уязвимые места: имеет очень слабую защиту против оружия дальнего боя, магии и огня");
+				Log_AddEntry( TOPIC_BEAST_GIANT_BUG , " Main benefits: - none - " );
+				Log_AddEntry( TOPIC_BEAST_GIANT_BUG , " Weak Points : Has very weak defense against ranged, magic and fire weapons " );
 				AI_Print(concatText);
 				Giant_Bug_B2 = TRUE;
 			}
 			else if((Giant_Bug_B1 >= 20) && (Giant_Bug_B3 == FALSE))
 			{
-				concatText = "Добавлена запись в бестиарий - '";
+				concatText = " Added entry to the bestiary - ' " ;
 				concatText = ConcatStrings(concatText,"Полевой жук'");
-				Log_AddEntry(TOPIC_BEAST_GIANT_BUG,"Тактика боя: полевые хищники не должны быть проблемой для хотя бы немного обученного бойца, который легко может убить его оружием ближнего боя.");
+				Log_AddEntry( TOPIC_BEAST_GIANT_BUG , " Combat Tactics: Field Predators shouldn't be a problem for even a slightly trained fighter who can easily kill them with melee weapons. " );
 				AI_Print(concatText);
 				B_RaiseAttribute(hero,ATR_HITPOINTS_MAX,10);
 				Npc_ChangeAttribute(hero,ATR_HITPOINTS,10);
@@ -1077,105 +1078,105 @@ func void B_LogBeast(var C_Npc Beast)
 
 		Giant_Bug_B1 += 1;	
 	}
-	else if(Beast.aivar[AIV_MM_REAL_ID] == ID_GOBBO_MAGE)
+	else  if ( Beast . aivar [ AIV_MM_REAL_ID ] ==  MAGE_HEAD_ID ) .
 	{
-		if(Gobbo_Shaman_B1 == FALSE)
+		if ( Gobbo_Shaman_B1 ==  FALSE )
 		{
-			concatText = "Добавлена запись в бестиарий - '";
-			concatText = ConcatStrings(concatText,"Гоблин-шаман'");
+			concatText = " Added entry to the bestiary - ' " ;
+			concatText = ConcatStrings(concatText, " Goblin Shaman' " );
 			Log_CreateTopic(TOPIC_BEAST_GOBBO_MAGE,LOG_MISSION);
 			Log_SetTopicStatus(TOPIC_BEAST_GOBBO_MAGE,LOG_FAILED);
-			Log_AddEntry(TOPIC_BEAST_GOBBO_MAGE,"Гоблины глубоко уважают своих шаманов за их магические способности, хотя вряд ли найдется гоблинский шаман, знающий больше одного заклинания. Однако они умеют извлекать немалую пользу из своих ограниченных знаний, к счастью для соплеменников и к несчастью для искателей приключений.");
+			Log_AddEntry( TOPIC_BEAST_GOBBO_MAGE , " Goblins deeply respect their shamans for their magical abilities, although there is hardly a goblin shaman who knows more than one spell. However, they are able to take advantage of their limited knowledge, fortunately for their tribesmen and unfortunately for adventurers. " );
 			AI_Print(concatText);
 		}
 		else
 		{
-			if((Gobbo_Shaman_B1 >= 3) && (Gobbo_Shaman_B2 == FALSE))
+			if ((Gobbo_Shaman_B1 >=  3 ) && (Gobbo_Shaman_B2 ==  FALSE ))
 			{
-				concatText = "Добавлена запись в бестиарий - '";
-				concatText = ConcatStrings(concatText,"Гоблин-шаман'");
-				Log_AddEntry(TOPIC_BEAST_GOBBO_MAGE,"Основные преимущества: использует магические руны");
-				Log_AddEntry(TOPIC_BEAST_GOBBO_MAGE,"Уязвимые места: имеет очень слабую защиту против оружия дальнего боя, магии и огня");
+				concatText = " Added entry to the bestiary - ' " ;
+				concatText = ConcatStrings(concatText, " Goblin Shaman' " );
+				Log_AddEntry( TOPIC_BEAST_GOBBO_MAGE , " Main benefits: uses magic runes " );
+				Log_AddEntry( TOPIC_BEAST_GOBBO_MAGE , " Weak Points : Has very weak defense against ranged weapons, magic, and fire " );
 				AI_Print(concatText);
 				Gobbo_Shaman_B2 = TRUE;
 			}
-			else if((Gobbo_Shaman_B1 >= 5) && (Gobbo_Shaman_B3 == FALSE))
+			else  if ((Gobbo_Shaman_B1 >=  5 ) && (Gobbo_Shaman_B3 ==  FALSE ))
 			{
-				concatText = "Добавлена запись в бестиарий - '";
-				concatText = ConcatStrings(concatText,"Гоблин-шаман'");
-				Log_AddEntry(TOPIC_BEAST_GOBBO_MAGE,"Тактика боя: лучше всего отстреливать их из лука или арбалета. Кроме того, в ближнем бою они практически не представляют никакой опасности.");
+				concatText = " Added entry to the bestiary - ' " ;
+				concatText = ConcatStrings(concatText, " Goblin Shaman' " );
+				Log_AddEntry( TOPIC_BEAST_GOBBO_MAGE , " Combat tactics: It is best to shoot them with a bow or crossbow. In addition, they are practically no danger in close combat. " );
 				AI_Print(concatText);
 				hero.protection[PROT_MAGIC] += 1;
 				REALPROTMAGIC += 1;
 				AI_Print(PRINT_LEARNPROTMAGICZ);
-				Gobbo_Shaman_B3 = TRUE;
+				Gobbo_Shaman_B3 = TRUE ;
 			};
 		};
 
-		Gobbo_Shaman_B1 += 1;	
+		Gobbo_Shaman_B1 +=  1 ;	
 	}
-	else if(Beast.aivar[AIV_MM_REAL_ID] == ID_HARPY)
+	else  if (Beast.aivar[ AIV_MM_REAL_ID ] ==  ID_HARPY )
 	{
-		if(Harpie_B1 == FALSE)
+		if (Harpie_B1 ==  FALSE )
 		{
-			concatText = "Добавлена запись в бестиарий - '";
+			concatText = " Added entry to the bestiary - ' " ;
 			concatText = ConcatStrings(concatText,"Гарпия'");
 			Log_CreateTopic(TOPIC_BEAST_HARPY,LOG_MISSION);
 			Log_SetTopicStatus(TOPIC_BEAST_HARPY,LOG_FAILED);
-			Log_AddEntry(TOPIC_BEAST_HARPY,"Отвратительные летающие создания, гнездящиеся в старых каменных руинах и на вершинах самых высоких скал. В Мордраге распространены страшные сказки о гарпиях, которые уносят младенцев из колыбелей, чтобы затем съесть или убить во время своих страшных обрядов. Разумеется, это не более чем легенды, но зерно правды в этом все же есть: гарпий привлекает все блестящее, и в их гнездах часто скапливается множество совершенно бесполезных вещей, сверкающих и переливающихся на солнце. Они не очень сильны или живучи, но превосходно летают, и никогда не делают это в одиночестве. И если стая таких кошмарных созданий налетит на вас, отбиться будет совсем не легко.");
+			Log_AddEntry(TOPIC_BEAST_HARPY,"Abominable flying creatures that nest in old stone ruins and on top of the highest cliffs. Horrible tales abound in Mordrag of harpies carrying babies from their cradles to be eaten or killed in their terrible rites. Of course, this is not more than legend, but there is still a grain of truth in this: harpies are attracted to everything shiny, and their nests often accumulate a lot of completely useless things that sparkle and shimmer in the sun.They are not very strong or tenacious, but they fly excellently, and never do it's all alone. And if a pack of such nightmarish creatures swoop down on you, it will not be easy to fight back.");
 			AI_Print(concatText);
 		}
 		else
 		{
-			if((Harpie_B1 >= 5) && (Harpie_B2 == FALSE))
+			if ((Harpy_B1 >=  5 ) && (Harpy_B2 ==  FALSE ))
 			{
-				concatText = "Добавлена запись в бестиарий - '";
+				concatText = " Added entry to the bestiary - ' " ;
 				concatText = ConcatStrings(concatText,"Гарпия'");
-				Log_AddEntry(TOPIC_BEAST_HARPY,"Основные преимущества: могут летать, имеет дистанционную атаку магией");
-				Log_AddEntry(TOPIC_BEAST_HARPY,"Уязвимые места: имеет очень слабую защиту против магии и огня");
+				Log_AddEntry( TOPIC_BEAST_HARPY , " Main advantages: can fly, has ranged magic attack " );
+				Log_AddEntry( TOPIC_BEAST_HARPY , " Weak Points : Has very weak defense against magic and fire " );
 				AI_Print(concatText);
 				Harpie_B2 = TRUE;
 			}
-			else if((Harpie_B1 >= 10) && (Harpie_B3 == FALSE))
+			else  if ((Harpy_B1 >=  10 ) && (Harpy_B3 ==  FALSE ))
 			{
-				concatText = "Добавлена запись в бестиарий - '";
+				concatText = " Added entry to the bestiary - ' " ;
 				concatText = ConcatStrings(concatText,"Гарпия'");
-				Log_AddEntry(TOPIC_BEAST_HARPY,"Тактика боя: Гарпию нетрудно заколоть мечом, но редкая гарпия позволит ткнуть себя этим варварским оружием, поэтому наилучшие результаты дает отстрел гарпий из лука или арбалета. Магия, но в большей степени огонь, - очень эффективное оружие против гарпий.");
+				Log_AddEntry( TOPIC_BEAST_HARPY , " Combat Tactics: A harpy is not difficult to stab with a sword, but a rare harpy will allow himself to be poked with this barbaric weapon, so shooting harpies with a bow or crossbow gives the best results. Magic, but mostly fire, is a very effective weapon against harpies. " );
 				AI_Print(concatText);
 				B_RaiseAttribute(hero,ATR_DEXTERITY,1);
 				Harpie_B3 = TRUE;
 			};
 		};
 
-		Harpie_B1 += 1;	
+		Harpy_B1 +=  1 ;	
 	}
-	else if(Beast.aivar[AIV_MM_REAL_ID] == ID_ICEGOLEM)
+	else  if (Beast.aivar[ AIV_MM_REAL_ID ] ==  ID_ICEGOLEM )
 	{
 		if(IceGolem_B1 == FALSE)
 		{
-			concatText = "Добавлена запись в бестиарий - '";
-			concatText = ConcatStrings(concatText,"Ледяной голем'");
+			concatText = " Added entry to the bestiary - ' " ;
+			concatText = ConcatStrings(concatText, " Ice Golem' " );
 			Log_CreateTopic(TOPIC_BEAST_ICEGOLEM,LOG_MISSION);
 			Log_SetTopicStatus(TOPIC_BEAST_ICEGOLEM,LOG_FAILED);
-			Log_AddEntry(TOPIC_BEAST_ICEGOLEM,"Эти создания появляются, когда магия воздуха соединяется с чистейшей водой горных озер и замораживает ее, превращая в уже не жидкую, но еще и не твердую субстанцию, похожую на желе. Как и их огненные собратья, они не очень живучи, но в отличие от них не потеряли присущей всем големам силы, и ближний бой с ними обещает быть тяжелым. К тому же, как и огненные големы, они почти неуязвимы для всего немагического оружия — оно просто вязнет в их структуре, не причиняя ни малейшего вреда. Только магия, сильная огненная магия способна растопить скованную магическими силами воду и уничтожить их. Но будьте осторожны: сплетение магии воздуха и воды дает причудливый результат: они способны метать в противника кусочки льда, причиняя тому серьезный урон.");
+			Log_AddEntry(TOPIC_BEAST_ICEGOLEM,"These creatures appear when airbending combines with the purest water of mountain lakes and freezes it, turning it into a jelly-like substance that is no longer liquid, but not yet solid. Like their fiery counterparts, they are not very tenacious, but unlike them, they have not lost the inherent strength of all golems, and close combat with them promises to be difficult.In addition, like fire golems, they are almost invulnerable to all non-magical weapons - they simply get stuck in their structure without causing the slightest harm "Only magic, strong fire magic, can melt magically bound water and destroy them. But beware: the intertwining of air and water magic produces a bizarre result: they are able to throw pieces of ice at the enemy, causing serious damage.");
 			AI_Print(concatText);
 		}
 		else
 		{
-			if((IceGolem_B1 >= 5) && (IceGolem_B2 == FALSE))
+			if ((IceGolem_B1 >=  5 ) && (IceGolem_B2 ==  FALSE ))
 			{
-				concatText = "Добавлена запись в бестиарий - '";
-				concatText = ConcatStrings(concatText,"Ледяной голем'");
-				Log_AddEntry(TOPIC_BEAST_ICEGOLEM,"Основные преимущества: огромный урон, большой запас здоровья, почти невосприимчивы к урону магией");
-				Log_AddEntry(TOPIC_BEAST_ICEGOLEM,"Уязвимые места: имеет очень слабую защиту против огня");
+				concatText = " Added entry to the bestiary - ' " ;
+				concatText = ConcatStrings(concatText, " Ice Golem' " );
+				Log_AddEntry( TOPIC_BEAST_ICEGOLEM , " Main benefits: huge damage, high health, almost immune to magic damage " );
+				Log_AddEntry( TOPIC_BEAST_ICEGOLEM , " Vulnerable Points: Has very weak resistance against fire " );
 				AI_Print(concatText);
 				IceGolem_B2 = TRUE;
 			}
 			else if((IceGolem_B1 >= 10) && (IceGolem_B3 == FALSE))
 			{
-				concatText = "Добавлена запись в бестиарий - '";
-				concatText = ConcatStrings(concatText,"Ледяной голем'");
-				Log_AddEntry(TOPIC_BEAST_ICEGOLEM,"Тактика боя: по большому счету только сильная огненная магия способна растопить скованную магическими силами воду и уничтожить их.");
+				concatText = " Added entry to the bestiary - ' " ;
+				concatText = ConcatStrings(concatText, " Ice Golem' " );
+				Log_AddEntry( TOPIC_BEAST_ICEGOLEM , " Combat tactics: by and large, only strong fire magic can melt the water bound by magical powers and destroy them. " );
 				AI_Print(concatText);
 				hero.protection[PROT_MAGIC] += 1;
 				REALPROTMAGIC += 1;
@@ -1184,35 +1185,35 @@ func void B_LogBeast(var C_Npc Beast)
 			};
 		};
 
-		IceGolem_B1 += 1;	
+		IceGolem_B1 +=  1 ;	
 	}
-	else if(Beast.aivar[AIV_MM_REAL_ID] == ID_LURKER)
+	else  if (Beast.aivar[ AIV_MM_REAL_ID ] ==  ID_LURKER )
 	{
 		if(Lurker_B1 == FALSE)
 		{
-			concatText = "Добавлена запись в бестиарий - '";
+			concatText = " Added entry to the bestiary - ' " ;
 			concatText = ConcatStrings(concatText,"Шныг'");
 			Log_CreateTopic(TOPIC_BEAST_LURKER,LOG_MISSION);
 			Log_SetTopicStatus(TOPIC_BEAST_LURKER,LOG_FAILED);
-			Log_AddEntry(TOPIC_BEAST_LURKER,"Эти амфибии ведут полуводный образ жизни, и вы никогда не встретите их вдали от водоемов. Вода дает им все, что нужно для жизни, и они готовы целый день бродить по берегу озера, лакомясь сочными корнями водяных растений и изредка ныряя за особенно аппетитно выглядящей рыбкой. Они прекрасно плавают и ныряют, и способны оставаться под водой неограниченно долгое время. Но, несмотря на свою любовь к воде, коротать ночь они предпочитают в сухой и теплой пещере, там же они время от времени откладывают яйца и воспитывают потомство.");
+			Log_AddEntry( TOPIC_BEAST_LURKER , " These amphibians are semi-aquatic and you will never see them away from water bodies. Water provides them with everything they need to live, and they are ready to wander around the lakeshore all day long, feasting on the succulent roots of aquatic plants and occasionally diving for a particularly appetizing looking fish. They are excellent swimmers and divers, and are able to stay under water indefinitely. But, despite their love of water, they prefer to spend the night in a dry and warm cave, where they lay eggs from time to time and raise offspring. " );
 			AI_Print(concatText);
 		}
 		else
 		{
-			if((Lurker_B1 >= 10) && (Lurker_B2 == FALSE))
+			if ((Lurker_B1 >=  10 ) && (Lurker_B2 ==  FALSE ))
 			{
-				concatText = "Добавлена запись в бестиарий - '";
+				concatText = " Added entry to the bestiary - ' " ;
 				concatText = ConcatStrings(concatText,"Шныг'");
-				Log_AddEntry(TOPIC_BEAST_LURKER,"Основные преимущества: неплохая защита от оружия ближнего боя");
-				Log_AddEntry(TOPIC_BEAST_LURKER,"Уязвимые места: имеет очень слабую защиту против оружия дальнего боя, магии и огня");
+				Log_AddEntry( TOPIC_BEAST_LURKER , " Main benefits: good defense against melee weapons " );
+				Log_AddEntry( TOPIC_BEAST_LURKER , " Weak Points : Has very weak defense against ranged, magic and fire weapons " );
 				AI_Print(concatText);
 				Lurker_B2 = TRUE;
 			}
 			else if((Lurker_B1 >= 20) && (Lurker_B3 == FALSE))
 			{
-				concatText = "Добавлена запись в бестиарий - '";
+				concatText = " Added entry to the bestiary - ' " ;
 				concatText = ConcatStrings(concatText,"Шныг'");
-				Log_AddEntry(TOPIC_BEAST_LURKER,"Тактика боя: шныги не особенно сильные противники, тем более что никогда не объединяются в стаи, и единственное препятствие, встающее на пути молодого героя — их весьма серьезные показатели защиты от оружия ближнего боя. Впрочем, из лука они убиваются так же легко.");
+				Log_AddEntry( TOPIC_BEAST_LURKER , " Combat Tactics: Shnygs are not particularly strong opponents, especially since they never unite in packs, and the only obstacle that gets in the way of a young hero is their very high defense against melee weapons. However, they are killed like this with a bow same easy. " );
 				AI_Print(concatText);
 				B_RaiseAttribute(hero,ATR_HITPOINTS_MAX,10);
 				Npc_ChangeAttribute(hero,ATR_HITPOINTS,10);
@@ -1222,33 +1223,33 @@ func void B_LogBeast(var C_Npc Beast)
 
 		Lurker_B1 += 1;	
 	}
-	else if(Beast.aivar[AIV_MM_REAL_ID] == ID_MINECRAWLER)
+	else  if (Beast.aivar[ AIV_MM_REAL_ID ] ==  ID_MINECRAWLER )
 	{
 		if(Minecrawler_B1 == FALSE)
 		{
-			concatText = "Добавлена запись в бестиарий - '";
+			concatText = " Added entry to the bestiary - ' " ;
 			concatText = ConcatStrings(concatText,"Ползун'");
 			Log_CreateTopic(TOPIC_BEAST_MINECRAWLER,LOG_MISSION);
 			Log_SetTopicStatus(TOPIC_BEAST_MINECRAWLER,LOG_FAILED);
-			Log_AddEntry(TOPIC_BEAST_MINECRAWLER,"Порождения мрака, магии и черной воли Белиара, ползуны — единственные существа, обитающие так глубоко под землей. Неизвестно, зачем они вгрызаются так глубоко в породу, и что они надеются найти в конце своей работы. Одни считают, что таким образом они надеются со временем докопаться до своего повелителя, Белиара, и выпустить его на свободу из его темного царства, другие — что Белиар приказал своим верным слугам охранять земные недра от людей и нелюдей, чтобы никто не мог его потревожить. Вторая гипотеза не лишена смысла, поскольку наиболее часто и охотно ползуны поселяются в шахтах, выкопанных для добычи драгоценной магической руды, и тем самым причиняют немало неприятностей рудокопам, которые часто идут на корм этим тварям. Впрочем, скорее всего, они просто ищут места, где поглубже, а человек копает самые глубокие шахты в Мордраге. Питаются они, вероятно, грибами и плесенью, растущими на стенах их пещер, поскольку еще никто и никогда не видел ползуна, вышедшего на поверхность земли, где имеется другая еда.");
+			and man digs the deepest mines in Mordrag. They probably feed on fungi and mold growing on the walls of their caves, since no one has ever seen a creeper come to the surface of the earth, where there is other food. ");
 			AI_Print(concatText);
 		}
 		else
 		{
-			if((Minecrawler_B1 >= 15) && (Minecrawler_B2 == FALSE))
+			if (( Minecrawler_B1 >=  15 ) && ( Minecrawler_B2 ==  FALSE )) ;
 			{
-				concatText = "Добавлена запись в бестиарий - '";
+				concatText = " Added entry to the bestiary - ' " ;
 				concatText = ConcatStrings(concatText,"Ползун'");
-				Log_AddEntry(TOPIC_BEAST_MINECRAWLER,"Основные преимущества: хорошая защита от оружия ближнего и дальнего боя");
-				Log_AddEntry(TOPIC_BEAST_MINECRAWLER,"Уязвимые места: имеет очень слабую защиту против магии и огня");
+				Log_AddEntry( TOPIC_BEAST_MINECRAWLER , " Main benefits: good defense against melee and ranged weapons " );
+				Log_AddEntry( TOPIC_BEAST_MINECRAWLER , " Weakness : Very weak against magic and fire " );
 				AI_Print(concatText);
 				Minecrawler_B2 = TRUE;
 			}
 			else if((Minecrawler_B1 >= 30) && (Minecrawler_B3 == FALSE))
 			{
-				concatText = "Добавлена запись в бестиарий - '";
+				concatText = " Added entry to the bestiary - ' " ;
 				concatText = ConcatStrings(concatText,"Ползун'");
-				Log_AddEntry(TOPIC_BEAST_MINECRAWLER,"Тактика боя: ползуны — сильные противники, их жвалы способны перекусить человека пополам, а их броня — самый прочный материал в мире среди живых существ. Но умелому бойцу они не причинят особого вреда. К тому же они совершенно беззащитны перед магией, и этим стоит воспользоваться.");
+				Log_AddEntry( TOPIC_BEAST_MINECRAWLER , " Combat tactics: crawlers are strong opponents, their mandibles can bite a person in half, and their armor is the most durable material in the world among living creatures. But they will not cause much harm to a skilled fighter. In addition, they are completely defenseless against magic , and it's worth taking advantage of. " );
 				AI_Print(concatText);
 				hero.protection[PROT_POINT] += 1;
 				REALPROTPO += 1;
@@ -1259,33 +1260,33 @@ func void B_LogBeast(var C_Npc Beast)
 
 		Minecrawler_B1 += 1;	
 	}
-	else if(Beast.aivar[AIV_MM_REAL_ID] == ID_SPIDER)
+	else  if (Beast.aivar[ AIV_MM_REAL_ID ] ==  ID_SPIDER )
 	{
 		if(Spider_B1 == FALSE)
 		{
-			concatText = "Добавлена запись в бестиарий - '";
+			concatText = " Added entry to the bestiary - ' " ;
 			concatText = ConcatStrings(concatText,"Паук'");
 			Log_CreateTopic(TOPIC_BEAST_SPIDER,LOG_MISSION);
 			Log_SetTopicStatus(TOPIC_BEAST_SPIDER,LOG_FAILED);
-			Log_AddEntry(TOPIC_BEAST_SPIDER,"Лесной хищник высотой примерно с крупную собаку. Он довольно часто встречается в глухих лесах, где плетет свою тонкую, едва заметную – но удивительно прочную паутину. Запутавшаяся жертва обречена – подождав, пока 'ужин' выбьется из сил, паук впрыскивает ей яд, смешанный с желудочным соком – после чего уходит погулять, пока животное или человек не превратится в безжизненную 'флягу' с вкусным и питательным бульоном.");
+			Log_AddEntry( TOPIC_BEAST_SPIDER , " Forest predator about the height of a large dog. It is quite common in deep forests, where it weaves its thin, barely visible - but surprisingly strong web. Confused prey is doomed - after waiting until the 'supper' is exhausted, the spider injects her poison mixed with gastric juice - after which she goes for a walk until the animal or person turns into a lifeless 'flask' with a tasty and nutritious broth. " );
 			AI_Print(concatText);
 		}
 		else
 		{
 			if((Spider_B1 >= 5) && (Spider_B2 == FALSE))
 			{
-				concatText = "Добавлена запись в бестиарий - '";
+				concatText = " Added entry to the bestiary - ' " ;
 				concatText = ConcatStrings(concatText,"Паук'");
-				Log_AddEntry(TOPIC_BEAST_SPIDER,"Основные преимущества: хорошая защита практически от любого вида урона, кроме магии, мгновенная и молниеносная атака");
-				Log_AddEntry(TOPIC_BEAST_SPIDER,"Уязвимые места: имеет очень слабую защиту против магии");
+				Log_AddEntry( TOPIC_BEAST_SPIDER , " Main advantages: good protection against almost any type of damage except magic, instant and lightning attack " );
+				Log_AddEntry( TOPIC_BEAST_SPIDER , " Weakness : Very weak against magic " );
 				AI_Print(concatText);
 				Spider_B2 = TRUE;
 			}
 			else if((Spider_B1 >= 10) && (Spider_B3 == FALSE))
 			{
-				concatText = "Добавлена запись в бестиарий - '";
+				concatText = " Added entry to the bestiary - ' " ;
 				concatText = ConcatStrings(concatText,"Паук'");
-				Log_AddEntry(TOPIC_BEAST_SPIDER,"Тактика боя: в противостоянии с пауком лучше использовать оружие подлиннее, чтобы не дать пауку возможности укусить.");
+				Log_AddEntry( TOPIC_BEAST_SPIDER , " Combat Tactics: When fighting a spider, it's better to use a longer weapon to prevent the spider from biting. " );
 				AI_Print(concatText);
 				hero.protection[PROT_POINT] += 1;
 				REALPROTPO += 1;
@@ -1296,33 +1297,33 @@ func void B_LogBeast(var C_Npc Beast)
 
 		Spider_B1 += 1;	
 	}
-	else if(Beast.aivar[AIV_MM_REAL_ID] == ID_MINECRAWLERWARRIOR)
+	else  if (Beast.aivar[ AIV_MM_REAL_ID ] ==  ID_MINECRAWLERWARRIOR )
 	{
 		if(MinecrawlerWarrior_B1 == FALSE)
 		{
-			concatText = "Добавлена запись в бестиарий - '";
+			concatText = " Added entry to the bestiary - ' " ;
 			concatText = ConcatStrings(concatText,"Ползун-воин'");
 			Log_CreateTopic(TOPIC_BEAST_MINECRAWLERWARRIOR,LOG_MISSION);
 			Log_SetTopicStatus(TOPIC_BEAST_MINECRAWLERWARRIOR,LOG_FAILED);
-			Log_AddEntry(TOPIC_BEAST_MINECRAWLERWARRIOR,"Ползуны-воины — это настоящие бойцы! В них сошлись воедино сила и стойкость, присущие этим подземным тварям, сам Белиар мог бы гордиться своими созданиями. Если простой ползун перекусывает человека пополам, то ползун-воин рвёт на кусочки шестидюймовый стальной прут. Толстые хитиновые пластины надежно предохраняют их внутренности от оружия ближнего и дальнего боя. Единственное их слабое место — уязвимость к магии и огню. Но не стоит очень уж полагаться на свои силы: эти твари дьявольски живучи, и редко бродят в одиночку, а в рукопашном бою с ними сходиться особенно опасно.");
+			Log_AddEntry(TOPIC_BEAST_MINECRAWLERWARRIOR,"Warrior crawlers are real fighters! They combine the strength and durability inherent in these underground creatures, Beliar himself would be proud of his creations. If a simple crawler bites a person in half, then a warrior crawler tears into pieces a six-inch steel thick chitinous plates reliably protect their insides from melee and ranged weapons. Their only weak point is their vulnerability to magic and fire. hand-to-hand combat with them is especially dangerous.");
 			AI_Print(concatText);
 		}
 		else
 		{
 			if((MinecrawlerWarrior_B1 >= 5) && (MinecrawlerWarrior_B2 == FALSE))
 			{
-				concatText = "Добавлена запись в бестиарий - '";
+				concatText = " Added entry to the bestiary - ' " ;
 				concatText = ConcatStrings(concatText,"Ползун-воин'");
-				Log_AddEntry(TOPIC_BEAST_MINECRAWLERWARRIOR,"Основные преимущества: отличная защита от оружия ближнего и дальнего боя");
-				Log_AddEntry(TOPIC_BEAST_MINECRAWLERWARRIOR,"Уязвимые места: имеет очень слабую защиту против магии и огня");
+				Log_AddEntry( TOPIC_BEAST_MINECRAWLERWARRIOR , " Main Benefits: Excellent defense against melee and ranged weapons " );
+				Log_AddEntry( TOPIC_BEAST_MINECRAWLERWARRIOR , " Weakness : Very weak against magic and fire " );
 				AI_Print(concatText);
 				MinecrawlerWarrior_B2 = TRUE;
 			}
 			else if((MinecrawlerWarrior_B1 >= 10) && (MinecrawlerWarrior_B3 == FALSE))
 			{
-				concatText = "Добавлена запись в бестиарий - '";
+				concatText = " Added entry to the bestiary - ' " ;
 				concatText = ConcatStrings(concatText,"Ползун-воин'");
-				Log_AddEntry(TOPIC_BEAST_MINECRAWLERWARRIOR,"Тактика боя: лучше всего воспользоваться мощными заклинаниями, если же вы таковыми не запаслись, и ближнего боя не избежать - выманивайте их по одному, после чего проводите стремительную атаку. Важно не попасть под удар ползуна-воина: это может стоить вам жизни.");
+				Log_AddEntry( TOPIC_BEAST_MINECRAWLERWARRIOR , " Combat Tactics: It's best to use powerful spells, if you don't have any, and you can't avoid melee - lure them out one at a time, then carry out a swift attack. It is important not to get hit by a warrior crawler: it can cost you life. " );
 				AI_Print(concatText);
 				hero.protection[PROT_POINT] += 1;
 				REALPROTPO += 1;
@@ -1333,33 +1334,33 @@ func void B_LogBeast(var C_Npc Beast)
 
 		MinecrawlerWarrior_B1 += 1;	
 	}
-	else if(Beast.aivar[AIV_MM_REAL_ID] == ID_OREBUG)
+	else  if (Beast.aivar[ AIV_MM_REAL_ID ] ==  ID_OREBUG )
 	{
 		if(OreBug_B1 == FALSE)
 		{
-			concatText = "Добавлена запись в бестиарий - '";
-			concatText = ConcatStrings(concatText,"Рудный ползун'");
+			concatText = " Added entry to the bestiary - ' " ;
+			concatText = ConcatStrings(concatText, " Ore Creeper' " );
 			Log_CreateTopic(TOPIC_BEAST_OREBUG,LOG_MISSION);
 			Log_SetTopicStatus(TOPIC_BEAST_OREBUG,LOG_FAILED);
-			Log_AddEntry(TOPIC_BEAST_OREBUG,"Одна из разновидностей ползунов, которые обычно обитают в местах скопления рудных жил. В отличии от своих сородичей они имеет более крепкий панцирь, который надежно защищает их от любого вида урона, в том числе магии и огня, а также огромные клешни, способные превращать в пыль груды камня.");
+			Log_AddEntry( TOPIC_BEAST_OREBUG , " One of the varieties of crawlers that usually live in places where ore veins accumulate. Unlike their relatives, they have a stronger shell that reliably protects them from any type of damage, including magic and fire, as well as huge claws , capable of turning piles of stone into dust. " );
 			AI_Print(concatText);
 		}
 		else
 		{
 			if((OreBug_B1 >= 10) && (OreBug_B2 == FALSE))
 			{
-				concatText = "Добавлена запись в бестиарий - '";
-				concatText = ConcatStrings(concatText,"Рудный ползун'");
-				Log_AddEntry(TOPIC_BEAST_OREBUG,"Основные преимущества: отличная защита от любого вида урона");
-				Log_AddEntry(TOPIC_BEAST_OREBUG,"Уязвимые места: - нет -");
+				concatText = " Added entry to the bestiary - ' " ;
+				concatText = ConcatStrings(concatText, " Ore Creeper' " );
+				Log_AddEntry( TOPIC_BEAST_OREBUG , " Main benefits: excellent protection against any kind of damage " );
+				Log_AddEntry( TOPIC_BEAST_OREBUG , " Vulnerabilities: - none - " );
 				AI_Print(concatText);
 				OreBug_B2 = TRUE;
 			}
 			else if((OreBug_B1 >= 20) && (OreBug_B3 == FALSE))
 			{
-				concatText = "Добавлена запись в бестиарий - '";
-				concatText = ConcatStrings(concatText,"Рудный ползун'");
-				Log_AddEntry(TOPIC_BEAST_OREBUG,"Тактика боя: вам придется повозиться с этими тварями, чтобы отправить их на тот свет. Вас же они туда отправят без особого труда, если вы будете не слишком осторожны.");
+				concatText = " Added entry to the bestiary - ' " ;
+				concatText = ConcatStrings(concatText, " Ore Creeper' " );
+				Log_AddEntry( TOPIC_BEAST_OREBUG , " Combat Tactics: You'll have to tinker with these creatures to send them to the next world. They'll send you there without too much trouble if you're not too careful. " );
 				AI_Print(concatText);
 				B_RaiseAttribute(hero,ATR_HITPOINTS_MAX,10);
 				Npc_ChangeAttribute(hero,ATR_HITPOINTS,10);
@@ -1367,71 +1368,71 @@ func void B_LogBeast(var C_Npc Beast)
 			};
 		};
 
-		OreBug_B1 += 1;	
+		OreBug_B1 +=  1 ;	
 	}
-	else if(Beast.aivar[AIV_MM_REAL_ID] == ID_MOLERAT)
+	else  if (Beast.aivar[ AIV_MM_REAL_ID ] ==  ID_MOLERAT )
 	{
-		if(Molerat_B1 == FALSE)
+		if (Molerat_B1 ==  FALSE )
 		{
-			concatText = "Добавлена запись в бестиарий - '";
+			concatText = " Added entry to the bestiary - ' " ;
 			concatText = ConcatStrings(concatText,"Кротокрыс'");
 			Log_CreateTopic(TOPIC_BEAST_MOLERAT,LOG_MISSION);
 			Log_SetTopicStatus(TOPIC_BEAST_MOLERAT,LOG_FAILED);
-			Log_AddEntry(TOPIC_BEAST_MOLERAT,"Помесь крота и крысы, выросшая до гигантских размеров. Обтянутая голой розовой кожей тварь оснащена двойным набором острейших зубов, свободно размещающихся в огромной, почти круглой пасти. Кротокрысы любят сухие просторные пещерки, в которых растет много съедобных грибов. Но, несмотря на пристрастие к грибам, это отнюдь не травоядное животное, и если вы ненароком забредете на его территорию, оно может вас порядочно покусать. Правда, драться кротокрыс не любит, угрожает до последнего, пока вы не подойдете совсем уж близко, и игнорировать вас будет уже просто нельзя.");
+			Log_AddEntry(TOPIC_BEAST_MOLERAT,"A cross between a mole and a rat that has grown to gigantic proportions. Covered in naked pink skin, the creature is equipped with a double set of sharp teeth that fit freely in a huge, almost round maw. Mole rats love dry, spacious caves in which many edible mushrooms grow. But, despite the addiction to mushrooms, this is by no means a herbivore, and if you inadvertently wander into its territory, it can bite you decently. it's just not possible anymore.");
 			AI_Print(concatText);
 		}
 		else
 		{
-			if((Molerat_B1 >= 10) && (Molerat_B2 == FALSE))
+			if ((Molerat_B1 >=  10 ) && (Molerat_B2 ==  FALSE ))
 			{
-				concatText = "Добавлена запись в бестиарий - '";
+				concatText = " Added entry to the bestiary - ' " ;
 				concatText = ConcatStrings(concatText,"Кротокрыс'");
-				Log_AddEntry(TOPIC_BEAST_MOLERAT,"Основные преимущества: - нет -");
-				Log_AddEntry(TOPIC_BEAST_MOLERAT,"Уязвимые места: имеет очень слабую защиту против оружия ближнего и дальнего боя, а также к магии и огню");
+				Log_AddEntry( TOPIC_BEAST_MOLERAT , " Main benefits: - none - " );
+				Log_AddEntry( TOPIC_BEAST_MOLERAT , " Weak Points : Very weak against melee, ranged, magic, and fire " );
 				AI_Print(concatText);
 				Molerat_B2 = TRUE;
 			}
-			else if((Molerat_B1 >= 20) && (Molerat_B3 == FALSE))
+			else  if ((Molerat_B1 >=  20 ) && (Molerat_B3 ==  FALSE ))
 			{
-				concatText = "Добавлена запись в бестиарий - '";
+				concatText = " Added entry to the bestiary - ' " ;
 				concatText = ConcatStrings(concatText,"Кротокрыс'");
-				Log_AddEntry(TOPIC_BEAST_MOLERAT,"Тактика боя: кротокрысы опасны лишь новичку, более опытный боец с легкостью будет шинковать этих неповоротливых животных на капусту.");
+				Log_AddEntry( TOPIC_BEAST_MOLERAT , " Combat tactics: mole rats are dangerous only for a beginner, a more experienced fighter will easily chop these clumsy animals for cabbage. " );
 				AI_Print(concatText);
 				B_RaiseAttribute(hero,ATR_HITPOINTS_MAX,10);
 				Npc_ChangeAttribute(hero,ATR_HITPOINTS,10);
-				Molerat_B3 = TRUE;
+				Grind_B3 = TRUE ;
 			};
 		};
 
-		Molerat_B1 += 1;	
+		Grinded_B1 +=  1 ;	
 	}
-	else if(Beast.aivar[AIV_MM_REAL_ID] == ID_SKELETON_MAGE)
+	else  if (Beast.aivar[ AIV_MM_REAL_ID ] ==  ID_SKELETON_MAGE )
 	{
 		if(Skeleton_Mage_B1 == FALSE)
 		{
-			concatText = "Добавлена запись в бестиарий - '";
+			concatText = " Added entry to the bestiary - ' " ;
 			concatText = ConcatStrings(concatText,"Скелет-маг'");
 			Log_CreateTopic(TOPIC_BEAST_SKELETON_MAGE,LOG_MISSION);
 			Log_SetTopicStatus(TOPIC_BEAST_SKELETON_MAGE,LOG_FAILED);
-			Log_AddEntry(TOPIC_BEAST_SKELETON_MAGE,"Если опытные воины после смерти становятся бойцами скелетов, то маги — магами скелетов. Как и при жизни, после смерти маги составляют своеобразную аристократию загробного мира — направляют и контролируют своих бойцов, а порой и помогают им или создают новых. До сих пор не выяснено, откуда подобные существа берут энергию для существования.");
+			Log_AddEntry( TOPIC_BEAST_SKELETON_MAGE , " If experienced warriors become skeleton fighters after death, then magicians become skeleton magicians. As in life, after death, magicians form a kind of aristocracy of the underworld - they direct and control their fighters, and sometimes help them or create new ones. Before it has not yet been clarified where such creatures get energy for existence. " );
 			AI_Print(concatText);
 		}
 		else
 		{
-			if((Skeleton_Mage_B1 >= 5) && (Skeleton_Mage_B2 == FALSE))
+			if (( Skeleton_Mage_B1 >=  5 ) && ( Skeleton_Mage_B2 ==  FALSE ))
 			{
-				concatText = "Добавлена запись в бестиарий - '";
+				concatText = " Added entry to the bestiary - ' " ;
 				concatText = ConcatStrings(concatText,"Скелет-маг'");
-				Log_AddEntry(TOPIC_BEAST_SKELETON_MAGE,"Основные преимущества: отличная защита от оружия ближнего и дальнего боя");
-				Log_AddEntry(TOPIC_BEAST_SKELETON_MAGE,"Уязвимые места: имеет очень слабую защиту против огня");
+				Log_AddEntry( TOPIC_BEAST_SKELETON_MAGE , " Main Benefits: Excellent defense against melee and ranged weapons " );
+				Log_AddEntry( TOPIC_BEAST_SKELETON_MAGE , " Weak Points : Has very little resistance against fire " );
 				AI_Print(concatText);
 				Skeleton_Mage_B2 = TRUE;
 			}
-			else if((Skeleton_Mage_B1 >= 10) && (Skeleton_Mage_B3 == FALSE))
+			else  if (( Skeleton_Mage_B1 >=  10 ) && ( Skeleton_Mage_B3 ==  FALSE ))
 			{
-				concatText = "Добавлена запись в бестиарий - '";
+				concatText = " Added entry to the bestiary - ' " ;
 				concatText = ConcatStrings(concatText,"Скелет-маг'");
-				Log_AddEntry(TOPIC_BEAST_SKELETON_MAGE,"Тактика боя: как и все скелеты, он более уязвим к дробящему оружию, чем к рубящему; и, как и на всех скелетов, на него очень эффективно действует огонь.");
+				Log_AddEntry( TOPIC_BEAST_SKELETON_MAGE , " Combat Tactics: Like all skeletons, it is more vulnerable to blunt weapons than slashes; and, like all skeletons, it is very effective against fire. " );
 				AI_Print(concatText);
 				hero.protection[PROT_MAGIC] += 1;
 				REALPROTMAGIC += 1;
@@ -1442,70 +1443,70 @@ func void B_LogBeast(var C_Npc Beast)
 
 		Skeleton_Mage_B1 += 1;	
 	}
-	else if(Beast.aivar[AIV_MM_REAL_ID] == ID_STONEGOLEM)
+	else  if (Beast.aivar[ AIV_MM_REAL_ID ] ==  ID_STONEGOLEM )
 	{
 		if(StoneGolem_B1 == FALSE)
 		{
-			concatText = "Добавлена запись в бестиарий - '";
-			concatText = ConcatStrings(concatText,"Каменный голем'");
+			concatText = " Added entry to the bestiary - ' " ;
+			concatText = ConcatStrings(concatText, " Stone Golem' " );
 			Log_CreateTopic(TOPIC_BEAST_STONEGOLEM,LOG_MISSION);
 			Log_SetTopicStatus(TOPIC_BEAST_STONEGOLEM,LOG_FAILED);
-			Log_AddEntry(TOPIC_BEAST_STONEGOLEM,"Каменные големы — создания, порожденные магией. Они появляются очень редко и лишь в немногих местах Мордрага, когда могущественная магия сплавляется с камнями горных вершин и оживляет их, создавая самые причудливые в мире создания. Порождения скал, эти создания не ведают боли и страха, им незнакомо чувство усталости, а обладая немалой силой и ловкостью, они готовы преследовать свою жертву до последнего. Против них не годятся ни мечи, ни стрелы, ни заклинания, только тяжелые камнедробильные молоты, или что-нибудь им подобное способно разрушить скалы, составляющие основу каменных големов.");
+			Log_AddEntry(TOPIC_BEAST_STONEGOLEM,"Stone golems are creatures born of magic. They appear very rarely and only in a few places in Mordrag when powerful magic fuses with the stones of the mountain peaks and animates them, creating the most bizarre creatures in the world. Born of rocks, these creatures do not know pain and fear, they are unfamiliar with the feeling of fatigue, and possessing considerable strength and dexterity, they are ready to pursue their prey to the last.Neither swords, nor arrows, nor spells are suitable against them, only heavy stone-crushing hammers, or something similar to them can destroy rocks that form the basis of stone golems.");
 			AI_Print(concatText);
 		}
 		else
 		{
-			if((StoneGolem_B1 >= 5) && (StoneGolem_B2 == FALSE))
+			if (( StoneGolem_B1 >=  5 ) && ( StoneGolem_B2 ==  FALSE ))
 			{
-				concatText = "Добавлена запись в бестиарий - '";
-				concatText = ConcatStrings(concatText,"Каменный голем'");
-				Log_AddEntry(TOPIC_BEAST_STONEGOLEM,"Основные преимущества: отличная защита от оружия ближнего и дальнего боя");
-				Log_AddEntry(TOPIC_BEAST_STONEGOLEM,"Уязвимые места: имеет очень слабую защиту против дробящего оружия");
+				concatText = " Added entry to the bestiary - ' " ;
+				concatText = ConcatStrings(concatText, " Stone Golem' " );
+				Log_AddEntry( TOPIC_BEAST_STONEGOLEM , " Main benefits: excellent defense against melee and ranged weapons " );
+				Log_AddEntry( TOPIC_BEAST_STONEGOLEM , " Weakness : Very weak defense against blunt weapons " );
 				AI_Print(concatText);
 				StoneGolem_B2 = TRUE;
 			}
-			else if((StoneGolem_B1 >= 10) && (StoneGolem_B3 == FALSE))
+			else  if ((StoneGolem_B1 >=  10 ) && (StoneGolem_B3 ==  FALSE ))
 			{
-				concatText = "Добавлена запись в бестиарий - '";
-				concatText = ConcatStrings(concatText,"Каменный голем'");
-				Log_AddEntry(TOPIC_BEAST_STONEGOLEM,"Тактика боя: только тяжелые камнедробильные молоты или что-нибудь им подобное способно разрушить скалы, составляющие основу каменных големов.");
+				concatText = " Added entry to the bestiary - ' " ;
+				concatText = ConcatStrings(concatText, " Stone Golem' " );
+				Log_AddEntry( TOPIC_BEAST_STONEGOLEM , " Combat Tactics: Only heavy stone crushing hammers or something similar can break the rocks that form the basis of stone golems. " );
 				AI_Print(concatText);
 				hero.protection[PROT_BLUNT] += 1;
 				REALPROTBL += 1;
 				AI_Print(PRINT_LEARNPROTBLUNT);
-				StoneGolem_B3 = TRUE;
+				StoneGolem_B3 = TRUE ;
 			};
 		};
 
-		StoneGolem_B1 += 1;	
+		StoneGolem_B1 +=  1 ;	
 	}
-	else if((Beast.aivar[AIV_MM_REAL_ID] == ID_SWAMPSHARK) || (Beast.aivar[AIV_MM_REAL_ID] == ID_DESERTSHARK))
+	else  if ((Beast.aivar[ AIV_MM_REAL_ID ] ==  ID_SWAMPSHARK ) || (Beast.aivar[ AIV_MM_REAL_ID ] ==  ID_DESERTSHARK ))
 	{
 		if(Swampshark_B1 == FALSE)
 		{
-			concatText = "Добавлена запись в бестиарий - '";
+			concatText = " Added entry to the bestiary - ' " ;
 			concatText = ConcatStrings(concatText,"Болотожор'");
 			Log_CreateTopic(TOPIC_BEAST_SWAMPSHARK,LOG_MISSION);
 			Log_SetTopicStatus(TOPIC_BEAST_SWAMPSHARK,LOG_FAILED);
-			Log_AddEntry(TOPIC_BEAST_SWAMPSHARK,"Сложно отнести этих огромных животных к какому-либо классу живых существ, особенно не имея четкого представления об их внутреннем строении. Скорее всего, это все-таки амфибии, хотя с таким же успехам они могут относиться к змеям или кольчатым червям. Живут болотожоры, как нетрудно догадаться, исключительно на болотах, на хорошо прогреваемом солнцем мелководье. Питаются они тем, что в этом болоте водится, вероятно — процеживают воду и ил в поисках питательных веществ или мелких растений и животных. Но и разнообразить свое меню случайно забредшим на болота человеком они, разумеется, не откажутся.");
+			Log_AddEntry(TOPIC_BEAST_SWAMPSHARK,"It is difficult to attribute these huge animals to any class of living creatures, especially without a clear idea of ​​\u200b\u200btheir internal structure. Most likely, these are still amphibians, although they could just as well be snakes or annelids "The swamps live, as you might guess, exclusively in swamps, in shallow water well warmed by the sun. They feed on what is found in this swamp, probably - they filter water and silt in search of nutrients or small plants and animals. But it is also accidental to diversify your menu Of course, they will not refuse a man wandering into the swamps. ");
 			AI_Print(concatText);
 		}
 		else
 		{
 			if((Swampshark_B1 >= 5) && (Swampshark_B2 == FALSE))
 			{
-				concatText = "Добавлена запись в бестиарий - '";
+				concatText = " Added entry to the bestiary - ' " ;
 				concatText = ConcatStrings(concatText,"Болотожор'");
-				Log_AddEntry(TOPIC_BEAST_SWAMPSHARK,"Основные преимущества: отличная защита от оружия ближнего и дальнего боя");
-				Log_AddEntry(TOPIC_BEAST_SWAMPSHARK,"Уязвимые места: имеет очень слабую защиту против магии и огня");
+				Log_AddEntry( TOPIC_BEAST_SWAMPSHARK , " Key Benefits: Excellent defense against melee and ranged weapons " );
+				Log_AddEntry( TOPIC_BEAST_SWAMPSHARK , " Weakness : Very weak against magic and fire " );
 				AI_Print(concatText);
 				Swampshark_B2 = TRUE;
 			}
 			else if((Swampshark_B1 >= 10) && (Swampshark_B3 == FALSE))
 			{
-				concatText = "Добавлена запись в бестиарий - '";
+				concatText = " Added entry to the bestiary - ' " ;
 				concatText = ConcatStrings(concatText,"Болотожор'");
-				Log_AddEntry(TOPIC_BEAST_SWAMPSHARK,"Тактика боя: они серьёзные противники, не очень быстрые, но неумолимые, как сама смерть, преследующие свою жертву до последнего. И если вы видите приближающегося к вам болотожора, лучше не рискуйте — уйдите с его дороги как можно дальше. Хитиновые пластины, внахлест покрывающие все их круглое длинное тело, очень прочны, и только человеку редкой силы, вооруженному прочным острым мечом, удается пробить их. От стрел они защищены так же хорошо, как и от оружия, и нет смысла стрелять в них из лука или арбалета. Магией их тоже поразить нелегко, хотя и возможно; у них просто нет слабых мест.");
+				Log_AddEntry(TOPIC_BEAST_SWAMPSHARK,"Battle tactics: they are serious opponents, not very fast, but implacable, like death itself, chasing their prey to the last. And if you see a swamp-eater approaching you, it's better not to risk it - get out of its way as far as possible. The chitin plates overlapping their entire round long body are very strong, and only a man of rare strength, armed with a strong sharp sword, manages to break through them.They are protected from arrows as well as from weapons, and it makes no sense to shoot them with a bow or a crossbow. They are also not easy to hit with magic, although it is possible; they simply have no weak points.");
 				AI_Print(concatText);
 				B_RaiseAttribute(hero,ATR_HITPOINTS_MAX,10);
 				Npc_ChangeAttribute(hero,ATR_HITPOINTS,10);
@@ -1515,33 +1516,33 @@ func void B_LogBeast(var C_Npc Beast)
 
 		Swampshark_B1 += 1;	
 	}
-	else if(Beast.aivar[AIV_MM_REAL_ID] == ID_TROLL)
+	else  if (Beast.aivar[ AIV_MM_REAL_ID ] ==  ID_TROLL )
 	{
 		if(Troll_B1 == FALSE)
 		{
-			concatText = "Добавлена запись в бестиарий - '";
+			concatText = " Added entry to the bestiary - ' " ;
 			concatText = ConcatStrings(concatText,"Тролль'");
 			Log_CreateTopic(TOPIC_BEAST_TROLL,LOG_MISSION);
 			Log_SetTopicStatus(TOPIC_BEAST_TROLL,LOG_FAILED);
-			Log_AddEntry(TOPIC_BEAST_TROLL,"Тролли — самые большие и неповоротливые звери Мордрага, очень большие уже в молодом возрасте, а к старости достигающие просто гигантских размеров. Тролль — очень серьезный противник, опасный не своими размерами или силой, но своей защитой и устойчивостью буквально ко всему. Его нельзя убить из лука или арбалета — стрелы и болты просто застревают в его толстой шкуре и слое жира под ней. У него практически абсолютная защита против магии, лишь самые мощные заклинания срабатывают против него.");
+			Log_AddEntry( TOPIC_BEAST_TROLL , " Trolls are the largest and most clumsy beasts of Mordrag, very large already at a young age, and by old age reaching simply gigantic sizes. A troll is a very serious enemy, dangerous not for its size or strength, but for its protection and resistance to literally everything "He can't be killed with a bow or crossbow - arrows and bolts just get stuck in his thick hide and the layer of fat underneath. He has almost absolute protection against magic, only the most powerful spells work against him. " );
 			AI_Print(concatText);
 		}
 		else
 		{
 			if((Troll_B1 >= 5) && (Troll_B2 == FALSE))
 			{
-				concatText = "Добавлена запись в бестиарий - '";
+				concatText = " Added entry to the bestiary - ' " ;
 				concatText = ConcatStrings(concatText,"Тролль'");
-				Log_AddEntry(TOPIC_BEAST_TROLL,"Основные преимущества: имеет невероятную силу удара, отличная защита от любого вида оружия ближнего или дальнего боя");
-				Log_AddEntry(TOPIC_BEAST_TROLL,"Уязвимые места: слишком медленная скорость атаки");
+				Log_AddEntry( TOPIC_BEAST_TROLL , " Main advantages: has incredible hitting power, excellent protection against any type of melee or ranged weapon " );
+				Log_AddEntry( TOPIC_BEAST_TROLL , " Vulnerabilities: too slow attack speed " );
 				AI_Print(concatText);
 				Troll_B2 = TRUE;
 			}
 			else if((Troll_B1 >= 10) && (Troll_B3 == FALSE))
 			{
-				concatText = "Добавлена запись в бестиарий - '";
+				concatText = " Added entry to the bestiary - ' " ;
 				concatText = ConcatStrings(concatText,"Тролль'");
-				Log_AddEntry(TOPIC_BEAST_TROLL,"Тактика боя: тролли очень неповоротливы, и, пока он замахивается, чтобы сделать удар, вы десять раз успеете отскочить и три раза ударить. Лучше всего забежать ему за спину и бить, пока он поворачивается, а когда повернется — повторить маневр. Главное не пропустить его удар, иначе он может стать для вас смертельным.");
+				Log_AddEntry( TOPIC_BEAST_TROLL , " Combat Tactics: Trolls are very clumsy, and while he swings to make a hit, you will have time to dodge ten times and hit three times. It is best to run behind him and hit while he turns, and when he turns, repeat maneuver. The main thing is not to miss his blow, otherwise it can become fatal for you. " );
 				AI_Print(concatText);
 				hero.protection[PROT_BLUNT] += 1;
 				REALPROTBL += 1;
@@ -1552,33 +1553,33 @@ func void B_LogBeast(var C_Npc Beast)
 
 		Troll_B1 += 1;	
 	}
-	else if(Beast.aivar[AIV_MM_REAL_ID] == ID_OGRE)
+	else  if (Beast.aivar[ AIV_MM_REAL_ID ] ==  ID_OGRE )
 	{
-		if(Ogre_B1 == FALSE)
+		if (Ogre_B1 ==  FALSE )
 		{
-			concatText = "Добавлена запись в бестиарий - '";
+			concatText = " Added entry to the bestiary - ' " ;
 			concatText = ConcatStrings(concatText,"Огр'");
 			Log_CreateTopic(TOPIC_BEAST_OGRE,LOG_MISSION);
 			Log_SetTopicStatus(TOPIC_BEAST_OGRE,LOG_FAILED);
-			Log_AddEntry(TOPIC_BEAST_OGRE,"Обычно огров можно встретить, прогуливаясь по лесам, а также спускаясь в пещеры. Огры редко ходят одни, но даже без своих сородичей огр крайне опасен, так как его 'кистень' бьет больно и точно.");
+			Log_AddEntry( TOPIC_BEAST_OGRE , " Ogres can usually be found walking through forests and also descending into caves. Ogres rarely go alone, but even without their relatives, an ogre is extremely dangerous, as its 'flail' hits painfully and accurately. " );
 			AI_Print(concatText);
 		}
 		else
 		{
-			if((Ogre_B1 >= 5) && (Ogre_B2 == FALSE))
+			if (( Ogre_B1 >=  5 ) && ( Ogre_B2 ==  FALSE ))
 			{
-				concatText = "Добавлена запись в бестиарий - '";
+				concatText = " Added entry to the bestiary - ' " ;
 				concatText = ConcatStrings(concatText,"Огр'");
-				Log_AddEntry(TOPIC_BEAST_OGRE,"Основные преимущества: хорошая защита от любого вида урона, прекрасно владеет оружием ближнего боя и имеет большой запас здоровья");
-				Log_AddEntry(TOPIC_BEAST_OGRE,"Уязвимые места: - нет -");
+				Log_AddEntry( TOPIC_BEAST_OGRE , " Main advantages: good protection against any kind of damage, excellent use of melee weapons and a large supply of health " );
+				Log_AddEntry( TOPIC_BEAST_OGRE , " Vulnerabilities: - none - " );
 				AI_Print(concatText);
 				Ogre_B2 = TRUE;
 			}
 			else if((Ogre_B1 >= 10) && (Ogre_B3 == FALSE))
 			{
-				concatText = "Добавлена запись в бестиарий - '";
+				concatText = " Added entry to the bestiary - ' " ;
 				concatText = ConcatStrings(concatText,"Огр'");
-				Log_AddEntry(TOPIC_BEAST_OGRE,"Тактика боя: рекомендуется сражаться длинным оружием или атаковать с расстояния");
+				Log_AddEntry( TOPIC_BEAST_OGRE , " Combat tactics: it is recommended to fight with a long weapon or attack from a distance " );
 				AI_Print(concatText);
 
 				if(ATR_STAMINA_MAX[0] < 100)
@@ -1589,39 +1590,39 @@ func void B_LogBeast(var C_Npc Beast)
 					AI_Print(PRINT_LEARNSTAMINA);
 				};
 
-				Ogre_B3 = TRUE;
+				Ogre_B3 = TRUE ;
 			};
 		};
 
-		Ogre_B1 += 1;	
+		Ogre_B1 +=  1 ;	
 	}
 	else if((Beast.aivar[AIV_MM_REAL_ID] == ID_TROLL_BLACK) || (Beast.aivar[AIV_MM_REAL_ID] == ID_TROLL_BLACK_CAVE) || (Beast.aivar[AIV_MM_REAL_ID] == ID_TROLL_BLACK_ICE))
 	{
 		if(Troll_Black_B1 == FALSE)
 		{
-			concatText = "Добавлена запись в бестиарий - '";
-			concatText = ConcatStrings(concatText,"Черный тролль'");
+			concatText = " Added entry to the bestiary - ' " ;
+			concatText = ConcatStrings(concatText, " Black Troll' " );
 			Log_CreateTopic(TOPIC_BEAST_TROLL_BLACK,LOG_MISSION);
 			Log_SetTopicStatus(TOPIC_BEAST_TROLL_BLACK,LOG_FAILED);
-			Log_AddEntry(TOPIC_BEAST_TROLL_BLACK,"Черный тролль - это сильнейшее из живых существ! Его внешность может вселить страх даже самым храбрым охотникам. В отличие от обычного тролля, его окраска светло черная с оттенками серого. Черные тролли крупнее, сильнее и более пугающие, чем обычные тролли. Их руки - огромные молоты, которые могут расплющить противника одним мощным ударом. Очень примечательна их голова со ртом полным огромных зубов и сияющими белыми глазами. На макушке его головы расположены два больших рога. Черные тролли живут поодиночке в скалистых местностях с парой-тройкой деревьев вокруг. Они находят себе пещеру, в которой они часто охраняют драгоценные сокровища. Находятся на верхушке пищевой цепочки, так как являются абсолютными хищниками, поедающими что угодно, слишком медленное для того, чтобы убежать от их огромных кулаков. У них нет естественных врагов.");
+			Log_AddEntry(TOPIC_BEAST_TROLL_BLACK,"The black troll is the strongest living creature! Its appearance can instill fear in even the bravest hunters. Unlike a normal troll, its coloration is light black with shades of gray. Black trolls are larger, stronger and more intimidating than ordinary trolls "Their hands are huge hammers that can flatten the enemy with one powerful blow. Very remarkable is their head with a mouth full of huge teeth and shining white eyes. On the top of his head are two large horns. Black trolls live alone in rocky areas with a couple of trees around.They find themselves a cave in which they often guard precious treasures.They are at the top of the food chain, as they are absolute predators, eating anything too slow to escape from their huge fists.They have no natural enemies.");
 			AI_Print(concatText);
 		}
 		else
 		{
 			if((Troll_Black_B1 >= 3) && (Troll_Black_B2 == FALSE))
 			{
-				concatText = "Добавлена запись в бестиарий - '";
-				concatText = ConcatStrings(concatText,"Черный тролль'");
-				Log_AddEntry(TOPIC_BEAST_TROLL_BLACK,"Основные преимущества: имеет невероятную силу удара, отличную защиту от любого вида оружия ближнего или дальнего боя, магии и огня");
-				Log_AddEntry(TOPIC_BEAST_TROLL_BLACK,"Уязвимые места: слишком медленная скорость атаки");
+				concatText = " Added entry to the bestiary - ' " ;
+				concatText = ConcatStrings(concatText, " Black Troll' " );
+				Log_AddEntry( TOPIC_BEAST_TROLL_BLACK , " Main advantages: has incredible hitting power, excellent protection against any kind of melee or ranged weapons, magic and fire " );
+				Log_AddEntry( TOPIC_BEAST_TROLL_BLACK , " Vulnerabilities: too slow attack speed " );
 				AI_Print(concatText);
 				Troll_Black_B2 = TRUE;
 			}
 			else if((Troll_Black_B1 >= 5) && (Troll_Black_B3 == FALSE))
 			{
-				concatText = "Добавлена запись в бестиарий - '";
-				concatText = ConcatStrings(concatText,"Черный тролль'");
-				Log_AddEntry(TOPIC_BEAST_TROLL_BLACK,"Тактика боя: тролли очень неповоротливы, и, пока он замахивается, чтобы сделать удар, вы десять раз успеете отскочить и три раза ударить. Лучше всего забежать ему за спину и бить, пока он поворачивается, а когда повернется — повторить маневр.");
+				concatText = " Added entry to the bestiary - ' " ;
+				concatText = ConcatStrings(concatText, " Black Troll' " );
+				Log_AddEntry( TOPIC_BEAST_TROLL_BLACK , " Combat Tactics: Trolls are very clumsy, and while he swings to make a hit, you will have time to dodge ten times and hit three times. It is best to run behind him and hit while he is turning, and when he turns, repeat maneuver. " );
 				AI_Print(concatText);
 				hero.protection[PROT_BLUNT] += 1;
 				REALPROTBL += 1;
@@ -1632,33 +1633,33 @@ func void B_LogBeast(var C_Npc Beast)
 
 		Troll_Black_B1 += 1;	
 	}
-	else if(Beast.aivar[AIV_MM_REAL_ID] == ID_WARG)
+	else  if (Beast.aivar[ AIV_MM_REAL_ID ] ==  ID_WARG )
 	{
-		if(Warg_B1 == FALSE)
+		if (Warg_B1 ==  FALSE )
 		{
-			concatText = "Добавлена запись в бестиарий - '";
+			concatText = " Added entry to the bestiary - ' " ;
 			concatText = ConcatStrings(concatText,"Варг'");
 			Log_CreateTopic(TOPIC_BEAST_WARG,LOG_MISSION);
 			Log_SetTopicStatus(TOPIC_BEAST_WARG,LOG_FAILED);
-			Log_AddEntry(TOPIC_BEAST_WARG,"Варг - зверь с темной шерстью, сильный и безжалостный. Его легко узнать по абсолютно черной шерсти и темно-красным глазам. Варги обитают в дремучих лесах, вблизи болот и пещер. В опасные времена в поисках еды они покидают леса и направляются на открытые пространства. Как и большинство хищников, в рационе варгов любое мясо. Волки - их обычная добыча. Варги держатся группами по несколько особей. Среди жителей Миртаны варги пользуются дурной славой, из-за их злого нрава, который особенно проявляется в кровавые времена. Частенько их приручают орки и используют в качестве сторожевых псов.");
+			Log_AddEntry(TOPIC_BEAST_WARG,"Warg is a dark-furred beast, strong and ruthless. It is easily recognizable by its completely black coat and dark red eyes. Wargs live in dense forests, near swamps and caves. In dangerous times, in search of food, they leave forests and Wargs head for open areas Like most predators, wargs eat any meat Wolves are their usual prey Wargs keep in groups of several individuals Wargs are notorious among the inhabitants of Myrtana because of their evil disposition, which is especially manifested in bloody times They are often tamed by orcs and used as watchdogs.");
 			AI_Print(concatText);
 		}
 		else
 		{
-			if((Warg_B1 >= 10) && (Warg_B2 == FALSE))
+			if (( Warg_B1 >=  10 ) && ( Warg_B2 ==  FALSE ))
 			{
-				concatText = "Добавлена запись в бестиарий - '";
+				concatText = " Added entry to the bestiary - ' " ;
 				concatText = ConcatStrings(concatText,"Варг'");
-				Log_AddEntry(TOPIC_BEAST_WARG,"Основные преимущества: способен быстро бегать, имеет отличную защиту от оружия ближнего и дальнего боя, кроме этого варги охотятся и нападают стаями");
-				Log_AddEntry(TOPIC_BEAST_WARG,"Уязвимые места: имеет очень слабую защиту против магии и огня");
+				Log_AddEntry( TOPIC_BEAST_WARG , " Main advantages: able to run fast, has excellent protection against melee and ranged weapons, in addition, wargs hunt and attack in packs " );
+				Log_AddEntry( TOPIC_BEAST_WARG , " Weakness : Very weak against magic and fire " );
 				AI_Print(concatText);
 				Warg_B2 = TRUE;
 			}
-			else if((Warg_B1 >= 20) && (Warg_B3 == FALSE))
+			else  if ((Warg_B1 >=  20 ) && (Warg_B3 ==  FALSE ))
 			{
-				concatText = "Добавлена запись в бестиарий - '";
+				concatText = " Added entry to the bestiary - ' " ;
 				concatText = ConcatStrings(concatText,"Варг'");
-				Log_AddEntry(TOPIC_BEAST_WARG,"Тактика боя: для начала следует приманить одного варга из стаи, а затем убить всю группу одного за другим");
+				Log_AddEntry( TOPIC_BEAST_WARG , " Combat Tactics: First, you should lure one Warg from the pack, and then kill the entire group one by one " );
 				AI_Print(concatText);
 				B_RaiseAttribute(hero,ATR_HITPOINTS_MAX,10);
 				Npc_ChangeAttribute(hero,ATR_HITPOINTS,10);
@@ -1666,17 +1667,17 @@ func void B_LogBeast(var C_Npc Beast)
 			};
 		};
 
-		Warg_B1 += 1;	
+		Warg_B1 +=  1 ;	
 	}
-	else if(Beast.aivar[AIV_MM_REAL_ID] == ID_SKELETON)
+	else  if (Beast.aivar[ AIV_MM_REAL_ID ] ==  ID_SKELETON )
 	{
 		if(Skeleton_B1 == FALSE)
 		{
-			concatText = "Добавлена запись в бестиарий - '";
+			concatText = " Added entry to the bestiary - ' " ;
 			concatText = ConcatStrings(concatText,"Скелет'");
 			Log_CreateTopic(TOPIC_BEAST_SKELETON,LOG_MISSION);
 			Log_SetTopicStatus(TOPIC_BEAST_SKELETON,LOG_FAILED);
-			Log_AddEntry(TOPIC_BEAST_SKELETON,"Скелеты — останки людей, некогда похороненных в неправильном месте или без соблюдения необходимых обрядов очищения. Их нельзя считать полноценными людьми, поскольку от прежней личности в этих кучках старых костей не осталось ровным счетом ничего. Но, тем не менее, они обладают каким-то разумом, или, по крайней мере, подобием его. Извращенным, разумеется, как и все существа, поднятые из своих могил черной магией Белиара. В их круглой, сверкающей на солнце черепушке крепко-накрепко засела одна-единственная мысль: убить всех, кто не является нежитью, — и они блестяще приводят ей в исполнение.");
+			Log_AddEntry(TOPIC_BEAST_SKELETON,"Skeletons are the remains of people who were once buried in the wrong place or without observing the necessary rites of purification. They cannot be considered full-fledged people, since absolutely nothing remains of their former personality in these heaps of old bones. But, nevertheless, they possess some kind of mind, or at least a semblance of it. Perverted, of course, like all creatures raised from their graves by the black magic of Beliar. In their round, sparkling skull in the sun, one single thought was firmly planted: to kill all who are not undead—and they execute it brilliantly.");
 			AI_Print(concatText);
 		}
 		else
@@ -1716,33 +1717,33 @@ func void B_LogBeast(var C_Npc Beast)
 
 		Skeleton_B1 += 1;	
 	}
-	else if(Beast.aivar[AIV_MM_REAL_ID] == ID_ORCWARRIOR)
+	else  if (Beast.aivar[ AIV_MM_REAL_ID ] ==  ID_ORCWARRIOR )
 	{
 		if(OrcWarrior_B1 == FALSE)
 		{
-			concatText = "Добавлена запись в бестиарий - '";
+			concatText = " Added entry to the bestiary - ' " ;
 			concatText = ConcatStrings(concatText,"Орк'");
 			Log_CreateTopic(TOPIC_BEAST_ORCWARRIOR,LOG_MISSION);
 			Log_SetTopicStatus(TOPIC_BEAST_ORCWARRIOR,LOG_FAILED);
-			Log_AddEntry(TOPIC_BEAST_ORCWARRIOR,"Орки — вторая разумная раса Мордрага, и единственная, способная на равных соперничать с людьми и человеческой культурой. Многие считают, что орки, в отличие от людей, порождения Белиара, но это представление не совсем верно. Конечно, логично предположить, что если люди были сотворены Инносом, то орки появились по воле бога тьмы, но никаких доказательств этому нет, и происхождение орков — загадка, ответ на которую давно был утерян в веках. Орки-воины — основная боевая сила армии орков. Они прекрасно знают свое дело, а их доспехи по прочности способны поспорить с панцирями ползунов. Встреча с ними не сулит ничего хорошего даже подготовленному воину, а новичку грозит мгновенной смертью. Они редко ходят по одному, чаще — группой из трех-пяти орков, и бой с ними никогда не бывает легким.");
+			Log_AddEntry(TOPIC_BEAST_ORCWARRIOR,"Orcs are the second intelligent race of Mordrag, and the only one capable of competing on equal terms with humans and human culture. Many believe that orcs, unlike humans, are the offspring of Beliar, but this view is not entirely correct. Of course, it is logical to assume that if people were created by Innos, then the orcs appeared at the behest of the god of darkness, but there is no evidence for this, and the origin of the orcs is a mystery, the answer to which has long been lost for centuries. Orc warriors are the main fighting force of the orc army. They know very well their work, and their armor can compete with the shells of crawlers in strength.A meeting with them does not bode well even for a trained warrior, and the novice is threatened with instant death.They rarely walk alone, more often in a group of three to five orcs, and a fight with them is never easy.");
 			AI_Print(concatText);
 		}
 		else
 		{
-			if((OrcWarrior_B1 >= 15) && (OrcWarrior_B2 == FALSE))
+			if (( OrcWarrior_B1 >=  15 ) && ( OrcWarrior_B2 ==  FALSE )) ;
 			{
-				concatText = "Добавлена запись в бестиарий - '";
+				concatText = " Added entry to the bestiary - ' " ;
 				concatText = ConcatStrings(concatText,"Орк'");
-				Log_AddEntry(TOPIC_BEAST_ORCWARRIOR,"Основные преимущества: отлично владеют оружием ближнего и дальнего боя, носят доспехи, разумны, атакуют группами");
-				Log_AddEntry(TOPIC_BEAST_ORCWARRIOR,"Уязвимые места: имеет очень слабую защиту против магии и огня");
+				Log_AddEntry( TOPIC_BEAST_ORCWARRIOR , " Main advantages: good at melee and ranged weapons, wear armor, intelligent, attack in groups " );
+				Log_AddEntry( TOPIC_BEAST_ORCWARRIOR , " Weakness : Very weak against magic and fire " );
 				AI_Print(concatText);
 				OrcWarrior_B2 = TRUE;
 			}
 			else if((OrcWarrior_B1 >= 30) && (OrcWarrior_B3 == FALSE))
 			{
-				concatText = "Добавлена запись в бестиарий - '";
+				concatText = " Added entry to the bestiary - ' " ;
 				concatText = ConcatStrings(concatText,"Орк'");
-				Log_AddEntry(TOPIC_BEAST_ORCWARRIOR,"Тактика боя: наименьшая сопротивляемость у них к магии и стрелам, но использовать придется довольно мощные заклинания, ибо слабые лишь раззадорят их.");
+				Log_AddEntry( TOPIC_BEAST_ORCWARRIOR , " Combat tactics: they have the least resistance to magic and arrows, but you will have to use quite powerful spells, because weak ones will only provoke them. " );
 				AI_Print(concatText);
 
 				if(hero.HitChance[NPC_TALENT_1H] >= hero.HitChance[NPC_TALENT_2H])
@@ -1764,33 +1765,33 @@ func void B_LogBeast(var C_Npc Beast)
 
 		OrcWarrior_B1 += 1;	
 	}
-	else if(Beast.aivar[AIV_MM_REAL_ID] == ID_SKELETON_LORD)
+	else  if (Beast.aivar[ AIV_MM_REAL_ID ] ==  ID_SKELETON_LORD )
 	{
 		if(Skeleton_Lord_B1 == FALSE)
 		{
-			concatText = "Добавлена запись в бестиарий - '";
-			concatText = ConcatStrings(concatText,"Лорд теней'");
+			concatText = " Added entry to the bestiary - ' " ;
+			concatText = ConcatStrings(concatText, " Shadow Lord' " );
 			Log_CreateTopic(TOPIC_BEAST_SKELETON_LORD,LOG_MISSION);
 			Log_SetTopicStatus(TOPIC_BEAST_SKELETON_LORD,LOG_FAILED);
-			Log_AddEntry(TOPIC_BEAST_SKELETON_LORD,"Пещеры, окутанные мраком старинного проклятия, безлюдные вересковые пустоши, места давних сражений, глухие заросли непроходимого леса, в которых когда свершились страшные вещи. Есть много мест, где можно встретить лорда теней, бывшего отважного воина, после смерти превратившегося в не знающее пощады чудовище. Хотя можно ли говорить о них 'после смерти'?.. Ведь их душа, давно истаявшая под неподъемным грузом вечности, так и не смогла отделить от бренного тела, прикованная к нему незримыми цепями черного колдовства. И, право, дело чести каждого воина — лишить таких тварей даже тени их призрачной жизни, убив их и развеяв прах по ветру. Хотя это и крайне непростая задача! Ведь это элита загробного мира.");
+			Log_AddEntry(TOPIC_BEAST_SKELETON_LORD,"Caves shrouded in the darkness of an ancient curse, deserted moorlands, places of ancient battles, dense thickets of an impenetrable forest in which terrible things happened. There are many places where you can meet the lord of shadows, a former brave warrior who, after death, turned into a monster that knows no mercy, although can one speak of them 'after death'? it is a matter of honor for every warrior to deprive such creatures of even the shadow of their ghostly life by killing them and scattering their ashes to the wind. Although this is an extremely difficult task! After all, this is the elite of the afterlife.");
 			AI_Print(concatText);
 		}
 		else
 		{
 			if((Skeleton_Lord_B1 >= 10) && (Skeleton_Lord_B2 == FALSE))
 			{
-				concatText = "Добавлена запись в бестиарий - '";
-				concatText = ConcatStrings(concatText,"Лорд теней'");
-				Log_AddEntry(TOPIC_BEAST_SKELETON_LORD,"Основные преимущества: превосходно владеют оружием ближнего и дальнего боя, носят доспехи, обладают абсолютным иммунитетом к колющему типу оружия, стрелам и болтам, хорошая защита от магии и огня");
-				Log_AddEntry(TOPIC_BEAST_SKELETON_LORD,"Уязвимые места: - нет -");
+				concatText = " Added entry to the bestiary - ' " ;
+				concatText = ConcatStrings(concatText, " Shadow Lord' " );
+				Log_AddEntry( TOPIC_BEAST_SKELETON_LORD , " Main benefits: excellent melee and ranged weapons, wear armor, have absolute immunity to piercing weapons, arrows and bolts, good protection against magic and fire " );
+				Log_AddEntry( TOPIC_BEAST_SKELETON_LORD , " Vulnerabilities: - none - " );
 				AI_Print(concatText);
 				Skeleton_Lord_B2 = TRUE;
 			}
 			else if((Skeleton_Lord_B1 >= 20) && (Skeleton_Lord_B3 == FALSE))
 			{
-				concatText = "Добавлена запись в бестиарий - '";
-				concatText = ConcatStrings(concatText,"Лорд теней'");
-				Log_AddEntry(TOPIC_BEAST_SKELETON_LORD,"Тактика боя: вам понадобятся все ваши силы и умения, чтобы одолеть этого воистину смертоносного врага.");
+				concatText = " Added entry to the bestiary - ' " ;
+				concatText = ConcatStrings(concatText, " Shadow Lord' " );
+				Log_AddEntry( TOPIC_BEAST_SKELETON_LORD , " Combat Tactics: You will need all your strength and skill to defeat this truly deadly enemy. " );
 				AI_Print(concatText);
 
 				if(hero.HitChance[NPC_TALENT_1H] >= hero.HitChance[NPC_TALENT_2H])
@@ -1816,8 +1817,8 @@ func void B_LogBeast(var C_Npc Beast)
 	{
 		if(Skeleton_Priest_B1 == FALSE)
 		{
-			concatText = "Добавлена запись в бестиарий - '";
-			concatText = ConcatStrings(concatText,"Проклятый жрец'");
+			concatText = " Added entry to the bestiary - ' " ;
+			concatText = ConcatStrings(concatText, " Cursed Priest' " );
 			Log_CreateTopic(TOPIC_BEAST_SKELETON_PRIEST,LOG_MISSION);
 			Log_SetTopicStatus(TOPIC_BEAST_SKELETON_PRIEST,LOG_FAILED);
 			Log_AddEntry(TOPIC_BEAST_SKELETON_PRIEST,"Проклятый жрец - крайне опасные соперники, атакующие магией на расстоянии и умело использующие посох в ближнем бою. Кроме того, любое соприкосновение с ним вызывает жуткую боль, поскольку он окружен защитной аурой проклятия!");
@@ -1905,45 +1906,45 @@ func void B_LogBeast(var C_Npc Beast)
 				AI_Print(concatText);
 				Waran_B2 = TRUE;
 			}
-			else if((Waran_B1 >= 20) && (Waran_B3 == FALSE))
+			else  if ((Word_B1 >=  20 ) && (Word_B3 ==  FALSE ))
 			{
-				concatText = "Добавлена запись в бестиарий - '";
+				concatText = " Added entry to the bestiary - ' " ;
 				concatText = ConcatStrings(concatText,"Варан'");
-				Log_AddEntry(TOPIC_BEAST_WARAN,"Тактика боя: убить их легко, в отличие от их огненных сородичей. Главное — не позволять им себя укусить, а остальное, как говорится, дело техники.");
+				Log_AddEntry( TOPIC_BEAST_WARAN , " Combat Tactics: They are easy to kill, unlike their fiery relatives. The main thing is not to let them bite you, and the rest, as they say, is a matter of technique. " );
 				AI_Print(concatText);
 				Waran_B3 = TRUE;
 			};
 		};
 
-		Waran_B1 += 1;	
+		Spear_B1 +=  1 ;	
 	}
-	else if(Beast.aivar[AIV_MM_REAL_ID] == ID_ORCELITE)
+	else  if (Beast.aivar[ AIV_MM_REAL_ID ] ==  ID_ORCELITE )
 	{
 		if(OrcElite_B1 == FALSE)
 		{
-			concatText = "Добавлена запись в бестиарий - '";
+			concatText = " Added entry to the bestiary - ' " ;
 			concatText = ConcatStrings(concatText,"Черный орк'");
 			Log_CreateTopic(TOPIC_BEAST_ORCELITE,LOG_MISSION);
 			Log_SetTopicStatus(TOPIC_BEAST_ORCELITE,LOG_FAILED);
-			Log_AddEntry(TOPIC_BEAST_ORCELITE,"Черные орки - элитная каста воинов. Они намного сильнее и выносливее обычных орков, и кроме этого, прекрасно владеют оружием. Одеты в тяжелые орочьи доспехи, и в основном занимают главенствующие позиции в сообществе орков.");
+			Log_AddEntry( TOPIC_BEAST_ORCELITE , " Black Orcs are an elite warrior caste. They are much stronger and more resilient than ordinary Orcs, and in addition, they are excellent at using weapons. Dressed in heavy Orc armor, and generally occupy a dominant position in the Orc community. " );
 			AI_Print(concatText);
 		}
 		else
 		{
-			if((OrcElite_B1 >= 10) && (OrcElite_B2 == FALSE))
+			if (( OrcElite_B1 >=  10 ) && ( OrcElite_B2 ==  FALSE )) ;
 			{
-				concatText = "Добавлена запись в бестиарий - '";
+				concatText = " Added entry to the bestiary - ' " ;
 				concatText = ConcatStrings(concatText,"Черный орк'");
-				Log_AddEntry(TOPIC_BEAST_ORCELITE,"Основные преимущества: огромная сила, отличная защита от любого вида оружия,  разумны, прекрасно владеют оружием ближнего боя");
-				Log_AddEntry(TOPIC_BEAST_ORCELITE,"Уязвимые места: имеет слабую защиту от огня и магии");
+				Log_AddEntry( TOPIC_BEAST_ORCELITE , " Main advantages: huge strength, excellent defense against any type of weapon, reasonable, excellent use of melee weapons " );
+				Log_AddEntry( TOPIC_BEAST_ORCELITE , " Weakness: Poor fire and magic resistance " );
 				AI_Print(concatText);
 				OrcElite_B2 = TRUE;
 			}
-			else if((OrcElite_B1 >= 20) && (OrcElite_B3 == FALSE))
+			else  if ((OrcElite_B1 >=  20 ) && (OrcElite_B3 ==  FALSE ))
 			{
-				concatText = "Добавлена запись в бестиарий - '";
+				concatText = " Added entry to the bestiary - ' " ;
 				concatText = ConcatStrings(concatText,"Черный орк'");
-				Log_AddEntry(TOPIC_BEAST_ORCELITE,"Тактика боя: они очень хороши в бою, и победить их действительно нелегко. Только очень сильный человек с надежным клинком может надеяться пробить их доспехи.");
+				Log_AddEntry( TOPIC_BEAST_ORCELITE , " Combat Tactics: They are very good in combat and really hard to defeat. Only a very strong person with a reliable blade can hope to break through their armor. " );
 				AI_Print(concatText);
 
 				if(hero.HitChance[NPC_TALENT_1H] >= hero.HitChance[NPC_TALENT_2H])
@@ -1963,35 +1964,35 @@ func void B_LogBeast(var C_Npc Beast)
 			};
 		};
 
-		OrcElite_B1 += 1;	
+		OrcElite_B1 +=  1 ;	
 	}
-	else if(Beast.aivar[AIV_MM_REAL_ID] == ID_ORCSHAMAN)
+	else  if (Beast.aivar[ AIV_MM_REAL_ID ] ==  ID_ORCSHAMAN )
 	{
-		if(OrcShaman_B1 == FALSE)
+		if ( OrcShaman_B1 ==  FALSE )
 		{
-			concatText = "Добавлена запись в бестиарий - '";
+			concatText = " Added entry to the bestiary - ' " ;
 			concatText = ConcatStrings(concatText,"Орк-шаман'");
 			Log_CreateTopic(TOPIC_BEAST_ORCSHAMAN,LOG_MISSION);
 			Log_SetTopicStatus(TOPIC_BEAST_ORCSHAMAN,LOG_FAILED);
-			Log_AddEntry(TOPIC_BEAST_ORCSHAMAN,"Магия едина, и орки в своих храмах используют те же приемы и ритуалы, что и их собратья-люди в монастырях и лабораториях. Но только людей, способные повелевать стихиями, зовут магами, а орков, которым подвластны все четыре составляющие мироздания — шаманами. Шаманы, или сыновья духов, если использовать язык орков, — вот кто на самом деле управляет обществом орков. В этом орки похожи на людей. Но если в человеческом обществе страной правит король, а маги играют роль скорее совещательного органа, то для каждого орка слово любого шамана — закон. И не в последнюю очередь потому, что несогласных с их мнением шаманы тут же превращают в кучку пепла.");
+			Log_AddEntry(TOPIC_BEAST_ORCSHAMAN,"Magic is one, and orcs in their temples use the same techniques and rituals as their fellow humans in monasteries and laboratories. But only people who can command the elements are called magicians, and orcs who are subject to all four components of the universe are shamans. Shamans, or sons of spirits, to use the language of orcs, are the ones who actually govern orc society. In this, orcs are similar to humans. But if in human society the king rules the country, and magicians play the role of more of an advisory body, then for every orc, the word of any shaman is law, not least because those who disagree with their opinion are immediately turned into a pile of ashes by shamans.");
 			AI_Print(concatText);
 		}
 		else
 		{
-			if((OrcShaman_B1 >= 10) && (OrcShaman_B2 == FALSE))
+			if ((OrcShaman_B1 >=  10 ) && (OrcShaman_B2 ==  FALSE ))
 			{
-				concatText = "Добавлена запись в бестиарий - '";
+				concatText = " Added entry to the bestiary - ' " ;
 				concatText = ConcatStrings(concatText,"Орк-шаман'");
-				Log_AddEntry(TOPIC_BEAST_ORCSHAMAN,"Основные преимущества: способны использовать магию Огня");
-				Log_AddEntry(TOPIC_BEAST_ORCSHAMAN,"Уязвимые места: имеет слабую защиту против оружия дальнего боя");
+				Log_AddEntry( TOPIC_BEAST_ORCSHAMAN , " Main Benefits: Can use Fire Magic " );
+				Log_AddEntry( TOPIC_BEAST_ORCSHAMAN , " Weak spots: has weak defense against ranged weapons " );
 				AI_Print(concatText);
 				OrcShaman_B2 = TRUE;
 			}
-			else if((OrcShaman_B1 >= 20) && (OrcShaman_B3 == FALSE))
+			else  if ((OrcShaman_B1 >=  20 ) && (OrcShaman_B3 ==  FALSE ))
 			{
-				concatText = "Добавлена запись в бестиарий - '";
+				concatText = " Added entry to the bestiary - ' " ;
 				concatText = ConcatStrings(concatText,"Орк-шаман'");
-				Log_AddEntry(TOPIC_BEAST_ORCSHAMAN,"Тактика боя: здесь возможны две тактики ведения боя: или вы зигзагами, уворачиваясь от их огненных шаров, как можно быстрее подбираетесь к шаманам и навязываете им ближний бой, или, наоборот, расстреливаете издалека с помощью лука или арбалета, опять же не забывая уворачиваться от встречных заклятий. Магия на шаманов практически не действует — только огненные заклинания способны причинить им некоторый ущерб.");
+				Log_AddEntry( TOPIC_BEAST_ORCSHAMAN , " Combat tactics: two combat tactics are possible here: either you zigzag, dodging their fireballs, get close to the shamans as quickly as possible and impose close combat on them, or, conversely, shoot from afar with a bow or crossbow, again not forgetting to dodge oncoming spells. Magic has practically no effect on shamans - only fire spells can cause them some damage. " );
 				AI_Print(concatText);
 				hero.protection[PROT_MAGIC] += 1;
 				REALPROTMAGIC += 1;
@@ -2000,35 +2001,35 @@ func void B_LogBeast(var C_Npc Beast)
 			};
 		};
 
-		OrcShaman_B1 += 1;	
+		OrcShaman_B1 +=  1 ;	
 	}
-	else if((Beast.aivar[AIV_MM_REAL_ID] == ID_UNDEADORCWARRIOR) || (Beast.aivar[AIV_MM_REAL_ID] == ID_UNDEADORCSHAMAN))
+	else  if ((Beast.aivar[ AIV_MM_REAL_ID ] ==  ID_UNDEADORCWARRIOR ) || (Beast.aivar[ AIV_MM_REAL_ID ] ==  ID_UNDEADORCSHAMAN ))
 	{
 		if(UndeadOrcWarrior_B1 == FALSE)
 		{
-			concatText = "Добавлена запись в бестиарий - '";
-			concatText = ConcatStrings(concatText,"Проклятый орк'");
+			concatText = " Added entry to the bestiary - ' " ;
+			concatText = ConcatStrings(concatText, " Damn Orc' " );
 			Log_CreateTopic(TOPIC_BEAST_UNDEADORCWARRIOR,LOG_MISSION);
 			Log_SetTopicStatus(TOPIC_BEAST_UNDEADORCWARRIOR,LOG_FAILED);
-			Log_AddEntry(TOPIC_BEAST_UNDEADORCWARRIOR,"Если лучшие воины-люди после смерти превращаются в скелетов, то бесстрашные воины орков, заканчивая свой жизненный путь, порой становятся бессмертными воинами в виде нежити. Они всегда начеку, всегда готовы уничтожить незваного гостя, ни на минуту не ослабляют внимания, и при этом не требуют взамен ничего. Совсем ничего...");
+			Log_AddEntry( TOPIC_BEAST_UNDEADORCWARRIOR , " If the best human warriors turn into skeletons after death, then the fearless orc warriors, ending their lives, sometimes become immortal warriors in the form of undead. They are always on the alert, always ready to destroy an intruder, never weaken their attention for a minute , and at the same time do not require anything in return. Nothing at all... " );
 			AI_Print(concatText);
 		}
 		else
 		{
 			if((UndeadOrcWarrior_B1 >= 5) && (UndeadOrcWarrior_B2 == FALSE))
 			{
-				concatText = "Добавлена запись в бестиарий - '";
-				concatText = ConcatStrings(concatText,"Проклятый орк'");
-				Log_AddEntry(TOPIC_BEAST_UNDEADORCWARRIOR,"Основные преимущества: огромная сила, отличная защита от любого вида оружия,  разумны, прекрасно владеют оружием ближнего боя");
-				Log_AddEntry(TOPIC_BEAST_UNDEADORCWARRIOR,"Уязвимые места: имеет слабую защиту от огня и магии");
+				concatText = " Added entry to the bestiary - ' " ;
+				concatText = ConcatStrings(concatText, " Damn Orc' " );
+				Log_AddEntry( TOPIC_BEAST_UNDEADORCWARRIOR , " Main advantages: huge strength, excellent defense against any type of weapon, reasonable, excellent use of melee weapons " );
+				Log_AddEntry( TOPIC_BEAST_UNDEADORCWARRIOR , " Weak spots: has weak fire and magic resistance " );
 				AI_Print(concatText);
 				UndeadOrcWarrior_B2 = TRUE;
 			}
 			else if((UndeadOrcWarrior_B1 >= 10) && (UndeadOrcWarrior_B3 == FALSE))
 			{
-				concatText = "Добавлена запись в бестиарий - '";
-				concatText = ConcatStrings(concatText,"Проклятый орк'");
-				Log_AddEntry(TOPIC_BEAST_UNDEADORCWARRIOR,"Тактика боя: они серьёзные бойцы, и сражение с ними будет особенно сложным.");
+				concatText = " Added entry to the bestiary - ' " ;
+				concatText = ConcatStrings(concatText, " Damn Orc' " );
+				Log_AddEntry( TOPIC_BEAST_UNDEADORCWARRIOR , " Combat Tactics: They are serious fighters, and fighting them will be especially difficult. " );
 				AI_Print(concatText);
 				UndeadOrcWarrior_B3 = TRUE;
 			};
@@ -2036,40 +2037,40 @@ func void B_LogBeast(var C_Npc Beast)
 
 		UndeadOrcWarrior_B1 += 1;	
 	}
-	else if(Beast.aivar[AIV_MM_REAL_ID] == ID_SANDGOLEM)
+	else  if (Beast.aivar[ AIV_MM_REAL_ID ] ==  ID_SANDGOLEM )
 	{
 		if(SandGolem_B1 == FALSE)
 		{
-			concatText = "Добавлена запись в бестиарий - '";
-			concatText = ConcatStrings(concatText,"Песчаный смерч'");
+			concatText = " Added entry to the bestiary - ' " ;
+			concatText = ConcatStrings(concatText, " Sandspout ' " );
 			Log_CreateTopic(TOPIC_BEAST_SANDGOLEM,LOG_MISSION);
 			Log_SetTopicStatus(TOPIC_BEAST_SANDGOLEM,LOG_FAILED);
-			Log_AddEntry(TOPIC_BEAST_SANDGOLEM,"Создание из песка и ветра, порожденное магией этого мира. С виду их порой нельзя отличить от небольшого песчаного шторма, но горе тому, кто допустит такую ошибку. Наказание последует незамедлительно...");
+			Log_AddEntry( TOPIC_BEAST_SANDGOLEM , " A creature of sand and wind, spawned by the magic of this world. In appearance, they can sometimes be indistinguishable from a small sandstorm, but woe to those who make such a mistake. Punishment will follow immediately... " );
 			AI_Print(concatText);
 		}
 		else
 		{
 			if((SandGolem_B1 >= 2) && (SandGolem_B2 == FALSE))
 			{
-				concatText = "Добавлена запись в бестиарий - '";
-				concatText = ConcatStrings(concatText,"Песчаный смерч'");
-				Log_AddEntry(TOPIC_BEAST_SANDGOLEM,"Основные преимущества: невосприимчивы к любому виду физического урона");
-				Log_AddEntry(TOPIC_BEAST_SANDGOLEM,"Уязвимые места: имеет слабую защиту от огня и магии");
+				concatText = " Added entry to the bestiary - ' " ;
+				concatText = ConcatStrings(concatText, " Sandspout ' " );
+				Log_AddEntry( TOPIC_BEAST_SANDGOLEM , " Primary Benefits: Immune to any kind of physical damage " );
+				Log_AddEntry( TOPIC_BEAST_SANDGOLEM , " Weakness: Poor fire and magic resistance " );
 				AI_Print(concatText);
 				SandGolem_B2 = TRUE;
 			}
 			else if((SandGolem_B1 >= 3) && (SandGolem_B3 == FALSE))
 			{
-				concatText = "Добавлена запись в бестиарий - '";
-				concatText = ConcatStrings(concatText,"Песчаный смерч'");
-				Log_AddEntry(TOPIC_BEAST_SANDGOLEM,"Тактика боя: если вы маг, то считайте вам повезло. В противном случае лучше для начала запастись большим количеством свитков. Без них вы не сможете одолеть это создание.");
+				concatText = " Added entry to the bestiary - ' " ;
+				concatText = ConcatStrings(concatText, " Sandspout ' " );
+				Log_AddEntry( TOPIC_BEAST_SANDGOLEM , " Combat Tactics: If you're a mage, consider yourself lucky. Otherwise, stock up on a lot of scrolls first. Without them, you won't be able to defeat this creature. " );
 				AI_Print(concatText);
 				B_RaiseAttribute(hero,ATR_DEXTERITY,1);
-				SandGolem_B3 = TRUE;
+				SandGolem_B3 = TRUE ;
 			};
 		};
 
-		SandGolem_B1 += 1;	
+		SandGolem_B1 +=  1 ;	
 	};
 };
 
@@ -2098,14 +2099,14 @@ func void ZS_Dead()
 	var string concatText;
 	var string concatexttext;
 	var int permvaluexp;
-	var int randvaluexp;
+	var int randvalueexp;
 	var int randindexstrmonster;
 	var int bonuslpgivehero;
 	var C_Item otherweap;
-	var int DayGonezStop;
+	var int DayGoneZStop;
 	var int RanSumm;
 	
-	self.aivar[AIV_MM_RoamEnd] = FALSE;
+	self.aivar[AIV_MM_RoamEnd] = FALSE ;
 	Mdl_RemoveOverlayMds(self,"HUMANS_NEWTORCH.MDS");
 	Ext_RemoveFromSlot(self,"BIP01 L HAND");
 	Npc_RemoveInvItems(self,ItLsFireTorch,Npc_HasItems(self,ItLsFireTorch));
@@ -2251,17 +2252,17 @@ func void ZS_Dead()
 		};
 		if(MIS_INNOSWILL == LOG_Running)
 		{
-			B_LogEntry(TOPIC_INNOSWILL,"Кажется, это был последний слуга Белиара, о котором я знал. Значит ли это, что я выполнил волю Инноса?");
+			B_LogEntry( TOPIC_INNOSWILL , " It seems that this was the last servant of Beliar that I knew about. Does this mean that I did the will of Innos? " );
 		};
 	};
 	if(Npc_IsPlayer(other) && (self.aivar[AIV_MM_REAL_ID] == ID_SWAMPDRONE) && (Npc_GetDistToNpc(self,other) <= 500))
 	{
 		POISONED = TRUE;
 	};
-	if(self.aivar[93] == FALSE)
+	if (self.aivar[ 93 ] ==  FALSE )
 	{
-		self.aivar[AIV_RANSACKED] = FALSE;
-		self.aivar[AIV_PARTYMEMBER] = FALSE;
+		self.aivar[ AIV_RANSACKED ] = FALSE ;
+		self.aivar[ AIV_PARTYMEMBER ] = FALSE ;
 		self.mission[4] = 4;
 	};
 
@@ -2270,13 +2271,13 @@ func void ZS_Dead()
 
 	if((self.aivar[AIV_VictoryXPGiven] == FALSE) && (Npc_IsPlayer(self) == FALSE) && (Npc_IsPlayer(other) || (other.aivar[AIV_PARTYMEMBER] == TRUE)))
 	{
-		//--------счетчики-------------------------
+		// --------counters-------------------------
 
 		if((self.guild >= 24) && (self.level > 0))
 		{
 			MonsterKilled += 1;
 		};
-		if((self.guild <= GIL_SEPERATOR_HUM) && (self.level > 0) && (self.aivar[93] == FALSE))
+		if (( self . guild <=  GIL_SEPERATOR_HUM ) && ( self . level >  0 ) && ( self . aivar [ 93 ] ==  FALSE )) ;
 		{
 			PeopleKilled += 1;
 		};
@@ -2284,11 +2285,11 @@ func void ZS_Dead()
 		{
 			InnosBonusCount += 1;
 		};
-		if((BeliarBonus == FALSE) && (self.guild <= GIL_SEPERATOR_HUM) && (self.guild != GIL_DMT) && (CurrentLevel != PRIORATWORLD_ZEN) && (self.aivar[93] == FALSE))
+		if ((BeliarBonus ==  FALSE ) && (self.guild <=  GIL_SEPERATOR_HUM ) && (self.guild !=  GIL_DMT ) && (CurrentLevel !=  PRIORATWORLD_ZEN ) && (self.aivar[ 93 ] ==  FALSE )) ;
 		{
 			BeliarBonusCount += 1;
 		};
-		if((BeliarBonus == FALSE) && (self.guild <= GIL_SEPERATOR_HUM) && (self.guild != GIL_BDT) && (CurrentLevel == PRIORATWORLD_ZEN) && (self.aivar[93] == FALSE))
+		if ((BeliarBonus ==  FALSE ) && (self.guild <=  GIL_SEPERATOR_HUM ) && (self.guild !=  GIL_BDT ) && (CurrentLevel ==  PRIORATWORLD_ZEN ) && (self.aivar[ 93 ] ==  FALSE )) ;
 		{
 			BeliarBonusCount += 1;
 		};
@@ -2307,7 +2308,7 @@ func void ZS_Dead()
 			INNOSCRIMECOUNT = INNOSCRIMECOUNT + 1;
 			BELIARPRAYCOUNT = BELIARPRAYCOUNT + 1;
 		};
-		if((self.guild == GIL_BDT) && (self.aivar[93] == FALSE) && (CurrentLevel != PRIORATWORLD_ZEN))
+		if (( self . guild ==  GIL_BDT ) && ( self . aivar [ 93 ] ==  FALSE ) && ( CurrentLevel !=  PRIORATWORLD_ZEN )) ;
 		{
 			INNOSPRAYCOUNT = INNOSPRAYCOUNT + 1;
 			BELIARPRAYCOUNT = BELIARPRAYCOUNT + 1;
@@ -2326,7 +2327,7 @@ func void ZS_Dead()
 			INNOSPRAYCOUNT = INNOSPRAYCOUNT + 20;
 			BELIARPRAYCOUNT = BELIARPRAYCOUNT - 10;
 		};
-		if((self.aivar[AIV_MM_REAL_ID] == ID_SKELETON_LORD) && (Hlp_GetInstanceID(self) != Hlp_GetInstanceID(SKELETON_LORD_KELTUZED)))
+		if ((self.aivar[ AIV_MM_REAL_ID ] ==  ID_SKELETON_LORD ) && (Hlp_GetInstanceID(self) != Hlp_GetInstanceID( SKELETON_LORD_KELTUZED )))
 		{
 			INNOSPRAYCOUNT = INNOSPRAYCOUNT + 5;
 			BELIARPRAYCOUNT = BELIARPRAYCOUNT - 5;
@@ -2342,7 +2343,7 @@ func void ZS_Dead()
 			};
 		};
 
-		//--------счетчики-------------------------
+		// --------counters-------------------------
 
 		if(self.level > 0)
 		{
@@ -2368,9 +2369,9 @@ func void ZS_Dead()
 				permvaluexp = 1;
 			};
 
-			self.aivar[AIV_VictoryXPGiven] = TRUE;
+			self.aivar[AIV_VictoryXPGiven] = TRUE ;
 
-			if(Hlp_GetInstanceID(self) != Hlp_GetInstanceID(Crait))
+			if (Hlp_GetInstanceID(self) != Hlp_GetInstanceID(Crait))
 			{
 				if(self.aivar[90] == TRUE)
 				{
@@ -2421,7 +2422,7 @@ func void ZS_Dead()
 			{
 				if(CountBelChos < 2)
 				{
-					RanSumm = Hlp_Random(100);
+					RanSumm = Hlp_Random( 100 );
 
 					if(RanSumm >= 50)
 					{
@@ -2490,40 +2491,40 @@ func void ZS_Dead()
 		{
 			MEETWITHSTONEGUARD = TRUE;
 		};
-		if((self.aivar[90] == TRUE) && (self.aivar[95] == FALSE) && (Npc_IsPlayer(other) || (other.aivar[AIV_PARTYMEMBER] == TRUE)))
+		if ((self.aivar[ 90 ] ==  TRUE ) && (self.aivar[ 95 ] ==  FALSE ) && (Npc_IsPlayer(other) || (other.aivar[ AIV_PARTYMEMBER ] ==  TRUE ))) ;
 		{
 			if((Hlp_GetInstanceID(self) != Hlp_GetInstanceID(AmasRaf)) && (Hlp_GetInstanceID(self) != Hlp_GetInstanceID(AmasSah)))
 			{
 				if(self.level >= 500)
 				{
-					bonuslpgivehero = 5;
+					bonuslpgivehero = 5 ;
 					b_givebonusforelitemonster(bonuslpgivehero);
 				}
 				else if(self.level >= 300)
 				{
-					bonuslpgivehero = 4;
+					bonuslpgivehero = 4 ;
 					b_givebonusforelitemonster(bonuslpgivehero);
 				}
 				else if(self.level >= 200)
 				{
-					bonuslpgivehero = 3;
+					bonuslpgivehero = 3 ;
 					b_givebonusforelitemonster(bonuslpgivehero);
 				}
 				else if(self.level >= 100)
 				{
-					bonuslpgivehero = 2;
+					bonuslpgivehero = 2 ;
 					b_givebonusforelitemonster(bonuslpgivehero);
 				}
 				else if(self.level > 0)
 				{
-					bonuslpgivehero = 1;
+					bonuslpgivehero = 1 ;
 					b_givebonusforelitemonster(bonuslpgivehero);
 				};
 
-				self.aivar[95] = TRUE;
+				self.aivar[ 95 ] = TRUE ;
 			};
 		};
-		if((self.guild == GIL_ORC) && (GUARDIANSISDEFEATED == FALSE) && (KAPITELORCATC == TRUE) && (Npc_IsPlayer(other) || (other.aivar[AIV_PARTYMEMBER] == TRUE)))
+		if ((self.guild ==  GIL_ORC ) && ( GUARDIANISDEFEATED  ==  FALSE ) && ( CAPITELORCATC  ==  TRUE ) && (Npc_IsPlayer(other) || (other.aivar[ AIV_PARTYMEMBER ] ==  TRUE ))) ;
 		{
 			if(Npc_GetDistToWP(other,"NW_CITY_MERCHANT_PATH_11") <= 32000)
 			{
@@ -2545,14 +2546,14 @@ func void ZS_Dead()
 					FIRSTSTRIKEME = TRUE;
 					if(MIS_STRANGETHINGS == LOG_Running)
 					{
-						B_LogEntry(TOPIC_STRANGETHINGS,"Я вообще перестаю понимать, что здесь происходит! Когда я попытался атаковать одного из орков, то в меня ударил разряд молнии чуть не убивший меня. По всей видимости, какая-то магия защищает всех этих тварей. Похоже, что мне надо быть теперь поосторожнее...");
+						B_LogEntry( TOPIC_STRANGETHINGS , " I don't even understand what's going on here! When I tried to attack one of the orcs, I was hit by a bolt of lightning that almost killed me. Apparently, some kind of magic protects all these creatures. It seems that I you have to be more careful now ... " );
 					}
 					else if(MIS_STRANGETHINGS == FALSE)
 					{
 						MIS_STRANGETHINGS = LOG_Running;
 						Log_CreateTopic(TOPIC_STRANGETHINGS,LOG_MISSION);
 						Log_SetTopicStatus(TOPIC_STRANGETHINGS,LOG_Running);
-						B_LogEntry(TOPIC_STRANGETHINGS,"Стали происходить довольно странные вещи! Когда я попытался атаковать одного из орков, то в меня ударил разряд молнии чуть не убивший меня. По всей видимости, какая-то магия защищает всех этих тварей. Похоже, что мне надо быть теперь поосторожнее...");
+						B_LogEntry( TOPIC_STRANGETHINGS , " Strange things started to happen! When I tried to attack one of the orcs, I was hit by a bolt of lightning that almost killed me. Apparently, some kind of magic protects all these creatures. It seems that I should be now be careful... " );
 					};
 				};
 			}
@@ -2583,7 +2584,7 @@ func void ZS_Dead()
 						MIS_STRANGETHINGS = LOG_Running;
 						Log_CreateTopic(TOPIC_STRANGETHINGS,LOG_MISSION);
 						Log_SetTopicStatus(TOPIC_STRANGETHINGS,LOG_Running);
-						B_LogEntry(TOPIC_STRANGETHINGS,"Стали происходить довольно странные вещи! Когда я попытался атаковать одного из орков, то в меня ударил разряд молнии чуть не убивший меня. По всей видимости, какая-то магия защищает всех этих тварей. Похоже, что мне надо быть теперь поосторожнее...");
+						B_LogEntry( TOPIC_STRANGETHINGS , " Strange things started to happen! When I tried to attack one of the orcs, I was hit by a bolt of lightning that almost killed me. Apparently, some kind of magic protects all these creatures. It seems that I should be now be careful... " );
 					};
 				};
 			}
@@ -2607,14 +2608,14 @@ func void ZS_Dead()
 					FIRSTSTRIKEME = TRUE;
 					if(MIS_STRANGETHINGS == LOG_Running)
 					{
-						B_LogEntry(TOPIC_STRANGETHINGS,"Я вообще перестаю понимать, что здесь происходит! Когда я попытался атаковать одного из орков, то в меня ударил разряд молнии чуть не убивший меня. По всей видимости, какая-то магия защищает всех этих тварей. Похоже, что мне надо быть теперь поосторожнее...");
+						B_LogEntry( TOPIC_STRANGETHINGS , " I don't even understand what's going on here! When I tried to attack one of the orcs, I was hit by a bolt of lightning that almost killed me. Apparently, some kind of magic protects all these creatures. It seems that I you have to be more careful now ... " );
 					}
 					else if(MIS_STRANGETHINGS == FALSE)
 					{
 						MIS_STRANGETHINGS = LOG_Running;
 						Log_CreateTopic(TOPIC_STRANGETHINGS,LOG_MISSION);
 						Log_SetTopicStatus(TOPIC_STRANGETHINGS,LOG_Running);
-						B_LogEntry(TOPIC_STRANGETHINGS,"Стали происходить довольно странные вещи! Когда я попытался атаковать одного из орков, то в меня ударил разряд молнии чуть не убивший меня. По всей видимости, какая-то магия защищает всех этих тварей. Похоже, что мне надо быть теперь поосторожнее...");
+						B_LogEntry( TOPIC_STRANGETHINGS , " Strange things started to happen! When I tried to attack one of the orcs, I was hit by a bolt of lightning that almost killed me. Apparently, some kind of magic protects all these creatures. It seems that I should be now be careful... " );
 					};
 				};
 			};
@@ -2628,13 +2629,13 @@ func void ZS_Dead()
 				B_CountCanyonRazor();
 			};
 		};
-		if((self.aivar[AIV_MM_REAL_ID] == ID_ORCBF) && (STOPBIGBATTLE == FALSE))
+		if ((self.aivar[ AIV_MM_REAL_ID ] ==  ID_ORCBF ) && ( STOPBIGBATTLE  ==  FALSE )) .
 		{
 			ALLBIGFIGHTERSORC = ALLBIGFIGHTERSORC + 1;
 
 			if(Npc_IsPlayer(other) || (other.aivar[AIV_PARTYMEMBER] == TRUE))
 			{
-				IAMKILLORCSBB = IAMKILLORCSBB + 1;
+				IAMKILLORCSBB = IAMKILLORCSBB  +  1 ;
 			};
 			if(ALLBIGFIGHTERSORC >= 150)
 			{
@@ -2643,19 +2644,19 @@ func void ZS_Dead()
 				HUMANSWINSBB = TRUE;
 				MIS_ORсGREATWAR = LOG_SUCCESS;
 				Log_SetTopicStatus(TOPIC_ORсGREATWAR,LOG_SUCCESS);
-				B_LogEntry(TOPIC_ORсGREATWAR,"Мы победили в этой битве - огромная армия орков повержена! Теперь можно подумать об освобождении от орков самого города и прилегающих к нему окрестностей.");
+				B_LogEntry( TOPIC_OR with GREATWAR , " We have won this battle - a huge army of orcs has been defeated! Now we can think about freeing the city and its surroundings from the orcs. " );
 				Wld_SendTrigger("EVT_TRIGGER_ORCMARCH");
 				b_changehp(SLD_800_Lee);
 			};
 		};
 		if((Hlp_GetInstanceID(self) == Hlp_GetInstanceID(Summoned_Skeleton_Warrior_Chosen)) || (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(Summoned_Skeleton_Orc)))
 		{
-			if(CountBelChos > 0)
+			if ( CountBelChos >  0 )
 			{
 				CountBelChos -= 1;
 			};
 		};
-		if((self.aivar[98] == TRUE) && (STOPBIGBATTLE == FALSE))
+		if ((self.aivar[ 98 ] ==  TRUE ) && ( STOPBIGBATTLE  ==  FALSE )) ;
 		{
 			ALLBIGFIGHTERSHUMAN = ALLBIGFIGHTERSHUMAN + 1;
 
@@ -2721,7 +2722,7 @@ func void ZS_Dead()
 		{
 			CreateInvItems(self,ItMi_DexterHead,1);
 			DexterIsDead = TRUE;
-			self.aivar[AIV_StoryBandit] = TRUE;
+			self.aivar[AIV_StoryBandit] = TRUE ;
 
 			if(MIS_WulfgarBandits == LOG_Running)
 			{
@@ -2729,66 +2730,66 @@ func void ZS_Dead()
 			};
 			if(MIS_DeadOrAlive == LOG_Running)
 			{
-				B_LogEntry(TOPIC_DeadOrAlive,"Главарь разбойников Декстер мертв. За его голову можно получить приличную награду.");
+				B_LogEntry(TOPIC_DeadOrAlive, " Rogue leader Dexter is dead. He's got a decent bounty on his head. " );
 			};
 		};
 		if((Hlp_GetInstanceID(self) == Hlp_GetInstanceID(BDT_1460_Nestor)) && (NestorIsDead == FALSE))
 		{
 			CreateInvItems(self,ItMi_NestorHead,1);
 			NestorIsDead = TRUE;
-			self.aivar[AIV_StoryBandit] = TRUE;
+			self.aivar[AIV_StoryBandit] = TRUE ;
 
 			if(MIS_DeadOrAlive == LOG_Running)
 			{
-				B_LogEntry(TOPIC_DeadOrAlive,"Главарь разбойников Нестор по прозвищу 'Ганибал' мертв. За его голову можно получить приличную награду.");
+				B_LogEntry(TOPIC_DeadOrAlive, " The leader of the robbers Nestor, nicknamed 'Hanibal', is dead. You can get a decent reward for his head. " );
 			};
 		};
 		if((Hlp_GetInstanceID(self) == Hlp_GetInstanceID(BDT_10620_Bandit_L)) && (KriksIsDead == FALSE))
 		{
 			CreateInvItems(self,ItMi_KriksHead,1);
 			KriksIsDead = TRUE;
-			self.aivar[AIV_StoryBandit] = TRUE;
+			self.aivar[AIV_StoryBandit] = TRUE ;
 
 			if(MIS_DeadOrAlive == LOG_Running)
 			{
-				B_LogEntry(TOPIC_DeadOrAlive,"Главарь разбойников Крикс по прозвищу 'Бритва' мертв. За его голову можно получить приличную награду.");
+				B_LogEntry(TOPIC_DeadOrAlive, " Rogue leader Crixus 'Razor' is dead. There's a decent bounty on his head. " );
 			};
 		};
-		if((Hlp_GetInstanceID(self) == Hlp_GetInstanceID(BDT_10621_Bandit_L)) && (BartIsDead == FALSE))
+		if ((Help_GetInstanceID(self) == Help_GetInstanceID(BDT_10621_Bandit_L)) && (BartIsDead ==  FALSE ))
 		{
 			CreateInvItems(self,ItMi_BartHead,1);
 			BartIsDead = TRUE;
-			self.aivar[AIV_StoryBandit] = TRUE;
+			self.aivar[AIV_StoryBandit] = TRUE ;
 
 			if(MIS_DeadOrAlive == LOG_Running)
 			{
-				B_LogEntry(TOPIC_DeadOrAlive,"Главарь разбойников Барт по прозвищу 'Коротышка' мертв. За его голову можно получить приличную награду.");
+				B_LogEntry(TOPIC_DeadOrAlive, " Rogue ringleader 'Shorty' Bart is dead. There's a decent bounty on his head. " );
 			};
 		};
 		if((Hlp_GetInstanceID(self) == Hlp_GetInstanceID(BDT_10622_Bandit_L)) && (SkironIsDead == FALSE))
 		{
 			CreateInvItems(self,ItMi_SkironHead,1);
 			SkironIsDead = TRUE;
-			self.aivar[AIV_StoryBandit] = TRUE;
+			self.aivar[AIV_StoryBandit] = TRUE ;
 
 			if(MIS_DeadOrAlive == LOG_Running)
 			{
-				B_LogEntry(TOPIC_DeadOrAlive,"Главарь разбойников Скирон по прозвищу 'Мясник' мертв. За его голову можно получить приличную награду.");
+				B_LogEntry(TOPIC_DeadOrAlive, " The bandit leader 'The Butcher' Skiron is dead. There's a decent bounty on his head. " );
 			};
 		};
 		if((Hlp_GetInstanceID(self) == Hlp_GetInstanceID(BDT_10623_Bandit_L)) && (RocksIsDead == FALSE))
 		{
 			CreateInvItems(self,ItMi_RocksHead,1);
-			RocksIsDead = TRUE;
-			self.aivar[AIV_StoryBandit] = TRUE;
+			RocksIsDead = TRUE ;
+			self.aivar[AIV_StoryBandit] = TRUE ;
 
 			if(MIS_DeadOrAlive == LOG_Running)
 			{
-				B_LogEntry(TOPIC_DeadOrAlive,"Главарь разбойников Рокс по прозвищу 'Шустрый' мертв. За его голову можно получить приличную награду.");
+				B_LogEntry(TOPIC_DeadOrAlive, " Rogue leader 'Nimble' Roxx is dead. There's a decent bounty on his head. " );
 			};
 		};
 
-		//----------------------охота за головами---------------------------------------
+		// ----------------------bounty hunting----------------------- ----------------
 
 		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(Ass_184_Adept))
 		{
@@ -2802,7 +2803,7 @@ func void ZS_Dead()
 			{
 				MIS_PsicampDemon= LOG_Success;
 				Log_SetTopicStatus(TOPIC_PsicampDemon,LOG_Success);
-				B_LogEntry(TOPIC_PsicampDemon,"Демон на болотах мертв! Убив его, я очень сильно помог оркам. Уверен, они не оставят это без внимания.");	
+				B_LogEntry(TOPIC_PsicampDemon, " The demon in the swamps is dead! By killing him, I helped the orcs a lot. I'm sure they won't let this go unnoticed. " );	
 			};
 		};
 		if((Hlp_GetInstanceID(self) == Hlp_GetInstanceID(Ass_127_Osair)) && (OsairIsDead == FALSE))
@@ -2812,7 +2813,7 @@ func void ZS_Dead()
 			if(OsairAttackMe == TRUE)
 			{
 				NoGonsaHereMe = TRUE;
-				B_LogEntry(TOPIC_MasiafStory,"Осаир мертв! А значит, братство Масиафа потеряло еще одного приора. Интересно, что по этому поводу скажет сам Гонсалес.");
+				B_LogEntry(TOPIC_MasiafStory, " Osair is dead! Which means the Masyaf brotherhood has lost another prior. I wonder what Gonzalez himself would say about this. " );
 			};
 
 			if(HideMeetCamera == TRUE)
@@ -2858,34 +2859,34 @@ func void ZS_Dead()
 				B_StartOtherRoutine(Ass_139_Adept,"Start");
 				B_StartOtherRoutine(Ass_140_Adept,"Start");
 				B_StartOtherRoutine(Ass_141_Adept,"Start");
-				B_LogEntry(TOPIC_MasiafStory,"Ханиар убил Тиаманта! Причем довольно легко, несмотря на то, что Тиамант считался лучшим бойцом братства. Это все крайне странно!");
+				B_LogEntry(TOPIC_MasiafStory, " Haniar killed Tiamant! And quite easily, despite the fact that Tiamant was considered the best fighter of the brotherhood. This is all extremely strange! " );
 			};
 		};
 		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(SEK_186_SLAVEOBSSEK))
 		{
-			GoldSlave_01_IsDead = TRUE;
+			GoldSlave_01_IsDead = TRUE ;
 
-			if((GoldSlave_01_IsDead == TRUE) && (GoldSlave_02_IsDead == TRUE) && (GoldOreHelpCome == FALSE))
+			if (( GoldSlave_01_IsDead ==  TRUE ) && ( GoldSlave_02_IsDead ==  TRUE ) && ( GoldOreHelpCome ==  FALSE ))
 			{
 				OsairInRage = TRUE;
 
 				if(MIS_PW_FollowGoldOre == LOG_Running)
 				{
-					B_LogEntry(TOPIC_PW_FollowGoldOre,"Все рабы мертвы! Осаир будет очень недоволен произошедшим.");
+					B_LogEntry(TOPIC_PW_FollowGoldOre, " All slaves are dead! Osair will be very unhappy with what happened. " );
 				};
 			};
 		};
 		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(SEK_387_SLAVEOBSSEK))
 		{
-			GoldSlave_02_IsDead = TRUE;
+			GoldSlave_02_IsDead = TRUE ;
 
-			if((GoldSlave_01_IsDead == TRUE) && (GoldSlave_02_IsDead == TRUE) && (GoldOreHelpCome == FALSE))
+			if (( GoldSlave_01_IsDead ==  TRUE ) && ( GoldSlave_02_IsDead ==  TRUE ) && ( GoldOreHelpCome ==  FALSE ))
 			{
 				OsairInRage = TRUE;
 
 				if(MIS_PW_FollowGoldOre == LOG_Running)
 				{
-					B_LogEntry(TOPIC_PW_FollowGoldOre,"Все рабы мертвы! Осаир будет очень недоволен произошедшим.");
+					B_LogEntry(TOPIC_PW_FollowGoldOre, " All slaves are dead! Osair will be very unhappy with what happened. " );
 				};
 			};
 		};
@@ -2893,7 +2894,7 @@ func void ZS_Dead()
 		{
 			//Wld_SendTrigger("EVT_ASS_DEMON_FIRSTLOCK_HIDE");
 		};
-		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(ORC_7550_GORKAR))
+		if (Hlp_GetInstanceID(self) == Hlp_GetInstanceID( ORC_7550_GORKAR ))
 		{
 			if((MIS_MissOldFriend == LOG_Running) && (GorKarShowMe == FALSE))
 			{
@@ -2939,22 +2940,22 @@ func void ZS_Dead()
 	
 			if(MIS_EvilTroll == LOG_Running)
 			{
-				B_LogEntry(TOPIC_EvilTroll,"Я убил огромного пещерного тролля, о котором говорил Нетбек.");
+				B_LogEntry(TOPIC_EvilTroll, " I killed the giant cave troll Netback was talking about. " );
 			};
 		};
 		if((Hlp_GetInstanceID(self) == Hlp_GetInstanceID(FIREGOLEM_UNIQ)) && (MagolemusIsDead == FALSE))
 		{
-			MagolemusIsDead = TRUE;
+			MagolemusIsDead = TRUE ;
 			AI_Print(PRINT_TEMPLETASK_03_DONE);
-			B_LogEntry(TOPIC_AdanosCrone,"Cущество Инноса уничтожено...");
+			B_LogEntry(TOPIC_AdanosCrone, " Innos' creature has been destroyed... " );
 		};
 		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(BDT_1084_Addon_Senyan))
 		{
 			if(Senyan_Called == TRUE)
 			{
-				Senyan_Erpressung = LOG_SUCCESS;
+				Senyan_Blackmail = LOG_SUCCESS ;
 				Log_SetTopicStatus(Topic_Addon_Senyan,LOG_SUCCESS);
-				B_LogEntry(Topic_Addon_Senyan,"Полагаю, что теперь Сеньян никому не сможет рассказать мою тайну. Оно и к лучшему!");
+				B_LogEntry(Topic_Addon_Senyan, " I guess now Senyan won't be able to tell anyone about my secret. It's for the best! " );
 			}
 			else
 			{
@@ -2966,13 +2967,13 @@ func void ZS_Dead()
 		{
 			MOEISDEAD = TRUE;
 		};
-		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(vlk_989_reinar))
+		if ( Help_GetInstanceID ( self ) == Help_GetInstanceID ( vlk_989_reinar ) )
 		{
-			Npc_RemoveInvItems(self,ItMw_Orkschlaechter,Npc_HasItems(self,ItMw_Orkschlaechter));
-			Npc_RemoveInvItems(self,ItMw_Schlachtaxt,Npc_HasItems(self,ItMw_Schlachtaxt));
-			Npc_RemoveInvItems(self,ItMw_Sturmbringer,Npc_HasItems(self,ItMw_Sturmbringer));
+			Npc_RemoveInvItems(self,ItMw_Orc Butcher,Npc_HasItems(self,ItMw_Orc Butcher));
+			Npc_RemoveInvItems(self,ItMw_axe,Npc_HasItems(self,ItMw_axe));
+			Npc_RemoveInvItems(self,ItMw_Stormbringer,Npc_HasItems(self,ItMw_Stormbringer));
 			Npc_RemoveInvItems(self,ItMw_Berserkeraxt,Npc_HasItems(self,ItMw_Berserkeraxt));
-			Npc_RemoveInvItems(self,ItMw_Drachenschneide,Npc_HasItems(self,ItMw_Drachenschneide));
+			Npc_RemoveInvItems(self,ItMw_Dragon's Edge,Npc_HasItems(self,ItMw_Dragon's Edge));
 			Npc_RemoveInvItems(self,ItMw_Addon_Betty,Npc_HasItems(self,ItMw_Addon_Betty));
 			Npc_RemoveInvItems(self,itmw_2h_urizel,Npc_HasItems(self,itmw_2h_urizel));
 			Npc_RemoveInvItems(self,itmw_2h_urizel_nomagic,Npc_HasItems(self,itmw_2h_urizel_nomagic));
@@ -3001,12 +3002,12 @@ func void ZS_Dead()
 			Npc_RemoveInvItems(self,ItMw_Schiffsaxt,Npc_HasItems(self,ItMw_Schiffsaxt));
 			B_CreateAmbientInv(self);
 		};
-		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(sek_8013_joru))
+		if (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(sek_8013_joru))
 		{
 			Npc_RemoveInvItems(self,ItMw_Sense,Npc_HasItems(self,ItMw_Sense));
 			Npc_RemoveInvItems(self,ItMw_Nagelkeule,Npc_HasItems(self,ItMw_Nagelkeule));
 			Npc_RemoveInvItems(self,ItMw_Nagelkeule2,Npc_HasItems(self,ItMw_Nagelkeule2));
-			Npc_RemoveInvItems(self,ItMw_Streitkolben,Npc_HasItems(self,ItMw_Streitkolben));
+			Npc_RemoveInvItems(self,ItMw_Mace,Npc_HasItems(self,ItMw_Mace));
 			Npc_RemoveInvItems(self,ItMW_Addon_Keule_1h_01,Npc_HasItems(self,ItMW_Addon_Keule_1h_01));
 			Npc_RemoveInvItems(self,ITMW_1H_MACE_BANDOS_107,Npc_HasItems(self,ITMW_1H_MACE_BANDOS_107));
 			Npc_RemoveInvItems(self,ItMw_Zweihaender1,Npc_HasItems(self,ItMw_Zweihaender1));
@@ -3069,7 +3070,7 @@ func void ZS_Dead()
 			{
 				MIS_KILLTHEMALL = LOG_SUCCESS;
 				Log_SetTopicStatus(TOPIC_KILLTHEMALL,LOG_SUCCESS);
-				B_LogEntry(TOPIC_KILLTHEMALL,"Полагаю, что я убил достаточно орков, чтобы посеять панику в их ряды! Лорд Хаген будет доволен этим известием.");
+				B_LogEntry( TOPIC_KILLTHEMALL , " I believe I've killed enough orcs to cause panic in their ranks! Lord Hagen will be pleased with this news. " );
 			};
 		};
 		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(ILARAH))
@@ -3087,7 +3088,7 @@ func void ZS_Dead()
 				GUARDIANSISDEFEATED = TRUE;
 				MIS_GUARDIANS = LOG_Success;
 				Log_SetTopicStatus(TOPIC_GUARDIANS,LOG_Success);
-				B_LogEntry(TOPIC_GUARDIANS,"Мне удалось одолеть всех Хранителей! Теперь этому миру с их стороны ничто не угрожает...");
+				B_LogEntry( TOPIC_GUARDIANS , " I managed to defeat all the Guardians! Now nothing threatens this world from their side... " );
 
 				if(MIS_STRANGETHINGS == LOG_Running)
 				{
@@ -3105,7 +3106,7 @@ func void ZS_Dead()
 		{
 			Wld_PlayEffect("spellFX_INCOVATION_WHITE",self,self,0,0,0,FALSE);
 			Wld_PlayEffect("FX_EarthQuake",self,self,0,0,0,FALSE);
-			STONNOSISDESTOYED = TRUE;
+			STONNOSISDESTOYED = TRUE ;
 			B_StartOtherRoutine(self,"TOT");
 			AI_Teleport(self,"TOT");
 
@@ -3116,7 +3117,7 @@ func void ZS_Dead()
 
 				MIS_GUARDIANS = LOG_Success;
 				Log_SetTopicStatus(TOPIC_GUARDIANS,LOG_Success);
-				B_LogEntry(TOPIC_GUARDIANS,"Мне удалось одолеть всех Хранителей! Теперь этому миру с их стороны ничто не угрожает...");
+				B_LogEntry( TOPIC_GUARDIANS , " I managed to defeat all the Guardians! Now nothing threatens this world from their side... " );
 
 				if(MIS_STRANGETHINGS == LOG_Running)
 				{
@@ -3164,11 +3165,11 @@ func void ZS_Dead()
 			if((ADEPT_1_DEAD == TRUE) && (ADEPT_2_DEAD == TRUE) && (ADEPT_3_DEAD == TRUE) && (ADEPT_4_DEAD == TRUE) && (AssInvasionStop == FALSE))
 			{
 				AssInvasionStop = TRUE;
-				B_LogEntry(TOPIC_PrioratStart ,"Мне и стражам удалось отразить атаку Масиафа на лагерь сборщиков! Хотя и не без потерь... Надо срочно сообщить о случившемся Идолу Намибу.");
+				B_LogEntry(TOPIC_PrioratStart , " Me and the guards managed to repel Masyaf's attack on the gathering camp! Although not without casualties... We must urgently report the incident to the Namib Idol. " );
 			};
 		};
 
-		//-------------------эпик данж---------------------------------
+		// ---------------------------------------------------------------- ------
 
 		if((PaleCrawlerIsDead == FALSE) && (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(PaleCrawler)))
 		{
@@ -3177,7 +3178,7 @@ func void ZS_Dead()
 
 			if(MIS_Miss_Brother == LOG_Running)
 			{
-				B_LogEntry(TOPIC_Miss_Brother,"Похоже именно этот жуткий монстр тогда убил Иле'Силя. Думаю стоит рассказать ему об этом...");
+				B_LogEntry(TOPIC_Miss_Brother, " It looks like that creepy monster was the one who killed Ile'Sil. I think I should tell him about it... " );
 			};
 		};
 		if((AraharPlagueIsDead == FALSE) && (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(AraharPlague)))
@@ -3187,7 +3188,7 @@ func void ZS_Dead()
 
 			if(MIS_Miss_Brother == LOG_Running)
 			{
-				B_LogEntry(TOPIC_Miss_Brother,"Этот необычный зомби доставил мне проблем. У него при себе был какой-то ключ. Возможно этот ключ открывает что-то особенное. Для начала я думаю, мне стоит осмотреться на месте...");
+				B_LogEntry(TOPIC_Miss_Brother, " This weird zombie gave me a hard time. He had a key of some sort on him. Maybe that key unlocks something special. First, I think I should look around the place... " );
 			};
 		};
 		if((ShadowGuardOneIsDead == FALSE) && (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(ShadowGuardOne)))
@@ -3200,7 +3201,7 @@ func void ZS_Dead()
 
 				if(MIS_Miss_Brother == LOG_Running)
 				{
-					B_LogEntry(TOPIC_Miss_Brother,"Эти призрачные стражи появились тут не спроста. Похоже, они что-то охраняли...");
+					B_LogEntry(TOPIC_Miss_Brother, " These ghostly guardians didn't show up here by accident. Looks like they were guarding something... " );
 				};
 			};
 		};
@@ -3214,7 +3215,7 @@ func void ZS_Dead()
 
 				if(MIS_Miss_Brother == LOG_Running)
 				{
-					B_LogEntry(TOPIC_Miss_Brother,"Эти призрачные стражи появились тут не спроста. Похоже, они что-то охраняли...");
+					B_LogEntry(TOPIC_Miss_Brother, " These ghostly guardians didn't show up here by accident. Looks like they were guarding something... " );
 				};
 			};
 		};
@@ -3323,7 +3324,7 @@ func void ZS_Dead()
 			Wld_SendTrigger("EVT_BOSSBROTHER_TRIGGER");	
 			Wld_SendTrigger("EVT_BOSSMAMAGE_TRIGGER");	
 			ChelDrakIsDead = TRUE;
-			B_LogEntry(TOPIC_Miss_Brother,"Я уничтожил древнего лорда, Чел'Драка. Похоже он тут находился не спроста. Он что-то охранял... Интересно что?");
+			B_LogEntry(TOPIC_Miss_Brother, " I destroyed the ancient lord, Chel'Drak. Looks like he was here for a reason. He was guarding something... I wonder what? " );
 		};
 		if((IlesilIsDead == FALSE) && (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(Ilesil_Evil)))
 		{
@@ -3332,7 +3333,7 @@ func void ZS_Dead()
 			IlesilIsDead = TRUE;
 			MIS_Miss_Brother = LOG_Success;
 			Log_SetTopicStatus(TOPIC_Miss_Brother,LOG_Success);
-			B_LogEntry_Quiet(TOPIC_Miss_Brother,"Иле'Силь повержен! Теперь ничто не мешает ему быть рядом со своим братом. Пора выбираться отсюда...");	
+			B_LogEntry_Quiet(TOPIC_Miss_Brother, " Ile'Sil is defeated! Now nothing prevents him from being close to his brother. It's time to get out of here... " );	
 
 			if((hero.guild == GIL_KDF) || (hero.guild == GIL_KDW) || (hero.guild == GIL_KDM) || (hero.guild == GIL_GUR) || (hero.guild == GIL_NDM) || (hero.guild == GIL_NDW) || (hero.guild == GIL_NOV))
 			{
@@ -3362,13 +3363,13 @@ func void ZS_Dead()
 			};
 		};
 
-		//------------------люди лагеря--------------------------------
+		// ------------------camp people---------------------- ----
 
 		if((Hlp_GetInstanceID(self) == Hlp_GetInstanceID(vlk_6134_valeran)) && (ValeranIsDead == FALSE))
 		{
 			ValeranIsDead = TRUE;
 		};
-		if((Hlp_GetInstanceID(self) == Hlp_GetInstanceID(VLK_4303_Addon_Erol)) && (ErolIsDead == FALSE))
+		if ((Help_GetInstanceID(self) == Help_GetInstanceID(VLK_4303_Erol_Addon)) && (ErolIsDead ==  FALSE ))
 		{
 			ErolIsDead = TRUE;
 		};
@@ -3386,9 +3387,9 @@ func void ZS_Dead()
 		};
 		if((Hlp_GetInstanceID(self) == Hlp_GetInstanceID(vlk_986_viper)) && (ViperIsDead == FALSE))
 		{
-			ViperIsDead = TRUE;
+			ViperIsDead = TRUE ;
 		};
-		if((Hlp_GetInstanceID(self) == Hlp_GetInstanceID(VLK_4132_Talbin_NW)) && (TalbinNWIsDead == FALSE))
+		if ((Help_GetInstanceID(self) == Help_GetInstanceID(VLK_4132_Talbin_NW)) && (TalbinNWIsDead ==  FALSE ))
 		{
 			TalbinNWIsDead = TRUE;
 		};
@@ -3396,7 +3397,7 @@ func void ZS_Dead()
 		{
 			NiclasIsDead = TRUE;
 		};
-		if((Hlp_GetInstanceID(self) == Hlp_GetInstanceID(VLK_4301_Addon_Farim)) && (FarimIsDead == FALSE))
+		if ((Help_GetInstanceID(self) == Help_GetInstanceID(VLK_4301_Farim_Addon)) && (FarimIsDead ==  FALSE ))
 		{
 			FarimIsDead = TRUE;
 		};
@@ -3428,7 +3429,7 @@ func void ZS_Dead()
 		{
 			CarlIsDead = TRUE;
 		};
-		if((Hlp_GetInstanceID(self) == Hlp_GetInstanceID(BAU_980_Sagitta)) && (SagittaIsDead == FALSE))
+		if ((Help_GetInstanceID(self) == Help_GetInstanceID(BAU_980_Our)) && (OurIsDead ==  FALSE ))
 		{
 			SagittaIsDead = TRUE;
 		};
@@ -3449,7 +3450,7 @@ func void ZS_Dead()
 			BilgotNWIsDead = TRUE;
 		};
 
-		//------------------люди лагеря--------------------------------
+		// ------------------camp people---------------------- ----
 
 		if((Hlp_GetInstanceID(self) == Hlp_GetInstanceID(VLK_494_Attila)) && (AttilaIsDead == FALSE))
 		{
@@ -3463,7 +3464,7 @@ func void ZS_Dead()
 			{
 				MIS_MasiafStory = LOG_Success;
 				Log_SetTopicStatus(TOPIC_MasiafStory,LOG_Success);
-				B_LogEntry(TOPIC_MasiafStory,"Ханиар мертв! Полагаю, что теперь Гонсалес частично загладил свою вину перед Инносом, а древнее братство Масиаф прекратило свое существование.");
+				B_LogEntry(TOPIC_MasiafStory, " Haniar is dead! I believe that now Gonzalez has partially made amends to Innos, and the ancient brotherhood of Masiaf has ceased to exist. " );
 			};
 
 			Cave_DemonHall_Gate = TRUE;
@@ -3519,7 +3520,7 @@ func void ZS_Dead()
 			{
 				MIS_PrioratStart = LOG_Success;
 				Log_SetTopicStatus(TOPIC_PrioratStart,LOG_Success);
-				B_LogEntry(TOPIC_PrioratStart,"За всеми похищениями, как оказалось, стоял наш старый знакомый - Кор-Галом! Тьма наделила его могущественной силой демона и он смог подчинить своей воле Ханиара с его братством. Эти слепые фанатики крали для него послушников, чтобы тот проводил над ними свои ужасающие эксперименты. Один из таких экспериментов Кор-Галома меня чуть не прикончил в храме. Однако теперь все кончено! Надо выбираться отсюда как можно скорее...и сообщить идолу Намибу, что братство отныне в безопасности.");
+				B_LogEntry(TOPIC_PrioratStart, " Behind all the abductions, as it turned out, was our old acquaintance - Kor-Gal! Darkness endowed him with powerful demonic power and he was able to subdue Haniar and his brotherhood to his will. These blind fanatics stole novices for him to see him over "Kor-Galom's one of these experiments almost killed me in the temple. But it's over now! We must get out of here as soon as possible...and inform the Namib idol that the brotherhood is safe from now on. " );
 			};
 			
 			PW_Exit = TRUE;
@@ -3532,7 +3533,7 @@ func void ZS_Dead()
 			{
 				MIS_TrueBattle = LOG_Success;
 				Log_SetTopicStatus(TOPIC_TrueBattle,LOG_Success);
-				B_LogEntry(TOPIC_TrueBattle,"Я убил Нрозаса в поединке Истины! Еще один приор отправился на тот свет...");
+				B_LogEntry(TOPIC_TrueBattle, " I killed Nrozas in a duel of Truth! Another Prior has died... " );
 				B_StartOtherRoutine(Ass_144_Adept,"Start");
 				B_StartOtherRoutine(Ass_145_Adept,"Start");
 				B_StartOtherRoutine(Ass_146_Adept,"Start");
@@ -3578,7 +3579,7 @@ func void ZS_Dead()
 
 			if((MIS_SleeperBack == LOG_Running) && (NeedSleeperStone == FALSE) && (SleeperStone == FALSE))
 			{
-				B_LogEntry(TOPIC_SleeperBack,"Спящий вернулся! При виде его, меня сразу же клонит в сон и я ничего не могу поделать с этим. Думаю, что сейчас мне не одолеть его! Надо поговорить с Нетбеком...");
+				B_LogEntry(TOPIC_SleeperBack, " The sleeper is back! Seeing him immediately puts me to sleep and I can't do anything about it. I don't think I can beat him now! I need to talk to Netback... " );
 				NeedSleeperStone = TRUE;
 			};
 		};
@@ -3587,22 +3588,22 @@ func void ZS_Dead()
 			ELITEGENERALORICISDEAD_02 = TRUE;
 			if(MIS_KILLOCELITE == LOG_Running)
 			{
-				B_LogEntry(TOPIC_KILLOCELITE,"Я убил орочьего военачальника Нур-Шака.");
+				B_LogEntry( TOPIC_KILLOCELITE , " I killed the orc warlord Nur-Shak. " );
 				if((ELITEGENERALORICISDEAD_01 == TRUE) && (ELITEGENERALORICISDEAD_02 == TRUE) && (ELITEGENERALORICISDEAD_03 == TRUE) && (ELITEGENERALORICISDEAD_04 == TRUE))
 				{
-					Log_AddEntry(TOPIC_KILLOCELITE,"Я убил всех орочьих военачальников, о которых мне говорил паладин Орик.");
+					Log_AddEntry( TOPIC_KILLOCELITE , " I've killed all the Orc Warlords paladin Orik told me about. " );
 				};
 			};
 		};
-		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(orc_8516_tumpak))
+		if (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(orc_8516_tumpak))
 		{
 			ELITEGENERALORICISDEAD_03 = TRUE;
 			if(MIS_KILLOCELITE == LOG_Running)
 			{
-				B_LogEntry(TOPIC_KILLOCELITE,"Я убил орочьего военачальника Тум-Пака.");
+				B_LogEntry( TOPIC_KILLOCELITE , " I killed the Orc Warlord Tum-Pak. " );
 				if((ELITEGENERALORICISDEAD_01 == TRUE) && (ELITEGENERALORICISDEAD_02 == TRUE) && (ELITEGENERALORICISDEAD_03 == TRUE) && (ELITEGENERALORICISDEAD_04 == TRUE))
 				{
-					Log_AddEntry(TOPIC_KILLOCELITE,"Я убил всех орочьих военачальников, о которых мне говорил паладин Орик.");
+					Log_AddEntry( TOPIC_KILLOCELITE , " I've killed all the Orc Warlords paladin Orik told me about. " );
 				};
 			};
 		};
@@ -3611,10 +3612,10 @@ func void ZS_Dead()
 			ELITEGENERALORICISDEAD_04 = TRUE;
 			if(MIS_KILLOCELITE == LOG_Running)
 			{
-				B_LogEntry(TOPIC_KILLOCELITE,"Я убил орочьего военачальника Дур-Каша.");
+				B_LogEntry( TOPIC_KILLOCELITE , " I killed the orc warlord Dur-Kash. " );
 				if((ELITEGENERALORICISDEAD_01 == TRUE) && (ELITEGENERALORICISDEAD_02 == TRUE) && (ELITEGENERALORICISDEAD_03 == TRUE) && (ELITEGENERALORICISDEAD_04 == TRUE))
 				{
-					Log_AddEntry(TOPIC_KILLOCELITE,"Я убил всех орочьих военачальников, о которых мне говорил паладин Орик.");
+					Log_AddEntry( TOPIC_KILLOCELITE , " I've killed all the Orc Warlords paladin Orik told me about. " );
 				};
 			};
 		};
@@ -3628,11 +3629,11 @@ func void ZS_Dead()
 			DEMONDAGOTISDEAD_01 = TRUE;
 			if((DEMONDAGOTISDEAD_01 == TRUE) && (DEMONDAGOTISDEAD_02 == TRUE) && (DEMONDAGOTISDEAD_03 == TRUE) && (DEMONDAGOTISDEAD_04 == TRUE))
 			{
-				ALLDAGOTDEMONSISDEAD = TRUE;
-				Wld_InsertItem(itru_teleportdagot,"FP_STAND_DI_GUARDIAN_01");
+				ALLDAGOTDEMONSISDEAD = TRUE ;
+				Wld_InsertItem(intru_teleportnow, " FP_STAND_UNGUARD_01 " );
 				if(MIS_GUARDIANS == LOG_Running)
 				{
-					B_LogEntry(TOPIC_GUARDIANS,"Мне чудом удалось избежать смерти от лап демонов, призваных Хранителем Даготом... Теперь надо решить, что делать дальше. У кого просить совета?!");
+					B_LogEntry( TOPIC_GUARDIANS , " I miraculously escaped death from the clutches of the demons summoned by the Guardian Dagoth... Now I need to decide what to do next. Whom should I ask for advice?! " );
 				};
 			};
 		};
@@ -3645,11 +3646,11 @@ func void ZS_Dead()
 			DEMONDAGOTISDEAD_02 = TRUE;
 			if((DEMONDAGOTISDEAD_01 == TRUE) && (DEMONDAGOTISDEAD_02 == TRUE) && (DEMONDAGOTISDEAD_03 == TRUE) && (DEMONDAGOTISDEAD_04 == TRUE))
 			{
-				ALLDAGOTDEMONSISDEAD = TRUE;
-				Wld_InsertItem(itru_teleportdagot,"FP_STAND_DI_GUARDIAN_01");
+				ALLDAGOTDEMONSISDEAD = TRUE ;
+				Wld_InsertItem(intru_teleportnow, " FP_STAND_UNGUARD_01 " );
 				if(MIS_GUARDIANS == LOG_Running)
 				{
-					B_LogEntry(TOPIC_GUARDIANS,"Мне чудом удалось избежать смерти от лап демонов, призваных Хранителем Даготом... Теперь надо решить, что делать дальше. У кого просить совета?!");
+					B_LogEntry( TOPIC_GUARDIANS , " I miraculously escaped death from the clutches of the demons summoned by the Guardian Dagoth... Now I need to decide what to do next. Whom should I ask for advice?! " );
 				};
 			};
 		};
@@ -3658,11 +3659,11 @@ func void ZS_Dead()
 			DEMONDAGOTISDEAD_03 = TRUE;
 			if((DEMONDAGOTISDEAD_01 == TRUE) && (DEMONDAGOTISDEAD_02 == TRUE) && (DEMONDAGOTISDEAD_03 == TRUE) && (DEMONDAGOTISDEAD_04 == TRUE))
 			{
-				ALLDAGOTDEMONSISDEAD = TRUE;
-				Wld_InsertItem(itru_teleportdagot,"FP_STAND_DI_GUARDIAN_01");
+				ALLDAGOTDEMONSISDEAD = TRUE ;
+				Wld_InsertItem(intru_teleportnow, " FP_STAND_UNGUARD_01 " );
 				if(MIS_GUARDIANS == LOG_Running)
 				{
-					B_LogEntry(TOPIC_GUARDIANS,"Мне чудом удалось избежать смерти от лап демонов, призваных Хранителем Даготом... Теперь надо решить, что делать дальше. У кого просить совета?!");
+					B_LogEntry( TOPIC_GUARDIANS , " I miraculously escaped death from the clutches of the demons summoned by the Guardian Dagoth... Now I need to decide what to do next. Whom should I ask for advice?! " );
 				};
 			};
 		};
@@ -3671,11 +3672,11 @@ func void ZS_Dead()
 			DEMONDAGOTISDEAD_04 = TRUE;
 			if((DEMONDAGOTISDEAD_01 == TRUE) && (DEMONDAGOTISDEAD_02 == TRUE) && (DEMONDAGOTISDEAD_03 == TRUE) && (DEMONDAGOTISDEAD_04 == TRUE))
 			{
-				ALLDAGOTDEMONSISDEAD = TRUE;
-				Wld_InsertItem(itru_teleportdagot,"FP_STAND_DI_GUARDIAN_01");
+				ALLDAGOTDEMONSISDEAD = TRUE ;
+				Wld_InsertItem(intru_teleportnow, " FP_STAND_UNGUARD_01 " );
 				if(MIS_GUARDIANS == LOG_Running)
 				{
-					B_LogEntry(TOPIC_GUARDIANS,"Мне чудом удалось избежать смерти от лап демонов, призваных Хранителем Даготом... Теперь надо решить, что делать дальше. У кого просить совета?!");
+					B_LogEntry( TOPIC_GUARDIANS , " I miraculously escaped death from the clutches of the demons summoned by the Guardian Dagoth... Now I need to decide what to do next. Whom should I ask for advice?! " );
 				};
 			};
 		};
@@ -3735,7 +3736,7 @@ func void ZS_Dead()
 		};
 		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(waterritualdarkskeleton_03))
 		{
-			WATERRITUALDARKSKELETONISDEAD_03 = TRUE;
+			WATERRITUALDARKSKELETONISDEAD_03 = TRUE ;
 			if((SECONDWAVEMONSTERSTART == TRUE) && (SECONDWAVEMONSTERSTOP == FALSE) && (WATERRITUALDARKSKELETONISDEAD_01 == TRUE) && (WATERRITUALDARKSKELETONISDEAD_02 == TRUE) && (WATERRITUALDARKSKELETONISDEAD_03 == TRUE))
 			{
 				SECONDWAVEMONSTERSTOP = TRUE;
@@ -3790,11 +3791,11 @@ func void ZS_Dead()
 				Wld_PlayEffect("VOB_MAGICBURN",hero,hero,0,0,0,FALSE);
 				hero.attribute[ATR_HITPOINTS] = 0;
 			};
-			if(MIS_HORINISFREE == LOG_Running)
+			if ( MIS_HORINISFREE  == LOG_Running )
 			{
 				MIS_HORINISFREE = LOG_SUCCESS;
 				Log_SetTopicStatus(TOPIC_HORINISFREE,LOG_SUCCESS);
-				B_LogEntry(TOPIC_ORсGREATWAR,"Я уничтожил предводителя орков, который руководил войсками в Хоринисе. Думаю, что теперь орки не окажут достойного сопротивления, лишившись своего лидера...осталось лишь перебить их в самом городе.");
+				B_LogEntry( TOPIC_OR with GREATWAR , " I destroyed the orc leader who led the troops in Khorinis. I think that now the orcs will not put up a worthy resistance, having lost their leader ... it remains only to kill them in the city itself. " );
 			};
 			if((HORINISISFREE == TRUE) && (MONASTERYISFREE == TRUE) && (ELITEORKNWFLGISDEAD_23 == TRUE) && (ELITEORKNWFLGISDEAD_24 == TRUE) && (ELITEORKNWFLGISDEAD_25 == TRUE) && (ELITEORKNWFLGISDEAD_27 == TRUE) && (ELITEORKNWFLGISDEAD_28 == TRUE) && (ELITEORKNWFLGISDEAD_29 == TRUE) && (ELITEORKNWFLGISDEAD_30 == TRUE) && (ELITEORKNWFLGISDEAD_32 == TRUE) && (ELITEORKNWFLGISDEAD_36 == TRUE) && (SUPERELITEORKNWFLGISDEAD_03 == TRUE))
 			{
@@ -3824,7 +3825,7 @@ func void ZS_Dead()
 				{
 					MIS_MONASTERYSIEDGE = LOG_SUCCESS;
 					Log_SetTopicStatus(TOPIC_MONASTERYSIEDGE,LOG_SUCCESS);
-					B_LogEntry(TOPIC_MONASTERYSIEDGE,"Я уничтожил весь командный состав орков, который руководил осадой монастыря! Пирокар будет рад этому известию.");
+					B_LogEntry( TOPIC_MONASTERYSIEDGE , " I have destroyed the entire orc command staff that led the siege of the monastery! The pyrocar will be glad to hear this. " );
 				};
 			};
 			if((HORINISISFREE == TRUE) && (MONASTERYISFREE == TRUE) && (ELITEORKNWFLGISDEAD_23 == TRUE) && (ELITEORKNWFLGISDEAD_24 == TRUE) && (ELITEORKNWFLGISDEAD_25 == TRUE) && (ELITEORKNWFLGISDEAD_27 == TRUE) && (ELITEORKNWFLGISDEAD_28 == TRUE) && (ELITEORKNWFLGISDEAD_29 == TRUE) && (ELITEORKNWFLGISDEAD_30 == TRUE) && (ELITEORKNWFLGISDEAD_32 == TRUE) && (ELITEORKNWFLGISDEAD_36 == TRUE) && (SUPERELITEORKNWFLGISDEAD_03 == TRUE))
@@ -3868,7 +3869,7 @@ func void ZS_Dead()
 				{
 					MIS_MONASTERYSIEDGE = LOG_SUCCESS;
 					Log_SetTopicStatus(TOPIC_MONASTERYSIEDGE,LOG_SUCCESS);
-					B_LogEntry(TOPIC_MONASTERYSIEDGE,"Я уничтожил весь командный состав орков, который руководил осадой монастыря! Пирокар будет рад этому известию.");
+					B_LogEntry( TOPIC_MONASTERYSIEDGE , " I have destroyed the entire orc command staff that led the siege of the monastery! The pyrocar will be glad to hear this. " );
 				};
 			};
 			if((HORINISISFREE == TRUE) && (MONASTERYISFREE == TRUE) && (ELITEORKNWFLGISDEAD_23 == TRUE) && (ELITEORKNWFLGISDEAD_24 == TRUE) && (ELITEORKNWFLGISDEAD_25 == TRUE) && (ELITEORKNWFLGISDEAD_27 == TRUE) && (ELITEORKNWFLGISDEAD_28 == TRUE) && (ELITEORKNWFLGISDEAD_29 == TRUE) && (ELITEORKNWFLGISDEAD_30 == TRUE) && (ELITEORKNWFLGISDEAD_32 == TRUE) && (ELITEORKNWFLGISDEAD_36 == TRUE) && (SUPERELITEORKNWFLGISDEAD_03 == TRUE))
@@ -4133,9 +4134,9 @@ func void ZS_Dead()
 		{
 			ELITEORKPASSISDEAD = TRUE;
 		};
-		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(pal_2500_garond))
+		if (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(pal_2500_garond))
 		{
-			GARONDNWISDEAD = TRUE;
+			GARONDNWISDEAD = TRUE ;
 		};
 		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(pal_2510_oric))
 		{
@@ -4306,8 +4307,8 @@ func void ZS_Dead()
 
 			if((MIS_KELIOSTEST == LOG_Running) && (KELIOSFIRETEST == FALSE) && (FIRETESTMONSTERONEISDEAD == TRUE) && (FIRETESTMONSTERTWOISDEAD == TRUE) && (FIRETESTMONSTERTHREEISDEAD == TRUE) && (FIRETESTMONSTERFOURISDEAD == TRUE) && (FIRETESTMONSTERFIVEISDEAD == TRUE))
 			{
-				B_LogEntry(TOPIC_KELIOSTEST,"Я прошел Испытание Огнем! Теперь, думаю пора возвращатьтся к хранителю Келиосу.");
-				KELIOSFIRETEST = TRUE;
+				B_LogEntry( TOPIC_KELIOSTEST , " I've passed the Trial by Fire! Now, I think it's time to get back to Keeper Kelios. " );
+				KELIOSFIRETEST = TRUE ;
 			};
 
 			Wld_PlayEffect("spellFX_Teleport_RING",hero,hero,0,0,0,FALSE);
@@ -4321,22 +4322,22 @@ func void ZS_Dead()
 
 			if((MIS_KELIOSTEST == LOG_Running) && (KELIOSFIRETEST == FALSE) && (FIRETESTMONSTERONEISDEAD == TRUE) && (FIRETESTMONSTERTWOISDEAD == TRUE) && (FIRETESTMONSTERTHREEISDEAD == TRUE) && (FIRETESTMONSTERFOURISDEAD == TRUE) && (FIRETESTMONSTERFIVEISDEAD == TRUE))
 			{
-				B_LogEntry(TOPIC_KELIOSTEST,"Я прошел Испытание Огнем! Теперь, думаю пора возвращатьтся к хранителю Келиосу.");
-				KELIOSFIRETEST = TRUE;
+				B_LogEntry( TOPIC_KELIOSTEST , " I've passed the Trial by Fire! Now, I think it's time to get back to Keeper Kelios. " );
+				KELIOSFIRETEST = TRUE ;
 			};
 
 			Wld_PlayEffect("spellFX_Teleport_RING",hero,hero,0,0,0,FALSE);
 			AI_Teleport(hero,"START_FIRECAVE");
 		};
-		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(vlk_6027_taliasan))
+		if (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(vlk_6027_taliasan))
 		{
 			if((MIS_XARDASNDMTASKSTWO == LOG_Running) && (GIVEXARDASSEEKBOOK == FALSE))
 			{
 				TALIASANISDEAD = TRUE;
-				B_LogEntry(TOPIC_XARDASNDMTASKSTWO,"Галлахад мертв! Надо сообщить об этом Ксардасу.");
+				B_LogEntry( TOPIC_XARDASNDMTASKSTWO , " Gallahad is dead! Xardas needs to be informed. " );
 			};
 		};
-		if((Talbin_NW_InCamp == FALSE) && ((Hlp_GetInstanceID(self) == Hlp_GetInstanceID(VLK_4132_Talbin_NW)) || (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(VLK_4130_Talbin))))
+		if ((Talbin_NW_InCamp ==  FALSE ) && ((Hlp_GetInstanceID(self) == Hlp_GetInstanceID(VLK_4132_Talbin_NW)) || (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(VLK_4130_Talbin_NW)))
 		{
 			Talbin_NW_InCamp = TRUE;
 			FalkHunters -= 1;
@@ -4375,17 +4376,17 @@ func void ZS_Dead()
 			if(MIS_MILTENANCIENT == LOG_Running)
 			{
 				outter = Hlp_GetNpc(pc_mage_li);
-				outter.aivar[AIV_PARTYMEMBER] = FALSE;
+				outer.aivar[ AIV_PARTYMEMBER ] = FALSE ;
 				B_StartOtherRoutine(outter,"Cave");
 				AI_GotoNpc(outter,hero);
 				B_KillNpc(demonlord_li_1);
 				B_KillNpc(demonlord_li_2);
 			};
 		};
-		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(Mil_3320_Stadtwache))
+		if (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(Mil_3320_City Guard))
 		{
 			CreateInvItems(self,ItMi_DeadManHead,1);
-			self.aivar[AIV_StoryBandit] = TRUE;
+			self.aivar[AIV_StoryBandit] = TRUE ;
 		};
 		if((TPLBalamDead == FALSE) && ((Hlp_GetInstanceID(self) == Hlp_GetInstanceID(TPL_8100_TEMPLER)) || (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(TPL_8101_TEMPLER)) || (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(TPL_8102_TEMPLER)) || (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(TPL_8103_TEMPLER)) || (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(TPL_8104_TEMPLER))))
 		{
@@ -4434,13 +4435,13 @@ func void ZS_Dead()
 				AI_Teleport(Skeleton_Lord_Ginnok,Npc_GetNearestWP(hero));
 			};
 		};
-		if((CurrentLevel == PRIORATWORLD_ZEN) && (self.guild == GIL_STRF) && (Npc_IsPlayer(other) || (other.aivar[AIV_PARTYMEMBER] == TRUE)))
+		if ((CurrentLevel ==  PRIORATWORLD_ZEN ) && (self.guild ==  GIL_STRF ) && (Npc_IsPlayer(other) || (other.aivar[ AIV_PARTYMEMBER ] ==  TRUE ))) ;
 		{
 			PlayerIsPrioratFake = TRUE;
 
 			if(MIS_MasiafStory == LOG_Running)
 			{
-				B_LogEntry(TOPIC_MasiafStory,"Думаю тени будут не очень довольны тем, что я убиваю их рабов. Скорей всего теперь я не смогу выдать себя за одного из них. Надо поговорить об этом с Гонсалесом.");
+				B_LogEntry(TOPIC_MasiafStory, " I don't think the shadows will be happy that I kill their slaves. I probably won't be able to impersonate one of them now. I should talk to Gonzalez about this. " );
 			};
 		};
 		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(skeleton_knight_ginnok_04))
@@ -4498,7 +4499,7 @@ func void ZS_Dead()
 		{
 			NarugIsDeadNow = TRUE;
 		};
-		if((Hlp_GetInstanceID(self) == Hlp_GetInstanceID(Skeleton_Lord_Archol)) || (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(DARKTOWER_SKELETON_LORD)) || (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(Skeleton_Lord_Ginnok)) || (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(skeleton_lord_mirat)) || (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(Crypt_Skeleton_Lord)))
+		if ((Hlp_GetInstanceID(self) == Hlp_GetInstanceID(Skeleton_Lord_Archol)) || (Hlp_GetInstanceID(self) == Hlp_GetInstanceID( DARKTOWER_SKELETON_LORD )) || (Hlp_GetInstanceID(self) == Hlp_GetInstanceID ( Skeleton_Lord_Ginnok)) || = Hlp_GetInstanceID(skeleton_lord_mirat)) || (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(Crypt_Skeleton_Lord)))
 		{
 			Wld_PlayEffect("SPELLFX_DESTROYUNDEAD_COLLIDE",self,self,0,0,0,FALSE);
 			Wld_PlayEffect("FX_EarthQuake",hero,hero,0,0,0,FALSE);
@@ -4508,36 +4509,36 @@ func void ZS_Dead()
 			{
 				Wld_SendTrigger("GINNOK_GATE_ENTER");
 				KillDeadPal_Ginnok = TRUE;
-				B_LogEntry(TOPIC_DarkOrden,"Я уничтожил безумного крестоносца - Лорда Гиннока!");
+				B_LogEntry(TOPIC_DarkOrden, " I destroyed the mad crusader - Lord Ginnok! " );
 			};
 			if((MIS_DarkOrden == LOG_Running) && (KillDeadPal_Serdah == FALSE) && (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(skeleton_lord_mirat)))
 			{
-				KillDeadPal_Serdah = TRUE;
-				B_LogEntry(TOPIC_DarkOrden,"Я уничтожил Лорда Мирата!");
+				KillDeadPal_Serdah = TRUE ;
+				B_LogEntry(TOPIC_DarkOrden, " I destroyed Lord Mirath! " );
 			};
 			if((MIS_DarkOrden == LOG_Running) && (KillDeadPal_Innubis == FALSE) && (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(Crypt_Skeleton_Lord)))
 			{
 				KillDeadPal_Innubis = TRUE;
-				B_LogEntry(TOPIC_DarkOrden,"Я уничтожил Лорда Иннубиса!");
+				B_LogEntry(TOPIC_DarkOrden, " I destroyed Lord Innubis! " );
 			};
 			if((MIS_DarkOrden == LOG_Running) && (KillDeadPal_Dexsar == FALSE) && (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(DARKTOWER_SKELETON_LORD)))
 			{
 				KillDeadPal_Dexsar = TRUE;
-				B_LogEntry(TOPIC_DarkOrden,"Я уничтожил Лорда Ульзара!");
+				B_LogEntry(TOPIC_DarkOrden, " I destroyed Lord Ulzar! " );
 			};
 			if((KillDeadPal_Serdah == TRUE) && (KillDeadPal_Innubis == TRUE) && (KillDeadPal_Dexsar == TRUE) && (KillDeadPalAll == FALSE))
 			{
 				KillDeadPalAll = TRUE;
 			};
 		};
-		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(skeleton_lord_kadar))
+		if (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(skeleton_lord_kadar))
 		{
 			if((MIS_HROMANINQUEST == LOG_Running) && (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(skeleton_lord_kadar)))
 			{
 				Wld_SendTrigger("HROMANIN_GATE");
 				MIS_HROMANINQUEST = LOG_SUCCESS;
 				Log_SetTopicStatus(TOPIC_HROMANINQUEST,LOG_SUCCESS);
-				B_LogEntry(TOPIC_HROMANINQUEST,"Тайна Хроманина раскрыта! За всем этим стоял Кадар, его хранитель. Ну что же, тем хуже для него...");
+				B_LogEntry( TOPIC_HROMANINQUEST , " Hromanin's secret is out! Kadar, his guardian, was behind it all. Well, so much the worse for him... " );
 			};
 		};
 		if((Hlp_GetInstanceID(self) == Hlp_GetInstanceID(VLK_4201_Wirt)) && (WirtIsDead == FALSE))
@@ -4557,34 +4558,34 @@ func void ZS_Dead()
 		if((Hlp_GetInstanceID(self) == Hlp_GetInstanceID(Avatar_Stone)) && (AvatarStoneIsDead == FALSE))
 		{
 			AvatarStoneIsDead = TRUE;
-			B_LogEntry(TOPIC_ORCSECRET,"Я убил каменного атронаха.");
+			B_LogEntry( TOPIC_ORCSECRET , " I killed the stone atronach. " );
 
 			if((AvatarWaterIsDead == TRUE) && (AvatarFireIsDead == TRUE) && (AvatarStoneIsDead == TRUE))
 			{
 				ALLGUARDMINIONSISDEAD = TRUE;
-				B_LogEntry_Quiet(TOPIC_ORCSECRET,"Я убил все древние существа, порожденные Хранителями! Думаю теперь, без защитной магии этих созданий, орки навряд ли останутся такими же неуязвимыми. Надо сообщить об этом Ли!");
+				) ; _ _ _ _ _
 			};
 		};
 		if((Hlp_GetInstanceID(self) == Hlp_GetInstanceID(Avatar_Fire)) && (AvatarFireIsDead == FALSE))
 		{
 			AvatarFireIsDead = TRUE;
-			B_LogEntry(TOPIC_ORCSECRET,"Я убил огненного атронаха.");
+			B_LogEntry( TOPIC_ORCSECRET , " I killed the fire atronach. " );
 
 			if((AvatarWaterIsDead == TRUE) && (AvatarFireIsDead == TRUE) && (AvatarStoneIsDead == TRUE))
 			{
 				ALLGUARDMINIONSISDEAD = TRUE;
-				B_LogEntry_Quiet(TOPIC_ORCSECRET,"Я убил все древние существа, порожденные Хранителями! Думаю теперь, без защитной магии этих созданий, орки навряд ли останутся такими же неуязвимыми. Надо сообщить об этом Ли!");
+				) ; _ _ _ _ _
 			};
 		};
 		if((Hlp_GetInstanceID(self) == Hlp_GetInstanceID(Avatar_Water)) && (AvatarWaterIsDead == FALSE))
 		{
 			AvatarWaterIsDead = TRUE;
-			B_LogEntry(TOPIC_ORCSECRET,"Я убил ледяного атронаха.");
+			B_LogEntry( TOPIC_ORCSECRET , " I killed a Frost Atronach. " );
 
 			if((AvatarWaterIsDead == TRUE) && (AvatarFireIsDead == TRUE) && (AvatarStoneIsDead == TRUE))
 			{
 				ALLGUARDMINIONSISDEAD = TRUE;
-				B_LogEntry_Quiet(TOPIC_ORCSECRET,"Я убил все древние существа, порожденные Хранителями! Думаю теперь, без защитной магии этих созданий, орки навряд ли останутся такими же неуязвимыми. Надо сообщить об этом Ли!");
+				) ; _ _ _ _ _
 			};
 		};
 		if((Hlp_GetInstanceID(self) == Hlp_GetInstanceID(XranFreg)) && (XranFregIsDead == FALSE))
@@ -4595,7 +4596,7 @@ func void ZS_Dead()
 			{
 				MIS_XRANFREG = LOG_SUCCESS;
 				Log_SetTopicStatus(TOPIC_XRANFREG,LOG_SUCCESS);
-				B_LogEntry(TOPIC_XRANFREG,"Я уничтожил Фрегараха! Каменный титан, проржденный духом самого Стонноса, отправился в небытие.");
+				B_LogEntry( TOPIC_XRANFREG , " I have destroyed Fregarach! The stone titan, inspired by the spirit of Stonnos himself, has gone into oblivion. " );
 			};
 
 			XranFregIsDead = TRUE;
@@ -4606,12 +4607,12 @@ func void ZS_Dead()
 
 			if(MIS_ScoutNewMine == LOG_Running)
 			{
-				B_LogEntry(TOPIC_ScoutNewMine,"Я добрался до военачальника орков в шахте Нового лагеря. Думаю, что теперь орки не сунутся больше сюда! Надо сообщить об этом Гаронду.");
+				B_LogEntry(TOPIC_ScoutNewMine, " I've reached the Orc Warlord in the New Camp Mine. I don't think the Orcs will come here anymore! Garond should be informed about this. " );
 			};
 		};
-		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(PAL_250_Garond))
+		if (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(PAL_250_Garond))
 		{
-			GARONDISDEAD = TRUE;
+			EARLY DEAD = TRUE ;
 		};
 		if((Hlp_GetInstanceID(self) == Hlp_GetInstanceID(TPL_8104_TEMPLER)) && (MIS_TrainInCamp == LOG_Running))
 		{
@@ -4626,20 +4627,20 @@ func void ZS_Dead()
 		{
 			PARCIVALISDEAD = TRUE;
 		};
-		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(PAL_268_Udar))
+		if (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(PAL_268_Udar))
 		{
-			UDARISDEAD = TRUE;
+			UDARISDEAD = TRUE ;
 			if(MIS_NATANDOLG == LOG_Running)
 			{
-				MIS_NATANDOLG = LOG_FAILED;
+				MIS_NATANDOLG = LOG_FAILED ;
 				B_LogEntry_Failed(TOPIC_NATANDOLG);
 			};
 		};
-		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(pal_2680_udar))
+		if (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(pal_2680_udar))
 		{
 			if(MIS_NATANDOLG == LOG_Running)
 			{
-				MIS_NATANDOLG = LOG_FAILED;
+				MIS_NATANDOLG = LOG_FAILED ;
 				B_LogEntry_Failed(TOPIC_NATANDOLG);
 			};
 		};
@@ -4651,7 +4652,7 @@ func void ZS_Dead()
 		{
 			ALBERTISDEAD = TRUE;
 
-			if(MIS_DRAKARBROKE == LOG_Running)
+			if ( MIS_DRAKARBROKE  == LOG_Running)
 			{
 				MIS_DRAKARBROKE = LOG_Failed;
 				B_LogEntry_Failed(TOPIC_DRAKARBROKE);
@@ -4662,20 +4663,20 @@ func void ZS_Dead()
 				Log_CreateTopic(TOPIC_ORCORDER,LOG_OBSOLETE);
 			};
 		};
-		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(pal_9168_natan))
+		if (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(pal_9168_natan))
 		{
 			NATANISDEAD = TRUE;
 			if(MIS_NATANDOLG == LOG_Running)
 			{
-				MIS_NATANDOLG = LOG_FAILED;
+				MIS_NATANDOLG = LOG_FAILED ;
 				B_LogEntry_Failed(TOPIC_NATANDOLG);
 			};
 		};
-		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(pal_91680_natan))
+		if (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(pal_91680_natan))
 		{
 			if(MIS_NATANDOLG == LOG_Running)
 			{
-				MIS_NATANDOLG = LOG_FAILED;
+				MIS_NATANDOLG = LOG_FAILED ;
 				B_LogEntry_Failed(TOPIC_NATANDOLG);
 			};
 		};
@@ -4708,54 +4709,54 @@ func void ZS_Dead()
 		};
 		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(pal_7518_ritter))
 		{
-			PAL_7518_ISDEAD = TRUE;
+			PAL_7518_ISDEAD = TRUE ;
 		};
 		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(pal_7519_ritter))
 		{
-			PAL_7519_ISDEAD = TRUE;
+			PAL_7519_ISDEAD = TRUE ;
 		};
 		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(pal_7520_ritter))
 		{
-			PAL_7520_ISDEAD = TRUE;
+			PAL_7520_ISDEAD = TRUE ;
 		};
 		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(pal_7521_ritter))
 		{
-			PAL_7521_ISDEAD = TRUE;
+			PAL_7521_ISDEAD = TRUE ;
 		};
 		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(pal_7522_ritter))
 		{
-			PAL_7522_ISDEAD = TRUE;
+			PAL_7522_ISDEAD = TRUE ;
 		};
 		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(pal_7524_ritter))
 		{
-			PAL_7524_ISDEAD = TRUE;
+			PAL_7524_ISDEAD = TRUE ;
 		};
-		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(PAL_253_Wache))
+		if (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(PAL_253_Wache))
 		{
-			PAL_253_ISDEAD = TRUE;
+			PAL_253_ISDEAD = TRUE ;
 		};
 		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(PAL_257_Ritter))
 		{
-			PAL_257_ISDEAD = TRUE;
+			PAL_257_ISDEAD = TRUE ;
 		};
 		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(pal_9165_ritter))
 		{
-			PAL_9165_ISDEAD = TRUE;
+			PAL_9165_ISDEAD = TRUE ;
 		};
 		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(pal_9166_ritter))
 		{
-			PAL_9166_ISDEAD = TRUE;
+			PAL_9166_ISDEAD = TRUE ;
 		};
 		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(pal_9167_ritter))
 		{
-			PAL_9167_ISDEAD = TRUE;
+			PAL_9167_ISDEAD = TRUE ;
 		};
 		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(DJG_700_Sylvio) && (MIS_SylvioDebts == LOG_Running) && (SylvioIsDead == FALSE))
 		{
 			SylvioIsDead = TRUE;
-			B_LogEntry(Topic_SylvioDebts,"Этот жадный ублюдок, Сильвио, сдох! Туда ему и дорога. Теперь все его золото принадлежит мне. Надо бы расчитаться с Рэтфордом...");
+			B_LogEntry(Topic_SylvioDebts, " That greedy bastard, Silvio, is dead! That's where he belongs. Now all his gold belongs to me. I should pay off Ratford... " );
 		};
-		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(Mil_337_Mika))
+		if ( Help_GetInstanceID ( self ) == Help_GetInstanceID ( Mil_337_Mika ) )
 		{
 			MIKAISDEAD = TRUE;
 
@@ -4798,23 +4799,23 @@ func void ZS_Dead()
 		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(orcwarrior_salandril))
 		{
 			ORCWARRIORSALANDRILISDEAD = TRUE;
-			if((MIKATELLORKSGO == TRUE) && (MIKATELLORKSDONE == FALSE) && (mika.aivar[AIV_PARTYMEMBER] == TRUE) && (MIKAISDEAD == FALSE))
+			if (( MIKATELLORKSGO  ==  TRUE ) && ( MIKATELLORKSDONE  ==  FALSE ) && ( mika.aivar[ AIV_PARTYMEMBER ] ==  TRUE ) && ( MIKAISDEAD  ==  FALSE ))
 			{
 				MIKATELLORKSDONE = TRUE;
-				mika.aivar[AIV_PARTYMEMBER] = FALSE;
+				mika.aivar[ AIV_PARTYMEMBER ] = FALSE ;
 				B_StartOtherRoutine(mika,"Start");
 			};
 		};
 		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(DJG_702_Rod))
 		{
-			DJG_ROD_ISDEAD = TRUE;
+			DJG_ROD_ISDEAD = TRUE ;
 			if(MIS_KILLDRAGONHUNTER == LOG_Running)
 			{
 				KILLCOUNTDJG = KILLCOUNTDJG + 1;
 				if(KILLCOUNTDJG >= KILLGLOBALCOUNTDJG)
 				{
 					ALLDRGHUNTERSISDEAD = TRUE;
-					B_LogEntry(TOPIC_KILLDRAGONHUNTER,"Как мне и велел Хаг-Тар, я убил всех охотников на драконов.");
+					B_LogEntry( TOPIC_KILLDRAGONHUNTER , " As Hag-Thar told me, I killed all the dragon hunters. " );
 				};
 			}
 			else if(KILLGLOBALCOUNTDJG < 1)
@@ -4835,7 +4836,7 @@ func void ZS_Dead()
 				if(KILLCOUNTDJG >= KILLGLOBALCOUNTDJG)
 				{
 					ALLDRGHUNTERSISDEAD = TRUE;
-					B_LogEntry(TOPIC_KILLDRAGONHUNTER,"Как мне и велел Хаг-Тар, я убил всех охотников на драконов.");
+					B_LogEntry( TOPIC_KILLDRAGONHUNTER , " As Hag-Thar told me, I killed all the dragon hunters. " );
 				};
 			}
 			else if(KILLGLOBALCOUNTDJG < 1)
@@ -4849,7 +4850,7 @@ func void ZS_Dead()
 		};
 		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(DJG_713_Biff))
 		{
-			DJG_BIFF_ISDEAD = TRUE;
+			DJG_BIFF_ISDEAD = TRUE ;
 			if((Biff_FollowsThroughPass != LOG_SUCCESS) || (Biff_FollowsThroughPass != LOG_Running))
 			{
 				if(MIS_KILLDRAGONHUNTER == LOG_Running)
@@ -4858,7 +4859,7 @@ func void ZS_Dead()
 					if(KILLCOUNTDJG >= KILLGLOBALCOUNTDJG)
 					{
 						ALLDRGHUNTERSISDEAD = TRUE;
-						B_LogEntry(TOPIC_KILLDRAGONHUNTER,"Как мне и велел Хаг-Тар, я убил всех охотников на драконов.");
+						B_LogEntry( TOPIC_KILLDRAGONHUNTER , " As Hag-Thar told me, I killed all the dragon hunters. " );
 					};
 				}
 				else if(KILLGLOBALCOUNTDJG < 1)
@@ -4880,7 +4881,7 @@ func void ZS_Dead()
 				if(KILLCOUNTDJG >= KILLGLOBALCOUNTDJG)
 				{
 					ALLDRGHUNTERSISDEAD = TRUE;
-					B_LogEntry(TOPIC_KILLDRAGONHUNTER,"Как мне и велел Хаг-Тар, я убил всех охотников на драконов.");
+					B_LogEntry( TOPIC_KILLDRAGONHUNTER , " As Hag-Thar told me, I killed all the dragon hunters. " );
 				};
 			}
 			else if(KILLGLOBALCOUNTDJG < 1)
@@ -4898,7 +4899,7 @@ func void ZS_Dead()
 
 			if((RitualShaman_01 == TRUE) && (RitualShaman_02 == TRUE) && (RitualShaman_03 == TRUE))
 			{
-				ORC_6666_XASH_GOR.flags = FALSE;
+				ORC_6666_HASH_GOR .flags = FALSE ;
 			};
 		};
 		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(Orc_6668_RitualShaman))
@@ -4907,7 +4908,7 @@ func void ZS_Dead()
 
 			if((RitualShaman_01 == TRUE) && (RitualShaman_02 == TRUE) && (RitualShaman_03 == TRUE))
 			{
-				ORC_6666_XASH_GOR.flags = FALSE;
+				ORC_6666_HASH_GOR .flags = FALSE ;
 			};
 		};
 		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(Orc_6669_RitualShaman))
@@ -4916,7 +4917,7 @@ func void ZS_Dead()
 
 			if((RitualShaman_01 == TRUE) && (RitualShaman_02 == TRUE) && (RitualShaman_03 == TRUE))
 			{
-				ORC_6666_XASH_GOR.flags = FALSE;
+				ORC_6666_HASH_GOR .flags = FALSE ;
 			};
 		};
 		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(Orc_6670_RitualShaman))
@@ -4925,7 +4926,7 @@ func void ZS_Dead()
 
 			if((RitualShaman_04 == TRUE) && (RitualShaman_05 == TRUE) && (RitualShaman_06 == TRUE))
 			{
-				ORC_6666_XASH_GOR.flags = FALSE;
+				ORC_6666_HASH_GOR .flags = FALSE ;
 			};
 		};
 		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(Orc_6671_RitualShaman))
@@ -4934,7 +4935,7 @@ func void ZS_Dead()
 
 			if((RitualShaman_04 == TRUE) && (RitualShaman_05 == TRUE) && (RitualShaman_06 == TRUE))
 			{
-				ORC_6666_XASH_GOR.flags = FALSE;
+				ORC_6666_HASH_GOR .flags = FALSE ;
 			};
 		};
 		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(Orc_6672_RitualShaman))
@@ -4943,7 +4944,7 @@ func void ZS_Dead()
 
 			if((RitualShaman_04 == TRUE) && (RitualShaman_05 == TRUE) && (RitualShaman_06 == TRUE))
 			{
-				ORC_6666_XASH_GOR.flags = FALSE;
+				ORC_6666_HASH_GOR .flags = FALSE ;
 			};
 		};
 		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(Orc_6673_RitualShaman))
@@ -4952,7 +4953,7 @@ func void ZS_Dead()
 
 			if((RitualShaman_07 == TRUE) && (RitualShaman_08 == TRUE) && (RitualShaman_09 == TRUE))
 			{
-				ORC_6666_XASH_GOR.flags = FALSE;
+				ORC_6666_HASH_GOR .flags = FALSE ;
 			};
 		};
 		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(Orc_6674_RitualShaman))
@@ -4961,7 +4962,7 @@ func void ZS_Dead()
 
 			if((RitualShaman_07 == TRUE) && (RitualShaman_08 == TRUE) && (RitualShaman_09 == TRUE))
 			{
-				ORC_6666_XASH_GOR.flags = FALSE;
+				ORC_6666_HASH_GOR .flags = FALSE ;
 			};
 		};
 		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(Orc_6675_RitualShaman))
@@ -4970,7 +4971,7 @@ func void ZS_Dead()
 
 			if((RitualShaman_07 == TRUE) && (RitualShaman_08 == TRUE) && (RitualShaman_09 == TRUE))
 			{
-				ORC_6666_XASH_GOR.flags = FALSE;
+				ORC_6666_HASH_GOR .flags = FALSE ;
 			};
 		};
 		if((Hlp_GetInstanceID(self) == Hlp_GetInstanceID(DMT_1812_Dementor)) && (RoscoeDMTIsDead == FALSE))
@@ -4986,7 +4987,7 @@ func void ZS_Dead()
 				if(KILLCOUNTDJG >= KILLGLOBALCOUNTDJG)
 				{
 					ALLDRGHUNTERSISDEAD = TRUE;
-					B_LogEntry(TOPIC_KILLDRAGONHUNTER,"Как мне и велел Хаг-Тар, я убил всех охотников на драконов.");
+					B_LogEntry( TOPIC_KILLDRAGONHUNTER , " As Hag-Thar told me, I killed all the dragon hunters. " );
 				};
 			}
 			else if(KILLGLOBALCOUNTDJG < 1)
@@ -4998,7 +4999,7 @@ func void ZS_Dead()
 				KILLGLOBALCOUNTDJG = KILLGLOBALCOUNTDJG - 1;
 			};
 		};
-		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(DJG_711_Godar))
+		if (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(DJG_711_Godar))
 		{
 			DRGHUNTER03ISDEAD = TRUE;
 			if(MIS_KILLDRAGONHUNTER == LOG_Running)
@@ -5007,7 +5008,7 @@ func void ZS_Dead()
 				if(KILLCOUNTDJG >= KILLGLOBALCOUNTDJG)
 				{
 					ALLDRGHUNTERSISDEAD = TRUE;
-					B_LogEntry(TOPIC_KILLDRAGONHUNTER,"Как мне и велел Хаг-Тар, я убил всех охотников на драконов.");
+					B_LogEntry( TOPIC_KILLDRAGONHUNTER , " As Hag-Thar told me, I killed all the dragon hunters. " );
 				};
 			}
 			else if(KILLGLOBALCOUNTDJG < 1)
@@ -5028,7 +5029,7 @@ func void ZS_Dead()
 				if(KILLCOUNTDJG >= KILLGLOBALCOUNTDJG)
 				{
 					ALLDRGHUNTERSISDEAD = TRUE;
-					B_LogEntry(TOPIC_KILLDRAGONHUNTER,"Как мне и велел Хаг-Тар, я убил всех охотников на драконов.");
+					B_LogEntry( TOPIC_KILLDRAGONHUNTER , " As Hag-Thar told me, I killed all the dragon hunters. " );
 				};
 			}
 			else if(KILLGLOBALCOUNTDJG < 1)
@@ -5048,7 +5049,7 @@ func void ZS_Dead()
 				CASTLEISFREE = TRUE;
 				if(MIS_STURMCASTLE == LOG_Running)
 				{
-					B_LogEntry(TOPIC_STURMCASTLE,"Кажется, удача в этот раз была на нашей стороне! Перебив весь командный состав орков в крепости, не думаю что орки смогут ее отстоять до конца.");
+					B_LogEntry( TOPIC_STURMCASTLE , " It seems that luck was on our side this time! Having killed all the commanding staff of the orcs in the fortress, I do not think that the orcs will be able to defend it to the end. " );
 				};
 				b_paladinattackcastledone();
 				b_victoryevents_oldworld();
@@ -5063,7 +5064,7 @@ func void ZS_Dead()
 				CASTLEISFREE = TRUE;
 				if(MIS_STURMCASTLE == LOG_Running)
 				{
-					B_LogEntry(TOPIC_STURMCASTLE,"Кажется, удача в этот раз была на нашей стороне! Перебив весь командный состав орков в крепости, не думаю что орки смогут ее отстоять до конца.");
+					B_LogEntry( TOPIC_STURMCASTLE , " It seems that luck was on our side this time! Having killed all the commanding staff of the orcs in the fortress, I do not think that the orcs will be able to defend it to the end. " );
 				};
 				b_paladinattackcastledone();
 				b_victoryevents_oldworld();
@@ -5087,7 +5088,7 @@ func void ZS_Dead()
 				CASTLEISFREE = TRUE;
 				if(MIS_STURMCASTLE == LOG_Running)
 				{
-					B_LogEntry(TOPIC_STURMCASTLE,"Кажется, удача в этот раз была на нашей стороне! Перебив весь командный состав орков в крепости, не думаю что орки смогут ее отстоять до конца.");
+					B_LogEntry( TOPIC_STURMCASTLE , " It seems that luck was on our side this time! Having killed all the commanding staff of the orcs in the fortress, I do not think that the orcs will be able to defend it to the end. " );
 				};
 				b_paladinattackcastledone();
 				b_victoryevents_oldworld();
@@ -5101,7 +5102,7 @@ func void ZS_Dead()
 				CASTLEISFREE = TRUE;
 				if(MIS_STURMCASTLE == LOG_Running)
 				{
-					B_LogEntry(TOPIC_STURMCASTLE,"Кажется, удача в этот раз была на нашей стороне! Перебив весь командный состав орков в крепости, не думаю что орки смогут ее отстоять до конца.");
+					B_LogEntry( TOPIC_STURMCASTLE , " It seems that luck was on our side this time! Having killed all the commanding staff of the orcs in the fortress, I do not think that the orcs will be able to defend it to the end. " );
 				};
 				b_paladinattackcastledone();
 				b_victoryevents_oldworld();
@@ -5115,7 +5116,7 @@ func void ZS_Dead()
 				CASTLEISFREE = TRUE;
 				if(MIS_STURMCASTLE == LOG_Running)
 				{
-					B_LogEntry(TOPIC_STURMCASTLE,"Кажется, удача в этот раз была на нашей стороне! Перебив весь командный состав орков в крепости, не думаю что орки смогут ее отстоять до конца.");
+					B_LogEntry( TOPIC_STURMCASTLE , " It seems that luck was on our side this time! Having killed all the commanding staff of the orcs in the fortress, I do not think that the orcs will be able to defend it to the end. " );
 				};
 				b_paladinattackcastledone();
 				b_victoryevents_oldworld();
@@ -5124,7 +5125,7 @@ func void ZS_Dead()
 		if((Hlp_GetInstanceID(self) == Hlp_GetInstanceID(Anti_Hero)) && (BossTear == FALSE))
 		{
 			Wld_SendTrigger("EVT_TEARDOOR");
-			Wld_SendTrigger("EVT_TT_TO_AV");
+			Wld_SendTrigger( " EVT_TT_TO_AV " );
 			BossTear = TRUE;
 		};
 		if((Hlp_GetInstanceID(self) == Hlp_GetInstanceID(NOV_605_Opolos)) && (OpolosIsDead == FALSE))
@@ -5133,7 +5134,7 @@ func void ZS_Dead()
 
 			if(MIS_Xardas_LastStand_Done == LOG_Running)
 			{
-				B_LogEntry(TOPIC_XARDAS_DEMON,"Я убил послушника Магов Огня.");
+				B_LogEntry( TOPIC_XARDAS_DEMON , " I killed a Firebender acolyte. " );
 			};
 		};
 		if((IlArahDemonIsDead_01 == FALSE) && (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(IlArah_Chaos_Lord_01)))
@@ -5182,12 +5183,12 @@ func void ZS_Dead()
 		};
 		if((Hlp_GetInstanceID(self) == Hlp_GetInstanceID(Druid_Agony)) && (DruidAgonyIsDead == FALSE))
 		{
-			DruidAgonyIsDead = TRUE;
+			DruidAgonyIsDead = TRUE ;
 		};
 		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(Imarah))
 		{
-			ImarahIsDead = TRUE;
-			ImarahStarts = FALSE;
+			ImarahIsDead = TRUE ;
+			ImarahStarts = FALSE ;
 			tmpImarahCount = FALSE;
 		};
 		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(orc_8566_urhan))
@@ -5202,12 +5203,12 @@ func void ZS_Dead()
 						MIS_KILLURTRALL = LOG_OBSOLETE;
 						Log_SetTopicStatus(TOPIC_KILLURTRALL,LOG_OBSOLETE);
 						BOGNARREFUSETALK = TRUE;
-						Kurgan.aivar[93] = TRUE;
+						Kurgan.aivar[ 93 ] = TRUE ;
 					}
 					else
 					{
 						KILLHAGTARURTRALL = TRUE;
-						B_LogEntry(TOPIC_KILLURTRALL,"Я убил Хаг-Тара! Теперь надо сообщить об этом Ур-Траллу, чтобы он отпустил паладинов.");
+						B_LogEntry( TOPIC_KILLURTRAL , " I killed Hag-Thar! Now I need to report this to Ur-Thrall so he can release the paladins. " );
 					};
 				};
 				if(MIS_KILLDRAGONHUNTER == LOG_Running)
@@ -5215,13 +5216,13 @@ func void ZS_Dead()
 					MIS_KILLDRAGONHUNTER = LOG_OBSOLETE;
 					Log_SetTopicStatus(TOPIC_KILLDRAGONHUNTER,LOG_OBSOLETE);
 					BOGNARREFUSETALK = TRUE;
-					Kurgan.aivar[93] = TRUE;
+					Kurgan.aivar[ 93 ] = TRUE ;
 				};
 			}
 			else if((URHANSPEAKBEFOREBATTLE == TRUE) && (Npc_IsPlayer(other) || (other.aivar[AIV_PARTYMEMBER] == TRUE)))
 			{
 				URHANBEATEN = TRUE;
-				B_LogEntry(TOPIC_CHALLANGEORC,"Я победил Хаг-Тара! Посмотрим, что он теперь скажет.");
+				B_LogEntry( TOPIC_CHALLANGEORC , " I've defeated Hag-Tar! Let's see what he has to say. " );
 			}
 			else
 			{
@@ -5235,7 +5236,7 @@ func void ZS_Dead()
 				CASTLEISFREE = TRUE;
 				if(MIS_STURMCASTLE == LOG_Running)
 				{
-					B_LogEntry(TOPIC_STURMCASTLE,"Кажется, удача в этот раз была на нашей стороне! Перебив весь командный состав орков в крепости, не думаю что орки смогут ее отстоять до конца.");
+					B_LogEntry( TOPIC_STURMCASTLE , " It seems that luck was on our side this time! Having killed all the commanding staff of the orcs in the fortress, I do not think that the orcs will be able to defend it to the end. " );
 				};
 				b_paladinattackcastledone();
 				b_victoryevents_oldworld();
@@ -5247,7 +5248,7 @@ func void ZS_Dead()
 
 			if((ORCMINEKILL_01 == TRUE) && (ORCMINEKILL_02 == TRUE))
 			{
-				B_LogEntry(TOPIC_LowLevel,"Я уничтожил древнее зло в глубокой шахте!");
+				B_LogEntry(TOPIC_LowLevel, " I destroyed the ancient evil in the deep mine! " );
 			};
 		};
 
@@ -5257,11 +5258,11 @@ func void ZS_Dead()
 
 			if((ORCMINEKILL_01 == TRUE) && (ORCMINEKILL_02 == TRUE))
 			{
-				B_LogEntry(TOPIC_LowLevel,"Я уничтожил древнее зло в глубокой шахте!");
+				B_LogEntry(TOPIC_LowLevel, " I destroyed the ancient evil in the deep mine! " );
 			};
 
 		};
-		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(Crait))
+		if (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(Crait))
 		{
 			Wld_PlayEffect("VOB_MAGICBURN",self,self,0,0,0,FALSE);
 			Wld_PlayEffect("spellFX_INCOVATION_RED",self,self,0,0,0,FALSE);
@@ -5294,19 +5295,19 @@ func void ZS_Dead()
 			{
 				if(MIS_HeroOrcJoin_T1 == LOG_Running)
 				{
-					MuritanS2 = TRUE;
-					B_LogEntry(TOPIC_HeroOrcJoin_T1,"Я убил Муритана! Однако я не смогу забрать его ядовитые клыки и отнести их Ур-Кррасу в город орков, поскольку не знаю - как их снять с тела чудовища. Похоже, что мне придется найти еще одного из них и при этом не забыть выучить навык свежевания клыков!");
+					MuritanS2 = TRUE ;
+					B_LogEntry(TOPIC_HeroOrcJoin_T1, " I killed Muritan! However, I won't be able to take his poison fangs and take them to Ur-Krras in the orc city, as I don't know how to remove them from the monster's body. It looks like I'll have to find another one and don't forget to learn the flaying skill! " );
 					Wld_InsertNpc(Muritan_North,"NW_TROLLAREA_RUINS_22");
 				};
 			};
 		};
-		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(Muritan_North))
+		if (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(Muritan_North))
 		{
 			if(PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_Teeth] == TRUE)
 			{
 				if(MIS_HeroOrcJoin_T1 == LOG_Running)
 				{
-					B_LogEntry(TOPIC_HeroOrcJoin_T1,"Я нашел еще одного Муритана и убил его! Теперь мне надо не забыть взять его ядовитые клыки и отнести их Ур-Кррасу.");
+					B_LogEntry(TOPIC_HeroOrcJoin_T1, " I found another Muritan and killed him! Now I must remember to take his poison fangs and take them to Ur-Krras. " );
 				};
 
 				CreateInvItems(self,ItAt_BuritanTooth,2);
@@ -5316,30 +5317,30 @@ func void ZS_Dead()
 				if(MIS_HeroOrcJoin_T1 == LOG_Running)
 				{
 					MuritanS3 = TRUE;
-					B_LogEntry(TOPIC_HeroOrcJoin_T1,"Я нашел еще одного Муритана и убил его! Но я не обучен вырывать клыки. Похоже я провалил задание Ур-Карраса...Не думаю, что он будет рад услышать это.");
+					B_LogEntry(TOPIC_HeroOrcJoin_T1, " I found another Muritan and killed him! But I'm not trained to pluck fangs. Looks like I failed Ur-Karras' mission...I don't think he'll be happy to hear that. " );
 				};
 			};
 		};
-		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(Orc_6666_Xash_Gor))
+		if (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(Orc_6666_Xash_Gor))
 		{
 			HashGorIsDead = TRUE;
 			Wld_SendTrigger("EVT_ORCGRYRD_HASHGOR");
 			
-			if((MIS_NagDumgar == LOG_Running) && (KnowAboutNagDumgar_P3 == TRUE) && (NagDumgarInsert == FALSE))
+			if ((MIS_Stupid == LOG_Running) && (KnowAboutStupid_P3 ==  TRUE ) && (StupidInsert ==  FALSE ))
 			{
-				B_LogEntry(TOPIC_NagDumgar,"Я убил верховного шамана Хаш-Гора! Осталось забрать у него ритуальный нож и отнести его Ур-Траллу.");
+				B_LogEntry(TOPIC_NagDumgar, " I've killed the high shaman of Khash-Gor! It remains to take the ritual knife from him and take it to Ur-Thrall. " );
 			};
 		};
-		if((Hlp_GetInstanceID(self) == Hlp_GetInstanceID(Orc_8568_NagDumgar)) && (NagDumgarInsertDone == TRUE))
+		if ((Hlp_GetInstanceID(self) == Hlp_GetInstanceID(Orc_8568_NagDumgar)) && (NagDumgarInsertDone ==  TRUE ))
 		{
-			NagDumgarIsDead = TRUE;
+			NagDumgarIsDead = TRUE ;
 
-			if(MIS_NagDumgar == LOG_Running)
+			if (MIS_Empty == LOG_Running)
 			{
-				B_LogEntry(Topic_NagDumgar,"Я убил орка-демона Наг-Думгара! Это было не легко, но я сделал это. Пора возвращаться к Ур-Траллу. Думаю, что его обрадует эта новость...");
+				B_LogEntry(Topic_NagDumgar, " I killed the orc demon Nag-Dumgar! It wasn't easy, but I did it. It's time to get back to Ur-Thrall. I think he'll be happy about this news... " );
 			};
 		};
-		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(OrcWarrior_Harad))
+		if (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(OrcWarrior_Harad))
 		{
 			OrcWarriorHaradIsDead = TRUE;
 		};
@@ -5361,7 +5362,7 @@ func void ZS_Dead()
 			{
 				MIS_Qvardemon = LOG_Success;
 				Log_SetTopicStatus(TOPIC_Qvardemon,LOG_Success);
-				B_LogEntry(TOPIC_Qvardemon,"Я уничтожил древнего жреца Кардимона!");
+				B_LogEntry(TOPIC_Qvardemon, " I destroyed the ancient priest Cardimon! " );
 			};
 		};
 		if((Hlp_GetInstanceID(self) == Hlp_GetInstanceID(VLK_5570_Avabul)) && (AvabulIsDead == FALSE))
@@ -5393,13 +5394,13 @@ func void ZS_Dead()
 			B_RemoveNpcQuarh(Ancient_Warrior_QT8);
 			B_RemoveNpcQuarh(Ancient_Warrior_QT9);
 
-			B_RemoveMonster(SKELETON_WARRIOR_AV_ELITE_Q1);
-			B_RemoveMonster(SKELETON_WARRIOR_AV_ELITE_Q2);
-			B_RemoveMonster(SKELETON_WARRIOR_AV_ELITE_Q3);
-			B_RemoveMonster(SKELETON_WARRIOR_AV_ELITE_Q4);
-			B_RemoveMonster(SKELETON_WARRIOR_AV_ELITE_Q5);
-			B_RemoveMonster(SKELETON_WARRIOR_AV_ELITE_Q6);
-			B_RemoveMonster(SKELETON_WARRIOR_AV_ELITE_Q7);
+			B_RemoveMonster( SKELETON_WARRIOR_AV_ELITE_Q1 );
+			B_RemoveMonster( SKELETON_WARRIOR_AV_ELITE_Q2 );
+			B_RemoveMonster( SKELETON_WARRIOR_AV_ELITE_Q3 );
+			B_RemoveMonster( SKELETON_WARRIOR_AV_ELITE_Q4 );
+			B_RemoveMonster( SKELETON_WARRIOR_AV_ELITE_Q5 );
+			B_RemoveMonster( SKELETON_WARRIOR_AV_ELITE_Q6 );
+			B_RemoveMonster( SKELETON_WARRIOR_AV_ELITE_Q7 );
 			B_RemoveMonster(SKELETON_WARRIOR_AV_ELITE_Q8);
 
 			B_RemoveMonster(SKELETON_WARRIOR_AV_Q1);
@@ -5433,23 +5434,23 @@ func void ZS_Dead()
 			{
 				MIS_JarCurse = LOG_Success;
 				Log_SetTopicStatus(TOPIC_JarCurse,LOG_Success);
-				B_LogEntry(Topic_JarCurse,"Я уничтожил древнего полководца, Куарходрона!");
+				B_LogEntry(Topic_JarCurse, " I have destroyed the ancient general, Quarhodron! " );
 			};
 		};
 		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(OrkElite_Addon2_Gonez))
 		{
 			if((MIS_HeroOrcJoin_T2 == LOG_Running) && (OrcTraitor == TRUE))
 			{
-				DayGonezStop = Wld_GetDay();
+				DayGoneZStop = Wld_GetDay();
 
 				if(DayGonezStop > DayGonezStart)
 				{
-					B_LogEntry(TOPIC_HeroOrcJoin_T2,"Я нашел гонца орков и убил его! Однако мне кажется, что я слишком затянул с его поисками и он уже успел передать Ур-Каррасу послание о моей измене.");
+					B_LogEntry(TOPIC_HeroOrcJoin_T2, " I found the orc messenger and killed him! However, it seems to me that I took too long to find him and he already managed to send Ur-Karras a message about my treason. " );
 				}
 				else
 				{
-					UrKarrasGonezIsDead = TRUE;
-					B_LogEntry(TOPIC_HeroOrcJoin_T2,"Я нашел гонца орков и убил его! Думаю, что теперь некому будет рассказать Ур-Каррасу о моей измене.");
+					UrKarrasGonezIsDead = TRUE ;
+					B_LogEntry(TOPIC_HeroOrcJoin_T2, " I found the orc messenger and killed him! I don't think there will be anyone to tell Ur-Karras about my treachery now. " );
 				};
 			};
 		};
@@ -5457,111 +5458,111 @@ func void ZS_Dead()
 		{
 			StoneBossIsDead = TRUE;
 		};
-		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(orkelite_addon3_chkflg_1))
+		if (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(orkelite_addon3_chkflg_1))
 		{
 			FLAG_ORCS_CHK_01 = TRUE;
 		};
-		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(orkelite_addon3_chkflg_2))
+		if (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(orkelite_addon3_chkflg_2))
 		{
 			FLAG_ORCS_CHK_02 = TRUE;
 		};
-		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(orkelite_addon3_chkflg_3))
+		if (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(orkelite_addon3_chkflg_3))
 		{
 			FLAG_ORCS_CHK_03 = TRUE;
 		};
-		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(orkelite_addon3_chkflg_4))
+		if (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(orkelite_addon3_chkflg_4))
 		{
 			FLAG_ORCS_CHK_04 = TRUE;
 		};
-		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(orkelite_addon3_chkflg_5))
+		if (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(orkelite_addon3_chkflg_5))
 		{
 			FLAG_ORCS_CHK_05 = TRUE;
 		};
-		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(orkelite_addon3_chkflg_6))
+		if (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(orkelite_addon3_chkflg_6))
 		{
 			FLAG_ORCS_CHK_06 = TRUE;
 		};
-		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(orkelite_addon3_chkflg_7))
+		if (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(orkelite_addon3_chkflg_7))
 		{
 			FLAG_ORCS_CHK_07 = TRUE;
 		};
-		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(orkelite_addon3_chkflg_8))
+		if (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(orkelite_addon3_chkflg_8))
 		{
 			FLAG_ORCS_CHK_08 = TRUE;
 		};
-		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(orkelite_addon3_chkflg_9))
+		if (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(orkelite_addon3_chkflg_9))
 		{
 			FLAG_ORCS_CHK_09 = TRUE;
 		};
-		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(orkelite_addon3_chkflg_10))
+		if (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(orkelite_addon3_chkflg_10))
 		{
 			FLAG_ORCS_CHK_10 = TRUE;
 		};
-		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(orkelite_addon3_chkflg_11))
+		if (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(orkelite_addon3_chkflg_11))
 		{
 			FLAG_ORCS_CHK_11 = TRUE;
 		};
-		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(orkelite_addon3_chkflg_12))
+		if (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(orkelite_addon3_chkflg_12))
 		{
 			FLAG_ORCS_CHK_12 = TRUE;
 		};
-		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(orkelite_addon3_chkflg_13))
+		if (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(orkelite_addon3_chkflg_13))
 		{
 			FLAG_ORCS_CHK_13 = TRUE;
 		};
-		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(orkelite_addon3_chkflg_14))
+		if (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(orkelite_addon3_chkflg_14))
 		{
 			FLAG_ORCS_CHK_14 = TRUE;
 		};
-		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(orkelite_addon3_chkflg_15))
+		if (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(orkelite_addon3_chkflg_15))
 		{
 			FLAG_ORCS_CHK_15 = TRUE;
 		};
-		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(orkelite_addon3_chkflg_16))
+		if (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(orkelite_addon3_chkflg_16))
 		{
 			FLAG_ORCS_CHK_16 = TRUE;
 		};
-		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(orkelite_addon3_chkflg_17))
+		if (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(orkelite_addon3_chkflg_17))
 		{
 			FLAG_ORCS_CHK_17 = TRUE;
 		};
-		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(orkelite_addon3_chkflg_18))
+		if (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(orkelite_addon3_chkflg_18))
 		{
 			FLAG_ORCS_CHK_18 = TRUE;
 		};
-		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(orkelite_addon3_chkflg_19))
+		if (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(orkelite_addon3_chkflg_19))
 		{
 			FLAG_ORCS_CHK_19 = TRUE;
 		};
-		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(orkelite_addon3_chkflg_20))
+		if (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(orkelite_addon3_chkflg_20))
 		{
 			FLAG_ORCS_CHK_20 = TRUE;
 		};
-		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(orkelite_addon3_chkflg_21))
+		if (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(orkelite_addon3_chkflg_21))
 		{
 			FLAG_ORCS_CHK_21 = TRUE;
 		};
-		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(orkelite_addon3_chkflg_22))
+		if (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(orkelite_addon3_chkflg_22))
 		{
 			FLAG_ORCS_CHK_22 = TRUE;
 		};
-		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(orkelite_addon3_chkflg_23))
+		if (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(orkelite_addon3_chkflg_23))
 		{
 			FLAG_ORCS_CHK_23 = TRUE;
 		};
-		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(orkelite_addon3_chkflg_24))
+		if (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(orkelite_addon3_chkflg_24))
 		{
 			FLAG_ORCS_CHK_24 = TRUE;
 		};
-		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(orkelite_addon3_chkflg_25))
+		if (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(orkelite_addon3_chkflg_25))
 		{
 			FLAG_ORCS_CHK_25 = TRUE;
 		};
-		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(orkelite_addon3_chkflg_26))
+		if (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(orkelite_addon3_chkflg_26))
 		{
 			FLAG_ORCS_CHK_26 = TRUE;
 		};
-		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(orkelite_addon3_chkflg_27))
+		if (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(orkelite_addon3_chkflg_27))
 		{
 			FLAG_ORCS_CHK_27 = TRUE;
 		};
@@ -5569,18 +5570,18 @@ func void ZS_Dead()
 		{
 			FLAG_ORCS_CHK_28 = TRUE;
 		};
-		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(orkelite_addon4_chkflg_drakar_capitan))
+		if (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(orkelite_addon4_chkflg_drakar_capitan))
 		{
-			FLAG_ORCS_DRAKAR = TRUE;
+			FLAG_ORCS_DRAGONS = TRUE ;
 
 			if(MIS_SylvioDrakar == LOG_Running)
 			{
-				FLAG_ORCS_DRAKAR_02 = TRUE;
+				FLAG_ORCS_DRAKAR_02 = TRUE ;
 			};
 		};
-		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(ORKELITE_CHKFLG_SYLVIODRAKAR_CAPITAN))
+		if (Hlp_GetInstanceID(self) == Hlp_GetInstanceID( ORKELITE_CHKFLG_SYLVIODRAKAR_CAPITAN ))
 		{
-			FLAG_ORCS_DRAKAR_02 = TRUE;
+			FLAG_ORCS_DRAKAR_02 = TRUE ;
 		};
 
 		if((Hlp_GetInstanceID(self) == Hlp_GetInstanceID(orc_8550_urnazul)) && (ORCLEADERISDEAD == FALSE))
@@ -5599,16 +5600,16 @@ func void ZS_Dead()
 					MIS_KILLURTRALL = LOG_OBSOLETE;
 					Log_SetTopicStatus(TOPIC_KILLURTRALL,LOG_OBSOLETE);
 					BOGNARREFUSETALK = TRUE;
-					Kurgan.aivar[93] = TRUE;
+					Kurgan.aivar[ 93 ] = TRUE ;
 				}
 				else
 				{
-					B_LogEntry(TOPIC_KILLURTRALL,"Я убил Ур-Тралла. Теперь необходимо сообщить об этом Хаг-Тару!");
+					B_LogEntry( TOPIC_KILLURTRAL , " I killed Ur-Thrall. Now I need to report this to Hag-Thar! " );
 				};
 			};
 			if(MIS_BELIARWILL == LOG_Running)
 			{
-				B_LogEntry(TOPIC_BELIARWILL,"Я убил вождя орков, Ур-Тралла! Воля Белиара исполнена!");
+				B_LogEntry( TOPIC_BELIARWILL , " I've killed the orc warchief, Ur-Thrall! Beliar's will is done! " );
 			};
 		};
 		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(orcslave_01))
@@ -5617,7 +5618,7 @@ func void ZS_Dead()
 			if((MIS_ORCORDER == LOG_Running) && (FLAG_ORCSLAVE_01 == TRUE) && (FLAG_ORCSLAVE_02 == TRUE) && (FLAG_ORCSLAVE_03 == TRUE) && (FLAG_ORCSLAVE_04 == TRUE) && (FLAG_ORCSLAVE_05 == TRUE) && (FLAG_ORCSLAVE_06 == TRUE) && (FLAG_ORCSLAVE_07 == TRUE) && (FLAG_ORCSLAVE_08 == TRUE))
 			{
 				GOTOKILLORCSLAVESDONE = TRUE;
-				B_LogEntry(TOPIC_ORCORDER,"Все орки-рабы мертвы! Теперь пора возвращаться к Альберту.");
+				B_LogEntry( TOPIC_ORCORDER , " All orc slaves are dead! Now it's time to return to Albert. " );
 			};
 		};
 		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(orcslave_02))
@@ -5626,7 +5627,7 @@ func void ZS_Dead()
 			if((MIS_ORCORDER == LOG_Running) && (FLAG_ORCSLAVE_01 == TRUE) && (FLAG_ORCSLAVE_02 == TRUE) && (FLAG_ORCSLAVE_03 == TRUE) && (FLAG_ORCSLAVE_04 == TRUE) && (FLAG_ORCSLAVE_05 == TRUE) && (FLAG_ORCSLAVE_06 == TRUE) && (FLAG_ORCSLAVE_07 == TRUE) && (FLAG_ORCSLAVE_08 == TRUE))
 			{
 				GOTOKILLORCSLAVESDONE = TRUE;
-				B_LogEntry(TOPIC_ORCORDER,"Все орки-рабы мертвы! Теперь пора возвращаться к Альберту.");
+				B_LogEntry( TOPIC_ORCORDER , " All orc slaves are dead! Now it's time to return to Albert. " );
 			};
 		};
 		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(orcslave_03))
@@ -5635,7 +5636,7 @@ func void ZS_Dead()
 			if((MIS_ORCORDER == LOG_Running) && (FLAG_ORCSLAVE_01 == TRUE) && (FLAG_ORCSLAVE_02 == TRUE) && (FLAG_ORCSLAVE_03 == TRUE) && (FLAG_ORCSLAVE_04 == TRUE) && (FLAG_ORCSLAVE_05 == TRUE) && (FLAG_ORCSLAVE_06 == TRUE) && (FLAG_ORCSLAVE_07 == TRUE) && (FLAG_ORCSLAVE_08 == TRUE))
 			{
 				GOTOKILLORCSLAVESDONE = TRUE;
-				B_LogEntry(TOPIC_ORCORDER,"Все орки-рабы мертвы! Теперь пора возвращаться к Альберту.");
+				B_LogEntry( TOPIC_ORCORDER , " All orc slaves are dead! Now it's time to return to Albert. " );
 			};
 		};
 		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(orcslave_04))
@@ -5644,7 +5645,7 @@ func void ZS_Dead()
 			if((MIS_ORCORDER == LOG_Running) && (FLAG_ORCSLAVE_01 == TRUE) && (FLAG_ORCSLAVE_02 == TRUE) && (FLAG_ORCSLAVE_03 == TRUE) && (FLAG_ORCSLAVE_04 == TRUE) && (FLAG_ORCSLAVE_05 == TRUE) && (FLAG_ORCSLAVE_06 == TRUE) && (FLAG_ORCSLAVE_07 == TRUE) && (FLAG_ORCSLAVE_08 == TRUE))
 			{
 				GOTOKILLORCSLAVESDONE = TRUE;
-				B_LogEntry(TOPIC_ORCORDER,"Все орки-рабы мертвы! Теперь пора возвращаться к Альберту.");
+				B_LogEntry( TOPIC_ORCORDER , " All orc slaves are dead! Now it's time to return to Albert. " );
 			};
 		};
 		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(orcslave_05))
@@ -5653,7 +5654,7 @@ func void ZS_Dead()
 			if((MIS_ORCORDER == LOG_Running) && (FLAG_ORCSLAVE_01 == TRUE) && (FLAG_ORCSLAVE_02 == TRUE) && (FLAG_ORCSLAVE_03 == TRUE) && (FLAG_ORCSLAVE_04 == TRUE) && (FLAG_ORCSLAVE_05 == TRUE) && (FLAG_ORCSLAVE_06 == TRUE) && (FLAG_ORCSLAVE_07 == TRUE) && (FLAG_ORCSLAVE_08 == TRUE))
 			{
 				GOTOKILLORCSLAVESDONE = TRUE;
-				B_LogEntry(TOPIC_ORCORDER,"Все орки-рабы мертвы! Теперь пора возвращаться к Альберту.");
+				B_LogEntry( TOPIC_ORCORDER , " All orc slaves are dead! Now it's time to return to Albert. " );
 			};
 		};
 		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(orcslave_06))
@@ -5662,7 +5663,7 @@ func void ZS_Dead()
 			if((MIS_ORCORDER == LOG_Running) && (FLAG_ORCSLAVE_01 == TRUE) && (FLAG_ORCSLAVE_02 == TRUE) && (FLAG_ORCSLAVE_03 == TRUE) && (FLAG_ORCSLAVE_04 == TRUE) && (FLAG_ORCSLAVE_05 == TRUE) && (FLAG_ORCSLAVE_06 == TRUE) && (FLAG_ORCSLAVE_07 == TRUE) && (FLAG_ORCSLAVE_08 == TRUE))
 			{
 				GOTOKILLORCSLAVESDONE = TRUE;
-				B_LogEntry(TOPIC_ORCORDER,"Все орки-рабы мертвы! Теперь пора возвращаться к Альберту.");
+				B_LogEntry( TOPIC_ORCORDER , " All orc slaves are dead! Now it's time to return to Albert. " );
 			};
 		};
 		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(orcslave_07))
@@ -5671,7 +5672,7 @@ func void ZS_Dead()
 			if((MIS_ORCORDER == LOG_Running) && (FLAG_ORCSLAVE_01 == TRUE) && (FLAG_ORCSLAVE_02 == TRUE) && (FLAG_ORCSLAVE_03 == TRUE) && (FLAG_ORCSLAVE_04 == TRUE) && (FLAG_ORCSLAVE_05 == TRUE) && (FLAG_ORCSLAVE_06 == TRUE) && (FLAG_ORCSLAVE_07 == TRUE) && (FLAG_ORCSLAVE_08 == TRUE))
 			{
 				GOTOKILLORCSLAVESDONE = TRUE;
-				B_LogEntry(TOPIC_ORCORDER,"Все орки-рабы мертвы! Теперь пора возвращаться к Альберту.");
+				B_LogEntry( TOPIC_ORCORDER , " All orc slaves are dead! Now it's time to return to Albert. " );
 			};
 		};
 		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(orcslave_08))
@@ -5680,14 +5681,14 @@ func void ZS_Dead()
 			if((MIS_ORCORDER == LOG_Running) && (FLAG_ORCSLAVE_01 == TRUE) && (FLAG_ORCSLAVE_02 == TRUE) && (FLAG_ORCSLAVE_03 == TRUE) && (FLAG_ORCSLAVE_04 == TRUE) && (FLAG_ORCSLAVE_05 == TRUE) && (FLAG_ORCSLAVE_06 == TRUE) && (FLAG_ORCSLAVE_07 == TRUE) && (FLAG_ORCSLAVE_08 == TRUE))
 			{
 				GOTOKILLORCSLAVESDONE = TRUE;
-				B_LogEntry(TOPIC_ORCORDER,"Все орки-рабы мертвы! Теперь пора возвращаться к Альберту.");
+				B_LogEntry( TOPIC_ORCORDER , " All orc slaves are dead! Now it's time to return to Albert. " );
 			};
 		};
 		if((Hlp_GetInstanceID(self) == Hlp_GetInstanceID(orc_8565_urgrom)) && (UrGromIsDead == FALSE))
 		{
 			UrGromIsDead = TRUE;
 		};
-		if((Hlp_GetInstanceID(self) == Hlp_GetInstanceID(NOV_601_Igaraz)) && (IgarazIsDead == FALSE))
+		if ((Hlp_GetInstanceID(self) == Hlp_GetInstanceID(NOV_601_Garage)) && (GarageIsDead ==  FALSE ))
 		{
 			IgarazIsDead = TRUE;
 
@@ -5708,7 +5709,7 @@ func void ZS_Dead()
 
 			if((MIS_PaladinCamp == LOG_Running) && (PaladinCampCostDestroyed == TRUE))
 			{	
-				B_LogEntry(TOPIC_PaladinCamp,"Я убил всех паладинов на побережье, как мне и приказал Ур-Каррас.");
+				B_LogEntry(TOPIC_PaladinCamp, " I killed all the paladins on the coast as Ur-Karras told me to. " );
 			};
 		};
 
@@ -5723,7 +5724,7 @@ func void ZS_Dead()
 
 			if((MIS_PaladinCamp == LOG_Running) && (PaladinCampCostDestroyed == TRUE))
 			{	
-				B_LogEntry(TOPIC_PaladinCamp,"Я убил всех паладинов на побережье, как мне и приказал Ур-Каррас.");
+				B_LogEntry(TOPIC_PaladinCamp, " I killed all the paladins on the coast as Ur-Karras told me to. " );
 			};
 		};
 
@@ -5738,7 +5739,7 @@ func void ZS_Dead()
 
 			if((MIS_PaladinCamp == LOG_Running) && (PaladinCampCostDestroyed == TRUE))
 			{	
-				B_LogEntry(TOPIC_PaladinCamp,"Я убил всех паладинов на побережье, как мне и приказал Ур-Каррас.");
+				B_LogEntry(TOPIC_PaladinCamp, " I killed all the paladins on the coast as Ur-Karras told me to. " );
 			};
 		};
 		if((Hlp_GetInstanceID(self) == Hlp_GetInstanceID(GuardChamber_Demon_Portal)) && (HaosPortalIsOpen == FALSE))
@@ -5757,10 +5758,10 @@ func void ZS_Dead()
 
 			if((MIS_PaladinCamp == LOG_Running) && (PaladinCampCostDestroyed == TRUE))
 			{	
-				B_LogEntry(TOPIC_PaladinCamp,"Я убил всех паладинов на побережье, как мне и приказал Ур-Каррас.");
+				B_LogEntry(TOPIC_PaladinCamp, " I killed all the paladins on the coast as Ur-Karras told me to. " );
 			};
 		};
-		if((Hlp_GetInstanceID(self) == Hlp_GetInstanceID(STRF_8147_Dagrag)) && (ArenaFightNow == TRUE) && (ArenaBattle_01 == TRUE) && (Npc_IsPlayer(other) || (other.aivar[AIV_PARTYMEMBER] == TRUE)))
+		if ((Help_GetInstanceID(self) == Help_GetInstanceID(STRF_8147_Dagrag)) && (ArenaFightNow ==  TRUE ) && (ArenaBattle_01 ==  TRUE ) && (Npc_IsPlayer(other) || (other.aivar[ AIV_PARTYMEMBER ] ==  TRUE ))) ;
 		{
 			KillArenaWarrior = TRUE;
 
@@ -5771,7 +5772,7 @@ func void ZS_Dead()
 				B_LogEntry_Failed(TOPIC_OrcArena);
 			};
 		};
-		if((Hlp_GetInstanceID(self) == Hlp_GetInstanceID(STRF_8148_Gunnok)) && (ArenaFightNow == TRUE) && (ArenaBattle_02 == TRUE) && (Npc_IsPlayer(other) || (other.aivar[AIV_PARTYMEMBER] == TRUE)))
+		if ((Help_GetInstanceID(self) == Help_GetInstanceID(STRF_8148_Gunnok)) && (ArenaFightNow ==  TRUE ) && (ArenaBattle_02 ==  TRUE ) && (Npc_IsPlayer(other) || (other.aivar[ AIV_PARTYMEMBER ] ==  TRUE ))) ;
 		{
 			KillArenaWarrior = TRUE;
 
@@ -5782,7 +5783,7 @@ func void ZS_Dead()
 				B_LogEntry_Failed(TOPIC_OrcArena);
 			};
 		};
-		if((Hlp_GetInstanceID(self) == Hlp_GetInstanceID(STRF_8149_Turuk)) && (ArenaFightNow == TRUE) && (ArenaBattle_03 == TRUE) && (Npc_IsPlayer(other) || (other.aivar[AIV_PARTYMEMBER] == TRUE)))
+		if ((Help_GetInstanceID(self) == Help_GetInstanceID(STRF_8149_Turuk)) && (ArenaFightNow ==  TRUE ) && (ArenaBattle_03 ==  TRUE ) && (Npc_IsPlayer(other) || (other.aivar[ AIV_PARTYMEMBER ] ==  TRUE )))
 		{
 			KillArenaWarrior = TRUE;
 
@@ -5813,7 +5814,7 @@ func void ZS_Dead()
 				B_LogEntry_Failed(TOPIC_ClansWar);
 			};
 		};
-		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(Orc_8571_HashTor))
+		if (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(Orc_8571_HashTor))
 		{
 			if(MIS_HashTorRule == LOG_Running)
 			{
@@ -5830,9 +5831,9 @@ func void ZS_Dead()
 				ParlafNoExcort = TRUE;
 			};
 		};
-		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(STRF_8152_UrTak))
+		if (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(STRF_8152_UrTak))
 		{
-			self.aivar[AIV_StoryBandit] = TRUE;
+			self.aivar[AIV_StoryBandit] = TRUE ;
 			UrTakIsDead = TRUE;
 
 			if((MIS_HashTorRule == LOG_Running) && (OFStyle == FALSE))
@@ -5847,7 +5848,7 @@ func void ZS_Dead()
 
 			if(MIS_ClansWar == LOG_Running)
 			{
-				B_LogEntry(TOPIC_ClansWar,"Вождь клана 'Ледяного Ветра' мертв! Надо сообщить об этом Грум Локу.");
+				B_LogEntry(TOPIC_ClansWar, " Chief of the Icewind Clan is dead! Groom Lok needs to be informed. " );
 			};
 		};
 		if((Hlp_GetInstanceID(self) == Hlp_GetInstanceID(STRF_8146_Hart)) && (ArenaFightNow == TRUE) && (ArenaBattle_04 == TRUE) && (Npc_IsPlayer(other) || (other.aivar[AIV_PARTYMEMBER] == TRUE)))
@@ -5861,7 +5862,7 @@ func void ZS_Dead()
 				B_LogEntry_Failed(TOPIC_OrcArena);
 			};
 		};
-		if((Hlp_GetInstanceID(self) == Hlp_GetInstanceID(STRF_8150_UrTrok)) && (ArenaFightNow == TRUE) && (ArenaBattle_05 == TRUE) && (Npc_IsPlayer(other) || (other.aivar[AIV_PARTYMEMBER] == TRUE)))
+		if ((Help_GetInstanceID(self) == Help_GetInstanceID(STRF_8150_Draw)) && (ArenaFightNow ==  TRUE ) && (ArenaBattle_05 ==  TRUE ) && (Npc_IsPlayer(other) || (other.aivar[ AIV_PARTYMEMBER ] ==  TRUE ))) ;
 		{
 			KillArenaWarrior = TRUE;
 
@@ -5872,7 +5873,7 @@ func void ZS_Dead()
 				B_LogEntry_Failed(TOPIC_OrcArena);
 			};
 		};
-		if((Hlp_GetInstanceID(self) == Hlp_GetInstanceID(STRF_8151_Umrak)) && (ArenaFightNow == TRUE) && (ArenaBattle_06 == TRUE) && (Npc_IsPlayer(other) || (other.aivar[AIV_PARTYMEMBER] == TRUE)))
+		if ((Help_GetInstanceID(self) == Help_GetInstanceID(STRF_8151_Umrak)) && (ArenaFightNow ==  TRUE ) && (ArenaBattle_06 ==  TRUE ) && (Npc_IsPlayer(other) || (other.aivar[ AIV_PARTYMEMBER ] ==  TRUE ))) ;
 		{
 			KillArenaWarrior = TRUE;
 
@@ -5894,7 +5895,7 @@ func void ZS_Dead()
 
 			if((MIS_PaladinCamp == LOG_Running) && (PaladinCampCostDestroyed == TRUE))
 			{	
-				B_LogEntry(TOPIC_PaladinCamp,"Я убил всех паладинов на побережье, как мне и приказал Ур-Каррас.");
+				B_LogEntry(TOPIC_PaladinCamp, " I killed all the paladins on the coast as Ur-Karras told me to. " );
 			};
 		};
 
@@ -5909,7 +5910,7 @@ func void ZS_Dead()
 
 			if((MIS_PaladinCamp == LOG_Running) && (PaladinCampCostDestroyed == TRUE))
 			{	
-				B_LogEntry(TOPIC_PaladinCamp,"Я убил всех паладинов на побережье, как мне и приказал Ур-Каррас.");
+				B_LogEntry(TOPIC_PaladinCamp, " I killed all the paladins on the coast as Ur-Karras told me to. " );
 			};
 		};
 
@@ -5924,19 +5925,19 @@ func void ZS_Dead()
 
 			if((MIS_PaladinCamp == LOG_Running) && (PaladinCampCostDestroyed == TRUE))
 			{	
-				B_LogEntry(TOPIC_PaladinCamp,"Я убил всех паладинов на побережье, как мне и приказал Ур-Каррас.");
+				B_LogEntry(TOPIC_PaladinCamp, " I killed all the paladins on the coast as Ur-Karras told me to. " );
 			};
 		};
 
 		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(Demon_PW_BOSS_GUARD_WAY))
 		{
 			Wld_SendTrigger("TRG_CORGALOM_MAGICWALL");
-			B_LogEntry(TOPIC_PrioratStart,"Могучий демон пал и магический барьер, преграждавший мне путь, исчез - теперь путь свободен!");
+			B_LogEntry(TOPIC_PrioratStart, "The mighty demon has fallen and the magical barrier that blocked my path has disappeared - now the path is clear! " );
 		};
 
-		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(NOV_600_Pedro_DI))
+		if ( Help_GetInstanceID ( self ) == Help_GetInstanceID ( NOV_600_Pedro_DI ) ) ;
 		{
-			DI_CHECK_PEDRO = TRUE;
+			DI_CHECK_PEDRO = TRUE ;
 
 			if((MIS_Gorax_KillPedro == LOG_Running) && (Npc_IsPlayer(other) || (other.aivar[AIV_PARTYMEMBER] == TRUE)))
 			{
@@ -5944,7 +5945,7 @@ func void ZS_Dead()
 				MIS_Gorax_KillPedro = LOG_SUCCESS;
 				MIS_TraitorPedro = LOG_SUCCESS;
 				Log_SetTopicStatus(TOPIC_TraitorPedro,LOG_SUCCESS);
-				B_LogEntry(TOPIC_TraitorPedro,"Я убил Педро! Серпентес будет доволен.");
+				B_LogEntry(TOPIC_TraitorPedro, " I killed Pedro! Serpentes will be pleased. " );
 			}
 			else if(!Npc_IsPlayer(other) && (MIS_Gorax_KillPedro == LOG_Running))
 			{
@@ -5952,7 +5953,7 @@ func void ZS_Dead()
 				MIS_Gorax_KillPedro = LOG_SUCCESS;
 				MIS_TraitorPedro = LOG_SUCCESS;
 				Log_SetTopicStatus(TOPIC_TraitorPedro,LOG_SUCCESS);
-				B_LogEntry(TOPIC_TraitorPedro,"Педро мертв и теперь уже не важно - как это случилось!");
+				B_LogEntry(TOPIC_TraitorPedro, " Pedro is dead and it doesn't matter anymore how it happened! " );
 			};
 		};
 		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(VLK_4250_Jorgen))
@@ -5971,29 +5972,29 @@ func void ZS_Dead()
 		{
 			YelaIsDead = TRUE;
 		};
-		if((Hlp_GetInstanceID(self) == Hlp_GetInstanceID(AmasRaf)) && (AmasRafIsDead == FALSE))
+		if ((Hlp_GetInstanceID(self) == Hlp_GetInstanceID(AmasRaf)) && (AmasRafIsDead ==  FALSE ))
 		{
-			AmasRafIsDead = TRUE;
-			self.aivar[95] = TRUE;
+			AmasRafIsDead = TRUE ;
+			self.aivar[ 95 ] = TRUE ;
 
 			if((AmasRafIsDead == TRUE) && (AmasSahIsDead == TRUE))
 			{
 				Wld_SendTrigger("EVT_BIGPYRAMIDDOOR_01");
 				Wld_SendTrigger("CAM_BIGPYRAMIDDOOR");
-				bonuslpgivehero = 3;
+				bonuslpgivehero = 3 ;
 				b_givebonusforelitemonster(bonuslpgivehero);
 			};
 		};
 		if((Hlp_GetInstanceID(self) == Hlp_GetInstanceID(AmasSah)) && (AmasSahIsDead == FALSE))
 		{
 			AmasSahIsDead = TRUE;
-			self.aivar[95] = TRUE;
+			self.aivar[ 95 ] = TRUE ;
 
 			if((AmasRafIsDead == TRUE) && (AmasSahIsDead == TRUE))
 			{
 				Wld_SendTrigger("EVT_BIGPYRAMIDDOOR_01");
 				Wld_SendTrigger("CAM_BIGPYRAMIDDOOR");
-				bonuslpgivehero = 3;
+				bonuslpgivehero = 3 ;
 				b_givebonusforelitemonster(bonuslpgivehero);
 			};
 		};
@@ -6067,21 +6068,21 @@ func void ZS_Dead()
 		{
 			if((MIS_HELPCREW == LOG_Running) && (MOVECREWTOHOME == FALSE) && (WOLFBACKNW == TRUE) && (WOLFISDEAD == FALSE))
 			{
-				WOLFISDEAD = TRUE;
+				WOLFISDEAD = TRUE ;
 				GLOBALCOUNTBACKNW = GLOBALCOUNTBACKNW - 1;
 			};
 		};
-		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(Pal_207_Girion_DI))
+		if ( Help_GetInstanceID ( self ) == Help_GetInstanceID ( Pal_207_Girion_DI ) )
 		{
-			DI_CHECK_GIRION = TRUE;
+			DI_CHECK_GIRION = TRUE ;
 		};
 		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(PC_Fighter_DI))
 		{
 			DI_CHECK_FIGHTER = TRUE;
 		};
-		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(PC_Mage_DI))
+		if ( Help_GetInstanceID ( self ) == Help_GetInstanceID ( PC_Mage_DI ) )
 		{
-			DI_CHECK_MAGE = TRUE;
+			DI_CHECK_MAGE = TRUE ;
 		};
 		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(PC_Psionic_DI))
 		{
@@ -6091,39 +6092,39 @@ func void ZS_Dead()
 		{
 			DI_CHECK_THIEF = TRUE;
 		};
-		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(SLD_800_Lee_DI))
+		if ( Help_GetInstanceID ( self ) == Help_GetInstanceID ( SLD_800_Lee_DI ) ) ;
 		{
 			DI_CHECK_LEE = TRUE;
 		};
-		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(SLD_801_Torlof_DI))
+		if ( Help_GetInstanceID ( self ) == Help_GetInstanceID ( SLD_801_Enjoy_DI ))
 		{
 			DI_CHECK_TORLOF = TRUE;
 		};
-		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(SLD_809_Bennet_DI))
+		if (Help_GetInstanceID(self) == Help_GetInstanceID(SLD_809_Benefit_DI))
 		{
 			DI_CHECK_BENNET = TRUE;
 		};
-		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(SLD_811_Wolf_DI))
+		if ( Help_GetInstanceID ( self ) == Help_GetInstanceID ( SLD_811_Wolf_DI ) )
 		{
-			DI_CHECK_WOLF = TRUE;
+			DI_CHECK_WOLF = TRUE ;
 		};
-		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(VLK_4250_Jorgen_DI))
+		if ( Help_GetInstanceID ( self ) == Help_GetInstanceID ( VLK_4250_Jorgen_DI ) )
 		{
-			DI_CHECK_JORGEN = TRUE;
+			DI_CHECK_JORGEN = TRUE ;
 		};
-		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(VLK_439_Vatras_DI))
+		if ( Help_GetInstanceID ( self ) == Help_GetInstanceID ( VLK_439_Batras_DI ))
 		{
-			DI_CHECK_VATRAS = TRUE;
+			DI_CHECK_VATRAS = TRUE ;
 		};
-		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(VLK_444_Jack_DI))
+		if ( Help_GetInstanceID ( self ) == Help_GetInstanceID ( VLK_444_Jack_DI ) )
 		{
 			DI_CHECK_JACK = TRUE;
 		};
-		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(VLK_449_Lares_DI))
+		if ( Help_GetInstanceID ( self ) == Help_GetInstanceID ( VLK_449_Lares_DI ) )
 		{
-			DI_CHECK_LARES = TRUE;
+			DI_CHECK_LARES = TRUE ;
 		};
-		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(djg_705_angar_li))
+		if (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(djg_705_angar_li))
 		{
 			LI_CHECK_ANGAR = TRUE;
 			if(COUNTPEOPLEDECIDE > 0)
@@ -6132,7 +6133,7 @@ func void ZS_Dead()
 				if(COUNTPEOPLEDECIDEPRG >= COUNTPEOPLEDECIDE)
 				{
 					READYCHANGECOURSE = TRUE;
-					B_LogEntry(TOPIC_CHANGECOURSE,"Кажется, я поговорил со всеми парнями. Теперь стоит сообщить об этом нашему капитану.");
+					B_LogEntry( TOPIC_CHANGECOURSE , " I think I've talked to all the guys. Now it's time to tell our captain. " );
 				};
 			};
 			if(COUNTPEOPLEONBEACH > 0)
@@ -6149,13 +6150,13 @@ func void ZS_Dead()
 				if(COUNTPEOPLEDECIDEPRG >= COUNTPEOPLEDECIDE)
 				{
 					READYCHANGECOURSE = TRUE;
-					B_LogEntry(TOPIC_CHANGECOURSE,"Кажется, я поговорил со всеми парнями. Теперь стоит сообщить об этом нашему капитану.");
+					B_LogEntry( TOPIC_CHANGECOURSE , " I think I've talked to all the guys. Now it's time to tell our captain. " );
 				};
 			};
 		};
 		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(nov_600_pedro_li))
 		{
-			LI_CHECK_PEDRO = TRUE;
+			LI_CHECK_PEDRO = TRUE ;
 			if(MIS_HELPPEDRO == LOG_Running)
 			{
 				MIS_HELPPEDRO = LOG_FAILED;
@@ -6167,7 +6168,7 @@ func void ZS_Dead()
 				if(COUNTPEOPLEDECIDEPRG >= COUNTPEOPLEDECIDE)
 				{
 					READYCHANGECOURSE = TRUE;
-					B_LogEntry(TOPIC_CHANGECOURSE,"Кажется, я поговорил со всеми парнями. Теперь стоит сообщить об этом нашему капитану.");
+					B_LogEntry( TOPIC_CHANGECOURSE , " I think I've talked to all the guys. Now it's time to tell our captain. " );
 				};
 			};
 		};
@@ -6180,7 +6181,7 @@ func void ZS_Dead()
 				if(COUNTPEOPLEDECIDEPRG >= COUNTPEOPLEDECIDE)
 				{
 					READYCHANGECOURSE = TRUE;
-					B_LogEntry(TOPIC_CHANGECOURSE,"Кажется, я поговорил со всеми парнями. Теперь стоит сообщить об этом нашему капитану.");
+					B_LogEntry( TOPIC_CHANGECOURSE , " I think I've talked to all the guys. Now it's time to tell our captain. " );
 				};
 			};
 		};
@@ -6193,7 +6194,7 @@ func void ZS_Dead()
 				if(COUNTPEOPLEDECIDEPRG >= COUNTPEOPLEDECIDE)
 				{
 					READYCHANGECOURSE = TRUE;
-					B_LogEntry(TOPIC_CHANGECOURSE,"Кажется, я поговорил со всеми парнями. Теперь стоит сообщить об этом нашему капитану.");
+					B_LogEntry( TOPIC_CHANGECOURSE , " I think I've talked to all the guys. Now it's time to tell our captain. " );
 				};
 			};
 			if(COUNTPEOPLEONBEACH > 0)
@@ -6227,7 +6228,7 @@ func void ZS_Dead()
 				if(COUNTPEOPLEDECIDEPRG >= COUNTPEOPLEDECIDE)
 				{
 					READYCHANGECOURSE = TRUE;
-					B_LogEntry(TOPIC_CHANGECOURSE,"Кажется, я поговорил со всеми парнями. Теперь стоит сообщить об этом нашему капитану.");
+					B_LogEntry( TOPIC_CHANGECOURSE , " I think I've talked to all the guys. Now it's time to tell our captain. " );
 				};
 			};
 			if(COUNTPEOPLEONBEACH > 0)
@@ -6244,7 +6245,7 @@ func void ZS_Dead()
 				if(COUNTPEOPLEDECIDEPRG >= COUNTPEOPLEDECIDE)
 				{
 					READYCHANGECOURSE = TRUE;
-					B_LogEntry(TOPIC_CHANGECOURSE,"Кажется, я поговорил со всеми парнями. Теперь стоит сообщить об этом нашему капитану.");
+					B_LogEntry( TOPIC_CHANGECOURSE , " I think I've talked to all the guys. Now it's time to tell our captain. " );
 				};
 			};
 			if(COUNTPEOPLEONBEACH > 0)
@@ -6261,7 +6262,7 @@ func void ZS_Dead()
 				if(COUNTPEOPLEDECIDEPRG >= COUNTPEOPLEDECIDE)
 				{
 					READYCHANGECOURSE = TRUE;
-					B_LogEntry(TOPIC_CHANGECOURSE,"Кажется, я поговорил со всеми парнями. Теперь стоит сообщить об этом нашему капитану.");
+					B_LogEntry( TOPIC_CHANGECOURSE , " I think I've talked to all the guys. Now it's time to tell our captain. " );
 				};
 			};
 		};
@@ -6278,7 +6279,7 @@ func void ZS_Dead()
 				if(COUNTPEOPLEDECIDEPRG >= COUNTPEOPLEDECIDE)
 				{
 					READYCHANGECOURSE = TRUE;
-					B_LogEntry(TOPIC_CHANGECOURSE,"Кажется, я поговорил со всеми парнями. Теперь стоит сообщить об этом нашему капитану.");
+					B_LogEntry( TOPIC_CHANGECOURSE , " I think I've talked to all the guys. Now it's time to tell our captain. " );
 				};
 			};
 		};
@@ -6291,15 +6292,15 @@ func void ZS_Dead()
 				if(COUNTPEOPLEDECIDEPRG >= COUNTPEOPLEDECIDE)
 				{
 					READYCHANGECOURSE = TRUE;
-					B_LogEntry(TOPIC_CHANGECOURSE,"Кажется, я поговорил со всеми парнями. Теперь стоит сообщить об этом нашему капитану.");
+					B_LogEntry( TOPIC_CHANGECOURSE , " I think I've talked to all the guys. Now it's time to tell our captain. " );
 				};
 			};
 		};
-		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(vlk_4250_jorgen_li))
+		if (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(vlk_4250_jorgen_li))
 		{
-			LI_CHECK_JORGEN = TRUE;
+			LI_CHECK_JORGEN = TRUE ;
 		};
-		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(vlk_439_vatras_li))
+		if (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(vlk_439_vatras_li))
 		{
 			LI_CHECK_VATRAS = TRUE;
 			if(COUNTPEOPLEDECIDE > 0)
@@ -6308,7 +6309,7 @@ func void ZS_Dead()
 				if(COUNTPEOPLEDECIDEPRG >= COUNTPEOPLEDECIDE)
 				{
 					READYCHANGECOURSE = TRUE;
-					B_LogEntry(TOPIC_CHANGECOURSE,"Кажется, я поговорил со всеми парнями. Теперь стоит сообщить об этом нашему капитану.");
+					B_LogEntry( TOPIC_CHANGECOURSE , " I think I've talked to all the guys. Now it's time to tell our captain. " );
 				};
 			};
 		};
@@ -6316,7 +6317,7 @@ func void ZS_Dead()
 		{
 			LI_CHECK_JACK = TRUE;
 		};
-		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(vlk_449_lares_li))
+		if (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(vlk_449_lares_li))
 		{
 			LI_CHECK_LARES = TRUE;
 			if(COUNTPEOPLEDECIDE > 0)
@@ -6325,11 +6326,11 @@ func void ZS_Dead()
 				if(COUNTPEOPLEDECIDEPRG >= COUNTPEOPLEDECIDE)
 				{
 					READYCHANGECOURSE = TRUE;
-					B_LogEntry(TOPIC_CHANGECOURSE,"Кажется, я поговорил со всеми парнями. Теперь стоит сообщить об этом нашему капитану.");
+					B_LogEntry( TOPIC_CHANGECOURSE , " I think I've talked to all the guys. Now it's time to tell our captain. " );
 				};
 			};
 		};
-		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(VLK_404_Lutero))
+		if (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(VLK_404_Lutero))
 		{
 			if(MIS_TRADEGUILD == LOG_Running)
 			{
@@ -6363,7 +6364,7 @@ func void ZS_Dead()
 			};
 			if(MIS_TRADEHELPER == LOG_Running)
 			{
-				MIS_TRADEHELPER = LOG_FAILED;
+				MIS_TRADEHELPER = LOG_FAILED ;
 				Log_SetTopicStatus(TOPIC_TRADEHELPER,LOG_OBSOLETE);
 			};
 			if(MIS_PALADINFOOD == LOG_Running)
@@ -6392,23 +6393,23 @@ func void ZS_Dead()
 
 			if(MIS_JORAHELP == LOG_Running)
 			{
-				B_LogEntry(TOPIC_JORAHELP,"Я убил Зуриса! Интересно, что мне это даст. Для начала надо обыскать его труп - может что и найду полезное.");
+				B_LogEntry( TOPIC_JORAHELP , " I killed Zuris! I wonder what this will give me. First I need to search his corpse - maybe I'll find something useful. " );
 			};
 		};
-		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(DJG_705_Angar))
+		if (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(DJG_705_Angar))
 		{
 			ANGARISDEAD = TRUE;
 		};
-		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(vlk_6130_benchel))
+		if (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(vlk_6130_benchel))
 		{
 			BENCHELISDEAD = TRUE;
 			if((MIS_BLACKBRENDI == LOG_Running) && (BENCHELSEE == TRUE) && (BENCHELFOLLOWME == FALSE))
 			{
-				B_LogEntry(TOPIC_BLACKBRENDI,"Я не успел помочь Бенчелу - бандиты убили его. Думаю, Лютеро не особо обрадуется этому известию.");
+				B_LogEntry( TOPIC_BLACKBRENDI , " I didn't have time to help Benchel - the bandits killed him. I don't think Luthero will be very happy about this news. " );
 			}
 			else if((MIS_BLACKBRENDI == LOG_Running) && (BENCHELSEE == TRUE) && (BENCHELFOLLOWME == TRUE))
 			{
-				B_LogEntry(TOPIC_BLACKBRENDI,"Бенчел мертв! Думаю, Лютеро не особо обрадуется этому известию.");
+				B_LogEntry( TOPIC_BLACKBRENDI , " Benchel is dead! I don't think Luthero will be too happy about this news. " );
 			};
 		};
 		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(bdt_9000_bandit))
@@ -6442,8 +6443,8 @@ func void ZS_Dead()
 		};
 		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(necromacerzombie))
 		{
-			CORRISTOSENDKILLDEMONDONE = TRUE;
-			B_LogEntry(TOPIC_RESCUEGOMEZ,"В склепе я встретил странного рода нежить. Похоже при жизни, этот кусок гнили был некромантом... Естественно, мне не оставалось ничего другого, как убить эту тварь. Теперь пора возвращаться к Корристо!");
+			CORRISTOSENDKILLDEMONDONE = TRUE ;
+			B_LogEntry( TOPIC_RESCUEGOMEZ , " I encountered a strange kind of undead in the crypt. It looks like this piece of rot was a necromancer in life... Naturally, I had no choice but to kill this creature. Now it's time to return to Corristo! " );
 		};
 		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(bdt_6123_nigelband_03))
 		{
@@ -6451,17 +6452,17 @@ func void ZS_Dead()
 		};
 		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(pir_1398_addon_inextremo_announcer))
 		{
-			Npc_RemoveInvItems(self,ItMi_IEDudelGelb,Npc_HasItems(self,ItMi_IEDudelGelb));
+			Npc_RemoveInvItems(self,ItMi_IEDudelYellow,Npc_HasItems(self,ItMi_IEDudelYellow));
 			Npc_RemoveInvItems(self,ItLsTorchFirespit,Npc_HasItems(self,ItLsTorchFirespit));
 			CHIEFKILLERISDEAD = TRUE;
 
-			if(!Npc_IsPlayer(other) && (other.aivar[AIV_PARTYMEMBER] == FALSE))
+			if ( ! Npc_IsPlayer(other) && (other.aivar[ AIV_PARTYMEMBERS ] ==  FALSE ))
 			{
 				CHIEFKILLERISDEADX = TRUE;
 			};
-			if((MIS_GUILDKILL == LOG_Running) && (GUILDKILLKNOWNLOC == TRUE) && (Npc_IsPlayer(other) || (other.aivar[AIV_PARTYMEMBER] == TRUE)))
+			if (( MIS_GUILDKILL  == LOG_Running) && ( GUILDKILLKNOWNLOC  ==  TRUE ) && (Npc_IsPlayer(other) || (other.aivar[ AIV_PARTYMEMBER ] ==  TRUE ))) ;
 			{
-				B_LogEntry(TOPIC_GUILDKILL,"Я убил Асмала.");
+				B_LogEntry( TOPIC_GUILDKILL , " I killed Asmal. " );
 			};
 			if((BANDHANS_MAIN == TRUE) && (MIS_KILLTARGETFINAL == LOG_Running) && (GOLDRECOVEREDHANS == FALSE))
 			{
@@ -6476,7 +6477,7 @@ func void ZS_Dead()
 				{
 					MIS_KILLTARGETFINAL = LOG_SUCCESS;
 					Log_SetTopicStatus(TOPIC_KILLTARGETFINAL,LOG_SUCCESS);
-					B_LogEntry(TOPIC_KILLTARGETFINAL,"С бандой Ханса покончено - все его люди и он сам мертвы. Но потом возникли проблемы - Асмал посчитал, что я не заслужил большой доли за это дело и согласился дать мне все лишь 500 монет. Меня это не устроило и мне пришлось покончить с Асмалом.");
+					B_LogEntry( TOPIC_KILLTARGETFINAL , " Hans's gang is finished - all his people and he himself are dead. But then problems arose - Asmal considered that I did not deserve a large share for this business and agreed to give me all only 500 coins. This did not suit me either had to do away with Asmal. " );
 				};
 			};
 			if((MIS_KILLWAY == LOG_Running) && (Npc_IsPlayer(other) || (other.aivar[AIV_PARTYMEMBER] == TRUE)))
@@ -6486,12 +6487,12 @@ func void ZS_Dead()
 
 				if(CANBEKILLMASTER == TRUE)
 				{
-					B_LogEntry(TOPIC_KILLWAY,"Я прикончил Асмала. Теперь я - глава гильдии убийц!");
-					BEKILLMASTER = TRUE;
+					B_LogEntry( TOPIC_KILLWAY , " I killed Asmal. Now I'm the head of the assassin's guild! " );
+					BEKILLMASTER = TRUE ;
 				}
 				else
 				{
-					B_LogEntry(TOPIC_KILLWAY,"Я прикончил Асмала! Возможно я поторопился, но теперь уже ничего не поправить.");
+					B_LogEntry( TOPIC_KILLWAY , " I killed Asmal! Maybe I was too hasty, but there's nothing to fix now. " );
 				};
 			};
 		};
@@ -6501,7 +6502,7 @@ func void ZS_Dead()
 
 			if(Npc_IsPlayer(other) || (other.aivar[AIV_PARTYMEMBER] == TRUE))
 			{
-				HANSKILL = HANSKILL + 1;
+				GLOVE = GLOVE  +  1 ;
 			};
 			if((CHIEFKILLERISDEADX == TRUE) && (MIS_KILLTARGETFINAL == LOG_Running) && (GOLDRECOVEREDHANS == FALSE))
 			{
@@ -6513,50 +6514,50 @@ func void ZS_Dead()
 		{
 			URSHAKISDEAD = TRUE;
 		};
-		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(vlk_6109_luis))
+		if (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(vlk_6109_luis))
 		{
 			KILLTARGET1 = TRUE;
 			if(MIS_KILLTARGET1 == LOG_Running)
 			{
-				B_LogEntry(TOPIC_KILLTARGET1,"Я прикончил этого болтуна, Луиса.");
+				B_LogEntry( TOPIC_KILLTARGET1 , " I killed that talker Louis. " );
 			};
 		};
-		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(VLK_484_Lehmar))
+		if (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(VLK_484_Lehmar))
 		{
 			KILLTARGET2 = TRUE;
 			LehmarIsDead = TRUE;
 
 			if(MIS_KILLTARGET2 == LOG_Running)
 			{
-				B_LogEntry(TOPIC_KILLTARGET2,"Я отправил Лемара на тот свет, при этом не забыв передать ему привет от Асмала.");
+				B_LogEntry( TOPIC_KILLTARGET2 , " I sent Lemar to the next world, while not forgetting to send him greetings from Asmal. " );
 			};
-			if((MIS_LemarTheft == LOG_Running) && (Npc_HasItems(hero,ItMi_ParlanRelic_MIS) == FALSE))
+			if ((MY_LemarTheft == LOG_Running) && (Npc_HasItems(hero,ItMy_TalkingRelic_MY) ==  FALSE ))
 			{
 				MIS_LemarTheft = LOG_FAILED;
 				B_LogEntry_Failed(Topic_LemarTheft);
 			};
 		};
-		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(VLK_468_Canthar))
+		if (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(VLK_468_Canthar))
 		{
 			KILLTARGET3 = TRUE;
 			if(MIS_KILLTARGET3 == LOG_Running)
 			{
-				B_LogEntry(TOPIC_KILLTARGET3,"Кантар мертв! В общем, я не особо сожалею о том, что мне пришлось это сделать, ведь он мне и самому не очень то нравился...");
+				B_LogEntry( TOPIC_KILLTARGET3 , " Kantar is dead! Anyway, I don't really regret having to do this, because I didn't really like him either... " );
 			};
 		};
-		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(vlk_6110_nigel))
+		if ( Help_GetInstanceID ( self ) == Help_GetInstanceID ( vlk_6110_nigel ) )
 		{
 			KILLTARGET4 = TRUE;
 			if(MIS_KILLTARGET4 == LOG_Running)
 			{
-				B_LogEntry(TOPIC_KILLTARGET4,"Я пришил этого беднягу Найджела.");
-				if((GRABTARGET4 == TRUE) && (NIGELBANDITISDEAD == FALSE))
+				B_LogEntry( TOPIC_KILLTARGET4 , " I killed that poor Nigel. " );
+				if (( GRABTARGET4  ==  TRUE ) && ( NIGELBANDITISDEAD  ==  FALSE ))
 				{
-					B_LogEntry(TOPIC_KILLTARGET4,"Интересно, как получается - и Найджел мертв и я знаю, у кого находятся его долговые деньги. Может быть мне стоит сказать Асмалу, что Найджел отказался отдавать долг, а деньги оставить себе... Правда для этого мне надо будет разобраться с бандитами, что ограбили его.");
+					B_LogEntry( TOPIC_KILLTARGET4 , " I wonder how it turns out - and Nigel is dead and I know who has his debt money. Maybe I should tell Asmal that Nigel refused to repay the debt, and keep the money for himself ... True, for this I will need to deal with the bandits that robbed him. " );
 				}
 				else if((GRABTARGET4 == TRUE) && (NIGELBANDITISDEAD == TRUE))
 				{
-					B_LogEntry(TOPIC_KILLTARGET4,"Интересно, как получается - и Найджел мертв и я забрал у бандитов его долговые деньги. Может быть мне стоит сказать Асмалу, что Найджел отказался отдавать долг, а деньги оставить себе...");
+					B_LogEntry( TOPIC_KILLTARGET4 , " I wonder how it turns out - and Nigel is dead and I took his debt money from the bandits. Maybe I should tell Asmal that Nigel refused to repay the debt, and keep the money for himself... " );
 				};
 			};
 		};
@@ -6565,7 +6566,7 @@ func void ZS_Dead()
 			KILLTARGET5 = TRUE;
 			if(MIS_KILLTARGET5 == LOG_Running)
 			{
-				B_LogEntry(TOPIC_KILLTARGET5,"Теперь, когда Рудар мертв - он не опасен для Асмала.");
+				B_LogEntry( TOPIC_KILLTARGET5 , " Now that Rudar is dead, he is no threat to Asmal. " );
 			};
 		};
 		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(bdt_6113_hansband_01))
@@ -6573,7 +6574,7 @@ func void ZS_Dead()
 			BANDHANS_CH01 = TRUE;
 			if(Npc_IsPlayer(other) || (other.aivar[AIV_PARTYMEMBER] == TRUE))
 			{
-				HANSKILL = HANSKILL + 1;
+				GLOVE = GLOVE  +  1 ;
 			};
 		};
 		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(bdt_6114_hansband_02))
@@ -6581,7 +6582,7 @@ func void ZS_Dead()
 			BANDHANS_CH02 = TRUE;
 			if(Npc_IsPlayer(other) || (other.aivar[AIV_PARTYMEMBER] == TRUE))
 			{
-				HANSKILL = HANSKILL + 1;
+				GLOVE = GLOVE  +  1 ;
 			};
 		};
 		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(bdt_6115_hansband_03))
@@ -6589,7 +6590,7 @@ func void ZS_Dead()
 			BANDHANS_CH03 = TRUE;
 			if(Npc_IsPlayer(other) || (other.aivar[AIV_PARTYMEMBER] == TRUE))
 			{
-				HANSKILL = HANSKILL + 1;
+				GLOVE = GLOVE  +  1 ;
 			};
 		};
 		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(bdt_6116_hansband_04))
@@ -6597,7 +6598,7 @@ func void ZS_Dead()
 			BANDHANS_CH04 = TRUE;
 			if(Npc_IsPlayer(other) || (other.aivar[AIV_PARTYMEMBER] == TRUE))
 			{
-				HANSKILL = HANSKILL + 1;
+				GLOVE = GLOVE  +  1 ;
 			};
 		};
 		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(bdt_6117_hansband_05))
@@ -6605,7 +6606,7 @@ func void ZS_Dead()
 			BANDHANS_CH05 = TRUE;
 			if(Npc_IsPlayer(other) || (other.aivar[AIV_PARTYMEMBER] == TRUE))
 			{
-				HANSKILL = HANSKILL + 1;
+				GLOVE = GLOVE  +  1 ;
 			};
 		};
 		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(bdt_6118_hansband_06))
@@ -6613,7 +6614,7 @@ func void ZS_Dead()
 			BANDHANS_CH06 = TRUE;
 			if(Npc_IsPlayer(other) || (other.aivar[AIV_PARTYMEMBER] == TRUE))
 			{
-				HANSKILL = HANSKILL + 1;
+				GLOVE = GLOVE  +  1 ;
 			};
 		};
 		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(bdt_6119_hansband_07))
@@ -6621,7 +6622,7 @@ func void ZS_Dead()
 			BANDHANS_CH07 = TRUE;
 			if(Npc_IsPlayer(other) || (other.aivar[AIV_PARTYMEMBER] == TRUE))
 			{
-				HANSKILL = HANSKILL + 1;
+				GLOVE = GLOVE  +  1 ;
 			};
 		};
 		if((BANDHANS_MAIN == TRUE) && (BANDHANS_CH01 == TRUE) && (BANDHANS_CH02 == TRUE) && (BANDHANS_CH03 == TRUE) && (BANDHANS_CH04 == TRUE) && (BANDHANS_CH05 == TRUE) && (BANDHANS_CH06 == TRUE) && (BANDHANS_CH07 == TRUE))
@@ -6651,7 +6652,7 @@ func void ZS_Dead()
 		{
 			DRPYMONTEISDEAD = TRUE;
 
-			if(!Npc_IsPlayer(other) && (other.aivar[AIV_PARTYMEMBER] == FALSE))
+			if ( ! Npc_IsPlayer(other) && (other.aivar[ AIV_PARTYMEMBERS ] ==  FALSE ))
 			{
 				DRPYMONTEISDEADX = TRUE;
 			};
@@ -6659,7 +6660,7 @@ func void ZS_Dead()
 		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(PIR_1391_Addon_InExtremo_TheFlail))
 		{
 			THEFLAILISDEAD = TRUE;
-			if(!Npc_IsPlayer(other) && (other.aivar[AIV_PARTYMEMBER] == FALSE))
+			if ( ! Npc_IsPlayer(other) && (other.aivar[ AIV_PARTYMEMBERS ] ==  FALSE ))
 			{
 				THEFLAILISDEADX = TRUE;
 			};
@@ -6667,7 +6668,7 @@ func void ZS_Dead()
 		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(PIR_1395_Addon_InExtremo_Lutter))
 		{
 			LUTTERISDEAD = TRUE;
-			if(!Npc_IsPlayer(other) && (other.aivar[AIV_PARTYMEMBER] == FALSE))
+			if ( ! Npc_IsPlayer(other) && (other.aivar[ AIV_PARTYMEMBERS ] ==  FALSE ))
 			{
 				LUTTERISDEADX = TRUE;
 			};
@@ -6675,15 +6676,15 @@ func void ZS_Dead()
 		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(PIR_1396_Addon_InExtremo_Flex))
 		{
 			FLEXISDEAD = TRUE;
-			if(!Npc_IsPlayer(other) && (other.aivar[AIV_PARTYMEMBER] == FALSE))
+			if ( ! Npc_IsPlayer(other) && (other.aivar[ AIV_PARTYMEMBERS ] ==  FALSE ))
 			{
-				FLEXISDEADX = TRUE;
+				FLEXISDEADX = TRUE ;
 			};
 		};
 		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(pir_1397_addon_inextremo_charlotte))
 		{
 			CHARLOTTEISDEAD = TRUE;
-			if(!Npc_IsPlayer(other) && (other.aivar[AIV_PARTYMEMBER] == FALSE))
+			if ( ! Npc_IsPlayer(other) && (other.aivar[ AIV_PARTYMEMBERS ] ==  FALSE ))
 			{
 				CHARLOTTEISDEADX = TRUE;
 			};
@@ -6693,10 +6694,10 @@ func void ZS_Dead()
 			GUILDKILLISDEAD = TRUE;
 			if((MIS_GUILDKILL == LOG_Running) && (GUILDKILLKNOWNLOC == TRUE))
 			{
-				B_LogEntry(TOPIC_GUILDKILL,"Я разобрался с гильдией убийц.");
+				B_LogEntry( TOPIC_GUILDKILL , " I've dealt with the assassin guild. " );
 			};
 		};
-		if((Hlp_GetInstanceID(self) == Hlp_GetInstanceID(Mil_316_Wambo)) && (WAMBOISDEAD == FALSE))
+		if ((Help_GetInstanceID(self) == Help_GetInstanceID(Mil_316_Wambo)) && ( WAMBOISDEAD  ==  FALSE ))
 		{
 			if(Hlp_GetInstanceID(other) == Hlp_GetInstanceID(pir_1398_addon_inextremo_announcer))
 			{
@@ -6728,11 +6729,11 @@ func void ZS_Dead()
 				};
 			};
 		
-			WAMBOISDEAD = TRUE;
+			WAMBOISDEAD = TRUE ;
 
 			if(MIS_KILLWAMBO == LOG_Running)
 			{
-				B_LogEntry(TOPIC_KILLWAMBO,"Вамбо мертв! Пора возвращаться к Асмалу.");
+				B_LogEntry( TOPIC_KILLWAMBO , " Wambo is dead! Time to go back to Asmal. " );
 			};
 		};
 		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(vlk_6120_lemarguard))
@@ -6751,22 +6752,22 @@ func void ZS_Dead()
 		{
 			DemonPWISDEAD = TRUE;
 		};
-		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(senyak_demon))
+		if (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(senyak_demon))
 		{
-			SenyakIsDead = TRUE;
+			SenyakIsDead = TRUE ;
 
 			if((DESTOYSENYAKSOUL == FALSE) && (USEMORAULARTU == TRUE))
 			{
 				Npc_RemoveInvItems(self,itmi_stonesoul,1);
-				CreateInvItems(self,itmi_stonesoul_senyak,1);
-				B_LogEntry(TOPIC_GOLDDRAGONPORTAL,"Я пленил душу архидемона С'эньяка, а затем уничтожил его телесную оболочку!");
+				CreateInvItems(self,itmi_stonesoul_senyak, 1 );
+				B_LogEntry( TOPIC_GOLDDRAGONPORTAL , " I captured the soul of the archdemon S'anyak, and then destroyed his corporeal form! " );
 				Log_SetTopicStatus(TOPIC_GOLDDRAGONPORTAL,LOG_SUCCESS);
 				MIS_GOLDDRAGONPORTAL = LOG_SUCCESS;
 			}
 			else
 			{
 				Npc_RemoveInvItems(self,itmi_stonesoul,1);
-				B_LogEntry(TOPIC_GOLDDRAGONPORTAL,"Архидемон С'эньяк мертв!");
+				B_LogEntry( TOPIC_GOLDDRAGONPORTAL , " Archidemon S'enyak is dead! " );
 				Log_SetTopicStatus(TOPIC_GOLDDRAGONPORTAL,LOG_SUCCESS);
 				MIS_GOLDDRAGONPORTAL = LOG_SUCCESS;
 			};
@@ -6775,67 +6776,67 @@ func void ZS_Dead()
 		{
 			INSANEKILLDONE = TRUE;
 		};
-		if((Hlp_GetInstanceID(self) == Hlp_GetInstanceID(demon_sendsenyak)) && (SENYAK_SENDPACK1 == TRUE) && (TALKSENYAK == FALSE))
+		if ((Hlp_GetInstanceID(self) == Hlp_GetInstanceID(demon_sendsenyak)) && ( SENYAK_SENDPACK1  ==  TRUE ) && ( TALKSENYAK  ==  FALSE ))
 		{
 			self.start_aistate = ZS_MM_Rtn_DragonRest;
-			self.aivar[AIV_EnemyOverride] = TRUE;
-			SENYAK_SENDPACK1 = FALSE;
+			self.aivar[AIV_EnemyOverride] = TRUE ;
+			SENYAK_SENDPACK1 = FALSE ;
 		};
-		if((Hlp_GetInstanceID(self) == Hlp_GetInstanceID(skeletonmage_sendsenyak_1)) && (SENYAK_SENDPACK2 == TRUE) && (TALKSENYAK == FALSE))
+		if ((Hlp_GetInstanceID(self) == Hlp_GetInstanceID(skeletonmage_sendsenyak_1)) && ( SENYAK_SENDPACK2  ==  TRUE ) && ( TALKSENYAK  ==  FALSE ))
 		{
 			self.start_aistate = ZS_MM_Rtn_DragonRest;
-			self.aivar[AIV_EnemyOverride] = TRUE;
-			SENYAK_SENDPACK2 = FALSE;
+			self.aivar[AIV_EnemyOverride] = TRUE ;
+			SENYAK_SENDPACK2 = FALSE ;
 		};
-		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(darkskeleton1_sendsenyak))
+		if (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(darkskeleton1_sendsenyak))
 		{
-			self.aivar[AIV_EnemyOverride] = TRUE;
+			self.aivar[AIV_EnemyOverride] = TRUE ;
 		};
-		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(darkskeleton2_sendsenyak))
+		if (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(darkskeleton2_sendsenyak))
 		{
-			self.aivar[AIV_EnemyOverride] = TRUE;
+			self.aivar[AIV_EnemyOverride] = TRUE ;
 		};
-		if((Hlp_GetInstanceID(self) == Hlp_GetInstanceID(skeletonmage_sendsenyak_2)) && (SENYAK_SENDPACK3 == TRUE) && (TALKSENYAK == FALSE))
-		{
-			self.start_aistate = ZS_MM_Rtn_DragonRest;
-			self.aivar[AIV_EnemyOverride] = TRUE;
-			SENYAK_SENDPACK3 = FALSE;
-		};
-		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(skeleton1_sendsenyak))
-		{
-			self.aivar[AIV_EnemyOverride] = TRUE;
-		};
-		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(skeleton2_sendsenyak))
-		{
-			self.aivar[AIV_EnemyOverride] = TRUE;
-		};
-		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(skeleton3_sendsenyak))
-		{
-			self.aivar[AIV_EnemyOverride] = TRUE;
-		};
-		if((Hlp_GetInstanceID(self) == Hlp_GetInstanceID(skeletonmage_sendsenyak_3)) && (SENYAK_SENDPACK4 == TRUE) && (TALKSENYAK == FALSE))
+		if ((Hlp_GetInstanceID(self) == Hlp_GetInstanceID(skeletonmage_sendsenyak_2)) && ( SENYAK_SENDPACK3  ==  TRUE ) && ( TALKSENYAK  ==  FALSE ))
 		{
 			self.start_aistate = ZS_MM_Rtn_DragonRest;
-			self.aivar[AIV_EnemyOverride] = TRUE;
-			SENYAK_SENDPACK4 = FALSE;
+			self.aivar[AIV_EnemyOverride] = TRUE ;
+			SENYAK_SENDPACK3 = FALSE ;
 		};
-		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(zombie1_sendsenyak))
+		if (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(skeleton1_sendsenyak))
 		{
-			self.aivar[AIV_EnemyOverride] = TRUE;
+			self.aivar[AIV_EnemyOverride] = TRUE ;
+		};
+		if (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(skeleton2_sendsenyak))
+		{
+			self.aivar[AIV_EnemyOverride] = TRUE ;
+		};
+		if (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(skeleton3_sendsenyak))
+		{
+			self.aivar[AIV_EnemyOverride] = TRUE ;
+		};
+		if ((Hlp_GetInstanceID(self) == Hlp_GetInstanceID(skeletonmage_sendsenyak_3)) && ( SENYAK_SENDPACK4  ==  TRUE ) && ( TALKSENYAK  ==  FALSE ))
+		{
+			self.start_aistate = ZS_MM_Rtn_DragonRest;
+			self.aivar[AIV_EnemyOverride] = TRUE ;
+			SENYAK_SENDPACK4 = FALSE ;
+		};
+		if (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(zombie1_sendsenyak))
+		{
+			self.aivar[AIV_EnemyOverride] = TRUE ;
 		};
 		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(zombie2_sendsenyak))
 		{
-			self.aivar[AIV_EnemyOverride] = TRUE;
+			self.aivar[AIV_EnemyOverride] = TRUE ;
 		};
 		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(zombie3_sendsenyak))
 		{
-			self.aivar[AIV_EnemyOverride] = TRUE;
+			self.aivar[AIV_EnemyOverride] = TRUE ;
 		};
 		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(zombie4_sendsenyak))
 		{
-			self.aivar[AIV_EnemyOverride] = TRUE;
+			self.aivar[AIV_EnemyOverride] = TRUE ;
 		};
-		if((self.aivar[AIV_MM_REAL_ID] == ID_SWAMPDRONE) || (self.aivar[AIV_MM_REAL_ID] == ID_SUMMONED_SWAMPDRONE))
+		if ((self.aivar[ AIV_MM_REAL_ID ] ==  ID_SWAMPDRONE ) || (self.aivar[ AIV_MM_REAL_ID ] ==  ID_SUMMONED_SWAMPDRONE ))
 		{
 			her = Hlp_GetNpc(PC_Hero);
 			if(Npc_GetDistToNpc(self,other) < 300)
@@ -6866,31 +6867,31 @@ func void ZS_Dead()
 		};
 		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(DiegoOW))
 		{
-			Diego_IsDead = TRUE;
+			Diego_IsDead = TRUE ;
 		};
 
 		if((Hlp_GetInstanceID(self) == Hlp_GetInstanceID(DMT_12987_Ituseld)) && (ItuseldIsDead == FALSE))
 		{
 			ItuseldIsDead = TRUE;
-			B_LogEntry(TOPIC_DarkWeb,"Это был не легкий бой! Но в конце концов мне удалось одолеть этого мага. Его голову я возьму в качестве доказательства для Лорда Хагена. Только теперь я понял, что у Лотара не было шансов выжить против такого могущественого противника...");
+			B_LogEntry(TOPIC_DarkWeb, " It was not an easy fight! But in the end I managed to defeat this mage. I will take his head as evidence for Lord Hagen. Only now I realized that Lothar had no chance of surviving against such a powerful opponent.. . " );
 		};
 		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(dmt_1298_darkmage))
 		{
-			DARKMAGE_ISDEAD = TRUE;
+			DARKMAGE_ISDEAD = TRUE ;
 			if(MIS_ORCTEMPLE != LOG_Running)
 			{
 				Log_CreateTopic(TOPIC_ORCTEMPLE,LOG_MISSION);
 				Log_SetTopicStatus(TOPIC_ORCTEMPLE,LOG_Running);
 			};
-			if(Kapitel >= 5)
+			if (Chapter >=  5 )
 			{
-				B_LogEntry(TOPIC_ORCTEMPLE,"Темный маг-некромант, которого я встретил в Храме Спящего, более не опасен, по той простой причине, что он мертв. При нем я нашел своего старого друга - могущественный древний клинок УРИЗЕЛь, которым я когда-то сразил Спящего. Думаю теперь можно наведаться и к драконам.");
+				B_LogEntry( TOPIC_ORCTEMPLE , " The dark necromancer mage I met in the Temple of the Sleeper is no longer dangerous, for the simple reason that he is dead. With him, I found my old friend - the powerful ancient blade URIZEL, with which I once slew the Sleeper . I think now you can visit the dragons. " );
 				Log_SetTopicStatus(TOPIC_ORCTEMPLE,LOG_SUCCESS);
 				MIS_ORCTEMPLE = LOG_SUCCESS;
 			}
 			else
 			{
-				B_LogEntry(TOPIC_ORCTEMPLE,"Темный маг-некромант, которого я встретил в Храме Спящего, более не опасен, по той простой причине, что он мертв. При нем я нашел своего старого друга - могущественный древний клинок УРИЗЕЛь, которым я когда-то сразил Спящего.");
+				B_LogEntry( TOPIC_ORCTEMPLE , " The dark necromancer mage I met in the Temple of the Sleeper is no longer dangerous, for the simple reason that he is dead. With him, I found my old friend - the powerful ancient blade URIZEL, with which I once slew the Sleeper . " );
 				Log_SetTopicStatus(TOPIC_ORCTEMPLE,LOG_SUCCESS);
 				MIS_ORCTEMPLE = LOG_SUCCESS;
 			};
@@ -6908,7 +6909,7 @@ func void ZS_Dead()
 			if(GOMEZSOULTALK_1 == TRUE)
 			{
 				GOMEZSOULCOUNT = GOMEZSOULCOUNT + 1;
-				concatText = "Убито проклятых призраков: ";
+				concatText = " Cursed ghosts killed: " ;
 				concatText = ConcatStrings(concatText,IntToString(GOMEZSOULCOUNT));
 				AI_Print(concatText);
 			}
@@ -6920,7 +6921,7 @@ func void ZS_Dead()
 			{
 				RESCUEGOMEZSTEPTWODONE = TRUE;
 				RESCUEGOMEZSTEPTHREE = TRUE;
-				B_LogEntry(TOPIC_RESCUEGOMEZ,"Я получил прощение для души Гомеза от десяти проклятых призраков в Старой Шахте! Теперь необходимо вернуться в замок и провести ритуал вызова убитых Гомезом магов Огня.");
+				B_LogEntry( TOPIC_RESCUEGOMEZ , " I received forgiveness for Gomez's soul from the ten cursed ghosts in the Old Mine! Now I need to return to the castle and perform the ritual to summon the Firebenders killed by Gomez. " );
 			};
 			if(GOMEZSOULNOCOUNT >= 6)
 			{
@@ -6935,7 +6936,7 @@ func void ZS_Dead()
 			if(GOMEZSOULTALK_2 == TRUE)
 			{
 				GOMEZSOULCOUNT = GOMEZSOULCOUNT + 1;
-				concatText = "Убито проклятых призраков: ";
+				concatText = " Cursed ghosts killed: " ;
 				concatText = ConcatStrings(concatText,IntToString(GOMEZSOULCOUNT));
 				AI_Print(concatText);
 			}
@@ -6947,7 +6948,7 @@ func void ZS_Dead()
 			{
 				RESCUEGOMEZSTEPTWODONE = TRUE;
 				RESCUEGOMEZSTEPTHREE = TRUE;
-				B_LogEntry(TOPIC_RESCUEGOMEZ,"Я получил прощение для души Гомеза от десяти проклятых призраков в Старой Шахте! Теперь необходимо вернуться в замок и провести ритуал вызова убитых Гомезом магов Огня.");
+				B_LogEntry( TOPIC_RESCUEGOMEZ , " I received forgiveness for Gomez's soul from the ten cursed ghosts in the Old Mine! Now I need to return to the castle and perform the ritual to summon the Firebenders killed by Gomez. " );
 			};
 			if(GOMEZSOULNOCOUNT >= 6)
 			{
@@ -6962,7 +6963,7 @@ func void ZS_Dead()
 			if(GOMEZSOULTALK_3 == TRUE)
 			{
 				GOMEZSOULCOUNT = GOMEZSOULCOUNT + 1;
-				concatText = "Убито проклятых призраков: ";
+				concatText = " Cursed ghosts killed: " ;
 				concatText = ConcatStrings(concatText,IntToString(GOMEZSOULCOUNT));
 				AI_Print(concatText);
 			}
@@ -6974,7 +6975,7 @@ func void ZS_Dead()
 			{
 				RESCUEGOMEZSTEPTWODONE = TRUE;
 				RESCUEGOMEZSTEPTHREE = TRUE;
-				B_LogEntry(TOPIC_RESCUEGOMEZ,"Я получил прощение для души Гомеза от десяти проклятых призраков в Старой Шахте! Теперь необходимо вернуться в замок и провести ритуал вызова убитых Гомезом магов Огня.");
+				B_LogEntry( TOPIC_RESCUEGOMEZ , " I received forgiveness for Gomez's soul from the ten cursed ghosts in the Old Mine! Now I need to return to the castle and perform the ritual to summon the Firebenders killed by Gomez. " );
 			};
 			if(GOMEZSOULNOCOUNT >= 6)
 			{
@@ -6989,7 +6990,7 @@ func void ZS_Dead()
 			if(GOMEZSOULTALK_4 == TRUE)
 			{
 				GOMEZSOULCOUNT = GOMEZSOULCOUNT + 1;
-				concatText = "Убито проклятых призраков: ";
+				concatText = " Cursed ghosts killed: " ;
 				concatText = ConcatStrings(concatText,IntToString(GOMEZSOULCOUNT));
 				AI_Print(concatText);
 			}
@@ -7001,7 +7002,7 @@ func void ZS_Dead()
 			{
 				RESCUEGOMEZSTEPTWODONE = TRUE;
 				RESCUEGOMEZSTEPTHREE = TRUE;
-				B_LogEntry(TOPIC_RESCUEGOMEZ,"Я получил прощение для души Гомеза от десяти проклятых призраков в Старой Шахте! Теперь необходимо вернуться в замок и провести ритуал вызова убитых Гомезом магов Огня.");
+				B_LogEntry( TOPIC_RESCUEGOMEZ , " I received forgiveness for Gomez's soul from the ten cursed ghosts in the Old Mine! Now I need to return to the castle and perform the ritual to summon the Firebenders killed by Gomez. " );
 			};
 			if(GOMEZSOULNOCOUNT >= 6)
 			{
@@ -7016,7 +7017,7 @@ func void ZS_Dead()
 			if(GOMEZSOULTALK_5 == TRUE)
 			{
 				GOMEZSOULCOUNT = GOMEZSOULCOUNT + 1;
-				concatText = "Убито проклятых призраков: ";
+				concatText = " Cursed ghosts killed: " ;
 				concatText = ConcatStrings(concatText,IntToString(GOMEZSOULCOUNT));
 				AI_Print(concatText);
 			}
@@ -7028,7 +7029,7 @@ func void ZS_Dead()
 			{
 				RESCUEGOMEZSTEPTWODONE = TRUE;
 				RESCUEGOMEZSTEPTHREE = TRUE;
-				B_LogEntry(TOPIC_RESCUEGOMEZ,"Я получил прощение для души Гомеза от десяти проклятых призраков в Старой Шахте! Теперь необходимо вернуться в замок и провести ритуал вызова убитых Гомезом магов Огня.");
+				B_LogEntry( TOPIC_RESCUEGOMEZ , " I received forgiveness for Gomez's soul from the ten cursed ghosts in the Old Mine! Now I need to return to the castle and perform the ritual to summon the Firebenders killed by Gomez. " );
 			};
 			if(GOMEZSOULNOCOUNT >= 6)
 			{
@@ -7043,7 +7044,7 @@ func void ZS_Dead()
 			if(GOMEZSOULTALK_6 == TRUE)
 			{
 				GOMEZSOULCOUNT = GOMEZSOULCOUNT + 1;
-				concatText = "Убито проклятых призраков: ";
+				concatText = " Cursed ghosts killed: " ;
 				concatText = ConcatStrings(concatText,IntToString(GOMEZSOULCOUNT));
 				AI_Print(concatText);
 			}
@@ -7055,7 +7056,7 @@ func void ZS_Dead()
 			{
 				RESCUEGOMEZSTEPTWODONE = TRUE;
 				RESCUEGOMEZSTEPTHREE = TRUE;
-				B_LogEntry(TOPIC_RESCUEGOMEZ,"Я получил прощение для души Гомеза от десяти проклятых призраков в Старой Шахте! Теперь необходимо вернуться в замок и провести ритуал вызова убитых Гомезом магов Огня.");
+				B_LogEntry( TOPIC_RESCUEGOMEZ , " I received forgiveness for Gomez's soul from the ten cursed ghosts in the Old Mine! Now I need to return to the castle and perform the ritual to summon the Firebenders killed by Gomez. " );
 			};
 			if(GOMEZSOULNOCOUNT >= 6)
 			{
@@ -7070,7 +7071,7 @@ func void ZS_Dead()
 			if(GOMEZSOULTALK_7 == TRUE)
 			{
 				GOMEZSOULCOUNT = GOMEZSOULCOUNT + 1;
-				concatText = "Убито проклятых призраков: ";
+				concatText = " Cursed ghosts killed: " ;
 				concatText = ConcatStrings(concatText,IntToString(GOMEZSOULCOUNT));
 				AI_Print(concatText);
 			}
@@ -7082,7 +7083,7 @@ func void ZS_Dead()
 			{
 				RESCUEGOMEZSTEPTWODONE = TRUE;
 				RESCUEGOMEZSTEPTHREE = TRUE;
-				B_LogEntry(TOPIC_RESCUEGOMEZ,"Я получил прощение для души Гомеза от десяти проклятых призраков в Старой Шахте! Теперь необходимо вернуться в замок и провести ритуал вызова убитых Гомезом магов Огня.");
+				B_LogEntry( TOPIC_RESCUEGOMEZ , " I received forgiveness for Gomez's soul from the ten cursed ghosts in the Old Mine! Now I need to return to the castle and perform the ritual to summon the Firebenders killed by Gomez. " );
 			};
 			if(GOMEZSOULNOCOUNT >= 6)
 			{
@@ -7097,7 +7098,7 @@ func void ZS_Dead()
 			if(GOMEZSOULTALK_8 == TRUE)
 			{
 				GOMEZSOULCOUNT = GOMEZSOULCOUNT + 1;
-				concatText = "Убито проклятых призраков: ";
+				concatText = " Cursed ghosts killed: " ;
 				concatText = ConcatStrings(concatText,IntToString(GOMEZSOULCOUNT));
 				AI_Print(concatText);
 			}
@@ -7109,7 +7110,7 @@ func void ZS_Dead()
 			{
 				RESCUEGOMEZSTEPTWODONE = TRUE;
 				RESCUEGOMEZSTEPTHREE = TRUE;
-				B_LogEntry(TOPIC_RESCUEGOMEZ,"Я получил прощение для души Гомеза от десяти проклятых призраков в Старой Шахте! Теперь необходимо вернуться в замок и провести ритуал вызова убитых Гомезом магов Огня.");
+				B_LogEntry( TOPIC_RESCUEGOMEZ , " I received forgiveness for Gomez's soul from the ten cursed ghosts in the Old Mine! Now I need to return to the castle and perform the ritual to summon the Firebenders killed by Gomez. " );
 			};
 			if(GOMEZSOULNOCOUNT >= 6)
 			{
@@ -7124,7 +7125,7 @@ func void ZS_Dead()
 			if(GOMEZSOULTALK_9 == TRUE)
 			{
 				GOMEZSOULCOUNT = GOMEZSOULCOUNT + 1;
-				concatText = "Убито проклятых призраков: ";
+				concatText = " Cursed ghosts killed: " ;
 				concatText = ConcatStrings(concatText,IntToString(GOMEZSOULCOUNT));
 				AI_Print(concatText);
 			}
@@ -7136,7 +7137,7 @@ func void ZS_Dead()
 			{
 				RESCUEGOMEZSTEPTWODONE = TRUE;
 				RESCUEGOMEZSTEPTHREE = TRUE;
-				B_LogEntry(TOPIC_RESCUEGOMEZ,"Я получил прощение для души Гомеза от десяти проклятых призраков в Старой Шахте! Теперь необходимо вернуться в замок и провести ритуал вызова убитых Гомезом магов Огня.");
+				B_LogEntry( TOPIC_RESCUEGOMEZ , " I received forgiveness for Gomez's soul from the ten cursed ghosts in the Old Mine! Now I need to return to the castle and perform the ritual to summon the Firebenders killed by Gomez. " );
 			};
 			if(GOMEZSOULNOCOUNT >= 6)
 			{
@@ -7151,7 +7152,7 @@ func void ZS_Dead()
 			if(GOMEZSOULTALK_10 == TRUE)
 			{
 				GOMEZSOULCOUNT = GOMEZSOULCOUNT + 1;
-				concatText = "Убито проклятых призраков: ";
+				concatText = " Cursed ghosts killed: " ;
 				concatText = ConcatStrings(concatText,IntToString(GOMEZSOULCOUNT));
 				AI_Print(concatText);
 			}
@@ -7163,7 +7164,7 @@ func void ZS_Dead()
 			{
 				RESCUEGOMEZSTEPTWODONE = TRUE;
 				RESCUEGOMEZSTEPTHREE = TRUE;
-				B_LogEntry(TOPIC_RESCUEGOMEZ,"Я получил прощение для души Гомеза от десяти проклятых призраков в Старой Шахте! Теперь необходимо вернуться в замок и провести ритуал вызова убитых Гомезом магов Огня.");
+				B_LogEntry( TOPIC_RESCUEGOMEZ , " I received forgiveness for Gomez's soul from the ten cursed ghosts in the Old Mine! Now I need to return to the castle and perform the ritual to summon the Firebenders killed by Gomez. " );
 			};
 			if(GOMEZSOULNOCOUNT >= 6)
 			{
@@ -7178,7 +7179,7 @@ func void ZS_Dead()
 			if(GOMEZSOULTALK_11 == TRUE)
 			{
 				GOMEZSOULCOUNT = GOMEZSOULCOUNT + 1;
-				concatText = "Убито проклятых призраков: ";
+				concatText = " Cursed ghosts killed: " ;
 				concatText = ConcatStrings(concatText,IntToString(GOMEZSOULCOUNT));
 				AI_Print(concatText);
 			}
@@ -7190,7 +7191,7 @@ func void ZS_Dead()
 			{
 				RESCUEGOMEZSTEPTWODONE = TRUE;
 				RESCUEGOMEZSTEPTHREE = TRUE;
-				B_LogEntry(TOPIC_RESCUEGOMEZ,"Я получил прощение для души Гомеза от десяти проклятых призраков в Старой Шахте! Теперь необходимо вернуться в замок и провести ритуал вызова убитых Гомезом магов Огня.");
+				B_LogEntry( TOPIC_RESCUEGOMEZ , " I received forgiveness for Gomez's soul from the ten cursed ghosts in the Old Mine! Now I need to return to the castle and perform the ritual to summon the Firebenders killed by Gomez. " );
 			};
 			if(GOMEZSOULNOCOUNT >= 6)
 			{
@@ -7205,7 +7206,7 @@ func void ZS_Dead()
 			if(GOMEZSOULTALK_12 == TRUE)
 			{
 				GOMEZSOULCOUNT = GOMEZSOULCOUNT + 1;
-				concatText = "Убито проклятых призраков: ";
+				concatText = " Cursed ghosts killed: " ;
 				concatText = ConcatStrings(concatText,IntToString(GOMEZSOULCOUNT));
 				AI_Print(concatText);
 			}
@@ -7217,7 +7218,7 @@ func void ZS_Dead()
 			{
 				RESCUEGOMEZSTEPTWODONE = TRUE;
 				RESCUEGOMEZSTEPTHREE = TRUE;
-				B_LogEntry(TOPIC_RESCUEGOMEZ,"Я получил прощение для души Гомеза от десяти проклятых призраков в Старой Шахте! Теперь необходимо вернуться в замок и провести ритуал вызова убитых Гомезом магов Огня.");
+				B_LogEntry( TOPIC_RESCUEGOMEZ , " I received forgiveness for Gomez's soul from the ten cursed ghosts in the Old Mine! Now I need to return to the castle and perform the ritual to summon the Firebenders killed by Gomez. " );
 			};
 			if(GOMEZSOULNOCOUNT >= 6)
 			{
@@ -7232,7 +7233,7 @@ func void ZS_Dead()
 			if(GOMEZSOULTALK_13 == TRUE)
 			{
 				GOMEZSOULCOUNT = GOMEZSOULCOUNT + 1;
-				concatText = "Убито проклятых призраков: ";
+				concatText = " Cursed ghosts killed: " ;
 				concatText = ConcatStrings(concatText,IntToString(GOMEZSOULCOUNT));
 				AI_Print(concatText);
 			}
@@ -7244,7 +7245,7 @@ func void ZS_Dead()
 			{
 				RESCUEGOMEZSTEPTWODONE = TRUE;
 				RESCUEGOMEZSTEPTHREE = TRUE;
-				B_LogEntry(TOPIC_RESCUEGOMEZ,"Я получил прощение для души Гомеза от десяти проклятых призраков в Старой Шахте! Теперь необходимо вернуться в замок и провести ритуал вызова убитых Гомезом магов Огня.");
+				B_LogEntry( TOPIC_RESCUEGOMEZ , " I received forgiveness for Gomez's soul from the ten cursed ghosts in the Old Mine! Now I need to return to the castle and perform the ritual to summon the Firebenders killed by Gomez. " );
 			};
 			if(GOMEZSOULNOCOUNT >= 6)
 			{
@@ -7259,7 +7260,7 @@ func void ZS_Dead()
 			if(GOMEZSOULTALK_14 == TRUE)
 			{
 				GOMEZSOULCOUNT = GOMEZSOULCOUNT + 1;
-				concatText = "Убито проклятых призраков: ";
+				concatText = " Cursed ghosts killed: " ;
 				concatText = ConcatStrings(concatText,IntToString(GOMEZSOULCOUNT));
 				AI_Print(concatText);
 			}
@@ -7271,7 +7272,7 @@ func void ZS_Dead()
 			{
 				RESCUEGOMEZSTEPTWODONE = TRUE;
 				RESCUEGOMEZSTEPTHREE = TRUE;
-				B_LogEntry(TOPIC_RESCUEGOMEZ,"Я получил прощение для души Гомеза от десяти проклятых призраков в Старой Шахте! Теперь необходимо вернуться в замок и провести ритуал вызова убитых Гомезом магов Огня.");
+				B_LogEntry( TOPIC_RESCUEGOMEZ , " I received forgiveness for Gomez's soul from the ten cursed ghosts in the Old Mine! Now I need to return to the castle and perform the ritual to summon the Firebenders killed by Gomez. " );
 			};
 			if(GOMEZSOULNOCOUNT >= 6)
 			{
@@ -7286,7 +7287,7 @@ func void ZS_Dead()
 			if(GOMEZSOULTALK_15 == TRUE)
 			{
 				GOMEZSOULCOUNT = GOMEZSOULCOUNT + 1;
-				concatText = "Убито проклятых призраков: ";
+				concatText = " Cursed ghosts killed: " ;
 				concatText = ConcatStrings(concatText,IntToString(GOMEZSOULCOUNT));
 				AI_Print(concatText);
 			}
@@ -7298,7 +7299,7 @@ func void ZS_Dead()
 			{
 				RESCUEGOMEZSTEPTWODONE = TRUE;
 				RESCUEGOMEZSTEPTHREE = TRUE;
-				B_LogEntry(TOPIC_RESCUEGOMEZ,"Я получил прощение для души Гомеза от десяти проклятых призраков в Старой Шахте! Теперь необходимо вернуться в замок и провести ритуал вызова убитых Гомезом магов Огня.");
+				B_LogEntry( TOPIC_RESCUEGOMEZ , " I received forgiveness for Gomez's soul from the ten cursed ghosts in the Old Mine! Now I need to return to the castle and perform the ritual to summon the Firebenders killed by Gomez. " );
 			};
 			if(GOMEZSOULNOCOUNT >= 6)
 			{
@@ -7323,27 +7324,27 @@ func void ZS_Dead()
 		};
 		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(orcshaman_leader1))
 		{
-			B_LogEntry(TOPIC_ADW_ORCINVASION,"Я убил верховного шамана орды - Варраг-Шатана.");
+			B_LogEntry( TOPIC_ADW_ORCINVASION , " I killed High Horde Shaman - Warrag-Shatana. " );
 		};
 		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(orcshaman_leader2))
 		{
-			B_LogEntry(TOPIC_ADW_ORCINVASION,"Я убил верховного шамана орды - Варраг-Казорга.");
+			B_LogEntry( TOPIC_ADW_ORCINVASION , " I killed the high shaman of the horde - Varrag-Kazorge. " );
 		};
 		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(orcshaman_leader3))
 		{
-			B_LogEntry(TOPIC_ADW_ORCINVASION,"Я убил верховного шамана орды - Варраг-Хашора.");
+			B_LogEntry( TOPIC_ADW_ORCINVASION , " I killed High Horde Shaman Varrag-Hashor. " );
 		};
 		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(orcshaman_leader4))
 		{
-			B_LogEntry(TOPIC_ADW_ORCINVASION,"Я убил верховного шамана орды - Варраг-Назула.");
+			B_LogEntry( TOPIC_ADW_ORCINVASION , " I have killed High Horde Shaman Warrag-Nazul. " );
 		};
 		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(orcshaman_leader5))
 		{
-			B_LogEntry(TOPIC_ADW_ORCINVASION,"Я убил верховного шамана орды - Варраг-Хаташа.");
+			B_LogEntry( TOPIC_ADW_ORCINVASION , " I killed the high shaman of the horde - Varrag-Khatash. " );
 		};
 		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(orkelite_adw_leader))
 		{
-			B_LogEntry(TOPIC_ADW_ORCINVASION,"Я убил одного из клана предводителей орды - Ур-Катана.");
+			B_LogEntry( TOPIC_ADW_ORCINVASION , " I have killed one of the clan leaders of the horde - Ur-Katana. " );
 		};
 		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(none_103_dragon_gold))
 		{
@@ -7361,27 +7362,27 @@ func void ZS_Dead()
 		};
 		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(BDT_10022_Addon_Miguel))
 		{
-			MIGUEL_ISDEAD = TRUE;
+			MIGUEL_ISDEAD = TRUE ;
 		};
 		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(BDT_1080_Addon_Tom))
 		{
-			TOM_ISDEAD = TRUE;
+			TOM_ISDEAD = TRUE ;
 		};
 		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(BDT_10014_Addon_Thorus))
 		{
-			THORUS_ISDEAD = TRUE;
+			THORUS_ISDEAD = TRUE ;
 		};
 		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(BDT_1098_Addon_Snaf))
 		{
-			SNAF_ISDEAD = TRUE;
+			SNAF_ISDEAD = TRUE ;
 		};
 		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(BDT_1086_Addon_Scatty))
 		{
-			SCATTY_ISDEAD = TRUE;
+			SCATTY_ISDEAD = TRUE ;
 		};
 		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(Fisk))
 		{
-			FISK_ISDEAD = TRUE;
+			FISK_ISDEAD = TRUE ;
 			if(MIS_RATFORDFISK == LOG_Running)
 			{
 				MIS_RATFORDFISK = LOG_OBSOLETE;
@@ -7389,9 +7390,9 @@ func void ZS_Dead()
 		};
 		if(Npc_IsPlayer(other) || (other.aivar[AIV_PARTYMEMBER] == TRUE))
 		{
-			self.aivar[AIV_KilledByPlayer] = TRUE;
+			self.aivar[AIV_KilledByPlayer] = TRUE ;
 
-			if((self.guild < GIL_SEPERATOR_HUM) && (self.guild != GIL_KDM) && (self.guild != GIL_DMT) && (self.guild != GIL_BDT) && (self.aivar[AIV_DropDeadAndKill] == FALSE))
+			if ((self.guild <  GIL_SEPERATOR_HUM ) && (self.guild !=  GIL_KDM ) && (self.guild !=  GIL_DMT ) && (self.guild !=  GIL_BDT ) && (self.aivar[AIV_DropDeadAndKill] ==  FALSE )) ;
 			{
 				MadKillerCount = MadKillerCount + 1;
 			};
@@ -7422,7 +7423,7 @@ func void ZS_Dead()
 			{
 				Log_SetTopicStatus(Topic_Addon_Fortuno,LOG_OBSOLETE);
 			};
-			if(self.aivar[AIV_MM_REAL_ID] == ID_ZOMBIE_OM)
+			if (self.aivar[ AIV_MM_REAL_ID ] ==  ID_ZOMBIE_OM )
 			{
 				OLDMINEZCOUNT = OLDMINEZCOUNT + 1;
 			};
@@ -7442,38 +7443,38 @@ func void ZS_Dead()
 		};
 
 		B_DeletePetzCrime(self);
-		self.aivar[AIV_NpcSawPlayerCommit] = CRIME_NONE;
+		self.aivar[AIV_NpcSawPlayerCommit] = CRIME_NONE ;
 	};
 	if(self.vars[6] == FALSE)
 	{
 		B_GiveTradeInv(self);
 		B_ClearRuneInv(self);
 
-		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(vlk_6027_taliasan))
+		if (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(vlk_6027_taliasan))
 		{
 			B_ClearBookInv(self);
 		};
 
 		AI_UnequipWeapons(self);
-		self.aivar[AIV_TAPOSITION] = FALSE;
+		self.aivar[ AIV_TAPOSITION ] = FALSE ;
 
-		if(self.aivar[93] == FALSE)
+		if (self.aivar[ 93 ] ==  FALSE )
 		{
-			if(self.aivar[AIV_DeathInvGiven] == FALSE)
+			if (self.aivar[AIV_DeathInvGiven] ==  FALSE )
 			{
 				B_GiveDeathInv(self);
 			};
 		};
-		if((Hlp_GetInstanceID(self) == Hlp_GetInstanceID(Draconian_Minion)) || (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(Skeleton_Lord_UD)) || (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(Ghost_Azgalor)) || (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(SwampGolem_Dragon)) || (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(StoneGolem_Dragon)) || (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(IceGolem_Dragon)) || (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(FireGolem_Dragon)))
+		if ((Hlp_GetInstanceID(self) == Hlp_GetInstanceID(Draconian_Minion)) || (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(Skeleton_Lord_UD)) || (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(Ghost_Azgalor)) || (Hlp_GetInstanceID(self) ) = Hlp_GetInstanceID(SwampGolem_Dragon)) || (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(StoneGolem_Dragon)) || (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(IceGolem_Dragon)) || (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(FireGolem_Dragon))
 		{
 			DragonRegenFast = FALSE;
 		};
 
 		self.vars[6] = TRUE;
 	};
-	if((self.aivar[AIV_StoryBandit] == FALSE) && (self.guild <= GIL_SEPERATOR_HUM) && (Npc_IsPlayer(other) || (other.aivar[AIV_PARTYMEMBER] == TRUE)))
+	if ((self.aivar[AIV_StoryBandit] ==  ​​FALSE ) && (self.guild <=  GIL_SEPERATOR_HUM ) && (Npc_IsPlayer(other) || (other.aivar[ AIV_PARTYMEMBER ] ==  TRUE ))) ;
 	{
-		self.aivar[AIV_StoryBandit] = TRUE;
+		self.aivar[AIV_StoryBandit] = TRUE ;
 	};
 };
 
@@ -7481,8 +7482,8 @@ func int ZS_Dead_loop()
 {
 	if(self.aivar[93] == TRUE)
 	{
-		self.aivar[92] = TRUE;
-		self.aivar[AIV_INVINCIBLE] = TRUE;
+		self.aivar[ 92 ] = TRUE ;
+		self.aivar[ AIV_INVINCIBLE ] = TRUE ;
 		return LOOP_END;
 	}
 	else
@@ -7491,10 +7492,10 @@ func int ZS_Dead_loop()
 		{
 			return LOOP_END;
 		};
-		if(self.aivar[AIV_TAPOSITION] == FALSE)
+		if (self.aivar[ AIV_TAPOSITION ] ==  FALSE )
 		{
 			B_DragonKillCounter(self);
-			self.aivar[AIV_TAPOSITION] = TRUE;
+			self.aivar[ AIV_TAPOSITION ] = TRUE ;
 		};
 
 		return LOOP_CONTINUE;
@@ -7510,7 +7511,7 @@ func void zs_dead_end()
 		self.attribute[ATR_HITPOINTS] = self.attribute[ATR_HITPOINTS_MAX];
 		Npc_ClearAIQueue(self);
 		AI_Standup(self);
-		self.aivar[AIV_EnemyOverride] = TRUE;
+		self.aivar[AIV_EnemyOverride] = TRUE ;
 		AI_StartState(self,ZS_MM_Rtn_DragonRest,0,"");
 	}
 	else if((Hlp_GetInstanceID(self) == Hlp_GetInstanceID(BDT_1090_Addon_Raven)) && (RavenAway == FALSE))
@@ -7528,7 +7529,7 @@ func void zs_dead_end()
 		{
 			Ext_RemoveFromSlot(self,"BIP01 R CLAVICLE");
 			Ext_RemoveFromSlot(self,"BIP01 SPINE");
-			self.aivar[AIV_MM_RoamEnd] = FALSE;
+			self.aivar[AIV_MM_RoamEnd] = FALSE ;
 			Mdl_RemoveOverlayMds(self,"HUMANS_NEWTORCH.MDS");
 			Ext_RemoveFromSlot(self,"BIP01 L HAND");
 			Npc_RemoveInvItems(self,ItLsFireTorch,Npc_HasItems(self,ItLsFireTorch));
