@@ -1,3 +1,4 @@
+
 var int IlarahCountAct_01;
 var int IlarahCountAct_02;
 var int IlarahCountAct_03;
@@ -1153,7 +1154,7 @@ func void EveryDayEconomicStuff()
 
 			DT_FOODSTOCK = DT_FOODSTOCK - DT_TOTAL_DAILY_FOODLOSS + DT_TOTAL_DAILY_FOODGATHER;
 
-			if(EDDARECRUITEDDT == FALSE)
+			if ( RECRUITEDT  ==  FALSE )
 			{
 				if(DT_FOODSTOCK > 130)
 				{
@@ -1173,7 +1174,7 @@ func void EveryDayEconomicStuff()
 			};
 			if(DT_FOODSTOCK <= 0)
 			{
-				AI_Print("В вашем лагере закончилась еда!");
+				AI_Print( " Your camp is out of food! " );
 				DTFOODCRISIS = TRUE;
 				DT_FOODSTOCK = FALSE;
 				DTFOODDEBT = DT_TOTAL_DAILY_FOODLOSS * 7;
@@ -1187,10 +1188,10 @@ func void EveryDayEconomicStuff()
 		if(EVERYDAYDTORE < DayNow)
 		{
 			DT_TOTAL_DAILY_ORECOME = FALSE;
-			DELTA_VIPER = Hlp_Random(75);
+			DELTA_VIPER = Hlp_Random( 75 );
 			DELTA_GRIMES = Hlp_Random(125);
 
-			if((ViperIsDead == FALSE) && (VIPERRECRUITEDDT == TRUE))
+			if ((ViperIsDead ==  FALSE ) && ( VIPERRECRUITEDDT  ==  TRUE ))
 			{
 				DT_TOTAL_DAILY_ORECOME = DT_TOTAL_DAILY_ORECOME + 75 + DELTA_VIPER;
 			};
@@ -1232,12 +1233,12 @@ func void EveryDayEconomicStuff()
 		if(EVERYDAYDTIRON < DayNow)
 		{
 			DT_TOTAL_DAILY_IRONCOME = FALSE;
-			DELTA_HUNTY = Hlp_Random(75);
-			DELTA_SNIPES = Hlp_Random(100);
+			DELTA_HUNTY = Hlp_Random( 75 );
+			DELTA_SNIPES = Hlp_Random( 100 );
 
 			if(HUNTYGRIMESRECRUITEDDT == TRUE)
 			{
-				if(HuntyNWIsDead == FALSE) 
+				if (HuntyNWIsDead ==  FALSE )
 				{
 					DT_TOTAL_DAILY_IRONCOME = DT_TOTAL_DAILY_IRONCOME + 75 + DELTA_HUNTY;
 				};
@@ -1247,7 +1248,7 @@ func void EveryDayEconomicStuff()
 				DT_TOTAL_DAILY_IRONCOME = DT_TOTAL_DAILY_IRONCOME + 100 + DELTA_SNIPES;
 			};
 
-			if((DT_TOTAL_DAILY_IRONCOME > 0) && (CanHireSmith == FALSE))
+			if (( DT_TOTAL_DAILY_IRONCOME  >  0 ) && ( CanHireSmith ==  FALSE )) ;
 			{
 				CanHireSmith = TRUE;
 			};
@@ -1287,11 +1288,11 @@ func void EveryDayEconomicStuff()
 			{
 				DT_TOTAL_DAILY_PAYMENTS += EROLWAGE;
 			};
-			if((niclasrecruiteddt == TRUE) && (NiclasIsDead == FALSE))
+			if ((NicholasRecruited ==  TRUE ) && (NicholasIsDead ==  FALSE ))
 			{
 				DT_TOTAL_DAILY_PAYMENTS += NICLASWAGE;
 			};
-			if((farimrecruiteddt == TRUE) && (FarimIsDead == FALSE))
+			if ((farimrecruiteddt ==  TRUE ) && (FarimIsDead ==  FALSE ))
 			{
 				DT_TOTAL_DAILY_PAYMENTS += FARIMWAGE;
 			};
@@ -1328,7 +1329,7 @@ func void EveryDayEconomicStuff()
 
 			if(DT_BUDGET <= 0)
 			{
-				AI_Print("В вашем лагере закончились деньги!");
+				AI_Print( " Your camp ran out of money! " );
 				DTMONEYCRISIS = TRUE;
 			};
 			if(DTFOODDEBT > 0)
@@ -1347,19 +1348,19 @@ func void B_NoticeBoard()
 	{
 		if(Npc_GetDistToWP(hero,"Z_TORCH_01") <= 2000)
 		{
-			AI_NoticePrint(500,7000,"Заброшенный маяк");
+			AI_NoticePrint( 500 , 7000 , " Abandoned Lighthouse " );
 		};
 		if(Npc_GetDistToWP(hero,"CITY1") <= 2000)
 		{
-			AI_NoticePrint(500,7000,"Хоринис, южные ворота");
+			AI_NoticePrint( 500 , 7000 , " Khorinis, south gate " );
 		};
 		if(Npc_GetDistToWP(hero,"CITY2") <= 2000)
 		{
-			AI_NoticePrint(500,7000,"Хоринис, восточные ворота");
+			AI_NoticePrint( 500 , 7000 , " Khorinis, east gate " );
 		};
 		if(Npc_GetDistToWP(hero,"HAFEN") <= 4200)
 		{
-			AI_NoticePrint(500,7000,"Портовый район");
+			AI_NoticePrint( 500 , 7000 , " Waterfront " );
 		};
 		if(Npc_GetDistToWP(hero,"NW_CITY_UPTOWN_PATH_03") <= 1000)
 		{
@@ -1383,251 +1384,251 @@ func void B_NoticeBoard()
 		};
 		if(Npc_GetDistToWP(hero,"KLOSTER") <= 5000)
 		{
-			AI_NoticePrint(500,7000,"Монастырь магов Огня");
+			AI_NoticePrint( 500 , 7000 , " Fire Mage Monastery " );
 		};
 		if(Npc_GetDistToWP(hero,"NW_TROLLAREA_RUINS_35") <= 2500)
 		{
-			AI_NoticePrint(500,7000,"Древние руины");
+			AI_NoticePrint( 500 , 7000 , " Ancient ruins " );
 		};
 		if(Npc_GetDistToWP(hero,"XARDAS") <= 1000)
 		{
-			AI_NoticePrint(500,7000,"Башня Ксардаса");
+			AI_NoticePrint( 500 , 7000 , " Tower of Xardas " );
 		};
 		if(Npc_GetDistToWP(hero,"FARM3") <= 1500)
 		{
-			AI_NoticePrint(500,7000,"Ферма Бенгара");
+			AI_NoticePrint( 500 , 7000 , " Bengar Farm " );
 		};
 		if(Npc_GetDistToWP(hero,"FARM4") <= 2000)
 		{
-			AI_NoticePrint(500,7000,"Ферма Секоба");
+			AI_NoticePrint( 500 , 7000 , " Sekob Farm " );
 		};
 		if(Npc_GetDistToWP(hero,"FARM1") <= 1500)
 		{
-			AI_NoticePrint(500,7000,"Ферма Лобарта");
+			AI_NoticePrint( 500 , 7000 , " Lobart Farm " );
 		};
 		if(Npc_GetDistToWP(hero,"FARM2") <= 1500)
 		{
-			AI_NoticePrint(500,7000,"Ферма Акила");
+			AI_NoticePrint( 500 , 7000 , " Aquila Farm " );
 		};
 		if((Npc_GetDistToWP(hero,"NW_CASTLEMINE_PATH_02") <= 2000) || (Npc_GetDistToWP(hero,"NW_CASTLEMINE_TOWER_06") <= 1500))
 		{
-			AI_NoticePrint(500,7000,"Башня Атрос");
+			AI_NoticePrint( 500 , 7000 , " Atros Tower " );
 		};
 		if(Npc_GetDistToWP(hero,"NW_TAVERNE_IN_RANGERMEETING") <= 2000)
 		{
-			AI_NoticePrint(500,7000,"Таверна 'Мертвая гарпия'");
+			AI_NoticePrint( 500 , 7000 , " Dead Harpy Tavern " );
 		};
 		if(Npc_GetDistToWP(hero,"SAVE_SPOT_PSI") <= 3000)
 		{
-			AI_NoticePrint(500,7000,"Лагерь братства");
+			AI_NoticePrint( 500 , 7000 , " Fraternity Camp " );
 		};
 		if(Npc_GetDistToWP(hero,"SAVE_SPOT_HUN") <= 1500)
 		{
-			AI_NoticePrint(500,7000,"Лагерь охотников");
+			AI_NoticePrint( 500 , 7000 , " Hunters Camp " );
 		};
 		if(Npc_GetDistToWP(hero,"NW_TROLLAREA_RITUALPATH_01") <= 3000)
 		{
-			AI_NoticePrint(500,7000,"Круг солнца");
+			AI_NoticePrint( 500 , 7000 , " circle of the sun " );
 		};
 		if(Npc_GetDistToWP(hero,"TROLL") <= 1000)
 		{
-			AI_NoticePrint(500,7000,"Логово черного тролля");
+			AI_NoticePrint( 500 , 7000 , " Black Troll Lair " );
 		};
 		if(Npc_GetDistToWP(hero,"NW_LIGHTHOUSE_OUT_01") <= 1000)
 		{
-			AI_NoticePrint(500,7000,"Маяк Хориниса");
+			AI_NoticePrint( 500 , 7000 , " Mayak Khorinisa " );
 		};
 		if(Npc_GetDistToWP(hero,"X_SOUTHBEACH_HANTEDTOWER_06") <= 1500)
 		{
-			AI_NoticePrint(500,7000,"Башня Ахирона");
+			AI_NoticePrint( 500 , 7000 , " Tower of Achiron " );
 		};
 	};
 	if(CurrentLevel == OldWorld_Zen)
 	{
 		if(Npc_GetDistToWP(hero,"OC_GATE_GUARD_01") <= 4000)
 		{
-			AI_NoticePrint(500,7000,"Замок рудных баронов");
+			AI_NoticePrint( 500 , 7000 , " The Ore Barons ' Castle " );
 		}
 		else if(Npc_GetDistToWP(hero,"WP_COAST_FOREST_58") <= 1000)
 		{
-			AI_NoticePrint(500,7000,"Лесной лагерь");
+			AI_NoticePrint( 500 , 7000 , " Forest Camp " );
 		}
 		else if(Npc_GetDistToWP(hero,"DRAKAR_SHIP") <= 1000)
 		{
-			AI_NoticePrint(500,7000,"Дракар орков");
+			AI_NoticePrint( 500 , 7000 , " Orc Drakar " );
 		}
 		else if(Npc_GetDistToWP(hero,"WP_COAST_FOREST_121") <= 500)
 		{
-			AI_NoticePrint(500,7000,"Кузница Дарриона");
+			AI_NoticePrint( 500 , 7000 , " Darrion's Forge " );
 		}
 		else if((Npc_GetDistToWP(hero,"OW_ORC_ALTAR_01") <= 500) || (Npc_GetDistToWP(hero,"OW_ORC_ALTAR_02") <= 500) || (Npc_GetDistToWP(hero,"OW_ORC_ALTAR_04") <= 500))
 		{
-			AI_NoticePrint(500,7000,"Святилище орков");
+			AI_NoticePrint( 500 , 7000 , " Orc Sanctuary " );
 		}
 		else if(Npc_GetDistToWP(hero,"OW_LAGERCLAN") <= 1000)
 		{
-			AI_NoticePrint(500,7000,"Лагерь орков 'Высокой скалы'");
+			AI_NoticePrint( 500 , 7000 , " High Rock Orc Camp " );
 		}
 		else if(Npc_GetDistToWP(hero,"OW_ICEDRAGON_24") <= 2000)
 		{
-			AI_NoticePrint(500,7000,"Логово ледяного дракона");
+			AI_NoticePrint( 500 , 7000 , " Ice Dragon Lair " );
 		}
 		else if(Npc_GetDistToWP(hero,"OW_SAWHUT_MEATBUG_SPAWN") <= 1000)
 		{
-			AI_NoticePrint(500,7000,"Хижина Кавалорна");
+			AI_NoticePrint( 500 , 7000 , " Cavalorn 's Hut " );
 		}
 		else if(Npc_GetDistToWP(hero,"OW_DRAGONSWAMP_007") <= 2000)
 		{
-			AI_NoticePrint(500,7000,"Логово болотного дракона");
+			AI_NoticePrint( 500 , 7000 , " Swamp Dragon Lair " );
 		}
 		else if(Npc_GetDistToWP(hero,"WP_ORCTEMPLE_04") <= 2000)
 		{
-			AI_NoticePrint(500,7000,"Старый орочий лагерь");
+			AI_NoticePrint( 500 , 7000 , " Old Orc Camp " );
 		}
 		else if(Npc_GetDistToWP(hero,"LOCATION_03_OUT") <= 1000)
 		{
-			AI_NoticePrint(500,7000,"Старая башня Ксардаса");
+			AI_NoticePrint( 500 , 7000 , " Old Tower of Xardas " );
 		}
 		else if(Npc_GetDistToWP(hero,"DM_RITUAL_08") <= 2000)
 		{
-			AI_NoticePrint(500,7000,"Логово огненного дракона");
+			AI_NoticePrint( 500 , 7000 , " Fire Dragon Lair " );
 		}
 		else if(Npc_GetDistToWP(hero,"LOCATION_19_03_PATH_RUIN9") <= 2000)
 		{
-			AI_NoticePrint(500,7000,"Старый форт");
+			AI_NoticePrint( 500 , 7000 , " Old Fort " );
 		}
 		else if(Npc_GetDistToWP(hero,"OW_ROCKDRAGON_06") <= 2000)
 		{
-			AI_NoticePrint(500,7000,"Логово каменного дракона");
+			AI_NoticePrint( 500 , 7000 , " Stone Dragon Lair " );
 		};
 	};
-	if(CurrentLevel == ADDONWORLD_ZEN)
+	if (CurrentLevel ==  ADDONWORLD_ZEN )
 	{
 		if(Npc_GetDistToWP(hero,"ADW_VALLEY_BIGCAVE_07") <= 2000)
 		{
-			AI_NoticePrint(500,7000,"Гробница Куарходрона");
+			AI_NoticePrint( 500 , 7000 , " Tomb of Quarhodron " );
 		}
 		else if(Npc_GetDistToWP(hero,"ADW_VALLEY_PATH_132") <= 1000)
 		{
-			AI_NoticePrint(500,7000,"Храм Жрецов");
+			AI_NoticePrint( 500 , 7000 , " Temple of the Priests " );
 		}
 		else if(Npc_GetDistToWP(hero,"ADW_VALLEY_PATH_067") <= 1000)
 		{
-			AI_NoticePrint(500,7000,"Храм Стражей мертвых");
+			AI_NoticePrint( 500 , 7000 , " Temple of the Guardians of the Dead " );
 		}
 		else if(Npc_GetDistToWP(hero,"ADW_SENAT_ENTRANCE_02") <= 1000)
 		{
-			AI_NoticePrint(500,7000,"Храм Целителей");
+			AI_NoticePrint( 500 , 7000 , " Temple of Healers " );
 		}
 		else if(Npc_GetDistToWP(hero,"ADW_ADANOSTEMPEL_ENTRANCE_03") <= 1000)
 		{
-			AI_NoticePrint(500,7000,"Храм Воинов");
+			AI_NoticePrint( 500 , 7000 , " Temple of the Warriors " );
 		}
 		else if(Npc_GetDistToWP(hero,"BL_DOWN_CENTER_06") <= 5000)
 		{
-			AI_NoticePrint(500,7000,"Лагерь бандитов");
+			AI_NoticePrint( 500 , 7000 , " Bandit Camp " );
 		}
 		else if(Npc_GetDistToWP(hero,"BL_MINELAGER_03") <= 1000)
 		{
-			AI_NoticePrint(500,7000,"Золотой рудник Ворона");
+			AI_NoticePrint( 500 , 7000 , " Crow Gold Mine " );
 		}
 		else if(Npc_GetDistToWP(hero,"ADW_MINE_TO_GRUFT_06") <= 1000)
 		{
-			AI_NoticePrint(500,7000,"Гробница Кардимона");
+			AI_NoticePrint( 500 , 7000 , " Cardimon's Tomb " );
 		}
 		else if(Npc_GetDistToWP(hero,"ADW_ADANOSTEMPEL_RAVEN_01") <= 2000)
 		{
-			AI_NoticePrint(500,7000,"Святилище Аданоса");
+			AI_NoticePrint( 500 , 7000 , " Sanctuary of Adanos " );
 		}
 		else if(Npc_GetDistToWP(hero,"ADW_PIRATECAMP_SCAVENGER") <= 5000)
 		{
-			AI_NoticePrint(500,7000,"Лагерь пиратов");
+			AI_NoticePrint( 500 , 7000 , " Pirate Camp " );
 		}
 		else if(Npc_GetDistToWP(hero,"ADW_CANYON_LIBRARY_01") <= 1000)
 		{
-			AI_NoticePrint(500,7000,"Храм Ученых");
+			AI_NoticePrint( 500 , 7000 , " Temple of Scientists " );
 		};
 	};
 	if(CurrentLevel == ORCMOUNTAIN_ZEN)
 	{
 		if(Npc_GetDistToWP(hero,"OZ_MAN_07") <= 1000)
 		{
-			AI_NoticePrint(500,7000,"Разрушенный форт");
+			AI_NoticePrint( 500 , 7000 , " Ruined Fort " );
 		}
 		else if(Npc_GetDistToWP(hero,"OZ_UNIQTROLL") <= 1000)
 		{
-			AI_NoticePrint(500,7000,"Логово белого тролля");
+			AI_NoticePrint( 500 , 7000 , " White Troll's Lair " );
 		}
 		else if(Npc_GetDistToWP(hero,"LOA_WUESTE_OFFROAD_110") <= 2000)
 		{
-			AI_NoticePrint(500,7000,"Святилище орков");
+			AI_NoticePrint( 500 , 7000 , " Orc Sanctuary " );
 		}
 		else if(Npc_GetDistToWP(hero,"WP_ORCCAMP_3") <= 3000)
 		{
-			AI_NoticePrint(500,7000,"Лагерь орков 'Ледяного ветра'");
+			AI_NoticePrint( 500 , 7000 , " Icewind Orc Camp " );
 		}
 		else if(Npc_GetDistToWP(hero,"ORM_AVABUL_01") <= 1000)
 		{
-			AI_NoticePrint(500,7000,"Врата Нимрода");
+			AI_NoticePrint( 500 , 7000 , " Gate of Nimrod " );
 		}
 		else if(Npc_GetDistToWP(hero,"ORM_CAMPLAGER") <= 1000)
 		{
-			AI_NoticePrint(500,7000,"Лагерь орков 'Огненного камня'");
+			AI_NoticePrint( 500 , 7000 , " Firestone Orc Camp " );
 		};
 	};
 	if(CurrentLevel == ADANOSVALLEY_ZEN)
 	{
 		if(Npc_GetDistToWP(hero,"HRAMWIND") <= 1000)
 		{
-			AI_NoticePrint(500,7000,"Святилище Ирх'Шас");
+			AI_NoticePrint( 500 , 7000 , " Sanctuary of Irkh'Shas " );
 		}
 		else if(Npc_GetDistToWP(hero,"AV_DRAGONEGG") <= 500)
 		{
-			AI_NoticePrint(500,7000,"Святилище чешуи");
+			AI_NoticePrint( 500 , 7000 , " Scale Shrine " );
 		}
 		else if(Npc_GetDistToWP(hero,"AV_OAZIS_01") <= 2000)
 		{
-			AI_NoticePrint(500,7000,"Святилище Сак'Шар");
+			AI_NoticePrint( 500 , 7000 , " Sanctuary of Sak'Shar " );
 		}
 		else if(Npc_GetDistToWP(hero,"AV_OAZIS_02") <= 2000)
 		{
-			AI_NoticePrint(500,7000,"Святилище Ал'Cар");
+			AI_NoticePrint( 500 , 7000 , " Sanctuary of Al'Car " );
 		}
 		else if(Npc_GetDistToWP(hero,"AV_OAZIS_03") <= 2000)
 		{
-			AI_NoticePrint(500,7000,"Святилище Бен'Шас");
+			AI_NoticePrint( 500 , 7000 , " Sanctuary of Ben'Shas " );
 		}
 		else if(Npc_GetDistToWP(hero,"AV_OAZIS_04") <= 2000)
 		{
-			AI_NoticePrint(500,7000,"Святилище Ишар'Арх");
+			AI_NoticePrint( 500 , 7000 , " Sanctuary of Ishar'Arkh " );
 		}
 		else if((Npc_GetDistToWP(hero,"AV_ADANOSHOLYCHAN_01") <= 1000) || (Npc_GetDistToWP(hero,"AV_ADANOSHOLYCHAN_02") <= 1000) || (Npc_GetDistToWP(hero,"AV_ADANOSHOLYCHAN_03") <= 1000) || (Npc_GetDistToWP(hero,"AV_ADANOSHOLYCHAN_04") <= 1000))
 		{
-			AI_NoticePrint(500,7000,"Священный сосуд древних");
+			AI_NoticePrint( 500 , 7000 , " Sacred Vessel of the Ancients " );
 		}
 		else if((Npc_GetDistToWP(hero,"AV_ANCIENTALTAR_01") <= 1500) || (Npc_GetDistToWP(hero,"AV_ANCIENTALTAR_02") <= 1500) || (Npc_GetDistToWP(hero,"AV_ANCIENTALTAR_03") <= 1500) || (Npc_GetDistToWP(hero,"AV_ANCIENTALTAR_04") <= 1500) || (Npc_GetDistToWP(hero,"AV_ANCIENTALTAR_05") <= 1500))
 		{
-			AI_NoticePrint(500,7000,"Жертвенный алтарь древних");
+			AI_NoticePrint( 500 , 7000 , " Altar of the Ancients " );
 		}
 		else if(Npc_GetDistToWP(hero,"PYRAMIDE3") <= 7500)
 		{
-			AI_NoticePrint(500,7000,"Великий храм Аму'Анос");
+			AI_NoticePrint( 500 , 7000 , " Great Temple of Amu'Anos " );
 		}
 		else if(Npc_GetDistToWP(hero,"OASE_022") <= 7500)
 		{
-			AI_NoticePrint(500,7000,"Гробница Эр'Хазир");
+			AI_NoticePrint( 500 , 7000 , " Tomb of Er'Hazir " );
 		}
 		else if(Npc_GetDistToWP(hero,"AV_ADANOSTREE") <= 2000)
 		{
-			AI_NoticePrint(500,7000,"Древо Жизни");
+			AI_NoticePrint( 500 , 7000 , " Tree of Life " );
 		}
 		else if(Npc_GetDistToWP(hero,"ZV_MAGETOWER_01") <= 2000)
 		{
-			AI_NoticePrint(500,7000,"Башня Им'Араха");
+			AI_NoticePrint( 500 , 7000 , " Tower of Im'Arah " );
 		}
 		else if(Npc_GetDistToWP(hero,"AV_UNDEADTHRONE") <= 3000)
 		{
-			AI_NoticePrint(500,7000,"Святилище Кхар'Арам");
+			AI_NoticePrint( 500 , 7000 , " Sanctuary of Khar'Aram " );
 		};
 	};
 	if(CurrentLevel == PRIORATWORLD_ZEN)
@@ -1636,15 +1637,15 @@ func void B_NoticeBoard()
 		{
 			if(Npc_GetDistToWP(hero,"PW_HANIAR") <= 2500)
 			{
-				AI_NoticePrint(500,7000,"Храм Масиаф");
+				AI_NoticePrint( 500 , 7000 , " Khram Masiaf " );
 			}
 			else if(Npc_GetDistToWP(hero,"PW_GROT_PRISION_CAVE_01") <= 500)
 			{
-				AI_NoticePrint(500,7000,"Пещера Осаира");
+				AI_NoticePrint( 500 , 7000 , " Osaira Cave " );
 			}
 			else if(Npc_GetDistToWP(hero,"PW_OUT_TO_IN_CHAMBERS") <= 1000)
 			{
-				AI_NoticePrint(500,7000,"Внутреннее святилище Масиаф");
+				AI_NoticePrint( 500 , 7000 , " Masyaf Inner Sanctuary " );
 			};
 		};
 	};
@@ -1652,182 +1653,182 @@ func void B_NoticeBoard()
 	{
 		if(Npc_GetDistToWP(hero,"ORC_CITY_45") <= 500)
 		{
-			AI_NoticePrint(500,7000,"Чертоги Ур-Тралла");
+			AI_NoticePrint( 500 , 7000 , " Halls of Ur-Thrall " );
 		}
 		else if(Npc_GetDistToWP(hero,"ORC_CITY_ARENA_HERO") <= 2000)
 		{
-			AI_NoticePrint(500,7000,"Арена орков");
+			AI_NoticePrint( 500 , 7000 , " Orc Arena " );
 		}
 		else if(Npc_GetDistToWP(hero,"ORC_CITY_27") <= 1000)
 		{
-			AI_NoticePrint(500,7000,"Храмовая площадь");
+			AI_NoticePrint( 500 , 7000 , " Temple Square " );
 		}
 		else if(Npc_GetDistToWP(hero,"ORC_CITY_HASHTOR") <= 500)
 		{
-			AI_NoticePrint(500,7000,"Кузница орков");
+			AI_NoticePrint( 500 , 7000 , " Orc Forge " );
 		}
 		else
 		{
-			AI_NoticePrint(500,7000,"Город орков");
+			AI_NoticePrint( 500 , 7000 , " Orc City " );
 		};
 	};
 	if(CurrentLevel == SHVALLEY_ZEN)
 	{
 		if(Npc_GetDistToWP(hero,"WP_CAMP_09") <= 500)
 		{
-			AI_NoticePrint(500,7000,"Лагерь людей");
+			AI_NoticePrint( 500 , 7000 , " Human Camp " );
 		}
 		else if(Npc_GetDistToWP(hero,"WP_URGROM_PLACE") <= 3000)
 		{
-			AI_NoticePrint(500,7000,"Лагерь орков");
+			AI_NoticePrint( 500 , 7000 , " Orc camp " );
 		}
 		else if(Npc_GetDistToWP(hero,"SV_KINGOFDEAD") <= 2000)
 		{
-			AI_NoticePrint(500,7000,"Склеп проклятых");
+			AI_NoticePrint( 500 , 7000 , " Crypt of the Damned " );
 		}
 		else if(Npc_GetDistToWP(hero,"WP_URGROM_ALIVE") <= 1000)
 		{
-			AI_NoticePrint(500,7000,"Святилище великой Тени");
+			AI_NoticePrint( 500 , 7000 , " Shrine of the Great Shadow " );
 		}
 		else
 		{
-			AI_NoticePrint(500,7000,"Долина теней");
+			AI_NoticePrint( 500 , 7000 , " Shadow Valley " );
 		};
 	};
 	if(CurrentLevel == DRAGONISLAND_ZEN)
 	{
 		if(Npc_GetDistToWP(hero,"DI_DRACONIANAREA_54") <= 2000)
 		{
-			AI_NoticePrint(500,7000,"Храм Белиара");
+			AI_NoticePrint( 500 , 7000 , " Temple of Beliar " );
 		}
 		else
 		{
-			AI_NoticePrint(500,7000,"Остров Ирдорат");
+			AI_NoticePrint( 500 , 7000 , " Irdorath Island " );
 		};
 	};
 	if(CurrentLevel == PSICAMP_ZEN)
 	{
 		if(Npc_GetDistToWP(hero,"PSI_TEMPLE_IN_1") <= 1000)
 		{
-			AI_NoticePrint(500,7000,"Храм братства Спящего");
+			AI_NoticePrint( 500 , 7000 , " Temple of the Brotherhood of the Sleeper " );
 		}
 		else
 		{
-			AI_NoticePrint(500,7000,"Лагерь братства Спящего");
+			AI_NoticePrint( 500 , 7000 , " Sleeper Brotherhood Camp " );
 		};
 	};
 	if(CurrentLevel == PALADINFORT_ZEN)
 	{
 		if(Npc_GetDistToWP(hero,"SAVE_SPOT_01") <= 3000)
 		{
-			AI_NoticePrint(500,7000,"Форт Азган");
+			AI_NoticePrint( 500 , 7000 , " Fort Azgan " );
 		};
 	};
 	if(CurrentLevel == TEARSTEMPLE_ZEN)
 	{
 		if(Npc_GetDistToWP(hero,"TEARSNOTICE") <= 2000)
 		{
-			AI_NoticePrint(500,7000,"Храм слез");
+			AI_NoticePrint( 500 , 7000 , " Temple of Tears " );
 		};
 	};
 	if(CurrentLevel == ORCOREMINE_ZEN)
 	{
-		AI_NoticePrint(500,7000,"Шахта орков");
+		AI_NoticePrint( 500 , 7000 , " Orc Mine " );
 	};
 	if(CurrentLevel == ORCTEMPEL_ZEN)
 	{
-		AI_NoticePrint(500,7000,"Храм Спящего");
+		AI_NoticePrint( 500 , 7000 , " Temple of the Sleeper " );
 	};
 	if(CurrentLevel == ABANDONEDMINE_ZEN)
 	{
-		AI_NoticePrint(500,7000,"Заброшенная шахта");
+		AI_NoticePrint( 500 , 7000 , " Abandoned Mine " );
 	};
 	if(CurrentLevel == GOLDMINE_ZEN)
 	{
-		AI_NoticePrint(500,7000,"Подгорный проход");
+		AI_NoticePrint( 500 , 7000 , " Piedmont pass " );
 	};
 	if(CurrentLevel == OLDMINE_ZEN)
 	{
-		AI_NoticePrint(500,7000,"Старая шахта");
+		AI_NoticePrint( 500 , 7000 , " Old Mine " );
 	};
 	if(CurrentLevel == FREEMINE_ZEN)
 	{
-		AI_NoticePrint(500,7000,"Новая шахта");
+		AI_NoticePrint( 500 , 7000 , " New Mine " );
 	};
 	if(CurrentLevel == GUARDIANCHAMBERS_ZEN)
 	{
-		AI_NoticePrint(500,7000,"Обитель хранителей");
+		AI_NoticePrint( 500 , 7000 , " Keeper 's Home " );
 	};
 	if(CurrentLevel == FREEMINELAGER_ZEN)
 	{
-		AI_NoticePrint(500,7000,"Горный перевал");
+		AI_NoticePrint( 500 , 7000 , " Mountain pass " );
 	};
 	if(CurrentLevel == DEMONSTOWER_ZEN)
 	{
-		AI_NoticePrint(500,7000,"Затопленная башня");
+		AI_NoticePrint( 500 , 7000 , " Flooded Tower " );
 	};
 	if(CurrentLevel == ORCGRAVEYARD_ZEN)
 	{
-		AI_NoticePrint(500,7000,"Кладбище орков");
+		AI_NoticePrint( 500 , 7000 , " Orc Graveyard " );
 	};
 	if(CurrentLevel == DEADGROT_ZEN)
 	{
-		AI_NoticePrint(500,7000,"Грот туманов");
+		AI_NoticePrint( 500 , 7000 , " Mist Grotto " );
 	};
 	if(CurrentLevel == SECRETISLAND_ZEN)
 	{
-		AI_NoticePrint(500,7000,"Остров Этлу");
+		AI_NoticePrint( 500 , 7000 , " Etlu Island " );
 	};
 	if(CurrentLevel == UNDEADZONE_ZEN)
 	{
-		AI_NoticePrint(500,7000,"Город мертвых");
+		AI_NoticePrint( 500 , 7000 , " City of the Dead " );
 	};
 	if(CurrentLevel == DEMONCAVE_ZEN)
 	{
-		AI_NoticePrint(500,7000,"Пещера боли");
+		AI_NoticePrint( 500 , 7000 , " Cave of Pain " );
 	};
 	if(CurrentLevel == FIRECAVE_ZEN)
 	{
-		AI_NoticePrint(500,7000,"Пещера огня");
+		AI_NoticePrint( 500 , 7000 , " Cave of Fire " );
 	};
 	if(CurrentLevel == HARADRIMARENA_ZEN)
 	{
-		AI_NoticePrint(500,7000,"Арена асгардов");
+		AI_NoticePrint( 500 , 7000 , " Arena spilled " );
 	};
 	if(CurrentLevel == GINNOKWORLD_ZEN)
 	{
-		AI_NoticePrint(500,7000,"Гробница Гиннока");
+		AI_NoticePrint( 500 , 7000 , " Ginnok's Tomb " );
 	};
 	if(CurrentLevel == HAOSWORLD_ZEN)
 	{
-		AI_NoticePrint(500,7000,"Чертоги Вакханы");
+		AI_NoticePrint( 500 , 7000 , " Chertogi Backhany " );
 	};
 	if(CurrentLevel == DRAGONTEMPLE_ZEN)
 	{
-		AI_NoticePrint(500,7000,"Святилище Зверя");
+		AI_NoticePrint( 500 , 7000 , " Sanctuary of the Beast " );
 	};
 	if(CurrentLevel == ASHTARTEMPLE_ZEN)
 	{
 		if(DRAGONGOLDMEET == TRUE)
 		{
-			AI_NoticePrint(500,7000,"Святилище Аш'Тар");
+			AI_NoticePrint( 500 , 7000 , " Sanctuary of Ash'Tar " );
 		};
 	};
 	if(CurrentLevel == LOSTVALLEY_ZEN)
 	{
 		if((EpicJorneyStart == TRUE) && (LVTextOnce == FALSE))
 		{
-			AI_NoticePrint(500,7000,"Обитель потерянных душ");
+			AI_NoticePrint( 500 , 7000 , " Lost Souls " );
 			LVTextOnce = TRUE;
 		};
 	};
 	if((RealMode[2] == TRUE) && (CheckRealMode[1] == TRUE) && (_bCanSave == TRUE) && (FlagSaveOn == TRUE))
 	{
-		AI_NoticePrint(3000,4098,"Здесь можно сохраниться...");
+		AI_NoticePrint( 3000 , 4098 , " You can save here... " );
 	};
 	if((CurrentLevel == LOSTVALLEY_ZEN) && (CheckRealMode[1] == TRUE) && (SBMode == TRUE) && (_bCanSave == TRUE))
 	{
-		AI_NoticePrint(3000,4098,"Здесь можно сохраниться...");
+		AI_NoticePrint( 3000 , 4098 , " You can save here... " );
 	};
 };
 
@@ -1872,7 +1873,7 @@ func void B_CheckAutoDismount()
 			MeetGuardiansFirst = TRUE;
 		};
 	};
-	if((CurrentLevel == ORCTEMPEL_ZEN) && (MeetOrcTempleFirst == FALSE))
+	if (( CurrentLevel ==  ORCTEMPLE_ZEN ) && ( MeetOrcTempleFirst ==  FALSE ))
 	{
 		if((Npc_GetDistToWP(hero,"TPL_006") <= 500) && (MeetOrcTempleFirst == FALSE))
 		{
@@ -1892,12 +1893,12 @@ func void B_CheckAutoDismount()
 
 func void View_Current_Hour()
 {
-	//-----------Общая информация---------------
+	// -----------General Information---------------
 
 	if(Menu_ReadInt("AST","bShowKarma") == 1)
 	{
 		print_karma_innos(90,1);
-		print_karma_beliar(95,1);
+		print_karma_beliar( 95 , 1 );
 	};
 	if((Menu_ReadInt("AST","bHFTStatus") == 1) && (SBMODE == TRUE))
 	{
@@ -1908,17 +1909,17 @@ func void View_Current_Hour()
 
 	print_arrow_count(1,7);
 
-	//-----------Статус-бары---------------
+	// -----------Status Bars--------------
 
 	print_threat_status(0,93);
-	print_canint_status(0,93);
-	print_acrobat_status(0,93);
+	print_canint_status( 0 , 93 );
+	print_acrobat_status( 0 , 93 );
 	print_sprint_status(0,93);
 	print_iceshield_status(0,93);
 	print_fireshield_status(0,93);
 	print_health_res(0,93);
 	print_mana_res(0,93);
-	print_regenmobs_status(0,93);
+	print_regenmobs_status( 0 , 93 );
 	print_ogonek_status(0,93);
 
 	print_poison_status(45,93);
@@ -1935,29 +1936,29 @@ func void View_Current_Hour_None()
 	if(StatusOnline == TRUE)
 	{
 		AI_PrintClrScreen();
-		StatusOnline = FALSE;
+		StatusOnline = FALSE ;
 	};
 
 	threatPosX = FALSE;
 	canintPosX = FALSE;
-	acrobatPosX = FALSE;
-	sprintPosX = FALSE;
+	acrobatPosX = FALSE ;
+	sprintPosX = FALSE ;
 	iceshieldPosX = FALSE;
 	fireshieldPosX = FALSE;
 	healthPosX = FALSE;
-	manaPosX = FALSE;
-	regenmobsPosX = FALSE;
-	ogonekPosX = FALSE;
+	powerPosX = FALSE ;
+	rainmobsPosX = FALSE ;
+	tailPosX = FALSE ;
 	threatST = FALSE;
-	canintST = FALSE;
+	canintST = FALSE ;
 	acrobatST = FALSE;
 	sprintST = FALSE;
 	iceshieldST = FALSE;
 	fireshieldST = FALSE;
 	healthST = FALSE;
-	manaST = FALSE;
-	regenmobsST = FALSE;
-	ogonekST = FALSE;
+	disadvantage = FALSE ;
+	rain mobsST = FALSE ;
+	ogonekST = FALSE ;
 };
 
 func void b_gettime()
@@ -2045,25 +2046,25 @@ func void b_gettime()
 	if((hero.attribute[ATR_HITPOINTS] < 1) && (HeroIsDead == FALSE))
 	{
 		HeroIsDead = TRUE;
-		bManaBar = 0;
+		bManaBar = 0 ;
 		bFocusBar = 0;
-		bHealthBar = 0;
+		bHealthBar = 0 ;
 		Wld_StopEffect("DRAGONLOOK_FX");
 		Wld_StopEffect("LOWHEALTH_FX");
 		Wld_StopEffect("POISONED_FX");
 		Wld_StopEffect("SPELLFX_FOG_SMOKE");
 		Wld_StopEffect("DIALOGSCOPE_FX");
-		AI_Print("Вы погибли...");
+		AI_Print( " You died... " );
 	};
 	if((HeroIsDead == TRUE) && (hero.attribute[ATR_HITPOINTS] > 1) && (TrailerMake == FALSE))
 	{
 		AI_Wait(hero,9999);
-		AI_PrintClr("Боги пометили шельму!",177,58,17);
+		AI_PrintClr( "The gods marked the rogue! " , 177 , 58 , 17 );
 
 		if(ATR_INTELLECT > 0)
 		{
 			ATR_INTELLECT -= 1;
-			concatText = ConcatStrings("Завершение игры через ",IntToString(ATR_INTELLECT));
+			concatText = ConcatStrings( " End game in " ,IntToString( ATR_INTELLECT ));
 			concatText = ConcatStrings(concatText," секунд...");
 			AI_PrintClr(concatText,177,58,17);
 		}
@@ -2072,17 +2073,17 @@ func void b_gettime()
 			ExitSession();
 		};
 	};
-	if((SLEEPONGROUND == FALSE) && (Npc_HasItems(hero,ITMI_SLEEPSACK_TEMP) >= 1))
+	if (( SLEEPONGROUND  ==  FALSE ) && ( Npc_HasItems ( hero , ITMI_SLEEPSACK_TEMP ) >=  1 )) ;
 	{
 		Npc_RemoveInvItems(hero,ITMI_SLEEPSACK_TEMP,Npc_HasItems(hero,ITMI_SLEEPSACK_TEMP));
 
-		if(Npc_HasItems(hero,ITMI_SLEEPSACK) == FALSE)
+		if (Npc_HasItems(here, ITMI_SLEEPSACK ) ==  FALSE )
 		{
 			CreateInvItems(hero,ITMI_SLEEPSACK,1);
 		};
 	};
 
-	//-----------------Хоринис----------------------------------
+	// -----------------Khorinis----------------------------- ----
 
 	if(CurrentLevel == NEWWORLD_ZEN)
 	{
@@ -2092,17 +2093,17 @@ func void b_gettime()
 
 		if((MageSpeechStart == FALSE) && (Npc_GetDistToWP(hero,"NW_TROLLAREA_RITUAL_01") <= 3000) && (Xardas_GoesToRitualInnosEye == TRUE) && (Pyrokar_GoesToRitualInnosEye == TRUE) && (Vatras_GoesToRitualInnosEye == TRUE) && (Npc_GetDistToWP(Mage_Xar,"NW_TROLLAREA_RITUAL_01") <= 1000) && (Npc_GetDistToWP(Mage_Pyr,"NW_TROLLAREA_RITUAL_02") <= 1000) && (Npc_GetDistToWP(Mage_Vat,"NW_TROLLAREA_RITUAL_04") <= 1000))
 		{
-			bManaBar = 0;
-			bHealthBar = 0;
+			bManaBar = 0 ;
+			bHealthBar = 0 ;
 			CamModeOn = TRUE;
-			Mage_Xar.aivar[AIV_INVINCIBLE] = TRUE;
+			Mage_Xar.aivar[ AIV_INVINCIBLE ] = TRUE ;
 			Mage_Pyr.aivar[AIV_INVINCIBLE] = TRUE;
-			Mage_Vat.aivar[AIV_INVINCIBLE] = TRUE;
+			Mage_Vat.aivar[ AIV_INVINCIBLE ] = TRUE ;
 			hero.aivar[AIV_INVINCIBLE] = TRUE;
 			Npc_ModifyBodyState(hero,0,BS_MOD_CONTROLLED);
-			Mage_Xar.aivar[AIV_EnemyOverride] = TRUE;
-			Mage_Pyr.aivar[AIV_EnemyOverride] = TRUE;
-			Mage_Vat.aivar[AIV_EnemyOverride] = TRUE;
+			Mage_Xar.aivar[AIV_EnemyOverride] = TRUE ;
+			Mage_Pyr.aivar[AIV_EnemyOverride] = TRUE ;
+			Mage_Vat.aivar[AIV_EnemyOverride] = TRUE ;
 			Wld_SendTrigger("EVT_CAM_MAGESPEECH");
 			B_StartOtherRoutine(Mage_Xar,"MageSpeech");
 			B_StartOtherRoutine(Mage_Pyr,"MageSpeech");
@@ -2119,7 +2120,7 @@ func void b_gettime()
 			{
 				if(Npc_HasItems(announcer,itar_asmal) == 0)
 				{
-					CreateInvItems(announcer,itar_asmal,1);
+					CreateInvItems(announcer,itar_asmal, 1 );
 				};
 	
 				AI_EquipBestArmor(announcer);	
@@ -2137,15 +2138,15 @@ func void b_gettime()
 				{
 					Npc_RemoveInvItems(Ragnar,ItAr_MIL_M,Npc_HasItems(Ragnar,ItAr_MIL_M));
 				};
-				if(Npc_HasItems(Ragnar,ItAr_MIL_L) > 0)
+				if (Npc_HasItems(Ragnar,ItAr_MIL_L) >  0 )
 				{
 					Npc_RemoveInvItems(Ragnar,ItAr_MIL_L,Npc_HasItems(Ragnar,ItAr_MIL_L));
 				};
-				if(Npc_HasItems(Ragnar,ItAr_KDF_L) > 0)
+				if (Npc_HasItems(Ragnar,ItAr_KDF_L) >  0 )
 				{
 					Npc_RemoveInvItems(Ragnar,ItAr_KDF_L,Npc_HasItems(Ragnar,ItAr_KDF_L));
 				};
-				if(Npc_HasItems(Ragnar,ItAr_NOV_L) == 0)
+				if (Npc_HasItems(Ragnar,ItAr_NOV_L) ==  0 )
 				{
 					CreateInvItems(Ragnar,ItAr_NOV_L,1);
 				};
@@ -2153,7 +2154,7 @@ func void b_gettime()
 				AI_EquipBestArmor(Ragnar);	
 				AI_UnequipWeapons(Ragnar);
 
-				if(Npc_HasItems(Ragnar,ItMw_StoneHammer) > 0)
+				if (Npc_HasItems(Ragnar,ItMw_StoneHammer) >  0 )
 				{
 					Npc_RemoveInvItems(Ragnar,ItMw_StoneHammer,Npc_HasItems(Ragnar,ItMw_StoneHammer));
 				};
@@ -2163,7 +2164,7 @@ func void b_gettime()
 		{
 			if(Npc_HasEquippedArmor(Ragnar) == FALSE)
 			{
-				if(Npc_HasItems(Ragnar,ItAr_NOV_L) > 0)
+				if (Npc_HasItems(Ragnar,ItAr_NOV_L) >  0 )
 				{
 					Npc_RemoveInvItems(Ragnar,ItAr_NOV_L,Npc_HasItems(Ragnar,ItAr_NOV_L));
 				};
@@ -2171,11 +2172,11 @@ func void b_gettime()
 				{
 					Npc_RemoveInvItems(Ragnar,ItAr_MIL_M,Npc_HasItems(Ragnar,ItAr_MIL_M));
 				};
-				if(Npc_HasItems(Ragnar,ItAr_MIL_L) > 0)
+				if (Npc_HasItems(Ragnar,ItAr_MIL_L) >  0 )
 				{
 					Npc_RemoveInvItems(Ragnar,ItAr_MIL_L,Npc_HasItems(Ragnar,ItAr_MIL_L));
 				};
-				if(Npc_HasItems(Ragnar,ItAr_KDF_L) > 0)
+				if (Npc_HasItems(Ragnar,ItAr_KDF_L) >  0 )
 				{
 					Npc_RemoveInvItems(Ragnar,ItAr_KDF_L,Npc_HasItems(Ragnar,ItAr_KDF_L));
 				};	
@@ -2193,7 +2194,7 @@ func void b_gettime()
 			{
 				if(RagnarIsMIL_H == TRUE)
 				{
-					if(Npc_HasItems(Ragnar,ItAr_NOV_L) > 0)
+					if (Npc_HasItems(Ragnar,ItAr_NOV_L) >  0 )
 					{
 						Npc_RemoveInvItems(Ragnar,ItAr_NOV_L,Npc_HasItems(Ragnar,ItAr_NOV_L));
 					};
@@ -2201,11 +2202,11 @@ func void b_gettime()
 					{
 						Npc_RemoveInvItems(Ragnar,ItAr_Sld_L,Npc_HasItems(Ragnar,ItAr_Sld_L));
 					};
-					if(Npc_HasItems(Ragnar,ItAr_MIL_L) > 0)
+					if (Npc_HasItems(Ragnar,ItAr_MIL_L) >  0 )
 					{
 						Npc_RemoveInvItems(Ragnar,ItAr_MIL_L,Npc_HasItems(Ragnar,ItAr_MIL_L));
 					};
-					if(Npc_HasItems(Ragnar,ItAr_KDF_L) > 0)
+					if (Npc_HasItems(Ragnar,ItAr_KDF_L) >  0 )
 					{
 						Npc_RemoveInvItems(Ragnar,ItAr_KDF_L,Npc_HasItems(Ragnar,ItAr_KDF_L));
 					};
@@ -2218,7 +2219,7 @@ func void b_gettime()
 				}
 				else
 				{
-					if(Npc_HasItems(Ragnar,ItAr_NOV_L) > 0)
+					if (Npc_HasItems(Ragnar,ItAr_NOV_L) >  0 )
 					{
 						Npc_RemoveInvItems(Ragnar,ItAr_NOV_L,Npc_HasItems(Ragnar,ItAr_NOV_L));
 					};
@@ -2230,11 +2231,11 @@ func void b_gettime()
 					{
 						Npc_RemoveInvItems(Ragnar,ItAr_MIL_M,Npc_HasItems(Ragnar,ItAr_MIL_M));
 					};
-					if(Npc_HasItems(Ragnar,ItAr_KDF_L) > 0)
+					if (Npc_HasItems(Ragnar,ItAr_KDF_L) >  0 )
 					{
 						Npc_RemoveInvItems(Ragnar,ItAr_KDF_L,Npc_HasItems(Ragnar,ItAr_KDF_L));
 					};
-					if(Npc_HasItems(Ragnar,ITAR_Mil_L) == 0)
+					if (Npc_HasItems(Ragnar,ITAR_Mil_L) ==  0 )
 					{
 						CreateInvItems(Ragnar,ITAR_Mil_L,1);
 					};
@@ -2247,7 +2248,7 @@ func void b_gettime()
 		{
 			if(Npc_HasEquippedArmor(Ragnar) == FALSE)
 			{
-				if(Npc_HasItems(Ragnar,ItAr_NOV_L) > 0)
+				if (Npc_HasItems(Ragnar,ItAr_NOV_L) >  0 )
 				{
 					Npc_RemoveInvItems(Ragnar,ItAr_NOV_L,Npc_HasItems(Ragnar,ItAr_NOV_L));
 				};
@@ -2255,7 +2256,7 @@ func void b_gettime()
 				{
 					Npc_RemoveInvItems(Ragnar,ItAr_MIL_M,Npc_HasItems(Ragnar,ItAr_MIL_M));
 				};
-				if(Npc_HasItems(Ragnar,ItAr_MIL_L) > 0)
+				if (Npc_HasItems(Ragnar,ItAr_MIL_L) >  0 )
 				{	
 					Npc_RemoveInvItems(Ragnar,ItAr_MIL_L,Npc_HasItems(Ragnar,ItAr_MIL_L));
 				};	
@@ -2263,7 +2264,7 @@ func void b_gettime()
 				{
 					Npc_RemoveInvItems(Ragnar,ItAr_Sld_L,Npc_HasItems(Ragnar,ItAr_Sld_L));
 				};
-				if(Npc_HasItems(Ragnar,ItAr_KDF_L) == 0)
+				if (Npc_HasItems(Ragnar,ItAr_KDF_L) ==  0 )
 				{
 					CreateInvItems(Ragnar,ItAr_KDF_L,1);
 				};
@@ -2271,7 +2272,7 @@ func void b_gettime()
 				AI_EquipBestArmor(Ragnar);	
 				AI_UnequipWeapons(Ragnar);
 	
-				if(Npc_HasItems(Ragnar,ItMw_StoneHammer) > 0)
+				if (Npc_HasItems(Ragnar,ItMw_StoneHammer) >  0 )
 				{
 					Npc_RemoveInvItems(Ragnar,ItMw_StoneHammer,Npc_HasItems(Ragnar,ItMw_StoneHammer));
 				};
@@ -2296,11 +2297,11 @@ func void b_gettime()
 		};
 		if((CurrentLevel == NEWWORLD_ZEN) && (CanGiveArmorDocs == TRUE) && (GiveNewArmorDocs > 0) && (GiveNewArmorDocs < (DayNow - 1)) && (CanGiveOtherArmor == FALSE))
 		{
-			if((MIS_MYNEWMANSION == LOG_SUCCESS) && (GuardOneIsDead == FALSE))
+			if (( MIS_MYNEWMANSION  ==  LOG_SUCCESS ) && (GuardOneIsDead ==  FALSE ))
 			{
 				AI_UnequipArmor(Mil_360_Miliz);
 				CreateInvItems(Mil_360_Miliz,ItAr_OldSteelArmor_NPC,1);
-				CreateInvItems(Mil_360_Miliz,ItMw_Schwert2,1);
+				CreateInvItems(Mil_360_Militia,ItMw_Sword2, 1 );
 				AI_EquipArmor(Mil_360_Miliz,ItAr_OldSteelArmor_NPC);
 				AI_EquipBestMeleeWeapon(Mil_360_Miliz);
 			};
@@ -2308,7 +2309,7 @@ func void b_gettime()
 			{
 				AI_UnequipArmor(Mil_361_Miliz);
 				CreateInvItems(Mil_361_Miliz,ItAr_OldSteelArmor_NPC,1);
-				CreateInvItems(Mil_361_Miliz,ItMw_Schwert2,1);
+				CreateInvItems(Mil_361_Militia,ItMw_Sword2, 1 );
 				AI_EquipArmor(Mil_361_Miliz,ItAr_OldSteelArmor_NPC);
 				AI_EquipBestMeleeWeapon(Mil_361_Miliz);
 			};
@@ -2316,14 +2317,14 @@ func void b_gettime()
 			{
 				AI_UnequipArmor(SLD_811_Wolf);
 				CreateInvItems(SLD_811_Wolf,ItAr_OldSteelArmor_NPC,1);
-				CreateInvItems(SLD_811_Wolf,ItMw_Schwert2,1);
+				CreateInvItems(SLD_811_Wolf,ItMw_Schwert2, 1 );
 				AI_EquipArmor(SLD_811_Wolf,ItAr_OldSteelArmor_NPC);
 			};
 			if((wolfrecruiteddt == TRUE) && (GuardThreeIsDead == FALSE))
 			{
 				AI_UnequipArmor(SLD_8111_Soeldner);
 				CreateInvItems(SLD_8111_Soeldner,ItAr_OldSteelArmor_NPC,1);
-				CreateInvItems(SLD_8111_Soeldner,ItMw_Schwert2,1);
+				CreateInvItems(SLD_8111_Soeldner,ItMw_Schwert2, 1 );
 				AI_EquipArmor(SLD_8111_Soeldner,ItAr_OldSteelArmor_NPC);
 				AI_EquipBestMeleeWeapon(SLD_8111_Soeldner);
 			};
@@ -2331,7 +2332,7 @@ func void b_gettime()
 			{
 				AI_UnequipArmor(SLD_8112_Soeldner);
 				CreateInvItems(SLD_8112_Soeldner,ItAr_OldSteelArmor_NPC,1);
-				CreateInvItems(SLD_8112_Soeldner,ItMw_Schwert2,1);
+				CreateInvItems(SLD_8112_Soeldner,ItMw_Schwert2, 1 );
 				AI_EquipArmor(SLD_8112_Soeldner,ItAr_OldSteelArmor_NPC);
 				AI_EquipBestMeleeWeapon(SLD_8112_Soeldner);
 			};
@@ -2339,7 +2340,7 @@ func void b_gettime()
 			{
 				AI_UnequipArmor(VLK_438_Alrik);
 				CreateInvItems(VLK_438_Alrik,ItAr_OldSteelArmor_NPC,1);
-				CreateInvItems(VLK_438_Alrik,ItMw_Schwert2,1);
+				CreateInvItems(VLK_438_Alrik,ItMw_Schwert2, 1 );
 				AI_EquipArmor(VLK_438_Alrik,ItAr_OldSteelArmor_NPC);
 				AI_EquipBestMeleeWeapon(VLK_438_Alrik);
 			};
@@ -2347,7 +2348,7 @@ func void b_gettime()
 			{
 				AI_UnequipArmor(vlk_6132_gayvern);
 				CreateInvItems(vlk_6132_gayvern,ItAr_OldSteelArmor_NPC,1);
-				CreateInvItems(vlk_6132_gayvern,ItMw_Schwert2,1);
+				CreateInvItems(vlk_6132_gayvern,ItMw_Schwert2, 1 );
 				AI_EquipArmor(vlk_6132_gayvern,ItAr_OldSteelArmor_NPC);
 				AI_EquipBestMeleeWeapon(vlk_6132_gayvern);
 			};
@@ -2361,69 +2362,69 @@ func void b_gettime()
 				MIS_Addon_Lester_PickForConstantino = LOG_SUCCESS;
 			};
 
-			QuestEnterOnce = FALSE;
+			QuestEnterOnce = FALSE ;
 		};
 		if((CurrentLevel == NEWWORLD_ZEN) && (MageSpeechStart == TRUE) && (MageSpeechEnd == TRUE) && (MageSpeechEndStop == FALSE))
 		{
 			B_StartOtherRoutine(KDF_500_Pyrokar,"RitualInnosEyeRepair");
 			B_StartOtherRoutine(NONE_100_Xardas,"RitualInnosEyeRepair");
 			B_StartOtherRoutine(VLK_439_Vatras,"RitualInnosEyeRepair");
-			hero.aivar[AIV_INVINCIBLE] = FALSE;
+			hero.aivar[ AIV_INVINCIBLE ] = FALSE ;
 			MageSpeechEndStop = TRUE;
 		};
-		if((CurrentLevel == NEWWORLD_ZEN) && (Diebesgilde_Verraten == TRUE) && (Andre_Diebesgilde_aufgeraeumt == FALSE))
+		if ((CurrentLevel ==  NEWWORLD_ZEN ) && (Thievesguilde_Verrate ==  TRUE ) && (Andre_Thievesgilde_cleaned up ==  FALSE ))
 		{
-			if(Npc_IsDead(VLK_447_Cassia) == FALSE)
+			if (Npc_IsDead(VLK_447_Cassia) ==  FALSE )
 			{
 				B_KillNpc(VLK_447_Cassia);
 			};
-			if(Npc_IsDead(VLK_446_Jesper) == FALSE)
+			if (Npc_IsDead(VLK_446_Jesper) ==  FALSE )
 			{
 				B_KillNpc(VLK_446_Jesper);
 			};
-			if(Npc_IsDead(VLK_445_Ramirez) == FALSE)
+			if (Npc_IsDead(VLK_445_Ramirez) ==  FALSE )
 			{
 				B_KillNpc(VLK_445_Ramirez);
 			};
-			if(Npc_IsDead(VLK_494_Attila) == FALSE)
+			if (Npc_IsDead(VLK_494_Attila) ==  FALSE )
 			{
 				B_KillNpc(VLK_494_Attila);
 			};
 
-			Andre_Diebesgilde_aufgeraeumt = TRUE;
+			Andre_Diebesgilde_aufgeraeumt = TRUE ;
 		};
 		if((CurrentLevel == NEWWORLD_ZEN) && (MIS_ReadyForChapter3 == TRUE) && (B_Chapter3_OneTime == FALSE))
 		{
-			B_Kapitelwechsel(3,NEWWORLD_ZEN);
+			B_Chapter Change( 3 , NEWWORLD_ZEN );
 			B_Chapter3_OneTime = TRUE;
 		};
 		if((CurrentLevel == NEWWORLD_ZEN) && (MIS_AllDragonsDead == TRUE) && (OWDragonsDeadIsDead == TRUE) && (B_Chapter5_OneTime == FALSE))
 		{
-			B_Kapitelwechsel(5,NEWWORLD_ZEN);
+			B_Chapter Change( 5 , NEWWORLD_ZEN );
 			B_Chapter5_OneTime = TRUE;
 		};
-		if((CurrentLevel == NEWWORLD_ZEN) && (Npc_KnowsInfo(hero,DIA_FERNANDO_GOTBOOK) == TRUE) && (RhetInsertAgain == FALSE))
+		if ((CurrentLevel ==  NEWWORLD_ZEN ) && (Npc_KnowsInfo(hero, DIA_FERNANDO_GOTBOOK ) ==  TRUE ) && (RhetInsertAgain ==  FALSE ))
 		{
 			Npc_RemoveInvItems(VLK_405_Fernando,itwr_rhetorikbook,Npc_HasItems(VLK_405_Fernando,itwr_rhetorikbook));
 			Mob_CreateItems("NW_CHEST_103",itwr_rhetorikbook,1);
 			RhetInsertAgain = TRUE;
 		};
-		if((MIS_DarkWeb == LOG_Running) && (Npc_HasItems(hero,ItMi_LotarRing) >= 1) && (FindLotarRing == FALSE))
+		if ((MY_DarkWeb == LOG_Running) && (Npc_HasItems(hero,ItMy_LotteryRing) >=  1 ) && (FindLotteryRing ==  FALSE )) ;
 		{
 			B_GivePlayerXP(250);
 			FindLotarRing = TRUE;
-			B_LogEntry(TOPIC_DarkWeb,"Ага! Кажется я нашел кольцо, которое когда-то принадлежало Лотару. По крайней мере на нем самом выгравировано именно его имя. Скорей всего оно соскочило с пальца убитого, когда тот падал на землю, и закатилось под мост. Так что неудивительно, что паладины его не нашли. Но что-то меня немного смущает в этом кольце. С виду оно обычное серебрянное, но при этом имеет небольшое магическое свечение. Думаю стоит поговорить с кем-нибудь из магов насчет него. Может быть Ватрас сможет мне помочь в этом деле?");
+			B_LogEntry(TOPIC_DarkWeb, " Aha! I think I found a ring that once belonged to Lothar. At least it is engraved with his name. Most likely it jumped off the victim's finger when he fell to the ground, and rolled under the bridge. So no wonder the paladins didn't find it, but there's something about this ring that confuses me a little. It looks like an ordinary silver ring, but it has a slight magical glow. I think it's worth talking to one of the magicians about it. Maybe Vatras can Can I help you with this? " );
 		};
-		if((CurrentLevel == NEWWORLD_ZEN) && (MIS_Rukhar_Wettkampf_Day > 0) && (Kapitel < 6) && (MIS_Rukhar_Wettkampf_Day < DayNow) && (RandolphGoParty == FALSE))
+		if ((CurrentLevel ==  NEWWORLD_ZEN ) && (MIS_Rukhar_Wettkampf_Day >  0 ) && (Chapter <  6 ) && (MIS_Rukhar_Wettkampf_Day < DayNow) && (RandolphGoParty ==  FALSE )) ;
 		{
 			RandolphGoParty = TRUE;
-			B_StartOtherRoutine(BAU_942_Randolph,"Wettkampf");
-			B_StartOtherRoutine(BAU_970_Orlan,"Wettkampf");
-			B_StartOtherRoutine(BAU_973_Rukhar,"Wettkampf");
+			B_StartOtherRoutine(BAU_942_Randolph, " Competition " );
+			B_StartOtherRoutine(BAU_970_Orlan, " Competition " );
+			B_StartOtherRoutine(BAU_973_Rukhar, " Competition " );
 		};
 		if((CurrentLevel == NEWWORLD_ZEN) && (MIS_HauntedLighthouse == LOG_Running) && (JackGoLH == TRUE) && (JackGoLHDay <= (DayNow - 1)) && (JackMainIsDead == FALSE) && (JackOnLH == FALSE))
 		{
-			JackOnLH = TRUE;
+			JackOnLH = TRUE ;
 			B_StartOtherRoutine(VLK_444_Jack,"MeetLH");
 			AI_Teleport(VLK_444_Jack,"NW_JACK_LH_01");
 		};
@@ -2442,7 +2443,7 @@ func void b_gettime()
 			else
 			{
 				Snd_Play("MFX_GHOSTVOICE");
-				VLK_444_Jack.aivar[AIV_StoryBandit] = TRUE;
+				VLK_444_Jack.aivar[AIV_StoryBandit] = TRUE ;
 				JackMainIsDead = TRUE;
 				B_KillNpc(VLK_444_Jack);
 				AI_Teleport(Skeleton_Stefan,"TOT");
@@ -2452,7 +2453,7 @@ func void b_gettime()
 		if((CurrentLevel == NEWWORLD_ZEN) && (MIS_HauntedLighthouse == LOG_Running) && (FindOldRing == FALSE) && (Npc_HasItems(hero,ItMi_StafanRing) >= 1))
 		{
 			B_GivePlayerXP(100);
-			B_LogEntry(TOPIC_HauntedLighthouse,"Я нашел старое серебрянное кольцо. На его внутренней дужке выбита надпись - 'Стефану от Ха...'. Остальная надпись неразбочива. Интересно, кому оно принадлежало? И кто такой Ха...?");
+			B_LogEntry(TOPIC_HauntedLighthouse, " I found an old silver ring. On the inner shackle is engraved - 'To Stefan from Ha...'. The rest of the inscription is illegible. I wonder who it belonged to? And who is Ha...? " );
 			FindOldRing = TRUE;
 		};
 		if((TillRosiAway == FALSE) && (MIS_RosisFlucht == LOG_SUCCESS))
@@ -2464,19 +2465,19 @@ func void b_gettime()
 				RosiTillDied = TRUE;
 				TillRosiAway = TRUE;
 			}
-			else if(TillRosiFarm == TRUE)
+			else  if (ToRosiFarm ==  TRUE )
 			{
 				B_StartOtherRoutine(BAU_936_Rosi,"BIGFARM");
 				B_StartOtherRoutine(BAU_931_Till,"BIGFARM");
 				TillRosiAway = TRUE;
 			}
-			else if(TillRosiKloster == TRUE)
+			else  if (ToRosiKloster ==  TRUE )
 			{
 				B_StartOtherRoutine(BAU_936_Rosi,"KLOSTER");
 				B_StartOtherRoutine(BAU_931_Till,"KLOSTER");
 				TillRosiAway = TRUE;
 			}
-			else if(TillRosiPsiCamp == TRUE)
+			else  if (ToRosiPsiCamp ==  TRUE )
 			{
 				B_StartOtherRoutine(BAU_936_Rosi,"PSICAMP");
 				B_StartOtherRoutine(BAU_931_Till,"PSICAMP");
@@ -2490,7 +2491,7 @@ func void b_gettime()
 			};
 		};
 
-		//--------------одеваем если согласились с Асмалом-------------------------
+		// -------------- dress if agreed with Asmal -------------------------
 
 		if((CurrentLevel == NEWWORLD_ZEN) && (CHECKFLAGKILLSJOIN == TRUE) && (EQUIPALLKILLERS == FALSE) && (Npc_GetDistToWP(hero,"NW_CITY_HABOUR_KILL_03") <= 1500))
 		{
@@ -2524,7 +2525,7 @@ func void b_gettime()
 			EQUIPALLKILLERS = TRUE;
 		};
 
-		//--------------одеваем если пришли на встречу у пристани-------------------------
+		// -------------- dress if you came to a meeting at the pier-------------------------
 
 		if((CurrentLevel == NEWWORLD_ZEN) && (CHECKFLAGKILLSMEET == TRUE) && (EQUIPALLKILLERS == FALSE) && (Npc_GetDistToWP(hero,"NW_CITY_HABOUR_KILL_03") <= 2000))
 		{
@@ -2557,7 +2558,7 @@ func void b_gettime()
 			Mdl_SetVisualBody(pir_1397_addon_inextremo_charlotte,"AML_Body_Naked0",4,0,"Bab_Head_Hair1",0,DEFAULT,-1);
 			EQUIPALLKILLERS = TRUE;
 		};
-		if((CurrentLevel == NEWWORLD_ZEN) && (KILLSMEET == TRUE) && (MEETKILLLATE == FALSE) && (CHECKFLAGKILLSMEET == FALSE) && (Npc_GetDistToWP(hero,"NW_CITY_HABOUR_KILL_03") <= 2000) && (Wld_IsTime(0,0,4,0) && (MIS_KILLSMEET_DAY == (DayNow - 2))))
+		if ((CurrentLevel ==  NEWWORLD_ZEN ) && ( KILLSMEET  ==  TRUE ) && ( MEETKILLLATE  ==  FALSE ) && ( CHECKFLAGKILLSMEET  ==  FALSE ) && (Npc_GetDistToWP(hero, " NW_CITY_HABOUR_KILL_03 " ) <=  2000 ) && (Wld_IsTime( 0. 0 ) ; , 4 , 0 ) && ( MIS_KILLSMEET_DAY  == (DayNow - 2))))
 		{
 			Npc_ExchangeRoutine(vlk_6028_buerger,"TOT");
 			//Npc_ExchangeRoutine(vlk_6029_buergerin,"TOT");
@@ -2586,7 +2587,7 @@ func void b_gettime()
 			MIS_VALENTINOHELP = LOG_FAILED;
 			B_LogEntry_Failed(TOPIC_VALENTINOHELP);
 		};
-		if((CurrentLevel == NEWWORLD_ZEN) && (KILLSMEET == TRUE) && (MEETKILLLATE == FALSE) && (GUILDKILLKNOWNLOC == FALSE) && (CHECKFLAGKILLSMEET == FALSE) && (MIS_KILLSMEET_DAY < (DayNow - 2)))
+		if ((CurrentLevel ==  NEWWORLD_ZEN ) && ( KILLSMEET  ==  TRUE ) && ( MEETKILLLATE  ==  FALSE ) && ( GUILDKILLKNOWNLOC  ==  FALSE ) && ( CHECKFLAGKILLSMEET  ==  FALSE ) && ( MIS_KILLSMEET_DAY  < (DayNow -  2 ))) ;
 		{
 			if(CHECKFLAGKILLSMEET == TRUE)
 			{
@@ -2605,13 +2606,13 @@ func void b_gettime()
 			};
 			if((MIS_GUILDKILL == LOG_Running) && (MEETKILLLATELOG == FALSE))
 			{
-				B_LogEntry(TOPIC_GUILDKILL,"Черт! Кажется, я опоздал на встречу, о которой говорил мне Гиллиан.");
+				B_LogEntry( TOPIC_GUILDKILL , " Damn! I think I'm late for the meeting Gillian told me about. " );
 				MEETKILLLATELOG = TRUE;
 			};
 
 			MEETKILLLATE = TRUE;
 		};
-		if((CurrentLevel == NEWWORLD_ZEN) && (KILLSMEET == TRUE) && (MEETKILLLATE == FALSE) && (GUILDKILLKNOWNLOC == FALSE) && (CHECKFLAGKILLSMEET == FALSE) && Wld_IsTime(4,1,23,59) && (MIS_KILLSMEET_DAY == (DayNow - 2)))
+		if ((CurrentLevel ==  NEWWORLD_ZEN ) && ( KILLSMEET  ==  TRUE ) && ( MEETKILLLATE  ==  FALSE ) && ( GUILDKILLKNOWNLOC  ==  FALSE ) && ( CHECKFLAGKILLSMEET  ==  FALSE ) && Wld_IsTime( 4 , 1 , 23 , 59 ) && ( MIS_DAYKILLSME );  == (DayNow -  2 )))
 		{
 			if(CHECKFLAGKILLSMEET == TRUE)
 			{
@@ -2630,20 +2631,20 @@ func void b_gettime()
 			};
 			if((MIS_GUILDKILL == LOG_Running) && (MEETKILLLATELOG == FALSE))
 			{
-				B_LogEntry(TOPIC_GUILDKILL,"Черт! Кажется, я опоздал на встречу, о которой говорил мне Гиллиан.");
+				B_LogEntry( TOPIC_GUILDKILL , " Damn! I think I'm late for the meeting Gillian told me about. " );
 				MEETKILLLATELOG = TRUE;
 			};
 
 			MEETKILLLATE = TRUE;
 		};
 
-		//----------------Гиллиан появляется в таверне-------------------------------------
+		// ----------------Gillian appears in the tavern---------------------- ---------
 
-		if((CurrentLevel == NEWWORLD_ZEN) && (MIS_GERBRANDTHELP == LOG_Running) && (MEETCHIEFKILLERSLAIT == FALSE) && (MEETCHIEFKILLERS == FALSE) && (APEARKILLER == FALSE))
+		if ((CurrentLevel ==  NEWWORLD_ZEN ) && ( MIS_GERBRANDTHELP  == LOG_Running) && ( MEETCHIEFKILLERSLAIT  ==  FALSE ) && ( MEETCHIEFKILLERS  ==  FALSE ) && ( APEARKILLERS  ==  FALSE )) ;
 		{
-			if((Wld_IsTime(23,30,23,59) && (MIS_GERBRANDT_MEETINTAVERNE_DAY == DayNow)) || (Wld_IsTime(0,0,1,30) && (MIS_GERBRANDT_MEETINTAVERNE_DAY == (DayNow - 1))))
+			if ((Wld_IsTime( 23 , 30 , 23 , 59 ) && ( MY_GERBRANDT_MEETING_DAY  == DayNow)) || (Wld_IsTime( 0 , 0 , 1 , 30 ) && ( MY_GERBRANDT_MEETING_DAY  == (DayNow -  1 ))))
 			{
-				pir_1398_addon_inextremo_announcer.name[0] = "Незнакомец";
+				pir_1398_addon_inextremo_announcer.name[ 0 ] = " Stranger " ;
 				B_StartOtherRoutine(pir_1398_addon_inextremo_announcer,"Taverne");
 				AI_Teleport(pir_1398_addon_inextremo_announcer,"NW_TAVERNE_KILLER");
 				Npc_RemoveInvItems(pir_1398_addon_inextremo_announcer,ItLsTorchFirespit,Npc_HasItems(pir_1398_addon_inextremo_announcer,ItLsTorchFirespit));
@@ -2653,37 +2654,37 @@ func void b_gettime()
 			};
 		};
 
-		//---------------- Опоздали на встречу -------------------------------------
+		// ---------------- We were late for the meeting ------------------------------ --------
 
-		if((CurrentLevel == NEWWORLD_ZEN) && (MIS_GERBRANDTHELP == LOG_Running) && (MEETCHIEFKILLERS == FALSE) && (MEETCHIEFKILLERSLAIT == FALSE))
+		if ((CurrentLevel ==  NEWWORLD_ZEN ) && ( MIS_GERBRANDHELP  == LOG_Running) && ( MEETCHIEFKILLERS  ==  FALSE ) && ( MEETCHIEFKILLERSLAIT  ==  FALSE )) ;
 		{
-			if(Wld_IsTime(1,31,23,59) && (MIS_GERBRANDT_MEETINTAVERNE_DAY == (DayNow - 1)))
+			if ( Wld_IsTime ( 1 , 31 , 23 , 59 ) && ( MY_GERBRANDT_MEETING_DAY  == ( DayNow --  1 )))
 			{
 				pir_1398_addon_inextremo_announcer.name[0] = "Гиллиан";
 				AI_UnequipArmor(pir_1398_addon_inextremo_announcer);
 				Npc_RemoveInvItems(pir_1398_addon_inextremo_announcer,itar_asmal,1);
 				B_StartOtherRoutine(pir_1398_addon_inextremo_announcer,"Start");
 				AI_Teleport(pir_1398_addon_inextremo_announcer,"OCR_ANNOUNCER");
-				B_LogEntry(TOPIC_GERBRANDTHELP,"Черт! Кажется, я опоздал на встречу, о которой говорил мне Гербрандт.");
+				B_LogEntry( TOPIC_GERBRANDTHELP , " Damn! I think I'm late for the meeting Gerbrandt told me about. " );
 				MEETCHIEFKILLERSLAIT = TRUE;
 				STRANGERKNOWS = FALSE;
 				CheckGillianTaverne = FALSE;
 			}
-			else if(MIS_GERBRANDT_MEETINTAVERNE_DAY < (DayNow - 1))
+			else  if ( MIS_GERBRANDT_MEETINTAVERNE_DAY  < (DayNow -  1 ))
 			{
 				pir_1398_addon_inextremo_announcer.name[0] = "Гиллиан";
 				AI_UnequipArmor(pir_1398_addon_inextremo_announcer);
 				Npc_RemoveInvItems(pir_1398_addon_inextremo_announcer,itar_asmal,1);
 				B_StartOtherRoutine(pir_1398_addon_inextremo_announcer,"Start");
 				AI_Teleport(pir_1398_addon_inextremo_announcer,"OCR_ANNOUNCER");
-				B_LogEntry(TOPIC_GERBRANDTHELP,"Черт! Кажется, я опоздал на встречу, о которой говорил мне Гербрандт.");
+				B_LogEntry( TOPIC_GERBRANDTHELP , " Damn! I think I'm late for the meeting Gerbrandt told me about. " );
 				MEETCHIEFKILLERSLAIT = TRUE;
 				STRANGERKNOWS = FALSE;
 				CheckGillianTaverne = FALSE;
 			};
 		};
 
-		//----------------Гиллиан возвращается на место-------------------------------------
+		// ----------------Gillian returns to his seat---------------------- ---------
 
 		if((CurrentLevel == NEWWORLD_ZEN) && (MEETCHIEFKILLERS == TRUE) && (Npc_GetDistToWP(hero,"NW_TAVERNE_KILLER") > 2000) && (MEETCHIEFKILLERSAWAY == FALSE))
 		{
@@ -2697,15 +2698,15 @@ func void b_gettime()
 			CheckGillianTaverne = FALSE;
 		};
 
-		//---------------------Отправляем Вамбо и Гиллиана к месту встречи-------------------------------
+		// ---------------------Send Wambo and Gillian to the meeting point-------------------- -----------
 
-		if((CurrentLevel == NEWWORLD_ZEN) && (ASMALCANAPPEAR == TRUE) && (KILLFLAG == FALSE) && (JOINKILLERS == FALSE)  && (KILLCANJOIN == FALSE) && (CHIEFKILLERISDEAD == FALSE))
+		if ((CurrentLevel ==  NEWWORLD_ZEN ) && ( ASMALCANAPPEAR  ==  TRUE ) && ( KILLFLAG  ==  FALSE ) && ( JOINKILLERS  ==  FALSE )   && ( KILLCANJOIN  ==  FALSE ) && ( CHIEFKILLERISDEAD  ==  FALSE )) ;
 		{
 			if((AsmalDayMeet == DayNow) && Wld_IsTime(22,0,23,59))
 			{		
 				if(Npc_GetDistToWP(hero,"NW_CITY_KILLWAMBO_02") > 1500)
 				{
-					pir_1398_addon_inextremo_announcer.name[0] = "Незнакомец";
+					pir_1398_addon_inextremo_announcer.name[ 0 ] = " Stranger " ;
 					B_StartOtherRoutine(pir_1398_addon_inextremo_announcer,"WaitFight");
 					B_StartOtherRoutine(Mil_316_Wambo,"WaitFight");
 					AI_Teleport(pir_1398_addon_inextremo_announcer,"NW_CITY_KILLWAMBO_01");
@@ -2714,7 +2715,7 @@ func void b_gettime()
 				}
 				else
 				{
-					pir_1398_addon_inextremo_announcer.name[0] = "Незнакомец";
+					pir_1398_addon_inextremo_announcer.name[ 0 ] = " Stranger " ;
 					B_StartOtherRoutine(pir_1398_addon_inextremo_announcer,"WaitFight");
 					B_StartOtherRoutine(Mil_316_Wambo,"WaitFight");
 					CheckGillianWambo = TRUE;
@@ -2725,19 +2726,19 @@ func void b_gettime()
 			};
 		};
 
-		//---------------------Все на месте встречи и нас не видно -------------------------------
+		// ---------------------Everyone is at the meeting point and we are not visible -------------------- ------------
 	
-		if((CurrentLevel == NEWWORLD_ZEN) && (ASMALCANAPPEAR == TRUE) && (KILLFLAG == TRUE) && (KILLFLAG2 == FALSE) && (JOINKILLERS == FALSE)  && (KILLCANJOIN == FALSE) && (CHIEFKILLERISDEAD == FALSE))
+		if ((CurrentLevel ==  NEWWORLD_ZEN ) && ( ASMALCANAPPEAR  ==  TRUE ) && ( KILLFLAG  ==  TRUE ) && ( KILLFLAG2  ==  FALSE ) && ( JOINKILLERS  ==  FALSE )   && ( KILLCANJOIN  ==  FALSE ) && ( CHIEFKILLERISDEAD  ==  FALSE ) . )
 		{
 			if((AsmalDayMeet == DayNow) && Wld_IsTime(22,0,23,59) && (Npc_GetDistToWP(hero,"NW_CITY_KILLWAMBO_02") <= 1500) && (Npc_GetDistToWP(Mil_316_Wambo,"NW_CITY_KILLWAMBO_02") <= 200) && (Npc_GetDistToWP(PIR_1398_ADDON_INEXTREMO_ANNOUNCER,"NW_CITY_KILLWAMBO_01") <= 200))
 			{	
 				if(Npc_CanSeeNpc(PIR_1398_ADDON_INEXTREMO_ANNOUNCER,hero) == FALSE)
 				{
-					WamboTimer += 1;
+					WamboTimer +=  1 ;
 
 					if(WamboTimer >= 10)
 					{
-						Mil_316_Wambo.aivar[AIV_DropDeadAndKill] = TRUE;
+						Mil_316_Wambo.aivar[AIV_DropDeadAndKill] = TRUE ;
 						b_changeguild(Mil_316_Wambo,GIL_BDT);
 						KILLFLAG2 = TRUE;
 						WamboMustDie = TRUE;
@@ -2757,7 +2758,7 @@ func void b_gettime()
 				};
 			};
 		};
-		if((CurrentLevel == NEWWORLD_ZEN) && (ASMALCANAPPEAR == TRUE) && (KILLFLAG == TRUE) && (KILLFLAG2 == FALSE) && (JOINKILLERS == FALSE)  && (KILLCANJOIN == FALSE) && (CHIEFKILLERISDEAD == FALSE))
+		if ((CurrentLevel ==  NEWWORLD_ZEN ) && ( ASMALCANAPPEAR  ==  TRUE ) && ( KILLFLAG  ==  TRUE ) && ( KILLFLAG2  ==  FALSE ) && ( JOINKILLERS  ==  FALSE )   && ( KILLCANJOIN  ==  FALSE ) && ( CHIEFKILLERISDEAD  ==  FALSE ) . )
 		{
 			if(AsmalDayMeet < DayNow)
 			{		
@@ -2771,11 +2772,11 @@ func void b_gettime()
 				CheckGillianWambo = FALSE;
 			};
 		};
-		if((CurrentLevel == NEWWORLD_ZEN) && (KILLFLAG == TRUE) && (WamboMustDie == TRUE) && (KILLFLAG2 == TRUE) && (WAMBOISDEAD == FALSE))
+		if (( CurrentLevel ==  NEWWORLD_ZEN ) && ( KILLFLAG  ==  TRUE ) && ( WamboMustDie ==  TRUE ) && ( KILLFLAG2  ==  TRUE ) && ( WAMBOISDEAD  ==  FALSE ))
 		{
-			WamboTimerEx += 1;
+			WamboTimerEx +=  1 ;
 
-			if(WamboTimerEx >= 10)
+			if (WamboTimerEx >=  10 )
 			{
 				B_KillNpc(Mil_316_Wambo);
 				b_changeguild(pir_1398_addon_inextremo_announcer,GIL_VLK);
@@ -2795,7 +2796,7 @@ func void b_gettime()
 					STRANGERKNOWS = FALSE;
 				};
 
-				WAMBOISDEAD = TRUE;
+				WAMBOISDEAD = TRUE ;
 			};
 		};
 		if((CurrentLevel == NEWWORLD_ZEN) && (ConcertIsOn == TRUE) && (ConcertBonus == FALSE))
@@ -2804,8 +2805,8 @@ func void b_gettime()
 	
 			if(ConcertTimer >= 97)
 			{
-				bManaBar = 1;
-				bHealthBar = 1;
+				bManaBar = 1 ;
+				bHealthBar = 1 ;
 				CamModeOn = FALSE;
 				Npc_RemoveInvItems(PIR_1398_ADDON_INEXTREMO_ANNOUNCER,ItMi_IEDudelGelb,Npc_HasItems(PIR_1398_ADDON_INEXTREMO_ANNOUNCER,ItMi_IEDudelGelb));
 				B_StartOtherRoutine(PIR_1390_Addon_InExtremo_DrPymonte,"Start");
@@ -2829,8 +2830,8 @@ func void b_gettime()
 
 			if(ConcertLoaTimer >= 372)
 			{
-				bManaBar = 1;
-				bHealthBar = 1;
+				bManaBar = 1 ;
+				bHealthBar = 1 ;
 				CamModeOn = FALSE;
 				B_StartOtherRoutine(Sld_822_Raoul,"Start");
 				B_StartOtherRoutine(SLD_819_Soeldner,"Start");
@@ -2855,7 +2856,7 @@ func void b_gettime()
 		};
 		if((CurrentLevel == NEWWORLD_ZEN) && (resettime == FALSE) && (SBMODE != FALSE))
 		{
-			Wld_SetTime(23,59);
+			Wld_SetTime( 23 , 59 );
 			resettime = TRUE;
 		};
 		if((Fight_Valgard_Now == TRUE) || (Fight_Graden_Now == TRUE) || (Fight_Olaf_Now == TRUE) || (Fight_Bram_Now == TRUE))
@@ -2882,7 +2883,7 @@ func void b_gettime()
 				{
 					if(ANGARBATTLETHROUGTH == TRUE)
 					{
-						randomchance = Hlp_Random(100);
+						randomchance = Hlp_Random( 100 );
 
 						if(randomchance >= 10)
 						{
@@ -2912,7 +2913,7 @@ func void b_gettime()
 				{
 					if(TORLOFBATTLETHROUGTH == TRUE)
 					{
-						randomchance = Hlp_Random(100);
+						randomchance = Hlp_Random( 100 );
 	
 						if(randomchance >= 20)
 						{
@@ -2942,7 +2943,7 @@ func void b_gettime()
 				{
 					if(BIFFBATTLETHROUGTH == TRUE)
 					{
-						randomchance = Hlp_Random(100);
+						randomchance = Hlp_Random( 100 );
 	
 						if(randomchance >= 30)
 						{
@@ -2972,7 +2973,7 @@ func void b_gettime()
 				{
 					if(GIRIONBATTLETHROUGTH == TRUE)
 					{
-						randomchance = Hlp_Random(100);
+						randomchance = Hlp_Random( 100 );
 
 						if(randomchance >= 40)
 						{
@@ -3006,7 +3007,7 @@ func void b_gettime()
 					{
 						if(WOLFRECRUITEDDT == FALSE)
 						{
-							randomchance = Hlp_Random(100);
+							randomchance = Hlp_Random( 100 );
 
 							if(randomchance >= 50)
 							{
@@ -3043,7 +3044,7 @@ func void b_gettime()
 				{
 					if(LARESBATTLETHROUGTH == TRUE)
 					{
-						randomchance = Hlp_Random(100);
+						randomchance = Hlp_Random( 100 );
 	
 						if(randomchance >= 40)
 						{
@@ -3073,7 +3074,7 @@ func void b_gettime()
 				{
 					if(BENNETBATTLETHROUGTH == TRUE)
 					{
-						randomchance = Hlp_Random(100);
+						randomchance = Hlp_Random( 100 );
 
 						if(randomchance >= 75)
 						{
@@ -3103,7 +3104,7 @@ func void b_gettime()
 				{
 					if(JORGENBATTLETHROUGTH == TRUE)
 					{
-						randomchance = Hlp_Random(100);
+						randomchance = Hlp_Random( 100 );
 
 						if(randomchance >= 90)
 						{
@@ -3123,7 +3124,7 @@ func void b_gettime()
 						COUNTSURVIVERS = COUNTSURVIVERS + 1;
 					};
 				}
-				else if((JorgenIsCaptain == TRUE) && (LI_CHECK_JORGEN == FALSE))
+				else  if ((JorgenIsCaptain ==  TRUE ) && ( LI_CHECK_JORGEN  ==  FALSE ))
 				{
 					B_StartOtherRoutine(VLK_4250_Jorgen,"KillHim");
 					B_KillNpc(VLK_4250_Jorgen);
@@ -3133,7 +3134,7 @@ func void b_gettime()
 				{
 					if(JACKBATTLETHROUGTH == TRUE)
 					{
-						randomchance = Hlp_Random(100);
+						randomchance = Hlp_Random( 100 );
 
 						if(randomchance >= 90)
 						{
@@ -3235,7 +3236,7 @@ func void b_gettime()
 				{
 					MIS_HELPCREW = LOG_SUCCESS;
 					Log_SetTopicStatus(TOPIC_HELPCREW,LOG_SUCCESS);
-					B_LogEntry(TOPIC_HELPCREW,"Теперь только Иннос решит - кому жить, а кому нет!");
+					B_LogEntry( TOPIC_HELPCREW , " Now only Innos will decide who lives and who doesn't! " );
 				};
 
 				REPLACEPLACESCREW = TRUE;
@@ -3253,30 +3254,30 @@ func void b_gettime()
 			MIS_JESPERMUSIC = LOG_FAILED;
 			B_LogEntry_Failed(TOPIC_JESPERMUSIC);
 		};
-		if((MIS_KILLIGNAZ == LOG_Running) && (Kapitel >= 5))
+		if (( MIS_SOURCE  == LOG_Running) && (Chapter >=  5 ))
 		{
 			MIS_KILLIGNAZ = LOG_FAILED;
 			B_LogEntry_Failed(TOPIC_KILLIGNAZ);
 		};
-		if((CurrentLevel == NEWWORLD_ZEN) && (PabloSpeakUp == TRUE) && (CanTeachTownMaster == FALSE) && (MIS_PathFromDown == LOG_Running) && (PabloSpeakUpDay <= (DayNow - 1)))
+		if ((CurrentLevel ==  NEWWORLD_ZEN ) && (PaulSpeakUp ==  TRUE ) && (CanTeachTownMaster ==  FALSE ) && (MY_PathFromDown == LOG_Running) && (PaulSpeakUpDay <= (DayNow -  1 ))) ;
 		{
 			CanTeachTownMaster = TRUE;
 			MIS_PathFromDown = LOG_SUCCESS;
 			Log_SetTopicStatus(TOPIC_PathFromDown,LOG_SUCCESS);
-			B_LogEntry(TOPIC_PathFromDown,"Думаю, что пришло время поговорить с мастерами.");
+			B_LogEntry(TOPIC_PathFromDown, " I think it's time to talk to the masters. " );
 		};
-		if(Wld_IsTime(21,15,23,0) && (Hagen_BringProof == TRUE) && (Kapitel <= 2) && (Npc_IsInState(VLK_4350_Priscila,ZS_Play_Lute) == TRUE) && (Npc_IsDead(VLK_4350_Priscila) == FALSE) && (CurrentLevel == NEWWORLD_ZEN) && (AbigailPlaySong == FALSE) && (PriscilaOnSc == TRUE) && (Npc_GetDistToWP(hero,"NW_PUFF_DANCE") < 400) && ((SBMode == TRUE) || (RealMode[2] == TRUE)))
+		if (Wld_IsTime( 21 , 15 , 23 , 0 ) && ( Hagen_BringProof ==  TRUE ) && ( Chapter <=  2 ) && ( Npc_IsInState ( VLK_4350_Priscilla , ZS_Play_Lute ) == TRUE )  && ( Npc_IsDead ( VLK_4350_Priscilla ) =  & ( CurrentLevel == NEWWORLD_ZEN ) && ( AbigailPlaySong == FALSE ) && (PriscilaOnSc ==TRUE) &&    (Npc_GetDistToWP(hero,"NW_PUFF_DANCE") < 400) && ((SBMode == TRUE) || (RealMode[2] == TRUE)))
 		{
-			bManaBar = 0;
-			bHealthBar = 0;
+			bManaBar = 0 ;
+			bHealthBar = 0 ;
 			CamModeOn = TRUE;
 			VLK_4350_Priscila.name[0] = "";
 			Snd_Play("CS_ABIGAILSONG");
-			Wld_SendTrigger("EVT_NADAJ_SONG");
+			Wld_SendTrigger( " EVT_SEND_SONG " );
 			AbigailPlaySong = TRUE;
 			Npc_ModifyBodyState(hero,0,BS_MOD_CONTROLLED);
 
-			if(MIS_Andre_REDLIGHT != LOG_SUCCESS)
+			if (MIS_Andre_REDLIGHT !=  LOG_SUCCESS )
 			{
 				B_StartOtherRoutine(VLK_434_Borka,"Keira");
 			};	
@@ -3289,15 +3290,15 @@ func void b_gettime()
 
 			if(ConcertAbiTimer >= 196)
 			{
-				bManaBar = 1;
-				bHealthBar = 1;
+				bManaBar = 1 ;
+				bHealthBar = 1 ;
 				CamModeOn = FALSE;
-				VLK_4350_Priscila.name[0] = "Айри";
+				VLK_4350_Priscila.name[ 0 ] = " Airi " ;
 				Npc_ModifyBodyState(hero,BS_MOD_CONTROLLED,0);
 				AbigailPlaySongDone = TRUE;
 				ConcertAbiTimer = FALSE;
 
-				if(MIS_Andre_REDLIGHT != LOG_SUCCESS)
+				if (MIS_Andre_REDLIGHT !=  LOG_SUCCESS )
 				{
 					B_StartOtherRoutine(VLK_434_Borka,"Start");
 				};
@@ -3319,7 +3320,7 @@ func void b_gettime()
 			Wld_InsertNpc(VLK_6039_BUERGER,"NW_CORAGON_GUEST_02");
 			Wld_InsertNpc(VLK_6040_BUERGER,"NW_CORAGON_GUEST_03");
 			Wld_InsertNpc(VLK_6041_BUERGER,"NW_CORAGON_GUEST_04");
-			B_LogEntry(TOPIC_CoragonFixBeer,"По идее Мартин должен был уже уладить проблему Карагона! Пора отправиться в таверну и спросить его самого.");
+			B_LogEntry(TOPIC_CoragonFixBeer, " I think Martin should have fixed Caragon's problem by now! Time to go to the tavern and ask him himself. " );
 		};
 		if(Wld_IsTime(0,0,4,0) && (MIS_LoaRomance == LOG_Success) && (LoaInLH == FALSE) && (LoaLover == TRUE) && (LoaLoverDay <= (DayNow - 1)))
 		{
@@ -3327,18 +3328,18 @@ func void b_gettime()
 			AI_Teleport(SLD_10920_Loa,"NW_LIGHTHOUSE_IN_16");
 			LoaInLH = TRUE;
 		};
-		if(!Wld_IsTime(0,0,4,0) && (MIS_LoaRomance == LOG_Success) && (LoaInLH == TRUE) && (LoaTellInLH == FALSE) && (LoaAwayLH == FALSE))
+		if ( ! Wld_IsTime( 0 , 0 , 4 , 0 ) && ( MIS_LoaRomance == LOG_Success ) && ( LoaInLH ==  TRUE ) && ( LoaTellInLH ==  FALSE ) && ( LoaAwayLH ==  FALSE )) ;
 		{
 			B_StartOtherRoutine(SLD_10920_Loa,"Start");
 			LoaAwayLH = TRUE;
 		};
-		if((CurrentLevel == NEWWORLD_ZEN) && (Wld_IsTime(20,0,5,0)) && (HorLightOn == FALSE))
+		if (( CurrentLevel ==  NEWWORLD_ZEN ) && ( Wld_IsTime ( 20 , 0 , 5 , 0 )) && ( HorLightOn ==  FALSE )) ;
 		{
 			Wld_SendTrigger("EVT_TOWNLIGHT");
 			Wld_SendTrigger("EVT_INNOSFIRE");
 			HorLightOn = TRUE;
 		};
-		if((CurrentLevel == NEWWORLD_ZEN) && (Wld_IsTime(5,1,19,59)) && (HorLightOn == TRUE))
+		if (( CurrentLevel ==  NEWWORLD_ZEN ) && ( Wld_IsTime ( 5 , 1 , 19 , 59 )) && ( HorLightOn ==  TRUE )) ;
 		{
 			Wld_SendTrigger("EVT_TOWNLIGHT");
 			Wld_SendTrigger("EVT_INNOSFIRE");
@@ -3347,40 +3348,40 @@ func void b_gettime()
 	};
 	if(CurrentLevel == OLDWORLD_ZEN)
 	{
-		if((CurrentLevel == OLDWORLD_ZEN) && (MIS_BrutusBaby == LOG_Running) && (Kapitel < 3) && (BrutusBabyDay > 0) && (BrutusBabyDay < DayNow) && Wld_IsTime(20,0,23,59) && (BrutusGoPartyNever == FALSE) && (BrutusGoParty == FALSE))
+		if ( ( CurrentLevel ==  OLDWORLD_ZEN ) && ( MY_BrutusBaby == LOG_Running ) && ( Chapter <  3 ) && ( BrutusBabyDay >  0 ) && ( BrutusBabyDay < DayNow ) && Wld_IsTime ( 20 , 0 , 23 , 59 ) && ( BrutusGoPartyNever ==  FALSE ) && (BrutusGoParty ==  FALSE ))
 		{
 			BrutusGoParty = TRUE;
-			B_LogEntry(TOPIC_BrutusBaby,"Полагаю, Мильтен уже все подготовил. Пора отправляться к нему.");
-			B_StartOtherRoutine(VLK_4100_Brutus,"BabyParty");
+			B_LogEntry(TOPIC_BrutusBaby, " I guess Milten has everything set up already. It's time to go to him. " );
+			B_StartOtherRoutine(VLK_4100_Brutus, " BabyParty " );
 			B_StartOtherRoutine(PC_Mage_OW,"BabyParty");
-			B_StartOtherRoutine(VLK_4101_Waffenknecht,"BabyParty");
-			B_StartOtherRoutine(VLK_4102_Waffenknecht,"BabyParty");
+			B_StartOtherRoutine(VLK_4101_Waffenknecht, " BabyParty " );
+			B_StartOtherRoutine(VLK_4102_Waffenknecht, " BabyParty " );
 		};
 		if((CurrentLevel == OLDWORLD_ZEN) && (MIS_BrutusBaby == LOG_Running) && (BrutusRitualDone == FALSE) && (BrutusBabyDay > 0) && (BrutusBabyDay < (DayNow - 1)) && (BrutusGoPartyNever == FALSE))
 		{
 			BrutusGoPartyNever = TRUE;
 			MIS_BrutusBaby = LOG_Success;
 			Log_SetTopicStatus(TOPIC_BrutusBaby,LOG_Success);
-			B_LogEntry(TOPIC_BrutusBaby,"Я не пошел узнавать, как там обстоят дела у Мильтена с моей просьбой. Надеюсь, у них все получилось.");
+			B_LogEntry(TOPIC_BrutusBaby, " I didn't go to see how Milten was doing with my request. I hope they succeeded. " );
 			B_StartOtherRoutine(VLK_4100_Brutus,"Start");
 			B_StartOtherRoutine(PC_Mage_OW,"Start");
 			B_StartOtherRoutine(VLK_4101_Waffenknecht,"Start");
 			B_StartOtherRoutine(VLK_4102_Waffenknecht,"Start");
 		};
-		if((CurrentLevel == OLDWORLD_ZEN) && (ParlafIsDead == FALSE) && (MIS_DobarOut == LOG_Running) && (ParlafFind == FALSE) && (DayParlafDead < (DayNow - 7)))
+		if ((CurrentLevel ==  OLDWORLD_ZEN ) && (ConversationIsDead ==  FALSE ) && (MIS_DobarOut == LOG_Running) && (FindConversation ==  FALSE ) && (DayConversationDead < (DayNow -  7 ))) ;
 		{
 			ParlafIsDead = TRUE;
 			B_KillNpc(VLK_4107_Parlaf);
 		};
-		if((MIS_OLDWORLD == FALSE) && (CurrentLevel == OLDWORLD_ZEN) && (CaptureCheat == TRUE) && (TrailerMake == FALSE))
+		if (( MY_OLDWORLD  ==  FALSE ) && ( CurrentLevel ==  OLDWORLD_ZEN ) && ( CaptureCheat ==  TRUE ) && ( TrailerMake ==  FALSE ))
 		{
 			AI_Wait(hero,9999);
-			AI_PrintClr("Боги пометили шельму!",177,58,17);
+			AI_PrintClr( "The gods marked the rogue! " , 177 , 58 , 17 );
 
 			if(ATR_INTELLECT > 0)
 			{
 				ATR_INTELLECT -= 1;
-				concatText = ConcatStrings("Завершение игры через ",IntToString(ATR_INTELLECT));
+				concatText = ConcatStrings( " End game in " ,IntToString( ATR_INTELLECT ));
 				concatText = ConcatStrings(concatText," секунд...");
 				AI_PrintClr(concatText,177,58,17);
 			}
@@ -3413,16 +3414,16 @@ func void b_gettime()
 	{
 		if((CurrentLevel == HAOSWORLD_ZEN) && (Npc_GetDistToWP(hero,"KRATUK") > 2000) && (PLACEKRATUKHEART == TRUE) && (CircleFightIlArah == TRUE) && (hero.attribute[ATR_HITPOINTS] > 0) && (ALLGUARDIANSNOLEADERISDEAD == FALSE))
 		{
-			if(tIlARahAura == FALSE)
+			if (tIlARahAura ==  FALSE )
 			{
 				Wld_PlayEffect("SPELLFX_UNDEAD_SCREENBLEND",hero,hero,0,0,0,FALSE);
 			};
 
-			tIlARahAura += 1;
+			tIlARahAura +=  1 ;
 	
-			if(tIlARahAura > 10)
+			if (tIlARahAura >  10 )
 			{
-				tIlARahAura = FALSE;
+				tIlARahAura = FALSE ;
 			};
 
 			Npc_ChangeAttribute(hero,ATR_HITPOINTS,-500);
@@ -3432,10 +3433,10 @@ func void b_gettime()
 	{
 		if((MIS_Miss_Brother == LOG_Running) && (Npc_HasItems(hero,ItMi_IlesilSoul) >= 1) && (SoulKeeperIsDead == TRUE) && (IlesilSoulStoneIsUp == FALSE))
 		{
-			B_LogEntry(TOPIC_Miss_Brother,"У побежденного мной Хранителя душ я обнаружил магическую сферу с душой Иле'Силя. Думаю, мне стоит использовать силу этого места и попробовать освободить ее...");
+			B_LogEntry(TOPIC_Miss_Brother, " I found a magical orb with the soul of Ile'Sil on the Soulkeeper I defeated. I think I should use the power of this place and try to free it... " );
 			IlesilSoulStoneIsUp = TRUE;
 		};
-		if((IlesilIsDead == TRUE) && (LostValleyBonus == FALSE))
+		if (( IlesilIsDead ==  TRUE ) && ( LostValleyBonus ==  FALSE ))
 		{
 			Snd_Play("LevelUp");
 			B_GivePlayerXP(5000);
@@ -3445,18 +3446,18 @@ func void b_gettime()
 		};
 		if(IlesilCount == TRUE)
 		{
-			IlesilCountTime += 1;
+			IlesilCountTime +=  1 ;
 
 			if(IlesilCountTime > 30)
 			{
 				IlesilCount = FALSE;
 				IlesilCountDone = TRUE;
-				IlesilCountTime = FALSE;
+				IlesilCountTime = FALSE ;
 			};
 		};
 		if((HintIlesilDone == TRUE) && (IlesilCountNextDone == FALSE))
 		{
-			IlesilCountTimeNext += 1;
+			IlesilCountTimeNext +=  1 ;
 
 			if(IlesilCountTimeNext > 60)
 			{
@@ -3466,22 +3467,22 @@ func void b_gettime()
 		};
 		if((Active4Boss == TRUE) && (Active4Boss_DONE == FALSE))
 		{
-			if(Npc_HasItems(hero,ItMi_ArahArEye) >= 1)
+			if (Npc_HasItems(hero,ItMi_ArahArEye) >=  1 )
 			{
-				Npc_RemoveInvItems(hero,ItMi_ArahArEye,1);
+				Npc_RemoveInvItems(here,ItMi_ArahArEye, 1 );
 			};
 
 			Active4Boss_DONE = TRUE;
 		};
 	};
-	if(CurrentLevel == ADDONWORLD_ZEN)
+	if (CurrentLevel ==  ADDONWORLD_ZEN )
 	{
 		if((CurrentLevel == ADDONWORLD_ZEN) && (MIS_OldElza == LOG_Running) && (SkipShipRepair == TRUE) && (SkipShipRepairDay < DayNow) && (SkipReadySailDrakia == FALSE))
 		{
 			Wld_SendTrigger("EVT_SHIP_DRAKIA");
 			Npc_ExchangeRoutine(PIR_1355_Addon_Skip,"ReadyDrakia");
 			AI_Teleport(PIR_1355_Addon_Skip,"ADW_TO_DRAKIA");
-			SkipReadySailDrakia = TRUE;
+			SkipReadySailDrakia = TRUE ;
 		};
 		if((CurrentLevel == ADDONWORLD_ZEN) && (Npc_HasItems(hero,ItMi_PortalRing_Addon) >= 1))
 		{
@@ -3502,12 +3503,12 @@ func void b_gettime()
 		if((ORCTEMPLEGATEOPENED == FALSE) && (CurrentLevel == ORCTEMPEL_ZEN) && (CaptureCheat == TRUE) && (TrailerMake == FALSE))
 		{
 			AI_Wait(hero,9999);
-			AI_PrintClr("Боги пометили шельму!",177,58,17);
+			AI_PrintClr( "The gods marked the rogue! " , 177 , 58 , 17 );
 
 			if(ATR_INTELLECT > 0)
 			{
 				ATR_INTELLECT -= 1;
-				concatText = ConcatStrings("Завершение игры через ",IntToString(ATR_INTELLECT));
+				concatText = ConcatStrings( " End game in " ,IntToString( ATR_INTELLECT ));
 				concatText = ConcatStrings(concatText," секунд...");
 				AI_PrintClr(concatText,177,58,17);
 			}
@@ -3519,15 +3520,15 @@ func void b_gettime()
 	};
 	if(CurrentLevel == PASHALWORLD_ZEN)
 	{
-		if((EGEZARTDOOROPEN == FALSE) && (CurrentLevel == PASHALWORLD_ZEN) && (CaptureCheat == TRUE) && (TrailerMake == FALSE))
+		if (( EGEZARTDOUROPEN  ==  FALSE ) && ( CurrentLevel ==  PASHALWORLD_ZEN ) && ( CaptureCheat ==  TRUE ) && ( TrailerMake ==  FALSE ))
 		{
 			AI_Wait(hero,9999);
-			AI_PrintClr("Боги пометили шельму!",177,58,17);
+			AI_PrintClr( "The gods marked the rogue! " , 177 , 58 , 17 );
 
 			if(ATR_INTELLECT > 0)
 			{
 				ATR_INTELLECT -= 1;
-				concatText = ConcatStrings("Завершение игры через ",IntToString(ATR_INTELLECT));
+				concatText = ConcatStrings( " End game in " ,IntToString( ATR_INTELLECT ));
 				concatText = ConcatStrings(concatText," секунд...");
 				AI_PrintClr(concatText,177,58,17);
 			}
@@ -3557,12 +3558,12 @@ func void b_gettime()
 		if((CurrentLevel == ORCOREMINE_ZEN) && (CaptureCheat == TRUE) && (TrailerMake == FALSE) && ((CanEnterOrcMine == FALSE) || (OrcMineClosed == TRUE))) 
 		{
 			AI_Wait(hero,9999);
-			AI_PrintClr("Боги пометили шельму!",177,58,17);
+			AI_PrintClr( "The gods marked the rogue! " , 177 , 58 , 17 );
 
 			if(ATR_INTELLECT > 0)
 			{
 				ATR_INTELLECT -= 1;
-				concatText = ConcatStrings("Завершение игры через ",IntToString(ATR_INTELLECT));
+				concatText = ConcatStrings( " End game in " ,IntToString( ATR_INTELLECT ));
 				concatText = ConcatStrings(concatText," секунд...");
 				AI_PrintClr(concatText,177,58,17);
 			}
@@ -3577,12 +3578,12 @@ func void b_gettime()
 		if((GRANTTOFORT == FALSE) && (CurrentLevel == PALADINFORT_ZEN) && (CaptureCheat == TRUE) && (TrailerMake == FALSE))
 		{
 			AI_Wait(hero,9999);
-			AI_PrintClr("Боги пометили шельму!",177,58,17);
+			AI_PrintClr( "The gods marked the rogue! " , 177 , 58 , 17 );
 
 			if(ATR_INTELLECT > 0)
 			{
 				ATR_INTELLECT -= 1;
-				concatText = ConcatStrings("Завершение игры через ",IntToString(ATR_INTELLECT));
+				concatText = ConcatStrings( " End game in " ,IntToString( ATR_INTELLECT ));
 				concatText = ConcatStrings(concatText," секунд...");
 				AI_PrintClr(concatText,177,58,17);
 			}
@@ -3597,7 +3598,7 @@ func void b_gettime()
 			AI_Teleport(NONE_1801_Fingers,"FT_FINGERS_02");
 			FingersInFort = TRUE;
 			NONE_1801_Fingers.guild = GIL_MIL;
-			B_LogEntry(TOPIC_FingersOpenDoor,"Думаю, что Фингерс должен быть уже в форте.");
+			B_LogEntry(TOPIC_FingersOpenDoor, " I think Fingers should be in the fort already. " );
 		};
 	};
 	if(CurrentLevel == PSICAMP_ZEN) 
@@ -3624,7 +3625,7 @@ func void b_gettime()
 				MIS_GUARDIANS = LOG_Running;
 				Log_CreateTopic(TOPIC_GUARDIANS,LOG_MISSION);
 				Log_SetTopicStatus(TOPIC_GUARDIANS,LOG_Running);
-				B_LogEntry(TOPIC_GUARDIANS,"Что происходит?! Это место просто сводит меня с ума! Ужасная боль пронзает все мое тело и разум охватывает непреодолимый ужас. Думаю, мне стоит повернуть назад, пока еще не поздно...");
+				B_LogEntry( TOPIC_GUARDIANS , " What's going on?! This place is driving me crazy! Terrible pain pierces my entire body and mind is filled with overwhelming horror. I think I should turn back before it's too late... " );
 				hero.attribute[ATR_HITPOINTS] = hero.attribute[ATR_HITPOINTS] - (hero.attribute[ATR_HITPOINTS] / 2);
 				HaosComeWarn = TRUE;
 			};
@@ -3652,12 +3653,12 @@ func void b_gettime()
 		if((UrTrallOkShv == FALSE) && (CurrentLevel == SHVALLEY_ZEN) && (CaptureCheat == TRUE) && (TrailerMake == FALSE))
 		{
 			AI_Wait(hero,9999);
-			AI_PrintClr("Боги пометили шельму!",177,58,17);
+			AI_PrintClr( "The gods marked the rogue! " , 177 , 58 , 17 );
 
 			if(ATR_INTELLECT > 0)
 			{
 				ATR_INTELLECT -= 1;
-				concatText = ConcatStrings("Завершение игры через ",IntToString(ATR_INTELLECT));
+				concatText = ConcatStrings( " End game in " ,IntToString( ATR_INTELLECT ));
 				concatText = ConcatStrings(concatText," секунд...");
 				AI_PrintClr(concatText,177,58,17);
 			}
@@ -3669,26 +3670,26 @@ func void b_gettime()
 	};
 	if(CurrentLevel == ORCMOUNTAIN_ZEN)
 	{
-		if((CurrentLevel == ORCMOUNTAIN_ZEN) && (Npc_HasItems(hero,ItMi_BretMeet) >= 1) && (BretInsert == FALSE))
+		if ((CurrentLevel ==  ORCMOUNTAIN_ZEN ) && (Npc_HasItems(hero,ItMy_BretMeet) >=  1 ) && (BretInsert ==  FALSE )) ;
 		{
 			Wld_InsertNpc(SLD_853_Bret,"OZ_MAN_11");
-			BretInsert = TRUE;
+			BretInsert = TRUE ;
 		};
-		if((CurrentLevel == ORCMOUNTAIN_ZEN) && (MIS_PashalQuest == LOG_SUCCESS) && (DoorPasClosed == FALSE))
+		if ((CurrentLevel ==  ORCMOUNTAIN_ZEN ) && (MY_PashalQuest ==  LOG_SUCCESS ) && (DoorPassClosed ==  FALSE ))
 		{
 			Wld_SendTrigger("EVT_OPENGORKMORKTEMPLEDOOR");
 			DoorPasClosed = TRUE;
 		};
 	};
 
-	//---------------------счетчик бонусов---------------------------------------------
+	// ---------------------bonus counter------------------------- --------------------
 
 	if((MIS_OldTeleports == FALSE) && ((Npc_GetDistToWP(hero,"TP_XARDAS") <= 500) || (Npc_GetDistToWP(hero,"TP_TOWN") <= 500) || (Npc_GetDistToWP(hero,"TP_TAVERNE") <= 500) || (Npc_GetDistToWP(hero,"TP_PSI") <= 500) || (Npc_GetDistToWP(hero,"TP_PASSOW") <= 500) || (Npc_GetDistToWP(hero,"TP_BIGFARM") <= 500) || (Npc_GetDistToWP(hero,"TP_KLOSTER") <= 500) || (Npc_GetDistToWP(hero,"TP_SAGITTA") <= 500) || (Npc_GetDistToWP(hero,"TP_HUNT") <= 500) || (Npc_GetDistToWP(hero,"TP_VINOCAVE") <= 500) || (Npc_GetDistToWP(hero,"TP_SUNCIRCLE") <= 500) || (Npc_GetDistToWP(hero,"TP_ADWRUINS") <= 500) || (Npc_GetDistToWP(hero,"TP_BLACKTROLL") <= 500)))
 	{
 		MIS_OldTeleports = LOG_Running;
 		Log_CreateTopic(TOPIC_OldTeleports,LOG_MISSION);
 		Log_SetTopicStatus(TOPIC_OldTeleports,LOG_Running);
-		B_LogEntry(TOPIC_OldTeleports,"Я нашел очень странного вида камень, весь испещренный рунами и непонятными надписями. Думаю, что стоит расспросить о нем Ксардаса. Возможно, он что-нибудь знает об этом.");
+		B_LogEntry(TOPIC_OldTeleports, " I found a very odd-looking stone covered in runes and strange inscriptions. I think it's worth asking Xardas about it. Perhaps he knows something about it. " );
 	};
 	if(TreasureBonus >= 24)
 	{
@@ -3778,23 +3779,23 @@ func void b_gettime()
 		RankPoints = RankPoints + 10;
 		AI_NoticePrint(3000,4098,NAME_Addon_TalentCount_Smith);
 	};
-	if((InnosBonus == FALSE) && (InnosBonusCount >= 250))
+	if (( InnosBonus ==  FALSE ) && ( InnosBonusCount >=  250 ))
 	{
 		Snd_Play("LevelUp");
 		B_GivePlayerXP(1000);
 		//PrintScreen(PRINT_AchivmentUp,-1,YPOS_LevelUp,FONT_NEWLEVEL,4);
 		//PrintScreen(ConcatStrings(NAME_Addon_InnosBonus,IntToString(1000)),-1,60,FONT_NEWLEVEL,4);
-		InnosBonus = TRUE;
+		InnosBonus = TRUE ;
 		RankPoints = RankPoints + 10;
 		AI_NoticePrint(3000,4098,NAME_Addon_InnosBonus);
 	};
-	if((BeliarBonus == FALSE) && (BeliarBonusCount >= 100))
+	if (( BelieveBonus ==  FALSE ) && ( BelieveBonusCount >=  100 ))
 	{
 		Snd_Play("LevelUp");
 		B_GivePlayerXP(1000);
 		//PrintScreen(PRINT_AchivmentUp,-1,YPOS_LevelUp,FONT_NEWLEVEL,4);
 		//PrintScreen(ConcatStrings(NAME_Addon_BeliarBonus,IntToString(1000)),-1,60,FONT_NEWLEVEL,4);
-		BeliarBonus = TRUE;
+		BeliarBonus = TRUE ;
 		RankPoints = RankPoints + 10;
 		AI_NoticePrint(3000,4098,NAME_Addon_BeliarBonus);
 	};
@@ -3802,7 +3803,7 @@ func void b_gettime()
 	{
 		MIS_PPL_FOR_TOWER = LOG_SUCCESS;
 		Log_SetTopicStatus(TOPIC_PPL_FOR_TOWER,LOG_SUCCESS);
-		B_LogEntry(TOPIC_PPL_FOR_TOWER,"Похоже, мой лагерь полностью укомплектован людьми!");
+		B_LogEntry( TOPIC_PPL_FOR_TOWER , " Looks like my camp is full of people! " );
 	};
 	if((CanBeatRodFistDo == TRUE) && (CanBeatRodFistDone == FALSE) && ((SBMode == TRUE) || (RealMode[2] == TRUE)))
 	{
@@ -3844,7 +3845,7 @@ func void b_gettime()
 		RankPoints = RankPoints + 10;
 		AI_NoticePrint(3000,4098,NAME_Addon_TPBonus);
 	};
-	if((SARG_DIGG >= 18) && (SargBonus == FALSE))
+	if (( SARG_DIGG  >=  18 ) && ( SargBonus ==  FALSE ))
 	{
 		Snd_Play("LevelUp");
 		B_GivePlayerXP(1500);
@@ -3855,11 +3856,11 @@ func void b_gettime()
 		AI_NoticePrint(3000,4098,NAME_Addon_SargBonus);
 	};
 
-	//-----------------перманентные проверки---------------------------------------
+	// ------------------permanent checks----------------------- ----------
 
 	if((MIS_WomanForSkip == LOG_Running) && (SonyaJobDone == FALSE) && (SonyaJob == TRUE) && (SonyaGoWithMeDay != FALSE) && (SonyaGoWithMeDay == (daynow - 3)))
 	{
-		B_LogEntry(TOPIC_WomanForSkip,"Три дня прошло! Теперь надо отвести Соню обратно к Бромору.");
+		B_LogEntry(TOPIC_WomanForSkip, " Three days have passed! Now we need to take Sonya back to Bromor. " );
 		SonyaJobDone = TRUE;
 	};
 	if((MIS_MissOldFriend == LOG_Running) && (FinishSTLSD == TRUE))
@@ -3890,18 +3891,18 @@ func void b_gettime()
 	};
 	if(WayToIrat == TRUE)
 	{
-		Wld_ChangeLevel("DARKWORLD\DARKTEMPLE.ZEN","START_DARKTEMPLE");
-		WayToIrat = FALSE;
+		Wld_ChangeLevel( " DARKWORLD \D ARKTEMPLE.ZEN " , " START_DARKTEMPLE " );
+		WayToIrat = FALSE ;
 	};
  	if(CheckStatusHero[1] == TRUE)
 	{
 		AI_Wait(hero,9999);
-		AI_PrintClr("Боги пометили шельму!",177,58,17);
+		AI_PrintClr( "The gods marked the rogue! " , 177 , 58 , 17 );
 
 		if(ATR_INTELLECT > 0)
 		{
 			ATR_INTELLECT -= 1;
-			concatText = ConcatStrings("Завершение игры через ",IntToString(ATR_INTELLECT));
+			concatText = ConcatStrings( " End game in " ,IntToString( ATR_INTELLECT ));
 			concatText = ConcatStrings(concatText," секунд...");
 			AI_PrintClr(concatText,177,58,17);
 		}
@@ -3910,15 +3911,15 @@ func void b_gettime()
 			ExitSession();
 		};
 	};
-	if((hero.guild != CheckHeroGuild[1]) && (CheckHeroGuild[0] == FALSE) && (hero.guild <= GIL_SEPERATOR_HUM) && (CaptureCheat == TRUE) && (TrailerMake == FALSE))
+	if ((hero.guild != CheckHeroGuild[ 1 ]) && (CheckHeroGuild[ 0 ] ==  FALSE ) && (hero.guild <=  GIL_SEPERATOR_HUM ) && (CaptureCheat ==  TRUE ) && (TrailerMake ==  FALSE )) ;
 	{
 		AI_Wait(hero,9999);
-		AI_PrintClr("Боги пометили шельму!",177,58,17);
+		AI_PrintClr( "The gods marked the rogue! " , 177 , 58 , 17 );
 
 		if(ATR_INTELLECT > 0)
 		{
 			ATR_INTELLECT -= 1;
-			concatText = ConcatStrings("Завершение игры через ",IntToString(ATR_INTELLECT));
+			concatText = ConcatStrings( " End game in " ,IntToString( ATR_INTELLECT ));
 			concatText = ConcatStrings(concatText," секунд...");
 			AI_PrintClr(concatText,177,58,17);
 		}
@@ -3927,15 +3928,15 @@ func void b_gettime()
 			ExitSession();
 		};
 	};
-	if((HEROTRANS == FALSE) && (Mount_Up == FALSE) && (hero.id != FALSE) && (CaptureCheat == TRUE) && (TrailerMake == FALSE))
+	if (( HEROTRANS  ==  FALSE ) && ( Mount_Up ==  FALSE ) && ( hero.id !=  FALSE ) && ( CaptureCheat ==  TRUE ) && ( TrailerMake ==  FALSE ))
 	{
 		AI_Wait(hero,9999);
-		AI_PrintClr("Боги пометили шельму!",177,58,17);
+		AI_PrintClr( "The gods marked the rogue! " , 177 , 58 , 17 );
 
 		if(ATR_INTELLECT > 0)
 		{
 			ATR_INTELLECT -= 1;
-			concatText = ConcatStrings("Завершение игры через ",IntToString(ATR_INTELLECT));
+			concatText = ConcatStrings( " End game in " ,IntToString( ATR_INTELLECT ));
 			concatText = ConcatStrings(concatText," секунд...");
 			AI_PrintClr(concatText,177,58,17);
 		}
@@ -3954,23 +3955,23 @@ func void b_gettime()
 	{
 		if(RestPoolTimer >= 250)
 		{
-			RestPoolTimer = FALSE;
+			RestPoolTimer = FALSE ;
 
 			if(RestPool < 3)
 			{
-				RestPool += 1;
+				RestPool +=  1 ;
 			};
 		}
 		else
 		{
-			RestPoolTimer += 1;
+			RestPoolTimer +=  1 ;
 		};
 	}
 	else
 	{
 		if(RestPoolTimer > 0)
 		{
-			RestPoolTimer = FALSE;
+			RestPoolTimer = FALSE ;
 		};
 	};
 	if(DaySleepHour > 0)
@@ -3998,12 +3999,12 @@ func void b_gettime()
 	};
 	if((NETBEKPOTIONUSED == TRUE) && (NETBEKPOTIONSTOP == FALSE))
 	{
-		TimerNetbekPot += 1;
+		TimerNetbekPot +=  1 ;
 
-		if((TimerNetbekPot >= 200) && (HEROTRANS == FALSE))
+		if ((TimerNetBackupPot >=  200 ) && ( HEROTRANS  ==  FALSE )) ;
 		{
 			NETBEKPOTIONSTOP = TRUE;
-			TimerNetbekPot = FALSE;
+			TimerNetbekPot = FALSE ;
 			hero.flags = NPC_FLAG_NONE;
 			Snd_Play("MFX_MASSDEATH_CAST");
 		};
@@ -4028,7 +4029,7 @@ func void B_DamageCalcRunes()
 			SPL_Damage_DESTROYUNDEAD = 1000 + (ATR_INTELLECT / 2) + ((1000 + (ATR_INTELLECT / 2)) * CountLearnSpell) / 100;
 			SPL_Damage_BreathOfDeath = 750 + (ATR_INTELLECT / 2) + ((750 + (ATR_INTELLECT / 2)) * CountLearnSpell) / 100;
 
-			//--------------руны магов Огня------------
+			// -------------- Runes of the Fire Mages------------
 
 			SPL_Damage_Firebolt = 70 + (ATR_INTELLECT / 2) + ((70 + (ATR_INTELLECT / 2)) * CountLearnSpell) / 100;
 			SPL_DAMAGE_InstantFireball = 150 + (ATR_INTELLECT / 2) + ((150 + (ATR_INTELLECT / 2)) * CountLearnSpell) / 100;
@@ -4043,7 +4044,7 @@ func void B_DamageCalcRunes()
 			SPL_MAGICBURN_DAMAGE_PER_SEC = 50 + (ATR_INTELLECT / 2) + ((50 + (ATR_INTELLECT / 2)) * CountLearnSpell) / 100;
 			SPL_MAGICBURNSHORT_DAMAGE_PER_SEC = 25 + (ATR_INTELLECT / 2) + ((25 + (ATR_INTELLECT / 2)) * CountLearnSpell) / 100;
 
-			//--------------руны магов Воды------------
+			// --------------Water Mage Runes------------
 
 			SPL_Damage_Zap = 40 + (ATR_INTELLECT / 2) + ((40 + (ATR_INTELLECT / 2)) * CountLearnSpell) / 100;
 			SPL_DAMAGE_Icebolt = 90 + (ATR_INTELLECT / 2) + ((90 + (ATR_INTELLECT / 2)) * CountLearnSpell) / 100;
@@ -4057,7 +4058,7 @@ func void B_DamageCalcRunes()
 			SPL_DAMAGE_Thunderstorm = 900 + (ATR_INTELLECT / 2) + ((900 + (ATR_INTELLECT / 2)) * CountLearnSpell) / 100;
 			SPL_FREEZE_DAMAGE = 5 + (ATR_INTELLECT / 2) + ((5 + (ATR_INTELLECT / 2)) * CountLearnSpell) / 100;
 
-			//--------------руны Гуру------------
+			// -------------- Guru runes------------
 
 			SPL_DAMAGE_BERZERK = 50 + ATR_INTELLECT + ((50 + ATR_INTELLECT) * CountLearnSpell) / 100;
 			SPL_Damage_Windfist = 125 + ATR_INTELLECT + ((125 + ATR_INTELLECT) * CountLearnSpell) / 100;
@@ -4067,7 +4068,7 @@ func void B_DamageCalcRunes()
 			SPL_DAMAGE_Quake = 800 + ATR_INTELLECT + ((800 + ATR_INTELLECT) * CountLearnSpell) / 100;
 			SPL_Damage_Extricate = 150 + ATR_INTELLECT + ((150 + ATR_INTELLECT) * CountLearnSpell) / 100;
 
-			//--------------руны Некромантов------------
+			// -------------- Necromancer runes------------
 
 			SPL_DAMAGE_Deathbolt = 80 + (ATR_INTELLECT / 2) + ((80 + (ATR_INTELLECT / 2)) * CountLearnSpell) / 100;
 			SPL_Damage_Lacerate = 150 + (ATR_INTELLECT / 2) + ((150 + (ATR_INTELLECT / 2)) * CountLearnSpell) / 100;
@@ -4091,7 +4092,7 @@ func void B_DamageCalcRunes()
 			SPL_Damage_DESTROYUNDEAD = 1000 + (ATR_INTELLECT / 4) + ((1000 + (ATR_INTELLECT / 4)) * CountLearnSpell) / 100;
 			SPL_Damage_BreathOfDeath = 750 + (ATR_INTELLECT / 4) + ((750 + (ATR_INTELLECT / 4)) * CountLearnSpell) / 100;
 
-			//--------------руны магов Огня------------
+			// -------------- Runes of the Fire Mages------------
 
 			SPL_Damage_Firebolt = 70 + (ATR_INTELLECT / 4) + ((70 + (ATR_INTELLECT / 4)) * CountLearnSpell) / 100;
 			SPL_DAMAGE_InstantFireball = 150 + (ATR_INTELLECT / 4) + ((150 + (ATR_INTELLECT / 4)) * CountLearnSpell) / 100;
@@ -4106,7 +4107,7 @@ func void B_DamageCalcRunes()
 			SPL_MAGICBURN_DAMAGE_PER_SEC = 50 + (ATR_INTELLECT / 4) + ((50 + (ATR_INTELLECT / 4)) * CountLearnSpell) / 100;
 			SPL_MAGICBURNSHORT_DAMAGE_PER_SEC = 25 + (ATR_INTELLECT / 4) + ((25 + (ATR_INTELLECT / 4)) * CountLearnSpell) / 100;
 
-			//--------------руны магов Воды------------
+			// --------------Water Mage Runes------------
 
 			SPL_Damage_Zap = 40 + (ATR_INTELLECT / 4) + ((40 + (ATR_INTELLECT / 4)) * CountLearnSpell) / 100;
 			SPL_DAMAGE_Icebolt = 90 + (ATR_INTELLECT / 4) + ((90 + (ATR_INTELLECT / 4)) * CountLearnSpell) / 100;
@@ -4120,7 +4121,7 @@ func void B_DamageCalcRunes()
 			SPL_DAMAGE_Thunderstorm = 900 + (ATR_INTELLECT / 4) + ((900 + (ATR_INTELLECT / 4)) * CountLearnSpell) / 100;
 			SPL_FREEZE_DAMAGE = 5 + (ATR_INTELLECT / 4) + ((5 + (ATR_INTELLECT / 4)) * CountLearnSpell) / 100;
 
-			//--------------руны Гуру------------
+			// -------------- Guru runes------------
 
 			SPL_DAMAGE_BERZERK = 50 + (ATR_INTELLECT / 4) + ((50 + (ATR_INTELLECT / 4)) * CountLearnSpell) / 100;
 			SPL_Damage_Windfist = 125 + (ATR_INTELLECT / 4) + ((125 + (ATR_INTELLECT / 4)) * CountLearnSpell) / 100;
@@ -4130,7 +4131,7 @@ func void B_DamageCalcRunes()
 			SPL_DAMAGE_Quake = 800 + (ATR_INTELLECT / 4) + ((800 + (ATR_INTELLECT / 4)) * CountLearnSpell) / 100;
 			SPL_Damage_Extricate = 150 + (ATR_INTELLECT / 4) + ((150 + (ATR_INTELLECT / 4)) * CountLearnSpell) / 100;
 
-			//--------------руны Некромантов------------
+			// -------------- Necromancer runes------------
 
 			SPL_DAMAGE_Deathbolt = 80 + (ATR_INTELLECT / 4) + ((80 + (ATR_INTELLECT / 4)) * CountLearnSpell) / 100;
 			SPL_Damage_Lacerate = 150 + (ATR_INTELLECT / 4) + ((150 + (ATR_INTELLECT / 4)) * CountLearnSpell) / 100;
@@ -4157,7 +4158,7 @@ func void B_DamageCalcRunes()
 			SPL_Damage_DESTROYUNDEAD = 1000 + (ATR_INTELLECT / 2);
 			SPL_Damage_BreathOfDeath = 750 + (ATR_INTELLECT / 2);
 
-			//--------------руны магов Огня------------
+			// -------------- Runes of the Fire Mages------------
 
 			SPL_Damage_Firebolt = 70 + (ATR_INTELLECT / 2);
 			SPL_DAMAGE_InstantFireball = 150 + (ATR_INTELLECT / 2);
@@ -4172,7 +4173,7 @@ func void B_DamageCalcRunes()
 			SPL_MAGICBURN_DAMAGE_PER_SEC = 50 + (ATR_INTELLECT / 2);
 			SPL_MAGICBURNSHORT_DAMAGE_PER_SEC = 25 + (ATR_INTELLECT / 2);
 
-			//--------------руны магов Воды------------
+			// --------------Water Mage Runes------------
 
 			SPL_Damage_Zap = 40 + (ATR_INTELLECT / 2);
 			SPL_DAMAGE_Icebolt = 90 + (ATR_INTELLECT / 2);
@@ -4186,7 +4187,7 @@ func void B_DamageCalcRunes()
 			SPL_DAMAGE_Thunderstorm = 900 + (ATR_INTELLECT / 2);
 			SPL_FREEZE_DAMAGE = 5 + (ATR_INTELLECT / 2);
 
-			//--------------руны Гуру------------
+			// -------------- Guru runes------------
 	
 			SPL_DAMAGE_BERZERK = 50 + ATR_INTELLECT;
 			SPL_Damage_Windfist = 125 + ATR_INTELLECT;
@@ -4196,7 +4197,7 @@ func void B_DamageCalcRunes()
 			SPL_DAMAGE_Quake = 800 + ATR_INTELLECT;
 			SPL_Damage_Extricate = 150 + ATR_INTELLECT;
 
-			//--------------руны Некромантов------------
+			// -------------- Necromancer runes------------
 
 			SPL_DAMAGE_Deathbolt = 80 + (ATR_INTELLECT / 2);
 			SPL_Damage_Lacerate = 150 + (ATR_INTELLECT / 2);
@@ -4220,7 +4221,7 @@ func void B_DamageCalcRunes()
 			SPL_Damage_DESTROYUNDEAD = 1000 + (ATR_INTELLECT / 4);
 			SPL_Damage_BreathOfDeath = 750 + (ATR_INTELLECT / 4);
 
-			//--------------руны магов Огня------------
+			// -------------- Runes of the Fire Mages------------
 
 			SPL_Damage_Firebolt = 70 + (ATR_INTELLECT / 4);
 			SPL_DAMAGE_InstantFireball = 150 + (ATR_INTELLECT / 4);
@@ -4235,7 +4236,7 @@ func void B_DamageCalcRunes()
 			SPL_MAGICBURN_DAMAGE_PER_SEC = 50 + (ATR_INTELLECT / 4);
 			SPL_MAGICBURNSHORT_DAMAGE_PER_SEC = 25 + (ATR_INTELLECT / 4);
 
-			//--------------руны магов Воды------------
+			// --------------Water Mage Runes------------
 
 			SPL_Damage_Zap = 40 + (ATR_INTELLECT / 4);
 			SPL_DAMAGE_Icebolt = 90 + (ATR_INTELLECT / 4);
@@ -4249,7 +4250,7 @@ func void B_DamageCalcRunes()
 			SPL_DAMAGE_Thunderstorm = 900 + (ATR_INTELLECT / 4);
 			SPL_FREEZE_DAMAGE = 5 + (ATR_INTELLECT / 4);
 	
-			//--------------руны Гуру------------
+			// -------------- Guru runes------------
 
 			SPL_DAMAGE_BERZERK = 50 + (ATR_INTELLECT / 4);
 			SPL_Damage_Windfist = 125 + (ATR_INTELLECT / 4);
@@ -4259,7 +4260,7 @@ func void B_DamageCalcRunes()
 			SPL_DAMAGE_Quake = 800 + (ATR_INTELLECT / 4);
 			SPL_Damage_Extricate = 150 + (ATR_INTELLECT / 4);
 
-			//--------------руны Некромантов------------
+			// -------------- Necromancer runes------------
 	
 			SPL_DAMAGE_Deathbolt = 80 + (ATR_INTELLECT / 4);
 			SPL_Damage_Lacerate = 150 + (ATR_INTELLECT / 4);
@@ -4358,7 +4359,7 @@ func void B_LOC_TeleportMe_NW()
 	{
 		if(LOC_XARDAS_TP_OK == TRUE)
 		{
-			LOC_XARDAS_TP_OK = FALSE;
+			LOC_XARDAS_TP_OK = FALSE ;
 			Wld_ChangeLevel("NEWWORLD\NEWWORLD.ZEN","TP_XARDAS");
 		}
 		else if(LOC_TOWN_TP_OK == TRUE)
@@ -4366,19 +4367,19 @@ func void B_LOC_TeleportMe_NW()
 			LOC_TOWN_TP_OK = FALSE;
 			Wld_ChangeLevel("NEWWORLD\NEWWORLD.ZEN","TP_TOWN");
 		}			
-		else if(LOC_TAVERNE_TP_OK == TRUE)
+		else  if ( LOC_TAVERNE_TP_OK  ==  TRUE )
 		{
-			LOC_TAVERNE_TP_OK = FALSE;
+			LOC_TAVERNE_TP_OK = FALSE ;
 			Wld_ChangeLevel("NEWWORLD\NEWWORLD.ZEN","TP_TAVERNE");
 		}	
 		else if(LOC_PSI_TP_OK == TRUE)
 		{
-			LOC_PSI_TP_OK = FALSE;
+			LOC_PSI_TP_OK = FALSE ;
 			Wld_ChangeLevel("NEWWORLD\NEWWORLD.ZEN","TP_PSI");
 		}
 		else if(LOC_PASSOW_TP_OK == TRUE)
 		{
-			LOC_PASSOW_TP_OK = FALSE;
+			LOC_PASSOW_TP_OK = FALSE ;
 			Wld_ChangeLevel("NEWWORLD\NEWWORLD.ZEN","TP_PASSOW");
 		}
 		else if(LOC_BIGFARM_TP_OK == TRUE)
@@ -4386,14 +4387,14 @@ func void B_LOC_TeleportMe_NW()
 			LOC_BIGFARM_TP_OK = FALSE;
 			Wld_ChangeLevel("NEWWORLD\NEWWORLD.ZEN","TP_BIGFARM");
 		}
-		else if(LOC_KLOSTER_TP_OK == TRUE)
+		else  if ( LOC_KLOSTER_TP_OK  ==  TRUE )
 		{
-			LOC_KLOSTER_TP_OK = FALSE;
+			LOC_KLOSTER_TP_OK = FALSE ;
 			Wld_ChangeLevel("NEWWORLD\NEWWORLD.ZEN","TP_KLOSTER");
 		}
 		else if(LOC_SAGITTA_TP_OK == TRUE)
 		{
-			LOC_SAGITTA_TP_OK = FALSE;
+			LOC_ARROW_TP_OK = FALSE ;
 			Wld_ChangeLevel("NEWWORLD\NEWWORLD.ZEN","TP_SAGITTA");
 		}
 		else if(LOC_HUNT_TP_OK == TRUE)
@@ -4440,7 +4441,7 @@ func void B_LOC_TeleportMe_OW()
 		}			
 		else if(LOC_SKLEP_TP_OK == TRUE)
 		{
-			LOC_SKLEP_TP_OK = FALSE;
+			LOC_STORE_TP_OK = FALSE ;
 			Wld_ChangeLevel("OLDWORLD\OLDWORLD.ZEN","TP_SKLEP");
 		}	
 		else if(LOC_DARKTOWER_TP_OK == TRUE)
@@ -4460,12 +4461,12 @@ func void B_LOC_TeleportMe_OW()
 		}	
 		else if(LOC_NETBEK_TP_OK == TRUE)
 		{
-			LOC_NETBEK_TP_OK = FALSE;
+			LOC_NETBEK_TP_OK = FALSE ;
 			Wld_ChangeLevel("OLDWORLD\OLDWORLD.ZEN","TP_NETBEK");
 		}	
 		else if(LOC_PASSNW_TP_OK == TRUE)
 		{
-			LOC_PASSNW_TP_OK = FALSE;
+			LOC_PASSNW_TP_OK = FALSE ;
 			Wld_ChangeLevel("OLDWORLD\OLDWORLD.ZEN","TP_PASSNW");
 		};
 	};
@@ -4487,7 +4488,7 @@ func void B_LOC_TeleportMe_AV()
 		}
 		else if(LOC_PASSAV_TP_OK == TRUE)
 		{
-			LOC_PASSAV_TP_OK = FALSE;
+			LOC_PASSAV_TP_OK = FALSE ;
 			Wld_ChangeLevel("ADDON\ADANOSVALLEY.ZEN","TP_PASSAV");
 		}
 		else if(LOC_LIFECIRCLE_TP_OK == TRUE)
@@ -4517,16 +4518,16 @@ func void B_LOC_TeleportMe_OZ()
 
 func void B_LOC_TeleportMe_ADW()
 {
-	if(CurrentLevel != ADDONWORLD_ZEN)
+	if (CurrentLevel !=  ADDONWORLD_ZEN )
 	{
 		if(LOC_ADW_TP_OK == TRUE)
 		{
-			LOC_ADW_TP_OK = FALSE;
+			LOC_ADW_TP_OK = FALSE ;
 			Wld_ChangeLevel("ADDON\ADDONWORLD.ZEN","TP_ADW");
 		}
-		else if(LOC_PIRATCAMP_TP_OK == TRUE)
+		else  if ( LOC_PIRATCAMP_TP_OK  ==  TRUE )
 		{
-			LOC_PIRATCAMP_TP_OK = FALSE;
+			LOC_PIRATCAMP_TP_OK = FALSE ;
 			Wld_ChangeLevel("ADDON\ADDONWORLD.ZEN","TP_PIRATCAMP");
 		};
 	};
@@ -4541,7 +4542,7 @@ func void B_TeleportMe_NW()
 			AI_Teleport(hero,"TP_XARDAS");
 			Wld_PlayEffect("spellFX_Teleport_RING",hero,hero,0,0,0,FALSE);
 			Snd_Play("MFX_SLEEP_CAST");
-			XARDAS_TP_OK = FALSE;
+			XARDAS_TP_OK = FALSE ;
 		}
 		else if(TOWN_TP_OK == TRUE)
 		{
@@ -4550,26 +4551,26 @@ func void B_TeleportMe_NW()
 			Snd_Play("MFX_SLEEP_CAST");
 			TOWN_TP_OK = FALSE;
 		}			
-		else if(TAVERNE_TP_OK == TRUE)
+		else  if ( TAVERNE_TP_OK  ==  TRUE )
 		{
 			AI_Teleport(hero,"TP_TAVERNE");
 			Wld_PlayEffect("spellFX_Teleport_RING",hero,hero,0,0,0,FALSE);
 			Snd_Play("MFX_SLEEP_CAST");
-			TAVERNE_TP_OK = FALSE;
+			TAVERNE_TP_OK = FALSE ;
 		}	
 		else if(PSI_TP_OK == TRUE)
 		{
 			AI_Teleport(hero,"TP_PSI");
 			Wld_PlayEffect("spellFX_Teleport_RING",hero,hero,0,0,0,FALSE);
 			Snd_Play("MFX_SLEEP_CAST");
-			PSI_TP_OK = FALSE;
+			PSI_TP_OK = FALSE ;
 		}
 		else if(PASSOW_TP_OK == TRUE)
 		{
 			AI_Teleport(hero,"TP_PASSOW");
 			Wld_PlayEffect("spellFX_Teleport_RING",hero,hero,0,0,0,FALSE);
 			Snd_Play("MFX_SLEEP_CAST");
-			PASSOW_TP_OK = FALSE;
+			PASSOW_TP_OK = FALSE ;
 		}
 		else if(BIGFARM_TP_OK == TRUE)
 		{
@@ -4578,19 +4579,19 @@ func void B_TeleportMe_NW()
 			Snd_Play("MFX_SLEEP_CAST");
 			BIGFARM_TP_OK = FALSE;
 		}
-		else if(KLOSTER_TP_OK == TRUE)
+		else  if ( KLOSTER_TP_OK  ==  TRUE )
 		{
 			AI_Teleport(hero,"TP_KLOSTER");
 			Wld_PlayEffect("spellFX_Teleport_RING",hero,hero,0,0,0,FALSE);
 			Snd_Play("MFX_SLEEP_CAST");
-			KLOSTER_TP_OK = FALSE;
+			KLOSTER_TP_OK = FALSE ;
 		}
 		else if(SAGITTA_TP_OK == TRUE)
 		{
-			AI_Teleport(hero,"TP_SAGITTA");
+			AI_Teleport(hero, " TP_ARROW " );
 			Wld_PlayEffect("spellFX_Teleport_RING",hero,hero,0,0,0,FALSE);
 			AI_PlayAni(hero,"T_HEASHOOT_2_STAND");
-			SAGITTA_TP_OK = FALSE;
+			ARROW_TP_OK = FALSE ;
 		}
 		else if(HUNT_TP_OK == TRUE)
 		{
@@ -4653,7 +4654,7 @@ func void B_TeleportMe_OW()
 			AI_Teleport(hero,"TP_SKLEP");
 			Wld_PlayEffect("spellFX_Teleport_RING",hero,hero,0,0,0,FALSE);
 			Snd_Play("MFX_SLEEP_CAST");
-			SKLEP_TP_OK = FALSE;
+			STORE_TP_OK = FALSE ;
 		}	
 		else if(DARKTOWER_TP_OK == TRUE)
 		{
@@ -4681,7 +4682,7 @@ func void B_TeleportMe_OW()
 			AI_Teleport(hero,"TP_NETBEK");
 			Wld_PlayEffect("spellFX_Teleport_RING",hero,hero,0,0,0,FALSE);
 			Snd_Play("MFX_SLEEP_CAST");
-			NETBEK_TP_OK = FALSE;
+			NETBEK_TP_OK = FALSE ;
 		}	
 		else if(PASSNW_TP_OK == TRUE)
 		{
@@ -4709,14 +4710,14 @@ func void B_TeleportMe_AV()
 			AI_Teleport(hero,"TP_PYRAMIDE");
 			Wld_PlayEffect("spellFX_Teleport_RING",hero,hero,0,0,0,FALSE);
 			Snd_Play("MFX_SLEEP_CAST");
-			PYRAMIDE_TP_OK = FALSE;
+			PYRAMID_TP_OK = FALSE ;
 		}
 		else if(PASSAV_TP_OK == TRUE)
 		{
 			AI_Teleport(hero,"TP_PASSAV");
 			Wld_PlayEffect("spellFX_Teleport_RING",hero,hero,0,0,0,FALSE);
 			Snd_Play("MFX_SLEEP_CAST");
-			PASSAV_TP_OK = FALSE;
+			PASSAV_TP_OK = FALSE ;
 		}
 		else if(LIFECIRCLE_TP_OK == TRUE)
 		{
@@ -4761,21 +4762,21 @@ func void B_TeleportMe_OZ()
 
 func void B_TeleportMe_ADW()
 {
-	if(CurrentLevel == ADDONWORLD_ZEN)
+	if (CurrentLevel ==  ADDONWORLD_ZEN )
 	{
 		if(ADW_TP_OK == TRUE)
 		{
 			AI_Teleport(hero,"TP_ADW");
 			Wld_PlayEffect("spellFX_Teleport_RING",hero,hero,0,0,0,FALSE);
 			Snd_Play("MFX_SLEEP_CAST");
-			ADW_TP_OK = FALSE;
+			ADW_TP_OK = FALSE ;
 		}
-		else if(PIRATCAMP_TP_OK == TRUE)
+		else  if ( PIRATCAMP_TP_OK  ==  TRUE )
 		{
 			AI_Teleport(hero,"TP_PIRATCAMP");
 			Wld_PlayEffect("spellFX_Teleport_RING",hero,hero,0,0,0,FALSE);
 			Snd_Play("MFX_SLEEP_CAST");
-			PIRATCAMP_TP_OK = FALSE;
+			PIRATECAMP_TP_OK = FALSE ;
 		};
 	};
 };
@@ -4845,7 +4846,7 @@ func void B_InitMunitionLoad()
 			if(Use_Bolt == TRUE)
 			{
 				weapon.munition = ItRw_Bolt;
-				Use_MagicBolt = FALSE;
+				Use_MagicBolt = FALSE ;
 				Use_HolyBolt = FALSE;
 			}
 			else if(Use_MagicBolt == TRUE)
@@ -4858,13 +4859,13 @@ func void B_InitMunitionLoad()
 			{
 				weapon.munition = ItRw_HolyBolt;
 				Use_Bolt = FALSE;
-				Use_MagicBolt = FALSE;
+				Use_MagicBolt = FALSE ;
 			}
 			else
 			{
 				weapon.munition = ItRw_Bolt;
 				Use_Bolt = TRUE;
-				Use_MagicBolt = FALSE;
+				Use_MagicBolt = FALSE ;
 				Use_HolyBolt = FALSE;
 			};
 		};
@@ -5083,7 +5084,7 @@ func void B_CheckTrophy()
 	};
 };
 
-var int CountTiks;
+var int countTiks;
 var int CountTiksSH;
 var int CountTiksGlb_Stam;
 var int CountTiks_2x2_L;
@@ -5091,14 +5092,14 @@ var int CountTiksSH_L;
 var int CountTiks_Staff;
 var int CountTiks_OrcWeapon;
 var int CountTiks_Swim;
-var int CountTiks_Stam;
-var int CountTiks_StamFar;
-var int ShieldTiks_Stam;
+var int CountTiks_Stem;
+var int CountTiks_StemFar;
+var int ShieldTiks_Stem;
 var int JumpDone;
 var int HeroDrunkCount;
 var int IsNpcReactTime;
 var int TempMagicCircle;
-var int TempheroLevel;
+var int TemperatureLevel;
 var int TempTransTime;
 var int ObsessedTick;
 var int FocusIsDone;
@@ -5106,7 +5107,7 @@ var int TempSwimTick;
 var int RainDayCount;
 var int SunDownDayCount;
 var int SunRiseDayCount;
-var int PashalSVM;
+var int PaschalSVM;
 var int FixSteal;
 
 func void Hero_poisoned()
@@ -5118,7 +5119,7 @@ func void Hero_poisoned()
 	var C_Npc npc;
 	var C_Npc MountCrt;
 	var C_Npc herz;
-	var C_Npc xardascheck;
+	var C_Npc xardas check;
 	var C_NPC FocusNPC;
 	var string comtext;
 	var string inst_id;
@@ -5129,7 +5130,7 @@ func void Hero_poisoned()
 	var c_item CurHlm;
 	var int TempSwimDelta;
 	var int TempArmorStamina;
-	var int tempaim;
+	var int temp;
 	var int TempHungerThirstDeBuff;
 	var int TempDayNow;
 	var int tempcurmaxstam;
@@ -5140,7 +5141,7 @@ func void Hero_poisoned()
 	var int ResetRandom;
 	var int TempHealth;
 	var int TempCritHealth;
-	var int randsiz;
+	be int randsiz;
 	var int PaleCrawler_RandyAttack;
 	var int AraharPlague_RandyAttack;
 	var int DamageAraharPlagueAOE;
@@ -5159,14 +5160,14 @@ func void Hero_poisoned()
 
 	TempDayNow = Wld_GetDay();
 
-	//Титры
+	// Titles
 	
 	if(PrologCredits == FALSE)
 	{
 		if(PrologCount == 0)
 		{
 			ShakoIsOn[0] = FALSE;
-			Kapitel = 1;
+			chapter = 1 ;
 			Hero_HackChance = 0;
 			HERO_HACKCHANCEORE = 0;
 			INNOSPRAYCOUNT = 0;
@@ -5183,8 +5184,8 @@ func void Hero_poisoned()
  			Menu_WriteInt("GAME","subTitlesPlayer",1);
  			Menu_WriteInt("GAME","spawnRemoveNpcOnlyIfEmpty",1);
  			Menu_WriteInt("GAME","spawnUseDeadNpcRoutinePos",1);
-			CraitLvl = 1;
-			CraitExpLvl = 0;
+			CraitLvl = 1 ;
+			CraitExpLvl = 0 ;
 			CraitExpLvl_Next = 500;
 			Npc_ModifyBodyState(hero,0,BS_MOD_CONTROLLED);
 			StaminaBar.bShow = 0;
@@ -5225,8 +5226,8 @@ func void Hero_poisoned()
 		else if(PrologCount == 53)
 		{
 			Snd_Play("MFX_THUNDERSTORM_THUNDER");
-			AI_NoticePrint(500,7000,"Хоринис - Башня Ксардаса");
-			//PrintScreen("Хоринис - Башня Ксардаса",-1,85,FONT_NEWLEVEL,5);
+			AI_NoticePrint( 500 , 7000 , " Khorinis - Tower of Xardas " );
+			// PrintScreen("Khorinis - Bashnya Ksardasa",-1,85,FONT_NEWLEVEL,5);
 		}
 		else if(PrologCount == 58)
 		{
@@ -5239,8 +5240,8 @@ func void Hero_poisoned()
 	};
 	if((ENDGAMECREDITS == TRUE) && (EpilogeGame == FALSE))
 	{
-		bManaBar = 0;
-		bHealthBar = 0;
+		bManaBar = 0 ;
+		bHealthBar = 0 ;
 		CamModeOn = TRUE;
 		Npc_ModifyBodyState(hero,0,BS_MOD_CONTROLLED);
 
@@ -5254,199 +5255,199 @@ func void Hero_poisoned()
 			AI_Wait(hero,9999);
 			Snd_Play("ENDGAME");
 			Wld_PlayEffect("ENDGAME_FX_01",hero,hero,0,0,0,FALSE);
-			PrintScreen("Над созданием модификации работали:",-1,85,FONT_ScreenSmall,5);
+			PrintScreen( " The modification was created by: " , - 1 , 85 ,FONT_ScreenSmall, 5 );
 		}
 		else if(EpilogeCount == 13)
 		{
 			PrintScreen("TRAZEGE",-1,85,FONT_Prolog,8);
-			PrintScreen("- автор и создатель модификации -",-1,92,FONT_ScreenSmall,8);
+			PrintScreen( " - author and creator of the modification - " , - 1 , 92 ,FONT_ScreenSmall, 8 );
 		}
 		else if(EpilogeCount == 22)
 		{
 			PrintScreen("MaGoth",-1,85,FONT_Prolog,3);
-			PrintScreen("- разработка SystemPack, создание установщика -",-1,92,FONT_ScreenSmall,3);
+			PrintScreen( " - SystemPack development, installer creation - " , - 1 , 92 ,FONT_ScreenSmall, 3 );
 		}
 		else if(EpilogeCount == 26)
 		{
 			PrintScreen("Saturas",-1,85,FONT_Prolog,3);
-			PrintScreen("- разработка AST версии мода -",-1,92,FONT_ScreenSmall,3);
+			PrintScreen( " - development of the AST version of the mod - " , - 1 , 92 ,FONT_ScreenSmall, 3 );
 		}
 		else if(EpilogeCount == 30)
 		{
 			PrintScreen("Alex_Draven",-1,85,FONT_Prolog,3);
-			PrintScreen("- создание моделей и анимации -",-1,92,FONT_ScreenSmall,3);
+			PrintScreen( " - creating models and animations - " , - 1 , 92 ,FONT_ScreenSmall, 3 );
 		}
 		else if(EpilogeCount == 34)
 		{
 			PrintScreen("Gratt",-1,85,FONT_Prolog,3);
-			PrintScreen("- создание моделей и анимации -",-1,92,FONT_ScreenSmall,3);
+			PrintScreen( " - creating models and animations - " , - 1 , 92 ,FONT_ScreenSmall, 3 );
 		}
 		else if(EpilogeCount == 38)
 		{
 			PrintScreen("Yelawolf",-1,85,FONT_Prolog,3);
-			PrintScreen("- информационная поддержка, лайтпак текстур -",-1,92,FONT_ScreenSmall,3);
+			PrintScreen( " - info support, texture lightpack - " , - 1 , 92 ,FONT_ScreenSmall, 3 );
 		}
 		else if(EpilogeCount == 42)
 		{
 			PrintScreen("Hokurn",-1,85,FONT_Prolog,3);
-			PrintScreen("- тестирование и идеи -",-1,92,FONT_ScreenSmall,3);
+			PrintScreen( " - testing and ideas - " , - 1 , 92 ,FONT_ScreenSmall, 3 );
 		}
 		else if(EpilogeCount == 46)
 		{
-			PrintScreen("Стражник",-1,85,FONT_Prolog,3);
-			PrintScreen("- тестирование и идеи -",-1,92,FONT_ScreenSmall,3);
+			PrintScreen( " Guard " , - 1 , 85 ,FONT_Prolog, 3 );
+			PrintScreen( " - testing and ideas - " , - 1 , 92 ,FONT_ScreenSmall, 3 );
 		}
 		else if(EpilogeCount == 50)
 		{
-			PrintScreen("MastBo",-1,85,FONT_Prolog,3);
-			PrintScreen("- тестирование и идеи -",-1,92,FONT_ScreenSmall,3);
+			PrintScreen( " MastBo " , - 1 , 85 ,FONT_Prolog, 3 );
+			PrintScreen( " - testing and ideas - " , - 1 , 92 ,FONT_ScreenSmall, 3 );
 		}
 		else if(EpilogeCount == 54)
 		{
 			PrintScreen("Alex1",-1,85,FONT_Prolog,3);
-			PrintScreen("- тестирование и идеи -",-1,92,FONT_ScreenSmall,3);
+			PrintScreen( " - testing and ideas - " , - 1 , 92 ,FONT_ScreenSmall, 3 );
 		}
 		else if(EpilogeCount == 58)
 		{
-			PrintScreen("Любава",-1,85,FONT_Prolog,3);
-			PrintScreen("- тестирование и идеи -",-1,92,FONT_ScreenSmall,3);
+			PrintScreen( " Love " , - 1 , 85 , FONT_Prolog , 3 );
+			PrintScreen( " - testing and ideas - " , - 1 , 92 ,FONT_ScreenSmall, 3 );
 		}
 		else if(EpilogeCount == 62)
 		{
 			PrintScreen("Алекс",-1,85,FONT_Prolog,3);
-			PrintScreen("- тестирование и идеи -",-1,92,FONT_ScreenSmall,3);
+			PrintScreen( " - testing and ideas - " , - 1 , 92 ,FONT_ScreenSmall, 3 );
 		}
 		else if(EpilogeCount == 66)
 		{
 			PrintScreen("Xterm",-1,85,FONT_Prolog,3);
-			PrintScreen("- тестирование и идеи -",-1,92,FONT_ScreenSmall,3);
+			PrintScreen( " - testing and ideas - " , - 1 , 92 ,FONT_ScreenSmall, 3 );
 		}
 		else if(EpilogeCount == 70)
 		{
 			PrintScreen("Ян75",-1,85,FONT_Prolog,3);
-			PrintScreen("- тестирование и идеи -",-1,92,FONT_ScreenSmall,3);
+			PrintScreen( " - testing and ideas - " , - 1 , 92 ,FONT_ScreenSmall, 3 );
 		}
 		else if(EpilogeCount == 74)
 		{
 			PrintScreen("Begun",-1,85,FONT_Prolog,3);
-			PrintScreen("- тестирование и идеи -",-1,92,FONT_ScreenSmall,3);
+			PrintScreen( " - testing and ideas - " , - 1 , 92 ,FONT_ScreenSmall, 3 );
 		}
 		else if(EpilogeCount == 78)
 		{
-			PrintScreen("Ариовист",-1,85,FONT_Prolog,3);
-			PrintScreen("- тестирование и идеи -",-1,92,FONT_ScreenSmall,3);
+			PrintScreen( " Ariovist " , - 1 , 85 ,FONT_Prolog, 3 );
+			PrintScreen( " - testing and ideas - " , - 1 , 92 ,FONT_ScreenSmall, 3 );
 		}
 		else if(EpilogeCount == 82)
 		{
 			PrintScreen("Oddler",-1,85,FONT_Prolog,3);
-			PrintScreen("- тестирование и идеи -",-1,92,FONT_ScreenSmall,3);
+			PrintScreen( " - testing and ideas - " , - 1 , 92 ,FONT_ScreenSmall, 3 );
 		}
 		else if(EpilogeCount == 86)
 		{
-			PrintScreen("Особенная благодарность разработчикам Gothic SystemPack:",-1,85,FONT_ScreenSmall,3);
-			PrintScreen("KuDeSnik, Guzz aka killer-m, Мухомор",-1,90,FONT_Prolog,3);
+			PrintScreen( " Special thanks to the developers of Gothic SystemPack: " , - 1 , 85 ,FONT_ScreenSmall, 3 );
+			PrintScreen( " KuDeSnik, Guzz aka killer-m, Amanita " , - 1 , 90 ,FONT_Prolog, 3 );
 		}
 		else if(EpilogeCount == 90)
 		{
-			PrintScreen("Озвучивали модификацию:",-1,85,FONT_ScreenSmall,3);
+			PrintScreen( " Voiced modification: " , - 1 , 85 ,FONT_ScreenSmall, 3 );
 		}
 		else if(EpilogeCount == 94)
 		{
 			PrintScreen("!sTaR",-1,85,FONT_Prolog,3);
-			PrintScreen("- озвучено более 100 персонажей модификации -",-1,92,FONT_ScreenSmall,3);
+			PrintScreen( " - more than 100 modification characters have been voiced - " , - 1 , 92 ,FONT_ScreenSmall, 3 );
 		}
 		else if(EpilogeCount == 100)
 		{
 			PrintScreen("Adept",-1,85,FONT_Prolog,3);
-			PrintScreen("- озвучено более 75 персонажей модификации, нарезка и редакция диалогов -",-1,92,FONT_ScreenSmall,3);
+			PrintScreen( " - more than 75 modification characters voiced, cutting and editing dialogues - " , - 1 , 92 ,FONT_ScreenSmall, 3 );
 		}
 		else if(EpilogeCount == 106)
 		{
-			PrintScreen("Пётр Иващенко 'Гланц'",-1,85,FONT_Prolog,3);
-			PrintScreen("- озвучивание главного героя (более 10000 реплик) -",-1,92,FONT_ScreenSmall,3);
+			PrintScreen( " Piotr Ivashchenko 'Glantz' " , - 1 , 85 ,FONT_Prolog, 3 );
+			PrintScreen( " - voicing of the main character (more than 10000 lines) - " , - 1 , 92 ,FONT_ScreenSmall, 3 );
 		}
 		else if(EpilogeCount == 110)
 		{
-			PrintScreen("Александр Коврижных",-1,85,FONT_Prolog,3);
-			PrintScreen("- озвучивание персонажей (оригинал Г2) -",-1,92,FONT_ScreenSmall,3);
+			PrintScreen( " Alexander Kovrizhnykh " , - 1 , 85 ,FONT_Prolog, 3 );
+			PrintScreen( " - dubbing characters (original G2) - " , - 1 , 92 ,FONT_ScreenSmall, 3 );
 		}
 		else if(EpilogeCount == 114)
 		{
-			PrintScreen("Гор На Драк",-1,85,FONT_Prolog,3);
-			PrintScreen("- озвучивание персонажей -",-1,92,FONT_ScreenSmall,3);
+			PrintScreen( " Go to Fight " , - 1 , 85 ,FONT_Prolog, 3 );
+			PrintScreen( " - dubbing characters - " , - 1 , 92 ,FONT_ScreenSmall, 3 );
 		}
 		else if(EpilogeCount == 118)
 		{
 			PrintScreen("AlexBel",-1,85,FONT_Prolog,3);
-			PrintScreen("- озвучивание персонажей -",-1,92,FONT_ScreenSmall,3);
+			PrintScreen( " - dubbing characters - " , - 1 , 92 ,FONT_ScreenSmall, 3 );
 		}
 		else if(EpilogeCount == 122)
 		{
 			PrintScreen("Blade",-1,85,FONT_Prolog,3);
-			PrintScreen("- озвучивание персонажей -",-1,92,FONT_ScreenSmall,3);
+			PrintScreen( " - dubbing characters - " , - 1 , 92 ,FONT_ScreenSmall, 3 );
 		}
 		else if(EpilogeCount == 126)
 		{
-			PrintScreen("Сергей Сокол",-1,85,FONT_Prolog,3);
-			PrintScreen("- озвучивание персонажей (лидер группы 'Виконт')-",-1,92,FONT_ScreenSmall,3);
+			PrintScreen( " Sergey Sokol " , - 1 , 85 ,FONT_Prolog, 3 );
+			PrintScreen( " - voicing characters (group leader 'Viscount') - " , - 1 , 92 ,FONT_ScreenSmall, 3 );
 		}
 		else if(EpilogeCount == 130)
 		{
 			PrintScreen("Koloyar",-1,85,FONT_Prolog,3);
-			PrintScreen("- озвучивание персонажей -",-1,92,FONT_ScreenSmall,3);
+			PrintScreen( " - dubbing characters - " , - 1 , 92 ,FONT_ScreenSmall, 3 );
 		}
 		else if(EpilogeCount == 134)
 		{
 			PrintScreen("Inear",-1,85,FONT_Prolog,3);
-			PrintScreen("- озвучивание персонажей -",-1,92,FONT_ScreenSmall,3);
+			PrintScreen( " - dubbing characters - " , - 1 , 92 ,FONT_ScreenSmall, 3 );
 		}
 		else if(EpilogeCount == 138)
 		{
 			PrintScreen("Naja",-1,85,FONT_Prolog,3);
-			PrintScreen("- озвучивание персонажей -",-1,92,FONT_ScreenSmall,3);
+			PrintScreen( " - dubbing characters - " , - 1 , 92 ,FONT_ScreenSmall, 3 );
 		}
 		else if(EpilogeCount == 142)
 		{
 			PrintScreen("Gerard",-1,85,FONT_Prolog,3);
-			PrintScreen("- озвучивание персонажей -",-1,92,FONT_ScreenSmall,3);
+			PrintScreen( " - dubbing characters - " , - 1 , 92 ,FONT_ScreenSmall, 3 );
 		}
 		else if(EpilogeCount == 146)
 		{
 			PrintScreen("Dennis",-1,85,FONT_Prolog,3);
-			PrintScreen("- озвучивание персонажей -",-1,92,FONT_ScreenSmall,3);
+			PrintScreen( " - dubbing characters - " , - 1 , 92 ,FONT_ScreenSmall, 3 );
 		}
 		else if(EpilogeCount == 150)
 		{
 			PrintScreen("Taja",-1,85,FONT_Prolog,3);
-			PrintScreen("- озвучивание персонажей -",-1,92,FONT_ScreenSmall,3);
+			PrintScreen( " - dubbing characters - " , - 1 , 92 ,FONT_ScreenSmall, 3 );
 		}
 		else if(EpilogeCount == 154)
 		{
-			PrintScreen("Шурик Ом",-1,85,FONT_Prolog,3);
-			PrintScreen("- озвучивание персонажей -",-1,92,FONT_ScreenSmall,3);
+			PrintScreen( " Shurik Om " , - 1 , 85 ,FONT_Prolog, 3 );
+			PrintScreen( " - dubbing characters - " , - 1 , 92 ,FONT_ScreenSmall, 3 );
 		}
 		else if(EpilogeCount == 158)
 		{
 			PrintScreen("Hullabaloo",-1,85,FONT_Prolog,3);
-			PrintScreen("- озвучивание персонажей -",-1,92,FONT_ScreenSmall,3);
+			PrintScreen( " - dubbing characters - " , - 1 , 92 ,FONT_ScreenSmall, 3 );
 		}
 		else if(EpilogeCount == 162)
 		{
-			PrintScreen("Химера",-1,85,FONT_Prolog,3);
-			PrintScreen("- озвучивание персонажей -",-1,92,FONT_ScreenSmall,3);
+			PrintScreen( " Chimera " , - 1 , 85 ,FONT_Prolog, 3 );
+			PrintScreen( " - dubbing characters - " , - 1 , 92 ,FONT_ScreenSmall, 3 );
 		}
 		else if(EpilogeCount == 166)
 		{
 			PrintScreen("107",-1,85,FONT_Prolog,3);
-			PrintScreen("- нарезка персонажей -",-1,92,FONT_ScreenSmall,3);
+			PrintScreen( " - slicing characters - " , - 1 , 92 ,FONT_ScreenSmall, 3 );
 		}
 		else if(EpilogeCount == 170)
 		{
-			PrintScreen("В разработке были задействованы материалы следующих модификаций:",-1,85,FONT_ScreenSmall,3);
+			PrintScreen( " The materials of the following modifications were involved in the development: " , - 1 , 85 ,FONT_ScreenSmall, 3 );
 		}
 		else if(EpilogeCount == 174)
 		{
-			PrintScreen("Темная Сага (The Dark Saga)",-1,85,FONT_Prolog,3);
+			PrintScreen( " The Dark Saga " , - 1 , 85 ,FONT_Prolog, 3 );
 			PrintScreen("- автор: SAGA-Team -",-1,92,FONT_ScreenSmall,3);
 		}
 		else if(EpilogeCount == 178)
@@ -5456,37 +5457,37 @@ func void Hero_poisoned()
 		}
 		else if(EpilogeCount == 182)
 		{
-			PrintScreen("Яктиль (Jaktyl)",-1,85,FONT_Prolog,3);
+			PrintScreen( " Jaktyl (Jaktyl) " , - 1 , 85 ,FONT_Prolog, 3 );
 			PrintScreen("- автор: Caphalor & HanterDakness -",-1,92,FONT_ScreenSmall,3);
 		}
 		else if(EpilogeCount == 186)
 		{
-			PrintScreen("Отбросы общества (Die Gemeinschaft des Grauens)",-1,85,FONT_Prolog,3);
+			PrintScreen( " Dregs of society (Die Gemeinschaft des Grauens) " , - 1 , 85 ,FONT_Prolog, 3 );
 			PrintScreen("- автор: Milgo & Freddy -",-1,92,FONT_ScreenSmall,3);
 		}
 		else if(EpilogeCount == 190)
 		{
-			PrintScreen("Пакт Зла (Der Pakt des Bosen)",-1,85,FONT_Prolog,3);
+			PrintScreen( " Pact of Evil (Der Pakt des Bosen) " , - 1 , 85 ,FONT_Prolog, 3 );
 			PrintScreen("- автор: Sharkdata Modteam -",-1,92,FONT_ScreenSmall,3);
 		}
 		else if(EpilogeCount == 194)
 		{
-			PrintScreen("Жизнь пирата (Piratenleben)",-1,85,FONT_Prolog,3);
+			PrintScreen( " Life of a Pirate (Piratenleben) " , - 1 , 85 ,FONT_Prolog, 3 );
 			PrintScreen("- автор: Freddy & Fizzban -",-1,92,FONT_ScreenSmall,3);
 		}
 		else if(EpilogeCount == 198)
 		{
-			PrintScreen("Долгий путь домой (The long voyage home)",-1,85,FONT_Prolog,3);
+			PrintScreen( " The long voyage home) " , - 1 , 85 ,FONT_Prolog, 3 );
 			PrintScreen("- автор: Alex_Draven, MaGoth -",-1,92,FONT_ScreenSmall,3);
 		}
 		else if(EpilogeCount == 202)
 		{
-			PrintScreen("Из жизни вора (Aus dem Leben eines Diebes)",-1,85,FONT_Prolog,3);
-			PrintScreen("- автор: Team K (Kurzer, Klabautermann, harhar!) -",-1,92,FONT_ScreenSmall,3);
+			PrintScreen( " From the life of a thief (Aus dem Leben eines Diebes) " , - 1 , 85 ,FONT_Prolog, 3 );
+			PrintScreen( " - автор: Team K (Short, Klabautermann, harhar!) - " , - 1 , 92 ,FONT_ScreenSmall, 3 );
 		}
 		else if(EpilogeCount == 206)
 		{
-			PrintScreen("Ужас кладбища (Laer Gjoll – Horror of cematary)",-1,85,FONT_Prolog,3);
+			PrintScreen( " Graveyard Horror (Laer Gjoll – Horror of cematary) " , - 1 , 85 ,FONT_Prolog, 3 );
 			PrintScreen("- автор: FaWl MT -",-1,92,FONT_ScreenSmall,3);
 		}
 		else if(EpilogeCount == 210)
@@ -5496,7 +5497,7 @@ func void Hero_poisoned()
 		}
 		else if(EpilogeCount == 214)
 		{
-			PrintScreen("Юран (Juran)",-1,85,FONT_Prolog,3);
+			PrintScreen( " Juran (Juran) " , - 1 , 85 ,FONT_Prolog, 3 );
 			PrintScreen("- автор: ThomasBausB -",-1,92,FONT_ScreenSmall,3);
 		}
 		else if(EpilogeCount == 218)
@@ -5511,26 +5512,26 @@ func void Hero_poisoned()
 		}
 		else if(EpilogeCount == 226)
 		{
-			PrintScreen("Золотые ворота (Zlote Wrota)",-1,85,FONT_Prolog,3);
+			PrintScreen( " Golden Gate (Zlote Wrota) " , - 1 , 85 ,FONT_Prolog, 3 );
 			PrintScreen("- автор: Zlote Wrota Team -",-1,92,FONT_ScreenSmall,3);
 		}
 		else if(EpilogeCount == 230)
 		{
-			PrintScreen("Час Расплаты (Czas Zaplaty)",-1,85,FONT_Prolog,3);
+			PrintScreen( " Hour of Reckoning (Czas Zaplaty) " , - 1 , 85 ,FONT_Prolog, 3 );
 			PrintScreen("- автор: The Modders -",-1,92,FONT_ScreenSmall,3);
 		}
 		else if(EpilogeCount == 234)
 		{
-			PrintScreen("и прочее...",-1,85,FONT_Prolog,3);
+			PrintScreen( " etc... " , - 1 , 85 ,FONT_Prolog, 3 );
 		}
 		else if(EpilogeCount == 238)
 		{
-			PrintScreen("За что, Trazege и команда разработчиков",-1,85,FONT_ScreenSmall,4);
-			PrintScreen("выражают им искреннюю благодарность!",-1,90,FONT_ScreenSmall,4);
+			PrintScreen( " For what, Trazege and the development team " , - 1 , 85 ,FONT_ScreenSmall, 4 );
+			PrintScreen( " thanks them sincerely! " , - 1 , 90 ,FONT_ScreenSmall, 4 );
 		}
 		else if(EpilogeCount == 242)
 		{
-			PrintScreen("Возвращение 2.0a",-1,85,FONT_Prolog,11);
+			PrintScreen( " Return 2.0a " , - 1 , 85 ,FONT_Prolog, 11 );
 			PrintScreen("- Trazege & Returning ModTeam, 2015 -",-1,92,FONT_ScreenSmall,6);
 		}
 		else if(EpilogeCount == 246)
@@ -5540,12 +5541,12 @@ func void Hero_poisoned()
 			ExitSession();
 		};
 
-		EpilogeCount = EpilogeCount + 1;
+		EpilogueCount = EpilogueCount +  1 ;
 	};
 	if(ShutDownGame == TRUE)
 	{
 		tmpShutDownGame += 1;
-		comtext = ConcatStrings("Завершение игры через ",IntToString(6 - tmpShutDownGame));
+		comtext = ConcatStrings( " End game in " ,IntToString( 6  - tmpShutDownGame));
 		comtext = ConcatStrings(comtext," секунд...");
 		AI_PrintClr(comtext,177,58,17);
 
@@ -5567,7 +5568,7 @@ func void Hero_poisoned()
 		TempCritHealth = TempHealth / 2;
 	};
 
-	//-------------------Загрузка------------------------------
+	// -------------------Loading---------------------- --
 
 	if((GameReload == TRUE) && (CanChangeItem == TRUE))
 	{
@@ -5577,7 +5578,7 @@ func void Hero_poisoned()
 		if(RealMode == TRUE)
 		{
 			RealMode[2] = TRUE;
-			RealMode = FALSE;
+			RealMode = FALSE ;
 		};
 		if(FixSteal == FALSE)
 		{
@@ -5595,25 +5596,25 @@ func void Hero_poisoned()
 
 		threatPosX = FALSE;
 		canintPosX = FALSE;
-		acrobatPosX = FALSE;
-		sprintPosX = FALSE;
+		acrobatPosX = FALSE ;
+		sprintPosX = FALSE ;
 		iceshieldPosX = FALSE;
 		fireshieldPosX = FALSE;
 		healthPosX = FALSE;
-		manaPosX = FALSE;
-		regenmobsPosX = FALSE;
-		ogonekPosX = FALSE;
+		powerPosX = FALSE ;
+		rainmobsPosX = FALSE ;
+		tailPosX = FALSE ;
 
 		threatST = FALSE;
-		canintST = FALSE;
+		canintST = FALSE ;
 		acrobatST = FALSE;
 		sprintST = FALSE;
 		iceshieldST = FALSE;
 		fireshieldST = FALSE;
 		healthST = FALSE;
-		manaST = FALSE;
-		regenmobsST = FALSE;
-		ogonekST = FALSE;
+		disadvantage = FALSE ;
+		rain mobsST = FALSE ;
+		ogonekST = FALSE ;
 
 		PressedFeithgt = FALSE;
 		bSprintTime = FALSE;
@@ -5628,10 +5629,10 @@ func void Hero_poisoned()
 
 		CheckRoomPresense = TRUE;
 
-		if(AutoRunIs == TRUE)
+		if (AutoRunIs ==  TRUE )
 		{
 			Mdl_RemoveOverlayMds(hero,"Humans_AutoRun.MDS");
-			AutoRunIs = FALSE;
+			AutoRunIs = FALSE ;
 		};
 		if(hero.attribute[ATR_HITPOINTS] <= TempCritHealth)
 		{
@@ -5642,7 +5643,7 @@ func void Hero_poisoned()
 			TimerPoisonUp = TRUE;
 		};
 
-		GameReload = FALSE;
+		GameReload = FALSE ;
 		TimerLowHealthUpTic = FALSE;
 		TimerPoisonUpTic = FALSE;
 
@@ -5674,9 +5675,9 @@ func void Hero_poisoned()
 		{
 			Mob_ScrambleContainers();
 		};
-		if(AcidIsOn == TRUE)
+		if (AcidIsOn ==  TRUE )
 		{
-			AcidIsOn = FALSE;
+			AcidIsOn = FALSE ;
 		};
 		if(PalLightIsOn == TRUE)
 		{
@@ -5687,7 +5688,7 @@ func void Hero_poisoned()
 			};
 
 			TempPalLightIsOn = FALSE;
-			PalLightIsOn = FALSE;
+			PalLightIsOn = FALSE ;
 		};
 
 		SPRINT_ACTIVE = FALSE;
@@ -5702,7 +5703,7 @@ func void Hero_poisoned()
 		{
 			Menu_WriteInt("GAME","spawnUseDeadNpcRoutinePos",1);
 		};
-		if(HelmIsUp == TRUE)
+		if (HelmIsUp ==  TRUE )
 		{
 			if(Menu_ReadInt("AST","bHideHelm") == TRUE)
 			{
@@ -5762,7 +5763,7 @@ func void Hero_poisoned()
 		};
 		if(ModVersion[0] != 66)
 		{
-			AI_PrintClr("Загружено сохранение старой версии!!!",177,58,17);
+			AI_PrintClr( " Old version save loaded!!! " , 177 , 58 , 17 );
 			ShutDownGame = TRUE;
 			tmpShutDownGame = FALSE;
 			AI_Wait(hero,9999);
@@ -5775,16 +5776,16 @@ func void Hero_poisoned()
 		{
 			if(CheckRealMode[1] == TRUE)
 			{
-				sHardLvl = "'Легендарная'";
+				sHardLvl = " 'Legendary' " ;
 			}
 			else
 			{
-				sHardLvl = "'Легендарная' (сохр.)";
+				sHardLvl = " 'Legendary' (preserved) " ;
 			};
 		}
 		else
 		{
-			sHardLvl = "тяжелая";
+			sHardLvl = " heavy " ;
 		};
 		if(AcrobatTurnOFF == TRUE)
 		{
@@ -5812,7 +5813,7 @@ func void Hero_poisoned()
 		};
 	};
 
-	//-------------------Загрузка------------------------------
+	// -------------------Loading---------------------- --
 
 	if(TimerLowHealthUp == TRUE)
 	{
@@ -5831,7 +5832,7 @@ func void Hero_poisoned()
 		if((TimerPoisonUpTic >= 10) && (POISONED == TRUE))
 		{
 			TimerPoisonUpTic = FALSE;
-			TimerPoisonUp = FALSE;
+			TimerPoisonUp = FALSE ;
 		};
 	};
 	if(IsLockPickBroken == TRUE)
@@ -5846,14 +5847,14 @@ func void Hero_poisoned()
 	};
 	if(HeroDrunk == TRUE)
 	{
-		HeroDrunkCount += 1;
+		HeroDrunkCount +=  1 ;
 
-		if(HeroDrunkCount >= 60)
+		if (HeroDrunkCount >=  60 )
 		{
 			Mdl_RemoveOverlayMds(hero,"Humans_Drunken.MDS");	
 			Mdl_RemoveOverlayMds(hero,"Humans_DrunkenExt.MDS");	
-			HeroDrunk = FALSE;
-			HeroDrunkCount = FALSE;
+			HeroDrunk = FALSE ;
+			HeroDrunkCount = FALSE ;
 		};
 	};
 	if(HeroInvisible == TRUE)
@@ -5862,7 +5863,7 @@ func void Hero_poisoned()
 
 		if(HeroInvisibleTimer == (HeroInvisibleTimerNow - 15))
 		{
-			AI_Print("Черный туман начинает рассеиваться...");
+			AI_Print( " The black fog is starting to dissipate... " );
 		}
 		else if(HeroInvisibleTimer > HeroInvisibleTimerNow)
 		{
@@ -5873,26 +5874,26 @@ func void Hero_poisoned()
 			if(HeroDragonLook == TRUE)
 			{
 				Wld_StopEffect("DRAGONLOOK_FX");	
-				HeroDragonLook = FALSE;
+				HeroDragonLook = FALSE ;
 			};
 		};
 	};
-	if((TaskHram_03 == TRUE) && (CurrentLevel == ADANOSVALLEY_ZEN) && (MagolemusIsDead == FALSE))
+	if (( TaskHram_03 ==  TRUE ) && ( CurrentLevel ==  ADANOSVALLEY_ZEN ) && ( MagolemusIsDead ==  FALSE ))
 	{
 		if(Wld_IsTime(4,0,22,0) == TRUE)
 		{
 			if((AOE_IsDown == FALSE) && (AOE_IsUp == TRUE))
 			{
-				Wld_SendTrigger("EVT_MAGOLEMUS_AOE");
+				Wld_SendTrigger( " EVT_MAGOLEMUS_AOE " );
 				AOE_IsDown = TRUE;
-				AOE_IsUp = FALSE;
+				AOE_IsUp = FALSE ;
 			};
 		}
 		else
 		{
 			if((AOE_IsUp == FALSE) && (AOE_IsDown == TRUE))
 			{
-				Wld_SendTrigger("EVT_MAGOLEMUS_AOE");
+				Wld_SendTrigger( " EVT_MAGOLEMUS_AOE " );
 				AOE_IsUp = TRUE;
 				AOE_IsDown	= FALSE;
 			};
@@ -5900,7 +5901,7 @@ func void Hero_poisoned()
 	};
 	if(PalLightIsOn == TRUE)
 	{
-		TempPalLightIsOn += 1;
+		TempPalLightIsOn +=  1 ;
 
 		if(TempPalLightIsOn >= 299)
 		{
@@ -5911,17 +5912,17 @@ func void Hero_poisoned()
 			};
 
 			TempPalLightIsOn = FALSE;
-			PalLightIsOn = FALSE;
+			PalLightIsOn = FALSE ;
 		};
 	};
-	if(AcidIsOn == TRUE)
+	if (AcidIsOn ==  TRUE )
 	{
-		TempAcidIsOn += 1;
+		TempAcidIsOn +=  1 ;
 
 		if(TempAcidIsOn >= 30)
 		{
-			AcidIsOn = FALSE;
-			TempAcidIsOn = FALSE;
+			AcidIsOn = FALSE ;
+			TempAcidIsOn = FALSE ;
 		};
 	};
 	if(CheckDismount == TRUE)
@@ -5937,7 +5938,7 @@ func void Hero_poisoned()
 			else if(!C_BodyStateContains(hero,BS_FALL))
 			{
 				tmpDismount = FALSE;
-				CheckDismount = FALSE;
+				CheckDismount = FALSE ;
 			};
 		};
 	};
@@ -5947,17 +5948,17 @@ func void Hero_poisoned()
 
 		if(tmpKillCrait >= 2)
 		{
-			B_RemoveNpc(Crait);
+			B_RemoveNpc(Crate);
 			tmpKillCrait = FALSE;
 			KillCrait = FALSE;
-			CraitIsUp = FALSE;
+			CraitIsUp = FALSE ;
 			Mount_Up = FALSE;
 		};
 	};
 	if((PLAYER_MOBSI_PRODUCTION == MOBSI_GOLDHACKEN) || (PLAYER_MOBSI_PRODUCTION == MOBSI_OREHACKEN) || (PLAYER_MOBSI_PRODUCTION == MOBSI_IRONHACKEN))
 	{
 		tempcurmaxstam = ATR_STAMINA_MAX[0] * 10;
-		concatText = "Выносливость: ";
+		concatText = " Endurance: " ;
 		concatText = ConcatStrings(concatText,IntToString(ATR_STAMINA[0]));
 		concatText = ConcatStrings(concatText,"/");
 		concatText = ConcatStrings(concatText,IntToString(tempcurmaxstam));
@@ -5965,7 +5966,7 @@ func void Hero_poisoned()
 	};
 	if(PAL_EliteDay == TRUE)
 	{
-		TempPalEliteDo += 1;
+		TempPalEliteDo +=  1 ;
 
 		if(TempPalEliteDo >= 8)
 		{
@@ -5975,42 +5976,42 @@ func void Hero_poisoned()
 	};
 	if(KDW_EliteDo == TRUE)
 	{
-		TempKDW_EliteDo += 1;
+		TempKDW_EliteDo +=  1 ;
 
 		if(TempKDW_EliteDo >= 8)
 		{
-			KDW_EliteDo = FALSE;
-			TempKDW_EliteDo = FALSE;
+			KDW_EliteDo = FALSE ;
+			TempKDW_EliteDo = FALSE ;
 		};
 	};
-	if(KDM_EliteDo == TRUE)
+	if (KDM_EliteDo ==  TRUE )
 	{
-		TempKDM_EliteDo += 1;
+		TempKDM_EliteDo +=  1 ;
 
 		if(TempKDM_EliteDo >= 8)
 		{
-			KDM_EliteDo = FALSE;
-			TempKDM_EliteDo = FALSE;
+			KDM_EliteDo = FALSE ;
+			TempKDM_EliteDo = FALSE ;
 		};
 	};
 	if(GUR_EliteDo == TRUE)
 	{
-		TempGUR_EliteDo += 1;
+		TempGUR_EliteDo +=  1 ;
 
 		if(TempGUR_EliteDo >= 60)
 		{
-			GUR_EliteDo = FALSE;
+			GUR_EliteDo = FALSE ;
 			TempGUR_EliteDo = FALSE;
 			Wld_StopEffect("SPELLFX_CAST_GURU");
 		};
 	};
 	if(SLD_EliteDo == TRUE)
 	{
-		TempSLD_EliteDo += 1;
+		TempSLD_EliteDo +=  1 ;
 
 		if(TempSLD_EliteDo >= TempSLDEliteTime)
 		{
-			SLD_EliteDo = FALSE;
+			SLD_EliteDo = FALSE ;
 			TempSLD_EliteDo = FALSE;
 			TempSLDEliteTime = FALSE;
 		};
@@ -6088,7 +6089,7 @@ func void Hero_poisoned()
 	};
 	if(PlayerIsCurse == TRUE)
 	{
-		TempPlayerIsCurse += 1;
+		TempPlayerIsCurse +=  1 ;
 
 		if(hero.attribute[ATR_MANA] > 10)
 		{
@@ -6129,7 +6130,7 @@ func void Hero_poisoned()
 		};
 		if(TempFireShieldTick > 120)
 		{
-			FireShieldIsUp = FALSE;
+			FireShieldIsUp = FALSE ;
 			TempFireShieldTick = FALSE;
 			TempFireShieldEffect = FALSE;
 		};
@@ -6138,7 +6139,7 @@ func void Hero_poisoned()
 	{
 		if(FireShieldIsUp == TRUE)
 		{
-			FireShieldIsUp = FALSE;
+			FireShieldIsUp = FALSE ;
 			TempFireShieldTick = FALSE;
 			TempFireShieldEffect = FALSE;
 		};
@@ -6151,19 +6152,19 @@ func void Hero_poisoned()
 
 		if(hero.attribute[ATR_MANA] < hero.attribute[ATR_MANA_MAX])
 		{
-			if(Hlp_IsItem(pItm,ITAR_KDW_L_Addon))
+			if (Hlp_IsItem(pItm,ITAR_KDW_L_Addon))
 			{
 				hero.attribute[ATR_MANA] += 1;
 			}
-			else if(Hlp_IsItem(pItm,ITAR_KDW_H))
+			else  if (Hlp_IsItem(pItm, ITAR_KDW_H ))
 			{
 				hero.attribute[ATR_MANA] += 2;
 			}
-			else if(Hlp_IsItem(pItm,ITAR_KDW_ADANOS))
+			else  if (Hlp_IsItem(pItm, ITAR_KDW_ADANOS ))
 			{
 				hero.attribute[ATR_MANA] += 3;
 			}
-			else if(Hlp_IsItem(pItm,ItAr_KDW_SH))
+			else  if (Hlp_IsItem(pItm,ItAr_KDW_SH))
 			{
 				hero.attribute[ATR_MANA] += 4;
 			};
@@ -6205,24 +6206,24 @@ func void Hero_poisoned()
 			PrintNowSuccess = FALSE;
 		};
 	};
-	if((KardifDayPlay < TempDayNow) && (KardifDayPlay > 0) && (KardifDayFlag == TRUE))
+	if ((CardifDayPlay < TempDayNow) && (CardifDayPlay >  0 ) && (CardifDayFlag ==  TRUE ))
 	{
 		KardifPlayResult = KardifPlayResult + 50;
-		KardifDayPlay = Wld_GetDay();
+		CardiffDayPlay = Wld_GetDay();
 
 		if(KardifPlayResult >= 100)
 		{
-			KardifDayFlag = FALSE;
+			CardiffDayFlag = FALSE ;
 		};
 	};
 	if((SalandrilDayPlay < TempDayNow) && (SalandrilDayPlay > 0) && (SalandrilDayFlag == TRUE))
 	{
-		SalandrilPlayResult = SalandrilPlayResult + 50;
-		SalandrilDayPlay = Wld_GetDay();
+		SalandrilPlayResult = SalandrilPlayResult +  50 ;
+		SandrilDayPlay = Wld_GetDay();
 
 		if(SalandrilPlayResult >= 150)
 		{
-			SalandrilDayFlag = FALSE;
+			SalandrilDayFlag = FALSE ;
 		};
 	};
 	if((OrlanDayPlay < TempDayNow) && (OrlanDayPlay > 0) && (OrlanDayFlag == TRUE))
@@ -6248,11 +6249,11 @@ func void Hero_poisoned()
 	if((SnafDayPlay < TempDayNow) && (SnafDayPlay > 0) && (SnafDayFlag == TRUE))
 	{
 		SnafPlayResult = SnafPlayResult + 50;
-		SnafDayPlay = Wld_GetDay();
+		SnapDayPlay = Wld_GetDay();
 
 		if(SnafPlayResult >= 100)
 		{
-			SnafDayFlag = FALSE;
+			SnafDayFlag = FALSE ;
 		};
 	};
 	if((SamuelDayPlay < TempDayNow) && (SamuelDayPlay > 0) && (SamuelDayFlag == TRUE))
@@ -6262,13 +6263,13 @@ func void Hero_poisoned()
 
 		if(SamuelPlayResult >= 150)
 		{
-			SamuelDayFlag = FALSE;
+			SamuelDayFlag = FALSE ;
 		};
 	};
 
-	//---------------------------------------реген потами-----------------------------------
+	// ---------------------------------------regen potami------- ----------------------------
 
-	if((RestoreHealth == TRUE) && (CurrentLevel != ITUSELDTOWER_ZEN) && (HEROTRANS == FALSE) && (ENDGAMECREDITS == FALSE) && (HeroIsDead == FALSE) && ((SBMode == TRUE) || (RealMode[2] == TRUE)))
+	if (( RestoreHealth ==  TRUE ) && ( CurrentLevel !=  ITUSELDTOWER_ZEN ) && ( HEROTRANS  ==  FALSE ) && ( ENDGAMECREDITS  ==  FALSE ) && ( HeroIsDead ==  FALSE ) && ((SBMode ==  TRUE ) || (RealMode[ 2 ] ==  TRUE )))
 	{
 		if(hero.attribute[ATR_HITPOINTS_MAX] <= 100)
 		{
@@ -6290,7 +6291,7 @@ func void Hero_poisoned()
 			RestoreHealth = FALSE;
 		};
 	};
-	if((RestoreMana == TRUE) && (CurrentLevel != ITUSELDTOWER_ZEN) && (HEROTRANS == FALSE) && (ENDGAMECREDITS == FALSE) && (HeroIsDead == FALSE) && ((SBMode == TRUE) || (RealMode[2] == TRUE)))
+	if ((RestoreMana ==  TRUE ) && (CurrentLevel !=  ITUSELDTOWER_ZEN ) && ( HEROTRANS  ==  FALSE ) && ( ENDGAMECREDITS  ==  FALSE ) && (HeroIsDead ==  FALSE ) && ((SBMode ==  TRUE ) || (RealMode[ 2 ] ==  TRUE )))
 	{
 		if(hero.attribute[ATR_MANA_MAX] <= 100)
 		{
@@ -6313,11 +6314,11 @@ func void Hero_poisoned()
 		};
 	};
 
-	//--------------------------реген стамины нормаль---------------------------------------------
+	// --------------------------------stamina regen normal------------- --------------------------
 
-	if((ATR_STAMINA[0] < (ATR_STAMINA_MAX[0] * 10)) && (SBMODE != TRUE) && (HEROTRANS == FALSE) && (ENDGAMECREDITS == FALSE) && (HeroIsDead == FALSE) && (hero.attribute[ATR_HITPOINTS] > 0) && (POISONED == FALSE) && (!C_BodyStateContains(hero,BS_SWIM) || !C_BodyStateContains(hero,BS_DIVE) || !C_BodyStateContains(hero,BS_CLIMB) || !C_BodyStateContains(hero,BS_JUMP) || !C_BodyStateContains(hero,BS_SPRINT)))
+	if (( ATR_STAMINA [ 0 ] < ( ATR_STAMINA_MAX [ 0 ] *  10 )) && ( SBMODE  !=  TRUE ) && ( HEROTRANS  ==  FALSE ) && ( ENDGAMECREDITS  ==  FALSE ) && ( HeroIsDead ==  FALSE ) && ( hero . attribute [ ATR_HITPOINTS ] >  0 ) && ( POISONED  ==  FALSE ) ;&& (!C_BodyStateContains(hero,BS_SWIM) || !C_BodyStateContains(hero,BS_DIVE) || !C_BodyStateContains(hero,BS_CLIMB) || !C_BodyStateContains(hero,BS_JUMP) || !C_BodyStateContains(hero,BS_SPRINT)))
 	{
-		if(VATRAS_TEACHREGENSTAM == TRUE)
+		if ( VATRAS_TEACHREGENSTAM  ==  TRUE )
 		{
 			if(RELOADSTAM >= 4)
 			{
@@ -6390,9 +6391,9 @@ func void Hero_poisoned()
 			ATR_STAMINA[0] = ATR_STAMINA_MAX[0] * 10;
 		};
 	}
-	else if((ATR_STAMINA[0] < (ATR_STAMINA_MAX[0] * 10)) && (PlayerIsSick == FALSE) && (SBMODE == TRUE) && (Hero_Fatigue >= 1) && (HEROTRANS == FALSE) && (ENDGAMECREDITS == FALSE) && (HeroIsDead == FALSE) && (hero.attribute[ATR_HITPOINTS] > 0) && (POISONED == FALSE) && (!C_BodyStateContains(hero,BS_SWIM) || !C_BodyStateContains(hero,BS_DIVE) || !C_BodyStateContains(hero,BS_CLIMB) || !C_BodyStateContains(hero,BS_JUMP) || !C_BodyStateContains(hero,BS_SPRINT)))
+	else  if (( ATR_STAMINA [ 0 ] < ( ATR_STAMINA_MAX [ 0 ] *  10 )) && ( PlayerIsSick ==  FALSE ) && ( SBMODE  ==  TRUE ) && ( Hero_Fatigue >=  1 ) && ( HEROTRANS  ==  FALSE ) && ( ENDGAMECREDITS  = =  FALSE ) && ( HeroIsDead ==  FALSE ) && (hero.attribute[ATR_HITPOINTS] > 0) && (POISONED == FALSE) && (!C_BodyStateContains(hero,BS_SWIM) || !C_BodyStateContains(hero,BS_DIVE) || !C_BodyStateContains(hero,BS_CLIMB) || !C_BodyStateContains(hero,BS_JUMP) || !C_BodyStateContains(hero,BS_SPRINT)))
 	{
-		if(VATRAS_TEACHREGENSTAM == TRUE)
+		if ( VATRAS_TEACHREGENSTAM  ==  TRUE )
 		{
 			if(RELOADSTAM >= 4)
 			{
@@ -6475,9 +6476,9 @@ func void Hero_poisoned()
 		RELOADSTAM = 0;
 	};
 
-	//--------------------------реген хп нормаль---------------------------------------------
+	// --------------------- HP regen is normal------------- --------------------------
 
-	if((VATRAS_TEACHREGEN == TRUE) && (HEROTRANS == FALSE) && (ENDGAMECREDITS == FALSE) && (HeroIsDead == FALSE) && (ATR_STAMINA[0] > 0) && (SBMODE != TRUE) && (hero.attribute[ATR_HITPOINTS] > 0) && (POISONED == FALSE) && (hero.attribute[ATR_HITPOINTS] < hero.attribute[ATR_HITPOINTS_MAX]))
+	if (( VATRAS_TEACHREGEN  ==  TRUE ) && ( HEROTRANS  ==  FALSE ) && ( ENDGAMECREDITS  ==  FALSE ) && ( HeroIsDead ==  FALSE ) && ( ATR_STAMINA [ 0 ] >  0 ) && ( SBMODE  !=  TRUE ) && ( hero . attribute [ ATR_HITPOINTS ] >  0 ) && ( POISONED  ==  FALSE) && (hero.attribute[ATR_HITPOINTS] < hero.attribute[ATR_HITPOINTS_MAX]))
 	{
 		if(RELOAD_HEALTH >= 4)
 		{
@@ -6507,9 +6508,9 @@ func void Hero_poisoned()
 		};
 	};
 
-	//--------------------------реген хп хард---------------------------------------------
+	// -------------------------------- HP regen hard------------------- --------------------------
 
-	if((VATRAS_TEACHREGEN == TRUE) && (SBMODE == TRUE) && (ATR_STAMINA[0] > 0) && (Hero_Hunger >= 1) && (Hero_Thirst >= 1) && (HEROTRANS == FALSE) && (ENDGAMECREDITS == FALSE) && (HeroIsDead == FALSE) && (hero.attribute[ATR_HITPOINTS] > 0) && (POISONED == FALSE) && (hero.attribute[ATR_HITPOINTS] < hero.attribute[ATR_HITPOINTS_MAX]))
+	if (( BATRAS_TEACHREGEN  ==  TRUE ) && ( SBMODE  ==  TRUE ) && ( ATR_STAMINA [ 0 ] >  0 ) && (Hero_Hunger >=  1 ) && (Hero_Thirst >=  1 ) && ( HEROTRANS  ==  FALSE ) && ( ENDGAMECREDITS  ==  FALSE ) && ( HeroIsDead ==  FALSE ) && ( hero .attribute[ATR_HITPOINTS] > 0) && (POISONED == FALSE) && (hero.attribute[ATR_HITPOINTS] < hero.attribute[ATR_HITPOINTS_MAX]))
 	{
 		if(RELOAD_HEALTH >= 4)
 		{
@@ -6538,7 +6539,7 @@ func void Hero_poisoned()
 			RELOAD_HEALTH += 1;
 		};
 	}
-	else if((VATRAS_TEACHREGEN == FALSE) && (SBMODE == TRUE) && (PlayerIsSick == FALSE) && (ATR_STAMINA[0] > 0) && (Hero_Hunger >= 1) && (Hero_Thirst >= 1) && (HEROTRANS == FALSE) && (ENDGAMECREDITS == FALSE) && (HeroIsDead == FALSE) && (hero.attribute[ATR_HITPOINTS] > 0) && (POISONED == FALSE) && (hero.attribute[ATR_HITPOINTS] < hero.attribute[ATR_HITPOINTS_MAX]))
+	else  if (( BATRAS_TEACHREGEN  ==  FALSE ) && ( SBMODE  ==  TRUE ) && ( PlayerIsSick ==  FALSE ) && ( ATR_STAMINA [ 0 ] >  0 ) && ( Hero_Hunger >=  1 ) && ( Hero_Thirst >=  1 ) && ( HEROTRANS  = =  FALSE ) && ( ENDGAMECREDITS  ==  FALSE ) && (HeroIsDead == FALSE) && (hero.attribute[ATR_HITPOINTS] > 0) && (POISONED == FALSE) && (hero.attribute[ATR_HITPOINTS] < hero.attribute[ATR_HITPOINTS_MAX]))
 	{
 		tmpTimerHPRegen = ((11 - Hero_Hunger) * 10) + ((6 - Hero_Thirst) * 10);
 
@@ -6569,7 +6570,7 @@ func void Hero_poisoned()
 			RELOAD_HEALTH += 1;
 		};
 	};
-	if((FightMeditation == TRUE) && (HEROTRANS == FALSE) && (ENDGAMECREDITS == FALSE) && (HeroIsDead == FALSE))
+	if (( FightMeditation ==  TRUE ) && ( HEROTRANS  ==  FALSE ) && ( ENDGAMECREDITS  ==  FALSE ) && ( HeroIsDead ==  FALSE ))
 	{
 		if(hero.attribute[ATR_HITPOINTS] < hero.attribute[ATR_HITPOINTS_MAX])
 		{
@@ -6577,9 +6578,9 @@ func void Hero_poisoned()
 		};
 	};
 
-	//--------------------------реген маны хард---------------------------------------------
+	// --------------------------- regen man hard-------------------- --------------------------
 
-	if((VATRAS_TEACHREGENMANA == TRUE) && (PlayerIsSick == FALSE) && (SBMODE == TRUE) && (Hero_Thirst >= 1) && (HEROTRANS == FALSE) && (ENDGAMECREDITS == FALSE) && (HeroIsDead == FALSE) && (hero.attribute[ATR_MANA] < hero.attribute[ATR_MANA_MAX]))
+	if (( BATRAS_TEACHREGENMANA  ==  TRUE ) && ( PlayerIsSick ==  FALSE ) && ( SBMODE  ==  TRUE ) && ( Hero_Thirst >=  1 ) && ( HEROTRANS  ==  FALSE ) && ( ENDGAMECREDITS  ==  FALSE ) && ( HeroIsDead ==  FALSE ) && (hero.attribute[ ATR_NO_MAX ] < hero.attribute[ ATR_NO_MAX ]))
 	{
 		if(RELOAD_MANA >= 4)
 		{
@@ -6610,7 +6611,7 @@ func void Hero_poisoned()
 				hero.attribute[ATR_MANA] = hero.attribute[ATR_MANA_MAX];
 			};
 
-			RELOAD_MANA = FALSE;
+			RELOAD_MANA = FALSE ;
 		}
 		else
 		{
@@ -6618,9 +6619,9 @@ func void Hero_poisoned()
 		};
 	};
 
-	//--------------------------реген маны нормал---------------------------------------------
+	// ------------------------------------------------------------- --------------------------
 
-	if((VATRAS_TEACHREGENMANA == TRUE) && (PlayerIsSick == FALSE) && (SBMODE != TRUE) && (HEROTRANS == FALSE) && (ENDGAMECREDITS == FALSE) && (HeroIsDead == FALSE) && (hero.attribute[ATR_MANA] < hero.attribute[ATR_MANA_MAX]))
+	if (( VATRAS_TEACHREGENMANA  ==  TRUE ) && ( PlayerIsSick ==  FALSE ) && ( SBMODE  !=  TRUE ) && ( HEROTRANS  ==  FALSE ) && ( ENDGAMECREDITS  ==  FALSE ) && ( HeroIsDead ==  FALSE ) && ( hero . attribute [ ATR_MANA ] < hero.attribute[ ATR_NOT_MAX ])) .
 	{
 		if(RELOAD_MANA >= 4)
 		{
@@ -6641,7 +6642,7 @@ func void Hero_poisoned()
 				hero.attribute[ATR_MANA] = hero.attribute[ATR_MANA_MAX];
 			};
 
-			RELOAD_MANA = FALSE;
+			RELOAD_MANA = FALSE ;
 		}
 		else
 		{
@@ -6649,7 +6650,7 @@ func void Hero_poisoned()
 		};
 	};
 
-	if((MagicMeditation == TRUE) && (HEROTRANS == FALSE) && (ENDGAMECREDITS == FALSE) && (HeroIsDead == FALSE))
+	if ((MagicMeditation ==  TRUE ) && ( HEROTRANS  ==  FALSE ) && ( ENDGAMECREDITS  ==  FALSE ) && ( HeroIsDead ==  FALSE ))
 	{
 		if(hero.attribute[ATR_MANA] < hero.attribute[ATR_MANA_MAX])
 		{
@@ -6660,7 +6661,7 @@ func void Hero_poisoned()
 			hero.attribute[ATR_MANA] = hero.attribute[ATR_MANA_MAX];
 		};
 	};
-	if((Trophy_DragonSkullIsUp == TRUE) && (HEROTRANS == FALSE) && (ENDGAMECREDITS == FALSE) && (HeroIsDead == FALSE))
+	if ((Trophy_DragonSkullIsUp ==  TRUE ) && ( HEROTRANS  ==  FALSE ) && ( ENDGAMECREDITS  ==  FALSE ) && ( HeroIsDead ==  FALSE ))
 	{
 		if(RELOAD_DRAGONSKULL >= 3)
 		{
@@ -6696,7 +6697,7 @@ func void Hero_poisoned()
 			RELOAD_DRAGONSKULL += 1;
 		};
 	};
-	if((JointBonusType != FALSE) && (HEROTRANS == FALSE) && (ENDGAMECREDITS == FALSE) && (HeroIsDead == FALSE) && ((hero.guild == GIL_GUR) || (hero.guild == GIL_TPL)))
+	if ((JointBonusType !=  FALSE ) && ( HEROTRANS  ==  FALSE ) && ( ENDGAMECREDITS  ==  FALSE ) && (HeroIsDead ==  FALSE ) && ((hero.guild ==  GIL_GUR ) || (hero.guild ==  GIL_TPL )) ; )
 	{
 		TempJointBonusCount += 1;
 
@@ -6715,7 +6716,7 @@ func void Hero_poisoned()
 				hero.protection[PROT_POINT] = hero.protection[PROT_POINT] - JointBonus_01;
 			};
 
-			AI_Print("Вы вернулись в обычное состояние...");
+			AI_Print( " You are back to normal... " );
 			JointBonusType = FALSE;
 			TempJointBonusCount = FALSE;
 		}
@@ -6736,7 +6737,7 @@ func void Hero_poisoned()
 				FightMeditation = FALSE;
 			};
 
-			AI_Print("Вы вернулись в обычное состояние...");
+			AI_Print( " You are back to normal... " );
 			JointBonusType = FALSE;
 			TempJointBonusCount = FALSE;
 		}
@@ -6757,17 +6758,17 @@ func void Hero_poisoned()
 				hero.protection[PROT_BLUNT] = hero.protection[PROT_BLUNT] - JointBonus_03;
 				hero.protection[PROT_POINT] = hero.protection[PROT_POINT] - JointBonus_03;
 				FightMeditation = FALSE;
-				WarTranse = FALSE;
+				WarTranse = FALSE ;
 			};
 
-			AI_Print("Вы вернулись в обычное состояние...");
+			AI_Print( " You are back to normal... " );
 			JointBonusType = FALSE;
 			TempJointBonusCount = FALSE;
 		};
 	};
-	if((SBMODE == TRUE) && (HEROTRANS == FALSE) && (PLAYER_MOBSI_PRODUCTION != MOBSI_SleepAbit) && (Hero_Hunger >= 1))
+	if (( SBMODE  ==  TRUE ) && ( HEROTRANS  ==  FALSE ) && ( PLAYER_MOBSI_PRODUCTION  != MOBSI_SLEEPAbit ) && ( Hero_Hunger >=  1 )) ;
 	{
-		GLTempStatusHungerCount += 1;			
+		GLTempStatusHungerCount +=  1 ;			
 
 		if(CurrentLevel == ORCMOUNTAIN_ZEN)
 		{
@@ -6783,7 +6784,7 @@ func void Hero_poisoned()
 				}
 				else
 				{
-					Hero_Hunger = FALSE;
+					Hero_Hunger = FALSE ;
 	
 					if((Hlp_GetHeroStatus() == HERO_NORMAL) && (Npc_IsInFightMode(hero,FMODE_NONE) == TRUE))
 					{
@@ -6793,7 +6794,7 @@ func void Hero_poisoned()
 						};
 					};
 	
-					AI_Print("Вас мучает голод!");
+					AI_Print( " You are hungry! " );
 				};
 			};
 		}
@@ -6811,7 +6812,7 @@ func void Hero_poisoned()
 				}
 				else
 				{
-					Hero_Hunger = FALSE;
+					Hero_Hunger = FALSE ;
 	
 					if((Hlp_GetHeroStatus() == HERO_NORMAL) && (Npc_IsInFightMode(hero,FMODE_NONE) == TRUE))
 					{
@@ -6821,12 +6822,12 @@ func void Hero_poisoned()
 						};
 					};
 	
-					AI_Print("Вас мучает голод!");
+					AI_Print( " You are hungry! " );
 				};
 			};
 		};
 	};
-	if((SBMODE == TRUE) && (HEROTRANS == FALSE) && (PLAYER_MOBSI_PRODUCTION != MOBSI_SleepAbit) && (Hero_Thirst >= 1))
+	if (( SBMODE  ==  TRUE ) && ( HEROTRANS  ==  FALSE ) && ( PLAYER_MOBSI_PRODUCTION  != MOBSI_SLEEPAbit ) && ( Hero_Thirst >=  1 )) ;
 	{
 		GLTempStatusThirstCount += 1;
 
@@ -6854,7 +6855,7 @@ func void Hero_poisoned()
 						};
 					};
 	
-					AI_Print("Вас мучает жажда!");
+					AI_Print( " You are thirsty! " );
 				};
 			};
 		}
@@ -6882,14 +6883,14 @@ func void Hero_poisoned()
 						};
 					};
 	
-					AI_Print("Вас мучает жажда!");
+					AI_Print( " You are thirsty! " );
 				};
 			};
 		};
 	};
-	if((SBMODE == TRUE) && (HEROTRANS == FALSE) && (PLAYER_MOBSI_PRODUCTION != MOBSI_SleepAbit) && (CanChangeItem == TRUE) && (Hero_Fatigue >= 1) && (C_BodyStateContains(hero,BS_SIT) == FALSE))
+	if (( SBMODE  ==  TRUE ) && ( HEROTRANS  ==  FALSE ) && ( PLAYER_MOBSI_PRODUCTION  != MOBSI_SleepAbit ) && ( CanChangeItem ==  TRUE ) && ( Hero_Fatigue >=  1 ) && ( C_BodyStateContains(hero, BS_SIT ) ==  FALSE )) ;
 	{
-		GLTempStatusFatigueCount += 1;
+		GLTempStatusFatigueCount +=  1 ;
 
 		if(GLTempStatusFatigueCount >= 864)
 		{
@@ -6911,11 +6912,11 @@ func void Hero_poisoned()
 					};
 				};
 
-				AI_Print("Вы утомлены! Пора отдохнуть...");
+				AI_Print( " You are tired! Time to rest... " );
 			};
 		};
 	};
-	if((C_BodyStateContains(hero,BS_SIT) == TRUE) && (HEROTRANS == FALSE) && (PLAYER_MOBSI_PRODUCTION == MOBSI_NONE) && (HeroNotMobsi == FALSE))
+	if ((C_BodyStateContains(hero, BS_SIT ) ==  TRUE ) && ( HEROTRANS  ==  FALSE ) && ( PLAYER_BODY_PRODUCTION  ==  BOY_NONE ) && ( HeroNotBody ==  FALSE )) ;
 	{
 		TempResetFatigue += 1;
 
@@ -6928,7 +6929,7 @@ func void Hero_poisoned()
 				Hero_Fatigue = 10;
 			};
 
-			TempResetFatigue = FALSE;
+			TempResetFatigue = FALSE ;
 		};
 	};
 	if((BuffStoneGolemHeart == TRUE) && (BuffStoneGolemHeartDone == FALSE))
@@ -7024,9 +7025,9 @@ func void Hero_poisoned()
 		};
 	}
 
-	//-----------------------------Циклический триггер-------------------------------------------
+	// -----------------------Cyclic trigger----------------- --------------------------
 
-	if((HEROTRANS == FALSE) && (HeroNotMobsi == FALSE) && (ShakoIsOn == FALSE) && (ENDGAMECREDITS == FALSE) && (CamModeOn == FALSE) && (CaptureCheat == TRUE) && (HeroIsDead == FALSE))
+	if (( HEROTRANS  ==  FALSE ) && ( HeroNotMobsi ==  FALSE ) && ( ShakoIsOn ==  FALSE ) && ( ENDGAMECREDITS  ==  FALSE ) && ( CamModeOn ==  FALSE ) && ( CaptureCheat ==  TRUE ) && ( HeroIsDead ==  FALSE ) )
 	{
 		itm = Npc_GetEquippedArmor(hero);
 
@@ -7055,7 +7056,7 @@ func void Hero_poisoned()
 		};
 		if(Npc_HasEquippedArmor(hero) == FALSE)
 		{
-			tmpNoArmor += 1;
+			tmpNoArmor +=  1 ;
 
 			if(tmpNoArmor >= 120)
 			{
@@ -7068,19 +7069,19 @@ func void Hero_poisoned()
 					PlayerIsSick = TRUE;
 				};
 
-				tmpNoArmor = FALSE;
+				tmpNoArmor = FALSE ;
 			};
 		}
 		else
 		{
 			if(tmpNoArmor != FALSE)
 			{
-				tmpNoArmor = FALSE;
+				tmpNoArmor = FALSE ;
 			};
 		};
-		if((hero.aivar[AIV_INVINCIBLE] == TRUE) && (PLAYER_MOBSI_PRODUCTION == MOBSI_NONE))
+		if ((hero.aivar[ AIV_INVINCIBLE ] ==  TRUE ) && ( PLAYER_MOBSI_PRODUCTION  ==  MOBSI_NONE ))
 		{
-			hero.aivar[AIV_INVINCIBLE] = FALSE;
+			hero.aivar[ AIV_INVINCIBLE ] = FALSE ;
 		};
 		if((CurrentLevel == NEWWORLD_ZEN) && (LoaOverParty == TRUE) && (LoaShadows == FALSE))
 		{
@@ -7091,7 +7092,7 @@ func void Hero_poisoned()
 		if(CheckTorchIsOn == TRUE)
 		{
 			Mdl_RemoveOverlayMds(hero,"HUMANS_NEWTORCH.MDS");
-			CheckTorchIsOn = FALSE;
+			CheckTorchIsOn = FALSE ;
 		};
 		if(Npc_HasItems(hero,ItMw_DS_MonWeapon) >= 1)
 		{
@@ -7117,7 +7118,7 @@ func void Hero_poisoned()
 		{
 			Npc_RemoveInvItems(hero,ItLsFireTorch,Npc_HasItems(hero,ItLsFireTorch));
 		};
-		if((SoulSenyakFree == TRUE) && (Npc_HasItems(hero,ItMi_StoneSoul_Senyak) >= 1))
+		if ((SoulSenyakFree ==  TRUE ) && (Npc_HasItems(hero,ItMi_StoneSoul_Senyak) >=  1 ))
 		{
 			Npc_RemoveInvItems(hero,ItMi_StoneSoul_Senyak,Npc_HasItems(hero,ItMi_StoneSoul_Senyak));
 		};
@@ -7156,7 +7157,7 @@ func void Hero_poisoned()
 			if(LoaLoveScene == TRUE)
 			{
 				CamLoaLove = TRUE;
-				TempLoaAway = FALSE;
+				TempLoaAway = FALSE ;
 			}
 			else if(TempLoaAway == TRUE)
 			{
@@ -7164,7 +7165,7 @@ func void Hero_poisoned()
 			}
 			else if(TempLoaAway == 20)
 			{
-				AI_Teleport(SLD_10920_Loa,"NW_LIGHTHOUSE_OUT_LOA_01");
+				AI_Teleport(SLD_10920_Loa, " NW_LIGHTHOUSE_OUT_LOA_01 " );
 				B_StartOtherRoutine(SLD_10920_Loa,"LoveScene");
 			}
 			else if(TempLoaAway >= 100)
@@ -7172,13 +7173,13 @@ func void Hero_poisoned()
 				if(LoaLoveScene == TRUE)
 				{
 					CamLoaLove = TRUE;
-					TempLoaAway = FALSE;
+					TempLoaAway = FALSE ;
 				}
 				else
 				{
 					AI_Teleport(SLD_10920_Loa,"BIGFARM");
 					B_StartOtherRoutine(SLD_10920_Loa,"Start");
-					TempLoaAway = FALSE;
+					TempLoaAway = FALSE ;
 					LoaLoveSceneFailed = TRUE;
 				};
 			};
@@ -7191,7 +7192,7 @@ func void Hero_poisoned()
 			{
 				IntroduceChapter(KapWechsel_1_Text,"","chapter1.tga","New_Chapter.wav",8000);
 				IntroduceCH_01 = FALSE;
-				TempIntCH_01 = FALSE;			
+				TempIntCH_01 = FALSE ;			
 			};
 		}
 		else if(IntroduceCH_02 == TRUE)
@@ -7202,7 +7203,7 @@ func void Hero_poisoned()
 			{
 				IntroduceChapter(KapWechsel_2_Text,"","chapter2.tga","New_Chapter.wav",8000);
 				IntroduceCH_02 = FALSE;
-				TempIntCH_02 = FALSE;			
+				TempIntCH_02 = FALSE ;			
 			};
 		}
 		else if(IntroduceCH_03 == TRUE)
@@ -7213,7 +7214,7 @@ func void Hero_poisoned()
 			{
 				IntroduceChapter(KapWechsel_3_Text,"","chapter3.tga","New_Chapter.wav",8000);
 				IntroduceCH_03 = FALSE;
-				TempIntCH_03 = FALSE;			
+				TempIntCH_03 = FALSE ;			
 			};
 		}
 		else if(IntroduceCH_04 == TRUE)
@@ -7224,7 +7225,7 @@ func void Hero_poisoned()
 			{
 				IntroduceChapter(KapWechsel_4_Text,"","chapter4.tga","New_Chapter.wav",8000);
 				IntroduceCH_04 = FALSE;
-				TempIntCH_04 = FALSE;			
+				TempIntCH_04 = FALSE ;			
 			};
 		}
 		else if(IntroduceCH_05 == TRUE)
@@ -7235,7 +7236,7 @@ func void Hero_poisoned()
 			{
 				IntroduceChapter(KapWechsel_5_Text,"","chapter5.tga","New_Chapter.wav",8000);
 				IntroduceCH_05 = FALSE;
-				TempIntCH_05 = FALSE;			
+				TempIntCH_05 = FALSE ;			
 			};
 		}
 		else if(IntroduceCH_06 == TRUE)
@@ -7246,7 +7247,7 @@ func void Hero_poisoned()
 			{
 				IntroduceChapter(KapWechsel_6_Text,"","chapter6.tga","New_Chapter.wav",8000);
 				IntroduceCH_06 = FALSE;
-				TempIntCH_06 = FALSE;			
+				TempIntCH_06 = FALSE ;			
 			};
 		}
 		else if(IntroduceCH_07 == TRUE)
@@ -7257,7 +7258,7 @@ func void Hero_poisoned()
 			{
 				IntroduceChapter(KapWechsel_7_Text,"","chapter7.tga","New_Chapter.wav",8000);
 				IntroduceCH_07 = FALSE;
-				TempIntCH_07 = FALSE;	
+				TempIntCH_07 = FALSE ;	
 			};
 
 			CanMoveCrewBack = TRUE;		
@@ -7265,7 +7266,7 @@ func void Hero_poisoned()
 
 		B_CheckLog_Done();
 
-		//--------------------------голод, жажда и утомляемость---------------------------------------
+		// --------------------------hunger, thirst and fatigue----------------- ----------------------
 
 		if((Hero_Thirst == FALSE) && (SBMODE == TRUE))
 		{
@@ -7283,7 +7284,7 @@ func void Hero_poisoned()
 					}
 					else
 					{
-						TempHungerThirstDeBuff = 1;
+						TempHungerThirstDeBuff = 1 ;
 					};
 				}
 				else
@@ -7294,7 +7295,7 @@ func void Hero_poisoned()
 					}
 					else
 					{
-						TempHungerThirstDeBuff = 2;
+						TempHungerThirstDeBuff = 2 ;
 					};
 				};
 				if(hero.attribute[ATR_HITPOINTS_MAX] > TempHungerThirstDeBuff)
@@ -7316,7 +7317,7 @@ func void Hero_poisoned()
 
 			if(TempHungerCount >= 31)
 			{
-				TempHungerCount = FALSE;
+				TempHungerCount = FALSE ;
 
 				if(Hero_Fatigue == FALSE)
 				{
@@ -7326,7 +7327,7 @@ func void Hero_poisoned()
 					}
 					else
 					{
-						TempHungerThirstDeBuff = 1;
+						TempHungerThirstDeBuff = 1 ;
 					};
 				}
 				else
@@ -7337,7 +7338,7 @@ func void Hero_poisoned()
 					}
 					else
 					{
-						TempHungerThirstDeBuff = 2;
+						TempHungerThirstDeBuff = 2 ;
 					};
 				};
 				if(hero.attribute[ATR_HITPOINTS_MAX] > TempHungerThirstDeBuff)
@@ -7418,9 +7419,9 @@ func void Hero_poisoned()
 		};
 		if(Wld_IsTime(19,0,20,0) == TRUE)
 		{
-			if(SunDownDayCount < TempDayNow)
+			if (SunDownDayCount < TempDayNow)
 			{
-				SunDownRandom = Hlp_Random(5) ;
+				SunDownRandom = Hlp_Random( 5 ) ;
 
 				if(SunDownRandom == 0)
 				{
@@ -7437,7 +7438,7 @@ func void Hero_poisoned()
 		{
 			if(RainDayCount < TempDayNow)
 			{
-				rainrandom = Hlp_Random(5) ;
+				rainrandom = Hlp_Random( 5 ) ;
 
 				if(rainrandom == 1)
 				{
@@ -7464,7 +7465,7 @@ func void Hero_poisoned()
 				B_Say(hero,hero,"$PASHAL_01");
 			};
 
-			PashalSVM = TRUE;
+			PashalSVM = TRUE ;
 		};
 		if((Mount_Up == FALSE) && (LowHealth == FALSE) && (PlayerSitDust == FALSE) && (Hlp_InventoryIsOpen() == FALSE) && (Hlp_GetHeroStatus() == HERO_NORMAL) && (Npc_IsInFightMode(hero,FMODE_NONE) == TRUE))
 		{
@@ -7552,16 +7553,16 @@ func void Hero_poisoned()
 				}
 				else
 				{
-					IhiyalRegen = FALSE;
+					IhiyalRegen = FALSE ;
 				};
 				if(SkeletonMage_Azgolor.attribute[ATR_HITPOINTS] > SkeletonMage_Azgolor.attribute[ATR_HITPOINTS_MAX])
 				{
 					SkeletonMage_Azgolor.attribute[ATR_HITPOINTS] = SkeletonMage_Azgolor.attribute[ATR_HITPOINTS_MAX];
-					IhiyalRegen = FALSE;
+					IhiyalRegen = FALSE ;
 				};
 				if(hero.attribute[ATR_MANA] > 1)
 				{
-					IhiyalRegen = FALSE;
+					IhiyalRegen = FALSE ;
 				};
 			}
 			else
@@ -7570,7 +7571,7 @@ func void Hero_poisoned()
 				Wld_PlayEffect("SPELLFX_SKULL_COLLIDEFX",hero,hero,0,0,0,FALSE);
 				SkeletonMage_Azgolor.attribute[ATR_HITPOINTS] = SkeletonMage_Azgolor.attribute[ATR_HITPOINTS_MAX];
 				hero.attribute[ATR_MANA] = 0;
-				IhiyalRegen = FALSE;
+				IhiyalRegen = FALSE ;
 			};
 		};
 		if((IzgulStep_01 == TRUE) && (IzgulCurse_01 == FALSE) && (hero.attribute[ATR_HITPOINTS] > 0))
@@ -7618,7 +7619,7 @@ func void Hero_poisoned()
 				IzgulCurse_03 = TRUE;
 			};
 		};
-		if((CinemaMod == TRUE) && (OptionCheck == FALSE) && (HeroNotMobsi == FALSE) && (PrayMobileCheck == FALSE) && (IdolMobileCheck == FALSE))
+		if (( CinemaMod ==  TRUE ) && ( OptionCheck ==  FALSE ) && ( HeroNotMobsi ==  FALSE ) && ( PrayMobileCheck ==  FALSE ) && ( IdolMobileCheck ==  FALSE ))
 		{
 			Wld_StopEffect("DIALOGSCOPE_FX");
 		}
@@ -7649,13 +7650,13 @@ func void Hero_poisoned()
 			Mdl_RemoveOverlayMds(hero,"humans_2hST3.mds");
 			Mdl_RemoveOverlayMds(hero,"humans_2hST2.mds");
 			Mdl_RemoveOverlayMds(hero,"humans_2hST1.mds");
-			bManaBar = 1;
-			bHealthBar = 1;
+			bManaBar = 1 ;
+			bHealthBar = 1 ;
 			StaminaBar.bShow = 1;
 			CanShowStamina = TRUE;
 			STGameFT = TRUE;
 		};
-		if((CurrentLevel == PASHALWORLD_ZEN) && (MIS_PashalQuest == LOG_SUCCESS) && (PASHALAWAY == FALSE))
+		if ((CurrentLevel == PASHALWORLD_ZEN  ) && ( MY_PashalQuest == LOG_SUCCESS  ) && ( PASHALWORLD_ZEN )  ) 
 		{
 			Wld_SendTrigger("EVT_BACK_ORCMOUNT");
 			PASHALAWAY = TRUE;
@@ -7693,15 +7694,15 @@ func void Hero_poisoned()
 		{
 			Wld_PlayEffect("SPELLFX_INCOVATION_RED",VLK_4570_Avabul,VLK_4570_Avabul,0,0,0,FALSE);
 			B_StartOtherRoutine(VLK_4570_Avabul,"TOT");
-			AI_PlayAni(VLK_4570_Avabul,"T_PRACTICEMAGIC4");
-			AI_Wait(VLK_4570_Avabul,1);
+			AI_PlayAni(VLK_4570_Avabul, " T_PRACTICEMAGIC4 " );
+			AI_Wait(VLK_4570_Avabul, 1 );
 			AI_Teleport(VLK_4570_Avabul,"TOT");
 			Wld_SendTrigger("EVT_DEMONSKULLUP");
 			AvabulAway = TRUE;
 		};
-		if(CrushBonus2HOn == FALSE)
+		if (CrushBonus2HOn ==  FALSE )
 		{
-			CrushBonus2HOn = TRUE;
+			CrushBonus2HOn = TRUE ;
 		};
 		if(CurrentLevel == NEWWORLD_ZEN)
 		{
@@ -7721,7 +7722,7 @@ func void Hero_poisoned()
 		{
 			if((TEARHRAM_TP_OK == TRUE) || (PYRAMIDE_TP_OK == TRUE) || (PASSAV_TP_OK == TRUE) || (LIFECIRCLE_TP_OK == TRUE) || (COMPLEX_TP_OK == TRUE))
 			{
-				B_TeleportMe_AV();
+				B_TeleportMe_OFF();
 			};
 		};
 		if(CurrentLevel == ORCMOUNTAIN_ZEN)
@@ -7731,7 +7732,7 @@ func void Hero_poisoned()
 				B_TeleportMe_OZ();
 			};
 		};
-		if(CurrentLevel == ADDONWORLD_ZEN)
+		if (CurrentLevel ==  ADDONWORLD_ZEN )
 		{
 			if((ADW_TP_OK == TRUE) || (PIRATCAMP_TP_OK == TRUE))
 			{
@@ -7756,7 +7757,7 @@ func void Hero_poisoned()
 		{
 			if((LOC_TEARHRAM_TP_OK == TRUE) || (LOC_PYRAMIDE_TP_OK == TRUE) || (LOC_PASSAV_TP_OK == TRUE) || (LOC_LIFECIRCLE_TP_OK == TRUE) || (LOC_COMPLEX_TP_OK == TRUE))
 			{
-				B_LOC_TeleportMe_AV();
+				B_LOC_TeleportMe_OFF();
 			};
 		};
 		if(CurrentLevel != ORCMOUNTAIN_ZEN)
@@ -7766,7 +7767,7 @@ func void Hero_poisoned()
 				B_LOC_TeleportMe_OZ();
 			};
 		};
-		if(CurrentLevel != ADDONWORLD_ZEN)
+		if (CurrentLevel !=  ADDONWORLD_ZEN )
 		{
 			if((LOC_ADW_TP_OK == TRUE) || (LOC_PIRATCAMP_TP_OK == TRUE))
 			{
@@ -7982,7 +7983,7 @@ func void Hero_poisoned()
 
 							if(ATR_STAMINA[0] > TempArmorStamina)
 							{
-								ATR_STAMINA[0] = ATR_STAMINA[0] - TempArmorStamina;
+								ATR_STAMINA [ 0 ] = ATR_STAMINA [ 0 ] - TempArmorStamina;
 							}
 							else
 							{
@@ -7991,17 +7992,17 @@ func void Hero_poisoned()
 						}
 						else
 						{
-							CountTiks_Stam = CountTiks_Stam + 1;
+							CountTiks_Stem = CountTiks_Stem +  1 ;
 	
 							if((CountTiks_Stam >= 2) && C_BodyStateContains(hero,BS_STAND))
 							{
 								ATR_STAMINA[0] = ATR_STAMINA[0] - 1;
-								CountTiks_Stam = 0;
+								CountTiks_Stem = 0 ;
 							}
 							else if((CountTiks_Stam >= 1) && C_BodyStateContains(hero,BS_RUN))
 							{
 								ATR_STAMINA[0] = ATR_STAMINA[0] - 1;
-								CountTiks_Stam = 0;
+								CountTiks_Stem = 0 ;
 							};
 						};
 					};
@@ -8024,7 +8025,7 @@ func void Hero_poisoned()
 					{
 						if(Npc_GetTarget(hero) == TRUE)
 						{
-							ATR_STAMINA[0] = ATR_STAMINA[0] - TempArmorStamina;
+							ATR_STAMINA [ 0 ] = ATR_STAMINA [ 0 ] - TempArmorStamina;
 						}
 						else
 						{
@@ -8054,7 +8055,7 @@ func void Hero_poisoned()
 				
 						if(ATR_STAMINA[0] > TempArmorStamina)
 						{
-							ATR_STAMINA[0] = ATR_STAMINA[0] - TempArmorStamina;
+							ATR_STAMINA [ 0 ] = ATR_STAMINA [ 0 ] - TempArmorStamina;
 						}
 						else
 						{
@@ -8065,15 +8066,15 @@ func void Hero_poisoned()
 			};
 		};
 
-		//--------------------------расход выноса при подкрадывании---------------------------------------
+		// -------------------- Stealth takeaway consumption------------ ---------------------
 
-		if(C_BodyStateContains(hero,BS_SNEAK) && (FlyCarpetIsOn == FALSE) && (SLD_EliteDo == FALSE) && (Mount_Up == FALSE))
+		if ( C_BodyStateContains ( hero , BS_SNEAK ) && ( FlyCarpetIsOn ==  FALSE ) && ( SLD_EliteDo ==  FALSE ) && ( Mount_Up ==  FALSE )) ;
 		{
 			TempArmorStamina = 1 + (itm.weight + HelmStam + CurShieldRes + MELEEWEAPONINDEX + RANGEWEAPONINDEX) / 4;
 
 			if(ATR_STAMINA[0] > TempArmorStamina)
 			{
-				ATR_STAMINA[0] = ATR_STAMINA[0] - TempArmorStamina;
+				ATR_STAMINA [ 0 ] = ATR_STAMINA [ 0 ] - TempArmorStamina;
 			}
 			else
 			{
@@ -8081,9 +8082,9 @@ func void Hero_poisoned()
 
 				if(Npc_IsInFightMode(hero,FMODE_NONE) == TRUE)
 				{
-					ExStItem = Hlp_GetSlotItem(hero,"ZS_LEFTHAND");
+					ExStItem = Hlp_GetSlotItem(hero, " ZS_LEFTHAND " );
 		
-					if(Hlp_IsValidItem(ExStItem))
+					if (Hlp_IsValidItem(ExStItem))
 					{
 						Ext_RemoveFromSlot(hero,"ZS_LEFTHAND");	
 						CreateInvItems(hero,ItLsTorch,1);
@@ -8097,7 +8098,7 @@ func void Hero_poisoned()
 			};
 		};
 
-		//--------------------------расход выноса при прыжке---------------------------------------
+		// ---------------------------output when jumping------------------ ---------------------
 
 		if((JumpDone == FALSE) && (FlyCarpetIsOn == FALSE) && (SLD_EliteDo == FALSE) && (Mount_Up == FALSE) && (HeroDrunk == FALSE) && (C_BodyStateContains(hero,BS_CLIMB) || C_BodyStateContains(hero,BS_JUMP) || C_BodyStateContains(hero,BS_PARADE)))
 		{
@@ -8113,7 +8114,7 @@ func void Hero_poisoned()
 
 						if(ATR_STAMINA[0] > TempArmorStamina)
 						{
-							ATR_STAMINA[0] = ATR_STAMINA[0] - TempArmorStamina;
+							ATR_STAMINA [ 0 ] = ATR_STAMINA [ 0 ] - TempArmorStamina;
 						}
 						else
 						{
@@ -8126,7 +8127,7 @@ func void Hero_poisoned()
 
 						if(ATR_STAMINA[0] > TempArmorStamina)
 						{
-							ATR_STAMINA[0] = ATR_STAMINA[0] - TempArmorStamina;
+							ATR_STAMINA [ 0 ] = ATR_STAMINA [ 0 ] - TempArmorStamina;
 						}
 						else
 						{
@@ -8140,7 +8141,7 @@ func void Hero_poisoned()
 
 					if(ATR_STAMINA[0] > TempArmorStamina)
 					{
-						ATR_STAMINA[0] = ATR_STAMINA[0] - TempArmorStamina;
+						ATR_STAMINA [ 0 ] = ATR_STAMINA [ 0 ] - TempArmorStamina;
 					}
 					else
 					{
@@ -8156,7 +8157,7 @@ func void Hero_poisoned()
 
 					if(ATR_STAMINA[0] > TempArmorStamina)
 					{
-						ATR_STAMINA[0] = ATR_STAMINA[0] - TempArmorStamina;
+						ATR_STAMINA [ 0 ] = ATR_STAMINA [ 0 ] - TempArmorStamina;
 					}
 					else
 					{
@@ -8169,7 +8170,7 @@ func void Hero_poisoned()
 
 					if(ATR_STAMINA[0] > TempArmorStamina)
 					{
-						ATR_STAMINA[0] = ATR_STAMINA[0] - TempArmorStamina;
+						ATR_STAMINA [ 0 ] = ATR_STAMINA [ 0 ] - TempArmorStamina;
 					}
 					else
 					{
@@ -8179,9 +8180,9 @@ func void Hero_poisoned()
 			};
 		};
 
-		//--------------------------расход выноса при спринте---------------------------------------
+		// -------------------------- sprint runout consumption------------ ---------------------
 
-		if(C_BodyStateContains(hero,BS_RUN) && (FlyCarpetIsOn == FALSE) && (Mount_Up == FALSE) && (SPRINT_ACTIVE == TRUE) && (bSprintTime == FALSE) && (ATR_STAMINA[0] > 0))
+		if ( C_BodyStateContains ( hero , BS_RUN ) && ( FlyCarpetIsOn ==  FALSE ) && ( Mount_Up ==  FALSE ) && ( SPRINT_ACTIVE  ==  TRUE ) && ( bSprintTime ==  FALSE ) && ( ATR_STAMINA [ 0 ] >  0 )) ;
 		{
 			if(Npc_IsInFightMode(hero,FMODE_MELEE) == TRUE)
 			{
@@ -8193,7 +8194,7 @@ func void Hero_poisoned()
 
 						if(ATR_STAMINA[0] > TempArmorStamina)
 						{
-							ATR_STAMINA[0] = ATR_STAMINA[0] - TempArmorStamina;
+							ATR_STAMINA [ 0 ] = ATR_STAMINA [ 0 ] - TempArmorStamina;
 						}
 						else
 						{
@@ -8207,7 +8208,7 @@ func void Hero_poisoned()
 
 						if(ATR_STAMINA[0] > TempArmorStamina)
 						{
-							ATR_STAMINA[0] = ATR_STAMINA[0] - TempArmorStamina;
+							ATR_STAMINA [ 0 ] = ATR_STAMINA [ 0 ] - TempArmorStamina;
 						}
 						else
 						{
@@ -8222,7 +8223,7 @@ func void Hero_poisoned()
 
 					if(ATR_STAMINA[0] > TempArmorStamina)
 					{
-						ATR_STAMINA[0] = ATR_STAMINA[0] - TempArmorStamina;
+						ATR_STAMINA [ 0 ] = ATR_STAMINA [ 0 ] - TempArmorStamina;
 					}
 					else
 					{
@@ -8241,7 +8242,7 @@ func void Hero_poisoned()
 
 						if(ATR_STAMINA[0] > TempArmorStamina)
 						{
-							ATR_STAMINA[0] = ATR_STAMINA[0] - TempArmorStamina;
+							ATR_STAMINA [ 0 ] = ATR_STAMINA [ 0 ] - TempArmorStamina;
 						}
 						else
 						{
@@ -8255,7 +8256,7 @@ func void Hero_poisoned()
 
 						if(ATR_STAMINA[0] > TempArmorStamina)
 						{
-							ATR_STAMINA[0] = ATR_STAMINA[0] - TempArmorStamina;
+							ATR_STAMINA [ 0 ] = ATR_STAMINA [ 0 ] - TempArmorStamina;
 						}
 						else
 						{
@@ -8270,7 +8271,7 @@ func void Hero_poisoned()
 
 					if(ATR_STAMINA[0] > TempArmorStamina)
 					{
-						ATR_STAMINA[0] = ATR_STAMINA[0] - TempArmorStamina;
+						ATR_STAMINA [ 0 ] = ATR_STAMINA [ 0 ] - TempArmorStamina;
 					}
 					else
 					{
@@ -8281,7 +8282,7 @@ func void Hero_poisoned()
 			};
 		};
 
-		//--------------------------расход выноса плавании---------------------------------------
+		// --------------------------stroke flow rate------------- --------------------
 
 		if((Mount_Up == FALSE) && (FlyCarpetIsOn == FALSE) && (C_BodyStateContains(hero,BS_SWIM) || C_BodyStateContains(hero,BS_DIVE)))
 		{
@@ -8317,7 +8318,7 @@ func void Hero_poisoned()
 			};
 		};
 
-		//--------------------------Холод и жар---------------------------------------
+		// --------------------------------Cold and hot------------- --------------------
 
 		tmpPortalGuild = Wld_GetPlayerPortalGuild();
 
@@ -8325,7 +8326,7 @@ func void Hero_poisoned()
 		{
 			if(WarnNakedDay == FALSE)
 			{
-				AI_Print("Не стоит бегать голым! Вас могут не так понять...");
+				AI_Print( " Don't run around naked! You may be misunderstood... " );
 				WarnNakedDay = TRUE;
 			};
 		}
@@ -8345,7 +8346,7 @@ func void Hero_poisoned()
 					B_Say(hero,hero,"$VERYCOLD");
 				};
 
-				AI_Print("Здесь очень холодно!");
+				AI_Print( " It's very cold here! " );
 				ColdReduceKnowAtt = TRUE;
 			};
 
@@ -8353,7 +8354,7 @@ func void Hero_poisoned()
 
 			if(ATR_STAMINA[0] >= TempArmorStamina)
 			{
-				ATR_STAMINA[0] = ATR_STAMINA[0] - TempArmorStamina;
+				ATR_STAMINA [ 0 ] = ATR_STAMINA [ 0 ] - TempArmorStamina;
 			}
 			else
 			{
@@ -8370,7 +8371,7 @@ func void Hero_poisoned()
 					B_Say(hero,hero,"$VERYHOT");
 				};
 
-				AI_Print("Здесь очень жарко!");
+				AI_Print( " It's very hot in here! " );
 				HotReduceKnowAtt = TRUE;
 			};
 
@@ -8378,7 +8379,7 @@ func void Hero_poisoned()
 
 			if(ATR_STAMINA[0] >= TempArmorStamina)
 			{
-				ATR_STAMINA[0] = ATR_STAMINA[0] - TempArmorStamina;
+				ATR_STAMINA [ 0 ] = ATR_STAMINA [ 0 ] - TempArmorStamina;
 			}
 			else
 			{
@@ -8386,7 +8387,7 @@ func void Hero_poisoned()
 				hero.attribute[ATR_HITPOINTS] -= 5;
 			};
 		};
-		if((CurrentLevel == OLDWORLD_ZEN) && (Npc_GetDistToWP(hero,"OW_SWAMPDRAGON_01") <= 4000) && (ResistPoisonKnow == FALSE) && (DragonSwampIsDead == FALSE) && (POISONED == FALSE))
+		if ((CurrentLevel ==  OLDWORLD_ZEN ) && (Npc_GetDistToWP(hero, " OW_SWAMPDRAGON_01 " ) <=  4000 ) && (ResistPoisonKnow ==  FALSE ) && (DragonSwampIsDead ==  FALSE ) && ( POISONED  ==  FALSE )) ;
 		{
 			POISONED = TRUE;
 
@@ -8397,7 +8398,7 @@ func void Hero_poisoned()
 					B_Say(hero,hero,"$COUGH");
 				};
 
-				AI_Print("Здесь полно ядовитых испарений!");
+				AI_Print( " It's full of toxic fumes! " );
 				ResistPoisonKnowAtt = TRUE;
 			};
 		};
@@ -8412,11 +8413,11 @@ func void Hero_poisoned()
 					B_Say(hero,hero,"$COUGH");
 				};
 
-				AI_Print("Здесь полно ядовитых испарений!");
+				AI_Print( " It's full of toxic fumes! " );
 				ResistPoisonKnowAtt = TRUE;
 			};
 		};
-		if((CurrentLevel == LOSTVALLEY_ZEN) && (Npc_HasItems(hero,ItMi_IlisilAmulet) == FALSE))
+		if ((CurrentLevel ==  LOSTVALLEY_ZEN ) && (Npc_HasItems(hero,ItMy_HiddenAmulet) ==  FALSE ))
 		{
 			if((HotReduceKnow == FALSE) && (HotReduceKnowAttLV == FALSE))
 			{
@@ -8425,7 +8426,7 @@ func void Hero_poisoned()
 					B_Say(hero,hero,"$VERYHOT");
 				};
 
-				AI_Print("Здесь очень жарко!");
+				AI_Print( " It's very hot in here! " );
 				HotReduceKnowAttLV = TRUE;
 			};
 	
@@ -8433,7 +8434,7 @@ func void Hero_poisoned()
 	
 			if(ATR_STAMINA[0] >= TempArmorStamina)
 			{
-				ATR_STAMINA[0] = ATR_STAMINA[0] - TempArmorStamina;
+				ATR_STAMINA [ 0 ] = ATR_STAMINA [ 0 ] - TempArmorStamina;
 			}
 			else
 			{
@@ -8441,7 +8442,7 @@ func void Hero_poisoned()
 				hero.attribute[ATR_HITPOINTS] -= 5;
 			};
 		};
-		if((CurrentLevel == ADANOSVALLEY_ZEN) && (Wld_IsTime(10,0,19,0) == TRUE) && (Wld_IsRaining() == FALSE) && (HotReduceKnow == FALSE))
+		if (( CurrentLevel ==  ADANOSVALLEY_ZEN ) && ( Wld_IsTime ( 10 , 0 , 19 , 0 ) ==  TRUE ) && ( Wld_IsRaining ( ) ==  FALSE ) && ( HotReduceKnow ==  FALSE )) ;
 		{
 			if((Npc_GetDistToWP(hero,"TALL_DES_TODES_515") > 3000) && (Npc_GetDistToWP(hero,"NW_TROLLAREA_RITUAL_08_TEMP") > 3000) && (Npc_GetDistToWP(hero,"NW_TROLLAREA_RITUAL_08") > 3000) && (Npc_GetDistToWP(hero,"PYRAMIDE153") > 5000) && (Npc_GetDistToWP(hero,"PYRAMIDE153") > 5000) && (Npc_GetDistToWP(hero,"AV_HOTPOINT_01") > 3000) && (Npc_GetDistToWP(hero,"AV_HOTPOINT_02") > 1500) && (Npc_GetDistToWP(hero,"AV_PYRAMIDE_IN") > 5500) && (Npc_GetDistToWP(hero,"HOLLE11") > 10000))
 			{
@@ -8452,7 +8453,7 @@ func void Hero_poisoned()
 						B_Say(hero,hero,"$VERYHOT");
 					};
 
-					AI_Print("Здесь очень жарко!");
+					AI_Print( " It's very hot in here! " );
 					HotReduceKnowAttAv = TRUE;
 				};
 	
@@ -8460,7 +8461,7 @@ func void Hero_poisoned()
 	
 				if(ATR_STAMINA[0] >= TempArmorStamina)
 				{
-					ATR_STAMINA[0] = ATR_STAMINA[0] - TempArmorStamina;
+					ATR_STAMINA [ 0 ] = ATR_STAMINA [ 0 ] - TempArmorStamina;
 				}
 				else
 				{
@@ -8478,7 +8479,7 @@ func void Hero_poisoned()
 					B_Say(hero,hero,"$VERYCOLD");
 				};
 
-				AI_Print("Здесь очень холодно!");
+				AI_Print( " It's very cold here! " );
 				ColdReduceKnowAttOM = TRUE;
 			};
 
@@ -8486,7 +8487,7 @@ func void Hero_poisoned()
 
 			if(ATR_STAMINA[0] >= TempArmorStamina)
 			{
-				ATR_STAMINA[0] = ATR_STAMINA[0] - TempArmorStamina;
+				ATR_STAMINA [ 0 ] = ATR_STAMINA [ 0 ] - TempArmorStamina;
 			}
 			else
 			{
@@ -8524,13 +8525,13 @@ func void Hero_poisoned()
 				ObsessedTick = FALSE;
 			};
 		};
-		if((PsiCamp_03_Ok == TRUE) && (HanisIsDead == FALSE))
+		if (( PsiCamp_03_Ok ==  TRUE ) && ( HanisIsDead ==  FALSE ))
 		{	
 			npc = Hlp_GetNpc(tpl_8045_hanis);
 
 			if(Hlp_IsValidNpc(npc) && !Npc_IsDead(npc))
 			{
-				npc.aivar[93] = FALSE;
+				npc.aivar[ 93 ] = FALSE ;
 				Npc_ChangeAttribute(npc,ATR_HITPOINTS,-npc.attribute[ATR_HITPOINTS_MAX]);
 				Wld_PlayEffect("SPELLFX_POISONBLADE",npc,npc,0,0,0,FALSE);
 			};
@@ -8546,7 +8547,7 @@ func void Hero_poisoned()
 				Wld_StopEffect("POISONED_FX");
 				PoisonedMe = FALSE;
 				TimerPoisonUpTic = FALSE;
-				TimerPoisonUp = FALSE;
+				TimerPoisonUp = FALSE ;
 			};
 		}
 		else
@@ -8561,7 +8562,7 @@ func void Hero_poisoned()
 		{
 			if(LowHealth == FALSE)
 			{
-				if(HelmIsUp == TRUE)
+				if (HelmIsUp ==  TRUE )
 				{
 					if(TempHelmModel == FALSE)
 					{
@@ -8807,7 +8808,7 @@ func void Hero_poisoned()
 		{
 			if(LowHealth == TRUE)
 			{
-				if(HelmIsUp == TRUE)
+				if (HelmIsUp ==  TRUE )
 				{
 					if(TempHelmModel == FALSE)
 					{
@@ -9167,18 +9168,18 @@ func void Hero_poisoned()
 		};
 		if(hero.attribute[ATR_HITPOINTS] <= TempCritHealth)
 		{
-			if(CritHealth == FALSE)
+			if (CritHealth ==  FALSE )
 			{
 				//Wld_PlayEffect("LOWHEALTH_FX",hero,hero,0,0,0,FALSE);
-				CritHealth = TRUE;
+				CritHealth = TRUE ;
 			};
 		}
 		else
 		{
-			if(CritHealth == TRUE)
+			if (CritHealth ==  TRUE )
 			{
 				Wld_StopEffect("LOWHEALTH_FX");
-				CritHealth = FALSE;
+				CritHealth = FALSE ;
 				TimerLowHealthUpTic = FALSE;
 				TimerLowHealthUp = FALSE;
 			};
@@ -9197,21 +9198,21 @@ func void Hero_poisoned()
 	};
 	if((CraitExpLvl >= CraitExpLvl_Next) && (CraitIsUp == TRUE))
 	{
-		CraitLvl += 1;
-		CraitExpLvl_Next = CraitExpLvl_Next + ((CraitLvl + 1) * 500);
+		CraitLvl +=  1 ;
+		CraitExpLvl_Next = CraitExpLvl_Next + (( CraitLvl +  1 ) *  500 );
 		CraitCanUp = TRUE;
-		AI_Print("Новый уровень питомца!");
+		AI_Print( " New pet level! " );
 	};
 	if((CraitIsUp == TRUE) && (CraitCanUp == TRUE))
 	{
 		Crait.attribute[ATR_STRENGTH] = 275 + (CraitLvl * 10);
 		Crait.attribute[ATR_DEXTERITY] = 200 + (CraitLvl * 10);
 		Crait.attribute[ATR_HITPOINTS_MAX] = 1000 + (CraitLvl * 50);
-		Crait.protection[PROT_BLUNT] = 145 + (CraitLvl * 5);
+		Crait.protection[ PROT_BLUNT ] = 145  + ( CraitLvl *  5 );
 		Crait.protection[PROT_EDGE] = 120 + (CraitLvl * 5);
-		Crait.protection[PROT_POINT] = 100 + (CraitLvl * 5);
-		Crait.protection[PROT_FIRE] = 20 + (CraitLvl * 5);
-		Crait.protection[PROT_FLY] = 50 + (CraitLvl * 5);
+		Crait.protection[ PROT_POINT ] = 100  + ( CraitLvl *  5 );
+		Crait.protection[ PROT_FIRE ] = 20  + ( CraitLvl *  5 );
+		Crait.protection[ PROT_FLY ] = 50  + ( CraitLvl *  5 );
 		Crait.protection[PROT_MAGIC] = 20 + (CraitLvl * 5);
 		CraitCanUp = FALSE;
 	};
@@ -9219,7 +9220,7 @@ func void Hero_poisoned()
 	{
 		AI_Wait(hero,1);
 	};
-	if((InsertJohnJonni == TRUE) && (RemoveJohnJonni == FALSE) && (Npc_GetDistToWP(hero,"NW_CITY_HABOUR_KASERN_JOHN_01") > 2000))
+	if ((InsertJohnJonni ==  TRUE ) && (RemoveJohnJonni ==  FALSE ) && (Npc_GetDistToWP(hero, " NW_CITY_HABOR_KASERN_JOHN_01 " ) >  2000 )) ;
 	{
 		B_StartOtherRoutine(Mil_362_Miliz,"TOT");
 		AI_Teleport(Mil_362_Miliz,"TOT");
@@ -9227,25 +9228,25 @@ func void Hero_poisoned()
 		AI_Teleport(Mil_363_Miliz,"TOT");
 		RemoveJohnJonni = TRUE;
 	};
-	if((MineKingArrive == TRUE) && (MineKingArriveDone == FALSE))
+	if ((MineKingArrive ==  TRUE ) && (MineKingArriveDone ==  FALSE ))
 	{
 		tmpTimerCaracust += 1;
 
 		if(tmpTimerCaracust > 10)
 		{
 			tmpTimerCaracust = FALSE;
-			MineKingArriveDone = TRUE;
-			AI_Teleport(Caracust,"FEUERHOLLESW");
+			MineKingArriveDone = TRUE ;
+			AI_Teleport(Caracust, " FEUERHOLLESW " );
 			AI_GotoWP(Caracust,"DAMAGE_KOLONA");
-			AI_AlignToWP(Caracust);
+			AI_AlignToWP(Carousel);
 		};
 	};
 
-	//-------------------эпик данж------------------------------------------
+	// ---------------------------------------------------------------- ---------------
 
 	if(CurrentLevel == LOSTVALLEY_ZEN)
 	{
-		if((CurrentLevel == LOSTVALLEY_ZEN) && (EpicJorneyStart == FALSE) && (Npc_GetDistToWP(hero,"LOSTVALLEY_START") > 1500) && (Npc_HasItems(hero,ItMi_IlisilAmulet) == FALSE))
+		if ((CurrentLevel ==  LOSTVALLEY_ZEN ) && (EpicJorneyStart ==  FALSE ) && (Npc_GetDistToWP(hero, " LOSTVALLEY_START " ) >  1500 ) && (Npc_HasItems(hero,ItMy_HiddenAmulet) ==  FALSE )) ;
 		{
 			Npc_ChangeAttribute(hero,ATR_HITPOINTS,-250);
 		};
@@ -9253,7 +9254,7 @@ func void Hero_poisoned()
 		{
 			if(Npc_GetDistToNpc(PaleCrawler,hero) > 650)
 			{
-				PaleCrawler_RandyAttack = Hlp_Random(100);
+				PaleCrawler_RandyAttack = Hlp_Random( 100 );
 
 				if(PaleCrawler_RandyAttack <= 5)
 				{
@@ -9299,11 +9300,11 @@ func void Hero_poisoned()
 		{
 			AraharPlagueCountAOE += 1;
 
-			if((AraharPlagueSpawn_01 == FALSE) && (AraharPlagueSpawn_02 == FALSE) && (AraharPlagueSpawn_03 == FALSE) && (AraharPlagueSpawn_04 == FALSE) && (AraharPlagueSpawn_05 == FALSE))
+			if ((AraharPlagueSpawn_01 ==  FALSE ) && (AraharPlagueSpawn_02 ==  FALSE ) && (AraharPlagueSpawn_03 ==  FALSE ) && (AraharPlagueSpawn_04 ==  FALSE ) && (AraharPlagueSpawn_05 ==  FALSE ))
 			{
 				AraharPlagueCount += 1;
 			};
-			if(AraharPlagueCountAOE >= 50)
+			if ( AraharPlagueCountAOE >=  50 )
 			{
 				AI_TurnToNPC(AraharPlague,hero);
 				AI_PlayAni(AraharPlague,"T_WARN");
@@ -9319,7 +9320,7 @@ func void Hero_poisoned()
 					Npc_ChangeAttribute(hero,ATR_HITPOINTS,-DamageAraharPlagueAOE);
 				};
 
-				AraharPlagueCountAOE = FALSE;
+				AraharPlagueCountAOE = FALSE ;
 			}
 			else
 			{
@@ -9338,7 +9339,7 @@ func void Hero_poisoned()
 					Wld_InsertNpc(Zombie_AraharPlague_03,"LOSTVALLEY_ZOMBIE_03");
 					Wld_InsertNpc(Zombie_AraharPlague_04,"LOSTVALLEY_ZOMBIE_04");
 					Wld_InsertNpc(Zombie_AraharPlague_05,"LOSTVALLEY_ZOMBIE_05");
-					AraharPlagueCount = FALSE;
+					AraharPlagueCount = FALSE ;
 					AraharPlagueSpawn_01 = TRUE;
 					AraharPlagueSpawn_02 = TRUE;
 					AraharPlagueSpawn_03 = TRUE;
@@ -9457,7 +9458,7 @@ func void Hero_poisoned()
 
 				if(FirstAppearMoonSun == FALSE)
 				{
-					PrintScreen("...Cолнце и Луна сильны как никогда...",-1,60,FONT_NEWLEVEL,4);
+					PrintScreen( " ...Sun and Moon are stronger than ever... " , - 1 , 60 , FONT_NEWLEVEL , 4 );
 					FirstAppearMoonSun = TRUE;
 				};
 				if((Npc_GetDistToWP(ShadowGuardOne,"LOSTVALLEY_SHADOWGUARD_01") > 3000) || (Npc_GetDistToWP(ShadowGuardTwo,"LOSTVALLEY_SHADOWGUARD_02") > 3000))
@@ -9498,7 +9499,7 @@ func void Hero_poisoned()
 
 					ShadowTwinsCount = FALSE;
 				};
-				if((ShadowDayTime_Moon == TRUE) && (ShadowKeyTime == FALSE))			//-----------Наступает ночь----------------------
+				if ((ShadowDayTime_Moon ==  TRUE ) && (ShadowKeyTime ==  FALSE ))			 // -----------Night is falling------------------- ---
 				{
 					ShadowSunCount += 1;
 
@@ -9506,8 +9507,8 @@ func void Hero_poisoned()
 					{
 						TempGuardOneHP = ShadowGuardOne.attribute[ATR_HITPOINTS];
 						TempGuardTwoHP = ShadowGuardTwo.attribute[ATR_HITPOINTS];
-						Wld_SetTime(22,0);
-						PrintScreen("...ночь пришла, Луна взошла...",-1,60,FONT_NEWLEVEL,3);
+						Wld_SetTime( 22 , 0 );
+						PrintScreen( " ...the night has come, the moon has risen... " , - 1 , 60 , FONT_NEWLEVEL , 3 );
 						ShadowGuardOne.attribute[ATR_HITPOINTS] = TempGuardOneHP;
 						ShadowGuardTwo.attribute[ATR_HITPOINTS] = TempGuardTwoHP;
 						ShadowGuardOne.flags = NPC_FLAG_IMMORTAL;
@@ -9522,7 +9523,7 @@ func void Hero_poisoned()
 					};
 					if(ShadowSunCount >= 15)
 					{
-						PrintScreen("...Cолнце и Луна рядом навсегда...",-1,60,FONT_NEWLEVEL,3);
+						PrintScreen( " ...Sun and Moon are near forever... " , - 1 , 60 , FONT_NEWLEVEL , 3 );
 						AI_PlayAni(ShadowGuardOne,"T_HEASHOOT_2_STAND");
 						ShadowGuardOne.flags = NPC_FLAG_IMMORTAL;
 						ShadowGuardTwo.flags = NPC_FLAG_IMMORTAL;
@@ -9548,7 +9549,7 @@ func void Hero_poisoned()
 						};
 					};
 				}
-				else if((ShadowDayTime_Sun == TRUE) && (ShadowKeyTime == FALSE))		//-----------Наступает день----------------------
+				else  if ((ShadowDayTime_Sun ==  TRUE ) && (ShadowKeyTime ==  FALSE ))		 // -----------It's Daytime----------- ----
 				{
 					ShadowMoonCount += 1;
 
@@ -9556,8 +9557,8 @@ func void Hero_poisoned()
 					{
 						TempGuardOneHP = ShadowGuardOne.attribute[ATR_HITPOINTS];
 						TempGuardTwoHP = ShadowGuardTwo.attribute[ATR_HITPOINTS];
-						Wld_SetTime(8,0);
-						PrintScreen("...утро пришло, Солнце взошло...",-1,60,FONT_NEWLEVEL,3);
+						Wld_SetTime( 8 , 0 );
+						PrintScreen( " ...morning has come, the sun has risen... " , - 1 , 60 , FONT_NEWLEVEL , 3 );
 						ShadowGuardOne.attribute[ATR_HITPOINTS] = TempGuardOneHP;
 						ShadowGuardTwo.attribute[ATR_HITPOINTS] = TempGuardTwoHP;
 						ShadowGuardOne.flags = 0;
@@ -9572,7 +9573,7 @@ func void Hero_poisoned()
 					};
 					if(ShadowMoonCount >= 15)
 					{
-						PrintScreen("...Cолнце и Луна рядом навсегда...",-1,60,FONT_NEWLEVEL,3);
+						PrintScreen( " ...Sun and Moon are near forever... " , - 1 , 60 , FONT_NEWLEVEL , 3 );
 						AI_PlayAni(ShadowGuardTwo,"T_HEASHOOT_2_STAND");
 						ShadowGuardOne.flags = NPC_FLAG_IMMORTAL;
 						ShadowGuardTwo.flags = NPC_FLAG_IMMORTAL;
@@ -9609,7 +9610,7 @@ func void Hero_poisoned()
 					};
 					if(ShadowMoonRests == TRUE)
 					{
-						Wld_SetTime(22,0);
+						Wld_SetTime( 22 , 0 );
 						AI_PlayAni(ShadowGuardTwo,"T_HEASHOOT_2_STAND");
 						ShadowMoonRests = FALSE;
 					};
@@ -9622,7 +9623,7 @@ func void Hero_poisoned()
 					};
 					if(ShadowSunRests == TRUE)
 					{
-						Wld_SetTime(8,0);
+						Wld_SetTime( 8 , 0 );
 						AI_PlayAni(ShadowGuardOne,"T_HEASHOOT_2_STAND");
 						ShadowSunRests = FALSE;
 					};
@@ -9810,7 +9811,7 @@ func void Hero_poisoned()
 
 					if(SoulKeeperInRage > 5)
 					{
-						PrintScreen("Хранитель до конца высосал вашу душу!",-1,60,FONT_NEWLEVEL,3);
+						PrintScreen( " The guardian sucked your soul to the end! " , - 1 , 60 , FONT_NEWLEVEL , 3 );
 						Npc_ChangeAttribute(hero,ATR_HITPOINTS,-hero.attribute[ATR_HITPOINTS_MAX]);
 						SoulKeeperInRage = FALSE;
 					}
@@ -9822,7 +9823,7 @@ func void Hero_poisoned()
 							Npc_ChangeAttribute(hero,ATR_HITPOINTS,-DamageSoulKeeperAOE);
 						};
 
-						PrintScreen("Хранитель высасывает часть вашей души!",-1,60,FONT_NEWLEVEL,3);
+						PrintScreen( " The Guardian is sucking out part of your soul! " , - 1 , 60 , FONT_NEWLEVEL , 3 );
 					};
 				};
 			};
@@ -9836,7 +9837,7 @@ func void Hero_poisoned()
 			if(Npc_GetDistToWP(FireGolem_LV,"WDS_LAVA_DEADTREE_01") <= 1100)
 			{
 				FireGolem_LV_Count += 1;
-				FireGolem_LV_RandyAttack = Hlp_Random(100);
+				FireGolem_LV_RandyAttack = Hlp_Random( 100 );
 
 				if(FireGolem_LV_RandyAttack <= 5)
 				{	
@@ -9859,7 +9860,7 @@ func void Hero_poisoned()
 				AI_Standup(FireGolem_LV);
 				AI_Teleport(FireGolem_LV,"WDS_LAVA_DEADTREE_01");
 				FiarasFight = FALSE;
-				FireGolem_LV.aivar[AIV_EnemyOverride] = TRUE;
+				FireGolem_LV.aivar[AIV_EnemyOverride] = TRUE ;
 				FireGolem_LV.flags = NPC_FLAG_IMMORTAL;
 			}
 			else if(HeroIsDead == TRUE)
@@ -9871,7 +9872,7 @@ func void Hero_poisoned()
 				AI_Standup(FireGolem_LV);
 				AI_Teleport(FireGolem_LV,"WDS_LAVA_DEADTREE_01");
 				FiarasFight = FALSE;
-				FireGolem_LV.aivar[AIV_EnemyOverride] = TRUE;
+				FireGolem_LV.aivar[AIV_EnemyOverride] = TRUE ;
 				FireGolem_LV.flags = NPC_FLAG_IMMORTAL;
 			};
 		};
@@ -9888,7 +9889,7 @@ func void Hero_poisoned()
 				Npc_ClearAIQueue(AncientTreeGolem);
 				AI_Standup(AncientTreeGolem);
 				AI_Teleport(AncientTreeGolem,"WDS_LAVA_EKRON_01");
-				AncientTreeGolem.aivar[AIV_EnemyOverride] = TRUE;
+				AncientTreeGolem.aivar[AIV_EnemyOverride] = TRUE ;
 				AncientTreeGolem.flags = NPC_FLAG_IMMORTAL;
 			};
 			if((EkronCount == 25) || (EkronCount == 75))
@@ -9897,7 +9898,7 @@ func void Hero_poisoned()
 				{	
 					DamageEkronAOE = 500 - hero.protection[PROT_MAGIC];
 					AI_TurnToNPC(AncientTreeGolem,hero);
-					AI_PlayAni(AncientTreeGolem,"T_WARN");
+					AI_PlayAni(AncientTreeGolem, " T_WARN " );
 					AI_Wait(AncientTreeGolem,1);
 					Wld_PlayEffect("spellFX_Quake",AncientTreeGolem,hero,2,DamageEkronAOE,DAM_MAGIC,TRUE);
 				};
@@ -9929,7 +9930,7 @@ func void Hero_poisoned()
 					AncientTreeGolem.flags = NPC_FLAG_IMMORTAL;
 					Wld_PlayEffect("SPELLFX_ROOTS_TARGET",AncientTreeGolem,AncientTreeGolem,2,0,0,FALSE);
 					Wld_PlayEffect("spellFX_INCOVATION_GREEN",AncientTreeGolem,AncientTreeGolem,2,0,0,FALSE);
-					AI_PlayAni(AncientTreeGolem,"T_DEAD");
+					AI_PlayAni(AncientTreeGolem, " T_DEAD " );
 					Wld_InsertNpc(ShadowWolf_DeadTree,"WDS_LAVA_HIGHLEVEL_02");
 					Wld_InsertNpc(ShadowWolf_DeadTree,"WDS_LAVA_HIGHLEVEL_04FIX");
 					Wld_InsertNpc(ShadowWolf_DeadTree,"WDS_LAVA_HIGHLEVEL_03");
@@ -9946,10 +9947,10 @@ func void Hero_poisoned()
 				else if(EkronCount > 110)
 				{		
 					AncientTreeGolem.noFocus = FALSE;
-					AncientTreeGolem.name[0] = "Экрон, проклятое древо";
+					AncientTreeGolem.name[ 0 ] = " Ekron, the Cursed Tree " ;
 					AncientTreeGolem.flags = 0;
 					EkronCount = FALSE;
-					AI_PlayAni(AncientTreeGolem,"T_RISE");	
+					AI_PlayAni(AncientTreeGolem, " T_RISE " );	
 				};
 
 				AI_Wait(AncientTreeGolem,1);
@@ -9959,7 +9960,7 @@ func void Hero_poisoned()
 				EkronCount = FALSE;
 				EkronFight = FALSE;
 				AncientTreeGolem.attribute[ATR_HITPOINTS] = AncientTreeGolem.attribute[ATR_HITPOINTS_MAX];
-				AncientTreeGolem.aivar[AIV_EnemyOverride] = TRUE;
+				AncientTreeGolem.aivar[AIV_EnemyOverride] = TRUE ;
 				AncientTreeGolem.flags = NPC_FLAG_IMMORTAL;
 				Npc_PerceiveAll(AncientTreeGolem);
 				Npc_ClearAIQueue(AncientTreeGolem);
@@ -9989,28 +9990,28 @@ func void Hero_poisoned()
 				AI_SetWalkMode(Skeleton_Bro_Mag,NPC_WALK);
 				AI_ReadyMeleeWeapon(Skeleton_Bro_Mag);
 				AI_GotoWP(Skeleton_Bro_Mag,"WDS_LAVA_CASTLEYARD_09");
-				StartBroMag = TRUE;
+				StartBroMag = TRUE ;
 			};
 			if((Npc_GetDistToWP(Skeleton_Bro_Dex,"WDS_LAVA_CASTLEYARD_09") <= 250) && (StartBroDex == TRUE) && (StartBroDexDone == FALSE))
 			{
 				Skeleton_Bro_Dex.flags = 0;
-				Skeleton_Bro_Dex.aivar[AIV_EnemyOverride] = FALSE;
-				StartBroDexDone = TRUE;
+				Skeleton_Bridge_Dex.aivar[AIV_EnemyOverride] = FALSE ;
+				StartBroDexDone = TRUE ;
 				SkelBroDexFight = TRUE;
 				SkelBrosFight = TRUE;
 			};
 			if((Npc_GetDistToWP(Skeleton_Bro_Str,"WDS_LAVA_CASTLEYARD_09") <= 250) && (StartBroStr == TRUE) && (StartBroStrDone == FALSE))
 			{
 				Skeleton_Bro_Str.flags = 0;
-				Skeleton_Bro_Str.aivar[AIV_EnemyOverride] = FALSE;
-				StartBroStrDone = TRUE;
+				Skeleton_Bro_Str.aivar[AIV_EnemyOverride] = FALSE ;
+				StartBroStrDone = TRUE ;
 				SkelBroStrFight = TRUE;
 			};
-			if((Npc_GetDistToWP(Skeleton_Bro_Mag,"WDS_LAVA_CASTLEYARD_09") <= 250) && (StartBroMag == TRUE) && (StartBroMagDone == FALSE))
+			if (( Npc_GetDistToWP( Skeleton_Bro_Mag , " WDS_LAVA_CASTLEYARD_09 " ) <=  250 ) && ( StartBroMag ==  TRUE ) && ( StartBroMagDone ==  FALSE )) ;
 			{
 				Skeleton_Bro_Mag.flags = 0;
-				Skeleton_Bro_Mag.aivar[AIV_EnemyOverride] = FALSE;
-				StartBroMagDone = TRUE;
+				Skeleton_Bridge_Mag.aivar[AIV_EnemyOverride] = FALSE ;
+				StartBroMagDone = TRUE ;
 				SkelBroMagFight = TRUE;
 			};
 			if((Npc_GetDistToWP(hero,"WDS_LAVA_CASTLEYARD_09") > 1500) && (StartBroFight == TRUE) && (SkelBrosFightWin == FALSE) && (HeroIsDead == FALSE))
@@ -10035,7 +10036,7 @@ func void Hero_poisoned()
 					//AI_Wait(hero,2);
 					SkelBroDexFight = FALSE;
 					SkelFinalReady_Dex = TRUE;
-					Skeleton_Bro_Dex.aivar[AIV_EnemyOverride] = TRUE;
+					Skeleton_Bro_Dex.aivar[AIV_EnemyOverride] = TRUE ;
 					Skeleton_Bro_Dex.flags = NPC_FLAG_IMMORTAL;
 					Npc_ClearAIQueue(Skeleton_Bro_Dex);
 					AI_Standup(Skeleton_Bro_Dex);
@@ -10087,7 +10088,7 @@ func void Hero_poisoned()
 					//AI_Wait(hero,2);
 					SkelBroMagFight = FALSE;
 					SkelFinalReady_Mag = TRUE;
-					Skeleton_Bro_Mag.aivar[AIV_EnemyOverride] = TRUE;
+					Skeleton_Bridge_Mag.aivar[AIV_EnemyOverride] = TRUE ;
 					Skeleton_Bro_Mag.flags = NPC_FLAG_IMMORTAL;
 					Npc_ClearAIQueue(Skeleton_Bro_Mag);
 					AI_Standup(Skeleton_Bro_Mag);
@@ -10125,21 +10126,21 @@ func void Hero_poisoned()
 					if((Npc_GetDistToWP(Skeleton_Bro_Dex,"WDS_LAVA_CASTLEYARD_09") <= 250) && (AllSkelMoveFightDex == FALSE))
 					{
 						Skeleton_Bro_Dex.flags = 0;
-						Skeleton_Bro_Dex.aivar[AIV_EnemyOverride] = FALSE;
+						Skeleton_Bridge_Dex.aivar[AIV_EnemyOverride] = FALSE ;
 						AI_TurnToNPC(Skeleton_Bro_Dex,hero);
 						AllSkelMoveFightDex = TRUE;
 					};
 					if((Npc_GetDistToWP(Skeleton_Bro_Str,"WDS_LAVA_CASTLEYARD_09") <= 250) && (AllSkelMoveFightStr == FALSE))
 					{
 						Skeleton_Bro_Str.flags = 0;
-						Skeleton_Bro_Str.aivar[AIV_EnemyOverride] = FALSE;
+						Skeleton_Bro_Str.aivar[AIV_EnemyOverride] = FALSE ;
 						AI_TurnToNPC(Skeleton_Bro_Str,hero);
 						AllSkelMoveFightStr = TRUE;
 					};
 					if((Npc_GetDistToWP(Skeleton_Bro_Mag,"WDS_LAVA_CASTLEYARD_09") <= 250) && (AllSkelMoveFightMag == FALSE))
 					{
 						Skeleton_Bro_Mag.flags = 0;
-						Skeleton_Bro_Mag.aivar[AIV_EnemyOverride] = FALSE;
+						Skeleton_Bridge_Mag.aivar[AIV_EnemyOverride] = FALSE ;
 						AI_TurnToNPC(Skeleton_Bro_Mag,hero);
 						AllSkelMoveFightMag = TRUE;
 					};
@@ -10152,7 +10153,7 @@ func void Hero_poisoned()
 		};
 	};
 
-	//----------------КратАр------------------------------------------------
+	// ----------------KratAr------------------------------ -----------------
 
 	if(CurrentLevel == HAOSWORLD_ZEN)
 	{
@@ -10169,8 +10170,8 @@ func void Hero_poisoned()
 				};
 				if(tmpIlarahCount_01 >= 50)
 				{
-					AI_PlayAni(Ilarah,"T_PALELITE");
-					AI_Wait(Ilarah,1);
+					AI_PlayAni(Ilarah, " T_PALELITE " );
+					AI_Wait(Ilarah, 1 );
 					Snd_Play("OPENSOUL");
 					Wld_PlayEffect("SPELLFX_SKULL_COLLIDEFX",Ilarah,hero,0,0,0,FALSE);
 					Wld_PlayEffect("SPELLFX_UNDEAD_SCREENBLEND",Ilarah,hero,0,0,0,FALSE);
@@ -10242,11 +10243,11 @@ func void Hero_poisoned()
 					Snd_Play("DRG_WARN");
 					Wld_PlayEffect("SPELLFX_BELIARSHRINE",Ilarah,Ilarah,0,0,0,FALSE);
 					Wld_PlayEffect("VOB_MAGICBURN",Ilarah,Ilarah,0,0,0,FALSE);
-					AI_Wait(Ilarah,5);
+					AI_Wait(Ilarah, 5 );
 				}
 				else if(tmpIlarahCount_03 > 55)
 				{
-					AI_PlayAni(Ilarah,"T_PALELITE");
+					AI_PlayAni(Ilarah, " T_PALELITE " );
 					Wld_PlayEffect("SPELLFX_FIRERAIN_RAIN",Ilarah,hero,0,0,0,FALSE);
 					Wld_PlayEffect("SPELLFX_FIRERAIN_SCREENBLEND",Ilarah,hero,0,0,0,FALSE);
 					Snd_Play("DRG_DIE");
@@ -10299,7 +10300,7 @@ func void Hero_poisoned()
 					Ext_RemoveFromSlot(Ilarah,"ZS_LEFTHAND");	
 					Ext_RemoveFromSlot(Ilarah,"ZS_RIGHTHAND");	
 
-					AI_Wait(Ilarah,1);
+					AI_Wait(Ilarah, 1 );
 					AI_PlayAni(hero,"T_FALLB_2_FALLENB");
 					AI_Wait(hero,1);
 					AI_PlayAni(hero,"T_FALLENB_2_STAND");
@@ -10332,23 +10333,23 @@ func void b_cycle_trigger_01()
 {
 	_hero = Hlp_GetNpc(PC_HERO);
 
-	if((hero.guild > GIL_SEPERATOR_HUM) && (HeroTransOpen == TRUE))
+	if (( hero . guild >  GIL_SEPERATOR_HUM ) && ( HeroTransOpen ==  TRUE ))
 	{
-		HEROTRANS = TRUE;
+		HEROTRANS = TRUE ;
 		HeroTransOpen = FALSE;
 		HeroTRANSCOUNT = FALSE;
-		TransformWarn = FALSE;
+		TransformWarn = FALSE ;
 	};
-	if((hero.guild <= GIL_SEPERATOR_HUM) && (HeroTrans == TRUE))
+	if ((hero.guild <=  GIL_SEPERATOR_HUM ) && (HeroTrans ==  TRUE ))
 	{
 		AI_UnequipWeapons(hero);
-		HeroTrans = FALSE;
+		HeroTrans = FALSE ;
 		HeroTransScroll = FALSE;
-		HeroTransRune = FALSE;
+		HeroTransRune = FALSE ;
 		HeroTRANSCOUNT = FALSE;
-		TransformWarn = FALSE;
+		TransformWarn = FALSE ;
 	};
-	if((HEROTRANS == TRUE) && (Mount_Up == FALSE) && (FlyCarpetIsOn == FALSE) && (HeroIsDead == FALSE) && (HeroTransScroll == TRUE))
+	if (( HEROTRANS  ==  TRUE ) && ( Mount_Up ==  FALSE ) && ( FlyCarpetIsOn ==  FALSE ) && ( HeroIsDead ==  FALSE ) && ( HeroTransScroll ==  TRUE ))
 	{
 		HeroTRANSCOUNT += 1;
 		TempTransTime = 30 + (hero.level * 5);
@@ -10359,7 +10360,7 @@ func void b_cycle_trigger_01()
 
 			if(TransformWarn == FALSE)
 			{
-				AI_Print("Телесная оболочка существа начала разрушаться...");
+				AI_Print( "The body shell of the creature began to collapse... " );
 				TransformWarn = TRUE;
 			};
 		};
@@ -10384,23 +10385,23 @@ func void b_cycle_trigger_02()
 {
 	_hero = Hlp_GetNpc(PC_HERO);
 
-	if((hero.guild > GIL_SEPERATOR_HUM) && (HeroTransOpen == TRUE))
+	if (( hero . guild >  GIL_SEPERATOR_HUM ) && ( HeroTransOpen ==  TRUE ))
 	{
-		HEROTRANS = TRUE;
+		HEROTRANS = TRUE ;
 		HeroTransOpen = FALSE;
 		HeroTRANSCOUNT = FALSE;
-		TransformWarn = FALSE;
+		TransformWarn = FALSE ;
 	};
-	if((hero.guild <= GIL_SEPERATOR_HUM) && (HeroTrans == TRUE))
+	if ((hero.guild <=  GIL_SEPERATOR_HUM ) && (HeroTrans ==  TRUE ))
 	{
 		AI_UnequipWeapons(hero);
-		HeroTrans = FALSE;
+		HeroTrans = FALSE ;
 		HeroTransScroll = FALSE;
-		HeroTransRune = FALSE;
+		HeroTransRune = FALSE ;
 		HeroTRANSCOUNT = FALSE;
-		TransformWarn = FALSE;
+		TransformWarn = FALSE ;
 	};
-	if((HEROTRANS == TRUE) && (Mount_Up == FALSE) && (FlyCarpetIsOn == FALSE) && (HeroIsDead == FALSE) && (HeroTransScroll == TRUE))
+	if (( HEROTRANS  ==  TRUE ) && ( Mount_Up ==  FALSE ) && ( FlyCarpetIsOn ==  FALSE ) && ( HeroIsDead ==  FALSE ) && ( HeroTransScroll ==  TRUE ))
 	{
 		HeroTRANSCOUNT += 1;
 		TempTransTime = 30 + (hero.level * 5);
@@ -10411,7 +10412,7 @@ func void b_cycle_trigger_02()
 
 			if(TransformWarn == FALSE)
 			{
-				AI_Print("Телесная оболочка существа начала разрушаться...");
+				AI_Print( "The body shell of the creature began to collapse... " );
 				TransformWarn = TRUE;
 			};
 		};
@@ -10425,7 +10426,7 @@ func void b_cycle_trigger_02()
 	b_gettime();
 	Hero_poisoned();
 
-	if(Npc_IsDead(orkelite_addon3_chkflg_12) && (SENDPATROW1 == FALSE))
+	if (Npc_IsDead(orkelite_addon3_chkflg_12) && ( SENDPATROW1  ==  FALSE ))
 	{
 		Wld_InsertNpc(orc_8522_warrior,"OW_PATH_STONEHENGE_1");
 		Wld_InsertNpc(orc_8522_warrior,"OW_PATH_STONEHENGE_1");
@@ -10441,23 +10442,23 @@ func void b_cycle_trigger_03()
 {
 	_hero = Hlp_GetNpc(PC_HERO);
 
-	if((hero.guild > GIL_SEPERATOR_HUM) && (HeroTransOpen == TRUE))
+	if (( hero . guild >  GIL_SEPERATOR_HUM ) && ( HeroTransOpen ==  TRUE ))
 	{
-		HEROTRANS = TRUE;
+		HEROTRANS = TRUE ;
 		HeroTransOpen = FALSE;
 		HeroTRANSCOUNT = FALSE;
-		TransformWarn = FALSE;
+		TransformWarn = FALSE ;
 	};
-	if((hero.guild <= GIL_SEPERATOR_HUM) && (HeroTrans == TRUE))
+	if ((hero.guild <=  GIL_SEPERATOR_HUM ) && (HeroTrans ==  TRUE ))
 	{
 		AI_UnequipWeapons(hero);
-		HeroTrans = FALSE;
+		HeroTrans = FALSE ;
 		HeroTransScroll = FALSE;
-		HeroTransRune = FALSE;
+		HeroTransRune = FALSE ;
 		HeroTRANSCOUNT = FALSE;
-		TransformWarn = FALSE;
+		TransformWarn = FALSE ;
 	};
-	if((HEROTRANS == TRUE) && (Mount_Up == FALSE) && (FlyCarpetIsOn == FALSE) && (HeroIsDead == FALSE) && (HeroTransScroll == TRUE))
+	if (( HEROTRANS  ==  TRUE ) && ( Mount_Up ==  FALSE ) && ( FlyCarpetIsOn ==  FALSE ) && ( HeroIsDead ==  FALSE ) && ( HeroTransScroll ==  TRUE ))
 	{
 		HeroTRANSCOUNT += 1;
 		TempTransTime = 30 + (hero.level * 5);
@@ -10468,7 +10469,7 @@ func void b_cycle_trigger_03()
 
 			if(TransformWarn == FALSE)
 			{
-				AI_Print("Телесная оболочка существа начала разрушаться...");
+				AI_Print( "The body shell of the creature began to collapse... " );
 				TransformWarn = TRUE;
 			};
 		};
@@ -10488,23 +10489,23 @@ func void b_cycle_trigger_04()
 {
 	_hero = Hlp_GetNpc(PC_HERO);
 
-	if((hero.guild > GIL_SEPERATOR_HUM) && (HeroTransOpen == TRUE))
+	if (( hero . guild >  GIL_SEPERATOR_HUM ) && ( HeroTransOpen ==  TRUE ))
 	{
-		HEROTRANS = TRUE;
+		HEROTRANS = TRUE ;
 		HeroTransOpen = FALSE;
 		HeroTRANSCOUNT = FALSE;
-		TransformWarn = FALSE;
+		TransformWarn = FALSE ;
 	};
-	if((hero.guild <= GIL_SEPERATOR_HUM) && (HeroTrans == TRUE))
+	if ((hero.guild <=  GIL_SEPERATOR_HUM ) && (HeroTrans ==  TRUE ))
 	{
 		AI_UnequipWeapons(hero);
-		HeroTrans = FALSE;
+		HeroTrans = FALSE ;
 		HeroTransScroll = FALSE;
-		HeroTransRune = FALSE;
+		HeroTransRune = FALSE ;
 		HeroTRANSCOUNT = FALSE;
-		TransformWarn = FALSE;
+		TransformWarn = FALSE ;
 	};
-	if((HEROTRANS == TRUE) && (Mount_Up == FALSE) && (FlyCarpetIsOn == FALSE) && (HeroIsDead == FALSE) && (HeroTransScroll == TRUE))
+	if (( HEROTRANS  ==  TRUE ) && ( Mount_Up ==  FALSE ) && ( FlyCarpetIsOn ==  FALSE ) && ( HeroIsDead ==  FALSE ) && ( HeroTransScroll ==  TRUE ))
 	{
 		HeroTRANSCOUNT += 1;
 		TempTransTime = 30 + (hero.level * 5);
@@ -10515,7 +10516,7 @@ func void b_cycle_trigger_04()
 
 			if(TransformWarn == FALSE)
 			{
-				AI_Print("Телесная оболочка существа начала разрушаться...");
+				AI_Print( "The body shell of the creature began to collapse... " );
 				TransformWarn = TRUE;
 			};
 		};
@@ -10536,23 +10537,23 @@ func void b_cycle_trigger_05()
 {
 	_hero = Hlp_GetNpc(PC_HERO);
 
-	if((hero.guild > GIL_SEPERATOR_HUM) && (HeroTransOpen == TRUE))
+	if (( hero . guild >  GIL_SEPERATOR_HUM ) && ( HeroTransOpen ==  TRUE ))
 	{
-		HEROTRANS = TRUE;
+		HEROTRANS = TRUE ;
 		HeroTransOpen = FALSE;
 		HeroTRANSCOUNT = FALSE;
-		TransformWarn = FALSE;
+		TransformWarn = FALSE ;
 	};
-	if((hero.guild <= GIL_SEPERATOR_HUM) && (HeroTrans == TRUE))
+	if ((hero.guild <=  GIL_SEPERATOR_HUM ) && (HeroTrans ==  TRUE ))
 	{
 		AI_UnequipWeapons(hero);
-		HeroTrans = FALSE;
+		HeroTrans = FALSE ;
 		HeroTransScroll = FALSE;
-		HeroTransRune = FALSE;
+		HeroTransRune = FALSE ;
 		HeroTRANSCOUNT = FALSE;
-		TransformWarn = FALSE;
+		TransformWarn = FALSE ;
 	};
-	if((HEROTRANS == TRUE) && (Mount_Up == FALSE) && (FlyCarpetIsOn == FALSE) && (HeroIsDead == FALSE) && (HeroTransScroll == TRUE))
+	if (( HEROTRANS  ==  TRUE ) && ( Mount_Up ==  FALSE ) && ( FlyCarpetIsOn ==  FALSE ) && ( HeroIsDead ==  FALSE ) && ( HeroTransScroll ==  TRUE ))
 	{
 		HeroTRANSCOUNT += 1;
 		TempTransTime = 30 + (hero.level * 5);
@@ -10563,7 +10564,7 @@ func void b_cycle_trigger_05()
 
 			if(TransformWarn == FALSE)
 			{
-				AI_Print("Телесная оболочка существа начала разрушаться...");
+				AI_Print( "The body shell of the creature began to collapse... " );
 				TransformWarn = TRUE;
 			};
 		};
@@ -10584,23 +10585,23 @@ func void b_cycle_trigger_06()
 {
 	_hero = Hlp_GetNpc(PC_HERO);
 
-	if((hero.guild > GIL_SEPERATOR_HUM) && (HeroTransOpen == TRUE))
+	if (( hero . guild >  GIL_SEPERATOR_HUM ) && ( HeroTransOpen ==  TRUE ))
 	{
-		HEROTRANS = TRUE;
+		HEROTRANS = TRUE ;
 		HeroTransOpen = FALSE;
 		HeroTRANSCOUNT = FALSE;
-		TransformWarn = FALSE;
+		TransformWarn = FALSE ;
 	};
-	if((hero.guild <= GIL_SEPERATOR_HUM) && (HeroTrans == TRUE))
+	if ((hero.guild <=  GIL_SEPERATOR_HUM ) && (HeroTrans ==  TRUE ))
 	{
 		AI_UnequipWeapons(hero);
-		HeroTrans = FALSE;
+		HeroTrans = FALSE ;
 		HeroTransScroll = FALSE;
-		HeroTransRune = FALSE;
+		HeroTransRune = FALSE ;
 		HeroTRANSCOUNT = FALSE;
-		TransformWarn = FALSE;
+		TransformWarn = FALSE ;
 	};
-	if((HEROTRANS == TRUE) && (Mount_Up == FALSE) && (FlyCarpetIsOn == FALSE) && (HeroIsDead == FALSE) && (HeroTransScroll == TRUE))
+	if (( HEROTRANS  ==  TRUE ) && ( Mount_Up ==  FALSE ) && ( FlyCarpetIsOn ==  FALSE ) && ( HeroIsDead ==  FALSE ) && ( HeroTransScroll ==  TRUE ))
 	{
 		HeroTRANSCOUNT += 1;
 		TempTransTime = 30 + (hero.level * 5);
@@ -10611,7 +10612,7 @@ func void b_cycle_trigger_06()
 
 			if(TransformWarn == FALSE)
 			{
-				AI_Print("Телесная оболочка существа начала разрушаться...");
+				AI_Print( "The body shell of the creature began to collapse... " );
 				TransformWarn = TRUE;
 			};
 		};
@@ -10632,23 +10633,23 @@ func void b_cycle_trigger_07()
 {
 	_hero = Hlp_GetNpc(PC_HERO);
 
-	if((hero.guild > GIL_SEPERATOR_HUM) && (HeroTransOpen == TRUE))
+	if (( hero . guild >  GIL_SEPERATOR_HUM ) && ( HeroTransOpen ==  TRUE ))
 	{
-		HEROTRANS = TRUE;
+		HEROTRANS = TRUE ;
 		HeroTransOpen = FALSE;
 		HeroTRANSCOUNT = FALSE;
-		TransformWarn = FALSE;
+		TransformWarn = FALSE ;
 	};
-	if((hero.guild <= GIL_SEPERATOR_HUM) && (HeroTrans == TRUE))
+	if ((hero.guild <=  GIL_SEPERATOR_HUM ) && (HeroTrans ==  TRUE ))
 	{
 		AI_UnequipWeapons(hero);
-		HeroTrans = FALSE;
+		HeroTrans = FALSE ;
 		HeroTransScroll = FALSE;
-		HeroTransRune = FALSE;
+		HeroTransRune = FALSE ;
 		HeroTRANSCOUNT = FALSE;
-		TransformWarn = FALSE;
+		TransformWarn = FALSE ;
 	};
-	if((HEROTRANS == TRUE) && (Mount_Up == FALSE) && (FlyCarpetIsOn == FALSE) && (HeroIsDead == FALSE) && (HeroTransScroll == TRUE))
+	if (( HEROTRANS  ==  TRUE ) && ( Mount_Up ==  FALSE ) && ( FlyCarpetIsOn ==  FALSE ) && ( HeroIsDead ==  FALSE ) && ( HeroTransScroll ==  TRUE ))
 	{
 		HeroTRANSCOUNT += 1;
 		TempTransTime = 30 + (hero.level * 5);
@@ -10659,7 +10660,7 @@ func void b_cycle_trigger_07()
 
 			if(TransformWarn == FALSE)
 			{
-				AI_Print("Телесная оболочка существа начала разрушаться...");
+				AI_Print( "The body shell of the creature began to collapse... " );
 				TransformWarn = TRUE;
 			};
 		};
@@ -10680,23 +10681,23 @@ func void b_cycle_trigger_08()
 {
 	_hero = Hlp_GetNpc(PC_HERO);
 
-	if((hero.guild > GIL_SEPERATOR_HUM) && (HeroTransOpen == TRUE))
+	if (( hero . guild >  GIL_SEPERATOR_HUM ) && ( HeroTransOpen ==  TRUE ))
 	{
-		HEROTRANS = TRUE;
+		HEROTRANS = TRUE ;
 		HeroTransOpen = FALSE;
 		HeroTRANSCOUNT = FALSE;
-		TransformWarn = FALSE;
+		TransformWarn = FALSE ;
 	};
-	if((hero.guild <= GIL_SEPERATOR_HUM) && (HeroTrans == TRUE))
+	if ((hero.guild <=  GIL_SEPERATOR_HUM ) && (HeroTrans ==  TRUE ))
 	{
 		AI_UnequipWeapons(hero);
-		HeroTrans = FALSE;
+		HeroTrans = FALSE ;
 		HeroTransScroll = FALSE;
-		HeroTransRune = FALSE;
+		HeroTransRune = FALSE ;
 		HeroTRANSCOUNT = FALSE;
-		TransformWarn = FALSE;
+		TransformWarn = FALSE ;
 	};
-	if((HEROTRANS == TRUE) && (Mount_Up == FALSE) && (FlyCarpetIsOn == FALSE) && (HeroIsDead == FALSE) && (HeroTransScroll == TRUE))
+	if (( HEROTRANS  ==  TRUE ) && ( Mount_Up ==  FALSE ) && ( FlyCarpetIsOn ==  FALSE ) && ( HeroIsDead ==  FALSE ) && ( HeroTransScroll ==  TRUE ))
 	{
 		HeroTRANSCOUNT += 1;
 		TempTransTime = 30 + (hero.level * 5);
@@ -10707,7 +10708,7 @@ func void b_cycle_trigger_08()
 
 			if(TransformWarn == FALSE)
 			{
-				AI_Print("Телесная оболочка существа начала разрушаться...");
+				AI_Print( "The body shell of the creature began to collapse... " );
 				TransformWarn = TRUE;
 			};
 		};
@@ -10728,23 +10729,23 @@ func void b_cycle_trigger_09()
 {
 	_hero = Hlp_GetNpc(PC_HERO);
 
-	if((hero.guild > GIL_SEPERATOR_HUM) && (HeroTransOpen == TRUE))
+	if (( hero . guild >  GIL_SEPERATOR_HUM ) && ( HeroTransOpen ==  TRUE ))
 	{
-		HEROTRANS = TRUE;
+		HEROTRANS = TRUE ;
 		HeroTransOpen = FALSE;
 		HeroTRANSCOUNT = FALSE;
-		TransformWarn = FALSE;
+		TransformWarn = FALSE ;
 	};
-	if((hero.guild <= GIL_SEPERATOR_HUM) && (HeroTrans == TRUE))
+	if ((hero.guild <=  GIL_SEPERATOR_HUM ) && (HeroTrans ==  TRUE ))
 	{
 		AI_UnequipWeapons(hero);
-		HeroTrans = FALSE;
+		HeroTrans = FALSE ;
 		HeroTransScroll = FALSE;
-		HeroTransRune = FALSE;
+		HeroTransRune = FALSE ;
 		HeroTRANSCOUNT = FALSE;
-		TransformWarn = FALSE;
+		TransformWarn = FALSE ;
 	};
-	if((HEROTRANS == TRUE) && (Mount_Up == FALSE) && (FlyCarpetIsOn == FALSE) && (HeroIsDead == FALSE) && (HeroTransScroll == TRUE))
+	if (( HEROTRANS  ==  TRUE ) && ( Mount_Up ==  FALSE ) && ( FlyCarpetIsOn ==  FALSE ) && ( HeroIsDead ==  FALSE ) && ( HeroTransScroll ==  TRUE ))
 	{
 		HeroTRANSCOUNT += 1;
 		TempTransTime = 30 + (hero.level * 5);
@@ -10755,7 +10756,7 @@ func void b_cycle_trigger_09()
 
 			if(TransformWarn == FALSE)
 			{
-				AI_Print("Телесная оболочка существа начала разрушаться...");
+				AI_Print( "The body shell of the creature began to collapse... " );
 				TransformWarn = TRUE;
 			};
 		};
@@ -10776,23 +10777,23 @@ func void b_cycle_trigger_10()
 {
 	_hero = Hlp_GetNpc(PC_HERO);
 
-	if((hero.guild > GIL_SEPERATOR_HUM) && (HeroTransOpen == TRUE))
+	if (( hero . guild >  GIL_SEPERATOR_HUM ) && ( HeroTransOpen ==  TRUE ))
 	{
-		HEROTRANS = TRUE;
+		HEROTRANS = TRUE ;
 		HeroTransOpen = FALSE;
 		HeroTRANSCOUNT = FALSE;
-		TransformWarn = FALSE;
+		TransformWarn = FALSE ;
 	};
-	if((hero.guild <= GIL_SEPERATOR_HUM) && (HeroTrans == TRUE))
+	if ((hero.guild <=  GIL_SEPERATOR_HUM ) && (HeroTrans ==  TRUE ))
 	{
 		AI_UnequipWeapons(hero);
-		HeroTrans = FALSE;
+		HeroTrans = FALSE ;
 		HeroTransScroll = FALSE;
-		HeroTransRune = FALSE;
+		HeroTransRune = FALSE ;
 		HeroTRANSCOUNT = FALSE;
-		TransformWarn = FALSE;
+		TransformWarn = FALSE ;
 	};
-	if((HEROTRANS == TRUE) && (Mount_Up == FALSE) && (FlyCarpetIsOn == FALSE) && (HeroIsDead == FALSE) && (HeroTransScroll == TRUE))
+	if (( HEROTRANS  ==  TRUE ) && ( Mount_Up ==  FALSE ) && ( FlyCarpetIsOn ==  FALSE ) && ( HeroIsDead ==  FALSE ) && ( HeroTransScroll ==  TRUE ))
 	{
 		HeroTRANSCOUNT += 1;
 		TempTransTime = 30 + (hero.level * 5);
@@ -10803,7 +10804,7 @@ func void b_cycle_trigger_10()
 
 			if(TransformWarn == FALSE)
 			{
-				AI_Print("Телесная оболочка существа начала разрушаться...");
+				AI_Print( "The body shell of the creature began to collapse... " );
 				TransformWarn = TRUE;
 			};
 		};
@@ -10824,23 +10825,23 @@ func void b_cycle_trigger_11()
 {
 	_hero = Hlp_GetNpc(PC_HERO);
 
-	if((hero.guild > GIL_SEPERATOR_HUM) && (HeroTransOpen == TRUE))
+	if (( hero . guild >  GIL_SEPERATOR_HUM ) && ( HeroTransOpen ==  TRUE ))
 	{
-		HEROTRANS = TRUE;
+		HEROTRANS = TRUE ;
 		HeroTransOpen = FALSE;
 		HeroTRANSCOUNT = FALSE;
-		TransformWarn = FALSE;
+		TransformWarn = FALSE ;
 	};
-	if((hero.guild <= GIL_SEPERATOR_HUM) && (HeroTrans == TRUE))
+	if ((hero.guild <=  GIL_SEPERATOR_HUM ) && (HeroTrans ==  TRUE ))
 	{
 		AI_UnequipWeapons(hero);
-		HeroTrans = FALSE;
+		HeroTrans = FALSE ;
 		HeroTransScroll = FALSE;
-		HeroTransRune = FALSE;
+		HeroTransRune = FALSE ;
 		HeroTRANSCOUNT = FALSE;
-		TransformWarn = FALSE;
+		TransformWarn = FALSE ;
 	};
-	if((HEROTRANS == TRUE) && (Mount_Up == FALSE) && (FlyCarpetIsOn == FALSE) && (HeroIsDead == FALSE) && (HeroTransScroll == TRUE))
+	if (( HEROTRANS  ==  TRUE ) && ( Mount_Up ==  FALSE ) && ( FlyCarpetIsOn ==  FALSE ) && ( HeroIsDead ==  FALSE ) && ( HeroTransScroll ==  TRUE ))
 	{
 		HeroTRANSCOUNT += 1;
 		TempTransTime = 30 + (hero.level * 5);
@@ -10851,7 +10852,7 @@ func void b_cycle_trigger_11()
 
 			if(TransformWarn == FALSE)
 			{
-				AI_Print("Телесная оболочка существа начала разрушаться...");
+				AI_Print( "The body shell of the creature began to collapse... " );
 				TransformWarn = TRUE;
 			};
 		};
@@ -10872,23 +10873,23 @@ func void b_cycle_trigger_12()
 {
 	_hero = Hlp_GetNpc(PC_HERO);
 
-	if((hero.guild > GIL_SEPERATOR_HUM) && (HeroTransOpen == TRUE))
+	if (( hero . guild >  GIL_SEPERATOR_HUM ) && ( HeroTransOpen ==  TRUE ))
 	{
-		HEROTRANS = TRUE;
+		HEROTRANS = TRUE ;
 		HeroTransOpen = FALSE;
 		HeroTRANSCOUNT = FALSE;
-		TransformWarn = FALSE;
+		TransformWarn = FALSE ;
 	};
-	if((hero.guild <= GIL_SEPERATOR_HUM) && (HeroTrans == TRUE))
+	if ((hero.guild <=  GIL_SEPERATOR_HUM ) && (HeroTrans ==  TRUE ))
 	{
 		AI_UnequipWeapons(hero);
-		HeroTrans = FALSE;
+		HeroTrans = FALSE ;
 		HeroTransScroll = FALSE;
-		HeroTransRune = FALSE;
+		HeroTransRune = FALSE ;
 		HeroTRANSCOUNT = FALSE;
-		TransformWarn = FALSE;
+		TransformWarn = FALSE ;
 	};
-	if((HEROTRANS == TRUE) && (Mount_Up == FALSE) && (FlyCarpetIsOn == FALSE) && (HeroIsDead == FALSE) && (HeroTransScroll == TRUE))
+	if (( HEROTRANS  ==  TRUE ) && ( Mount_Up ==  FALSE ) && ( FlyCarpetIsOn ==  FALSE ) && ( HeroIsDead ==  FALSE ) && ( HeroTransScroll ==  TRUE ))
 	{
 		HeroTRANSCOUNT += 1;
 		TempTransTime = 30 + (hero.level * 5);
@@ -10899,7 +10900,7 @@ func void b_cycle_trigger_12()
 
 			if(TransformWarn == FALSE)
 			{
-				AI_Print("Телесная оболочка существа начала разрушаться...");
+				AI_Print( "The body shell of the creature began to collapse... " );
 				TransformWarn = TRUE;
 			};
 		};
@@ -10920,23 +10921,23 @@ func void b_cycle_trigger_13()
 {
 	_hero = Hlp_GetNpc(PC_HERO);
 
-	if((hero.guild > GIL_SEPERATOR_HUM) && (HeroTransOpen == TRUE))
+	if (( hero . guild >  GIL_SEPERATOR_HUM ) && ( HeroTransOpen ==  TRUE ))
 	{
-		HEROTRANS = TRUE;
+		HEROTRANS = TRUE ;
 		HeroTransOpen = FALSE;
 		HeroTRANSCOUNT = FALSE;
-		TransformWarn = FALSE;
+		TransformWarn = FALSE ;
 	};
-	if((hero.guild <= GIL_SEPERATOR_HUM) && (HeroTrans == TRUE))
+	if ((hero.guild <=  GIL_SEPERATOR_HUM ) && (HeroTrans ==  TRUE ))
 	{
 		AI_UnequipWeapons(hero);
-		HeroTrans = FALSE;
+		HeroTrans = FALSE ;
 		HeroTransScroll = FALSE;
-		HeroTransRune = FALSE;
+		HeroTransRune = FALSE ;
 		HeroTRANSCOUNT = FALSE;
-		TransformWarn = FALSE;
+		TransformWarn = FALSE ;
 	};
-	if((HEROTRANS == TRUE) && (Mount_Up == FALSE) && (FlyCarpetIsOn == FALSE) && (HeroIsDead == FALSE) && (HeroTransScroll == TRUE))
+	if (( HEROTRANS  ==  TRUE ) && ( Mount_Up ==  FALSE ) && ( FlyCarpetIsOn ==  FALSE ) && ( HeroIsDead ==  FALSE ) && ( HeroTransScroll ==  TRUE ))
 	{
 		HeroTRANSCOUNT += 1;
 		TempTransTime = 30 + (hero.level * 5);
@@ -10947,7 +10948,7 @@ func void b_cycle_trigger_13()
 
 			if(TransformWarn == FALSE)
 			{
-				AI_Print("Телесная оболочка существа начала разрушаться...");
+				AI_Print( "The body shell of the creature began to collapse... " );
 				TransformWarn = TRUE;
 			};
 		};
@@ -10968,23 +10969,23 @@ func void b_cycle_trigger_14()
 {
 	_hero = Hlp_GetNpc(PC_HERO);
 
-	if((hero.guild > GIL_SEPERATOR_HUM) && (HeroTransOpen == TRUE))
+	if (( hero . guild >  GIL_SEPERATOR_HUM ) && ( HeroTransOpen ==  TRUE ))
 	{
-		HEROTRANS = TRUE;
+		HEROTRANS = TRUE ;
 		HeroTransOpen = FALSE;
 		HeroTRANSCOUNT = FALSE;
-		TransformWarn = FALSE;
+		TransformWarn = FALSE ;
 	};
-	if((hero.guild <= GIL_SEPERATOR_HUM) && (HeroTrans == TRUE))
+	if ((hero.guild <=  GIL_SEPERATOR_HUM ) && (HeroTrans ==  TRUE ))
 	{
 		AI_UnequipWeapons(hero);
-		HeroTrans = FALSE;
+		HeroTrans = FALSE ;
 		HeroTransScroll = FALSE;
-		HeroTransRune = FALSE;
+		HeroTransRune = FALSE ;
 		HeroTRANSCOUNT = FALSE;
-		TransformWarn = FALSE;
+		TransformWarn = FALSE ;
 	};
-	if((HEROTRANS == TRUE) && (Mount_Up == FALSE) && (FlyCarpetIsOn == FALSE) && (HeroIsDead == FALSE) && (HeroTransScroll == TRUE))
+	if (( HEROTRANS  ==  TRUE ) && ( Mount_Up ==  FALSE ) && ( FlyCarpetIsOn ==  FALSE ) && ( HeroIsDead ==  FALSE ) && ( HeroTransScroll ==  TRUE ))
 	{
 		HeroTRANSCOUNT += 1;
 		TempTransTime = 30 + (hero.level * 5);
@@ -10995,7 +10996,7 @@ func void b_cycle_trigger_14()
 
 			if(TransformWarn == FALSE)
 			{
-				AI_Print("Телесная оболочка существа начала разрушаться...");
+				AI_Print( "The body shell of the creature began to collapse... " );
 				TransformWarn = TRUE;
 			};
 		};
@@ -11016,23 +11017,23 @@ func void b_cycle_trigger_15()
 {
 	_hero = Hlp_GetNpc(PC_HERO);
 
-	if((hero.guild > GIL_SEPERATOR_HUM) && (HeroTransOpen == TRUE))
+	if (( hero . guild >  GIL_SEPERATOR_HUM ) && ( HeroTransOpen ==  TRUE ))
 	{
-		HEROTRANS = TRUE;
+		HEROTRANS = TRUE ;
 		HeroTransOpen = FALSE;
 		HeroTRANSCOUNT = FALSE;
-		TransformWarn = FALSE;
+		TransformWarn = FALSE ;
 	};
-	if((hero.guild <= GIL_SEPERATOR_HUM) && (HeroTrans == TRUE))
+	if ((hero.guild <=  GIL_SEPERATOR_HUM ) && (HeroTrans ==  TRUE ))
 	{
 		AI_UnequipWeapons(hero);
-		HeroTrans = FALSE;
+		HeroTrans = FALSE ;
 		HeroTransScroll = FALSE;
-		HeroTransRune = FALSE;
+		HeroTransRune = FALSE ;
 		HeroTRANSCOUNT = FALSE;
-		TransformWarn = FALSE;
+		TransformWarn = FALSE ;
 	};
-	if((HEROTRANS == TRUE) && (Mount_Up == FALSE) && (FlyCarpetIsOn == FALSE) && (HeroIsDead == FALSE) && (HeroTransScroll == TRUE))
+	if (( HEROTRANS  ==  TRUE ) && ( Mount_Up ==  FALSE ) && ( FlyCarpetIsOn ==  FALSE ) && ( HeroIsDead ==  FALSE ) && ( HeroTransScroll ==  TRUE ))
 	{
 		HeroTRANSCOUNT += 1;
 		TempTransTime = 30 + (hero.level * 5);
@@ -11043,7 +11044,7 @@ func void b_cycle_trigger_15()
 
 			if(TransformWarn == FALSE)
 			{
-				AI_Print("Телесная оболочка существа начала разрушаться...");
+				AI_Print( "The body shell of the creature began to collapse... " );
 				TransformWarn = TRUE;
 			};
 		};
@@ -11064,23 +11065,23 @@ func void b_cycle_trigger_16()
 {
 	_hero = Hlp_GetNpc(PC_HERO);
 
-	if((hero.guild > GIL_SEPERATOR_HUM) && (HeroTransOpen == TRUE))
+	if (( hero . guild >  GIL_SEPERATOR_HUM ) && ( HeroTransOpen ==  TRUE ))
 	{
-		HEROTRANS = TRUE;
+		HEROTRANS = TRUE ;
 		HeroTransOpen = FALSE;
 		HeroTRANSCOUNT = FALSE;
-		TransformWarn = FALSE;
+		TransformWarn = FALSE ;
 	};
-	if((hero.guild <= GIL_SEPERATOR_HUM) && (HeroTrans == TRUE))
+	if ((hero.guild <=  GIL_SEPERATOR_HUM ) && (HeroTrans ==  TRUE ))
 	{
 		AI_UnequipWeapons(hero);
-		HeroTrans = FALSE;
+		HeroTrans = FALSE ;
 		HeroTransScroll = FALSE;
-		HeroTransRune = FALSE;
+		HeroTransRune = FALSE ;
 		HeroTRANSCOUNT = FALSE;
-		TransformWarn = FALSE;
+		TransformWarn = FALSE ;
 	};
-	if((HEROTRANS == TRUE) && (Mount_Up == FALSE) && (FlyCarpetIsOn == FALSE) && (HeroIsDead == FALSE) && (HeroTransScroll == TRUE))
+	if (( HEROTRANS  ==  TRUE ) && ( Mount_Up ==  FALSE ) && ( FlyCarpetIsOn ==  FALSE ) && ( HeroIsDead ==  FALSE ) && ( HeroTransScroll ==  TRUE ))
 	{
 		HeroTRANSCOUNT += 1;
 		TempTransTime = 30 + (hero.level * 5);
@@ -11091,7 +11092,7 @@ func void b_cycle_trigger_16()
 
 			if(TransformWarn == FALSE)
 			{
-				AI_Print("Телесная оболочка существа начала разрушаться...");
+				AI_Print( "The body shell of the creature began to collapse... " );
 				TransformWarn = TRUE;
 			};
 		};
@@ -11112,23 +11113,23 @@ func void b_cycle_trigger_17()
 {
 	_hero = Hlp_GetNpc(PC_HERO);
 
-	if((hero.guild > GIL_SEPERATOR_HUM) && (HeroTransOpen == TRUE))
+	if (( hero . guild >  GIL_SEPERATOR_HUM ) && ( HeroTransOpen ==  TRUE ))
 	{
-		HEROTRANS = TRUE;
+		HEROTRANS = TRUE ;
 		HeroTransOpen = FALSE;
 		HeroTRANSCOUNT = FALSE;
-		TransformWarn = FALSE;
+		TransformWarn = FALSE ;
 	};
-	if((hero.guild <= GIL_SEPERATOR_HUM) && (HeroTrans == TRUE))
+	if ((hero.guild <=  GIL_SEPERATOR_HUM ) && (HeroTrans ==  TRUE ))
 	{
 		AI_UnequipWeapons(hero);
-		HeroTrans = FALSE;
+		HeroTrans = FALSE ;
 		HeroTransScroll = FALSE;
-		HeroTransRune = FALSE;
+		HeroTransRune = FALSE ;
 		HeroTRANSCOUNT = FALSE;
-		TransformWarn = FALSE;
+		TransformWarn = FALSE ;
 	};
-	if((HEROTRANS == TRUE) && (Mount_Up == FALSE) && (FlyCarpetIsOn == FALSE) && (HeroIsDead == FALSE) && (HeroTransScroll == TRUE))
+	if (( HEROTRANS  ==  TRUE ) && ( Mount_Up ==  FALSE ) && ( FlyCarpetIsOn ==  FALSE ) && ( HeroIsDead ==  FALSE ) && ( HeroTransScroll ==  TRUE ))
 	{
 		HeroTRANSCOUNT += 1;
 		TempTransTime = 30 + (hero.level * 5);
@@ -11139,7 +11140,7 @@ func void b_cycle_trigger_17()
 
 			if(TransformWarn == FALSE)
 			{
-				AI_Print("Телесная оболочка существа начала разрушаться...");
+				AI_Print( "The body shell of the creature began to collapse... " );
 				TransformWarn = TRUE;
 			};
 		};
@@ -11160,23 +11161,23 @@ func void b_cycle_trigger_18()
 {
 	_hero = Hlp_GetNpc(PC_HERO);
 
-	if((hero.guild > GIL_SEPERATOR_HUM) && (HeroTransOpen == TRUE))
+	if (( hero . guild >  GIL_SEPERATOR_HUM ) && ( HeroTransOpen ==  TRUE ))
 	{
-		HEROTRANS = TRUE;
+		HEROTRANS = TRUE ;
 		HeroTransOpen = FALSE;
 		HeroTRANSCOUNT = FALSE;
-		TransformWarn = FALSE;
+		TransformWarn = FALSE ;
 	};
-	if((hero.guild <= GIL_SEPERATOR_HUM) && (HeroTrans == TRUE))
+	if ((hero.guild <=  GIL_SEPERATOR_HUM ) && (HeroTrans ==  TRUE ))
 	{
 		AI_UnequipWeapons(hero);
-		HeroTrans = FALSE;
+		HeroTrans = FALSE ;
 		HeroTransScroll = FALSE;
-		HeroTransRune = FALSE;
+		HeroTransRune = FALSE ;
 		HeroTRANSCOUNT = FALSE;
-		TransformWarn = FALSE;
+		TransformWarn = FALSE ;
 	};
-	if((HEROTRANS == TRUE) && (Mount_Up == FALSE) && (FlyCarpetIsOn == FALSE) && (HeroIsDead == FALSE) && (HeroTransScroll == TRUE))
+	if (( HEROTRANS  ==  TRUE ) && ( Mount_Up ==  FALSE ) && ( FlyCarpetIsOn ==  FALSE ) && ( HeroIsDead ==  FALSE ) && ( HeroTransScroll ==  TRUE ))
 	{
 		HeroTRANSCOUNT += 1;
 		TempTransTime = 30 + (hero.level * 5);
@@ -11187,7 +11188,7 @@ func void b_cycle_trigger_18()
 
 			if(TransformWarn == FALSE)
 			{
-				AI_Print("Телесная оболочка существа начала разрушаться...");
+				AI_Print( "The body shell of the creature began to collapse... " );
 				TransformWarn = TRUE;
 			};
 		};
@@ -11208,23 +11209,23 @@ func void b_cycle_trigger_19()
 {
 	_hero = Hlp_GetNpc(PC_HERO);
 
-	if((hero.guild > GIL_SEPERATOR_HUM) && (HeroTransOpen == TRUE))
+	if (( hero . guild >  GIL_SEPERATOR_HUM ) && ( HeroTransOpen ==  TRUE ))
 	{
-		HEROTRANS = TRUE;
+		HEROTRANS = TRUE ;
 		HeroTransOpen = FALSE;
 		HeroTRANSCOUNT = FALSE;
-		TransformWarn = FALSE;
+		TransformWarn = FALSE ;
 	};
-	if((hero.guild <= GIL_SEPERATOR_HUM) && (HeroTrans == TRUE))
+	if ((hero.guild <=  GIL_SEPERATOR_HUM ) && (HeroTrans ==  TRUE ))
 	{
 		AI_UnequipWeapons(hero);
-		HeroTrans = FALSE;
+		HeroTrans = FALSE ;
 		HeroTransScroll = FALSE;
-		HeroTransRune = FALSE;
+		HeroTransRune = FALSE ;
 		HeroTRANSCOUNT = FALSE;
-		TransformWarn = FALSE;
+		TransformWarn = FALSE ;
 	};
-	if((HEROTRANS == TRUE) && (Mount_Up == FALSE) && (FlyCarpetIsOn == FALSE) && (HeroIsDead == FALSE) && (HeroTransScroll == TRUE))
+	if (( HEROTRANS  ==  TRUE ) && ( Mount_Up ==  FALSE ) && ( FlyCarpetIsOn ==  FALSE ) && ( HeroIsDead ==  FALSE ) && ( HeroTransScroll ==  TRUE ))
 	{
 		HeroTRANSCOUNT += 1;
 		TempTransTime = 30 + (hero.level * 5);
@@ -11235,7 +11236,7 @@ func void b_cycle_trigger_19()
 
 			if(TransformWarn == FALSE)
 			{
-				AI_Print("Телесная оболочка существа начала разрушаться...");
+				AI_Print( "The body shell of the creature began to collapse... " );
 				TransformWarn = TRUE;
 			};
 		};
@@ -11256,23 +11257,23 @@ func void b_cycle_trigger_20()
 {
 	_hero = Hlp_GetNpc(PC_HERO);
 
-	if((hero.guild > GIL_SEPERATOR_HUM) && (HeroTransOpen == TRUE))
+	if (( hero . guild >  GIL_SEPERATOR_HUM ) && ( HeroTransOpen ==  TRUE ))
 	{
-		HEROTRANS = TRUE;
+		HEROTRANS = TRUE ;
 		HeroTransOpen = FALSE;
 		HeroTRANSCOUNT = FALSE;
-		TransformWarn = FALSE;
+		TransformWarn = FALSE ;
 	};
-	if((hero.guild <= GIL_SEPERATOR_HUM) && (HeroTrans == TRUE))
+	if ((hero.guild <=  GIL_SEPERATOR_HUM ) && (HeroTrans ==  TRUE ))
 	{
 		AI_UnequipWeapons(hero);
-		HeroTrans = FALSE;
+		HeroTrans = FALSE ;
 		HeroTransScroll = FALSE;
-		HeroTransRune = FALSE;
+		HeroTransRune = FALSE ;
 		HeroTRANSCOUNT = FALSE;
-		TransformWarn = FALSE;
+		TransformWarn = FALSE ;
 	};
-	if((HEROTRANS == TRUE) && (Mount_Up == FALSE) && (FlyCarpetIsOn == FALSE) && (HeroIsDead == FALSE) && (HeroTransScroll == TRUE))
+	if (( HEROTRANS  ==  TRUE ) && ( Mount_Up ==  FALSE ) && ( FlyCarpetIsOn ==  FALSE ) && ( HeroIsDead ==  FALSE ) && ( HeroTransScroll ==  TRUE ))
 	{
 		HeroTRANSCOUNT += 1;
 		TempTransTime = 30 + (hero.level * 5);
@@ -11283,7 +11284,7 @@ func void b_cycle_trigger_20()
 
 			if(TransformWarn == FALSE)
 			{
-				AI_Print("Телесная оболочка существа начала разрушаться...");
+				AI_Print( "The body shell of the creature began to collapse... " );
 				TransformWarn = TRUE;
 			};
 		};
@@ -11304,23 +11305,23 @@ func void b_cycle_trigger_21()
 {
 	_hero = Hlp_GetNpc(PC_HERO);
 
-	if((hero.guild > GIL_SEPERATOR_HUM) && (HeroTransOpen == TRUE))
+	if (( hero . guild >  GIL_SEPERATOR_HUM ) && ( HeroTransOpen ==  TRUE ))
 	{
-		HEROTRANS = TRUE;
+		HEROTRANS = TRUE ;
 		HeroTransOpen = FALSE;
 		HeroTRANSCOUNT = FALSE;
-		TransformWarn = FALSE;
+		TransformWarn = FALSE ;
 	};
-	if((hero.guild <= GIL_SEPERATOR_HUM) && (HeroTrans == TRUE))
+	if ((hero.guild <=  GIL_SEPERATOR_HUM ) && (HeroTrans ==  TRUE ))
 	{
 		AI_UnequipWeapons(hero);
-		HeroTrans = FALSE;
+		HeroTrans = FALSE ;
 		HeroTransScroll = FALSE;
-		HeroTransRune = FALSE;
+		HeroTransRune = FALSE ;
 		HeroTRANSCOUNT = FALSE;
-		TransformWarn = FALSE;
+		TransformWarn = FALSE ;
 	};
-	if((HEROTRANS == TRUE) && (Mount_Up == FALSE) && (FlyCarpetIsOn == FALSE) && (HeroIsDead == FALSE) && (HeroTransScroll == TRUE))
+	if (( HEROTRANS  ==  TRUE ) && ( Mount_Up ==  FALSE ) && ( FlyCarpetIsOn ==  FALSE ) && ( HeroIsDead ==  FALSE ) && ( HeroTransScroll ==  TRUE ))
 	{
 		HeroTRANSCOUNT += 1;
 		TempTransTime = 30 + (hero.level * 5);
@@ -11331,7 +11332,7 @@ func void b_cycle_trigger_21()
 
 			if(TransformWarn == FALSE)
 			{
-				AI_Print("Телесная оболочка существа начала разрушаться...");
+				AI_Print( "The body shell of the creature began to collapse... " );
 				TransformWarn = TRUE;
 			};
 		};
@@ -11352,23 +11353,23 @@ func void b_cycle_trigger_22()
 {
 	_hero = Hlp_GetNpc(PC_HERO);
 
-	if((hero.guild > GIL_SEPERATOR_HUM) && (HeroTransOpen == TRUE))
+	if (( hero . guild >  GIL_SEPERATOR_HUM ) && ( HeroTransOpen ==  TRUE ))
 	{
-		HEROTRANS = TRUE;
+		HEROTRANS = TRUE ;
 		HeroTransOpen = FALSE;
 		HeroTRANSCOUNT = FALSE;
-		TransformWarn = FALSE;
+		TransformWarn = FALSE ;
 	};
-	if((hero.guild <= GIL_SEPERATOR_HUM) && (HeroTrans == TRUE))
+	if ((hero.guild <=  GIL_SEPERATOR_HUM ) && (HeroTrans ==  TRUE ))
 	{
 		AI_UnequipWeapons(hero);
-		HeroTrans = FALSE;
+		HeroTrans = FALSE ;
 		HeroTransScroll = FALSE;
-		HeroTransRune = FALSE;
+		HeroTransRune = FALSE ;
 		HeroTRANSCOUNT = FALSE;
-		TransformWarn = FALSE;
+		TransformWarn = FALSE ;
 	};
-	if((HEROTRANS == TRUE) && (Mount_Up == FALSE) && (FlyCarpetIsOn == FALSE) && (HeroIsDead == FALSE) && (HeroTransScroll == TRUE))
+	if (( HEROTRANS  ==  TRUE ) && ( Mount_Up ==  FALSE ) && ( FlyCarpetIsOn ==  FALSE ) && ( HeroIsDead ==  FALSE ) && ( HeroTransScroll ==  TRUE ))
 	{
 		HeroTRANSCOUNT += 1;
 		TempTransTime = 30 + (hero.level * 5);
@@ -11379,7 +11380,7 @@ func void b_cycle_trigger_22()
 
 			if(TransformWarn == FALSE)
 			{
-				AI_Print("Телесная оболочка существа начала разрушаться...");
+				AI_Print( "The body shell of the creature began to collapse... " );
 				TransformWarn = TRUE;
 			};
 		};
@@ -11400,23 +11401,23 @@ func void b_cycle_trigger_23()
 {
 	_hero = Hlp_GetNpc(PC_HERO);
 
-	if((hero.guild > GIL_SEPERATOR_HUM) && (HeroTransOpen == TRUE))
+	if (( hero . guild >  GIL_SEPERATOR_HUM ) && ( HeroTransOpen ==  TRUE ))
 	{
-		HEROTRANS = TRUE;
+		HEROTRANS = TRUE ;
 		HeroTransOpen = FALSE;
 		HeroTRANSCOUNT = FALSE;
-		TransformWarn = FALSE;
+		TransformWarn = FALSE ;
 	};
-	if((hero.guild <= GIL_SEPERATOR_HUM) && (HeroTrans == TRUE))
+	if ((hero.guild <=  GIL_SEPERATOR_HUM ) && (HeroTrans ==  TRUE ))
 	{
 		AI_UnequipWeapons(hero);
-		HeroTrans = FALSE;
+		HeroTrans = FALSE ;
 		HeroTransScroll = FALSE;
-		HeroTransRune = FALSE;
+		HeroTransRune = FALSE ;
 		HeroTRANSCOUNT = FALSE;
-		TransformWarn = FALSE;
+		TransformWarn = FALSE ;
 	};
-	if((HEROTRANS == TRUE) && (Mount_Up == FALSE) && (FlyCarpetIsOn == FALSE) && (HeroIsDead == FALSE) && (HeroTransScroll == TRUE))
+	if (( HEROTRANS  ==  TRUE ) && ( Mount_Up ==  FALSE ) && ( FlyCarpetIsOn ==  FALSE ) && ( HeroIsDead ==  FALSE ) && ( HeroTransScroll ==  TRUE ))
 	{
 		HeroTRANSCOUNT += 1;
 		TempTransTime = 30 + (hero.level * 5);
@@ -11427,7 +11428,7 @@ func void b_cycle_trigger_23()
 
 			if(TransformWarn == FALSE)
 			{
-				AI_Print("Телесная оболочка существа начала разрушаться...");
+				AI_Print( "The body shell of the creature began to collapse... " );
 				TransformWarn = TRUE;
 			};
 		};
@@ -11448,23 +11449,23 @@ func void b_cycle_trigger_25()
 {
 	_hero = Hlp_GetNpc(PC_HERO);
 
-	if((hero.guild > GIL_SEPERATOR_HUM) && (HeroTransOpen == TRUE))
+	if (( hero . guild >  GIL_SEPERATOR_HUM ) && ( HeroTransOpen ==  TRUE ))
 	{
-		HEROTRANS = TRUE;
+		HEROTRANS = TRUE ;
 		HeroTransOpen = FALSE;
 		HeroTRANSCOUNT = FALSE;
-		TransformWarn = FALSE;
+		TransformWarn = FALSE ;
 	};
-	if((hero.guild <= GIL_SEPERATOR_HUM) && (HeroTrans == TRUE))
+	if ((hero.guild <=  GIL_SEPERATOR_HUM ) && (HeroTrans ==  TRUE ))
 	{
 		AI_UnequipWeapons(hero);
-		HeroTrans = FALSE;
+		HeroTrans = FALSE ;
 		HeroTransScroll = FALSE;
-		HeroTransRune = FALSE;
+		HeroTransRune = FALSE ;
 		HeroTRANSCOUNT = FALSE;
-		TransformWarn = FALSE;
+		TransformWarn = FALSE ;
 	};
-	if((HEROTRANS == TRUE) && (Mount_Up == FALSE) && (FlyCarpetIsOn == FALSE) && (HeroIsDead == FALSE) && (HeroTransScroll == TRUE))
+	if (( HEROTRANS  ==  TRUE ) && ( Mount_Up ==  FALSE ) && ( FlyCarpetIsOn ==  FALSE ) && ( HeroIsDead ==  FALSE ) && ( HeroTransScroll ==  TRUE ))
 	{
 		HeroTRANSCOUNT += 1;
 		TempTransTime = 30 + (hero.level * 5);
@@ -11475,7 +11476,7 @@ func void b_cycle_trigger_25()
 
 			if(TransformWarn == FALSE)
 			{
-				AI_Print("Телесная оболочка существа начала разрушаться...");
+				AI_Print( "The body shell of the creature began to collapse... " );
 				TransformWarn = TRUE;
 			};
 		};
@@ -11501,23 +11502,23 @@ func void b_cycle_trigger_26()
 {
 	_hero = Hlp_GetNpc(PC_HERO);
 
-	if((hero.guild > GIL_SEPERATOR_HUM) && (HeroTransOpen == TRUE))
+	if (( hero . guild >  GIL_SEPERATOR_HUM ) && ( HeroTransOpen ==  TRUE ))
 	{
-		HEROTRANS = TRUE;
+		HEROTRANS = TRUE ;
 		HeroTransOpen = FALSE;
 		HeroTRANSCOUNT = FALSE;
-		TransformWarn = FALSE;
+		TransformWarn = FALSE ;
 	};
-	if((hero.guild <= GIL_SEPERATOR_HUM) && (HeroTrans == TRUE))
+	if ((hero.guild <=  GIL_SEPERATOR_HUM ) && (HeroTrans ==  TRUE ))
 	{
 		AI_UnequipWeapons(hero);
-		HeroTrans = FALSE;
+		HeroTrans = FALSE ;
 		HeroTransScroll = FALSE;
-		HeroTransRune = FALSE;
+		HeroTransRune = FALSE ;
 		HeroTRANSCOUNT = FALSE;
-		TransformWarn = FALSE;
+		TransformWarn = FALSE ;
 	};
-	if((HEROTRANS == TRUE) && (Mount_Up == FALSE) && (FlyCarpetIsOn == FALSE) && (HeroIsDead == FALSE) && (HeroTransScroll == TRUE))
+	if (( HEROTRANS  ==  TRUE ) && ( Mount_Up ==  FALSE ) && ( FlyCarpetIsOn ==  FALSE ) && ( HeroIsDead ==  FALSE ) && ( HeroTransScroll ==  TRUE ))
 	{
 		HeroTRANSCOUNT += 1;
 		TempTransTime = 30 + (hero.level * 5);
@@ -11528,7 +11529,7 @@ func void b_cycle_trigger_26()
 
 			if(TransformWarn == FALSE)
 			{
-				AI_Print("Телесная оболочка существа начала разрушаться...");
+				AI_Print( "The body shell of the creature began to collapse... " );
 				TransformWarn = TRUE;
 			};
 		};
@@ -11549,23 +11550,23 @@ func void b_cycle_trigger_27()
 {
 	_hero = Hlp_GetNpc(PC_HERO);
 
-	if((hero.guild > GIL_SEPERATOR_HUM) && (HeroTransOpen == TRUE))
+	if (( hero . guild >  GIL_SEPERATOR_HUM ) && ( HeroTransOpen ==  TRUE ))
 	{
-		HEROTRANS = TRUE;
+		HEROTRANS = TRUE ;
 		HeroTransOpen = FALSE;
 		HeroTRANSCOUNT = FALSE;
-		TransformWarn = FALSE;
+		TransformWarn = FALSE ;
 	};
-	if((hero.guild <= GIL_SEPERATOR_HUM) && (HeroTrans == TRUE))
+	if ((hero.guild <=  GIL_SEPERATOR_HUM ) && (HeroTrans ==  TRUE ))
 	{
 		AI_UnequipWeapons(hero);
-		HeroTrans = FALSE;
+		HeroTrans = FALSE ;
 		HeroTransScroll = FALSE;
-		HeroTransRune = FALSE;
+		HeroTransRune = FALSE ;
 		HeroTRANSCOUNT = FALSE;
-		TransformWarn = FALSE;
+		TransformWarn = FALSE ;
 	};
-	if((HEROTRANS == TRUE) && (Mount_Up == FALSE) && (FlyCarpetIsOn == FALSE) && (HeroIsDead == FALSE) && (HeroTransScroll == TRUE))
+	if (( HEROTRANS  ==  TRUE ) && ( Mount_Up ==  FALSE ) && ( FlyCarpetIsOn ==  FALSE ) && ( HeroIsDead ==  FALSE ) && ( HeroTransScroll ==  TRUE ))
 	{
 		HeroTRANSCOUNT += 1;
 		TempTransTime = 30 + (hero.level * 5);
@@ -11576,7 +11577,7 @@ func void b_cycle_trigger_27()
 
 			if(TransformWarn == FALSE)
 			{
-				AI_Print("Телесная оболочка существа начала разрушаться...");
+				AI_Print( "The body shell of the creature began to collapse... " );
 				TransformWarn = TRUE;
 			};
 		};
@@ -11597,23 +11598,23 @@ func void b_cycle_trigger_28()
 {
 	_hero = Hlp_GetNpc(PC_HERO);
 
-	if((hero.guild > GIL_SEPERATOR_HUM) && (HeroTransOpen == TRUE))
+	if (( hero . guild >  GIL_SEPERATOR_HUM ) && ( HeroTransOpen ==  TRUE ))
 	{
-		HEROTRANS = TRUE;
+		HEROTRANS = TRUE ;
 		HeroTransOpen = FALSE;
 		HeroTRANSCOUNT = FALSE;
-		TransformWarn = FALSE;
+		TransformWarn = FALSE ;
 	};
-	if((hero.guild <= GIL_SEPERATOR_HUM) && (HeroTrans == TRUE))
+	if ((hero.guild <=  GIL_SEPERATOR_HUM ) && (HeroTrans ==  TRUE ))
 	{
 		AI_UnequipWeapons(hero);
-		HeroTrans = FALSE;
+		HeroTrans = FALSE ;
 		HeroTransScroll = FALSE;
-		HeroTransRune = FALSE;
+		HeroTransRune = FALSE ;
 		HeroTRANSCOUNT = FALSE;
-		TransformWarn = FALSE;
+		TransformWarn = FALSE ;
 	};
-	if((HEROTRANS == TRUE) && (Mount_Up == FALSE) && (FlyCarpetIsOn == FALSE) && (HeroIsDead == FALSE) && (HeroTransScroll == TRUE))
+	if (( HEROTRANS  ==  TRUE ) && ( Mount_Up ==  FALSE ) && ( FlyCarpetIsOn ==  FALSE ) && ( HeroIsDead ==  FALSE ) && ( HeroTransScroll ==  TRUE ))
 	{
 		HeroTRANSCOUNT += 1;
 		TempTransTime = 30 + (hero.level * 5);
@@ -11624,7 +11625,7 @@ func void b_cycle_trigger_28()
 
 			if(TransformWarn == FALSE)
 			{
-				AI_Print("Телесная оболочка существа начала разрушаться...");
+				AI_Print( "The body shell of the creature began to collapse... " );
 				TransformWarn = TRUE;
 			};
 		};
@@ -11645,23 +11646,23 @@ func void b_cycle_trigger_29()
 {
 	_hero = Hlp_GetNpc(PC_HERO);
 
-	if((hero.guild > GIL_SEPERATOR_HUM) && (HeroTransOpen == TRUE))
+	if (( hero . guild >  GIL_SEPERATOR_HUM ) && ( HeroTransOpen ==  TRUE ))
 	{
-		HEROTRANS = TRUE;
+		HEROTRANS = TRUE ;
 		HeroTransOpen = FALSE;
 		HeroTRANSCOUNT = FALSE;
-		TransformWarn = FALSE;
+		TransformWarn = FALSE ;
 	};
-	if((hero.guild <= GIL_SEPERATOR_HUM) && (HeroTrans == TRUE))
+	if ((hero.guild <=  GIL_SEPERATOR_HUM ) && (HeroTrans ==  TRUE ))
 	{
 		AI_UnequipWeapons(hero);
-		HeroTrans = FALSE;
+		HeroTrans = FALSE ;
 		HeroTransScroll = FALSE;
-		HeroTransRune = FALSE;
+		HeroTransRune = FALSE ;
 		HeroTRANSCOUNT = FALSE;
-		TransformWarn = FALSE;
+		TransformWarn = FALSE ;
 	};
-	if((HEROTRANS == TRUE) && (Mount_Up == FALSE) && (FlyCarpetIsOn == FALSE) && (HeroIsDead == FALSE) && (HeroTransScroll == TRUE))
+	if (( HEROTRANS  ==  TRUE ) && ( Mount_Up ==  FALSE ) && ( FlyCarpetIsOn ==  FALSE ) && ( HeroIsDead ==  FALSE ) && ( HeroTransScroll ==  TRUE ))
 	{
 		HeroTRANSCOUNT += 1;
 		TempTransTime = 30 + (hero.level * 5);
@@ -11672,7 +11673,7 @@ func void b_cycle_trigger_29()
 
 			if(TransformWarn == FALSE)
 			{
-				AI_Print("Телесная оболочка существа начала разрушаться...");
+				AI_Print( "The body shell of the creature began to collapse... " );
 				TransformWarn = TRUE;
 			};
 		};
@@ -11693,23 +11694,23 @@ func void b_cycle_trigger_30()
 {
 	_hero = Hlp_GetNpc(PC_HERO);
 
-	if((hero.guild > GIL_SEPERATOR_HUM) && (HeroTransOpen == TRUE))
+	if (( hero . guild >  GIL_SEPERATOR_HUM ) && ( HeroTransOpen ==  TRUE ))
 	{
-		HEROTRANS = TRUE;
+		HEROTRANS = TRUE ;
 		HeroTransOpen = FALSE;
 		HeroTRANSCOUNT = FALSE;
-		TransformWarn = FALSE;
+		TransformWarn = FALSE ;
 	};
-	if((hero.guild <= GIL_SEPERATOR_HUM) && (HeroTrans == TRUE))
+	if ((hero.guild <=  GIL_SEPERATOR_HUM ) && (HeroTrans ==  TRUE ))
 	{
 		AI_UnequipWeapons(hero);
-		HeroTrans = FALSE;
+		HeroTrans = FALSE ;
 		HeroTransScroll = FALSE;
-		HeroTransRune = FALSE;
+		HeroTransRune = FALSE ;
 		HeroTRANSCOUNT = FALSE;
-		TransformWarn = FALSE;
+		TransformWarn = FALSE ;
 	};
-	if((HEROTRANS == TRUE) && (Mount_Up == FALSE) && (FlyCarpetIsOn == FALSE) && (HeroIsDead == FALSE) && (HeroTransScroll == TRUE))
+	if (( HEROTRANS  ==  TRUE ) && ( Mount_Up ==  FALSE ) && ( FlyCarpetIsOn ==  FALSE ) && ( HeroIsDead ==  FALSE ) && ( HeroTransScroll ==  TRUE ))
 	{
 		HeroTRANSCOUNT += 1;
 		TempTransTime = 30 + (hero.level * 5);
@@ -11720,7 +11721,7 @@ func void b_cycle_trigger_30()
 
 			if(TransformWarn == FALSE)
 			{
-				AI_Print("Телесная оболочка существа начала разрушаться...");
+				AI_Print( "The body shell of the creature began to collapse... " );
 				TransformWarn = TRUE;
 			};
 		};
@@ -11741,23 +11742,23 @@ func void b_cycle_trigger_31()
 {
 	_hero = Hlp_GetNpc(PC_HERO);
 
-	if((hero.guild > GIL_SEPERATOR_HUM) && (HeroTransOpen == TRUE))
+	if (( hero . guild >  GIL_SEPERATOR_HUM ) && ( HeroTransOpen ==  TRUE ))
 	{
-		HEROTRANS = TRUE;
+		HEROTRANS = TRUE ;
 		HeroTransOpen = FALSE;
 		HeroTRANSCOUNT = FALSE;
-		TransformWarn = FALSE;
+		TransformWarn = FALSE ;
 	};
-	if((hero.guild <= GIL_SEPERATOR_HUM) && (HeroTrans == TRUE))
+	if ((hero.guild <=  GIL_SEPERATOR_HUM ) && (HeroTrans ==  TRUE ))
 	{
 		AI_UnequipWeapons(hero);
-		HeroTrans = FALSE;
+		HeroTrans = FALSE ;
 		HeroTransScroll = FALSE;
-		HeroTransRune = FALSE;
+		HeroTransRune = FALSE ;
 		HeroTRANSCOUNT = FALSE;
-		TransformWarn = FALSE;
+		TransformWarn = FALSE ;
 	};
-	if((HEROTRANS == TRUE) && (Mount_Up == FALSE) && (FlyCarpetIsOn == FALSE) && (HeroIsDead == FALSE) && (HeroTransScroll == TRUE))
+	if (( HEROTRANS  ==  TRUE ) && ( Mount_Up ==  FALSE ) && ( FlyCarpetIsOn ==  FALSE ) && ( HeroIsDead ==  FALSE ) && ( HeroTransScroll ==  TRUE ))
 	{
 		HeroTRANSCOUNT += 1;
 		TempTransTime = 30 + (hero.level * 5);
@@ -11768,7 +11769,7 @@ func void b_cycle_trigger_31()
 
 			if(TransformWarn == FALSE)
 			{
-				AI_Print("Телесная оболочка существа начала разрушаться...");
+				AI_Print( "The body shell of the creature began to collapse... " );
 				TransformWarn = TRUE;
 			};
 		};
@@ -11789,23 +11790,23 @@ func void b_cycle_trigger_32()
 {
 	_hero = Hlp_GetNpc(PC_HERO);
 
-	if((hero.guild > GIL_SEPERATOR_HUM) && (HeroTransOpen == TRUE))
+	if (( hero . guild >  GIL_SEPERATOR_HUM ) && ( HeroTransOpen ==  TRUE ))
 	{
-		HEROTRANS = TRUE;
+		HEROTRANS = TRUE ;
 		HeroTransOpen = FALSE;
 		HeroTRANSCOUNT = FALSE;
-		TransformWarn = FALSE;
+		TransformWarn = FALSE ;
 	};
-	if((hero.guild <= GIL_SEPERATOR_HUM) && (HeroTrans == TRUE))
+	if ((hero.guild <=  GIL_SEPERATOR_HUM ) && (HeroTrans ==  TRUE ))
 	{
 		AI_UnequipWeapons(hero);
-		HeroTrans = FALSE;
+		HeroTrans = FALSE ;
 		HeroTransScroll = FALSE;
-		HeroTransRune = FALSE;
+		HeroTransRune = FALSE ;
 		HeroTRANSCOUNT = FALSE;
-		TransformWarn = FALSE;
+		TransformWarn = FALSE ;
 	};
-	if((HEROTRANS == TRUE) && (Mount_Up == FALSE) && (FlyCarpetIsOn == FALSE) && (HeroIsDead == FALSE) && (HeroTransScroll == TRUE))
+	if (( HEROTRANS  ==  TRUE ) && ( Mount_Up ==  FALSE ) && ( FlyCarpetIsOn ==  FALSE ) && ( HeroIsDead ==  FALSE ) && ( HeroTransScroll ==  TRUE ))
 	{
 		HeroTRANSCOUNT += 1;
 		TempTransTime = 30 + (hero.level * 5);
@@ -11816,7 +11817,7 @@ func void b_cycle_trigger_32()
 
 			if(TransformWarn == FALSE)
 			{
-				AI_Print("Телесная оболочка существа начала разрушаться...");
+				AI_Print( "The body shell of the creature began to collapse... " );
 				TransformWarn = TRUE;
 			};
 		};
@@ -11837,23 +11838,23 @@ func void b_cycle_trigger_33()
 {
 	_hero = Hlp_GetNpc(PC_HERO);
 
-	if((hero.guild > GIL_SEPERATOR_HUM) && (HeroTransOpen == TRUE))
+	if (( hero . guild >  GIL_SEPERATOR_HUM ) && ( HeroTransOpen ==  TRUE ))
 	{
-		HEROTRANS = TRUE;
+		HEROTRANS = TRUE ;
 		HeroTransOpen = FALSE;
 		HeroTRANSCOUNT = FALSE;
-		TransformWarn = FALSE;
+		TransformWarn = FALSE ;
 	};
-	if((hero.guild <= GIL_SEPERATOR_HUM) && (HeroTrans == TRUE))
+	if ((hero.guild <=  GIL_SEPERATOR_HUM ) && (HeroTrans ==  TRUE ))
 	{
 		AI_UnequipWeapons(hero);
-		HeroTrans = FALSE;
+		HeroTrans = FALSE ;
 		HeroTransScroll = FALSE;
-		HeroTransRune = FALSE;
+		HeroTransRune = FALSE ;
 		HeroTRANSCOUNT = FALSE;
-		TransformWarn = FALSE;
+		TransformWarn = FALSE ;
 	};
-	if((HEROTRANS == TRUE) && (Mount_Up == FALSE) && (FlyCarpetIsOn == FALSE) && (HeroIsDead == FALSE) && (HeroTransScroll == TRUE))
+	if (( HEROTRANS  ==  TRUE ) && ( Mount_Up ==  FALSE ) && ( FlyCarpetIsOn ==  FALSE ) && ( HeroIsDead ==  FALSE ) && ( HeroTransScroll ==  TRUE ))
 	{
 		HeroTRANSCOUNT += 1;
 		TempTransTime = 30 + (hero.level * 5);
@@ -11864,7 +11865,7 @@ func void b_cycle_trigger_33()
 
 			if(TransformWarn == FALSE)
 			{
-				AI_Print("Телесная оболочка существа начала разрушаться...");
+				AI_Print( "The body shell of the creature began to collapse... " );
 				TransformWarn = TRUE;
 			};
 		};
@@ -11885,23 +11886,23 @@ func void b_cycle_trigger_34()
 {
 	_hero = Hlp_GetNpc(PC_HERO);
 
-	if((hero.guild > GIL_SEPERATOR_HUM) && (HeroTransOpen == TRUE))
+	if (( hero . guild >  GIL_SEPERATOR_HUM ) && ( HeroTransOpen ==  TRUE ))
 	{
-		HEROTRANS = TRUE;
+		HEROTRANS = TRUE ;
 		HeroTransOpen = FALSE;
 		HeroTRANSCOUNT = FALSE;
-		TransformWarn = FALSE;
+		TransformWarn = FALSE ;
 	};
-	if((hero.guild <= GIL_SEPERATOR_HUM) && (HeroTrans == TRUE))
+	if ((hero.guild <=  GIL_SEPERATOR_HUM ) && (HeroTrans ==  TRUE ))
 	{
 		AI_UnequipWeapons(hero);
-		HeroTrans = FALSE;
+		HeroTrans = FALSE ;
 		HeroTransScroll = FALSE;
-		HeroTransRune = FALSE;
+		HeroTransRune = FALSE ;
 		HeroTRANSCOUNT = FALSE;
-		TransformWarn = FALSE;
+		TransformWarn = FALSE ;
 	};
-	if((HEROTRANS == TRUE) && (Mount_Up == FALSE) && (FlyCarpetIsOn == FALSE) && (HeroIsDead == FALSE) && (HeroTransScroll == TRUE))
+	if (( HEROTRANS  ==  TRUE ) && ( Mount_Up ==  FALSE ) && ( FlyCarpetIsOn ==  FALSE ) && ( HeroIsDead ==  FALSE ) && ( HeroTransScroll ==  TRUE ))
 	{
 		HeroTRANSCOUNT += 1;
 		TempTransTime = 30 + (hero.level * 5);
@@ -11912,7 +11913,7 @@ func void b_cycle_trigger_34()
 
 			if(TransformWarn == FALSE)
 			{
-				AI_Print("Телесная оболочка существа начала разрушаться...");
+				AI_Print( "The body shell of the creature began to collapse... " );
 				TransformWarn = TRUE;
 			};
 		};
@@ -11933,23 +11934,23 @@ func void b_cycle_trigger_35()
 {
 	_hero = Hlp_GetNpc(PC_HERO);
 
-	if((hero.guild > GIL_SEPERATOR_HUM) && (HeroTransOpen == TRUE))
+	if (( hero . guild >  GIL_SEPERATOR_HUM ) && ( HeroTransOpen ==  TRUE ))
 	{
-		HEROTRANS = TRUE;
+		HEROTRANS = TRUE ;
 		HeroTransOpen = FALSE;
 		HeroTRANSCOUNT = FALSE;
-		TransformWarn = FALSE;
+		TransformWarn = FALSE ;
 	};
-	if((hero.guild <= GIL_SEPERATOR_HUM) && (HeroTrans == TRUE))
+	if ((hero.guild <=  GIL_SEPERATOR_HUM ) && (HeroTrans ==  TRUE ))
 	{
 		AI_UnequipWeapons(hero);
-		HeroTrans = FALSE;
+		HeroTrans = FALSE ;
 		HeroTransScroll = FALSE;
-		HeroTransRune = FALSE;
+		HeroTransRune = FALSE ;
 		HeroTRANSCOUNT = FALSE;
-		TransformWarn = FALSE;
+		TransformWarn = FALSE ;
 	};
-	if((HEROTRANS == TRUE) && (Mount_Up == FALSE) && (FlyCarpetIsOn == FALSE) && (HeroIsDead == FALSE) && (HeroTransScroll == TRUE))
+	if (( HEROTRANS  ==  TRUE ) && ( Mount_Up ==  FALSE ) && ( FlyCarpetIsOn ==  FALSE ) && ( HeroIsDead ==  FALSE ) && ( HeroTransScroll ==  TRUE ))
 	{
 		HeroTRANSCOUNT += 1;
 		TempTransTime = 30 + (hero.level * 5);
@@ -11960,7 +11961,7 @@ func void b_cycle_trigger_35()
 
 			if(TransformWarn == FALSE)
 			{
-				AI_Print("Телесная оболочка существа начала разрушаться...");
+				AI_Print( "The body shell of the creature began to collapse... " );
 				TransformWarn = TRUE;
 			};
 		};
@@ -11980,23 +11981,23 @@ func void b_cycle_trigger_36()
 {
 	_hero = Hlp_GetNpc(PC_HERO);
 
-	if((hero.guild > GIL_SEPERATOR_HUM) && (HeroTransOpen == TRUE))
+	if (( hero . guild >  GIL_SEPERATOR_HUM ) && ( HeroTransOpen ==  TRUE ))
 	{
-		HEROTRANS = TRUE;
+		HEROTRANS = TRUE ;
 		HeroTransOpen = FALSE;
 		HeroTRANSCOUNT = FALSE;
-		TransformWarn = FALSE;
+		TransformWarn = FALSE ;
 	};
-	if((hero.guild <= GIL_SEPERATOR_HUM) && (HeroTrans == TRUE))
+	if ((hero.guild <=  GIL_SEPERATOR_HUM ) && (HeroTrans ==  TRUE ))
 	{
 		AI_UnequipWeapons(hero);
-		HeroTrans = FALSE;
+		HeroTrans = FALSE ;
 		HeroTransScroll = FALSE;
-		HeroTransRune = FALSE;
+		HeroTransRune = FALSE ;
 		HeroTRANSCOUNT = FALSE;
-		TransformWarn = FALSE;
+		TransformWarn = FALSE ;
 	};
-	if((HEROTRANS == TRUE) && (Mount_Up == FALSE) && (FlyCarpetIsOn == FALSE) && (HeroIsDead == FALSE) && (HeroTransScroll == TRUE))
+	if (( HEROTRANS  ==  TRUE ) && ( Mount_Up ==  FALSE ) && ( FlyCarpetIsOn ==  FALSE ) && ( HeroIsDead ==  FALSE ) && ( HeroTransScroll ==  TRUE ))
 	{
 		HeroTRANSCOUNT += 1;
 		TempTransTime = 30 + (hero.level * 5);
@@ -12007,7 +12008,7 @@ func void b_cycle_trigger_36()
 
 			if(TransformWarn == FALSE)
 			{
-				AI_Print("Телесная оболочка существа начала разрушаться...");
+				AI_Print( "The body shell of the creature began to collapse... " );
 				TransformWarn = TRUE;
 			};
 		};
@@ -12027,23 +12028,23 @@ func void b_cycle_trigger_37()
 {
 	_hero = Hlp_GetNpc(PC_HERO);
 
-	if((hero.guild > GIL_SEPERATOR_HUM) && (HeroTransOpen == TRUE))
+	if (( hero . guild >  GIL_SEPERATOR_HUM ) && ( HeroTransOpen ==  TRUE ))
 	{
-		HEROTRANS = TRUE;
+		HEROTRANS = TRUE ;
 		HeroTransOpen = FALSE;
 		HeroTRANSCOUNT = FALSE;
-		TransformWarn = FALSE;
+		TransformWarn = FALSE ;
 	};
-	if((hero.guild <= GIL_SEPERATOR_HUM) && (HeroTrans == TRUE))
+	if ((hero.guild <=  GIL_SEPERATOR_HUM ) && (HeroTrans ==  TRUE ))
 	{
 		AI_UnequipWeapons(hero);
-		HeroTrans = FALSE;
+		HeroTrans = FALSE ;
 		HeroTransScroll = FALSE;
-		HeroTransRune = FALSE;
+		HeroTransRune = FALSE ;
 		HeroTRANSCOUNT = FALSE;
-		TransformWarn = FALSE;
+		TransformWarn = FALSE ;
 	};
-	if((HEROTRANS == TRUE) && (Mount_Up == FALSE) && (FlyCarpetIsOn == FALSE) && (HeroIsDead == FALSE) && (HeroTransScroll == TRUE))
+	if (( HEROTRANS  ==  TRUE ) && ( Mount_Up ==  FALSE ) && ( FlyCarpetIsOn ==  FALSE ) && ( HeroIsDead ==  FALSE ) && ( HeroTransScroll ==  TRUE ))
 	{
 		HeroTRANSCOUNT += 1;
 		TempTransTime = 30 + (hero.level * 5);
@@ -12054,7 +12055,7 @@ func void b_cycle_trigger_37()
 
 			if(TransformWarn == FALSE)
 			{
-				AI_Print("Телесная оболочка существа начала разрушаться...");
+				AI_Print( "The body shell of the creature began to collapse... " );
 				TransformWarn = TRUE;
 			};
 		};
@@ -12100,7 +12101,7 @@ func void B_CheckStamina()
 	}
 	else
 	{
-		if((HeroTRANS == FALSE) && (HeroNotMobsi == FALSE) && (OptionCheck == FALSE) && (CamModeOn == FALSE) && (HeroIsDead == FALSE))
+		if ((HeroTRANS ==  FALSE ) && (HeroNotMobsi ==  FALSE ) && (OptionCheck ==  FALSE ) && (CamModeOn ==  FALSE ) && (HeroIsDead ==  FALSE ))
 		{
 			if((POISONED == TRUE) && (ResistPoisonKnow == FALSE))
 			{
@@ -12126,13 +12127,13 @@ func void B_CheckStamina()
 		};
 		if(bHeroIsInCutscene == FALSE)
 		{
-			bManaBar = 1;
-			bHealthBar = 1;
+			bManaBar = 1 ;
+			bHealthBar = 1 ;
 		}
 		else
 		{
-			bManaBar = 0;
-			bHealthBar = 0;
+			bManaBar = 0 ;
+			bHealthBar = 0 ;
 			StaminaBar.bShow = 0;
 		};
 	};
@@ -12389,7 +12390,7 @@ func void B_CheckStamina()
 		}
 		else if(Hlp_GetHeroStatus() == HERO_NORMAL)
 		{
-			if(KAPITELORCATC == FALSE)
+			if ( CAPITALORCATC  ==  FALSE )
 			{
 				if(CurrentLevel == NEWWORLD_ZEN)
 				{
@@ -12398,7 +12399,7 @@ func void B_CheckStamina()
 						_bCanSave = TRUE;
 						FlagSaveOn = TRUE;
 					}
-					else if((Npc_GetDistToWP(hero,"SAVE_SPOT_NW_AW") <= 500) && (DIA_Addon_Saturas_OpenPortal_NoPerm == TRUE))
+					else  if ((Npc_GetDistToWP(hero, " SAVE_SPOT_NW_AW " ) <=  500 ) && (DIA_Addon_Saturate_OpenPortal_NoPerm ==  TRUE )) ;
 					{
 						_bCanSave = TRUE;
 						FlagSaveOn = TRUE;
@@ -12507,7 +12508,7 @@ func void B_CheckStamina()
 						FlagSaveOn = FALSE;
 					};
 				}
-				else if(CurrentLevel == ADDONWORLD_ZEN)
+				else  if (CurrentLevel ==  ADDONWORLD_ZEN )
 				{
 					if((Npc_GetDistToWP(hero,"SAVE_SPOT_01") <= 1000) || (Npc_GetDistToWP(hero,"SAVE_SPOT_02") <= 1500))
 					{
@@ -12998,7 +12999,7 @@ func void B_CheckStamina()
 						_bCanSave = TRUE;
 						FlagSaveOn = TRUE;
 					}
-					else if((Npc_GetDistToWP(hero,"SAVE_SPOT_NW_AW") <= 500) && (DIA_Addon_Saturas_OpenPortal_NoPerm == TRUE))
+					else  if ((Npc_GetDistToWP(hero, " SAVE_SPOT_NW_AW " ) <=  500 ) && (DIA_Addon_Saturate_OpenPortal_NoPerm ==  TRUE )) ;
 					{
 						_bCanSave = TRUE;
 						FlagSaveOn = TRUE;
@@ -13047,7 +13048,7 @@ func void B_CheckStamina()
 						FlagSaveOn = FALSE;
 					};
 				}
-				else if(CurrentLevel == ADDONWORLD_ZEN)
+				else  if (CurrentLevel ==  ADDONWORLD_ZEN )
 				{
 					if((Npc_GetDistToWP(hero,"SAVE_SPOT_01") <= 1000) || (Npc_GetDistToWP(hero,"SAVE_SPOT_02") <= 1500))
 					{
@@ -13750,13 +13751,13 @@ func void RefreshStatusMenuData()
 
 	bHaltHero = TRUE;
 
-	if(KAPITELORCATC == FALSE)
+	if ( CAPITALORCATC  ==  FALSE )
 	{
-		sKapitel = IntToString(Kapitel);
+		sChapter = IntToString(Chapter);
 	}
 	else
 	{
-		sKapitel = IntToString(7);
+		sChapter = IntToString( 7 );
 	};
 	if(SBMODE == 1)
 	{
@@ -13764,37 +13765,37 @@ func void RefreshStatusMenuData()
 		{
 			if(CheckRealMode[1] == TRUE)
 			{
-				sHardLvl = "'Легендарная'";
+				sHardLvl = " 'Legendary' " ;
 			}
 			else
 			{
-				sHardLvl = "'Легендарная' (сохр.)";
+				sHardLvl = " 'Legendary' (preserved) " ;
 			};
 		}
 		else
 		{
-			sHardLvl = "тяжелая";
+			sHardLvl = " heavy " ;
 		};
 	}
 	else if(SBMODE == 2)
 	{
-		sHardLvl = "нормальная";
+		sHardLvl = " normal " ;
 	}
 	else if(SBMODE == 4)
 	{	
-		sHardLvl = "легкая";
+		sHardLvl = " light " ;
 	};
 
 	sAllDay = IntToString(Wld_GetDay());
 
-	//----------Гильдия воров---------------------
+	// ----------Thieves Guild--------------------
 
 
 	if(IS_LOVCACH == TRUE)
 	{
 		if((hero.attribute[ATR_DEXTERITY] >= 220) && (THIEF_REPUTATION >= 30))
 		{
-			sThiefGuild = "мастер";
+			sThiefGuild = " master " ;
 		}
 		else if((hero.attribute[ATR_DEXTERITY] >= 150) && (THIEF_REPUTATION >= 15))
 		{
@@ -13814,17 +13815,17 @@ func void RefreshStatusMenuData()
 		sThiefGuild = "-";
 	};
 
-	//----------Гильдия убийц---------------------
+	// ----------Guild of Assassins--------------------
 
 	if(JOINKILLERS == TRUE)
 	{
 		if(BEKILLMASTER == TRUE)
 		{
-			sKillersGuild = "главарь";
+			sKillersGuild = " leader " ;
 		}
 		else
 		{
-			sKillersGuild = "наемник";
+			sKillersGuild = " mercenary " ;
 		};
 	}
 	else
@@ -13832,17 +13833,17 @@ func void RefreshStatusMenuData()
 		sKillersGuild = "-";
 	};
 
-	//----------Гильдия торговцев---------------------
+	// ----------Guild of Merchants--------------------
 	
 	if(MEMBERTRADEGUILD == TRUE)
 	{
 		if(TRADEMASTERBEGAN == TRUE)
 		{
-			sTradeGuild = "мастер";
+			sTradeGuild = " master " ;
 		}
 		else
 		{
-			sTradeGuild = "торговец";
+			sTradeGuild = " trader " ;
 		};
 	}
 	else
@@ -13860,87 +13861,87 @@ func void RefreshStatusMenuData()
 	{
 		if(TempRankPoints <= 500)
 		{
-			sGrade = "заключенный";
+			sGrade = " prisoner " ;
 		}
 		else if(TempRankPoints <= 1000)
 		{
-			sGrade = "нищий";
+			sGrade = " beggar " ;
 		}
 		else if(TempRankPoints <= 2000)
 		{
-			sGrade = "крестьянин";
+			sGrade = " peasant " ;
 		}
 		else if(TempRankPoints <= 6000)
 		{
-			sGrade = "рабочий";
+			sGrade = " working " ;
 		}
 		else if(TempRankPoints <= 10000)
 		{
-			sGrade = "садовник";
+			sGrade = " gardener " ;
 		}
 		else if(TempRankPoints <= 16000)
 		{
-			sGrade = "подмастерье";
+			sGrade = " undermaster " ;
 		}
 		else if(TempRankPoints <= 22000)
 		{
-			sGrade = "мастеровой";
+			sGrade = " artisan " ;
 		}
 		else if(TempRankPoints <= 28000)
 		{
-			sGrade = "ростовщик";
+			sGrade = " usurer " ;
 		}
 		else if(TempRankPoints <= 40000)
 		{
-			sGrade = "торговец";
+			sGrade = " merchant " ;
 		}
 		else if(TempRankPoints <= 52000)
 		{
-			sGrade = "стражник";
+			sGrade = " guard " ;
 		}
 		else if(TempRankPoints <= 65000)
 		{
-			sGrade = "оруженосец";
+			sGrade = " squire " ;
 		}
 		else if(TempRankPoints <= 80000)
 		{
-			sGrade = "солдат";
+			sGrade = " soldier " ;
 		}
 		else if(TempRankPoints <= 100000)
 		{
-			sGrade = "альгвазил";
+			sGrade = " algvazil " ;
 		}
 		else if(TempRankPoints <= 125000)
 		{
-			sGrade = "наместник";
+			sGrade = " namestnik " ;
 		}
 		else if(TempRankPoints <= 150000)
 		{
-			sGrade = "рыцарь";
+			sGrade = " knight " ;
 		}
 		else if(TempRankPoints <= 200000)
 		{
-			sGrade = "военачальник";
+			sGrade = " general " ;
 		}
 		else if(TempRankPoints <= 250000)
 		{
-			sGrade = "Герой Миртаны";
+			sGrade = " Hero of Myrtana " ;
 		}
 		else if(TempRankPoints <= 300000)
 		{
-			sGrade = "Длань богов";
+			sGrade = " Hand of the Gods " ;
 		}
 		else if(TempRankPoints <= 400000)
 		{
-			sGrade = "Избранный";
+			sGrade = " Chosen One " ;
 		}
 		else if(TempRankPoints < 500000)
 		{
-			sGrade = "Хранитель мира";
+			sGrade = " Guardian of the world " ;
 		}
 		else
 		{
-			sGrade = "Легенда";
+			sGrade = " Legend " ;
 		};
 	};
 	if(UseMarvin[1] == TRUE)
@@ -13953,11 +13954,11 @@ func void RefreshStatusMenuData()
 	sBeliarKarma = IntToString(BELIARPRAYCOUNT);
 
 
-	//---------------------Аттрибуты--------------------------
+	// ---------------------Attribute----------------------------
 
 	sRealStr = IntToString(hero.aivar[REAL_STRENGTH]);
 	sRealDex = IntToString(hero.aivar[REAL_DEXTERITY]);
-	sRealMana = IntToString(hero.aivar[REAL_MANA_MAX]);
+	sRealMana = IntToString(hero.aivar[ REAL_MANA_MAX ]);
 	sIntellect = IntToString(ATR_INTELLECT);
 
 	if(hero.attribute[ATR_REGENERATEMANA] > 0)
@@ -13971,79 +13972,79 @@ func void RefreshStatusMenuData()
 
 	if(hero.HitChance[NPC_TALENT_1H] >= 90)
 	{
-		sMastery1H = "мастер";
+		sMastery1H = " master " ;
 	}
 	else if(hero.HitChance[NPC_TALENT_1H] >= 60)
 	{
-		sMastery1H = "эксперт";
+		sMastery1H = " expert " ;
 	}
 	else if(hero.HitChance[NPC_TALENT_1H] >= 30)
 	{
-		sMastery1H = "опытный";
+		sMastery1H = " skilled " ;
 	}
 	else
 	{
-		sMastery1H = "новичок";
+		sMastery1H = " newbie " ;
 	};
 
 	if(hero.HitChance[NPC_TALENT_2H] >= 90)
 	{
-		sMastery2H = "мастер";
+		sMastery2H = " master " ;
 	}
 	else if(hero.HitChance[NPC_TALENT_2H] >= 60)
 	{
-		sMastery2H = "эксперт";
+		sMastery2H = " expert " ;
 	}
 	else if(hero.HitChance[NPC_TALENT_2H] >= 30)
 	{
-		sMastery2H = "опытный";
+		sMastery2H = " experienced " ;
 	}
 	else
 	{
-		sMastery2H = "новичок";
+		sMastery2H = " newbie " ;
 	};
 
 	if(hero.HitChance[NPC_TALENT_BOW] >= 60)
 	{
-		sMasteryBow = "мастер";
+		sMasteryBow = " master " ;
 	}
 	else if(hero.HitChance[NPC_TALENT_BOW] >= 30)
 	{
-		sMasteryBow = "опытный";
+		sMasteryBow = " skilled " ;
 	}
 	else
 	{
-		sMasteryBow = "новичок";
+		sMasteryBow = " newbie " ;
 	};
 
 	if(hero.HitChance[NPC_TALENT_CROSSBOW] >= 60)
 	{
-		sMasteryCBow = "мастер";
+		sMasteryCBow = " master " ;
 	}
 	else if(hero.HitChance[NPC_TALENT_CROSSBOW] >= 30)
 	{
-		sMasteryCBow = "опытный";
+		sMasteryCBow = " skilled " ;
 	}
 	else
 	{
-		sMasteryCBow = "новичок";
+		sMasteryCBow = " newbie " ;
 	};
 
 	if(hero.attribute[ATR_REGENERATEMANA] >= 90)
 	{
-		sMasteryShld = "мастер";
+		sMasteryShld = " master " ;
 	}
 	else if(hero.attribute[ATR_REGENERATEMANA] >= 60)
 	{
-		sMasteryShld = "эксперт";
+		sMasteryShld = " expert " ;
 	}
 	else if(hero.attribute[ATR_REGENERATEMANA] >= 30)
 	{
-		sMasteryShld = "опытный";
+		sMasteryShld = " skilled " ;
 	}
 	else if(hero.attribute[ATR_REGENERATEMANA] > 0)
 	{
-		sMasteryShld = "новичок";
+		sMasteryShld = " novice " ;
 	}
 	else
 	{
@@ -14052,7 +14053,7 @@ func void RefreshStatusMenuData()
 
 	if(AIV_TwoHands == TRUE)
 	{
-		sDualWeapon = "обучен";
+		sDualWeapon = " sDualWeapon " ;
 	}
 	else
 	{
@@ -14061,16 +14062,16 @@ func void RefreshStatusMenuData()
 
 	if(OFStyle == TRUE)
 	{
-		sOrcWeapon = "обучен";
+		sOrcWeapon = " sOrcWeapon " ;
 	}
 	else
 	{
 		sOrcWeapon = "-";
 	};
 
-	//--------------------ТАЛАНТЫ И УМЕНИЯ-----------------------------
+	// --------------------TALENTS AND SKILLS------------------------- ----
 
-	//Ремесленные навыки
+	// Craft Skills
 
 
 	if(Npc_GetTalentSkill(hero,NPC_TALENT_SMITH) > 0)
@@ -14083,19 +14084,19 @@ func void RefreshStatusMenuData()
 	};
 	if(TalentCount_Smith[0] >= 90)
 	{
-		sMasterySmth = "мастер";
+		sMasterySmth = " master " ;
 	}
 	else if(TalentCount_Smith[0] >= 60)
 	{
-		sMasterySmth = "эксперт";
+		sMasterySmth = " expert " ;
 	}
 	else if(TalentCount_Smith[0] >= 30)
 	{
-		sMasterySmth = "опытный";
+		sMasterySmth = " experienced " ;
 	}
 	else if(TalentCount_Smith[0] > 0)
 	{
-		sMasterySmth = "новичок";
+		sMasterySmth = " newbie " ;
 	}
 	else
 	{
@@ -14115,19 +14116,19 @@ func void RefreshStatusMenuData()
 	{
 		if(TalentCount_Alchemy[0] >= 90)
 		{
-			sMasteryAlkh = "мастер";
+			sMasteryAlkh = " master " ;
 		}
 		else if(TalentCount_Alchemy[0] >= 60)
 		{
-			sMasteryAlkh = "эксперт";
+			sMasteryAlkh = " expert " ;
 		}
 		else if(TalentCount_Alchemy[0] >= 30)
 		{
-			sMasteryAlkh = "опытный";
+			sMasteryAlkh = " skilled " ;
 		}
 		else if(TalentCount_Alchemy[0] > 0)
 		{
-			sMasteryAlkh = "новичок";
+			sMasteryAlkh = " beginner " ;
 		}
 		else
 		{
@@ -14148,19 +14149,19 @@ func void RefreshStatusMenuData()
 	};
 	if(TalentCount_Rune[0] >= 90)
 	{
-		sMasteryRune = "мастер";
+		sMasteryRune = " master " ;
 	}
 	else if(TalentCount_Rune[0] >= 60)
 	{
-		sMasteryRune = "эксперт";
+		sMasteryRune = " expert " ;
 	}
 	else if(TalentCount_Rune[0] >= 30)
 	{
-		sMasteryRune = "опытный";
+		sMasterRune = " skilled " ;
 	}
 	else if(TalentCount_Rune[0] > 0)
 	{
-		sMasteryRune = "новичок";
+		sMasteryRune = " novice " ;
 	}
 	else
 	{
@@ -14177,19 +14178,19 @@ func void RefreshStatusMenuData()
 	};
 	if(HERO_HACKCHANCEORE >= 90)
 	{
-		sMasteryOre = "мастер";
+		sMasteryOre = " master " ;
 	}
 	else if(HERO_HACKCHANCEORE >= 60)
 	{
-		sMasteryOre = "эксперт";
+		sMasteryOre = " expert " ;
 	}
 	else if(HERO_HACKCHANCEORE >= 30)
 	{
-		sMasteryOre = "опытный";
+		sMasteryOre = " experienced " ;
 	}
 	else if(HERO_HACKCHANCEORE > 0)
 	{
-		sMasteryOre = "новичок";
+		sMasteryOre = " newbie " ;
 	}
 	else
 	{
@@ -14207,19 +14208,19 @@ func void RefreshStatusMenuData()
 	};
 	if(Hero_HackChance >= 90)
 	{
-		sMasteryGold = "мастер";
+		sMasteryGold = " master " ;
 	}
 	else if(Hero_HackChance >= 60)
 	{
-		sMasteryGold = "эксперт";
+		sMasteryGold = " expert " ;
 	}
 	else if(Hero_HackChance >= 30)
 	{
-		sMasteryGold = "опытный";
+		sMasteryGold = " skilled " ;
 	}
 	else if(Hero_HackChance > 0)
 	{
-		sMasteryGold = "новичок";
+		sMasteryGold = " newbie " ;
 	}
 	else
 	{
@@ -14230,19 +14231,19 @@ func void RefreshStatusMenuData()
 	{
 		if(JEWERLY_LEVEL_AMUL == TRUE)
 		{
-			sStatusJew = "мастер";
+			sStatusJew = " master " ;
 		}
 		else if(JEWERLY_LEVEL_L3 == TRUE)
 		{
-			sStatusJew = "эксперт";
+			sStatusJew = " expert " ;
 		}
 		else if(JEWERLY_LEVEL_L2 == TRUE)
 		{
-			sStatusJew = "опытный";
+			sStatusJew = " experienced " ;
 		}
 		else if(JEWERLY_LEVEL_L1 == TRUE)
 		{
-			sStatusJew = "новичок";
+			sStatusJew = " newbie " ;
 		};
 	}
 	else
@@ -14251,7 +14252,7 @@ func void RefreshStatusMenuData()
 	};
 	if(KNOWHOWTOOREFUS == TRUE)
 	{
-		sStatusPlavka = "обучен";
+sStatusPlavka 		= " education " ;
 	}
 	else
 	{
@@ -14259,7 +14260,7 @@ func void RefreshStatusMenuData()
 	};
 	if(PlayerRudoplav == TRUE)
 	{
-		sStatusMagPlavka = "обучен";
+sStatusMagPlavka 		= " education " ;
 	}
 	else
 	{
@@ -14267,7 +14268,7 @@ func void RefreshStatusMenuData()
 	};
 	if(OrcsWeaponSteel == TRUE)
 	{
-		sStatusOrcPlavka = "обучен";
+		sStatusOrcPlavka = " obuchen " ;
 	}
 	else
 	{
@@ -14275,7 +14276,7 @@ func void RefreshStatusMenuData()
 	};
 	if(KNOWHOWTOOREFUSGOLD == TRUE)
 	{
-		sStatusGoldSmth = "обучен";
+sStatusGoldSmth 		= " education " ;
 	}
 	else
 	{
@@ -14283,7 +14284,7 @@ func void RefreshStatusMenuData()
 	};
 	if(KNOWHOWSHARPWEAPON == TRUE)
 	{
-		sStatusSharp = "обучен";
+sStatusSharp 		= " education " ;
 	}
 	else
 	{
@@ -14295,19 +14296,19 @@ func void RefreshStatusMenuData()
 
 		if(PickPocketBonusCount >= 90)
 		{
-			sMasteryThft = "мастер";
+			sMasteryThft = " master " ;
 		}
 		else if(PickPocketBonusCount >= 60)
 		{
-			sMasteryThft = "эксперт";
+			sMasteryThft = " expert " ;
 		}
 		else if(PickPocketBonusCount >= 30)
 		{
-			sMasteryThft = "опытный";
+			sMasteryThft = " experienced " ;
 		}
 		else if(PickPocketBonusCount > 0)
 		{
-			sMasteryThft = "новичок";
+			sMasteryThft = " novice " ;
 		};
 	}
 	else
@@ -14325,19 +14326,19 @@ func void RefreshStatusMenuData()
 	};
 	if(Npc_GetTalentValue(hero,NPC_TALENT_PICKLOCK) >= 90)
 	{
-		sMasteryBrk = "мастер";
+		sMasteryBrk = " master " ;
 	}
 	else if(Npc_GetTalentValue(hero,NPC_TALENT_PICKLOCK) >= 60)
 	{
-		sMasteryBrk = "эксперт";
+		sMasteryBrk = " expert " ;
 	}
 	else if(Npc_GetTalentValue(hero,NPC_TALENT_PICKLOCK) >= 30)
 	{
-		sMasteryBrk = "опытный";
+		sMasteryBrk = " experienced " ;
 	}
 	else if(Npc_GetTalentValue(hero,NPC_TALENT_PICKLOCK) > 0)
 	{
-		sMasteryBrk = "новичок";
+		sMasteryBrk = " newbie " ;
 	}
 	else
 	{
@@ -14346,7 +14347,7 @@ func void RefreshStatusMenuData()
 
 	if(Npc_GetTalentSkill(hero,NPC_TALENT_ACROBAT) > 0)
 	{
-		sStatusAcro = "обучен";
+sStatusAcro 		= " education " ;
 	}
 	else
 	{
@@ -14354,7 +14355,7 @@ func void RefreshStatusMenuData()
 	};
 	if(Npc_GetTalentSkill(hero,NPC_TALENT_SNEAK) > 0)
 	{
-		sStatusStl = "обучен";
+sStatusStl 		= " student " ;
 	}
 	else
 	{
@@ -14364,27 +14365,27 @@ func void RefreshStatusMenuData()
 	{
 		if(Npc_GetTalentSkill(hero,NPC_TALENT_MAGE) == 1)
 		{
-			sStatusCirc = "1 круг";
+			sStatusCirc = " 1 circle " ;
 		}
 		else if(Npc_GetTalentSkill(hero,NPC_TALENT_MAGE) == 2)
 		{
-			sStatusCirc = "2 круг";
+			sStatusCirc = " 2 circles " ;
 		}
 		else if(Npc_GetTalentSkill(hero,NPC_TALENT_MAGE) == 3)
 		{
-			sStatusCirc = "3 круг";
+			sStatusCirc = " 3 circle " ;
 		}
 		else if(Npc_GetTalentSkill(hero,NPC_TALENT_MAGE) == 4)
 		{
-			sStatusCirc = "4 круг";
+			sStatusCirc = " 4 krug " ;
 		}
 		else if(Npc_GetTalentSkill(hero,NPC_TALENT_MAGE) == 5)
 		{
-			sStatusCirc = "5 круг";
+			sStatusCirc = " 5 circle " ;
 		}
 		else if(Npc_GetTalentSkill(hero,NPC_TALENT_MAGE) == 6)
 		{
-			sStatusCirc = "6 круг";
+			sStatusCirc = " 6 circle " ;
 		};
 	}
 	else
@@ -14396,7 +14397,7 @@ func void RefreshStatusMenuData()
 	{
 		if(Npc_GetTalentSkill(hero,NPC_TALENT_DEMONOLOG) == 1)
 		{
-			sStatusDmn = "обучен";
+			sStatusDmn = " obuchen " ;
 		}
 		else if(Npc_GetTalentSkill(hero,NPC_TALENT_DEMONOLOG) == 2)
 		{
@@ -14437,7 +14438,7 @@ func void RefreshStatusMenuData()
 	};
 	if(Npc_GetTalentSkill(hero,NPC_TALENT_MAKEARROWS) > 0)
 	{
-		sStatusArrow = "обучен";
+sStatusArrow 		= " education " ;
 	}
 	else
 	{
@@ -14459,15 +14460,15 @@ func void RefreshStatusMenuData()
 		}
 		else if(RhetorikSkillValue[1] >= 60)
 		{
-			sStatusRhet = "эксперт";
+			sStatusRhet = " expert " ;
 		}
 		else if(RhetorikSkillValue[1] >= 30)
 		{
-			sStatusRhet = "опытный";
+			sStatusRhet = " опытный " ;
 		}
 		else if(RhetorikSkillValue[1] > 0)
 		{
-			sStatusRhet = "новичок";
+			sStatusRhet = " newbie " ;
 		};
 
 		sStatusRhetValue = IntToString(RhetorikSkillValue[1]);
@@ -14479,7 +14480,7 @@ func void RefreshStatusMenuData()
 	};
 	if(PlayerKnowsOrcLanguage == TRUE)
 	{
-		sStatusOrcL = "обучен";
+sStatusOrcL 		= " education " ;
 	}
 	else
 	{
@@ -14487,7 +14488,7 @@ func void RefreshStatusMenuData()
 	};
 	if((PLAYER_TALENT_FOREIGNLANGUAGE[0] == TRUE) || (PLAYER_TALENT_FOREIGNLANGUAGE[1] == TRUE) || (PLAYER_TALENT_FOREIGNLANGUAGE[2] == TRUE))
 	{
-		sStatusAncL = "обучен";
+sStatusAncL 		= " education " ;
 	}
 	else
 	{
@@ -14495,14 +14496,14 @@ func void RefreshStatusMenuData()
 	};
 	if(PLAYER_TALENT_FOREIGNLANGUAGE[3] == TRUE)
 	{
-		sStatusDemL = "обучен";
+sStatusDemL 		= " education " ;
 	}
 	else
 	{
 		sStatusDemL = "-";
 	};
 
-	//------------Защита----------------------------------
+	// ------------Protection--------------------------------
 
 	sStatusEdge = IntToString(hero.protection[PROT_EDGE]);
 	sStatusBlunt = IntToString(hero.protection[PROT_BLUNT]);
@@ -14520,7 +14521,7 @@ func void RefreshStatusMenuData()
 	};
 	if(HotReduceKnow == TRUE)
 	{
-		sStatusHeat = "обучен";
+sStatusHeat 		= " education " ;
 	}
 	else
 	{
@@ -14528,7 +14529,7 @@ func void RefreshStatusMenuData()
 	};
 	if(ResistPoisonKnow == TRUE)
 	{
-		sStatusPoison = "обучен";
+		sStatusPoison = " obuchen " ;
 	}
 	else
 	{
@@ -14545,163 +14546,163 @@ func void RefreshStatusMenuData()
 	};
 	if(OberDementorIsDead == TRUE)
 	{
-		sStatusHeroic_01 = "- Дементор, страж Зверя";
+		sStatusHeroic_01 = " - Dementor, Guardian of the Beast " ;
 	};
-	if(DARKMAGE_ISDEAD == TRUE)
+	if ( DARKMAGE_ISDEAD  ==  TRUE )
 	{
-		sStatusHeroic_02 = "- Хошкар, некромант";
+		sStatusHeroic_02 = " - Khoshkar, Necromancer " ;
 	};
 	if(KreolIsDead == TRUE)
 	{
-		sStatusHeroic_03 = "- Креол, некромант";
+		sStatusHeroic_03 = " - Creole Necromancer " ;
 	};
 	if(ORCLEADERISDEAD == TRUE)
 	{
-		sStatusHeroic_04 = "- Ур-Тралл, вождь Орды";
+		sStatusHeroic_04 = " - Ur-Thrall, Warchief of the Horde " ;
 	};
 	if(PW_Exit == TRUE)
 	{
-		sStatusHeroic_05 = "- Кор Галом, демон Масиаф";
+		sStatusHeroic_05 = " - Cor Halom, daemon Masiaf " ;
 	};
 	if(DragonFireIsDead == TRUE)
 	{
-		sStatusHeroic_06 = "- Феоматар, огненный дракон";
+		sStatusHeroic_06 = " - Feomatar, Fire Dragon " ;
 	};
 	if(DragonIceIsDead == TRUE)
 	{
-		sStatusHeroic_07 = "- Финкрег, ледяной дракон";
+		sStatusHeroic_07 = " - Finkreg the Ice Dragon " ;
 	};
 	if(DragonSwampIsDead == TRUE)
 	{
-		sStatusHeroic_08 = "- Пандродор, болотный дракон";
+		sStatusHeroic_08 = " - Pandrodor the Swamp Dragon " ;
 	};
 	if(DragonRockIsDead == TRUE)
 	{
-		sStatusHeroic_09 = "- Педракан, каменный дракон";
+		sStatusHeroic_09 = " - Pedrakan Stone Dragon " ;
 	};
 	if(DragonRedIsDead == TRUE)
 	{
-		sStatusHeroic_10 = "- Траканон, красный дракон";
+		sStatusHeroic_10 = " - Trakanon, red dragon " ;
 	};
 	if(UndeadDragonIsDead == TRUE)
 	{
-		sStatusHeroic_11 = "- Аватар Белиара";
+		sStatusHeroic_11 = " - Avatar Beliara " ;
 	};
 	if(BLKDRAGNISDEAD == TRUE)
 	{
-		sStatusHeroic_12 = "- Азгалор, черный дракон";
+		sStatusHeroic_12 = " - Azgalor, Black Dragon " ;
 	};
 	if(RavenIsDead == TRUE)
 	{
-		sStatusHeroic_13 = "- Ворон, демон Зодчих";
+		sStatusHeroic_13 = " - Voron, the demon Zodchih " ;
 	};
 	if(KillDeadPal_Ginnok == TRUE)
 	{
-		sStatusHeroic_14 = "- Лорд Гиннок, безумный крестоносец";
+		sStatusHeroic_14 = " - Lord Ginnock, Mad Crusader " ;
 	};
 	if(INUBISISDEAD == TRUE)
 	{
-		sStatusHeroic_15 = "- Лорд Инубис, страж склепа";
+		sStatusHeroic_15 = " - Lord Inubis, Guardian of the Crypt " ;
 	};
 	if(QvardemonIsDead == TRUE)
 	{
-		sStatusHeroic_16 = "- Кардимон, жрец Зодчих";
+		sStatusHeroic_16 = " - Cardimon, Zodchih " ;
 	};
 	if(LIDEMONISDEAD == TRUE)
 	{
-		sStatusHeroic_17 = "- Заркул, демоникон";
+		sStatusHeroic_17 = " - Zarkul, demonicon " ;
 	};
 	if(SleeperOldIsDead == TRUE)
 	{
-		sStatusHeroic_18 = "- Спящий, демоникон";
+		sStatusHeroic_18 = " - Sleeping demonicon " ;
 	};
 	if(DemonPWISDEAD == TRUE)
 	{
-		sStatusHeroic_19 = "- Небирос, демон";
+		sStatusHeroic_19 = " - Nebiros, the demon " ;
 	};
-	if(SenyakIsDead == TRUE)
+	if (SenyakIsDead ==  TRUE )
 	{
-		sStatusHeroic_20 = "- С'эньяк, архидемон";
+		sStatusHeroic_20 = " - S'enyak, archdemon " ;
 	};
 	if(ORCMINEKILL_01 == TRUE)
 	{
-		sStatusHeroic_21 = "- Ирх'Тар, длань Хаоса";
+		sStatusHeroic_21 = " - Irkh'Tar, hand of Chaos " ;
 	};
 	if(DemonPsicampIsDead == TRUE)
 	{
-		sStatusHeroic_22 = "- Мораг'Бар, длань Хаоса";
+		sStatusHeroic_22 = " - Morag'Bar, Palm of Chaos " ;
 	};
 	if(ALLGUARDIANSNOLEADERISDEAD == TRUE)
 	{
-		sStatusHeroic_23 = "- Кра'Тук, Аватар Хаоса";
+		sStatusHeroic_23 = " - Kra'Tuk, Avatar of Chaos " ;
 	};
-	if(MagolemusIsDead == TRUE)
+	if (MagolemusIsDead ==  TRUE )
 	{
-		sStatusHeroic_24 = "- Маголемус, огненный голем";
+		sStatusHeroic_24 = " - Magolemus the Fire Golem " ;
 	};
 	if(HashGorIsDead == TRUE)
 	{
-		sStatusHeroic_25 = "- Хаш-Гор, орк-нежить";
+		sStatusHeroic_25 = " - Hash-Gor, Orc-Undead " ;
 	};
 	if(KelTuzedIsDead == TRUE)
 	{
-		sStatusHeroic_26 = "- Дакат, Лорд Смерти";
+		sStatusHeroic_26 = " - Dakat, Lord of Death " ;
 	};
 	if(DarkZhnezIsDead == TRUE)
 	{
-		sStatusHeroic_27 = "- Темный жнец";
+		sStatusHeroic_27 = " - Dark Reaper " ;
 	};
 	if(IzulgIsDead == TRUE)
 	{
-		sStatusHeroic_28 = "- Изулг, страж мертвых";
+		sStatusHeroic_28 = " - Izulg, Guardian of the Dead " ;
 	};
 	if(AraharPlagueIsDead == TRUE)
 	{
-		sStatusHeroic_29 = "- Арах'Ар Чумной";
+		sStatusHeroic_29 = " - Arah'Ar Chumnoi " ;
 	};
 	if(ShadowGuardOneIsDead == TRUE)
 	{
-		sStatusHeroic_30 = "- Ксерт, Призрачное Солнце";
+		sStatusHeroic_30 = " - Xerth, Ghost Sun " ;
 	};
 	if(ShadowGuardTwoIsDead == TRUE)
 	{
-		sStatusHeroic_31 = "- Элайр, Призрачная Луна";
+		sStatusHeroic_31 = " - Elair, Shadowmoon " ;
 	};
 	if(SoulKeeperIsDead == TRUE)
 	{
-		sStatusHeroic_32 = "- Асинокс, хранитель душ";
+		sStatusHeroic_32 = " - Asinox, Guardian of Souls " ;
 	};
 	if(FiarasIsDead == TRUE)
 	{
-		sStatusHeroic_33 = "- Фиарас, Вечное Пламя";
+		sStatusHeroic_33 = " - Fiaras, the Eternal Flame " ;
 	};
 	if(EkronIsDead == TRUE)
 	{
-		sStatusHeroic_34 = "- Экрон, проклятое древо";
+		sStatusHeroic_34 = " Ekron, the Cursed Tree " ;
 	};
 	if(SkelBroDexIsDead == TRUE)
 	{
-		sStatusHeroic_35 = "- Дра'Кзар, призрак-страж";
+		sStatusHeroic_35 = " - Dra'Kzar, Guardian Ghost " ;
 	};
 	if(SkelBroStrIsDead == TRUE)
 	{
-		sStatusHeroic_36 = "- Иль'Кзар, призрак-страж";
+		sStatusHeroic_36 = " - Il'Kzar, Guardian Ghost " ;
 	};
 	if(SkelBroMagIsDead == TRUE)
 	{
-		sStatusHeroic_37 = "- Ар'Кзар, призрак-страж";
+		sStatusHeroic_37 = " - Ar'Kzar, Guardian Ghost " ;
 	};
 	if(ChelDrakIsDead == TRUE)
 	{
-		sStatusHeroic_38 = "- Чел'Драк, древний лорд";
+		sStatusHeroic_38 = " - Chel'Drak, Ancient Lord " ;
 	};
 	if(IlesilIsDead == TRUE)
 	{
-		sStatusHeroic_39 = "- Иле'Силь, Лорд Теней";
+		sStatusHeroic_39 = " - Yle'Sil, Lord of Shadows " ;
 	};
 	if(VATRAS_TEACHREGEN == TRUE)
 	{
-		sStatusRegenHP = "обучен";
+		sStatusRegenHP = " regen " ;
 	}
 	else
 	{
@@ -14709,15 +14710,15 @@ func void RefreshStatusMenuData()
 	};
 	if(VATRAS_TEACHREGENMANA == TRUE)
 	{
-		sStatusRegenMana = "обучен";
+		sStatusRegenMana = " trained " ;
 	}
 	else
 	{
 		sStatusRegenMana = "-";
 	};
-	if(VATRAS_TEACHREGENSTAM == TRUE)
+	if ( VATRAS_TEACHREGENSTAM  ==  TRUE )
 	{
-		sStatusRegenStam = "обучен";
+		sStatusRegenStam = " trained " ;
 	}
 	else
 	{
@@ -14725,7 +14726,7 @@ func void RefreshStatusMenuData()
 	};
 	if(TALIASAN_COUNTER > 0)
 	{
-		sStatusMagScrolls = "обучен";
+		sStatusMagScrolls = " trained " ;
 	}
 	else
 	{
@@ -14733,7 +14734,7 @@ func void RefreshStatusMenuData()
 	};
 	if(XARDAS_KNOWSSACTANOME == TRUE)
 	{
-		sStatusSactaNomen = "обучен";
+		sStatusSactaNomen = " obuchen " ;
 	}
 	else
 	{
@@ -14749,7 +14750,7 @@ func void RefreshStatusMenuData()
 	};
 	if(SkillBlockShield == TRUE)
 	{
-		sStatusShldRef = "обучен";
+sStatusShldRef 		= " education " ;
 	}
 	else
 	{
@@ -14781,7 +14782,7 @@ func void RefreshStatusMenuData()
 	};
 	if((ORCWEAPON_LINE_STR_01 == TRUE) || (ORCWEAPON_LINE_HP_01 == TRUE))
 	{
-		sStatusOrcWPSmth = "обучен";
+sStatusOrcWPSmth 		= " education " ;
 	}
 	else
 	{
@@ -14789,7 +14790,7 @@ func void RefreshStatusMenuData()
 	};
 	if((KNOWMAKECRAWLERARMOR == TRUE) || (PLAYER_TALENT_SMITH[33] == TRUE) || (PLAYER_TALENT_SMITH[34] == TRUE) || (Know_HuntArmor_01 == TRUE) || (Know_HuntArmor_02 == TRUE) || (Know_HuntArmor_03 == TRUE) || (Know_HuntArmor_04 == TRUE))
 	{
-		sStatusMakeArmor = "обучен";
+		sStatusMakeArmor = " trained " ;
 	}
 	else
 	{
@@ -14797,7 +14798,7 @@ func void RefreshStatusMenuData()
 	};
 	if((PLAYER_TALENT_SMITH[13] == TRUE) || (PLAYER_TALENT_SMITH[14] == TRUE) || (PLAYER_TALENT_SMITH[15] == TRUE) || (PLAYER_TALENT_SMITH[16] == TRUE) || (PLAYER_TALENT_SMITH[17] == TRUE) || (PLAYER_TALENT_SMITH[18] == TRUE) || (PLAYER_TALENT_SMITH[19] == TRUE) || (PLAYER_TALENT_SMITH[20] == TRUE) || (PLAYER_TALENT_SMITH[21] == TRUE) || (PLAYER_TALENT_SMITH[22] == TRUE) || (PLAYER_TALENT_SMITH[25] == TRUE) || (PLAYER_TALENT_SMITH[26] == TRUE) || (PLAYER_TALENT_SMITH[27] == TRUE) || (PLAYER_TALENT_SMITH[29] == TRUE) || (PLAYER_TALENT_SMITH[30] == TRUE) || (PLAYER_TALENT_SMITH[31] == TRUE) || (PLAYER_TALENT_SMITH[32] == TRUE))
 	{
-		sStatusArmorSmth = "обучен";
+		sStatusArmorSmth = " learner " ;
 	}
 	else
 	{
@@ -14813,7 +14814,7 @@ func void RefreshStatusMenuData()
 	};
 	if(KNOWHOWTOMAKEFIREARROWS == TRUE)
 	{
-		sStatusFireArrow = "обучен";
+		sStatusFireArrow = " trained " ;
 	}
 	else
 	{
@@ -14829,7 +14830,7 @@ func void RefreshStatusMenuData()
 	};
 	if(MAKEHOLYARROWS == TRUE)
 	{
-		sStatusBlessArrow = "обучен";
+		sStatusBlessArrow = " obuchen " ;
 	}
 	else
 	{
@@ -14837,7 +14838,7 @@ func void RefreshStatusMenuData()
 	};
 	if(PoisonArrowKnow == TRUE)
 	{
-		sStatusPoisonArrow = "обучен";
+		sStatusPoisonArrow = " obuchen " ;
 	}
 	else
 	{
@@ -14853,7 +14854,7 @@ func void RefreshStatusMenuData()
 	};
 	if(PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_Fur] == TRUE)
 	{
-		sStatusHuntSkin = "обучен";
+		sStatusHuntSkin = " obuchen " ;
 	}
 	else
 	{
@@ -14885,7 +14886,7 @@ func void RefreshStatusMenuData()
 	};
 	if(PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_CrawlerPlate] == TRUE)
 	{
-		sStatusHuntCrwl = "обучен";
+		sStatusHuntCrwl = " obuchen " ;
 	}
 	else
 	{
@@ -14901,7 +14902,7 @@ func void RefreshStatusMenuData()
 	};
 	if(PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_BFWing] == TRUE)
 	{
-		sStatusHuntWing = "обучен";
+		sStatusHuntWing = " obuchen " ;
 	}
 	else
 	{
@@ -14909,7 +14910,7 @@ func void RefreshStatusMenuData()
 	};
 	if(PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_BFSting] == TRUE)
 	{
-		sStatusHuntSting = "обучен";
+		sStatusHuntSting = " trained " ;
 	}
 	else
 	{
@@ -14925,7 +14926,7 @@ func void RefreshStatusMenuData()
 	};
 	if(PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_ShadowHorn] == TRUE)
 	{
-		sStatusHuntShwHorn = "обучен";
+		sStatusHuntShwHorn = " obuchen " ;
 	}
 	else
 	{
@@ -14941,7 +14942,7 @@ func void RefreshStatusMenuData()
 	};
 	if(PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_FireTongue] == TRUE)
 	{
-		sStatusHuntFireLang = "обучен";
+		sStatusHuntFireLang = " trained " ;
 	}
 	else
 	{
@@ -14949,7 +14950,7 @@ func void RefreshStatusMenuData()
 	};
 	if(PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_DragonScale] == TRUE)
 	{
-		sStatusHuntDragScale = "обучен";
+		sStatusHuntDragScale = " trained " ;
 	}
 	else
 	{
@@ -14965,13 +14966,13 @@ func void RefreshStatusMenuData()
 	};
 	if((Edda_Soup_00 == TRUE) || (Edda_Soup_01 == TRUE) || (Edda_Soup_02 == TRUE) || (Edda_Soup_03 == TRUE) || (Snaf_Meal_01 == TRUE) || (Snaf_Meal_02 == TRUE) || (Snaf_Meal_03 == TRUE))
 	{
-		sStatusHerdSoup = "обучен";
+		sStatusHerdSoup = " obuchen " ;
 	}
 	else
 	{
 		sStatusHerdSoup = "-";
 	};
-	if((Rezept_Compote_01 == TRUE) || (Rezept_Compote_02 == TRUE))
+	if ((Rezept_Compote_01 ==  TRUE ) || (Rezept_Compote_02 ==  TRUE ))
 	{
 		sStatusHerdCompot = "обучен";
 	}
@@ -14981,7 +14982,7 @@ func void RefreshStatusMenuData()
 	};
 	if((Thekla_Cake_01 == TRUE) || (Thekla_Cake_02 == TRUE) || (Thekla_Cake_03 == TRUE) || (Thekla_Cake_05 == TRUE) || (Thekla_Cake_05 == TRUE))
 	{
-		sStatusHerdCake = "обучен";
+		sStatusHerdCake = " herd " ;
 	}
 	else
 	{
@@ -14997,7 +14998,7 @@ func void CantUnlock()
 
 func void UnlockDone()
 {
-	AI_PrintClr("Сундук открыт!",83,152,48);
+	AI_PrintClr( " The chest is open! " , 83 , 152 , 48 );
 	B_Say(hero,hero,"$ITEMREADY");
 };
 
@@ -15013,7 +15014,7 @@ func void DevMode_On()
 	if(bDevMode == FALSE)
 	{
 		bDevMode = TRUE;
-		AI_Print("!!!Тестовый режим!!!");
+		AI_Print( " !!!Test mode!!! " );
 
 		if(GuruTest[1] == FALSE)
 		{
@@ -15044,7 +15045,7 @@ func void DevMode_On()
 
 		if(Npc_ValidFocusNpc(hero))
 		{
-			if(pNpc.aivar[90] == TRUE)
+			if (pNpc.aivar[ 90 ] ==  TRUE )
 			{
 				ExitSession();
 			};
@@ -15072,7 +15073,7 @@ func void DevMode_On()
 
 		if(Npc_ValidFocusNpc(hero))
 		{
-			if(pNpc.aivar[90] == TRUE)
+			if (pNpc.aivar[ 90 ] ==  TRUE )
 			{
 				ExitSession();
 			};
@@ -15080,7 +15081,7 @@ func void DevMode_On()
 	};	
 	if(HeroTpBack == TRUE)
 	{
-		HeroTpBack = FALSE;
+		HeroTpBack = FALSE ;
 		ExitSession();
 	};
 	if((bDevMode == TRUE) && (HeroTrans == TRUE))
@@ -15093,10 +15094,10 @@ func void DevMode_Off()
 {
 	if(bDevMode == TRUE)
 	{
-		bDevMode = FALSE;
+		bDevMode = FALSE ;
 	};
 
-	HeroTpBack = FALSE;
+	HeroTpBack = FALSE ;
 };
 
 func void ClearPaused()
@@ -15160,11 +15161,11 @@ func void EnableShieldBlock()
 func void GamePaused()
 {
 	var int curhour;
-	var int curmaxstam;
-	var int daynow;
+	var int curmax stem;
+	where int daynow;
 	var string concatText;
 
-	if((MoreInfoOnScreen == TRUE) && (bHeroIsInCutscene == FALSE) && (HeroTrans == FALSE) && (PLAYER_MOBSI_PRODUCTION == MOBSI_NONE) && (OptionCheck == FALSE) && (ShakoIsOn[0] == FALSE) && (HeroNotMobsi == FALSE) && (HeroIsDead == FALSE) && (CaptureCheat == TRUE) && (ENDGAMECREDITS == FALSE))
+	if ((MoreInfoOnScreen ==  TRUE ) && (bHeroIsInCutscene ==  FALSE ) && (HeroTrans ==  FALSE ) && ( PLAYER_MOBSI_PRODUCTION  ==  MOBSI_NONE ) && (OptionCheck ==  FALSE ) && (ShakoIsOn[ 0 ] ==  FALSE ) && (HeroNotMobsi = =  FALSE ) && ( HeroIsDead ==  FALSE ) && (CaptureCheat == TRUE) && (ENDGAMECREDITS == FALSE))
 	{
 		if(Menu_ReadInt("AST","bSaveInfoFPS") == FALSE)
 		{
@@ -15180,7 +15181,7 @@ func void GamePaused()
 
 		if((PLAYER_MOBSI_PRODUCTION == MOBSI_PRAYIDOL) || (IdolMobileCheck == TRUE))
 		{
-			print_karma_beliar(95,1);
+			print_karma_beliar( 95 , 1 );
 		}
 		else if((PLAYER_MOBSI_PRODUCTION == MOBSI_PrayShrine) || (PrayMobileCheck == TRUE))
 		{
@@ -15218,7 +15219,7 @@ func void GamePaused()
 					}
 					else
 					{
-						bNotShowHunger = FALSE;
+						bNotShowHunger = FALSE ;
 					};
 					if(Hero_Thirst == 0)
 					{
@@ -15250,9 +15251,9 @@ func void PerFrame()
 	bPerFrameTimerP01 += 1;
 	bPerFrameTimerP06 += 1;
 
-	if((HeroTransOpen == FALSE) && (HEROTRANS == FALSE))
+	if ((HeroTransOpen ==  FALSE ) && ( HEROTRANS  ==  FALSE ))
 	{
-		//-------------------покадровый цикл - поток 0-------------------------------------
+		// ------------------- frame by frame - stream 0 ------------------------ -------------
 
 		if(bPerFrameTimerP00 >= FRM_TIMER_P00)
 		{
@@ -15278,7 +15279,7 @@ func void PerFrame()
 			};
 			if(!C_BodyStateContains(hero,BS_CLIMB) && !C_BodyStateContains(hero,BS_JUMP) && !C_BodyStateContains(hero,BS_PARADE))
 			{
-				JumpDone = FALSE;
+				JumpDone = FALSE ;
 			};
 			if(SPRINT_ACTIVE == FALSE)
 			{
@@ -15296,7 +15297,7 @@ func void PerFrame()
 					SPRINT_ACTIVE_DO = TRUE;
 				};
 			};
-			if((Steal_Mode == FALSE) && (C_BodyStateContains(hero,BS_JUMP) == FALSE) && (C_BodyStateContains(hero,BS_CRAWL) == FALSE) && (C_BodyStateContains(hero,BS_FALL) == FALSE) && (C_BodyStateContains(hero,BS_SWIM) == FALSE) && (C_BodyStateContains(hero,BS_DIVE) == FALSE) && (Npc_IsInFightMode(hero,FMODE_NONE) == TRUE) && (Mount_Up == FALSE) && (Hlp_InventoryIsOpen() == FALSE) && (OptionCheck == FALSE) && (HeroTRANS == FALSE) && (PLAYER_MOBSI_PRODUCTION == MOBSI_NONE) && (HeroNotMobsi == FALSE) && (ENDGAMECREDITS == FALSE) && (CaptureCheat == TRUE) && (HeroIsDead == FALSE))
+			if((Steal_Mode == FALSE) && (C_BodyStateContains(hero,BS_JUMP) == FALSE) && (C_BodyStateContains(hero,BS_CRAWL) == FALSE) && (C_BodyStateContains(hero,BS_FALL) == FALSE) && (C_BodyStateContains(hero,BS_SWIM) == FALSE) && (C_BodyStateContains(hero,BS_DIVE) == FALSE) && (Npc_IsInFightMode(hero,FMODE_NONE) ==  TRUE ) && (Mount_Up ==  FALSE ) && (Hlp_InventoryIsOpen() ==  FALSE ) && (OptionCheck ==  FALSE ) && (HeroTRANS ==  FALSE ) && ( PLAYER_MOBSI_PRODUCTION  ==  MOBSI_NONE ) && (HeroNotMobsi ==  FALSE ) && ( ENDGAMECREDITS  ==  FALSE ) && ( CaptureCheat ==  TRUE ) && (HeroIsDead == FALSE))
 			{
 				if(bStatusMenuInfo == FALSE)
 				{
@@ -15326,10 +15327,10 @@ func void PerFrame()
 			{
 				if(!C_BodyStateContains(hero,BS_LIE))
 				{
-					HeroNotMobsi = FALSE;
+					HeroNotMobsi = FALSE ;
 				};
 			};
-			if((bHeroIsInCutscene == FALSE) && (Hlp_InventoryIsOpen() == FALSE) && (C_BodyStateContains(hero,BS_MOBINTERACT_INTERRUPT) == FALSE) && (HeroTrans == FALSE) && (PLAYER_MOBSI_PRODUCTION == MOBSI_NONE) && (OptionCheck == FALSE) && (ShakoIsOn[0] == FALSE) && (HeroNotMobsi == FALSE) && (HeroIsDead == FALSE) && (CaptureCheat == TRUE) && (ENDGAMECREDITS == FALSE))
+			if ((bHeroIsInCutscene ==  FALSE ) && (Hlp_InventoryIsOpen() ==  FALSE ) && (C_BodyStateContains(hero, BS_MOBINTERACT_INTERRUPT ) ==  FALSE ) && (HeroTrans ==  FALSE ) && ( PLAYER_MOBSI_PRODUCTION  ==  MOBSI_NONE ) && ( FOPTIONChe  ) . && (ShakoIsOn[ 0 ] ==  FALSE ) && ( HeroNotMobsi ==  FALSE )&& (HeroIsDead == FALSE) && (CaptureCheat == TRUE) && (ENDGAMECREDITS == FALSE))
 			{
 				if(bDebuffStatus == FALSE)
 				{
@@ -15387,7 +15388,7 @@ func void PerFrame()
 				{
 					if(bStaminaBar == FALSE)
 					{
-						bStaminaBar = TRUE;
+						bStaminaBar = TRUE ;
 					};
 				};
 
@@ -15464,14 +15465,14 @@ func void PerFrame()
 		{
 			if(bStaminaBar == FALSE)
 			{
-				bStaminaBar = TRUE;
+				bStaminaBar = TRUE ;
 			};
 		};
 
 		B_CheckNpcHealth();
 	};
 
-	//-------------------покадровый цикл - поток 6-------------------------------------
+	// ------------------- frame by frame - thread 6 ----------------------- -------------
 
 	if(bPerFrameTimerP06 >= FRM_TIMER_P06)
 	{
@@ -15485,15 +15486,15 @@ func void PerFrame()
 			{
 				ImarahHeals = TRUE;
 				Snd_Play("IMARAHCURSE");
-				AI_PlayAni(Imarah,"T_SLDELITE");
-				AI_Wait(Imarah,1);
+				AI_PlayAni(Imarah, " T_SLDELITE " );
+				AI_Wait(Imarah, 1 );
 				Wld_PlayEffect("SPELLFX_BELIARSHRINE",Imarah,Imarah,0,0,0,FALSE);
 				Wld_PlayEffect("VOB_MAGICBURN",Imarah,Imarah,0,0,0,FALSE);
 			}
 			else if(tmpImarahCount == 2500)
 			{
-				AI_PlayAni(Imarah,"T_PALELITE");
-				AI_Wait(Imarah,1);
+				AI_PlayAni(Imarah, " T_PALELITE " );
+				AI_Wait(Imarah, 1 );
 				Wld_PlayEffect("VOB_MAGICBURN",Imarah,Imarah,0,0,0,FALSE);	
 				Snd_Play("OPENSOUL");
 				Wld_PlayEffect("SPELLFX_FIRERAIN_RAIN",Imarah,hero,0,0,0,FALSE);
@@ -15508,7 +15509,7 @@ func void PerFrame()
 					Npc_ChangeAttribute(hero,ATR_HITPOINTS,-tmpDamageImarah);
 				};
 
-				ImarahHeals = FALSE;
+				ImarahHeals = FALSE ;
 				tmpImarahCount = FALSE;
 			};
 		};
