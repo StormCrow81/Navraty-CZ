@@ -1,3 +1,4 @@
+
 var int CountAlchemyOverallBonus;
 var int CountAlchemyOverallBonusDay;
 var int OverallBonusAlchemy;
@@ -189,7 +190,7 @@ func void B_RaisekAlchemySkillNoInt(var int grade)
 
 func void B_RaisekAlchemySkill(var int grade)
 {
-	var int daynow;
+	where int daynow;
 
 	daynow = Wld_GetDay();
 
@@ -385,7 +386,7 @@ func void B_RaisekAlchemySkill(var int grade)
 			{
 				ATR_INTELLECT = ATR_INTELLECT + 1;
 				Npc_SetTalentSkill(hero,NPC_TALENT_INTELLECT,ATR_INTELLECT);
-				AI_Print("Интеллект + 1");
+				AI_Print( " Intelligence + 1 " );
 			};
 
 			CountAlchemyOverallBonus = FALSE;
@@ -404,13 +405,13 @@ func int B_CheckAlchemySkill(var int skill)
 	}
 	else
 	{
-		concatText = ConcatStrings("Необходим навык в алхимии не менее ",IntToString(Skill));
+		concatText = ConcatStrings( " Requires Alchemy skill at least " ,IntToString(Skill));
 		AI_PrintClr(concatText,177,58,17);
 		B_Say(self,self,"$NOLEARNNOPOINTS");
-		return FALSE;
+		return  FALSE ;
 	};
 
-	return FALSE;
+	return  FALSE ;
 };
 
 func void potionalchemy_s1()
@@ -419,14 +420,14 @@ func void potionalchemy_s1()
 	her = Hlp_GetNpc(PC_Hero);
 	if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(her))
 	{
-		//print_percent_bar_none(ATR_STAMINA[0],ATR_STAMINA_MAX[0] * 10,"Выносливость",42,97);
+		// print_percent_bar_none(ATR_STAMINA[0],ATR_STAMINA_MAX[0] * 10,"Stamina",42,97);
 
 		if(CinemaMod == TRUE)
 		{
 			Wld_PlayEffect("DIALOGSCOPE_FX",hero,hero,0,0,0,FALSE);
 		};
 
-		self.aivar[AIV_INVINCIBLE] = TRUE;
+		self.aivar[ AIV_INVINCIBLE ] = TRUE ;
 		PLAYER_MOBSI_PRODUCTION = MOBSI_PotionAlchemy;
 		CreateInvItems(hero,ItMi_Flask,1);
 		AI_ProcessInfos(her);
@@ -470,7 +471,7 @@ instance PC_Mana_Start(C_Info)
 	condition = PC_Mana_Start_Condition;
 	information = PC_Mana_Start_Info;
 	permanent = TRUE;
-	description = "Изготовить зелья маны";
+	description = " Make mana potions " ;
 };
 
 func int PC_Mana_Start_Condition()
@@ -488,19 +489,19 @@ func void B_Mana_Start()
 
 	if((PLAYER_TALENT_ALCHEMY[POTION_Mana_04] == TRUE) && (Npc_HasItems(hero,ItMi_Flask) >= 1) && (Npc_HasItems(hero,ItFo_Alcohol) >= 1) && (Npc_HasItems(hero,ItPo_Mana_01) >= 3) && (Npc_HasItems(hero,ItPl_Temp_Herb) >= 1) && (Npc_HasItems(hero,ItPl_Blueplant) >= 1))
 	{
-		Info_AddChoice(PC_Mana_Start,"Эликсир чистой магической энергии",PC_ItPo_Mana_04);
+		Info_AddChoice(PC_Mana_Start, " Elixir of Pure Magical Energy " ,PC_ItPo_Mana_04);
 	};
 	if((PLAYER_TALENT_ALCHEMY[POTION_Mana_03] == TRUE) && (Npc_HasItems(hero,ItMi_Flask) >= 1) && (Npc_HasItems(hero,ItFo_Alcohol) >= 1) && (Npc_HasItems(hero,ItPl_Mana_Herb_03) >= 1) && (Npc_HasItems(hero,ItPl_Blueplant) >= 1))
 	{
-		Info_AddChoice(PC_Mana_Start,"Эликсир маны",PC_ItPo_Mana_03);
+		Info_AddChoice(PC_Mana_Start, " Mana Elixir " , PC_ItPo_Mana_03);
 	};
 	if((PLAYER_TALENT_ALCHEMY[POTION_Mana_02] == TRUE) && (Npc_HasItems(hero,ItMi_Flask) >= 1) && (Npc_HasItems(hero,ItFo_Alcohol) >= 1) && (Npc_HasItems(hero,ItPl_Mana_Herb_02) >= 1) && (Npc_HasItems(hero,ItPl_Blueplant) >= 1))
 	{
-		Info_AddChoice(PC_Mana_Start,"Экстракт маны",PC_ItPo_Mana_02);
+		Info_AddChoice(PC_Mana_Start, " Mana Extract " ,PC_ItPo_Mana_02);
 	};
 	if((PLAYER_TALENT_ALCHEMY[POTION_Mana_01] == TRUE) && (Npc_HasItems(hero,ItMi_Flask) >= 1) && (Npc_HasItems(hero,ItFo_Alcohol) >= 1) && (Npc_HasItems(hero,ItPl_Mana_Herb_01) >= 1) && (Npc_HasItems(hero,ItPl_Blueplant) >= 1))
 	{
-		Info_AddChoice(PC_Mana_Start,"Эссенция маны",PC_ItPo_Mana_01);
+		Info_AddChoice(PC_Mana_Start, " Mana Essence " , PC_ItPo_Mana_01);
 	};
 
 	Info_AddChoice(PC_Mana_Start,DIALOG_BACK,PC_Mana_Start_Back_Info);
@@ -618,7 +619,7 @@ instance PC_Health_Start(C_Info)
 	condition = PC_Health_Start_Condition;
 	information = PC_Health_Start_Info;
 	permanent = TRUE;
-	description = "Изготовить лечебные зелья";
+	description = " Make Healing Potions " ;
 };
 
 func int PC_Health_Start_Condition()
@@ -636,23 +637,23 @@ func void B_Health_Start()
 
 	if((KNOWFULLHEALTH2 == TRUE) && (Npc_HasItems(hero,ItMi_Flask) >= 1) && (Npc_HasItems(hero,ItFo_Alcohol) >= 1) && (Npc_HasItems(hero,ItAt_Sting) >= 5) && (Npc_HasItems(hero,ItPl_Health_Herb_01) >= 1) && (Npc_HasItems(hero,ItPl_Temp_Herb) >= 1) && (Npc_HasItems(hero,ItPl_Blueplant) >= 1))
 	{
-		Info_AddChoice(PC_Health_Start,"Восстанавливающая настойка из жал",pc_itpo_health_04_new);
+		Info_AddChoice(PC_Health_Start, " Sting Healing Potion " ,pc_itpo_health_04_new);
 	};
 	if((PLAYER_TALENT_ALCHEMY[POTION_Health_04] == TRUE) && (Npc_HasItems(hero,ItMi_Flask) >= 1) && (Npc_HasItems(hero,ItFo_Alcohol) >= 1) && (Npc_HasItems(hero,ItPo_Health_01) >= 3) && (Npc_HasItems(hero,ItPl_Temp_Herb) >= 1) && (Npc_HasItems(hero,ItPl_Blueplant) >= 1))
 	{
-		Info_AddChoice(PC_Health_Start,"Эликсир чистой жизненной энергии",PC_ItPo_Health_04);
+		Info_AddChoice(PC_Health_Start, " Pure Life Energy Elixir " ,PC_ItPo_Health_04);
 	};
 	if((PLAYER_TALENT_ALCHEMY[POTION_Health_03] == TRUE) && (Npc_HasItems(hero,ItMi_Flask) >= 1) && (Npc_HasItems(hero,ItFo_Alcohol) >= 1) && (Npc_HasItems(hero,ItPl_Health_Herb_03) >= 1) && (Npc_HasItems(hero,ItPl_Blueplant) >= 1))
 	{
-		Info_AddChoice(PC_Health_Start,"Лечебный эликсир",PC_ItPo_Health_03);
+		Info_AddChoice(PC_Health_Start, " Healing Elixir " ,PC_ItPo_Health_03);
 	};
 	if((PLAYER_TALENT_ALCHEMY[POTION_Health_02] == TRUE) && (Npc_HasItems(hero,ItMi_Flask) >= 1) && (Npc_HasItems(hero,ItFo_Alcohol) >= 1) && (Npc_HasItems(hero,ItPl_Health_Herb_02) >= 1) && (Npc_HasItems(hero,ItPl_Blueplant) >= 1))
 	{
-		Info_AddChoice(PC_Health_Start,"Лечебный экстракт",PC_ItPo_Health_02);
+		Info_AddChoice(PC_Health_Start, " Healing Extract " ,PC_ItPo_Health_02);
 	};
 	if((PLAYER_TALENT_ALCHEMY[POTION_Health_01] == TRUE) && (Npc_HasItems(hero,ItMi_Flask) >= 1) && (Npc_HasItems(hero,ItFo_Alcohol) >= 1) && (Npc_HasItems(hero,ItPl_Health_Herb_01) >= 1) && (Npc_HasItems(hero,ItPl_Blueplant) >= 1))
 	{
-		Info_AddChoice(PC_Health_Start,"Лечебная эссенция",PC_ItPo_Health_01);
+		Info_AddChoice(PC_Health_Start, " Healing Essence " ,PC_ItPo_Health_01);
 	};
 
 	Info_AddChoice(PC_Health_Start,DIALOG_BACK,PC_Health_Start_Back_Info);
@@ -796,7 +797,7 @@ instance PC_Special_StaminaSpeed(C_Info)
 	condition = PC_Special_StaminaSpeed_Condition;
 	information = PC_Special_StaminaSpeed_Info;
 	permanent = TRUE;
-	description = "Изготовить зелья выносливости и ускорения";
+	description = " Make stamina and haste potions " ;
 };
 
 func int PC_Special_StaminaSpeed_Condition()
@@ -818,15 +819,15 @@ func void B_Special_StaminaSpeed()
 	};
 	if((PLAYER_TALENT_ALCHEMY[15] == TRUE) && (Npc_HasItems(hero,ItMi_Flask) >= 1) && (Npc_HasItems(hero,ItFo_Alcohol) >= 1) && (Npc_HasItems(hero,ItPl_Speed_Herb_01) >= 1) && (Npc_HasItems(hero,ItPo_Speed) >= 1))
 	{
-		Info_AddChoice(PC_Special_StaminaSpeed,"Напиток двойного ускорения",pc_itpo_speed_02);
+		Info_AddChoice(PC_Special_StaminaSpeed, " Double Speed ​​Drink " ,pc_itpo_speed_02);
 	};
 	if((PLAYER_TALENT_ALCHEMY[POTION_Speed] == TRUE) && (Npc_HasItems(hero,ItMi_Flask) >= 1) && (Npc_HasItems(hero,ItFo_Alcohol) >= 1) && (Npc_HasItems(hero,ItPl_Speed_Herb_01) >= 1) && (Npc_HasItems(hero,ItPl_Temp_Herb) >= 1))
 	{
-		Info_AddChoice(PC_Special_StaminaSpeed,"Напиток ускорения",PC_ItPo_Speed);
+		Info_AddChoice(PC_Special_StaminaSpeed, " Boost Drink " ,PC_ItPo_Speed);
 	};
 	if((PLAYER_TALENT_ALCHEMY[17] == TRUE) && (Npc_HasItems(hero,ItMi_Flask) >= 1) && (Npc_HasItems(hero,ItFo_Alcohol) >= 1) && (Npc_HasItems(hero,ItPl_Blueplant) >= 1) && (Npc_HasItems(hero,ItPl_Temp_Herb) >= 1))
 	{
-		Info_AddChoice(PC_Special_StaminaSpeed,"Напиток выносливости",pc_itpo_stamina);
+		Info_AddChoice(PC_Special_StaminaSpeed, " Stamina Drink " ,pc_itpo_stamina);
 	};
 
 	Info_AddChoice(PC_Special_StaminaSpeed,DIALOG_BACK,PC_Special_StaminaSpeed_Back_Info);
@@ -944,7 +945,7 @@ instance PC_Special_Start(C_Info)
 	condition = PC_Special_Start_Condition;
 	information = PC_Special_Start_Info;
 	permanent = TRUE;
-	description = "Изготовить магические зелья";
+	description = " Make magic potions " ;
 };
 
 func int PC_Special_Start_Condition()
@@ -962,11 +963,11 @@ func void B_Special_Start()
 
 	if((KNOWPERMINT == TRUE) && (Npc_HasItems(hero,ItMi_Flask) >= 1) && (Npc_HasItems(hero,ItFo_Alcohol) >= 1) && (Npc_HasItems(hero,ItAt_Addon_BCKopf) >= 10) && (Npc_HasItems(hero,ItPl_SwampHerb) >= 1) && (Npc_HasItems(hero,ItPl_Temp_Herb) >= 1))
 	{
-		Info_AddChoice(PC_Special_Start,"Эликсир разума",pc_itpo_intellect);
+		Info_AddChoice(PC_Special_Start, " Mind Elixir " ,pc_itpo_intellect);
 	};
 	if((PLAYER_TALENT_ALCHEMY[POTION_Perm_Mana] == TRUE) && (Npc_HasItems(hero,ItMi_Flask) >= 1) && (Npc_HasItems(hero,ItFo_Alcohol) >= 1) && (Npc_HasItems(hero,ItPl_Mana_Herb_03) >= 1) && (Npc_HasItems(hero,ItPl_Perm_Herb) >= 1))
 	{
-		Info_AddChoice(PC_Special_Start,"Эликсир духа",PC_ItPo_Perm_Mana);
+		Info_AddChoice(PC_Special_Start, " Spirit Elixir " ,PC_ItPo_Perm_Mana);
 	};
 	if((PLAYER_TALENT_ALCHEMY[POTION_Perm_Health] == TRUE) && (Npc_HasItems(hero,ItMi_Flask) >= 1) && (Npc_HasItems(hero,ItFo_Alcohol) >= 1) && (Npc_HasItems(hero,ItPl_Health_Herb_03) >= 3) && (Npc_HasItems(hero,ItPl_Temp_Herb) >= 1))
 	{
@@ -974,15 +975,15 @@ func void B_Special_Start()
 	};
 	if((PLAYER_TALENT_ALCHEMY[18] == TRUE) && (Npc_HasItems(hero,ItMi_Flask) >= 1) && (Npc_HasItems(hero,ItFo_Alcohol) >= 1) && (Npc_HasItems(hero,itpl_super_herb) >= 1) && (Npc_HasItems(hero,ItPl_Perm_Herb) >= 1))
 	{
-		Info_AddChoice(PC_Special_Start,"Эликсир выносливости",pc_itpo_perm_stamina);
+		Info_AddChoice(PC_Special_Start, " Elixir of Stamina " ,pc_itpo_perm_stamina);
 	};
 	if((PLAYER_TALENT_ALCHEMY[POTION_Perm_DEX] == TRUE) && (Npc_HasItems(hero,ItMi_Flask) >= 1) && (Npc_HasItems(hero,ItFo_Alcohol) >= 1) && (Npc_HasItems(hero,ItPl_Dex_Herb_01) >= 1) && (Npc_HasItems(hero,ItPl_Perm_Herb) >= 1))
 	{
-		Info_AddChoice(PC_Special_Start,"Эликсир ловкости",PC_ItPo_Dex);
+		Info_AddChoice(PC_Special_Start, " Elixir of Agility " ,PC_ItPo_Dex);
 	};
 	if((PLAYER_TALENT_ALCHEMY[POTION_Perm_STR] == TRUE) && (Npc_HasItems(hero,ItMi_Flask) >= 1) && (Npc_HasItems(hero,ItFo_Alcohol) >= 1) && (Npc_HasItems(hero,ItPl_Strength_Herb_01) >= 1) && (Npc_HasItems(hero,ItPl_Perm_Herb) >= 1))
 	{
-		Info_AddChoice(PC_Special_Start,"Эликсир силы",PC_ItPo_Strg);
+		Info_AddChoice(PC_Special_Start, " Elixir of Power " ,PC_ItPo_Strg);
 	};
 
 	Info_AddChoice(PC_Special_Start,DIALOG_BACK,PC_Special_Start_Back_Info);
@@ -1155,7 +1156,7 @@ instance PC_Special_DefenceStart(C_Info)
 	condition = PC_Special_DefenceStart_Condition;
 	information = PC_Special_DefenceStart_Info;
 	permanent = TRUE;
-	description = "Изготовить зелья магической защиты";
+	description = " Make magical protection potions " ;
 };
 
 func int PC_Special_DefenceStart_Condition()
@@ -1173,15 +1174,15 @@ func void B_DefenceStart()
 
 	if((KNOWPROTFALL == TRUE) && (Npc_HasItems(hero,ItMi_Flask) >= 1) && (Npc_HasItems(hero,ItFo_Alcohol) >= 1) && (Npc_HasItems(hero,ItAt_Wing) >= 15) && (Npc_HasItems(hero,ItPl_Weed) >= 1) && (Npc_HasItems(hero,ItPl_Temp_Herb) >= 1))
 	{
-		Info_AddChoice(PC_Special_DefenceStart,"Эликсир защиты от падения",pc_itpo_falldefence);
+		Info_AddChoice(PC_Special_DefenceStart, " Elixir of Fall Protection " ,pc_itpo_falldefence);
 	};
 	if((KNOWFIREDEF == TRUE) && (Npc_HasItems(hero,ItMi_Flask) >= 1) && (Npc_HasItems(hero,ItFo_Alcohol) >= 1) && (Npc_HasItems(hero,ItAt_WaranFiretongue) >= 5) && (Npc_HasItems(hero,ItPl_Mana_Herb_02) >= 1) && (Npc_HasItems(hero,ItPl_Temp_Herb) >= 1))
 	{
-		Info_AddChoice(PC_Special_DefenceStart,"Эликсир защиты от огня",pc_itpo_firedefence);
+		Info_AddChoice(PC_Special_DefenceStart, " Elixir of Fire Protection " ,pc_itpo_firedefence);
 	};
 	if((KNOWMAGDEF == TRUE) && (Npc_HasItems(hero,ItMi_Flask) >= 1) && (Npc_HasItems(hero,ItFo_Alcohol) >= 1) && (Npc_HasItems(hero,ItPl_Mushroom_02) >= 25) && (Npc_HasItems(hero,ItFo_Booze) >= 1) && (Npc_HasItems(hero,ItPl_Temp_Herb) >= 1))
 	{
-		Info_AddChoice(PC_Special_DefenceStart,"Эликсир защиты от магии",pc_itpo_magdefence);
+		Info_AddChoice(PC_Special_DefenceStart, " Magic Defense Elixir " ,pc_itpo_magdefence);
 	};
 
 	Info_AddChoice(PC_Special_DefenceStart,DIALOG_BACK,PC_Special_DefenceStart_Back_Info);
@@ -1286,7 +1287,7 @@ instance PC_Special_Mutagen(C_Info)
 	condition = PC_Special_Mutagen_Condition;
 	information = PC_Special_Mutagen_Info;
 	permanent = TRUE;
-	description = "Изготовить мутагенные магические зелья";
+	description = " Make mutagenic magic potions " ;
 };
 
 func int PC_Special_Mutagen_Condition()
@@ -1302,25 +1303,25 @@ func void B_Special_Mutagen()
 	Info_ClearChoices(PC_Special_Mutagen);
 	Info_AddChoice(PC_Special_Mutagen,DIALOG_ENDE_WORK,PC_PotionAlchemy_End_Info);
 
-	if((Npc_HasItems(hero,ItPo_Perm_STR) >= 1) && ((Npc_HasItems(hero,ItMi_Mutagen_Str_Low) >= 1) || (Npc_HasItems(hero,ItMi_Mutagen_Str_Normal) >= 1) || (Npc_HasItems(hero,ItMi_Mutagen_Str_Strong) >= 1)))
+	if ((Npc_HasItems(hero,ItPo_Perm_STR) >=  1 ) && ((Npc_HasItems(hero,ItMi_Mutagen_Str_Low) >=  1 ) || (Npc_HasItems(hero,ItMi_Mutagen_Str_Normal) >=  1 ) || ( Npc_HasItems(hero,ItMi_Mutagen_Str_Strong) > = 1 )  1 )))
 	{
-		Info_AddChoice(PC_Special_Mutagen,"Использовать эликсир силы",PC_Special_Mutagen_Str);
+		Info_AddChoice(PC_Special_Mutagen, " Use Elixir of Strength " ,PC_Special_Mutagen_Str);
 	};
 	if((Npc_HasItems(hero,ItPo_Perm_DEX) >= 1) && ((Npc_HasItems(hero,ItMi_Mutagen_Dex_Low) >= 1) || (Npc_HasItems(hero,ItMi_Mutagen_Dex_Normal) >= 1) || (Npc_HasItems(hero,ItMi_Mutagen_Dex_Strong) >= 1)))
 	{
-		Info_AddChoice(PC_Special_Mutagen,"Использовать эликсир ловкости",PC_Special_Mutagen_Dex);
+		Info_AddChoice(PC_Special_Mutagen, " Use Agility Elixir " ,PC_Special_Mutagen_Dex);
 	};
 	if((Npc_HasItems(hero,ItPo_Perm_Health) >= 1) && ((Npc_HasItems(hero,ItMi_Mutagen_HP_Low) >= 1) || (Npc_HasItems(hero,ItMi_Mutagen_HP_Normal) >= 1) || (Npc_HasItems(hero,ItMi_Mutagen_HP_Strong) >= 1)))
 	{
-		Info_AddChoice(PC_Special_Mutagen,"Использовать эликсир жизни",PC_Special_Mutagen_HP);
+		Info_AddChoice(PC_Special_Mutagen, " Use Elixir of Life " ,PC_Special_Mutagen_HP);
 	};
-	if((Npc_HasItems(hero,ItPo_Perm_Mana) >= 1) && ((Npc_HasItems(hero,ItMi_Mutagen_Mana_Low) >= 1) || (Npc_HasItems(hero,ItMi_Mutagen_Mana_Normal) >= 1) || (Npc_HasItems(hero,ItMi_Mutagen_Mana_Strong) >= 1)))
+	if ((Npc_HasItems(hero,ItPo_Perm_Mana) >=  1 ) && ((Npc_HasItems(hero,ItMi_Mutagen_Mana_Low) >=  1 ) || (Npc_HasItems(hero,ItMi_Mutagen_Mana_Normal) >=  1 ) || ( Npc_HasItems(hero,ItMi_Mutagen_Mana_Strong) > = 1 )  1 )))
 	{
-		Info_AddChoice(PC_Special_Mutagen,"Использовать эликсир духа",PC_Special_Mutagen_Mana);
+		Info_AddChoice(PC_Special_Mutagen, " Use Spirit Elixir " ,PC_Special_Mutagen_Mana);
 	};
-	if((Npc_HasItems(hero,ItPo_Perm_Stamina) >= 1) && ((Npc_HasItems(hero,ItMi_Mutagen_Stamina_Low) >= 1) || (Npc_HasItems(hero,ItMi_Mutagen_Stamina_Normal) >= 1) || (Npc_HasItems(hero,ItMi_Mutagen_Stamina_Strong) >= 1)))
+	if ((Npc_HasItems(hero,ItPo_Perm_Stamina) >=  1 ) && ((Npc_HasItems(hero,ItMi_Mutagen_Stamina_Low) >=  1 ) || (Npc_HasItems(hero,ItMi_Mutagen_Stamina_Normal) >=  1 ) || ( Npc_HasItems(hero,ItMi_Mutagen_Stamina_Strong) > = 1 )  1 )))
 	{
-		Info_AddChoice(PC_Special_Mutagen,"Использовать эликсир выносливости",PC_Special_Mutagen_Stamina);
+		Info_AddChoice(PC_Special_Mutagen, " Use Stamina Elixir " ,PC_Special_Mutagen_Stamina);
 	};
 
 	Info_AddChoice(PC_Special_Mutagen,DIALOG_BACK,PC_Special_Mutagen_Back_Info);
@@ -1330,11 +1331,11 @@ func void PC_Special_Mutagen_Info()
 {
 	if((Npc_HasItems(hero,ItPo_Perm_STR) == FALSE) && (Npc_HasItems(hero,ItPo_Perm_Dex) == FALSE) && (Npc_HasItems(hero,ItPo_Perm_Health) == FALSE) && (Npc_HasItems(hero,ItPo_Perm_Mana) == FALSE) && (Npc_HasItems(hero,ItPo_Perm_Stamina) == FALSE))
 	{
-		AI_PrintClr("У вас нет подходящих магических зелий...",177,58,17);
+		AI_PrintClr( " You don't have the right magic potions... " , 177 , 58 , 17 );
 	}
-	else if((Npc_HasItems(hero,ItMi_Mutagen_Str_Low) == FALSE) && (Npc_HasItems(hero,ItMi_Mutagen_Str_Normal) == FALSE) && (Npc_HasItems(hero,ItMi_Mutagen_Str_Strong) == FALSE) && (Npc_HasItems(hero,ItMi_Mutagen_Dex_Low) == FALSE) && (Npc_HasItems(hero,ItMi_Mutagen_Dex_Normal) == FALSE) && (Npc_HasItems(hero,ItMi_Mutagen_Dex_Strong) == FALSE) && (Npc_HasItems(hero,ItMi_Mutagen_HP_Low) == FALSE) && (Npc_HasItems(hero,ItMi_Mutagen_HP_Normal) == FALSE) && (Npc_HasItems(hero,ItMi_Mutagen_HP_Strong) == FALSE) && (Npc_HasItems(hero,ItMi_Mutagen_Mana_Low) == FALSE) && (Npc_HasItems(hero,ItMi_Mutagen_Mana_Normal) == FALSE) && (Npc_HasItems(hero,ItMi_Mutagen_Mana_Strong) == FALSE) && (Npc_HasItems(hero,ItMi_Mutagen_Stamina_Low) == FALSE) && (Npc_HasItems(hero,ItMi_Mutagen_Stamina_Normal) == FALSE) && (Npc_HasItems(hero,ItMi_Mutagen_Stamina_Strong) == FALSE))
+	else  if ((Npc_HasItems(hero,ItMi_Mutagen_Str_Low) ==  FALSE ) && (Npc_HasItems(hero,ItMi_Mutagen_Str_Normal) ==  FALSE ) && (Npc_HasItems(hero,ItMi_Mutagen_Str_Strong) ==  FALSE ) && (Npc_HasItems(hero,ItMi_Mutagen_Str_Strong) ==  FALSE ) && (Npc_HasItems(hero,ItMi_Mutagen_Dex_Normal) ==  FALSE ) && (Npc_HasItems(hero,ItMi_Mutagen_Dex_Strong) ==  FALSE ) && (Npc_HasItems(hero,ItMi_Mutagen_HP_Low) ==  FALSE )&& (Npc_HasItems(hero,ItMi_Mutagen_HP_Normal) ==  FALSE ) && (Npc_HasItems(hero,ItMi_Mutagen_HP_Strong) ==  FALSE ) && (Npc_HasItems(hero,ItMi_Mutagen_Mana_Low) ==  FALSE ) && (Npc_HasItems(hero,ItMi_Mutagen_Mana_Normal) ==  FALSE ) && ( Npc_HasItems(hero,ItMi_Mutagen_Mana_Strong) ==  FALSE ) && (Npc_HasItems(hero,ItMi_Mutagen_Stamina_Low) ==  FALSE ) && (Npc_HasItems(hero,ItMi_Mutagen_Stamina_Normal) ==  FALSE )&& (Npc_HasItems(hero,ItMi_Mutagen_Stamina_Strong) ==  FALSE ))
 	{
-		AI_PrintClr("У вас нет мутагенов...",177,58,17);
+		AI_PrintClr( " You don't have any mutagens... " , 177 , 58 , 17 );
 	};
 
 	B_Special_Mutagen();
@@ -1352,15 +1353,15 @@ func void PC_Special_Mutagen_Str()
 
 	if(Npc_HasItems(hero,ItMi_Mutagen_Str_Low) >= 1)
 	{
-		Info_AddChoice(PC_Special_Mutagen,"...добавить малый мутаген силы",PC_Special_Mutagen_Str_Low);
+		Info_AddChoice(PC_Special_Mutagen, " ...add lesser strength mutagen " ,PC_Special_Mutagen_Str_Low);
 	};
 	if(Npc_HasItems(hero,ItMi_Mutagen_Str_Normal) >= 1)
 	{
-		Info_AddChoice(PC_Special_Mutagen,"...добавить мутаген силы",PC_Special_Mutagen_Str_Normal);
+		Info_AddChoice(PC_Special_Mutagen, " ...add strength mutagen " ,PC_Special_Mutagen_Str_Normal);
 	};
 	if(Npc_HasItems(hero,ItMi_Mutagen_Str_Strong) >= 1)
 	{
-		Info_AddChoice(PC_Special_Mutagen,"...добавить большой мутаген силы",PC_Special_Mutagen_Str_Strong);
+		Info_AddChoice(PC_Special_Mutagen, " ...add great strength mutagen " ,PC_Special_Mutagen_Str_Strong);
 	};
 
 	Info_AddChoice(PC_Special_Mutagen,DIALOG_BACK,PC_Special_Mutagen_Back_Info);
@@ -1373,15 +1374,15 @@ func void PC_Special_Mutagen_Dex()
 
 	if(Npc_HasItems(hero,ItMi_Mutagen_Dex_Low) >= 1)
 	{
-		Info_AddChoice(PC_Special_Mutagen,"...добавить малый мутаген ловкости",PC_Special_Mutagen_Dex_Low);
+		Info_AddChoice(PC_Special_Mutagen, " ...add Less Agility Mutagen " ,PC_Special_Mutagen_Dex_Low);
 	};
 	if(Npc_HasItems(hero,ItMi_Mutagen_Dex_Normal) >= 1)
 	{
-		Info_AddChoice(PC_Special_Mutagen,"...добавить мутаген ловкости",PC_Special_Mutagen_Dex_Normal);
+		Info_AddChoice(PC_Special_Mutagen, " ...add agility mutagen " ,PC_Special_Mutagen_Dex_Normal);
 	};
 	if(Npc_HasItems(hero,ItMi_Mutagen_Dex_Strong) >= 1)
 	{
-		Info_AddChoice(PC_Special_Mutagen,"...добавить большой мутаген ловкости",PC_Special_Mutagen_Dex_Strong);
+		Info_AddChoice(PC_Special_Mutagen, " ...add Great Agility Mutagen " ,PC_Special_Mutagen_Dex_Strong);
 	};
 
 	Info_AddChoice(PC_Special_Mutagen,DIALOG_BACK,PC_Special_Mutagen_Back_Info);
@@ -1394,15 +1395,15 @@ func void PC_Special_Mutagen_HP()
 
 	if(Npc_HasItems(hero,ItMi_Mutagen_HP_Low) >= 1)
 	{
-		Info_AddChoice(PC_Special_Mutagen,"...добавить малый мутаген жизненной энергии",PC_Special_Mutagen_HP_Low);
+		Info_AddChoice(PC_Special_Mutagen, " ...add Lesser Vitality Mutagen " ,PC_Special_Mutagen_HP_Low);
 	};
 	if(Npc_HasItems(hero,ItMi_Mutagen_HP_Normal) >= 1)
 	{
-		Info_AddChoice(PC_Special_Mutagen,"...добавить мутаген жизненной энергии",PC_Special_Mutagen_HP_Normal);
+		Info_AddChoice(PC_Special_Mutagen, " ...add life energy mutagen " ,PC_Special_Mutagen_HP_Normal);
 	};
 	if(Npc_HasItems(hero,ItMi_Mutagen_HP_Strong) >= 1)
 	{
-		Info_AddChoice(PC_Special_Mutagen,"...добавить большой мутаген жизненной энергии",PC_Special_Mutagen_HP_Strong);
+		Info_AddChoice(PC_Special_Mutagen, " ...add Large Vitality Mutagen " ,PC_Special_Mutagen_HP_Strong);
 	};
 
 	Info_AddChoice(PC_Special_Mutagen,DIALOG_BACK,PC_Special_Mutagen_Back_Info);
@@ -1415,15 +1416,15 @@ func void PC_Special_Mutagen_Mana()
 
 	if(Npc_HasItems(hero,ItMi_Mutagen_Mana_Low) >= 1)
 	{
-		Info_AddChoice(PC_Special_Mutagen,"...добавить малый мутаген магической энергии",PC_Special_Mutagen_Mana_Low);
+		Info_AddChoice(PC_Special_Mutagen, " ...add Lesser Magical Energy Mutagen " ,PC_Special_Mutagen_Mana_Low);
 	};
 	if(Npc_HasItems(hero,ItMi_Mutagen_Mana_Normal) >= 1)
 	{
-		Info_AddChoice(PC_Special_Mutagen,"...добавить мутаген магической энергии",PC_Special_Mutagen_Mana_Normal);
+		Info_AddChoice(PC_Special_Mutagen, " ...add magic energy mutagen " ,PC_Special_Mutagen_Mana_Normal);
 	};
 	if(Npc_HasItems(hero,ItMi_Mutagen_Mana_Strong) >= 1)
 	{
-		Info_AddChoice(PC_Special_Mutagen,"...добавить большой мутаген магической энергии",PC_Special_Mutagen_Mana_Strong);
+		Info_AddChoice(PC_Special_Mutagen, " ...add Greater Magical Energy Mutagen " ,PC_Special_Mutagen_Mana_Strong);
 	};
 
 	Info_AddChoice(PC_Special_Mutagen,DIALOG_BACK,PC_Special_Mutagen_Back_Info);
@@ -1436,15 +1437,15 @@ func void PC_Special_Mutagen_Stamina()
 
 	if(Npc_HasItems(hero,ItMi_Mutagen_Stamina_Low) >= 1)
 	{
-		Info_AddChoice(PC_Special_Mutagen,"...добавить малый мутаген выносливости",PC_Special_Mutagen_Stamina_Low);
+		Info_AddChoice(PC_Special_Mutagen, " ...add Lesser Stamina Mutagen " ,PC_Special_Mutagen_Stamina_Low);
 	};
 	if(Npc_HasItems(hero,ItMi_Mutagen_Stamina_Normal) >= 1)
 	{
-		Info_AddChoice(PC_Special_Mutagen,"...добавить мутаген выносливости",PC_Special_Mutagen_Stamina_Normal);
+		Info_AddChoice(PC_Special_Mutagen, " ...add stamina mutagen " ,PC_Special_Mutagen_Stamina_Normal);
 	};
 	if(Npc_HasItems(hero,ItMi_Mutagen_Stamina_Strong) >= 1)
 	{
-		Info_AddChoice(PC_Special_Mutagen,"...добавить большой мутаген выносливости",PC_Special_Mutagen_Stamina_Strong);
+		Info_AddChoice(PC_Special_Mutagen, " ...add great stamina mutagen " ,PC_Special_Mutagen_Stamina_Strong);
 	};
 
 	Info_AddChoice(PC_Special_Mutagen,DIALOG_BACK,PC_Special_Mutagen_Back_Info);
@@ -1792,7 +1793,7 @@ instance PC_Epic_Start(C_Info)
 	condition = PC_Epic_Start_Condition;
 	information = PC_Epic_Start_Info;
 	permanent = TRUE;
-	description = "Изготовить особенные магические зелья";
+	description = " Make custom magic potions " ;
 };
 
 func int PC_Epic_Start_Condition()
@@ -1808,33 +1809,33 @@ func void B_Epic_Start()
 	Info_ClearChoices(PC_Epic_Start);
 	Info_AddChoice(PC_Epic_Start,DIALOG_ENDE_WORK,PC_PotionAlchemy_End_Info);
 
-	if((SOULRIVER == TRUE) && (Npc_HasItems(hero,ItMi_Flask) >= 1) && (Npc_HasItems(hero,itat_luzianheart) >= 1) && (Npc_HasItems(hero,ItMi_Sulfur) >= 1) && (Npc_HasItems(hero,ItMi_Aquamarine) >= 1) && (Npc_HasItems(hero,ItMi_DarkPearl) >= 1) && (Npc_HasItems(hero,ItPo_Mana_01) >= 1) && (Npc_HasItems(hero,ItPl_SwampHerb) >= 1))
+	if (( SOULRIVER  ==  TRUE ) && (Npc_HasItems(hero,ItMi_Flask) >=  1 ) && (Npc_HasItems(hero,itat_luzianheart) >=  1 ) && (Npc_HasItems(hero,ItMi_Sulfur) >= 1 ) && ( Npc_HasItems(hero,ItMi_Sulfur) >=  1 ) ItMi_Aquamarine) >= 1 ) && (Npc_HasItems(hero,ItMi_DarkPearl) >= 1 ) && (Npc_HasItems(hero,ItPo_Mana_01) >= 1 ) && ( Npc_HasItems(hero,ItPl_SwampHerb) > = 1 )=1))    
 	{
 		Info_AddChoice(PC_Epic_Start,"'Вытяжка Душ'",pc_itpo_soulriver);
 	};
-	if((PLAYER_TALENT_ALCHEMY[16] == TRUE) && (Npc_HasItems(hero,ItMi_Flask) >= 1) && (Npc_HasItems(hero,ItAt_CrawlerMandibles) >= 1) && (Npc_HasItems(hero,ItAt_WaranFiretongue) >= 1) && (Npc_HasItems(hero,ItAt_StoneGolemHeart) >= 1) && (Npc_HasItems(hero,ItAt_SkeletonBone) >= 1) && (Npc_HasItems(hero,itat_crawlerqueen) >= 1) && (Npc_HasItems(hero,ItPl_SwampHerb) >= 1) && (Npc_HasItems(hero,ItPl_Perm_Herb) >= 1) && (Npc_HasItems(hero,ItPl_Mana_Herb_03) >= 1) && (Npc_HasItems(hero,ItMi_Aquamarine) >= 1) && (Npc_HasItems(hero,ItMi_DarkPearl) >= 1))
+	if((PLAYER_TALENT_ALCHEMY[16] == TRUE) && (Npc_HasItems(hero,ItMi_Flask) >= 1) && (Npc_HasItems(hero,ItAt_CrawlerMandibles) >= 1) && (Npc_HasItems(hero,ItAt_WaranFiretongue) >= 1) && (Npc_HasItems(hero,ItAt_StoneGolemHeart) >= 1) && (Npc_HasItems(hero,ItAt_SkeletonBone) >= 1) && (Npc_HasItems(hero,itat_crawlerqueen) >= 1) &&(Npc_HasItems(hero,ItPl_SwampHerb) >=  1 ) && (Npc_HasItems(hero,ItPl_Perm_Herb) >=  1 ) && (Npc_HasItems(hero,ItPl_Mana_Herb_03) >=  1 ) && (Npc_HasItems(hero,ItMi_Aquamarine) > =  1 ) && (hero,ItMi_DarkPearl) >=  1 ))
 	{
-		Info_AddChoice(PC_Epic_Start,"Напиток 'Амун-Су'",pc_itpo_tyonpotion);
+		Info_AddChoice(PC_Epic_Start, " Potion 'Amun-Su' " ,pc_itpo_tyonpotion);
 	};
 	if((Knows_MCELIXIER == TRUE) && (Npc_HasItems(hero,ItMi_Flask) >= 1) && (Npc_HasItems(hero,ItAt_Sting) >= 2) && (Npc_HasItems(hero,ItPo_Mana_02) >= 1) && (Npc_HasItems(hero,ItPo_Health_01) >= 1) && (Npc_HasItems(hero,ItFo_Addon_Pfeffer_01) >= 1))
 	{
-		Info_AddChoice(PC_Epic_Start,"Эликсир изменения духа",PC_ItPo_Addon_Geist);
+		Info_AddChoice(PC_Epic_Start, " Spirit Change Elixir " ,PC_ItPo_Addon_Geist);
 	};
 	if(((Npc_HasItems(hero,ItAt_IcedragonHeart) >= 1) || (Npc_HasItems(hero,ItAt_RockdragonHeart) >= 1) || (Npc_HasItems(hero,ItAt_FiredragonHeart) >= 1) || (Npc_HasItems(hero,itat_reddragonheart) >= 1) || (Npc_HasItems(hero,itat_blackdragonheart) >= 1) || (Npc_HasItems(hero,ItAt_SwampdragonHeart) >= 1)) && (Npc_HasItems(hero,ItMi_InnosEye_Discharged_Mis) >= 1) && (PLAYER_TALENT_ALCHEMY[CHARGE_Innoseye] == TRUE))
 	{
-		Info_AddChoice(PC_Epic_Start,"Восстановить 'Глаз Инноса'",PC_Charge_InnosEye);
+		Info_AddChoice(PC_Epic_Start, " Restore 'Innos Eye' " ,PC_Charge_InnosEye);
 	};
-	if((Npc_HasItems(hero,ItAt_DragonEgg_MIS) >= 9) && (Npc_HasItems(hero,ItMi_Flask) >= 1) && (Npc_HasItems(hero,ItMi_DarkPearl) >= 1) && (Npc_HasItems(hero,ItMi_Sulfur) >= 1) && (PLAYER_TALENT_ALCHEMY[POTION_MegaDrink] == TRUE))
+	if ((Npc_HasItems(hero,It's_DragonEgg_MY) >=  9 ) && (Npc_HasItems(hero,It'sMy_Sulfur) >=  1 ) && (Npc_HasItems(hero,It'sMy_DarkPearl) >=  1 ) && (Npc_HasItems(hero,It'sMy_Sulfur) >=  1 ) ; ( PLAYER_TALENT_ALCHEMY [ POTION_MegaDrink ] ==  TRUE ))
 	{
-		Info_AddChoice(PC_Epic_Start,"Эмбарла Фиргасто",PC_ItPo_MegaDrink);
+		Info_AddChoice(PC_Epic_Start, " Embarla Firgasto " ,PC_ItPo_MegaDrink);
 	};
-	if((Npc_HasItems(hero,itmi_prisonsoul) >= 1) && (Npc_HasItems(hero,itmi_orcblood) >= 1) && (Npc_HasItems(hero,itmi_barlokheart) >= 1) && (Npc_HasItems(hero,ItMi_Sulfur) >= 5) && (READ_AZGOLOR == TRUE))
+	if ((Npc_HasItems(hero,itmi_prisonsoul) >=  1 ) && (Npc_HasItems(hero,itmi_orcblood) >=  1 ) && (Npc_HasItems(hero,itmi_barlokheart) >=  1 ) && (Npc_HasItems(hero,itmi_Sulfur) >=  5 ) &&; ( READ_BLUE  ==  TRUE ))
 	{
-		Info_AddChoice(PC_Epic_Start,"Пробудить 'Око Гнева'",pc_charge_prisonsoul);
+		Info_AddChoice(PC_Epic_Start, " Awaken 'Eye of Wrath' " ,pc_charge_prisonsoul);
 	};
-	if((KNOW_NIMROD_MAKE == TRUE) && (Npc_HasItems(hero,ItMi_Moleratlubric_MIS) >= 1) && (Npc_HasItems(hero,ItAt_PumaMuscle) >= 1))
+	if (( KNOW_NIMROD_MAKE  ==  TRUE ) && (Npc_HasItems(hero,ItMi_GrindLubric_MIS) >=  1 ) && (Npc_HasItems(hero,It_Miss_PumaMuscle) >=  1 )) ;
 	{
-		Info_AddChoice(PC_Epic_Start,"Обработать сухожилия жиром",PC_PumaMuscle);
+		Info_AddChoice(PC_Epic_Start, " Treat tendons with fat " ,PC_PumaMuscle);
 	};
 
 	Info_AddChoice(PC_Epic_Start,DIALOG_BACK,PC_Epic_Start_Back_Info);
@@ -2011,7 +2012,7 @@ func void PC_PumaMuscle()
 	Npc_RemoveInvItems(hero,ItMi_Moleratlubric_MIS,1);
 	Npc_RemoveInvItems(hero,ItAt_PumaMuscle,1);
 	CreateInvItems(hero,ItAt_PumaMuscle_Jir,1);
-	AI_PrintClr("Готово!",83,152,48);
+	AI_PrintClr( " Done! " , 83 , 152 , 48 );
 	//B_Say(self,self,"$ITEMREADY");
 	Snd_Play("POTION_DONE");
 	CreateInvItems(self,ItMi_Flask,1);
@@ -2033,7 +2034,7 @@ instance PC_Mana_Regone(C_Info)
 	condition = PC_Mana_Regone_Condition;
 	information = PC_Mana_Regone_Info;
 	permanent = TRUE;
-	description = "Переработка зелий";
+	description = " Potion Refining " ;
 };
 
 func int PC_Mana_Regone_Condition()
@@ -2051,38 +2052,38 @@ func void B_Regone()
 
 	if((PLAYER_TALENT_ALCHEMY[POTION_Mana_03] == TRUE) && ((Npc_HasItems(hero,ItPo_Mana_02) >= 2) || (Npc_HasItems(hero,ItPo_Mana_01) >= 4)))
 	{
-		Info_AddChoice(PC_Mana_Regone,"Переработать все магические напитки в 'Эликсир маны'",PC_Regone_ItPo_Mana_03_All);
+		Info_AddChoice(PC_Mana_Regone, " Recycle all magic drinks into 'Mana Elixir' " ,PC_Regone_ItPo_Mana_03_All);
 	};
 	if((PLAYER_TALENT_ALCHEMY[POTION_Health_03] == TRUE) && ((Npc_HasItems(hero,ItPo_Health_02) >= 2) || (Npc_HasItems(hero,ItPo_Health_01) >= 4)))
 	{
-		Info_AddChoice(PC_Mana_Regone,"Переработать все целебные напитки в 'Лечебный эликсир'",PC_Regone_ItPo_Health_03_All);
+		Info_AddChoice(PC_Mana_Regone, " Recycle all health drinks into 'Healing Elixir' " ,PC_Regone_ItPo_Health_03_All);
 	};
 	if((PLAYER_TALENT_ALCHEMY[POTION_Mana_03] == TRUE) && (Npc_HasItems(hero,ItPo_Mana_02) >= 2))
 	{
-		Info_AddChoice(PC_Mana_Regone,"Переработать 'Экстракт маны' в 'Эликсир маны'",PC_Regone_ItPo_Mana_03);
+		Info_AddChoice(PC_Mana_Regone, " Recycle 'Mana Extract' into 'Mana Elixir' " ,PC_Regone_ItPo_Mana_03);
 	};
 	if((PLAYER_TALENT_ALCHEMY[POTION_Mana_02] == TRUE) && (Npc_HasItems(hero,ItPo_Mana_01) >= 2))
 	{
-		Info_AddChoice(PC_Mana_Regone,"Переработать 'Эссенцию маны' в 'Экстракт маны'",PC_Regone_ItPo_Mana_02);
+		Info_AddChoice(PC_Mana_Regone, " Recycle 'Mana Essence' into 'Mana Extract' " ,PC_Regone_ItPo_Mana_02);
 	};
 	if((PLAYER_TALENT_ALCHEMY[POTION_Mana_03] == TRUE) && (Npc_HasItems(hero,ItPo_Mana_01) >= 4))
 	{
-		Info_AddChoice(PC_Mana_Regone,"Переработать 'Эссенцию маны' в 'Эликсир маны'",PC_Regone_ItPo_Mana_01);
+		Info_AddChoice(PC_Mana_Regone, " Recycle 'Mana Essence' into 'Mana Elixir' " ,PC_Regone_ItPo_Mana_01);
 	};
 	if((PLAYER_TALENT_ALCHEMY[POTION_Health_03] == TRUE) && (Npc_HasItems(hero,ItPo_Health_02) >= 2))
 	{
-		Info_AddChoice(PC_Mana_Regone,"Переработать 'Лечебный экстракт' в 'Лечебный эликсир'",PC_Regone_ItPo_Health_03);
+		Info_AddChoice(PC_Mana_Regone, " Recycle 'Healing Extract' into 'Healing Elixir' " ,PC_Regone_ItPo_Health_03);
 	};
 	if((PLAYER_TALENT_ALCHEMY[POTION_Health_02] == TRUE) && (Npc_HasItems(hero,ItPo_Health_01) >= 2))
 	{
-		Info_AddChoice(PC_Mana_Regone,"Переработать 'Лечебную эссенцию' в 'Лечебный экстракт'",PC_Regone_ItPo_Health_02);
+		Info_AddChoice(PC_Mana_Regone, " Recycle 'Healing Essence' into 'Healing Extract' " ,PC_Regone_ItPo_Health_02);
 	};
 	if((PLAYER_TALENT_ALCHEMY[POTION_Health_03] == TRUE) && (Npc_HasItems(hero,ItPo_Health_01) >= 4))
 	{
-		Info_AddChoice(PC_Mana_Regone,"Переработать 'Лечебную эссенцию' в 'Лечебный эликсир'",PC_Regone_ItPo_Health_01);
+		Info_AddChoice(PC_Mana_Regone, " Recycle 'Healing Essence' into 'Healing Elixir' " ,PC_Regone_ItPo_Health_01);
 	};
 
-	Info_AddChoice(PC_Mana_Regone,DIALOG_BACK,PC_Mana_Regone_Back_Info);
+	Info_AddChoice(PC_Mana_Regone, DIALOG_BACK ,PC_Mana_Regone_Back_Info);
 };
 
 func void PC_Mana_Regone_Info()
@@ -2103,7 +2104,7 @@ func void PC_Regone_ItPo_Mana_03_All()
 		var int CountMana02;
 		var int AllMana01;
 		var int AllMana02;
-		var int SummAllHealthMana;
+		var int SumAllHealthMana;
 
 		CountMana01 = Npc_HasItems(hero,ItPo_Mana_01);
 		CountMana02 = Npc_HasItems(hero,ItPo_Mana_02);
@@ -2143,7 +2144,7 @@ func void PC_Regone_ItPo_Health_03_All()
 		var int CountHealth02;
 		var int AllHealth01;
 		var int AllHealth02;
-		var int SummAllHealthMana;
+		var int SumAllHealthMana;
 
 		CountHealth01 = Npc_HasItems(hero,ItPo_Health_01);
 		CountHealth02 = Npc_HasItems(hero,ItPo_Health_02);
@@ -2157,7 +2158,7 @@ func void PC_Regone_ItPo_Health_03_All()
 			AllHealth02 = CountHealth02 / 2;
 		};
 
-		SummAllHealthMana = AllHealth01 + AllHealth02;
+		SumAllHealthMana = AllHealth01 + AllHealth02;
 		//B_GivePlayerXP(XP_HandMade_Alchemy);
 		Npc_RemoveInvItems(hero,ItPo_Health_01,Npc_HasItems(hero,ItPo_Health_01));
 		Npc_RemoveInvItems(hero,ItPo_Health_02,Npc_HasItems(hero,ItPo_Health_02));
@@ -2302,7 +2303,7 @@ instance PC_Booze_Start(C_Info)
 	condition = PC_Booze_Start_Condition;
 	information = PC_Booze_Start_Info;
 	permanent = TRUE;
-	description = "Изготовить алкогольные напитки";
+	description = " Produce alcoholic drinks " ;
 };
 
 func int PC_Booze_Start_Condition()
@@ -2320,40 +2321,40 @@ func void B_Booze_Start()
 
 	if(READBOOKSDONE_09 == TRUE)
 	{
-		Info_AddChoice(PC_Booze_Start,"Изготовить 'Вино Забвения'",pc_booze_ealbalzamtwo);
+		Info_AddChoice(PC_Booze_Start, " Make 'Wine of Oblivion' " ,pc_booze_ealbalzamtwo);
 	};
 	if(READBOOKSDONE_08 == TRUE)
 	{
-		Info_AddChoice(PC_Booze_Start,"Изготовить 'Бальзам провидения'",pc_booze_ealbalzam);
+		Info_AddChoice(PC_Booze_Start, " Craft Providence Balm " ,pc_booze_ealbalzam);
 	};
 	if(Knows_Schlafhammer == TRUE)
 	{
-		Info_AddChoice(PC_Booze_Start,"Изготовить 'Молоток Лу' с двойной порцией рома",PC_Booze_Schlaf);
+		Info_AddChoice(PC_Booze_Start, " Make Lou's Hammer with Double Rum " ,PC_Booze_Schlaf);
 	};
 	if(Knows_LousHammer == TRUE)
 	{
-		Info_AddChoice(PC_Booze_Start,"Изготовить 'Молоток Лу'",PC_Booze_Lou);
+		Info_AddChoice(PC_Booze_Start, " Craft Lou's Hammer " ,PC_Booze_Lou);
 	};
-	if(Knows_SchnellerHering == TRUE)
+	if (Knows_SchnellerHering ==  TRUE )
 	{
-		Info_AddChoice(PC_Booze_Start,"Изготовить 'Быструю селедку'",PC_Booze_SchnellerHering);
+		Info_AddChoice(PC_Booze_Start, " Make 'Swift Herring' " ,PC_Booze_SchnellerHering);
 	};
 	if(READBOOKSDONE_99 == TRUE)
 	{
-		Info_AddChoice(PC_Booze_Start,"Изготовить 'Джин'(10 порций шнапса)",PC_Booze_Start_compote_11);
+		Info_AddChoice(PC_Booze_Start, " Make 'Gin'(10 Schnapps) " ,PC_Booze_Start_compote_11);
 	};
 	if(MakePureAlcoholBooze == TRUE)
 	{
-		Info_AddChoice(PC_Booze_Start,"Изготовить чистый спирт из шнапса (2 порции шнапса)",PC_Booze_Start_Alcohol_Booze);
+		Info_AddChoice(PC_Booze_Start, " Make Schnapps Pure Alcohol (2 Schnapps) " ,PC_Booze_Start_Alcohol_Booze);
 	};
 	if(MakePureAlcoholGrog == TRUE)
 	{
-		Info_AddChoice(PC_Booze_Start,"Изготовить чистый спирт из грога (2 порции грога)",PC_Booze_Start_Alcohol_Grog);
+		Info_AddChoice(PC_Booze_Start, " Make Pure Alcohol from Grog (2 Grog) " ,PC_Booze_Start_Alcohol_Grog);
 	};
 	if(MakePureAlcoholRom == TRUE)
 	{
-		Info_AddChoice(PC_Booze_Start,"Изготовить чистый спирт из рома (2 порции рома)",PC_Booze_Start_Alcohol_Rom);
-		Info_AddChoice(PC_Booze_Start,"Изготовить чистый спирт из орочьего пойла (1 порции)",PC_Booze_Start_Alcohol_Orc);
+		Info_AddChoice(PC_Booze_Start, " Make Pure Alcohol from Rum (2 Rum) " ,PC_Booze_Start_Alcohol_Rom);
+		Info_AddChoice(PC_Booze_Start, " Create Pure Alcohol from Orc Drink (1 serving) " ,PC_Booze_Start_Alcohol_Orc);
 	};
 
 	Info_AddChoice(PC_Booze_Start,DIALOG_BACK,PC_Booze_Start_Back_Info);
@@ -2381,7 +2382,7 @@ func void PC_Booze_Start_Alcohol_Orc()
 	}
 	else
 	{
-		AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+		AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 		B_Say(self,self,"$MISSINGINGREDIENTS");
 	};
 
@@ -2403,8 +2404,8 @@ func void PC_Booze_Start_Alcohol_Booze()
 	}
 	else
 	{
-		//Print(PRINT_ProdItemsMissing);
-		AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+		// Print(PRINT_ProdItemsMissing);
+		AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 		B_Say(self,self,"$MISSINGINGREDIENTS");
 	};
 
@@ -2428,8 +2429,8 @@ func void PC_Booze_Start_Alcohol_Grog()
 		}
 		else
 		{
-			//Print(PRINT_ProdItemsMissing);
-			AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+			// Print(PRINT_ProdItemsMissing);
+			AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 			B_Say(self,self,"$MISSINGINGREDIENTS");
 		};
 
@@ -2458,8 +2459,8 @@ func void PC_Booze_Start_Alcohol_Rom()
 		}
 		else
 		{
-			//Print(PRINT_ProdItemsMissing);
-			AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+			// Print(PRINT_ProdItemsMissing);
+			AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 			B_Say(self,self,"$MISSINGINGREDIENTS");
 		};
 
@@ -2488,8 +2489,8 @@ func void PC_Booze_Start_compote_11()
 		}
 		else
 		{
-			//Print(PRINT_ProdItemsMissing);
-			AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+			// Print(PRINT_ProdItemsMissing);
+			AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 			B_Say(self,self,"$MISSINGINGREDIENTS");
 		};
 
@@ -2505,7 +2506,7 @@ func void PC_Booze_Lou()
 {
 	if(B_CheckAlchemySkill(20))
 	{
-		if((Npc_HasItems(self,ItPl_SwampHerb) >= 1) && (Npc_HasItems(self,ItMi_Flask) >= 1) && (Npc_HasItems(self,ItPl_Beet) >= 2) && (Npc_HasItems(self,ItAt_SharkTeeth) >= 1) && (Npc_HasItems(self,ItFo_Addon_Rum) >= 1))
+		if ((Npc_HasItems(self,ItPl_SwampHerb) >=  1 ) && (Npc_HasItems(self,ItMi_Flask) >=  1 ) && (Npc_HasItems(self,ItPl_Beet) >=  2 ) && (Npc_HasItems(self,ItAt_SharkTeeth) >=  1 ) && (Npc_HasItems(self,ItFo_Addon_Rum) >=  1 ))
 		{
 			//B_GivePlayerXP(XP_HandMade_Alchemy);
 			Npc_RemoveInvItems(self,ItPl_SwampHerb,1);
@@ -2522,8 +2523,8 @@ func void PC_Booze_Lou()
 		}
 		else
 		{
-			//Print(PRINT_ProdItemsMissing);
-			AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+			// Print(PRINT_ProdItemsMissing);
+			AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 			B_Say(self,self,"$MISSINGINGREDIENTS");
 		};
 
@@ -2535,11 +2536,11 @@ func void PC_Booze_Lou()
 	};
 };
 
-func void PC_Booze_Schlaf()
+func void PC_Booze_Sleep()
 {
 	if(B_CheckAlchemySkill(30))
 	{
-		if((Npc_HasItems(self,ItPl_SwampHerb) >= 1) && (Npc_HasItems(self,ItMi_Flask) >= 1) && (Npc_HasItems(self,ItPl_Beet) >= 2) && (Npc_HasItems(self,ItAt_SharkTeeth) >= 1) && (Npc_HasItems(self,ItFo_Addon_Rum) >= 2))
+		if ((Npc_HasItems(self,ItPl_SwampHerb) >=  1 ) && (Npc_HasItems(self,ItMi_Flask) >=  1 ) && (Npc_HasItems(self,ItPl_Beet) >=  2 ) && (Npc_HasItems(self,ItAt_SharkTeeth) >=  1 ) && (Npc_HasItems(self,ItFo_Addon_Rum) >=  2 ))
 		{
 			//B_GivePlayerXP(XP_HandMade_Alchemy);
 			Npc_RemoveInvItems(self,ItPl_SwampHerb,1);
@@ -2550,14 +2551,14 @@ func void PC_Booze_Schlaf()
 			//Print(PRINT_AlchemySuccess);
 			AI_PrintClr(PRINT_AlchemySuccess,83,152,48);
 			//B_Say(self,self,"$ITEMREADY");
-			CreateInvItems(self,ItFo_Addon_SchlafHammer,1);
+			CreateInvItems(self,ItFo_Addon_SchlafHammer, 1 );
 			B_RaisekAlchemySkillNoInt(2);
 			POTIONSTARTOK = 1;
 		}
 		else
 		{
-			//Print(PRINT_ProdItemsMissing);
-			AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+			// Print(PRINT_ProdItemsMissing);
+			AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 			B_Say(self,self,"$MISSINGINGREDIENTS");
 		};
 
@@ -2583,14 +2584,14 @@ func void PC_Booze_SchnellerHering()
 			//Print(PRINT_AlchemySuccess);
 			AI_PrintClr(PRINT_AlchemySuccess,83,152,48);
 			//B_Say(self,self,"$ITEMREADY");
-			CreateInvItems(self,ItFo_Addon_SchnellerHering,1);
+			CreateInvItems(self,ItFo_Addon_SchnellerHering, 1 );
 			B_RaisekAlchemySkillNoInt(2);
 			POTIONSTARTOK = 1;
 		}
 		else
 		{
-			//Print(PRINT_ProdItemsMissing);
-			AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+			// Print(PRINT_ProdItemsMissing);
+			AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 			B_Say(self,self,"$MISSINGINGREDIENTS");
 		};
 
@@ -2606,7 +2607,7 @@ func void pc_booze_ealbalzam()
 {
 	if(B_CheckAlchemySkill(40))
 	{
-		if((Npc_HasItems(self,itfo_wineberrys) >= 2) && (Npc_HasItems(self,ItMi_Flask) >= 1) && (Npc_HasItems(self,ItPl_SwampHerb) >= 2) && (Npc_HasItems(self,ItAt_WaranFiretongue) >= 1) && (Npc_HasItems(self,ItFo_Addon_Rum) >= 1))
+		if ((Npc_HasItems(self,itfo_wineberrys) >=  2 ) && (Npc_HasItems(self,ItMi_Flask) >=  1 ) && (Npc_HasItems(self,ItPl_SwampHerb) >=  2 ) && (Npc_HasItems(self,ItAt_WaranFiretongue) >=  1 ) && (Npc_HasItems(self,ItFo_Addon_Rum) >=  1 ))
 		{
 			//B_GivePlayerXP(XP_HandMade_Alchemy);
 			Npc_RemoveInvItems(self,itfo_wineberrys,2);
@@ -2623,8 +2624,8 @@ func void pc_booze_ealbalzam()
 		}
 		else
 		{
-			//Print(PRINT_ProdItemsMissing);
-			AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+			// Print(PRINT_ProdItemsMissing);
+			AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 			B_Say(self,self,"$MISSINGINGREDIENTS");
 		};
 
@@ -2656,8 +2657,8 @@ func void pc_booze_ealbalzamtwo()
 		}
 		else
 		{
-			//Print(PRINT_ProdItemsMissing);
-			AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+			// Print(PRINT_ProdItemsMissing);
+			AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 			B_Say(self,self,"$MISSINGINGREDIENTS");
 		};
 
@@ -2681,7 +2682,7 @@ instance PC_Poison_Start(C_Info)
 	condition = PC_Poison_Start_Condition;
 	information = PC_Poison_Start_Info;
 	permanent = TRUE;
-	description = "Изготовить яд и противоядие";
+	description = " Craft poison and antidote " ;
 };
 
 func int PC_Poison_Start_Condition()
@@ -2699,15 +2700,15 @@ func void B_Poison_Start()
 
 	if(PoisonArrowKnow == TRUE)
 	{
-		Info_AddChoice(PC_Poison_Start,"Изготовить отравленные стрелы",PC_Poison_Start_PoisonArrow);
+		Info_AddChoice(PC_Poison_Start, " Make Poison Arrows " ,PC_Poison_Start_PoisonArrow);
 	};
 	if(AnPoisonKnow == TRUE)
 	{
-		Info_AddChoice(PC_Poison_Start,"Изготовить противоядие",PC_Poison_Start_AnPoison);
+		Info_AddChoice(PC_Poison_Start, " Make Antidote " ,PC_Poison_Start_AnPoison);
 	};
 	if(MakePoisonKnow == TRUE)
 	{
-		Info_AddChoice(PC_Poison_Start,"Изготовить яд",PC_Poison_Start_Poison);
+		Info_AddChoice(PC_Poison_Start, " Make Poison " ,PC_Poison_Start_Poison);
 	};
 
 	Info_AddChoice(PC_Poison_Start,DIALOG_BACK,PC_Poison_Start_Back_Info);
@@ -2744,8 +2745,8 @@ func void PC_Poison_Start_AnPoison()
 		}
 		else
 		{
-			//Print(PRINT_ProdItemsMissing);
-			AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+			// Print(PRINT_ProdItemsMissing);
+			AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 			B_Say(self,self,"$MISSINGINGREDIENTS");
 		};
 
@@ -2785,8 +2786,8 @@ func void PC_Poison_Start_Poison()
 		}
 		else
 		{
-			//Print(PRINT_ProdItemsMissing);
-			AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+			// Print(PRINT_ProdItemsMissing);
+			AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 			B_Say(self,self,"$MISSINGINGREDIENTS");
 		};
 
@@ -2813,8 +2814,8 @@ func void PC_Poison_Start_PoisonArrow()
 		}
 		else
 		{
-			//Print(PRINT_ProdItemsMissing);
-			AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+			// Print(PRINT_ProdItemsMissing);
+			AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 			B_Say(self,self,"$MISSINGINGREDIENTS");
 		};
 
@@ -2826,7 +2827,7 @@ func void PC_Poison_Start_PoisonArrow()
 	};
 };
 
-var int TabakStart;
+var int TobaccoStart;
 
 func void pc_tabak_start_back()
 {
@@ -2840,7 +2841,7 @@ instance PC_Tabak_Start(C_Info)
 	condition = PC_Tabak_Start_Condition;
 	information = PC_Tabak_Start_Info;
 	permanent = TRUE;
-	description = "Изготовить табак и прочее";
+	description = " Make tobacco and stuff " ;
 };
 
 func int PC_Tabak_Start_Condition()
@@ -2856,13 +2857,13 @@ func void B_Tabak_Start()
 	Info_ClearChoices(PC_Tabak_Start);
 	Info_AddChoice(PC_Tabak_Start,DIALOG_ENDE_WORK,PC_PotionAlchemy_End_Info);
 
-	if((Npc_HasItems(hero,ItMi_ApfelTabak) >= 1) && (AbuyinTellTabak == TRUE))
+	if ((Npc_HasItems(here,ItMi_ApfelTabak) >=  1 ) && (AbuyinTellTabak ==  TRUE ))
 	{
-		Info_AddChoice(PC_Tabak_Start,"Смешать табак",PC_ItMi_Tabak);
+		Info_AddChoice(PC_Tabak_Start, " Mix Tobacco " ,PC_ItMi_Tabak);
 	};
 	if((MakeMuritanSweet == TRUE) && (MIS_TiamantMuritan != LOG_SUCCESS))
 	{
-		Info_AddChoice(PC_Tabak_Start,"Обработать серой кусок мяса",PC_ItMi_MuritanSweet);
+		Info_AddChoice(PC_Tabak_Start, " Gray a piece of meat " ,PC_ItMi_MuritanSweet);
 	};
 
 	Info_AddChoice(PC_Tabak_Start,DIALOG_BACK,PC_Tabak_Start_Back_Info);
@@ -2870,7 +2871,7 @@ func void B_Tabak_Start()
 
 func void PC_Tabak_Start_Info()
 {
-	B_Tabak_Start();
+	B_Tobacco_Start();
 };
 
 func void PC_Tabak_Start_Back_Info()
@@ -2886,19 +2887,19 @@ func void PC_ItMi_MuritanSweet()
 		Npc_RemoveInvItems(hero,ItFoMuttonRaw,1);
 		Npc_RemoveInvItems(hero,ItMi_Sulfur,1);
 		CreateInvItems(hero,ItMi_SulfurMuttonRaw,1);
-		B_LogEntry(TOPIC_TiamantMuritan,"Я сделал приманку! Теперь надо найти место, где полным полно серы.");
+		B_LogEntry(TOPIC_TiamantMuritan, " I made a bait! Now I need to find a place full of sulfur. " ​​);
 		AI_PrintClr(PRINT_Success,83,152,48);
 		B_RaisekAlchemySkill(1);
 		//B_Say(self,self,"$ITEMREADY");
 	}
 	else
 	{
-		//Print(PRINT_ProdItemsMissing);
-		AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+		// Print(PRINT_ProdItemsMissing);
+		AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 		B_Say(self,self,"$MISSINGINGREDIENTS");
 	};
 
-	B_Tabak_Start();
+	B_Tobacco_Start();
 };
 
 func void PC_ItMi_Tabak()
@@ -2912,11 +2913,11 @@ func void PC_ItMi_Tabak()
 	};
 	if(Npc_HasItems(hero,ItPl_SwampHerb) >= 1)
 	{
-		Info_AddChoice(PC_Tabak_Start,"...с болотником",PC_ItMi_Tabak_Swampherb);
+		Info_AddChoice(PC_Tabak_Start, " ...with swamp " ,PC_ItMi_Tabak_Swampherb);
 	};
 	if(Npc_HasItems(hero,ItPl_Mushroom_01) >= 1)
 	{
-		Info_AddChoice(PC_Tabak_Start,"...с темным грибом ",PC_ItMi_Tabak_Mushroom_01);
+		Info_AddChoice(PC_Tabak_Start, " ...with dark mushroom " ,PC_ItMi_Tabak_Mushroom_01);
 	};
 };
 
@@ -2929,7 +2930,7 @@ func void PC_ItMi_Tabak_Honey()
 	AI_PrintClr(PRINT_TabakSuccess,83,152,48);
 	//B_Say(self,self,"$ITEMREADY");
 	B_RaisekAlchemySkill(1);
-	B_Tabak_Start();
+	B_Tobacco_Start();
 };
 
 func void PC_ItMi_Tabak_Swampherb()
@@ -2941,7 +2942,7 @@ func void PC_ItMi_Tabak_Swampherb()
 	AI_PrintClr(PRINT_TabakSuccess,83,152,48);
 	//B_Say(self,self,"$ITEMREADY");
 	B_RaisekAlchemySkill(1);
-	B_Tabak_Start();
+	B_Tobacco_Start();
 };
 
 func void PC_ItMi_Tabak_Mushroom_01()
@@ -2953,7 +2954,7 @@ func void PC_ItMi_Tabak_Mushroom_01()
 	AI_PrintClr(PRINT_TabakSuccess,83,152,48);
 	//B_Say(self,self,"$ITEMREADY");
 	B_RaisekAlchemySkill(1);
-	B_Tabak_Start();
+	B_Tobacco_Start();
 };
 
 instance PC_MIS_MyBrew(C_Info)
@@ -2963,7 +2964,7 @@ instance PC_MIS_MyBrew(C_Info)
 	condition = PC_MIS_MyBrew_Condition;
 	information = PC_MIS_MyBrew_Info;
 	permanent = TRUE;
-	description = "Изготовить 'зелье Константино'";
+	description = " Craft 'Potion of Constantino' " ;
 };
 
 func int PC_MIS_MyBrew_Condition()
@@ -2978,7 +2979,7 @@ func void PC_MIS_MyBrew_Info()
 {
 	var int ransfx;
 
-	if((Npc_HasItems(self,ItMi_Flask) >= 1) && (Npc_HasItems(hero,ItMi_Aquamarine) >= 1) && (Npc_HasItems(hero,ItMi_SilverRing) >= 1) && (Npc_HasItems(hero,ItFo_Water) >= 1) && (Npc_HasItems(hero,ItAt_SkeletonBone) >= 1) && (Npc_HasItems(hero,ItPl_SwampHerb) >= 1) && (Npc_HasItems(hero,ItFo_Cheese) >= 1) && (Npc_HasItems(hero,ItPl_Mushroom_01) >= 1))
+	if ((Npc_HasItems(self,ItMi_Flask) >=  1 ) && (Npc_HasItems(hero,ItMi_Aquamarine) >=  1 ) && (Npc_HasItems(hero,ItMi_SilverRing) >=  1 ) && (Npc_HasItems(hero,ItMi_Water) >=  1 ) && (Npc_HasItems(hero,ItAt_SkeletonBone) >=  1 ) && (Npc_HasItems(hero,ItPl_SwampHerb) >=  1 ) && (Npc_HasItems(hero,ItFo_Cheese) >= 1 ) && ( Npc_HasItems(hero,ItPl_Mushroom) > = 1 )= 1)) 
 	{
 		Npc_RemoveInvItems(hero,ItMi_Flask,1);
 		Npc_RemoveInvItems(hero,ItMi_Aquamarine,1);
@@ -3004,7 +3005,7 @@ func void PC_MIS_MyBrew_Info()
 			B_Say(self,self,"$DONTKNOW");
 		};
 
-		Print("Вы не смогли изготовить зелье!");
+		Print ( " You failed to make the potion! " );
 
 		if(FTConsPotion == FALSE)
 		{
@@ -3012,13 +3013,13 @@ func void PC_MIS_MyBrew_Info()
 
 			if(MIS_MyBrew == LOG_Running)
 			{
-				B_LogEntry(TOPIC_MyBrew,"C рецептом что-то явно не то! Надо попробовать поговорить о нем с другими алхимиками в городе.");
+				B_LogEntry(TOPIC_MyBrew, " Something's wrong with the recipe! I should try talking to the other alchemists in town about it. " );
 			};
 		};
 	}
 	else
 	{
-		AI_PrintClr("Не хватает материалов!",177,58,17);
+		AI_PrintClr( " Not enough materials! " , 177 , 58 , 17 );
 		B_Say(self,self,"$MISSINGINGREDIENTS");
 	};
 };
