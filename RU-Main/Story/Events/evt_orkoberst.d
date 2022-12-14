@@ -1,14 +1,15 @@
 
+
 var int EVT_ORKOBERST_OneTime;
 
 func void evt_orkoberst()
 {
 	if(EVT_ORKOBERST_OneTime == FALSE)
 	{
-		OrkElite_AntiPaladinOrkOberst_DI.aivar[AIV_EnemyOverride] = FALSE;
-		OrcElite_DIOberst1_Rest.aivar[AIV_EnemyOverride] = FALSE;
-		OrcElite_DIOberst2_Rest.aivar[AIV_EnemyOverride] = FALSE;
-		OrcElite_DIOberst3_Rest.aivar[AIV_EnemyOverride] = FALSE;
+		OrkElite_AntiPaladinOrkOberst_DI.aivar[AIV_EnemyOverride] = FALSE ;
+		OrcElite_DIOberst1_Rest.aivar[AIV_EnemyOverride] = FALSE ;
+		OrcElite_DIOberst2_Rest.aivar[AIV_EnemyOverride] = FALSE ;
+		OrcElite_DIOberst3_Rest.aivar[AIV_EnemyOverride] = FALSE ;
 		Wld_InsertNpc(OrcWarrior_Roam,"SHIP_DECK_05");
 		Wld_InsertNpc(OrcWarrior_Roam,"SHIP_DECK_17");
 		Wld_InsertNpc(OrcWarrior_Roam,"DI_SHIP_04");
@@ -25,7 +26,7 @@ func void evt_orkoberst()
 		B_StartOtherRoutine(Torlof_DI,"OrkSturmDI");
 		B_StartOtherRoutine(Mario_DI,"OrkSturmDI");
 
-		if(Npc_IsDead(Mario_DI) == FALSE)
+		if (Npc_IsDead(Mario_DI) ==  FALSE )
 		{
 			Wld_InsertNpc(Skeleton_Mario1,"FP_ROAM_DI_MARIOSSKELETONS_01");
 			Wld_InsertNpc(Skeleton_Mario2,"FP_ROAM_DI_MARIOSSKELETONS_02");
@@ -41,7 +42,7 @@ func void evt_orkoberst()
 		};
 
 		ORkSturmDI = TRUE;
-		B_LogEntry(TOPIC_HallenVonIrdorath,"Этот вождь орков - чертовски крепкий орешек. Он должен быть где-то в районе тронного зала.");
+		B_LogEntry(TOPIC_HallenVonIrdorath, " That orc warchief is a damn tough nut to crack. He should be somewhere around the throne room. " );
 		EVT_ORKOBERST_OneTime = TRUE;
 	};
 };
