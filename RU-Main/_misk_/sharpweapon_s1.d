@@ -1,3 +1,4 @@
+
 var int SharpBlade;
 var int SharpMiscWeapon;
 
@@ -7,14 +8,14 @@ func void sharpweapon_s1()
 	her = Hlp_GetNpc(PC_Hero);
 	if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(her))
 	{
-		//print_percent_bar_none(ATR_STAMINA[0],ATR_STAMINA_MAX[0] * 10,"Выносливость",42,97);
+		// print_percent_bar_none(ATR_STAMINA[0],ATR_STAMINA_MAX[0] * 10,"Stamina",42,97);
 
 		if(CinemaMod == TRUE)
 		{
 			Wld_PlayEffect("DIALOGSCOPE_FX",hero,hero,0,0,0,FALSE);
 		};
 
-		self.aivar[AIV_INVINCIBLE] = TRUE;
+		self.aivar[ AIV_INVINCIBLE ] = TRUE ;
 		PLAYER_MOBSI_PRODUCTION = MOBSI_SHARPWEAPON;
 		AI_ProcessInfos(her);
 	};
@@ -53,7 +54,7 @@ instance PC_SharpNow(C_Info)
 	condition = PC_SharpNow_condition;
 	information = PC_SharpNow_info;
 	permanent = TRUE;
-	description = "Заточить заготовку клинка";
+	description = " Sharpen the blade blank " ;
 };
 
 func int PC_SharpNow_condition()
@@ -69,7 +70,7 @@ func void PC_SharpNow_info()
 	AI_Wait(self,1);
 	B_GivePlayerXP(10);
 	CreateInvItems(hero,ItMw_1H_Common_01_Blade,1);
-	AI_PrintClr("Готово!",83,152,48);
+	AI_PrintClr( " Done! " , 83 , 152 , 48 );
 	//B_Say(self,self,"$ITEMREADY");
 	Snd_Play("SHARP_DONE");
 	b_endproductiondialog();
@@ -84,7 +85,7 @@ instance PC_SharpNow_MyWeapon(C_Info)
 	condition = PC_SharpNow_MyWeapon_condition;
 	information = PC_SharpNow_MyWeapon_info;
 	permanent = TRUE;
-	description = "Заточить экипированное оружие";
+	description = " Sharpen an equipped weapon " ;
 };
 
 func int PC_SharpNow_MyWeapon_condition()
