@@ -1,3 +1,4 @@
+
 func void sleepabit_s1()
 {
 	var C_Npc her;
@@ -25,7 +26,7 @@ func void sleepabit_s1()
 			}
 			else
 			{
-				self.aivar[AIV_INVINCIBLE] = FALSE;
+				self.aivar[ AIV_INVINCIBLE ] = FALSE ;
 			};
 
 			PLAYER_MOBSI_PRODUCTION = MOBSI_SleepAbit;
@@ -40,7 +41,7 @@ func void use_sleepfur()
 	{
 		B_Say(self,self,"$DOESNTWORK");
 
-		if(Npc_HasItems(hero,ITMI_SLEEPSACK) == FALSE)
+		if (Npc_HasItems(here, ITMI_SLEEPSACK ) ==  FALSE )
 		{
 			CreateInvItems(hero,ITMI_SLEEPSACK,1);
 		};
@@ -82,7 +83,7 @@ func void PC_NoSleep_Info()
 	//Wld_StopEffect("DEMENTOR_FX");
 	AI_StopProcessInfos(self);
 	PLAYER_MOBSI_PRODUCTION = MOBSI_NONE;
-	self.aivar[AIV_INVINCIBLE] = FALSE;
+	self.aivar[ AIV_INVINCIBLE ] = FALSE ;
 
 	if(SLEEPONGROUND == TRUE)
 	{
@@ -102,7 +103,7 @@ instance PC_SLEEPTIME_RECOVER(C_Info)
 	information = pc_sleeptime_recover_info;
 	important = FALSE;
 	permanent = TRUE;
-	description = "Спать...";
+	description = " Sleep... " ;
 };
 
 func int pc_sleeptime_recover_condition()
@@ -134,11 +135,11 @@ func void pc_sleeptime_recover_info()
 	{
 		if(DaySleepHour >= 10)
 		{
-			AI_Print("Вы не хотите спать...");
+			AI_Print( " You don't want to sleep... " );
 			//Wld_StopEffect("DEMENTOR_FX");
 			AI_StopProcessInfos(self);
 			PLAYER_MOBSI_PRODUCTION = MOBSI_NONE;
-			self.aivar[AIV_INVINCIBLE] = FALSE;
+			self.aivar[ AIV_INVINCIBLE ] = FALSE ;
 
 			if(SLEEPONGROUND == TRUE)
 			{
@@ -163,11 +164,11 @@ func void pc_sleeptime_recover_info()
 				Info_AddChoice(pc_sleeptime_recover,"9 часов",pc_sleeptime_recover_9);
 			};
 			if((10 - DaySleepHour) >= 8)
-			{ 
+			{
 				Info_AddChoice(pc_sleeptime_recover,"8 часов",pc_sleeptime_recover_8);
 			};
 			if((10 - DaySleepHour) >= 7)
-			{ 
+			{
 				Info_AddChoice(pc_sleeptime_recover,"7 часов",pc_sleeptime_recover_7);
 			};
 			if((10 - DaySleepHour) >= 6)
@@ -175,11 +176,11 @@ func void pc_sleeptime_recover_info()
 				Info_AddChoice(pc_sleeptime_recover,"6 часов",pc_sleeptime_recover_6);
 			};
 			if((10 - DaySleepHour) >= 5)
-			{ 
+			{
 				Info_AddChoice(pc_sleeptime_recover,"5 часов",pc_sleeptime_recover_5);
 			};
 			if((10 - DaySleepHour) >= 4)
-			{ 
+			{
 				Info_AddChoice(pc_sleeptime_recover,"4 часа",pc_sleeptime_recover_4);
 			};
 			if((10 - DaySleepHour) >= 3)
@@ -187,11 +188,11 @@ func void pc_sleeptime_recover_info()
 				Info_AddChoice(pc_sleeptime_recover,"3 часа",pc_sleeptime_recover_3);
 			};
 			if((10 - DaySleepHour) >= 2)
-			{ 
+			{
 				Info_AddChoice(pc_sleeptime_recover,"2 часа",pc_sleeptime_recover_2);
 			};
 			if((10 - DaySleepHour) >= 1)
-			{ 
+			{
 				Info_AddChoice(pc_sleeptime_recover,"1 час",pc_sleeptime_recover_1);
 			};
 
@@ -207,23 +208,23 @@ func void pc_sleeptime_recover_back()
 
 func void pc_sleep_random(var int hour)
 {
-	var int hitheal;
-	var int hitmana;
-	var int hit;
+	var int ithel;
+	be int hit mana;
+	be int here;
 	var int hitmax;
-	var int hitdelta;
-	var int hithealhit;
+	where int hit participate;
+	var int heatherhit;
 	var int staminares;
 	var int rnd_scream;
 
 	hit = hero.attribute[ATR_HITPOINTS];
 	hitmax = hero.attribute[ATR_HITPOINTS_MAX];
 	hitdelta = hitmax - hit;
-	hitheal = hitmax / SLEEPDIS;
+	hitheal = hitmax /  SLEEPDIS ;
 
-	if(hitheal <= 0)
+	if (heat <=  0 )
 	{
-		hitheal = 1;
+		heather = 1 ;
 	};
 
 	if(SC_IsObsessed == TRUE)
@@ -294,7 +295,7 @@ func void pc_sleep_random(var int hour)
 			}
 			else
 			{
-				hero.attribute[ATR_HITPOINTS] = hithealhit;
+				hero.attribute[ ATR_HITPOINTS ] = herohit;
 			};
 		}
 		else
@@ -314,28 +315,28 @@ func void pc_sleep_random(var int hour)
 		{
 			ATR_STAMINA[0] = ATR_STAMINA_MAX[0] * 10;
 		};
-		if((hero.guild == GIL_KDF) || (hero.guild == GIL_KDW) || (hero.guild == GIL_KDM) || (hero.guild == GIL_GUR))
+		if ((hero.guild ==  GIL_KDF ) || (hero.guild ==  GIL_KDW ) || (hero.guild ==  GIL_KDM ) || (hero.guild ==  GIL_GUR ))
 		{
 			hit = hero.attribute[ATR_MANA];
 			hitmax = hero.attribute[ATR_MANA_MAX];
 			hitdelta = hitmax - hit;
-			hitheal = hitmax / SLEEPDIS;
+			hitheal = hitmax /  SLEEPDIS ;
 
-			if(hitheal <= 0)
+			if (heat <=  0 )
 			{
-				hitheal = 1;
+				heather = 1 ;
 			};
 
 			hithealhit = hour * hitheal;
 			hithealhit = hithealhit + hit;
 
-			if(hithealhit >= hero.attribute[ATR_MANA_MAX])
+			if (hithealhit >= hero.attribute[ ATR_MANA_MAX ])
 			{
 				hero.attribute[ATR_MANA] = hero.attribute[ATR_MANA_MAX];
 			}
 			else
 			{
-				hero.attribute[ATR_MANA] = hithealhit;
+				hero.attribute[ ATR_MANA ] = herohit;
 			};
 		};
 	};
@@ -365,7 +366,7 @@ func void pc_sleeptime_recover_1()
 			}		
 			else
 			{
-				Hero_Hunger = FALSE;
+				Hero_Hunger = FALSE ;
 			};	
 			if(Hero_Thirst > 1)
 			{
@@ -381,7 +382,7 @@ func void pc_sleeptime_recover_1()
 
 		bHour = Wld_GetTimeHour();
 		bMinute = Wld_GetTimeMin();
-		bHour += 1;
+		bHour +=  1 ;
 		Wld_SetTime(bHour,bMinute);
 		pc_sleep_random(1);
 	}
@@ -429,7 +430,7 @@ func void pc_sleeptime_recover_2()
 			}		
 			else
 			{
-				Hero_Hunger = FALSE;
+				Hero_Hunger = FALSE ;
 			};	
 			if(Hero_Thirst > 1)
 			{
@@ -445,7 +446,7 @@ func void pc_sleeptime_recover_2()
 
 		bHour = Wld_GetTimeHour();
 		bMinute = Wld_GetTimeMin();
-		bHour += 2;
+		bHour +=  2 ;
 		Wld_SetTime(bHour,bMinute);
 		pc_sleep_random(2);
 	}
@@ -493,7 +494,7 @@ func void pc_sleeptime_recover_3()
 			}		
 			else
 			{
-				Hero_Hunger = FALSE;
+				Hero_Hunger = FALSE ;
 			};	
 			if(Hero_Thirst > 2)
 			{
@@ -509,7 +510,7 @@ func void pc_sleeptime_recover_3()
 
 		bHour = Wld_GetTimeHour();
 		bMinute = Wld_GetTimeMin();
-		bHour += 3;
+		bHour +=  3 ;
 		Wld_SetTime(bHour,bMinute);
 		pc_sleep_random(3);
 	}
@@ -557,7 +558,7 @@ func void pc_sleeptime_recover_4()
 			}		
 			else
 			{
-				Hero_Hunger = FALSE;
+				Hero_Hunger = FALSE ;
 			};	
 			if(Hero_Thirst > 2)
 			{
@@ -573,7 +574,7 @@ func void pc_sleeptime_recover_4()
 
 		bHour = Wld_GetTimeHour();
 		bMinute = Wld_GetTimeMin();
-		bHour += 4;
+		bHour +=  4 ;
 		Wld_SetTime(bHour,bMinute);
 		pc_sleep_random(4);
 	}
@@ -621,7 +622,7 @@ func void pc_sleeptime_recover_5()
 			}		
 			else
 			{
-				Hero_Hunger = FALSE;
+				Hero_Hunger = FALSE ;
 			};	
 			if(Hero_Thirst > 3)
 			{
@@ -637,7 +638,7 @@ func void pc_sleeptime_recover_5()
 
 		bHour = Wld_GetTimeHour();
 		bMinute = Wld_GetTimeMin();
-		bHour += 5;
+		bHour +=  5 ;
 		Wld_SetTime(bHour,bMinute);
 		pc_sleep_random(5);
 	}
@@ -685,7 +686,7 @@ func void pc_sleeptime_recover_6()
 			}		
 			else
 			{
-				Hero_Hunger = FALSE;
+				Hero_Hunger = FALSE ;
 			};	
 			if(Hero_Thirst > 3)
 			{
@@ -701,7 +702,7 @@ func void pc_sleeptime_recover_6()
 
 		bHour = Wld_GetTimeHour();
 		bMinute = Wld_GetTimeMin();
-		bHour += 6;
+		bHour +=  6 ;
 		Wld_SetTime(bHour,bMinute);
 		pc_sleep_random(6);
 	}
@@ -749,7 +750,7 @@ func void pc_sleeptime_recover_7()
 			}		
 			else
 			{
-				Hero_Hunger = FALSE;
+				Hero_Hunger = FALSE ;
 			};	
 			if(Hero_Thirst > 4)
 			{
@@ -765,7 +766,7 @@ func void pc_sleeptime_recover_7()
 
 		bHour = Wld_GetTimeHour();
 		bMinute = Wld_GetTimeMin();
-		bHour += 7;
+		bHour +=  7 ;
 		Wld_SetTime(bHour,bMinute);
 		pc_sleep_random(7);
 	}
@@ -813,7 +814,7 @@ func void pc_sleeptime_recover_8()
 			}		
 			else
 			{
-				Hero_Hunger = FALSE;
+				Hero_Hunger = FALSE ;
 			};	
 			if(Hero_Thirst > 4)
 			{
@@ -829,7 +830,7 @@ func void pc_sleeptime_recover_8()
 
 		bHour = Wld_GetTimeHour();
 		bMinute = Wld_GetTimeMin();
-		bHour += 8;
+		bHour +=  8 ;
 		Wld_SetTime(bHour,bMinute);
 		pc_sleep_random(8);
 	}
@@ -877,7 +878,7 @@ func void pc_sleeptime_recover_9()
 			}		
 			else
 			{
-				Hero_Hunger = FALSE;
+				Hero_Hunger = FALSE ;
 			};	
 			if(Hero_Thirst > 5)
 			{
@@ -893,7 +894,7 @@ func void pc_sleeptime_recover_9()
 
 		bHour = Wld_GetTimeHour();
 		bMinute = Wld_GetTimeMin();
-		bHour += 9;
+		bHour +=  9 ;
 		Wld_SetTime(bHour,bMinute);
 		pc_sleep_random(9);
 	}
@@ -941,7 +942,7 @@ func void pc_sleeptime_recover_10()
 			}		
 			else
 			{
-				Hero_Hunger = FALSE;
+				Hero_Hunger = FALSE ;
 			};	
 			if(Hero_Thirst > 5)
 			{
@@ -957,7 +958,7 @@ func void pc_sleeptime_recover_10()
 
 		bHour = Wld_GetTimeHour();
 		bMinute = Wld_GetTimeMin();
-		bHour += 10;
+		bHour +=  10 ;
 		Wld_SetTime(bHour,bMinute);
 		pc_sleep_random(10);
 	}
