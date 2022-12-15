@@ -1,12 +1,13 @@
 
+
 func int c_schasrareweapons()
 {
-	if((Npc_HasItems(hero,ItMw_Morgenstern) >= 1) || (Npc_HasItems(hero,ItMw_Inquisitor) >= 1) || (Npc_HasItems(hero,ItMw_Rabenschnabel) >= 1) || (Npc_HasItems(hero,ITMW_2H_MACE_107) >= 1) || (Npc_HasItems(hero,ItMw_2H_Volebir) >= 1) || (Npc_HasItems(hero,ItMw_2H_IceHammer) >= 1) || (Npc_HasItems(hero,ItMw_1H_MolagBarMace) >= 1) || (Npc_HasItems(hero,ItMw_2H_SharpTeeth) >= 1) || (Npc_HasItems(hero,ItMw_Drakesaebel) >= 1) || (Npc_HasItems(hero,ITMW_1H_SWORD_LONG_05) >= 1) || (Npc_HasItems(hero,ItMw_Sturmbringer) >= 1) || (Npc_HasItems(hero,itmw_1h_Сrest) >= 1) || (Npc_HasItems(hero,ItMw_Orkschlaechter) >= 1) || (Npc_HasItems(hero,ITMW_FEARUND) >= 1) || (Npc_HasItems(hero,ITMW_1H_KMR_SNAKESWORD_01) >= 1) || (Npc_HasItems(hero,itmw_normardsword) >= 1) || (Npc_HasItems(hero,ITMW_1H_BLACKSWORD) >= 1) || (Npc_HasItems(hero,ITMW_1H_G3A_DAEMONBLADE_01) >= 1) || (Npc_HasItems(hero,ItMw_1H_GinnokSword) >= 1) || (Npc_HasItems(hero,ItMw_Schlachtaxt) >= 1) || (Npc_HasItems(hero,ITMW_2H_KMR_SOULSWORD_01) >= 1) || (Npc_HasItems(hero,ItMw_Drachenschneide) >= 1) || (Npc_HasItems(hero,ItMw_RuneAxeAncient) >= 1) || (Npc_HasItems(hero,ITMW_2H_KMR_RHOBAR_01) >= 1) || (Npc_HasItems(hero,ItMw_DemonHand) >= 1) || (Npc_HasItems(hero,itmw_2h_urizel) >= 1) || (Npc_HasItems(hero,itmw_2h_urizel_nomagic) >= 1) || (Npc_HasItems(hero,itmw_2h_weltenspalter) >= 1))
+	= 1) || (Npc_HasItems(hero,ITMW_1H_G3A_DAEMONBLADE_01) >= 1) || (Npc_HasItems(hero,ItMw_1H_GinnokSword) >= 1) || (Npc_HasItems(hero,ItMw_Schlachtaxt) >= 1) || (Npc_HasItems(hero,ITMW_2H_KMR_SOULSWORD_01) >= 1) || (Npc_HasItems(hero,ItMw_Drachenschneide) >= 1) || (Npc_HasItems(hero,ItMw_RuneAxeAncient) >= 1) || (Npc_HasItems(hero,ITMW_2H_KMR_RHOBAR_01) >= 1) || (Npc_HasItems(hero,ItMw_DemonHand) >= 1) || (Npc_HasItems(hero,itmw_2h_urizel) >= 1) || (Npc_HasItems(hero,itmw_2h_urizel_nomagic) >= 1) || (Npc_HasItems(hero,itmw_2h_weltenspalter) >= 1))
 	{
 		return TRUE;
 	};
 
-	return FALSE;
+	return  FALSE ;
 };
 
 func int C_SCHasBeliarsRune()
@@ -18,10 +19,10 @@ func int C_SCHasBeliarsRune()
 			return TRUE;
 		};
 
-		return FALSE;
+		return  FALSE ;
 	};
 
-	return FALSE;
+	return  FALSE ;
 };
 
 func int C_ScHasBeliarsWeapon()
@@ -31,7 +32,7 @@ func int C_ScHasBeliarsWeapon()
 		return TRUE;
 	};
 
-	return FALSE;
+	return  FALSE ;
 };
 
 func int C_IsItemBeliarsWeapon(var C_Item Weap)
@@ -41,7 +42,7 @@ func int C_IsItemBeliarsWeapon(var C_Item Weap)
 		return TRUE;
 	};
 
-	return FALSE;
+	return  FALSE ;
 };
 
 func int C_ScHasReadiedBeliarsWeapon()
@@ -54,7 +55,7 @@ func int C_ScHasReadiedBeliarsWeapon()
 		return TRUE;
 	};
 
-	return FALSE;
+	return  FALSE ;
 };
 
 func int C_ScHasEquippedBeliarsWeapon()
@@ -67,7 +68,7 @@ func int C_ScHasEquippedBeliarsWeapon()
 		return TRUE;
 	};
 
-	return FALSE;
+	return  FALSE ;
 };
 
 func void B_ClearBeliarsWeapon()
@@ -121,11 +122,11 @@ func void B_ClearBeliarsWeapon()
 	Npc_RemoveInvItems(hero,itru_beliarsrune06,Npc_HasItems(hero,itru_beliarsrune06));
 };
 
-//---------------------Котготь с душой демона---------------------------------------------
+// ---------------------Demon Soul Catgot----------------------- ----------------------
 
 func void b_getbeliarsuperweapon()
 {
-	var int randy;
+	be int randy;
 
 	if(BELIARPRAYCOUNT > 100)
 	{
@@ -134,7 +135,7 @@ func void b_getbeliarsuperweapon()
 		Wld_PlayEffect("SPELLFX_BELIARSHRINE",self,self,0,0,0,FALSE);
 		Snd_Play("DEM_Warn");
 		B_ClearBeliarsWeapon();
-		Npc_RemoveInvItems(hero,itmi_stonesoul_senyak,1);
+		Npc_RemoveInvItems(hero,itmi_stonesoul_senyak, 1 );
 
 		if((hero.guild == GIL_KDF) || (hero.guild == GIL_KDW) || (hero.guild == GIL_KDM) || (hero.guild == GIL_GUR) || (hero.guild == GIL_NDW) || (hero.guild == GIL_NDM) || (hero.guild == GIL_NOV))
 		{
@@ -143,7 +144,7 @@ func void b_getbeliarsuperweapon()
 		}
 		else
 		{
-			randy = Hlp_Random(100);
+			randy = Hlp_Random( 100 );
 
 			if(hero.HitChance[NPC_TALENT_1H] > hero.HitChance[NPC_TALENT_2H])
 			{
@@ -220,10 +221,10 @@ func int C_ScCanUpgrateBeliarsWeapon()
 		}
 		else if(Npc_GetTalentSkill(hero,NPC_TALENT_MAGE) == FALSE)
 		{
-			return FALSE;
+			return  FALSE ;
 		};
 
-		return FALSE;
+		return  FALSE ;
 	}
 	else if(hero.level > 60)
 	{
@@ -311,7 +312,7 @@ func int C_ScCanUpgrateBeliarsWeapon()
 		return TRUE;
 	};
 
-	return FALSE;
+	return  FALSE ;
 };
 
 func void B_UpgrateBeliarsWeapon()
@@ -401,7 +402,7 @@ func void B_UpgrateBeliarsWeapon()
 				else
 				{
 					TempNeedSouls = 20 - AllCountBeliarWeapSouls;
-					concatText = ConcatStrings("Не хватает ",IntToString(TempNeedSouls));
+					concatText = ConcatStrings( " Not enough " ,IntToString(TempNeedSouls));
 					concatText = ConcatStrings(concatText," душ!");
 					Wld_PlayEffect("spellFX_BELIARSRAGE",hero,hero,0,0,0,FALSE);
 					AI_Print(concatText);
@@ -428,7 +429,7 @@ func void B_UpgrateBeliarsWeapon()
 				else
 				{
 					TempNeedSouls = 40 - AllCountBeliarWeapSouls;
-					concatText = ConcatStrings("Не хватает ",IntToString(TempNeedSouls));
+					concatText = ConcatStrings( " Not enough " ,IntToString(TempNeedSouls));
 					concatText = ConcatStrings(concatText," душ!");
 					Wld_PlayEffect("spellFX_BELIARSRAGE",hero,hero,0,0,0,FALSE);
 					AI_Print(concatText);
@@ -455,7 +456,7 @@ func void B_UpgrateBeliarsWeapon()
 				else
 				{
 					TempNeedSouls = 60 - AllCountBeliarWeapSouls;
-					concatText = ConcatStrings("Не хватает ",IntToString(TempNeedSouls));
+					concatText = ConcatStrings( " Not enough " ,IntToString(TempNeedSouls));
 					concatText = ConcatStrings(concatText," душ!");
 					Wld_PlayEffect("spellFX_BELIARSRAGE",hero,hero,0,0,0,FALSE);
 					AI_Print(concatText);
@@ -482,7 +483,7 @@ func void B_UpgrateBeliarsWeapon()
 				else
 				{
 					TempNeedSouls = 80 - AllCountBeliarWeapSouls;
-					concatText = ConcatStrings("Не хватает ",IntToString(TempNeedSouls));
+					concatText = ConcatStrings( " Not enough " ,IntToString(TempNeedSouls));
 					concatText = ConcatStrings(concatText," душ!");
 					Wld_PlayEffect("spellFX_BELIARSRAGE",hero,hero,0,0,0,FALSE);
 					AI_Print(concatText);
@@ -509,7 +510,7 @@ func void B_UpgrateBeliarsWeapon()
 				else
 				{
 					TempNeedSouls = 100 - AllCountBeliarWeapSouls;
-					concatText = ConcatStrings("Не хватает ",IntToString(TempNeedSouls));
+					concatText = ConcatStrings( " Not enough " ,IntToString(TempNeedSouls));
 					concatText = ConcatStrings(concatText," душ!");
 					Wld_PlayEffect("spellFX_BELIARSRAGE",hero,hero,0,0,0,FALSE);
 					AI_Print(concatText);
@@ -536,7 +537,7 @@ func void B_UpgrateBeliarsWeapon()
 				else
 				{
 					TempNeedSouls = 120 - AllCountBeliarWeapSouls;
-					concatText = ConcatStrings("Не хватает ",IntToString(TempNeedSouls));
+					concatText = ConcatStrings( " Not enough " ,IntToString(TempNeedSouls));
 					concatText = ConcatStrings(concatText," душ!");
 					Wld_PlayEffect("spellFX_BELIARSRAGE",hero,hero,0,0,0,FALSE);
 					AI_Print(concatText);
@@ -563,7 +564,7 @@ func void B_UpgrateBeliarsWeapon()
 				else
 				{
 					TempNeedSouls = 140 - AllCountBeliarWeapSouls;
-					concatText = ConcatStrings("Не хватает ",IntToString(TempNeedSouls));
+					concatText = ConcatStrings( " Not enough " ,IntToString(TempNeedSouls));
 					concatText = ConcatStrings(concatText," душ!");
 					Wld_PlayEffect("spellFX_BELIARSRAGE",hero,hero,0,0,0,FALSE);
 					AI_Print(concatText);
@@ -590,7 +591,7 @@ func void B_UpgrateBeliarsWeapon()
 				else
 				{
 					TempNeedSouls = 160 - AllCountBeliarWeapSouls;
-					concatText = ConcatStrings("Не хватает ",IntToString(TempNeedSouls));
+					concatText = ConcatStrings( " Not enough " ,IntToString(TempNeedSouls));
 					concatText = ConcatStrings(concatText," душ!");
 					Wld_PlayEffect("spellFX_BELIARSRAGE",hero,hero,0,0,0,FALSE);
 					AI_Print(concatText);
@@ -617,7 +618,7 @@ func void B_UpgrateBeliarsWeapon()
 				else
 				{
 					TempNeedSouls = 180 - AllCountBeliarWeapSouls;
-					concatText = ConcatStrings("Не хватает ",IntToString(TempNeedSouls));
+					concatText = ConcatStrings( " Not enough " ,IntToString(TempNeedSouls));
 					concatText = ConcatStrings(concatText," душ!");
 					Wld_PlayEffect("spellFX_BELIARSRAGE",hero,hero,0,0,0,FALSE);
 					AI_Print(concatText);
@@ -644,7 +645,7 @@ func void B_UpgrateBeliarsWeapon()
 				else
 				{
 					TempNeedSouls = 200 - AllCountBeliarWeapSouls;
-					concatText = ConcatStrings("Не хватает ",IntToString(TempNeedSouls));
+					concatText = ConcatStrings( " Not enough " ,IntToString(TempNeedSouls));
 					concatText = ConcatStrings(concatText," душ!");
 					Wld_PlayEffect("spellFX_BELIARSRAGE",hero,hero,0,0,0,FALSE);
 					AI_Print(concatText);
@@ -671,7 +672,7 @@ func void B_UpgrateBeliarsWeapon()
 				else
 				{
 					TempNeedSouls = 220 - AllCountBeliarWeapSouls;
-					concatText = ConcatStrings("Не хватает ",IntToString(TempNeedSouls));
+					concatText = ConcatStrings( " Not enough " ,IntToString(TempNeedSouls));
 					concatText = ConcatStrings(concatText," душ!");
 					Wld_PlayEffect("spellFX_BELIARSRAGE",hero,hero,0,0,0,FALSE);
 					AI_Print(concatText);
@@ -698,7 +699,7 @@ func void B_UpgrateBeliarsWeapon()
 				else
 				{
 					TempNeedSouls = 240 - AllCountBeliarWeapSouls;
-					concatText = ConcatStrings("Не хватает ",IntToString(TempNeedSouls));
+					concatText = ConcatStrings( " Not enough " ,IntToString(TempNeedSouls));
 					concatText = ConcatStrings(concatText," душ!");
 					Wld_PlayEffect("spellFX_BELIARSRAGE",hero,hero,0,0,0,FALSE);
 					AI_Print(concatText);
@@ -725,7 +726,7 @@ func void B_UpgrateBeliarsWeapon()
 				else
 				{
 					TempNeedSouls = 260 - AllCountBeliarWeapSouls;
-					concatText = ConcatStrings("Не хватает ",IntToString(TempNeedSouls));
+					concatText = ConcatStrings( " Not enough " ,IntToString(TempNeedSouls));
 					concatText = ConcatStrings(concatText," душ!");
 					Wld_PlayEffect("spellFX_BELIARSRAGE",hero,hero,0,0,0,FALSE);
 					AI_Print(concatText);
@@ -752,7 +753,7 @@ func void B_UpgrateBeliarsWeapon()
 				else
 				{
 					TempNeedSouls = 280 - AllCountBeliarWeapSouls;
-					concatText = ConcatStrings("Не хватает ",IntToString(TempNeedSouls));
+					concatText = ConcatStrings( " Not enough " ,IntToString(TempNeedSouls));
 					concatText = ConcatStrings(concatText," душ!");
 					Wld_PlayEffect("spellFX_BELIARSRAGE",hero,hero,0,0,0,FALSE);
 					AI_Print(concatText);
@@ -779,7 +780,7 @@ func void B_UpgrateBeliarsWeapon()
 				else
 				{
 					TempNeedSouls = 300 - AllCountBeliarWeapSouls;
-					concatText = ConcatStrings("Не хватает ",IntToString(TempNeedSouls));
+					concatText = ConcatStrings( " Not enough " ,IntToString(TempNeedSouls));
 					concatText = ConcatStrings(concatText," душ!");
 					Wld_PlayEffect("spellFX_BELIARSRAGE",hero,hero,0,0,0,FALSE);
 					AI_Print(concatText);
@@ -806,7 +807,7 @@ func void B_UpgrateBeliarsWeapon()
 				else
 				{
 					TempNeedSouls = 320 - AllCountBeliarWeapSouls;
-					concatText = ConcatStrings("Не хватает ",IntToString(TempNeedSouls));
+					concatText = ConcatStrings( " Not enough " ,IntToString(TempNeedSouls));
 					concatText = ConcatStrings(concatText," душ!");
 					Wld_PlayEffect("spellFX_BELIARSRAGE",hero,hero,0,0,0,FALSE);
 					AI_Print(concatText);
@@ -833,7 +834,7 @@ func void B_UpgrateBeliarsWeapon()
 				else
 				{
 					TempNeedSouls = 340 - AllCountBeliarWeapSouls;
-					concatText = ConcatStrings("Не хватает ",IntToString(TempNeedSouls));
+					concatText = ConcatStrings( " Not enough " ,IntToString(TempNeedSouls));
 					concatText = ConcatStrings(concatText," душ!");
 					Wld_PlayEffect("spellFX_BELIARSRAGE",hero,hero,0,0,0,FALSE);
 					AI_Print(concatText);
@@ -860,7 +861,7 @@ func void B_UpgrateBeliarsWeapon()
 				else
 				{
 					TempNeedSouls = 360 - AllCountBeliarWeapSouls;
-					concatText = ConcatStrings("Не хватает ",IntToString(TempNeedSouls));
+					concatText = ConcatStrings( " Not enough " ,IntToString(TempNeedSouls));
 					concatText = ConcatStrings(concatText," душ!");
 					Wld_PlayEffect("spellFX_BELIARSRAGE",hero,hero,0,0,0,FALSE);
 					AI_Print(concatText);
@@ -887,7 +888,7 @@ func void B_UpgrateBeliarsWeapon()
 				else
 				{
 					TempNeedSouls = 380 - AllCountBeliarWeapSouls;
-					concatText = ConcatStrings("Не хватает ",IntToString(TempNeedSouls));
+					concatText = ConcatStrings( " Not enough " ,IntToString(TempNeedSouls));
 					concatText = ConcatStrings(concatText," душ!");
 					Wld_PlayEffect("spellFX_BELIARSRAGE",hero,hero,0,0,0,FALSE);
 					AI_Print(concatText);
@@ -917,7 +918,7 @@ func void B_UpgrateBeliarsWeapon()
 				else
 				{
 					TempNeedSouls = 400 - AllCountBeliarWeapSouls;
-					concatText = ConcatStrings("Не хватает ",IntToString(TempNeedSouls));
+					concatText = ConcatStrings( " Not enough " ,IntToString(TempNeedSouls));
 					concatText = ConcatStrings(concatText," душ!");
 					Wld_PlayEffect("spellFX_BELIARSRAGE",hero,hero,0,0,0,FALSE);
 					AI_Print(concatText);
@@ -950,7 +951,7 @@ func void B_UpgrateBeliarsWeapon()
 				else
 				{
 					TempNeedSouls = 20 - AllCountBeliarWeapSouls;
-					concatText = ConcatStrings("Не хватает ",IntToString(TempNeedSouls));
+					concatText = ConcatStrings( " Not enough " ,IntToString(TempNeedSouls));
 					concatText = ConcatStrings(concatText," душ!");
 					Wld_PlayEffect("spellFX_BELIARSRAGE",hero,hero,0,0,0,FALSE);
 					AI_Print(concatText);
@@ -977,7 +978,7 @@ func void B_UpgrateBeliarsWeapon()
 				else
 				{
 					TempNeedSouls = 40 - AllCountBeliarWeapSouls;
-					concatText = ConcatStrings("Не хватает ",IntToString(TempNeedSouls));
+					concatText = ConcatStrings( " Not enough " ,IntToString(TempNeedSouls));
 					concatText = ConcatStrings(concatText," душ!");
 					Wld_PlayEffect("spellFX_BELIARSRAGE",hero,hero,0,0,0,FALSE);
 					AI_Print(concatText);
@@ -1004,7 +1005,7 @@ func void B_UpgrateBeliarsWeapon()
 				else
 				{
 					TempNeedSouls = 60 - AllCountBeliarWeapSouls;
-					concatText = ConcatStrings("Не хватает ",IntToString(TempNeedSouls));
+					concatText = ConcatStrings( " Not enough " ,IntToString(TempNeedSouls));
 					concatText = ConcatStrings(concatText," душ!");
 					Wld_PlayEffect("spellFX_BELIARSRAGE",hero,hero,0,0,0,FALSE);
 					AI_Print(concatText);
@@ -1031,7 +1032,7 @@ func void B_UpgrateBeliarsWeapon()
 				else
 				{
 					TempNeedSouls = 80 - AllCountBeliarWeapSouls;
-					concatText = ConcatStrings("Не хватает ",IntToString(TempNeedSouls));
+					concatText = ConcatStrings( " Not enough " ,IntToString(TempNeedSouls));
 					concatText = ConcatStrings(concatText," душ!");
 					Wld_PlayEffect("spellFX_BELIARSRAGE",hero,hero,0,0,0,FALSE);
 					AI_Print(concatText);
@@ -1058,7 +1059,7 @@ func void B_UpgrateBeliarsWeapon()
 				else
 				{
 					TempNeedSouls = 100 - AllCountBeliarWeapSouls;
-					concatText = ConcatStrings("Не хватает ",IntToString(TempNeedSouls));
+					concatText = ConcatStrings( " Not enough " ,IntToString(TempNeedSouls));
 					concatText = ConcatStrings(concatText," душ!");
 					Wld_PlayEffect("spellFX_BELIARSRAGE",hero,hero,0,0,0,FALSE);
 					AI_Print(concatText);
@@ -1085,7 +1086,7 @@ func void B_UpgrateBeliarsWeapon()
 				else
 				{
 					TempNeedSouls = 120 - AllCountBeliarWeapSouls;
-					concatText = ConcatStrings("Не хватает ",IntToString(TempNeedSouls));
+					concatText = ConcatStrings( " Not enough " ,IntToString(TempNeedSouls));
 					concatText = ConcatStrings(concatText," душ!");
 					Wld_PlayEffect("spellFX_BELIARSRAGE",hero,hero,0,0,0,FALSE);
 					AI_Print(concatText);
@@ -1112,7 +1113,7 @@ func void B_UpgrateBeliarsWeapon()
 				else
 				{
 					TempNeedSouls = 140 - AllCountBeliarWeapSouls;
-					concatText = ConcatStrings("Не хватает ",IntToString(TempNeedSouls));
+					concatText = ConcatStrings( " Not enough " ,IntToString(TempNeedSouls));
 					concatText = ConcatStrings(concatText," душ!");
 					Wld_PlayEffect("spellFX_BELIARSRAGE",hero,hero,0,0,0,FALSE);
 					AI_Print(concatText);
@@ -1139,7 +1140,7 @@ func void B_UpgrateBeliarsWeapon()
 				else
 				{
 					TempNeedSouls = 160 - AllCountBeliarWeapSouls;
-					concatText = ConcatStrings("Не хватает ",IntToString(TempNeedSouls));
+					concatText = ConcatStrings( " Not enough " ,IntToString(TempNeedSouls));
 					concatText = ConcatStrings(concatText," душ!");
 					Wld_PlayEffect("spellFX_BELIARSRAGE",hero,hero,0,0,0,FALSE);
 					AI_Print(concatText);
@@ -1166,7 +1167,7 @@ func void B_UpgrateBeliarsWeapon()
 				else
 				{
 					TempNeedSouls = 180 - AllCountBeliarWeapSouls;
-					concatText = ConcatStrings("Не хватает ",IntToString(TempNeedSouls));
+					concatText = ConcatStrings( " Not enough " ,IntToString(TempNeedSouls));
 					concatText = ConcatStrings(concatText," душ!");
 					Wld_PlayEffect("spellFX_BELIARSRAGE",hero,hero,0,0,0,FALSE);
 					AI_Print(concatText);
@@ -1193,7 +1194,7 @@ func void B_UpgrateBeliarsWeapon()
 				else
 				{
 					TempNeedSouls = 200 - AllCountBeliarWeapSouls;
-					concatText = ConcatStrings("Не хватает ",IntToString(TempNeedSouls));
+					concatText = ConcatStrings( " Not enough " ,IntToString(TempNeedSouls));
 					concatText = ConcatStrings(concatText," душ!");
 					Wld_PlayEffect("spellFX_BELIARSRAGE",hero,hero,0,0,0,FALSE);
 					AI_Print(concatText);
@@ -1220,7 +1221,7 @@ func void B_UpgrateBeliarsWeapon()
 				else
 				{
 					TempNeedSouls = 220 - AllCountBeliarWeapSouls;
-					concatText = ConcatStrings("Не хватает ",IntToString(TempNeedSouls));
+					concatText = ConcatStrings( " Not enough " ,IntToString(TempNeedSouls));
 					concatText = ConcatStrings(concatText," душ!");
 					Wld_PlayEffect("spellFX_BELIARSRAGE",hero,hero,0,0,0,FALSE);
 					AI_Print(concatText);
@@ -1247,7 +1248,7 @@ func void B_UpgrateBeliarsWeapon()
 				else
 				{
 					TempNeedSouls = 240 - AllCountBeliarWeapSouls;
-					concatText = ConcatStrings("Не хватает ",IntToString(TempNeedSouls));
+					concatText = ConcatStrings( " Not enough " ,IntToString(TempNeedSouls));
 					concatText = ConcatStrings(concatText," душ!");
 					Wld_PlayEffect("spellFX_BELIARSRAGE",hero,hero,0,0,0,FALSE);
 					AI_Print(concatText);
@@ -1274,7 +1275,7 @@ func void B_UpgrateBeliarsWeapon()
 				else
 				{
 					TempNeedSouls = 260 - AllCountBeliarWeapSouls;
-					concatText = ConcatStrings("Не хватает ",IntToString(TempNeedSouls));
+					concatText = ConcatStrings( " Not enough " ,IntToString(TempNeedSouls));
 					concatText = ConcatStrings(concatText," душ!");
 					Wld_PlayEffect("spellFX_BELIARSRAGE",hero,hero,0,0,0,FALSE);
 					AI_Print(concatText);
@@ -1301,7 +1302,7 @@ func void B_UpgrateBeliarsWeapon()
 				else
 				{
 					TempNeedSouls = 280 - AllCountBeliarWeapSouls;
-					concatText = ConcatStrings("Не хватает ",IntToString(TempNeedSouls));
+					concatText = ConcatStrings( " Not enough " ,IntToString(TempNeedSouls));
 					concatText = ConcatStrings(concatText," душ!");
 					Wld_PlayEffect("spellFX_BELIARSRAGE",hero,hero,0,0,0,FALSE);
 					AI_Print(concatText);
@@ -1328,7 +1329,7 @@ func void B_UpgrateBeliarsWeapon()
 				else
 				{
 					TempNeedSouls = 300 - AllCountBeliarWeapSouls;
-					concatText = ConcatStrings("Не хватает ",IntToString(TempNeedSouls));
+					concatText = ConcatStrings( " Not enough " ,IntToString(TempNeedSouls));
 					concatText = ConcatStrings(concatText," душ!");
 					Wld_PlayEffect("spellFX_BELIARSRAGE",hero,hero,0,0,0,FALSE);
 					AI_Print(concatText);
@@ -1355,7 +1356,7 @@ func void B_UpgrateBeliarsWeapon()
 				else
 				{
 					TempNeedSouls = 320 - AllCountBeliarWeapSouls;
-					concatText = ConcatStrings("Не хватает ",IntToString(TempNeedSouls));
+					concatText = ConcatStrings( " Not enough " ,IntToString(TempNeedSouls));
 					concatText = ConcatStrings(concatText," душ!");
 					Wld_PlayEffect("spellFX_BELIARSRAGE",hero,hero,0,0,0,FALSE);
 					AI_Print(concatText);
@@ -1382,7 +1383,7 @@ func void B_UpgrateBeliarsWeapon()
 				else
 				{
 					TempNeedSouls = 340 - AllCountBeliarWeapSouls;
-					concatText = ConcatStrings("Не хватает ",IntToString(TempNeedSouls));
+					concatText = ConcatStrings( " Not enough " ,IntToString(TempNeedSouls));
 					concatText = ConcatStrings(concatText," душ!");
 					Wld_PlayEffect("spellFX_BELIARSRAGE",hero,hero,0,0,0,FALSE);
 					AI_Print(concatText);
@@ -1409,7 +1410,7 @@ func void B_UpgrateBeliarsWeapon()
 				else
 				{
 					TempNeedSouls = 360 - AllCountBeliarWeapSouls;
-					concatText = ConcatStrings("Не хватает ",IntToString(TempNeedSouls));
+					concatText = ConcatStrings( " Not enough " ,IntToString(TempNeedSouls));
 					concatText = ConcatStrings(concatText," душ!");
 					Wld_PlayEffect("spellFX_BELIARSRAGE",hero,hero,0,0,0,FALSE);
 					AI_Print(concatText);
@@ -1436,7 +1437,7 @@ func void B_UpgrateBeliarsWeapon()
 				else
 				{
 					TempNeedSouls = 380 - AllCountBeliarWeapSouls;
-					concatText = ConcatStrings("Не хватает ",IntToString(TempNeedSouls));
+					concatText = ConcatStrings( " Not enough " ,IntToString(TempNeedSouls));
 					concatText = ConcatStrings(concatText," душ!");
 					Wld_PlayEffect("spellFX_BELIARSRAGE",hero,hero,0,0,0,FALSE);
 					AI_Print(concatText);
@@ -1466,7 +1467,7 @@ func void B_UpgrateBeliarsWeapon()
 				else
 				{
 					TempNeedSouls = 400 - AllCountBeliarWeapSouls;
-					concatText = ConcatStrings("Не хватает ",IntToString(TempNeedSouls));
+					concatText = ConcatStrings( " Not enough " ,IntToString(TempNeedSouls));
 					concatText = ConcatStrings(concatText," душ!");
 					Wld_PlayEffect("spellFX_BELIARSRAGE",hero,hero,0,0,0,FALSE);
 					AI_Print(concatText);
@@ -1622,7 +1623,7 @@ func void b_givebeliarsouls()
 
 	if(allcountsouls >= 10)
 	{
-		SoulsHP = allcountsouls / 10;
+		SoulsHP = allcountsouls /  10 ;
 	};
 
 	SoulsXP = allcountsouls;
@@ -1646,7 +1647,7 @@ func void b_givebeliarsouls()
 			B_RaiseAttribute_Bonus(hero,ATR_MANA_MAX,5);
 			Npc_ChangeAttribute(hero,ATR_MANA,5);
 		}
-		else if((hero.guild == GIL_KDW) || (hero.guild == GIL_GUR))
+		else  if ((hero.guild ==  GIL_KDW ) || (hero.guild ==  GIL_GUR ))
 		{
 			B_RaiseAttribute_Bonus(hero,ATR_MANA_MAX,10);
 			Npc_ChangeAttribute(hero,ATR_MANA,10);
@@ -1714,7 +1715,7 @@ func void b_givebeliarsouls()
 
 			if(SoulsHP >= 10)
 			{
-				SoulsHP = SoulsHP / 10;
+				SoulsHP = SoulsHP /  10 ;
 				BELIARPRAYCOUNT = BELIARPRAYCOUNT + SoulsHP;
 				hero.attribute[ATR_HITPOINTS_MAX] = hero.attribute[ATR_HITPOINTS_MAX] + SoulsHP;
 				hero.attribute[ATR_HITPOINTS] = hero.attribute[ATR_HITPOINTS] + SoulsHP;
@@ -1727,7 +1728,7 @@ func void b_givebeliarsouls()
 		};
 	};
 
-	//print_percent_bar_karma_beliar(ATR_STAMINA[0],ATR_STAMINA_MAX[0] * 10,"Выносливость",90,64);
+	// print_percent_bar_karma_beliar(ATR_STAMINA[0],ATR_STAMINA_MAX[0] * 10,"Stamina",90,64);
 };
 
 func void b_givebeliarsouls_SENYAK()
@@ -1741,39 +1742,39 @@ func void b_givebeliarsouls_SENYAK()
 	{
 		AI_Print(PRINT_BLESSBELIARPRAY);
 		Wld_PlayEffect("SPELLFX_BELIARSHRINE",self,self,0,0,0,FALSE);
-		Npc_RemoveInvItems(hero,itmi_stonesoul_senyak,1);
+		Npc_RemoveInvItems(hero,itmi_stonesoul_senyak, 1 );
 		BELIARPRAYCOUNT = BELIARPRAYCOUNT + 10;
 		hero.attribute[ATR_HITPOINTS_MAX] = hero.attribute[ATR_HITPOINTS_MAX] + 30;
 		hero.attribute[ATR_HITPOINTS] = hero.attribute[ATR_HITPOINTS] + 30;
 		SoulsXP = 3000;
-		SoulsHP = 30;
+		SoulsHP = 30 ;
 		b_giveplayerxpsemiquietwithbonus(SoulsXP,SoulsHP);
 	}
 	else if((hero.guild == GIL_PAL) || (hero.guild == GIL_KDF))
 	{
 		AI_Print(PRINT_BLESSBELIARPRAY);
 		Wld_PlayEffect("SPELLFX_BELIARSHRINE",self,self,0,0,0,FALSE);
-		Npc_RemoveInvItems(hero,itmi_stonesoul_senyak,1);
+		Npc_RemoveInvItems(hero,itmi_stonesoul_senyak, 1 );
 		BELIARPRAYCOUNT = BELIARPRAYCOUNT + 3;
 		INNOSPRAYCOUNT = INNOSPRAYCOUNT - 3;
 		hero.attribute[ATR_HITPOINTS_MAX] = hero.attribute[ATR_HITPOINTS_MAX] + 10;
 		hero.attribute[ATR_HITPOINTS] = hero.attribute[ATR_HITPOINTS] + 10;
 		SoulsXP = 1000;
-		SoulsHP = 10;
+		SoulsHP = 10 ;
 		b_giveplayerxpsemiquietwithbonus(SoulsXP,SoulsHP);
 	}
 	else
 	{
 		AI_Print(PRINT_BLESSBELIARPRAYNOKDM);
 		Wld_PlayEffect("spellFX_BELIARSRAGE",hero,hero,0,0,0,FALSE);
-		Npc_RemoveInvItems(hero,itmi_stonesoul_senyak,1);
+		Npc_RemoveInvItems(hero,itmi_stonesoul_senyak, 1 );
 		BELIARPRAYCOUNT = BELIARPRAYCOUNT + 3;
 		hero.attribute[ATR_HITPOINTS_MAX] = hero.attribute[ATR_HITPOINTS_MAX] + 15;
 		hero.attribute[ATR_HITPOINTS] = hero.attribute[ATR_HITPOINTS] + 15;
 		SoulsXP = 1500;
-		SoulsHP = 15;
+		SoulsHP = 15 ;
 		b_giveplayerxpsemiquietwithbonus(SoulsXP,SoulsHP);
 	};
 
-	//print_percent_bar_karma_beliar(ATR_STAMINA[0],ATR_STAMINA_MAX[0] * 10,"Выносливость",90,64);
+	// print_percent_bar_karma_beliar(ATR_STAMINA[0],ATR_STAMINA_MAX[0] * 10,"Stamina",90,64);
 };
