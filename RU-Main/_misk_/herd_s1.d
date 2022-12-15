@@ -1,3 +1,4 @@
+
 var int HerdFish;
 var int HerdMeat;
 var int HerdBug;
@@ -8,7 +9,7 @@ var int HerdCake;
 var int NeedPan;
 var int CampfireRest;
 
-//----------------------------------------Жарка---------------------------------------
+// --------------------------------------------------- --------------------------------
 
 func void herdpan_s1()
 {
@@ -21,7 +22,7 @@ func void herdpan_s1()
 			Wld_PlayEffect("DIALOGSCOPE_FX",hero,hero,0,0,0,FALSE);
 		};
 
-		self.aivar[AIV_INVINCIBLE] = TRUE;
+		self.aivar[ AIV_INVINCIBLE ] = TRUE ;
 		PLAYER_MOBSI_PRODUCTION = MOBSI_HERD;
 		NeedPan = FALSE;
 		AI_ProcessInfos(her);
@@ -39,7 +40,7 @@ func void herd_s1()
 			Wld_PlayEffect("DIALOGSCOPE_FX",hero,hero,0,0,0,FALSE);
 		};
 
-		self.aivar[AIV_INVINCIBLE] = TRUE;
+		self.aivar[ AIV_INVINCIBLE ] = TRUE ;
 		PLAYER_MOBSI_PRODUCTION = MOBSI_HERD;
 		NeedPan = TRUE;
 		AI_ProcessInfos(her);
@@ -83,7 +84,7 @@ func void pc_herd_exit_info()
 	};
 	if(Npc_GetDistToWP(hero,"NW_BIGFARM_KITCHEN_04") < 500)
 	{
-		CreateInvItems(hero,ITMI_BROTSCHIEBER,1);
+		CreateInvItems(hero, ITMI_BREADPUSHER , 1 );
 	};
 
 	b_endproductiondialog();
@@ -98,7 +99,7 @@ instance PC_Herd_Meat(C_Info)
 	condition = PC_Herd_Meat_Condition;
 	information = PC_Herd_Meat_Info;
 	permanent = TRUE;
-	description = "Пожарить мясо";
+	description = " Fry the meat " ;
 };
 
 func int PC_Herd_Meat_Condition()
@@ -120,7 +121,7 @@ instance PC_Herd_Fish(C_Info)
 	condition = PC_Herd_Fish_Condition;
 	information = PC_Herd_Fish_Info;
 	permanent = TRUE;
-	description = "Пожарить рыбу";
+	description = " Fry the fish " ;
 };
 
 func int PC_Herd_Fish_Condition()
@@ -142,7 +143,7 @@ instance PC_Herd_Bug(C_Info)
 	condition = PC_Herd_Bug_Condition;
 	information = PC_Herd_Bug_Info;
 	permanent = TRUE;
-	description = "Пожарить мясо жука";
+	description = " Fry beetle meat " ;
 };
 
 func int PC_Herd_Bug_Condition()
@@ -164,7 +165,7 @@ instance PC_Herd_Cake(C_Info)
 	condition = PC_Herd_Cake_Condition;
 	information = PC_Herd_Cake_Info;
 	permanent = TRUE;
-	description = "Испечь пирог";
+	description = " Bake a cake " ;
 };
 
 func int PC_Herd_Cake_Condition()
@@ -280,7 +281,7 @@ instance PC_HERD_Cake_Apple(C_Info)
 	information = PC_HERD_Cake_Apple_info;
 	permanent = 1;
 	important = 0;
-	description = "Испечь яблочный пирог";
+	description = " Bake an apple pie " ;
 };
 
 func int PC_HERD_Cake_Apple_condition()
@@ -304,13 +305,13 @@ func void PC_HERD_Cake_Apple_info()
 		Npc_RemoveInvItems(hero,ItFo_Water,1);
 		CreateInvItems(hero,ItFo_Cake_Apple,1);
 		RankPoints = RankPoints + 1;
-		AI_PrintClr("Готово!",83,152,48);
+		AI_PrintClr( " Done! " , 83 , 152 , 48 );
 		//B_Say(self,self,"$ITEMREADY");
 	}
 	else
 	{
-		//Print(PRINT_ProdItemsMissing);
-		AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+		// Print(PRINT_ProdItemsMissing);
+		AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 		B_Say(self,self,"$MISSINGINGREDIENTS");
 	};
 };
@@ -323,7 +324,7 @@ instance PC_HERD_Cake_Meat(C_Info)
 	information = PC_HERD_Cake_Meat_info;
 	permanent = 1;
 	important = 0;
-	description = "Испечь мясной пирог";
+	description = " Bake a meat pie " ;
 };
 
 func int PC_HERD_Cake_Meat_condition()
@@ -347,13 +348,13 @@ func void PC_HERD_Cake_Meat_info()
 		Npc_RemoveInvItems(hero,ItFo_Booze,1);
 		CreateInvItems(hero,ItFo_Cake_Meat,1);
 		RankPoints = RankPoints + 1;
-		AI_PrintClr("Готово!",83,152,48);
+		AI_PrintClr( " Done! " , 83 , 152 , 48 );
 		//B_Say(self,self,"$ITEMREADY");
 	}
 	else
 	{
-		//Print(PRINT_ProdItemsMissing);
-		AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+		// Print(PRINT_ProdItemsMissing);
+		AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 		B_Say(self,self,"$MISSINGINGREDIENTS");
 	};
 };
@@ -366,7 +367,7 @@ instance PC_HERD_Cake_Mushroom(C_Info)
 	information = PC_HERD_Cake_Mushroom_info;
 	permanent = 1;
 	important = 0;
-	description = "Испечь грибной пирог";
+	description = " Bake mushroom pie " ;
 };
 
 func int PC_HERD_Cake_Mushroom_condition()
@@ -389,13 +390,13 @@ func void PC_HERD_Cake_Mushroom_info()
 		Npc_RemoveInvItems(hero,ItFo_Wine,1);
 		CreateInvItems(hero,ItFo_Cake_Mushroom,1);
 		RankPoints = RankPoints + 1;
-		AI_PrintClr("Готово!",83,152,48);
+		AI_PrintClr( " Done! " , 83 , 152 , 48 );
 		//B_Say(self,self,"$ITEMREADY");
 	}
 	else
 	{
-		//Print(PRINT_ProdItemsMissing);
-		AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+		// Print(PRINT_ProdItemsMissing);
+		AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 		B_Say(self,self,"$MISSINGINGREDIENTS");
 	};
 };
@@ -408,7 +409,7 @@ instance PC_HERD_Cake_Fish(C_Info)
 	information = PC_HERD_Cake_Fish_info;
 	permanent = 1;
 	important = 0;
-	description = "Испечь рыбный пирог";
+	description = " Bake a fish pie " ;
 };
 
 func int PC_HERD_Cake_Fish_condition()
@@ -431,13 +432,13 @@ func void PC_HERD_Cake_Fish_info()
 		Npc_RemoveInvItems(hero,ItFo_Booze,1);
 		CreateInvItems(hero,ItFo_Cake_Fish,1);
 		RankPoints = RankPoints + 1;
-		AI_PrintClr("Готово!",83,152,48);
+		AI_PrintClr( " Done! " , 83 , 152 , 48 );
 		//B_Say(self,self,"$ITEMREADY");
 	}
 	else
 	{
-		//Print(PRINT_ProdItemsMissing);
-		AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+		// Print(PRINT_ProdItemsMissing);
+		AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 		B_Say(self,self,"$MISSINGINGREDIENTS");
 	};
 };
@@ -450,7 +451,7 @@ instance PC_HERD_Cake_Honey(C_Info)
 	information = PC_HERD_Cake_Honey_info;
 	permanent = 1;
 	important = 0;
-	description = "Испечь медовый пирог";
+	description = " Bake a honey cake " ;
 };
 
 func int PC_HERD_Cake_Honey_condition()
@@ -475,18 +476,18 @@ func void PC_HERD_Cake_Honey_info()
 		Npc_RemoveInvItems(hero,ItFo_Wine,1);
 		CreateInvItems(hero,ItFo_Cake_Honey,1);
 		RankPoints = RankPoints + 1;
-		AI_PrintClr("Готово!",83,152,48);
+		AI_PrintClr( " Done! " , 83 , 152 , 48 );
 		//B_Say(self,self,"$ITEMREADY");
 	}
 	else
 	{
-		//Print(PRINT_ProdItemsMissing);
-		AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+		// Print(PRINT_ProdItemsMissing);
+		AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 		B_Say(self,self,"$MISSINGINGREDIENTS");
 	};
 };
 
-instance PC_HERD_FISCHBRATEN(C_Info)
+instance PC_HERD_FISCHBRATEN (C_Info)
 {
 	npc = PC_Hero;
 	nr = 1;
@@ -494,7 +495,7 @@ instance PC_HERD_FISCHBRATEN(C_Info)
 	information = pc_herd_fischbraten_info;
 	permanent = 1;
 	important = 0;
-	description = "Пожарить рыбу (1 порцию)";
+	description = " Fry fish (1 serving) " ;
 };
 
 func int pc_herd_fischbraten_condition()
@@ -511,7 +512,7 @@ func void pc_herd_fischbraten_info()
 	Npc_RemoveInvItems(hero,ItFo_Fish,1);
 	CreateInvItems(hero,itfo_fish_gebraten,1);
 	RankPoints = RankPoints + 1;
-	AI_PrintClr("Готово!",83,152,48);
+	AI_PrintClr( " Done! " , 83 , 152 , 48 );
 	//B_Say(self,self,"$ITEMREADY");
 };
 
@@ -523,7 +524,7 @@ instance PC_HERD_FISCHBRATEN_10X(C_Info)
 	information = pc_herd_fischbraten10x_info;
 	permanent = 1;
 	important = 0;
-	description = "Пожарить рыбу (10 порций)";
+	description = " Fry fish (10 servings) " ;
 };
 
 func int pc_herd_fischbraten10x_condition()
@@ -540,7 +541,7 @@ func void pc_herd_fischbraten10x_info()
 	Npc_RemoveInvItems(hero,ItFo_Fish,10);
 	CreateInvItems(hero,itfo_fish_gebraten,10);
 	RankPoints = RankPoints + 1;
-	AI_PrintClr("Готово!",83,152,48);
+	AI_PrintClr( " Done! " , 83 , 152 , 48 );
 	//B_Say(self,self,"$ITEMREADY");
 };
 
@@ -552,7 +553,7 @@ instance PC_HERD_FISCHBRATEN_ALL(C_Info)
 	information = PC_HERD_FISCHBRATEN_ALL_info;
 	permanent = 1;
 	important = 0;
-	description = "Пожарить всю рыбу";
+	description = " Fry all fish " ;
 };
 
 func int PC_HERD_FISCHBRATEN_ALL_condition()
@@ -572,7 +573,7 @@ func void PC_HERD_FISCHBRATEN_ALL_info()
 	Npc_RemoveInvItems(hero,ItFo_Fish,allfish);
 	CreateInvItems(hero,itfo_fish_gebraten,allfish);
 	RankPoints = RankPoints + 1;
-	AI_PrintClr("Готово!",83,152,48);
+	AI_PrintClr( " Done! " , 83 , 152 , 48 );
 };
 
 
@@ -584,7 +585,7 @@ instance PC_HERD_FLEISCHBRATEN(C_Info)
 	information = pc_herd_fleischbraten_info;
 	permanent = 1;
 	important = 0;
-	description = "Пожарить мясо (1 кусок)";
+	description = " Fry meat (1 piece) " ;
 };
 
 func int pc_herd_fleischbraten_condition()
@@ -601,7 +602,7 @@ func void pc_herd_fleischbraten_info()
 	Npc_RemoveInvItems(hero,ItFoMuttonRaw,1);
 	CreateInvItems(hero,ItMi_Pan,1);
 	RankPoints = RankPoints + 1;
-	AI_PrintClr("Готово!",83,152,48);
+	AI_PrintClr( " Done! " , 83 , 152 , 48 );
 	//B_Say(self,self,"$ITEMREADY");
 };
 
@@ -614,7 +615,7 @@ instance PC_HERD_FLEISCHBRATEN_10X(C_Info)
 	information = pc_herd_fleischbraten10x_info;
 	permanent = 1;
 	important = 0;
-	description = "Пожарить мясо (10 кусков)";
+	description = " Fry meat (10 pieces) " ;
 };
 
 func int pc_herd_fleischbraten10x_condition()
@@ -631,7 +632,7 @@ func void pc_herd_fleischbraten10x_info()
 	RankPoints = RankPoints + 1;
 	Npc_RemoveInvItems(hero,ItFoMuttonRaw,10);
 	CreateInvItems(hero,ItFoMutton,10);
-	AI_PrintClr("Готово!",83,152,48);
+	AI_PrintClr( " Done! " , 83 , 152 , 48 );
 	//B_Say(self,self,"$ITEMREADY");
 };
 
@@ -643,7 +644,7 @@ instance PC_HERD_FLEISCHBRATEN_ALL(C_Info)
 	information = PC_HERD_FLEISCHBRATEN_ALL_info;
 	permanent = 1;
 	important = 0;
-	description = "Пожарить все мясо";
+	description = " Fry all meat " ;
 };
 
 func int PC_HERD_FLEISCHBRATEN_ALL_condition()
@@ -656,19 +657,19 @@ func int PC_HERD_FLEISCHBRATEN_ALL_condition()
 
 func void PC_HERD_FLEISCHBRATEN_ALL_info()
 {
-	var int allmeat;
+	be int allmeat;
 
 	AI_Wait(hero,1);
 	allmeat = Npc_HasItems(hero,ItFoMuttonRaw);
 	Npc_RemoveInvItems(hero,ItFoMuttonRaw,allmeat);
 	CreateInvItems(hero,ItFoMutton,allmeat);
 	RankPoints = RankPoints + 1;
-	AI_PrintClr("Готово!",83,152,48);
+	AI_PrintClr( " Done! " , 83 , 152 , 48 );
 	//B_Say(self,self,"$ITEMREADY");
 };
 
 
-instance PC_HERD_WANZENFLEISCHBRATEN(C_Info)
+instance PC_HERD_BUG MEAT ROAST (C_Info)
 {
 	npc = PC_Hero;
 	nr = 1;
@@ -676,11 +677,11 @@ instance PC_HERD_WANZENFLEISCHBRATEN(C_Info)
 	information = pc_herd_wanzenfleischbraten_info;
 	permanent = 1;
 	important = 0;
-	description = "Пожарить мясо жука (1 кусок)";
+	description = " Roast beetle meat (1 piece) " ;
 };
 
 
-func int pc_herd_wanzenfleischbraten_condition()
+func int pc_herd_bug meat roast_condition()
 {
 	if((PLAYER_MOBSI_PRODUCTION == MOBSI_HERD) && (CampfirePan == FALSE) && (HerdBug == TRUE) && (Npc_HasItems(hero,ItAt_Meatbugflesh) >= 1))
 	{
@@ -688,18 +689,18 @@ func int pc_herd_wanzenfleischbraten_condition()
 	};
 };
 
-func void pc_herd_wanzenfleischbraten_info()
+func void pc_herd_bug meat roast_info()
 {
 	AI_Wait(hero,1);
 	Npc_RemoveInvItems(hero,ItAt_Meatbugflesh,1);
-	CreateInvItems(hero,itat_meatbugflesh_gebraten,1);
+	CreateInvItems(hero,itat_meatbugflesh_fried, 1 );
 	RankPoints = RankPoints + 1;
-	AI_PrintClr("Готово!",83,152,48);
+	AI_PrintClr( " Done! " , 83 , 152 , 48 );
 	//B_Say(self,self,"$ITEMREADY");
 };
 
 
-instance PC_HERD_WANZENFLEISCHBRATEN_10X(C_Info)
+instance PC_HERD_BUG MEAT ROAST_10X (C_Info)
 {
 	npc = PC_Hero;
 	nr = 1;
@@ -707,11 +708,11 @@ instance PC_HERD_WANZENFLEISCHBRATEN_10X(C_Info)
 	information = pc_herd_wanzenfleischbraten10x_info;
 	permanent = 1;
 	important = 0;
-	description = "Пожарить мясо жука (10 кусков)";
+	description = " Roast Beetle Meat (10 pieces) " ;
 };
 
 
-func int pc_herd_wanzenfleischbraten10x_condition()
+func int pc_herd_bug meat roast10x_condition()
 {
 	if((PLAYER_MOBSI_PRODUCTION == MOBSI_HERD) && (CampfirePan == FALSE) && (HerdBug == TRUE) && (Npc_HasItems(hero,ItAt_Meatbugflesh) >= 10))
 	{
@@ -719,28 +720,28 @@ func int pc_herd_wanzenfleischbraten10x_condition()
 	};
 };
 
-func void pc_herd_wanzenfleischbraten10x_info()
+func void pc_herd_bug meat roast10x_info()
 {
 	AI_Wait(hero,1);
 	Npc_RemoveInvItems(hero,ItAt_Meatbugflesh,10);
-	CreateInvItems(hero,itat_meatbugflesh_gebraten,10);
+	CreateInvItems(hero,itat_meatbugflesh_fried, 10 );
 	RankPoints = RankPoints + 1;
-	AI_PrintClr("Готово!",83,152,48);
+	AI_PrintClr( " Done! " , 83 , 152 , 48 );
 	//B_Say(self,self,"$ITEMREADY");
 };
 
-instance PC_HERD_WANZENFLEISCHBRATEN_ALL(C_Info)
+instance PC_HERD_BUZZEFLEISCHBRATEN_ALL (C_Info)
 {
 	npc = PC_Hero;
 	nr = 1;
-	condition = PC_HERD_WANZENFLEISCHBRATEN_ALL_condition;
-	information = PC_HERD_WANZENFLEISCHBRATEN_ALL_info;
+	condition = PC_HERD_BUG MEAT ROAST_ALL_condition;
+	information = PC_HERD_BUG MEAT ROAST_ALL_info;
 	permanent = 1;
 	important = 0;
-	description = "Пожарить все мясо жука";
+	description = " Fry all beetle meat " ;
 };
 
-func int PC_HERD_WANZENFLEISCHBRATEN_ALL_condition()
+func int PC_STOCK_BUGS MEATROAST_ALL_condition()
 {
 	if((PLAYER_MOBSI_PRODUCTION == MOBSI_HERD) && (CampfirePan == FALSE) && (HerdBug == TRUE) && (Npc_HasItems(hero,ItAt_Meatbugflesh) >= 1))
 	{
@@ -748,20 +749,20 @@ func int PC_HERD_WANZENFLEISCHBRATEN_ALL_condition()
 	};
 };
 
-func void PC_HERD_WANZENFLEISCHBRATEN_ALL_info()
+func void PC_STOCK_BUGS MEATROAST_ALL_info()
 {
 	var int allbug;
 
 	AI_Wait(hero,1);
 	allbug = Npc_HasItems(hero,ItAt_Meatbugflesh);
 	Npc_RemoveInvItems(hero,ItAt_Meatbugflesh,allbug);
-	CreateInvItems(hero,itat_meatbugflesh_gebraten,allbug);
+	CreateInvItems(hero,itat_meatbugflesh_fried,allbug);
 	RankPoints = RankPoints + 1;
-	AI_PrintClr("Готово!",83,152,48);
+	AI_PrintClr( " Done! " , 83 , 152 , 48 );
 	//B_Say(self,self,"$ITEMREADY");
 };
 
-//----------------------------------------Компоты---------------------------------------
+// ---------------------------------------- Compotes------- --------------------------------
 
 func void kessel_s1()
 {
@@ -774,7 +775,7 @@ func void kessel_s1()
 			Wld_PlayEffect("DIALOGSCOPE_FX",hero,hero,0,0,0,FALSE);
 		};
 
-		self.aivar[AIV_INVINCIBLE] = TRUE;
+		self.aivar[ AIV_INVINCIBLE ] = TRUE ;
 		PLAYER_MOBSI_PRODUCTION = MOBSI_KESSEL;
 		AI_ProcessInfos(her);
 	};
@@ -793,7 +794,7 @@ instance PC_KESSEL_PEACH(C_Info)
 	information = PC_KESSEL_PEACH_info;
 	permanent = 1;
 	important = 0;
-	description = "Варить компоты";
+	description = " Cook compotes " ;
 };
 
 func int PC_KESSEL_PEACH_condition()
@@ -811,19 +812,19 @@ func void B_Kessel_Peach()
 
 	if((Rezept_Compote_01 == TRUE) && (Npc_HasItems(hero,ItPl_Planeberry) >= 100) && (Npc_HasItems(hero,ItPl_Health_Herb_01) >= 5))
 	{
-		Info_AddChoice(PC_KESSEL_PEACH,"Компот из диких ягод x 5 (100 диких ягод, 5 лечебных трав)",PC_KESSEL_PEACH_compote_01_X5);
+		Info_AddChoice( PC_KESSEL_PEACH , " Wildberry compote x 5 (100 wild berries, 5 medicinal herbs) " ,PC_KESSEL_PEACH_compote_01_X5);
 	};
 	if((Rezept_Compote_01 == TRUE) && (Npc_HasItems(hero,ItPl_Planeberry) >= 20) && (Npc_HasItems(hero,ItPl_Health_Herb_01) >= 1))
 	{
-		Info_AddChoice(PC_KESSEL_PEACH,"Компот из диких ягод (20 диких ягод, лечебная трава)",PC_KESSEL_PEACH_compote_01);
+		Info_AddChoice( PC_KESSEL_PEACH , " Wild Berry Compote (20 Wild Berries, Medicinal Herb) " ,PC_KESSEL_PEACH_compote_01);
 	};
 	if((Rezept_Compote_02 == TRUE) && (Npc_HasItems(hero,ItPl_Forestberry) >= 150) && (Npc_HasItems(hero,ItPl_Health_Herb_02) >= 5))
 	{
-		Info_AddChoice(PC_KESSEL_PEACH,"Компот из лесных ягод  x 5(150 лесных ягод, 5 лечебных растений)",PC_KESSEL_PEACH_compote_00_X5);
+		Info_AddChoice( PC_KESSEL_PEACH , " Wild berry compote x 5(150 wild berries, 5 medicinal plants) " ,PC_KESSEL_PEACH_compote_00_X5);
 	};
 	if((Rezept_Compote_02 == TRUE) && (Npc_HasItems(hero,ItPl_Forestberry) >= 30) && (Npc_HasItems(hero,ItPl_Health_Herb_02) >= 1))
 	{
-		Info_AddChoice(PC_KESSEL_PEACH,"Компот из лесных ягод (30 лесных ягод, лечебное растение)",PC_KESSEL_PEACH_compote_00);
+		Info_AddChoice( PC_KESSEL_PEACH , " Wild Berries Compote (30 Wild Berries, Medicinal Plant) " , PC_KESSEL_PEACH_compote_00);
 	};
 };
 
@@ -839,7 +840,7 @@ func void PC_KESSEL_PEACH_compote_00()
 	Npc_RemoveInvItems(hero,ItPl_Forestberry,30);
 	Npc_RemoveInvItems(hero,ItPl_Health_Herb_02,1);
 	CreateInvItems(hero,itfo_compote_00,1);
-	AI_PrintClr("Готово!",83,152,48);
+	AI_PrintClr( " Done! " , 83 , 152 , 48 );
 	//B_Say(self,self,"$ITEMREADY");
 	B_Kessel_Peach();
 };
@@ -851,7 +852,7 @@ func void PC_KESSEL_PEACH_compote_00_X5()
 	Npc_RemoveInvItems(hero,ItPl_Forestberry,150);
 	Npc_RemoveInvItems(hero,ItPl_Health_Herb_02,5);
 	CreateInvItems(hero,itfo_compote_00,5);
-	AI_PrintClr("Готово!",83,152,48);
+	AI_PrintClr( " Done! " , 83 , 152 , 48 );
 	//B_Say(self,self,"$ITEMREADY");
 	B_Kessel_Peach();
 };
@@ -863,7 +864,7 @@ func void PC_KESSEL_PEACH_compote_01()
 	Npc_RemoveInvItems(hero,ItPl_Planeberry,20);
 	Npc_RemoveInvItems(hero,ItPl_Health_Herb_01,1);
 	CreateInvItems(hero,itfo_compote_01,1);
-	AI_PrintClr("Готово!",83,152,48);
+	AI_PrintClr( " Done! " , 83 , 152 , 48 );
 	//B_Say(self,self,"$ITEMREADY");
 	B_Kessel_Peach();
 };
@@ -875,28 +876,28 @@ func void PC_KESSEL_PEACH_compote_01_X5()
 	Npc_RemoveInvItems(hero,ItPl_Planeberry,100);
 	Npc_RemoveInvItems(hero,ItPl_Health_Herb_01,5);
 	CreateInvItems(hero,itfo_compote_01,5);
-	AI_PrintClr("Готово!",83,152,48);
+	AI_PrintClr( " Done! " , 83 , 152 , 48 );
 	//B_Say(self,self,"$ITEMREADY");
 	B_Kessel_Peach();
 };
 
-func void pc_kessel_fischsuppe_back()
+func void pc_kettle_fishsoup_back()
 {
-	Info_ClearChoices(pc_kessel_fischsuppe);
+	Info_ClearChoices(pc_kettle_fishsoup);
 };
 
-instance PC_KESSEL_FISCHSUPPE(C_Info)
+instance PC_KESSEL_FISH SOUP (C_Info)
 {
 	npc = PC_Hero;
 	nr = 1;
-	condition = pc_kessel_fischsuppe_condition;
-	information = pc_kessel_fischsuppe_info;
+	condition = pc_kettle_fishsoup_condition;
+	information = pc_kettle_fishsoup_info;
 	permanent = 1;
 	important = 0;
-	description = "Варить супы";
+	description = " Cook soups " ;
 };
 
-func int pc_kessel_fischsuppe_condition()
+func int pc_kettle_fishsoup_condition()
 {
 	if(PLAYER_MOBSI_PRODUCTION == MOBSI_KESSEL)
 	{
@@ -906,74 +907,74 @@ func int pc_kessel_fischsuppe_condition()
 
 func void B_Kessel_Supp()
 {
-	Info_ClearChoices(pc_kessel_fischsuppe);
-	Info_AddChoice(pc_kessel_fischsuppe,Dialog_Back,pc_kessel_fischsuppe_back);
+	Info_ClearChoices(pc_kettle_fishsoup);
+	Info_AddChoice(pc_kettle_fishsoup,Dialog_Back,pc_kettle_fishsoup_back);
 
 
 	if((Edda_Soup_00 == TRUE) && (Npc_HasItems(hero,ItPl_Beet) >= 1))
 	{
-		Info_AddChoice(pc_kessel_fischsuppe,"Использовать всю репу для супа",pc_kessel_fischsuppe_Beet_all);
+		Info_AddChoice(pc_kessel_fischsuppe, " Use all turnips for soup " ,pc_kessel_fischsuppe_Beet_all);
 	};
 	if((Edda_Soup_00 == TRUE) && (Npc_HasItems(hero,ItPl_Beet) >= 1))
 	{
-		Info_AddChoice(pc_kessel_fischsuppe,"Суп из репы (Требуется: 1 репа)",pc_kessel_fischsuppe_Beet);
+		Info_AddChoice(pc_kessel_fischsuppe, " Turnip Soup (Requires: 1 Turnip) " ,pc_kessel_fischsuppe_Beet);
 	};
 	if((Edda_Soup_01 == TRUE) && (Npc_HasItems(hero,ItFo_Fish) >= 1))
 	{
-		Info_AddChoice(pc_kessel_fischsuppe,"Использовать всю рыбу для супа",pc_kessel_fischsuppe_fish_all);
+		Info_AddChoice(pc_kessel_fischsuppe, " Use all fish for soup " ,pc_kessel_fischsuppe_fish_all);
 	};
 	if((Edda_Soup_01 == TRUE) && (Npc_HasItems(hero,ItFo_Fish) >= 1))
 	{
-		Info_AddChoice(pc_kessel_fischsuppe,"Рыбный суп (Требуется: 1 рыба)",pc_kessel_fischsuppe_fish);
+		Info_AddChoice(pc_kessel_fischsuppe, " Fish Soup (Requires: 1 Fish) " ,pc_kessel_fischsuppe_fish);
 	};
 	if((Edda_Soup_02 == TRUE) && (Npc_HasItems(hero,itfoschildkroeteraw) >= 1))
 	{
-		Info_AddChoice(pc_kessel_fischsuppe,"Использовать все мясо черепахи для супа",pc_kessel_shildkroetesoup_all);
+		Info_AddChoice(pc_kessel_fischsuppe, " Use All Turtle Meat for Soup " ,pc_kessel_shildkroetesoup_all);
 	};
 	if((Edda_Soup_02 == TRUE) && (Npc_HasItems(hero,itfoschildkroeteraw) >= 1))
 	{
-		Info_AddChoice(pc_kessel_fischsuppe,"Черепаший суп (Требуется: 1 кусок мяса черепахи)",pc_kessel_shildkroetesoup);
+		Info_AddChoice(pc_kessel_fischsuppe, " Turtle Soup (Requires: 1 Piece of Turtle Meat) " ,pc_kessel_shildkroetesoup);
 	};
 	if((Edda_Soup_03 == TRUE) && (Npc_HasItems(hero,ItPl_Mushroom_02) >= 1))
 	{
-		Info_AddChoice(pc_kessel_fischsuppe,"Использовать все мясные грибы для супа",pc_kessel_pilzsuppe_all);
+		Info_AddChoice(pc_kessel_fischsuppe, " Use all meat mushrooms for soup " ,pc_kessel_pilzsuppe_all);
 	};
 	if((Edda_Soup_03 == TRUE) && (Npc_HasItems(hero,ItPl_Mushroom_02) >= 1))
 	{
-		Info_AddChoice(pc_kessel_fischsuppe,"Грибной суп (Требуется: 1 мясной гриб)",pc_kessel_pilzsuppe);
+		Info_AddChoice(pc_kessel_fischsuppe, " Mushroom Soup (Requires: 1 meat mushroom) " ,pc_kessel_pilzsuppe);
 	};
 	if((Edda_Soup_04 == TRUE) && (Npc_HasItems(hero,ItFoMuttonRaw) >= 1))
 	{
-		Info_AddChoice(pc_kessel_fischsuppe,"Использовать все мясо для супа",pc_kessel_meet_all);
+		Info_AddChoice(pc_kessel_fischsuppe, " Use all meat for soup " ,pc_kessel_meet_all);
 	};
 	if((Edda_Soup_04 == TRUE) && (Npc_HasItems(hero,ItFoMuttonRaw) >= 1))
 	{
-		Info_AddChoice(pc_kessel_fischsuppe,"Мясной суп (Требуется: 1 кусок мяса)",pc_kessel_meet);
+		Info_AddChoice(pc_kessel_fischsuppe, " Meat Soup (Requires: 1 Piece of Meat) " ,pc_kessel_meet);
 	};
 };
 
-func void pc_kessel_fischsuppe_info()
+func void pc_kettle_fishsoup_info()
 {
 	B_Kessel_Supp();
 };
 
-func void pc_kessel_fischsuppe_Beet()
+func void pc_kettle_fishsoup_beet()
 {
 	AI_Wait(hero,1);
 	RankPoints = RankPoints + 1;
 	Npc_RemoveInvItems(hero,ItPl_Beet,1);
-	CreateInvItems(hero,ItFo_BeetSoup,1);
-	AI_PrintClr("Готово!",83,152,48);
+	CreateInvItems(hero, ItFo_BeetSoup, 1 );
+	AI_PrintClr( " Done! " , 83 , 152 , 48 );
 	B_Kessel_Supp();
 };
 
-func void pc_kessel_fischsuppe_fish()
+func void pc_kettle_fishsoup_fish()
 {
 	AI_Wait(hero,1);
 	RankPoints = RankPoints + 1;
 	Npc_RemoveInvItems(hero,ItFo_Fish,1);
 	CreateInvItems(hero,ItFo_FishSoup,1);
-	AI_PrintClr("Готово!",83,152,48);
+	AI_PrintClr( " Done! " , 83 , 152 , 48 );
 	//B_Say(self,self,"$ITEMREADY");
 	B_Kessel_Supp();
 };
@@ -983,8 +984,8 @@ func void pc_kessel_meet()
 	AI_Wait(hero,1);
 	RankPoints = RankPoints + 1;
 	Npc_RemoveInvItems(hero,ItFoMuttonRaw,1);
-	CreateInvItems(hero,ItFo_MeetSoup,1);
-	AI_PrintClr("Готово!",83,152,48);
+	CreateInvItems(hero, ItFo_MeetSoup, 1 );
+	AI_PrintClr( " Done! " , 83 , 152 , 48 );
 	//B_Say(self,self,"$ITEMREADY");
 	B_Kessel_Supp();
 };
@@ -994,8 +995,8 @@ func void pc_kessel_shildkroetesoup()
 	AI_Wait(hero,1);
 	RankPoints = RankPoints + 1;
 	Npc_RemoveInvItems(hero,itfoschildkroeteraw,1);
-	CreateInvItems(hero,itfo_schildkroetesoup,1);
-	AI_PrintClr("Готово!",83,152,48);
+	CreateInvItems(hero,itfo_schildkroetesoup, 1 );
+	AI_PrintClr( " Done! " , 83 , 152 , 48 );
 	//B_Say(self,self,"$ITEMREADY");
 	B_Kessel_Supp();
 };
@@ -1006,7 +1007,7 @@ func void pc_kessel_pilzsuppe()
 	RankPoints = RankPoints + 1;
 	Npc_RemoveInvItems(hero,ItPl_Mushroom_02,1);
 	CreateInvItems(hero,itfo_pilzsuppe,1);
-	AI_PrintClr("Готово!",83,152,48);
+	AI_PrintClr( " Done! " , 83 , 152 , 48 );
 	//B_Say(self,self,"$ITEMREADY");
 	B_Kessel_Supp();
 };
@@ -1035,16 +1036,16 @@ func void pc_kessel_meet_all()
 	else if(CountMeet >= 5)
 	{
 		concatText = ConcatStrings("Сварено ",IntToString(CountMeet));
-		concatText = ConcatStrings(concatText," мясных супов!");
+		concatText = ConcatStrings(concatText, " meat soups! " );
 	};
 
 	AI_PrintClr(concatText,83,152,48);
 	B_Kessel_Supp();
 };
 
-func void pc_kessel_fischsuppe_Beet_all()
+func void pc_kettle_fishsoup_beet_all()
 {
-	var int CountBeet;
+	var int countBeet;
 	var string concatText;
 
 	AI_Wait(hero,1);
@@ -1056,17 +1057,17 @@ func void pc_kessel_fischsuppe_Beet_all()
 	if(CountBeet == 1)
 	{
 		concatText = ConcatStrings("Сварен ",IntToString(CountBeet));
-		concatText = ConcatStrings(concatText," суп из репы!");
+		concatText = ConcatStrings(concatText, " turnip soup! " );
 	}
 	else if((CountBeet > 1) && (CountBeet < 5))
 	{
 		concatText = ConcatStrings("Сварено ",IntToString(CountBeet));
-		concatText = ConcatStrings(concatText," супа из репы!");
+		concatText = ConcatStrings(concatText, " turnip soup! " );
 	}
 	else if(CountBeet >= 5)
 	{
 		concatText = ConcatStrings("Сварено ",IntToString(CountBeet));
-		concatText = ConcatStrings(concatText," супов из репы!");
+		concatText = ConcatStrings(concatText, " turnip soup! " );
 	};
 
 	AI_PrintClr(concatText,83,152,48);
@@ -1087,7 +1088,7 @@ func void pc_kessel_fischsuppe_fish_all()
 	if(CountFish == 1)
 	{
 		concatText = ConcatStrings("Сварен ",IntToString(CountFish));
-		concatText = ConcatStrings(concatText," рыбный суп!");
+		concatText = ConcatStrings(concatText, " fish soup! " );
 	}
 	else if((CountFish > 1) && (CountFish < 5))
 	{
@@ -1097,7 +1098,7 @@ func void pc_kessel_fischsuppe_fish_all()
 	else if(CountFish >= 5)
 	{
 		concatText = ConcatStrings("Сварено ",IntToString(CountFish));
-		concatText = ConcatStrings(concatText," рыбных супов!");
+		concatText = ConcatStrings(concatText, " fish soups! " );
 	};
 
 	AI_PrintClr(concatText,83,152,48);
@@ -1119,17 +1120,17 @@ func void pc_kessel_shildkroetesoup_all()
 	if(CountSchildMeat == 1)
 	{
 		concatText = ConcatStrings("Сварен ",IntToString(CountSchildMeat));
-		concatText = ConcatStrings(concatText," черепаший суп!");
+		concatText = ConcatStrings(concatText, " turtle soup! " );
 	}
 	else if((CountSchildMeat > 1) && (CountSchildMeat < 5))
 	{
 		concatText = ConcatStrings("Сварено ",IntToString(CountSchildMeat));
-		concatText = ConcatStrings(concatText," черепаших супа!");
+		concatText = ConcatStrings(concatText, " черепаших супа! " );
 	}
 	else if(CountSchildMeat >= 5)
 	{
 		concatText = ConcatStrings("Сварено ",IntToString(CountSchildMeat));
-		concatText = ConcatStrings(concatText," черепаших супов!");
+		concatText = ConcatStrings(concatText, " turtle soup! " );
 	};
 
 	AI_PrintClr(concatText,83,152,48);
@@ -1151,7 +1152,7 @@ func void pc_kessel_pilzsuppe_all()
 	if(CountPilz == 1)
 	{
 		concatText = ConcatStrings("Сварен ",IntToString(CountPilz));
-		concatText = ConcatStrings(concatText," грибной суп!");
+		concatText = ConcatStrings(concatText, " mushroom soup! " );
 	}
 	else if((CountPilz > 1) && (CountPilz < 5))
 	{
@@ -1161,7 +1162,7 @@ func void pc_kessel_pilzsuppe_all()
 	else if(CountPilz >= 5)
 	{
 		concatText = ConcatStrings("Сварено ",IntToString(CountPilz));
-		concatText = ConcatStrings(concatText," грибных супов!");
+		concatText = ConcatStrings(concatText, " mushroom soups! " );
 	};
 
 	AI_PrintClr(concatText,83,152,48);
@@ -1182,7 +1183,7 @@ instance PC_KESSEL_SOUP(C_Info)
 	information = PC_KESSEL_SOUP_info;
 	permanent = 1;
 	important = 0;
-	description = "Варить похлебки";
+	description = " Cook stews " ;
 };
 
 func int PC_KESSEL_SOUP_condition()
@@ -1200,27 +1201,27 @@ func void B_Kessel_Soup()
 
 	if((Snaf_Meal_02 == TRUE) && (Npc_HasItems(hero,ItPl_Mushroom_02) >= 250) && (Npc_HasItems(hero,ItPl_Mana_Herb_03) >= 5))
 	{
-		Info_AddChoice(PC_KESSEL_SOUP,"Матерая грибная похлебка х5 (250 мясных грибов, 5 огненных корней)",PC_KESSEL_SOUP_mana_x5);
+		Info_AddChoice( PC_KESSEL_SOUP , " Seasoned Mushroom Stew x5 (250 Meat Mushrooms, 5 Fire Roots) " ,PC_KESSEL_SOUP_mana_x5);
 	};
 	if((Snaf_Meal_02 == TRUE) && (Npc_HasItems(hero,ItPl_Mushroom_02) >= 50) && (Npc_HasItems(hero,ItPl_Mana_Herb_03) >= 1))
 	{
-		Info_AddChoice(PC_KESSEL_SOUP,"Матерая грибная похлебка (50 мясных грибов, огненный корень)",PC_KESSEL_SOUP_mana);
+		Info_AddChoice( PC_KESSEL_SOUP , " Seasoned Mushroom Stew (50 Meat Mushrooms, Fireroot) " ,PC_KESSEL_SOUP_mana);
 	};
 	if((Snaf_Meal_01 == TRUE) && (Npc_HasItems(hero,ItPl_Mushroom_01) >= 250) && (Npc_HasItems(hero,ItPl_Mana_Herb_02) >= 5))
 	{
-		Info_AddChoice(PC_KESSEL_SOUP,"Черная грибная похлебка х5 (250 темных грибов, 5 огненных трав)",PC_KESSEL_SOUP_magic_x5);
+		Info_AddChoice( PC_KESSEL_SOUP , " Black Mushroom Stew x5 (250 Dark Mushrooms, 5 Fire Herbs) " ,PC_KESSEL_SOUP_magic_x5);
 	};
 	if((Snaf_Meal_01 == TRUE) && (Npc_HasItems(hero,ItPl_Mushroom_01) >= 50) && (Npc_HasItems(hero,ItPl_Mana_Herb_02) >= 1))
 	{
-		Info_AddChoice(PC_KESSEL_SOUP,"Черная грибная похлебка (50 темных грибов, огненная трава)",PC_KESSEL_SOUP_magic);
+		Info_AddChoice( PC_KESSEL_SOUP , " Black Mushroom Stew (50 Dark Mushrooms, Fire Herb) " ,PC_KESSEL_SOUP_magic);
 	};
 	if((Snaf_Meal_03 == TRUE) && (Npc_HasItems(hero,ItPl_Mushroom_01) >= 10) && (Npc_HasItems(hero,ItAt_Meatbugflesh) >= 5))
 	{
-		Info_AddChoice(PC_KESSEL_SOUP,"Мясное рагу х5 (10 темных грибов, 5 кусков мяса жука)",PC_KESSEL_SOUP_fleischwanzenragout_x5);
+		Info_AddChoice( PC_KESSEL_SOUP , " Meat Stew x5 (10 Dark Mushrooms, 5 Beetle Meat) " ,PC_KESSEL_SOUP_fleischwanzenragout_x5);
 	};
 	if((Snaf_Meal_03 == TRUE) && (Npc_HasItems(hero,ItPl_Mushroom_01) >= 2) && (Npc_HasItems(hero,ItAt_Meatbugflesh) >= 1))
 	{
-		Info_AddChoice(PC_KESSEL_SOUP,"Мясное рагу (2 темных гриба, кусок мяса жука)",PC_KESSEL_SOUP_fleischwanzenragout);
+		Info_AddChoice( PC_KESSEL_SOUP , " Meat Stew (2 Dark Mushrooms, Piece of Beetle Meat) " ,PC_KESSEL_SOUP_fleischwanzenragout);
 	};
 };
 
@@ -1236,7 +1237,7 @@ func void PC_KESSEL_SOUP_mana()
 	Npc_RemoveInvItems(hero,ItPl_Mushroom_02,50);
 	Npc_RemoveInvItems(hero,ItPl_Mana_Herb_03,1);
 	CreateInvItems(hero,itfo_pottage_mushroom,1);
-	AI_PrintClr("Готово!",83,152,48);
+	AI_PrintClr( " Done! " , 83 , 152 , 48 );
 	//B_Say(self,self,"$ITEMREADY");
 	B_Kessel_Soup();
 };
@@ -1248,7 +1249,7 @@ func void PC_KESSEL_SOUP_magic()
 	Npc_RemoveInvItems(hero,ItPl_Mushroom_01,50);
 	Npc_RemoveInvItems(hero,ItPl_Mana_Herb_02,1);
 	CreateInvItems(hero,itfo_pottage_mushroom_black,1);
-	AI_PrintClr("Готово!",83,152,48);
+	AI_PrintClr( " Done! " , 83 , 152 , 48 );
 	//B_Say(self,self,"$ITEMREADY");
 	B_Kessel_Soup();
 };
@@ -1261,7 +1262,7 @@ func void PC_KESSEL_SOUP_fleischwanzenragout()
 	Npc_RemoveInvItems(hero,ItPl_Mushroom_01,2);
 	Npc_RemoveInvItems(hero,ItAt_Meatbugflesh,1);
 	CreateInvItems(hero,itfo_fleischwanzenragout,1);
-	AI_PrintClr("Готово!",83,152,48);
+	AI_PrintClr( " Done! " , 83 , 152 , 48 );
 	//B_Say(self,self,"$ITEMREADY");
 	B_Kessel_Soup();
 };
@@ -1273,7 +1274,7 @@ func void PC_KESSEL_SOUP_mana_x5()
 	Npc_RemoveInvItems(hero,ItPl_Mushroom_02,250);
 	Npc_RemoveInvItems(hero,ItPl_Mana_Herb_03,5);
 	CreateInvItems(hero,itfo_pottage_mushroom,5);
-	AI_PrintClr("Готово!",83,152,48);
+	AI_PrintClr( " Done! " , 83 , 152 , 48 );
 	//B_Say(self,self,"$ITEMREADY");
 	B_Kessel_Soup();
 };
@@ -1285,7 +1286,7 @@ func void PC_KESSEL_SOUP_magic_x5()
 	Npc_RemoveInvItems(hero,ItPl_Mushroom_01,250);
 	Npc_RemoveInvItems(hero,ItPl_Mana_Herb_02,5);
 	CreateInvItems(hero,itfo_pottage_mushroom_black,5);
-	AI_PrintClr("Готово!",83,152,48);
+	AI_PrintClr( " Done! " , 83 , 152 , 48 );
 	//B_Say(self,self,"$ITEMREADY");
 	B_Kessel_Soup();
 };
@@ -1298,7 +1299,7 @@ func void PC_KESSEL_SOUP_fleischwanzenragout_x5()
 	Npc_RemoveInvItems(hero,ItPl_Mushroom_01,10);
 	Npc_RemoveInvItems(hero,ItAt_Meatbugflesh,5);
 	CreateInvItems(hero,itfo_fleischwanzenragout,5);
-	AI_PrintClr("Готово!",83,152,48);
+	AI_PrintClr( " Done! " , 83 , 152 , 48 );
 	//B_Say(self,self,"$ITEMREADY");
 	B_Kessel_Soup();
 };
@@ -1328,7 +1329,7 @@ func void pc_kessel_exit_info()
 };
 
 
-//-------------------костер--------------------------------------
+// -------------------bonfire---------------------- ----------
 
 func void herw_s1()
 {
@@ -1342,7 +1343,7 @@ func void herw_s1()
 			Wld_PlayEffect("DIALOGSCOPE_FX",hero,hero,0,0,0,FALSE);
 		};
 
-		self.aivar[AIV_INVINCIBLE] = TRUE;
+		self.aivar[ AIV_INVINCIBLE ] = TRUE ;
 		PLAYER_MOBSI_PRODUCTION = MOBSI_HERD;
 		CampfirePan = TRUE;
 		AI_ProcessInfos(her);
@@ -1384,7 +1385,7 @@ instance PC_Herw_Meat(C_Info)
 	condition = PC_Herw_Meat_Condition;
 	information = PC_Herw_Meat_Info;
 	permanent = TRUE;
-	description = "Пожарить мясо";
+	description = " Fry the meat " ;
 };
 
 func int PC_Herw_Meat_Condition()
@@ -1406,7 +1407,7 @@ instance PC_Herw_Fish(C_Info)
 	condition = PC_Herw_Fish_Condition;
 	information = PC_Herw_Fish_Info;
 	permanent = TRUE;
-	description = "Пожарить рыбу";
+	description = " Fry the fish " ;
 };
 
 func int PC_Herw_Fish_Condition()
@@ -1428,7 +1429,7 @@ instance PC_Herw_Bug(C_Info)
 	condition = PC_Herw_Bug_Condition;
 	information = PC_Herw_Bug_Info;
 	permanent = TRUE;
-	description = "Пожарить мясо жука";
+	description = " Fry beetle meat " ;
 };
 
 func int PC_Herw_Bug_Condition()
@@ -1513,7 +1514,7 @@ func void PC_Herw_Bug_BACK_Info()
 	HerwBug = FALSE;
 };
 
-instance PC_HERW_FISCHBRATEN(C_Info)
+instance PC_HERW_FISCHBRATEN (C_Info)
 {
 	npc = PC_Hero;
 	nr = 1;
@@ -1521,7 +1522,7 @@ instance PC_HERW_FISCHBRATEN(C_Info)
 	information = pc_herw_fischbraten_info;
 	permanent = 1;
 	important = 0;
-	description = "Пожарить рыбу (1 порцию)";
+	description = " Fry fish (1 serving) " ;
 };
 
 func int pc_herw_fischbraten_condition()
@@ -1538,11 +1539,11 @@ func void pc_herw_fischbraten_info()
 	Npc_RemoveInvItems(hero,ItFo_Fish,1);
 	CreateInvItems(hero,itfo_fish_gebraten,1);
 	RankPoints = RankPoints + 1;
-	AI_PrintClr("Готово!",83,152,48);
+	AI_PrintClr( " Done! " , 83 , 152 , 48 );
 	//B_Say(self,self,"$ITEMREADY");
 };
 
-instance PC_HERW_FISCHBRATEN_10X(C_Info)
+instance PC_HERW_FISCHBRATEN_10X (C_Info)
 {
 	npc = PC_Hero;
 	nr = 1;
@@ -1550,7 +1551,7 @@ instance PC_HERW_FISCHBRATEN_10X(C_Info)
 	information = pc_herw_fischbraten10x_info;
 	permanent = 1;
 	important = 0;
-	description = "Пожарить рыбу (5 порций)";
+	description = " Fry fish (5 servings) " ;
 };
 
 func int pc_herw_fischbraten10x_condition()
@@ -1567,11 +1568,11 @@ func void pc_herw_fischbraten10x_info()
 	Npc_RemoveInvItems(hero,ItFo_Fish,5);
 	CreateInvItems(hero,itfo_fish_gebraten,5);
 	RankPoints = RankPoints + 1;
-	AI_PrintClr("Готово!",83,152,48);
+	AI_PrintClr( " Done! " , 83 , 152 , 48 );
 	//B_Say(self,self,"$ITEMREADY");
 };
 
-instance PC_HERW_FLEISCHBRATEN(C_Info)
+instance PC_HERW_FLEISCHROTEN (C_Info)
 {
 	npc = PC_Hero;
 	nr = 1;
@@ -1579,7 +1580,7 @@ instance PC_HERW_FLEISCHBRATEN(C_Info)
 	information = pc_herw_fleischbraten_info;
 	permanent = 1;
 	important = 0;
-	description = "Пожарить мясо (1 кусок)";
+	description = " Fry meat (1 piece) " ;
 };
 
 func int pc_herw_fleischbraten_condition()
@@ -1596,11 +1597,11 @@ func void pc_herw_fleischbraten_info()
 	Npc_RemoveInvItems(hero,ItFoMuttonRaw,1);
 	CreateInvItems(hero,ItFoMutton,1);
 	RankPoints = RankPoints + 1;
-	AI_PrintClr("Готово!",83,152,48);
+	AI_PrintClr( " Done! " , 83 , 152 , 48 );
 	//B_Say(self,self,"$ITEMREADY");
 };
 
-instance PC_HERW_FLEISCHBRATEN_10X(C_Info)
+instance PC_HERW_FLEISCHBRATEN_10X (C_Info)
 {
 	npc = PC_Hero;
 	nr = 1;
@@ -1608,7 +1609,7 @@ instance PC_HERW_FLEISCHBRATEN_10X(C_Info)
 	information = pc_herw_fleischbraten10x_info;
 	permanent = 1;
 	important = 0;
-	description = "Пожарить мясо (5 кусков)";
+	description = " Fry meat (5 pieces) " ;
 };
 
 func int pc_herw_fleischbraten10x_condition()
@@ -1625,11 +1626,11 @@ func void pc_herw_fleischbraten10x_info()
 	RankPoints = RankPoints + 1;
 	Npc_RemoveInvItems(hero,ItFoMuttonRaw,5);
 	CreateInvItems(hero,ItFoMutton,5);
-	AI_PrintClr("Готово!",83,152,48);
+	AI_PrintClr( " Done! " , 83 , 152 , 48 );
 	//B_Say(self,self,"$ITEMREADY");
 };
 
-instance PC_HERW_WANZENFLEISCHBRATEN(C_Info)
+instance PC_HERW_BUG MEAT ROAST (C_Info)
 {
 	npc = PC_Hero;
 	nr = 1;
@@ -1637,10 +1638,10 @@ instance PC_HERW_WANZENFLEISCHBRATEN(C_Info)
 	information = pc_herw_wanzenfleischbraten_info;
 	permanent = 1;
 	important = 0;
-	description = "Пожарить мясо жука (1 кусок)";
+	description = " Roast beetle meat (1 piece) " ;
 };
 
-func int pc_herw_wanzenfleischbraten_condition()
+func int pc_herw_bug meat roast_condition()
 {
 	if((PLAYER_MOBSI_PRODUCTION == MOBSI_HERD) && (CampfirePan == TRUE) && (HerwBug == TRUE) && (Npc_HasItems(hero,ItAt_Meatbugflesh) >= 1))
 	{
@@ -1648,17 +1649,17 @@ func int pc_herw_wanzenfleischbraten_condition()
 	};
 };
 
-func void pc_herw_wanzenfleischbraten_info()
+func void pc_herw_bug meat roast_info()
 {
 	AI_Wait(hero,1);
 	Npc_RemoveInvItems(hero,ItAt_Meatbugflesh,1);
-	CreateInvItems(hero,itat_meatbugflesh_gebraten,1);
+	CreateInvItems(hero,itat_meatbugflesh_fried, 1 );
 	RankPoints = RankPoints + 1;
-	AI_PrintClr("Готово!",83,152,48);
+	AI_PrintClr( " Done! " , 83 , 152 , 48 );
 	//B_Say(self,self,"$ITEMREADY");
 };
 
-instance PC_HERW_WANZENFLEISCHBRATEN_10X(C_Info)
+instance PC_HERW_BUG MEAT ROAST_10X (C_Info)
 {
 	npc = PC_Hero;
 	nr = 1;
@@ -1666,7 +1667,7 @@ instance PC_HERW_WANZENFLEISCHBRATEN_10X(C_Info)
 	information = pc_herw_wanzenfleischbraten10x_info;
 	permanent = 1;
 	important = 0;
-	description = "Пожарить мясо жука (5 кусков)";
+	description = " Roast beetle meat (5 pieces) " ;
 };
 
 func int pc_herw_wanzenfleischbraten10x_condition()
@@ -1681,9 +1682,9 @@ func void pc_herw_wanzenfleischbraten10x_info()
 {
 	AI_Wait(hero,1);
 	Npc_RemoveInvItems(hero,ItAt_Meatbugflesh,5);
-	CreateInvItems(hero,itat_meatbugflesh_gebraten,5);
+	CreateInvItems(hero,itat_meatbugflesh_fried, 5 );
 	RankPoints = RankPoints + 1;
-	AI_PrintClr("Готово!",83,152,48);
+	AI_PrintClr( " Done! " , 83 , 152 , 48 );
 	//B_Say(self,self,"$ITEMREADY");
 };
 
@@ -1694,7 +1695,7 @@ instance PC_Herw_CampfireRest(C_Info)
 	condition = PC_Herw_CampfireRest_Condition;
 	information = PC_Herw_CampfireRest_Info;
 	permanent = TRUE;
-	description = "Отдохнуть...";
+	description = " Rest... " ;
 };
 
 func int PC_Herw_CampfireRest_Condition()
@@ -1776,10 +1777,10 @@ func void pc_herw_CampfireRest_1H_info()
 
 	ATR_STAMINA[0] = ATR_STAMINA_MAX[0] * 10;
 
-	RestPool = RestPool - 1;
+	RestPool = RestPool -  1 ;
 	bHour = Wld_GetTimeHour();
 	bMinute = Wld_GetTimeMin();
-	bHour += 1;
+	bHour +=  1 ;
 	Wld_SetTime(bHour,bMinute);
 	CampfireRest = FALSE;
 };
@@ -1822,7 +1823,7 @@ func void pc_herw_CampfireRest_2H_info()
 		}		
 		else
 		{
-			Hero_Hunger = FALSE;
+			Hero_Hunger = FALSE ;
 		};	
 		if(Hero_Thirst > 1)
 		{
@@ -1843,10 +1844,10 @@ func void pc_herw_CampfireRest_2H_info()
 
 	ATR_STAMINA[0] = ATR_STAMINA_MAX[0] * 10;
 
-	RestPool = RestPool - 2;
+	RestPool = RestPool -  2 ;
 	bHour = Wld_GetTimeHour();
 	bMinute = Wld_GetTimeMin();
-	bHour += 2;
+	bHour +=  2 ;
 	Wld_SetTime(bHour,bMinute);
 	CampfireRest = FALSE;
 };
@@ -1889,7 +1890,7 @@ func void pc_herw_CampfireRest_3H_info()
 		}		
 		else
 		{
-			Hero_Hunger = FALSE;
+			Hero_Hunger = FALSE ;
 		};	
 		if(Hero_Thirst > 2)
 		{
@@ -1910,10 +1911,10 @@ func void pc_herw_CampfireRest_3H_info()
 
 	ATR_STAMINA[0] = ATR_STAMINA_MAX[0] * 10;
 
-	RestPool = RestPool - 3;
+	RestPool = RestPool -  3 ;
 	bHour = Wld_GetTimeHour();
 	bMinute = Wld_GetTimeMin();
-	bHour += 3;
+	bHour +=  3 ;
 	Wld_SetTime(bHour,bMinute);
 	CampfireRest = FALSE;
 };
