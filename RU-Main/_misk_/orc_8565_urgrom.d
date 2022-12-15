@@ -1,9 +1,10 @@
 
+
 instance ORC_8565_URGROM(C_Npc)
 {
-	name[0] = "Ур-Гром";
+	name[ 0 ] = " Ur-Thunder " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCELITE;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCELITE ;
 	voice = 18;
 	id = 8565;
 	level = 50;
@@ -28,7 +29,7 @@ instance ORC_8565_URGROM(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_MONSTER_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
 	EquipItem(self,itmw_2h_orcsword_04);
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyElit4",DEFAULT,DEFAULT,"Orc_HeadWarrior",6,DEFAULT,-1);
