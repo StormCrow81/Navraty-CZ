@@ -1,12 +1,13 @@
 
+
 instance ORC_8519_WARRIOR(C_Npc)
 {
-	name[0] = "Орк-разведчик";
+	name[ 0 ] = " Orc Scout " ;
 	guild = GIL_ORC;
 	id = 8519;
 	voice = 18;
 	level = 10;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBOWMEN;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBOWMEN ;
 	attribute[ATR_STRENGTH] = 100;
 	attribute[ATR_DEXTERITY] = 150;
 	attribute[ATR_HITPOINTS_MAX] = 500;
@@ -24,13 +25,13 @@ instance ORC_8519_WARRIOR(C_Npc)
 	HitChance[NPC_TALENT_BOW] = 60;
 	HitChance[NPC_TALENT_CROSSBOW] = 60;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
 	damagetype = DAM_EDGE;
 	fight_tactic = FAI_ORC;
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyWaScout",DEFAULT,DEFAULT,"Orc_HeadWarrior",8,DEFAULT,-1);
 	EquipItem(self,ItMw_2H_OrcAxe_03);
