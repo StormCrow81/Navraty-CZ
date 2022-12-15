@@ -1,10 +1,11 @@
 
+
 instance ORC_6666_XASH_GOR(C_Npc)
 {
-	name[0] = "Хаш-Гор";
+	name[ 0 ] = " Jade-Gor " ;
 	guild = GIL_UNDEADORC;
-	aivar[AIV_MM_REAL_ID] = ID_UNDEADORCSHAMAN;
-	aivar[90] = TRUE;
+	aivar[ AIV_MM_REAL_ID ] = ID_UNDEADORCSHAMAN ;
+	aivar[ 90 ] = TRUE ;
 	aivar[94] = NPC_EPIC;
 	level = 200;
 	id = 6666;
@@ -30,13 +31,13 @@ instance ORC_6666_XASH_GOR(C_Npc)
 	aivar[AIV_MagicUser] = MAGIC_ALWAYS;
 	senses_range = PERC_DIST_MONSTER_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = TRUE ;
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"UOS_Body",1,1,"",DEFAULT,DEFAULT,-1);
 	effect = "SPELLFX_MAGIC_SMOKE";
 	EquipItem(self,ItMw_OrcStaff_Undead);
-	CreateInvItems(self,ItRu_OrcTeleport,1);
+	CreateInvItems(self,ItRu_OrcTeleport, 1 );
 	CreateInvItems(self,ItMw_1h_TributeDagger,1);
 	CreateInvItems(self,ItPo_ElixirSHadow,1);
 	CreateInvItems(self,ItAm_HashGor,1);
@@ -46,9 +47,9 @@ instance ORC_6666_XASH_GOR(C_Npc)
 
 instance Orc_6667_RitualShaman(C_Npc)
 {
-	name[0] = "Шаман-нежить";
+	name[ 0 ] = " Undead Shaman " ;
 	guild = GIL_UNDEADORC;
-	aivar[AIV_MM_REAL_ID] = ID_UNDEADORCSHAMAN;
+	aivar[ AIV_MM_REAL_ID ] = ID_UNDEADORCSHAMAN ;
 	level = 20;
 	id = 6667;
 	attribute[ATR_STRENGTH] = 1000;
@@ -73,8 +74,8 @@ instance Orc_6667_RitualShaman(C_Npc)
 	aivar[AIV_MagicUser] = MAGIC_ALWAYS;
 	senses_range = PERC_DIST_MONSTER_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = TRUE ;
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"UOS_Body",DEFAULT,DEFAULT,"",DEFAULT,DEFAULT,-1);
 	start_aistate = ZS_MM_Rtn_OrcRitual;
@@ -82,9 +83,9 @@ instance Orc_6667_RitualShaman(C_Npc)
 
 instance Orc_6668_RitualShaman(C_Npc)
 {
-	name[0] = "Шаман-нежить";
+	name[ 0 ] = " Undead Shaman " ;
 	guild = GIL_UNDEADORC;
-	aivar[AIV_MM_REAL_ID] = ID_UNDEADORCSHAMAN;
+	aivar[ AIV_MM_REAL_ID ] = ID_UNDEADORCSHAMAN ;
 	level = 20;
 	id = 6668;
 	attribute[ATR_STRENGTH] = 1000;
@@ -109,8 +110,8 @@ instance Orc_6668_RitualShaman(C_Npc)
 	aivar[AIV_MagicUser] = MAGIC_ALWAYS;
 	senses_range = PERC_DIST_MONSTER_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = TRUE ;
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"UOS_Body",DEFAULT,DEFAULT,"",DEFAULT,DEFAULT,-1);
 	start_aistate = ZS_MM_Rtn_OrcRitual;
@@ -118,9 +119,9 @@ instance Orc_6668_RitualShaman(C_Npc)
 
 instance Orc_6669_RitualShaman(C_Npc)
 {
-	name[0] = "Шаман-нежить";
+	name[ 0 ] = " Undead Shaman " ;
 	guild = GIL_UNDEADORC;
-	aivar[AIV_MM_REAL_ID] = ID_UNDEADORCSHAMAN;
+	aivar[ AIV_MM_REAL_ID ] = ID_UNDEADORCSHAMAN ;
 	level = 20;
 	id = 6669;
 	attribute[ATR_STRENGTH] = 1000;
@@ -145,8 +146,8 @@ instance Orc_6669_RitualShaman(C_Npc)
 	aivar[AIV_MagicUser] = MAGIC_ALWAYS;
 	senses_range = PERC_DIST_MONSTER_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = TRUE ;
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"UOS_Body",DEFAULT,DEFAULT,"",DEFAULT,DEFAULT,-1);
 	start_aistate = ZS_MM_Rtn_OrcRitual;
@@ -154,9 +155,9 @@ instance Orc_6669_RitualShaman(C_Npc)
 
 instance Orc_6670_RitualShaman(C_Npc)
 {
-	name[0] = "Шаман-нежить";
+	name[ 0 ] = " Undead Shaman " ;
 	guild = GIL_UNDEADORC;
-	aivar[AIV_MM_REAL_ID] = ID_UNDEADORCSHAMAN;
+	aivar[ AIV_MM_REAL_ID ] = ID_UNDEADORCSHAMAN ;
 	level = 20;
 	id = 6670;
 	attribute[ATR_STRENGTH] = 1000;
@@ -181,8 +182,8 @@ instance Orc_6670_RitualShaman(C_Npc)
 	aivar[AIV_MagicUser] = MAGIC_ALWAYS;
 	senses_range = PERC_DIST_MONSTER_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = TRUE ;
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"UOS_Body",DEFAULT,DEFAULT,"",DEFAULT,DEFAULT,-1);
 	start_aistate = ZS_MM_Rtn_OrcRitual;
@@ -190,9 +191,9 @@ instance Orc_6670_RitualShaman(C_Npc)
 
 instance Orc_6671_RitualShaman(C_Npc)
 {
-	name[0] = "Шаман-нежить";
+	name[ 0 ] = " Undead Shaman " ;
 	guild = GIL_UNDEADORC;
-	aivar[AIV_MM_REAL_ID] = ID_UNDEADORCSHAMAN;
+	aivar[ AIV_MM_REAL_ID ] = ID_UNDEADORCSHAMAN ;
 	level = 20;
 	id = 6671;
 	attribute[ATR_STRENGTH] = 1000;
@@ -217,8 +218,8 @@ instance Orc_6671_RitualShaman(C_Npc)
 	aivar[AIV_MagicUser] = MAGIC_ALWAYS;
 	senses_range = PERC_DIST_MONSTER_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = TRUE ;
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"UOS_Body",DEFAULT,DEFAULT,"",DEFAULT,DEFAULT,-1);
 	start_aistate = ZS_MM_Rtn_OrcRitual;
@@ -226,9 +227,9 @@ instance Orc_6671_RitualShaman(C_Npc)
 
 instance Orc_6672_RitualShaman(C_Npc)
 {
-	name[0] = "Шаман-нежить";
+	name[ 0 ] = " Undead Shaman " ;
 	guild = GIL_UNDEADORC;
-	aivar[AIV_MM_REAL_ID] = ID_UNDEADORCSHAMAN;
+	aivar[ AIV_MM_REAL_ID ] = ID_UNDEADORCSHAMAN ;
 	level = 20;
 	id = 6672;
 	attribute[ATR_STRENGTH] = 1000;
@@ -253,8 +254,8 @@ instance Orc_6672_RitualShaman(C_Npc)
 	aivar[AIV_MagicUser] = MAGIC_ALWAYS;
 	senses_range = PERC_DIST_MONSTER_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = TRUE ;
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"UOS_Body",DEFAULT,DEFAULT,"",DEFAULT,DEFAULT,-1);
 	start_aistate = ZS_MM_Rtn_OrcRitual;
@@ -262,9 +263,9 @@ instance Orc_6672_RitualShaman(C_Npc)
 
 instance Orc_6673_RitualShaman(C_Npc)
 {
-	name[0] = "Шаман-нежить";
+	name[ 0 ] = " Undead Shaman " ;
 	guild = GIL_UNDEADORC;
-	aivar[AIV_MM_REAL_ID] = ID_UNDEADORCSHAMAN;
+	aivar[ AIV_MM_REAL_ID ] = ID_UNDEADORCSHAMAN ;
 	level = 20;
 	id = 6673;
 	attribute[ATR_STRENGTH] = 1000;
@@ -289,8 +290,8 @@ instance Orc_6673_RitualShaman(C_Npc)
 	aivar[AIV_MagicUser] = MAGIC_ALWAYS;
 	senses_range = PERC_DIST_MONSTER_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = TRUE ;
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"UOS_Body",DEFAULT,DEFAULT,"",DEFAULT,DEFAULT,-1);
 	start_aistate = ZS_MM_Rtn_OrcRitual;
@@ -298,9 +299,9 @@ instance Orc_6673_RitualShaman(C_Npc)
 
 instance Orc_6674_RitualShaman(C_Npc)
 {
-	name[0] = "Шаман-нежить";
+	name[ 0 ] = " Undead Shaman " ;
 	guild = GIL_UNDEADORC;
-	aivar[AIV_MM_REAL_ID] = ID_UNDEADORCSHAMAN;
+	aivar[ AIV_MM_REAL_ID ] = ID_UNDEADORCSHAMAN ;
 	level = 20;
 	id = 6674;
 	attribute[ATR_STRENGTH] = 1000;
@@ -325,8 +326,8 @@ instance Orc_6674_RitualShaman(C_Npc)
 	aivar[AIV_MagicUser] = MAGIC_ALWAYS;
 	senses_range = PERC_DIST_MONSTER_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = TRUE ;
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"UOS_Body",DEFAULT,DEFAULT,"",DEFAULT,DEFAULT,-1);
 	start_aistate = ZS_MM_Rtn_OrcRitual;
@@ -334,9 +335,9 @@ instance Orc_6674_RitualShaman(C_Npc)
 
 instance Orc_6675_RitualShaman(C_Npc)
 {
-	name[0] = "Шаман-нежить";
+	name[ 0 ] = " Undead Shaman " ;
 	guild = GIL_UNDEADORC;
-	aivar[AIV_MM_REAL_ID] = ID_UNDEADORCSHAMAN;
+	aivar[ AIV_MM_REAL_ID ] = ID_UNDEADORCSHAMAN ;
 	level = 20;
 	id = 6675;
 	attribute[ATR_STRENGTH] = 1000;
@@ -361,8 +362,8 @@ instance Orc_6675_RitualShaman(C_Npc)
 	aivar[AIV_MagicUser] = MAGIC_ALWAYS;
 	senses_range = PERC_DIST_MONSTER_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = TRUE ;
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"UOS_Body",DEFAULT,DEFAULT,"",DEFAULT,DEFAULT,-1);
 	start_aistate = ZS_MM_Rtn_OrcRitual;
