@@ -1,4 +1,5 @@
 
+
 instance INFO_TPL_13_EXIT(C_Info)
 {
 	nr = 999;
@@ -26,7 +27,7 @@ instance INFO_TPL_13_EINERVONEUCHWERDEN(C_Info)
 	condition = info_tpl_13_einervoneuchwerden_condition;
 	information = info_tpl_13_einervoneuchwerden_info;
 	permanent = 1;
-	description = "Я хочу стать Стражем, как и ты.";
+	description = " I want to become a Guardian, just like you. " ;
 };
 
 
@@ -40,33 +41,33 @@ func int info_tpl_13_einervoneuchwerden_condition()
 
 func void info_tpl_13_einervoneuchwerden_info()
 {
-	AI_Output(other,self,"Info_Tpl_13_EinerVonEuchWerden_15_00");	//Я хочу стать Стражем, как и ты.
-	AI_Output(self,other,"Info_Tpl_13_EinerVonEuchWerden_13_01");	//А знаешь ли ты, от чего мне пришлось отказаться, прежде чем я смог встать на страже покоя избранных Братства?
-	AI_Output(self,other,"Info_Tpl_13_EinerVonEuchWerden_13_02");	//Не думай, что сможешь так вот запросто попасть на это место и получить подобающий почет и уважение.
-	AI_Output(self,other,"Info_Tpl_13_EinerVonEuchWerden_13_03");	//Прежде чем говорить об этом, ты должен узнать немного об нашем новом учении.
-	AI_Output(self,other,"Info_Tpl_13_EinerVonEuchWerden_13_04");	//Это займет некоторое время и, возможно, приведет тебя в чувство.
+	AI_Output(other,self, " Info_Tpl_13_EinerVonEuchWerden_15_00 " );	// I want to become a Guardian, just like you.
+	AI_Output(self,other, " Info_Tpl_13_EinerVonEuchWerden_13_01 " );	// Do you know what I had to give up before I could stand guard over the peace of the Brotherhood's chosen ones?
+	AI_Output(self,other, " Info_Tpl_13_EinerVonEuchWerden_13_02 " );	// Don't think that you can easily get to this place and get proper honor and respect.
+	AI_Output(self,other, " Info_Tpl_13_EinerVonEuchWerden_13_03 " );	// Before talking about it, you should know a little about our new teaching.
+	AI_Output(self,other, " Info_Tpl_13_EinerVonEuchWerden_13_04 " );	// This will take some time and may bring you back to your senses.
 };
 
 
-instance INFO_TPL_13_WICHTIGEPERSONEN(C_Info)
+instance INFO_TPL_13_IMPORTANT PEOPLE (C_Info)
 {
 	nr = 3;
-	condition = info_tpl_13_wichtigepersonen_condition;
-	information = info_tpl_13_wichtigepersonen_info;
+	condition = info_tpl_13_important people_condition;
+	information = info_tpl_13_important people_info;
 	permanent = 1;
-	description = "Кто здесь командует?";
+	description = " Who's in charge here? " ;
 };
 
 
-func int info_tpl_13_wichtigepersonen_condition()
+func int info_tpl_13_important_persons_condition()
 {
 	return TRUE;
 };
 
-func void info_tpl_13_wichtigepersonen_info()
+func void info_tpl_13_important_persons_info()
 {
-	AI_Output(other,self,"Info_Tpl_13_WichtigePersonen_15_00");	//Кто здесь командует?
-	AI_Output(self,other,"Info_Tpl_13_WichtigePersonen_13_01");	//Наши Гуру и избранные Стражи. Наша вера определяет нашу судьбу, и Гуру служат ему пророками.
+	AI_Output(other,self, " Info_Tpl_13_WichtigePersonen_15_00 " );	// Who's in charge here?
+	AI_Output(self,other, " Info_Tpl_13_WichtigePersonen_13_01 " );	// Our Gurus and chosen Guardians. Our faith determines our destiny, and the Gurus serve as prophets to him.
 };
 
 
@@ -76,7 +77,7 @@ instance INFO_TPL_13_DIELAGE(C_Info)
 	condition = info_tpl_13_dielage_condition;
 	information = info_tpl_13_dielage_info;
 	permanent = 1;
-	description = "Как дела?";
+	description = " How are you? " ;
 };
 
 
@@ -90,17 +91,17 @@ func int info_tpl_13_dielage_condition()
 
 func void info_tpl_13_dielage_info()
 {
-	AI_Output(other,self,"Info_Tpl_13_DieLage_15_00");	//Как дела?
-	AI_Output(self,other,"Info_Tpl_13_DieLage_13_01");	//С тех пор как я стал одним из избранных защитников веры, я чувствую себя, как никогда раньше.
-	AI_Output(other,self,"Info_Tpl_13_DieLage_15_02");	//Звучит занятно...
-	AI_Output(self,other,"Info_Tpl_13_DieLage_13_03");	//Ты неверующий. Тебе не понять.
+	AI_Output(other, self, " Info_Tpl_13_DieLage_15_00 " );	// How are you?
+	AI_Output(self,other, " Info_Tpl_13_DieLage_13_01 " );	// Since I became one of the chosen defenders of the faith, I feel like never before.
+	AI_Output(other, self, " Info_Tpl_13_DieLage_15_02 " );	// Sounds interesting...
+	AI_Output(self,other, " Info_Tpl_13_DieLage_13_03 " );	// You are not a believer. You can not understand.
 };
 
 func void b_assignambientinfos_tpl_13(var C_Npc slf)
 {
 	info_tpl_13_exit.npc = Hlp_GetInstanceID(slf);
 	info_tpl_13_einervoneuchwerden.npc = Hlp_GetInstanceID(slf);
-	info_tpl_13_wichtigepersonen.npc = Hlp_GetInstanceID(slf);
+	info_tpl_13_wichigepeople.npc = Hlp_GetInstanceID(slf);
 	info_tpl_13_dielage.npc = Hlp_GetInstanceID(slf);
 };
 
