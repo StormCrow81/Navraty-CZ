@@ -1,14 +1,15 @@
-//-----------------------------вызвать через хоткей LCONTROL+LSHIFT+K--------------------------------------------------------
+
+// ----------------------- call via hotkey LCONTROL+LSHIFT+K----------- ----------------------------------------------------
 
 instance ItWr_UndefBook(C_Item)
 {
-	name = "Для тестов - Том I";
+	name = " For tests - Volume I " ;
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 1;
 	visual = "ItWr_Scrl_Olds.3DS";
 	material = MAT_LEATHER;
-	on_state[0] = Use_ItWr_Addon_Hinweis_UndefBook;
+	on_state[ 0 ] = Use_ItWr_Addon_Hinweis_UndefBook;
 	scemeName = "MAP";
 	description = name ;
 	inv_animate = 1;
@@ -18,7 +19,7 @@ func void Use_ItWr_Addon_Hinweis_UndefBook()
 {
 };
 
-//-----------------------------зачарование--------------------------------------------------------
+// -----------------------enchanting------------------ --------------------------------------
 
 func void ENCHANT_s1()
 {
@@ -27,7 +28,7 @@ func void ENCHANT_s1()
 
 	if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(her))
 	{
-		self.aivar[AIV_INVINCIBLE] = TRUE;
+		self.aivar[ AIV_INVINCIBLE ] = TRUE ;
 		PLAYER_MOBSI_PRODUCTION = MOBSI_MEMORIES;
 		AI_ProcessInfos(her);
 	};
