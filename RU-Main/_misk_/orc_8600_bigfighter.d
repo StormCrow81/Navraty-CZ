@@ -1,9 +1,10 @@
 
+
 instance ORC_8600_BIGFIGHTER(C_Npc)
 {
-	name[0] = "Орк-воин";
+	name[ 0 ] = " Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8600;
 	voice = 18;
 	level = 10;
@@ -28,8 +29,8 @@ instance ORC_8600_BIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	EquipItem(self,ItMw_2H_OrcAxe_03);
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyWaSoldt",0,0,"Orc_HeadWarrior",0,0,-1);
@@ -46,9 +47,9 @@ func void rtn_start_8600()
 
 instance ORC_8601_BIGFIGHTER(C_Npc)
 {
-	name[0] = "Орк-воин";
+	name[ 0 ] = " Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8601;
 	voice = 18;
 	level = 10;
@@ -73,8 +74,8 @@ instance ORC_8601_BIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	EquipItem(self,ItMw_2H_OrcAxe_03);
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyWaSoldt",0,0,"Orc_HeadWarrior",0,0,-1);
@@ -91,9 +92,9 @@ func void rtn_start_8601()
 
 instance ORC_8602_BIGFIGHTER(C_Npc)
 {
-	name[0] = "Орк-воин";
+	name[ 0 ] = " Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8602;
 	voice = 18;
 	level = 10;
@@ -118,8 +119,8 @@ instance ORC_8602_BIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	EquipItem(self,ItMw_2H_OrcAxe_03);
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyWaSoldt",0,0,"Orc_HeadWarrior",0,0,-1);
@@ -136,9 +137,9 @@ func void rtn_start_8602()
 
 instance ORC_8603_BIGFIGHTER(C_Npc)
 {
-	name[0] = "Орк-воин";
+	name[ 0 ] = " Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8603;
 	voice = 18;
 	level = 10;
@@ -163,8 +164,8 @@ instance ORC_8603_BIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	EquipItem(self,ItMw_2H_OrcAxe_03);
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyWaSoldt",0,0,"Orc_HeadWarrior",0,0,-1);
@@ -181,9 +182,9 @@ func void rtn_start_8603()
 
 instance ORC_8604_BIGFIGHTER(C_Npc)
 {
-	name[0] = "Орк-воин";
+	name[ 0 ] = " Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8604;
 	voice = 18;
 	level = 10;
@@ -253,8 +254,8 @@ instance ORC_8605_BIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	EquipItem(self,ItMw_2H_OrcAxe_03);
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyWaSoldt",0,0,"Orc_HeadWarrior",0,0,-1);
@@ -271,9 +272,9 @@ func void rtn_start_8605()
 
 instance ORC_8606_BIGFIGHTER(C_Npc)
 {
-	name[0] = "Орк-воин";
+	name[ 0 ] = " Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8606;
 	voice = 18;
 	level = 10;
@@ -298,8 +299,8 @@ instance ORC_8606_BIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	EquipItem(self,ItMw_2H_OrcAxe_03);
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyWaSoldt",0,0,"Orc_HeadWarrior",0,0,-1);
@@ -316,9 +317,9 @@ func void rtn_start_8606()
 
 instance ORC_8607_BIGFIGHTER(C_Npc)
 {
-	name[0] = "Орк-воин";
+	name[ 0 ] = " Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8607;
 	voice = 18;
 	level = 10;
@@ -343,8 +344,8 @@ instance ORC_8607_BIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	EquipItem(self,ItMw_2H_OrcAxe_03);
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyWaSoldt",0,0,"Orc_HeadWarrior",0,0,-1);
@@ -361,9 +362,9 @@ func void rtn_start_8607()
 
 instance ORC_8608_BIGFIGHTER(C_Npc)
 {
-	name[0] = "Орк-воин";
+	name[ 0 ] = " Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8608;
 	voice = 18;
 	level = 10;
@@ -388,8 +389,8 @@ instance ORC_8608_BIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	EquipItem(self,ItMw_2H_OrcAxe_03);
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyWaSoldt",0,0,"Orc_HeadWarrior",0,0,-1);
@@ -406,9 +407,9 @@ func void rtn_start_8608()
 
 instance ORC_8609_BIGFIGHTER(C_Npc)
 {
-	name[0] = "Орк-воин";
+	name[ 0 ] = " Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8609;
 	voice = 18;
 	level = 10;
@@ -496,9 +497,9 @@ func void rtn_start_8610()
 
 instance ORC_8611_BIGFIGHTER(C_Npc)
 {
-	name[0] = "Орк-воин";
+	name[ 0 ] = " Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8611;
 	voice = 18;
 	level = 10;
@@ -523,8 +524,8 @@ instance ORC_8611_BIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	EquipItem(self,ItMw_2H_OrcAxe_03);
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyWaSoldt",0,0,"Orc_HeadWarrior",0,0,-1);
@@ -541,9 +542,9 @@ func void rtn_start_8611()
 
 instance ORC_8612_BIGFIGHTER(C_Npc)
 {
-	name[0] = "Орк-воин";
+	name[ 0 ] = " Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8612;
 	voice = 18;
 	level = 10;
@@ -568,8 +569,8 @@ instance ORC_8612_BIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	EquipItem(self,ItMw_2H_OrcAxe_03);
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyWaSoldt",0,0,"Orc_HeadWarrior",0,0,-1);
@@ -586,9 +587,9 @@ func void rtn_start_8612()
 
 instance ORC_8613_BIGFIGHTER(C_Npc)
 {
-	name[0] = "Орк-воин";
+	name[ 0 ] = " Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8613;
 	voice = 18;
 	level = 10;
@@ -613,8 +614,8 @@ instance ORC_8613_BIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	EquipItem(self,ItMw_2H_OrcAxe_03);
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyWaSoldt",0,0,"Orc_HeadWarrior",0,0,-1);
@@ -631,9 +632,9 @@ func void rtn_start_8613()
 
 instance ORC_8614_BIGFIGHTER(C_Npc)
 {
-	name[0] = "Орк-воин";
+	name[ 0 ] = " Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8614;
 	voice = 18;
 	level = 10;
@@ -658,8 +659,8 @@ instance ORC_8614_BIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	EquipItem(self,ItMw_2H_OrcAxe_03);
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyWaSoldt",0,0,"Orc_HeadWarrior",0,0,-1);
@@ -676,9 +677,9 @@ func void rtn_start_8614()
 
 instance ORC_8615_BIGFIGHTER(C_Npc)
 {
-	name[0] = "Орк-воин";
+	name[ 0 ] = " Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8615;
 	voice = 18;
 	level = 10;
@@ -703,8 +704,8 @@ instance ORC_8615_BIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	EquipItem(self,ItMw_2H_OrcAxe_03);
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyWaSoldt",0,0,"Orc_HeadWarrior",0,0,-1);
@@ -721,9 +722,9 @@ func void rtn_start_8615()
 
 instance ORC_8616_BIGFIGHTER(C_Npc)
 {
-	name[0] = "Орк-воин";
+	name[ 0 ] = " Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8616;
 	voice = 18;
 	level = 10;
@@ -748,8 +749,8 @@ instance ORC_8616_BIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	EquipItem(self,ItMw_2H_OrcAxe_03);
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyWaSoldt",0,0,"Orc_HeadWarrior",0,0,-1);
@@ -766,9 +767,9 @@ func void rtn_start_8616()
 
 instance ORC_8617_BIGFIGHTER(C_Npc)
 {
-	name[0] = "Орк-воин";
+	name[ 0 ] = " Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8617;
 	voice = 18;
 	level = 10;
@@ -793,8 +794,8 @@ instance ORC_8617_BIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	EquipItem(self,ItMw_2H_OrcAxe_03);
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyWaSoldt",0,0,"Orc_HeadWarrior",0,0,-1);
@@ -811,9 +812,9 @@ func void rtn_start_8617()
 
 instance ORC_8618_BIGFIGHTER(C_Npc)
 {
-	name[0] = "Орк-воин";
+	name[ 0 ] = " Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8618;
 	voice = 18;
 	level = 10;
@@ -838,8 +839,8 @@ instance ORC_8618_BIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	EquipItem(self,ItMw_2H_OrcAxe_03);
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyWaSoldt",0,0,"Orc_HeadWarrior",0,0,-1);
@@ -856,9 +857,9 @@ func void rtn_start_8618()
 
 instance ORC_8619_BIGFIGHTER(C_Npc)
 {
-	name[0] = "Орк-воин";
+	name[ 0 ] = " Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8619;
 	voice = 18;
 	level = 10;
@@ -991,9 +992,9 @@ func void rtn_start_8621()
 
 instance ORC_8622_BIGFIGHTER(C_Npc)
 {
-	name[0] = "Орк-воин";
+	name[ 0 ] = " Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8622;
 	voice = 18;
 	level = 10;
@@ -1018,8 +1019,8 @@ instance ORC_8622_BIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	EquipItem(self,ItMw_2H_OrcAxe_03);
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyWaSoldt",0,0,"Orc_HeadWarrior",0,0,-1);
@@ -1036,9 +1037,9 @@ func void rtn_start_8622()
 
 instance ORC_8623_BIGFIGHTER(C_Npc)
 {
-	name[0] = "Орк-воин";
+	name[ 0 ] = " Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8623;
 	voice = 18;
 	level = 10;
@@ -1063,8 +1064,8 @@ instance ORC_8623_BIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	EquipItem(self,ItMw_2H_OrcAxe_03);
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyWaSoldt",0,0,"Orc_HeadWarrior",0,0,-1);
@@ -1081,9 +1082,9 @@ func void rtn_start_8623()
 
 instance ORC_8624_BIGFIGHTER(C_Npc)
 {
-	name[0] = "Орк-воин";
+	name[ 0 ] = " Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8624;
 	voice = 18;
 	level = 10;
@@ -1108,8 +1109,8 @@ instance ORC_8624_BIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	EquipItem(self,ItMw_2H_OrcAxe_03);
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyWaSoldt",0,0,"Orc_HeadWarrior",0,0,-1);
@@ -1126,9 +1127,9 @@ func void rtn_start_8624()
 
 instance ORC_8625_BIGFIGHTER(C_Npc)
 {
-	name[0] = "Орк-воин";
+	name[ 0 ] = " Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8625;
 	voice = 18;
 	level = 10;
@@ -1153,8 +1154,8 @@ instance ORC_8625_BIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	EquipItem(self,ItMw_2H_OrcAxe_03);
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyWaSoldt",0,0,"Orc_HeadWarrior",0,0,-1);
@@ -1171,9 +1172,9 @@ func void rtn_start_8625()
 
 instance ORC_8626_BIGFIGHTER(C_Npc)
 {
-	name[0] = "Орк-воин";
+	name[ 0 ] = " Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8626;
 	voice = 18;
 	level = 10;
@@ -1198,8 +1199,8 @@ instance ORC_8626_BIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	EquipItem(self,ItMw_2H_OrcAxe_03);
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyWaSoldt",0,0,"Orc_HeadWarrior",0,0,-1);
@@ -1216,9 +1217,9 @@ func void rtn_start_8626()
 
 instance ORC_8627_BIGFIGHTER(C_Npc)
 {
-	name[0] = "Орк-воин";
+	name[ 0 ] = " Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8627;
 	voice = 18;
 	level = 10;
@@ -1243,8 +1244,8 @@ instance ORC_8627_BIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	EquipItem(self,ItMw_2H_OrcAxe_03);
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyWaSoldt",0,0,"Orc_HeadWarrior",0,0,-1);
@@ -1261,9 +1262,9 @@ func void rtn_start_8627()
 
 instance ORC_8628_BIGFIGHTER(C_Npc)
 {
-	name[0] = "Орк-воин";
+	name[ 0 ] = " Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8628;
 	voice = 18;
 	level = 10;
@@ -1288,8 +1289,8 @@ instance ORC_8628_BIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	EquipItem(self,ItMw_2H_OrcAxe_03);
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyWaSoldt",0,0,"Orc_HeadWarrior",0,0,-1);
@@ -1306,9 +1307,9 @@ func void rtn_start_8628()
 
 instance ORC_8629_BIGFIGHTER(C_Npc)
 {
-	name[0] = "Орк-воин";
+	name[ 0 ] = " Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8629;
 	voice = 18;
 	level = 10;
@@ -1333,8 +1334,8 @@ instance ORC_8629_BIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	EquipItem(self,ItMw_2H_OrcAxe_03);
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyWaSoldt",0,0,"Orc_HeadWarrior",0,0,-1);
@@ -1351,9 +1352,9 @@ func void rtn_start_8629()
 
 instance ORC_8630_BIGFIGHTER(C_Npc)
 {
-	name[0] = "Орк-воин";
+	name[ 0 ] = " Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8630;
 	voice = 18;
 	level = 10;
@@ -1378,8 +1379,8 @@ instance ORC_8630_BIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	EquipItem(self,ItMw_2H_OrcAxe_03);
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyWaSoldt",0,0,"Orc_HeadWarrior",0,0,-1);
@@ -1396,9 +1397,9 @@ func void rtn_start_8630()
 
 instance ORC_8631_BIGFIGHTER(C_Npc)
 {
-	name[0] = "Орк-воин";
+	name[ 0 ] = " Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8631;
 	voice = 18;
 	level = 10;
@@ -1423,8 +1424,8 @@ instance ORC_8631_BIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	EquipItem(self,ItMw_2H_OrcAxe_03);
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyWaSoldt",0,0,"Orc_HeadWarrior",0,0,-1);
@@ -1441,9 +1442,9 @@ func void rtn_start_8631()
 
 instance ORC_8632_BIGFIGHTER(C_Npc)
 {
-	name[0] = "Орк-воин";
+	name[ 0 ] = " Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8632;
 	voice = 18;
 	level = 10;
@@ -1468,8 +1469,8 @@ instance ORC_8632_BIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	EquipItem(self,ItMw_2H_OrcAxe_03);
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyWaSoldt",0,0,"Orc_HeadWarrior",0,0,-1);
@@ -1486,9 +1487,9 @@ func void rtn_start_8632()
 
 instance ORC_8633_BIGFIGHTER(C_Npc)
 {
-	name[0] = "Орк-воин";
+	name[ 0 ] = " Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8633;
 	voice = 18;
 	level = 10;
@@ -1513,8 +1514,8 @@ instance ORC_8633_BIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	EquipItem(self,ItMw_2H_OrcAxe_03);
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyWaSoldt",0,0,"Orc_HeadWarrior",0,0,-1);
@@ -1531,9 +1532,9 @@ func void rtn_start_8633()
 
 instance ORC_8634_BIGFIGHTER(C_Npc)
 {
-	name[0] = "Орк-воин";
+	name[ 0 ] = " Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8634;
 	voice = 18;
 	level = 10;
@@ -1558,8 +1559,8 @@ instance ORC_8634_BIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	EquipItem(self,ItMw_2H_OrcAxe_03);
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyWaSoldt",0,0,"Orc_HeadWarrior",0,0,-1);
@@ -1576,9 +1577,9 @@ func void rtn_start_8634()
 
 instance ORC_8635_BIGFIGHTER(C_Npc)
 {
-	name[0] = "Орк-воин";
+	name[ 0 ] = " Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8635;
 	voice = 18;
 	level = 10;
@@ -1603,8 +1604,8 @@ instance ORC_8635_BIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	EquipItem(self,ItMw_2H_OrcAxe_03);
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyWaSoldt",0,0,"Orc_HeadWarrior",0,0,-1);
@@ -1621,9 +1622,9 @@ func void rtn_start_8635()
 
 instance ORC_8636_BIGFIGHTER(C_Npc)
 {
-	name[0] = "Орк-воин";
+	name[ 0 ] = " Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8636;
 	voice = 18;
 	level = 10;
@@ -1648,8 +1649,8 @@ instance ORC_8636_BIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	EquipItem(self,ItMw_2H_OrcAxe_03);
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyWaSoldt",0,0,"Orc_HeadWarrior",0,0,-1);
@@ -1666,9 +1667,9 @@ func void rtn_start_8636()
 
 instance ORC_8637_BIGFIGHTER(C_Npc)
 {
-	name[0] = "Орк-воин";
+	name[ 0 ] = " Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8637;
 	voice = 18;
 	level = 10;
@@ -1693,8 +1694,8 @@ instance ORC_8637_BIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	EquipItem(self,ItMw_2H_OrcAxe_03);
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyWaSoldt",0,0,"Orc_HeadWarrior",0,0,-1);
@@ -1711,9 +1712,9 @@ func void rtn_start_8637()
 
 instance ORC_8638_BIGFIGHTER(C_Npc)
 {
-	name[0] = "Орк-воин";
+	name[ 0 ] = " Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8638;
 	voice = 18;
 	level = 10;
@@ -1738,8 +1739,8 @@ instance ORC_8638_BIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	EquipItem(self,ItMw_2H_OrcAxe_03);
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyWaSoldt",0,0,"Orc_HeadWarrior",0,0,-1);
@@ -1756,9 +1757,9 @@ func void rtn_start_8638()
 
 instance ORC_8639_BIGFIGHTER(C_Npc)
 {
-	name[0] = "Орк-воин";
+	name[ 0 ] = " Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8639;
 	voice = 18;
 	level = 10;
@@ -1783,8 +1784,8 @@ instance ORC_8639_BIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	EquipItem(self,ItMw_2H_OrcAxe_03);
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyWaSoldt",0,0,"Orc_HeadWarrior",0,0,-1);
@@ -1801,9 +1802,9 @@ func void rtn_start_8639()
 
 instance ORC_8640_BIGFIGHTER(C_Npc)
 {
-	name[0] = "Орк-воин";
+	name[ 0 ] = " Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8640;
 	voice = 18;
 	level = 10;
@@ -1828,8 +1829,8 @@ instance ORC_8640_BIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	EquipItem(self,ItMw_2H_OrcAxe_03);
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyWaSoldt",0,0,"Orc_HeadWarrior",0,0,-1);
@@ -1846,9 +1847,9 @@ func void rtn_start_8640()
 
 instance ORC_8641_BIGFIGHTER(C_Npc)
 {
-	name[0] = "Орк-воин";
+	name[ 0 ] = " Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8641;
 	voice = 18;
 	level = 10;
@@ -1873,8 +1874,8 @@ instance ORC_8641_BIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	EquipItem(self,ItMw_2H_OrcAxe_03);
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyWaSoldt",0,0,"Orc_HeadWarrior",0,0,-1);
@@ -1891,9 +1892,9 @@ func void rtn_start_8641()
 
 instance ORC_8642_BIGFIGHTER(C_Npc)
 {
-	name[0] = "Орк-воин";
+	name[ 0 ] = " Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8642;
 	voice = 18;
 	level = 10;
@@ -1918,8 +1919,8 @@ instance ORC_8642_BIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	EquipItem(self,ItMw_2H_OrcAxe_03);
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyWaSoldt",0,0,"Orc_HeadWarrior",0,0,-1);
@@ -1936,9 +1937,9 @@ func void rtn_start_8642()
 
 instance ORC_8643_BIGFIGHTER(C_Npc)
 {
-	name[0] = "Орк-воин";
+	name[ 0 ] = " Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8643;
 	voice = 18;
 	level = 10;
@@ -1963,8 +1964,8 @@ instance ORC_8643_BIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	EquipItem(self,ItMw_2H_OrcAxe_03);
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyWaSoldt",0,0,"Orc_HeadWarrior",0,0,-1);
@@ -1981,9 +1982,9 @@ func void rtn_start_8643()
 
 instance ORC_8644_BIGFIGHTER(C_Npc)
 {
-	name[0] = "Орк-воин";
+	name[ 0 ] = " Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8644;
 	voice = 18;
 	level = 10;
@@ -2008,8 +2009,8 @@ instance ORC_8644_BIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	EquipItem(self,ItMw_2H_OrcAxe_03);
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyWaSoldt",0,0,"Orc_HeadWarrior",0,0,-1);
@@ -2026,9 +2027,9 @@ func void rtn_start_8644()
 
 instance ORC_8645_BIGFIGHTER(C_Npc)
 {
-	name[0] = "Орк-воин";
+	name[ 0 ] = " Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8645;
 	voice = 18;
 	level = 10;
@@ -2053,8 +2054,8 @@ instance ORC_8645_BIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	EquipItem(self,ItMw_2H_OrcAxe_03);
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyWaSoldt",0,0,"Orc_HeadWarrior",0,0,-1);
@@ -2071,9 +2072,9 @@ func void rtn_start_8645()
 
 instance ORC_8646_BIGFIGHTER(C_Npc)
 {
-	name[0] = "Орк-воин";
+	name[ 0 ] = " Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8646;
 	voice = 18;
 	level = 10;
@@ -2098,8 +2099,8 @@ instance ORC_8646_BIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	EquipItem(self,ItMw_2H_OrcAxe_03);
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyWaSoldt",0,0,"Orc_HeadWarrior",0,0,-1);
@@ -2116,9 +2117,9 @@ func void rtn_start_8646()
 
 instance ORC_8647_BIGFIGHTER(C_Npc)
 {
-	name[0] = "Орк-воин";
+	name[ 0 ] = " Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8647;
 	voice = 18;
 	level = 10;
@@ -2143,8 +2144,8 @@ instance ORC_8647_BIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	EquipItem(self,ItMw_2H_OrcAxe_03);
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyWaSoldt",0,0,"Orc_HeadWarrior",0,0,-1);
@@ -2161,9 +2162,9 @@ func void rtn_start_8647()
 
 instance ORC_8648_BIGFIGHTER(C_Npc)
 {
-	name[0] = "Орк-воин";
+	name[ 0 ] = " Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8648;
 	voice = 18;
 	level = 10;
@@ -2188,8 +2189,8 @@ instance ORC_8648_BIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	EquipItem(self,ItMw_2H_OrcAxe_03);
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyWaSoldt",0,0,"Orc_HeadWarrior",0,0,-1);
@@ -2206,9 +2207,9 @@ func void rtn_start_8648()
 
 instance ORC_8649_BIGFIGHTER(C_Npc)
 {
-	name[0] = "Орк-воин";
+	name[ 0 ] = " Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8649;
 	voice = 18;
 	level = 10;
@@ -2233,8 +2234,8 @@ instance ORC_8649_BIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	EquipItem(self,ItMw_2H_OrcAxe_03);
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyWaSoldt",0,0,"Orc_HeadWarrior",0,0,-1);
@@ -2251,9 +2252,9 @@ func void rtn_start_8649()
 
 instance ORC_8650_BIGFIGHTER(C_Npc)
 {
-	name[0] = "Орк-воин";
+	name[ 0 ] = " Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8650;
 	voice = 18;
 	level = 10;
@@ -2278,8 +2279,8 @@ instance ORC_8650_BIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	EquipItem(self,ItMw_2H_OrcAxe_03);
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyWaSoldt",0,0,"Orc_HeadWarrior",0,0,-1);
@@ -2296,9 +2297,9 @@ func void rtn_start_8650()
 
 instance ORC_8651_BIGFIGHTER(C_Npc)
 {
-	name[0] = "Орк-воин";
+	name[ 0 ] = " Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8651;
 	voice = 18;
 	level = 10;
@@ -2323,8 +2324,8 @@ instance ORC_8651_BIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	EquipItem(self,ItMw_2H_OrcAxe_03);
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyWaSoldt",0,0,"Orc_HeadWarrior",0,0,-1);
@@ -2341,9 +2342,9 @@ func void rtn_start_8651()
 
 instance ORC_8652_BIGFIGHTER(C_Npc)
 {
-	name[0] = "Орк-воин";
+	name[ 0 ] = " Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8652;
 	voice = 18;
 	level = 10;
@@ -2368,8 +2369,8 @@ instance ORC_8652_BIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	EquipItem(self,ItMw_2H_OrcAxe_03);
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyWaSoldt",0,0,"Orc_HeadWarrior",0,0,-1);
@@ -2386,9 +2387,9 @@ func void rtn_start_8652()
 
 instance ORC_8653_BIGFIGHTER(C_Npc)
 {
-	name[0] = "Орк-воин";
+	name[ 0 ] = " Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8653;
 	voice = 18;
 	level = 10;
@@ -2413,8 +2414,8 @@ instance ORC_8653_BIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	EquipItem(self,ItMw_2H_OrcAxe_03);
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyWaSoldt",0,0,"Orc_HeadWarrior",0,0,-1);
@@ -2431,9 +2432,9 @@ func void rtn_start_8653()
 
 instance ORC_8654_BIGFIGHTER(C_Npc)
 {
-	name[0] = "Орк-воин";
+	name[ 0 ] = " Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8654;
 	voice = 18;
 	level = 10;
@@ -2458,8 +2459,8 @@ instance ORC_8654_BIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	EquipItem(self,ItMw_2H_OrcAxe_03);
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyWaSoldt",0,0,"Orc_HeadWarrior",0,0,-1);
@@ -2476,9 +2477,9 @@ func void rtn_start_8654()
 
 instance ORC_8655_BIGFIGHTER(C_Npc)
 {
-	name[0] = "Орк-воин";
+	name[ 0 ] = " Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8655;
 	voice = 18;
 	level = 10;
@@ -2503,8 +2504,8 @@ instance ORC_8655_BIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	EquipItem(self,ItMw_2H_OrcAxe_03);
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyWaSoldt",0,0,"Orc_HeadWarrior",0,0,-1);
@@ -2521,9 +2522,9 @@ func void rtn_start_8655()
 
 instance ORC_8656_BIGFIGHTER(C_Npc)
 {
-	name[0] = "Орк-воин";
+	name[ 0 ] = " Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8656;
 	voice = 18;
 	level = 10;
@@ -2548,8 +2549,8 @@ instance ORC_8656_BIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	EquipItem(self,ItMw_2H_OrcAxe_03);
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyWaSoldt",0,0,"Orc_HeadWarrior",0,0,-1);
@@ -2566,9 +2567,9 @@ func void rtn_start_8656()
 
 instance ORC_8657_BIGFIGHTER(C_Npc)
 {
-	name[0] = "Орк-воин";
+	name[ 0 ] = " Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8657;
 	voice = 18;
 	level = 10;
@@ -2593,8 +2594,8 @@ instance ORC_8657_BIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	EquipItem(self,ItMw_2H_OrcAxe_03);
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyWaSoldt",0,0,"Orc_HeadWarrior",0,0,-1);
@@ -2611,9 +2612,9 @@ func void rtn_start_8657()
 
 instance ORC_8658_BIGFIGHTER(C_Npc)
 {
-	name[0] = "Орк-воин";
+	name[ 0 ] = " Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8658;
 	voice = 18;
 	level = 10;
@@ -2638,8 +2639,8 @@ instance ORC_8658_BIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	EquipItem(self,ItMw_2H_OrcAxe_03);
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyWaSoldt",0,0,"Orc_HeadWarrior",0,0,-1);
@@ -2656,9 +2657,9 @@ func void rtn_start_8658()
 
 instance ORC_8659_BIGFIGHTER(C_Npc)
 {
-	name[0] = "Орк-воин";
+	name[ 0 ] = " Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8659;
 	voice = 18;
 	level = 10;
@@ -2683,8 +2684,8 @@ instance ORC_8659_BIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	EquipItem(self,ItMw_2H_OrcAxe_03);
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyWaSoldt",0,0,"Orc_HeadWarrior",0,0,-1);
@@ -2701,9 +2702,9 @@ func void rtn_start_8659()
 
 instance ORC_8660_BIGFIGHTER(C_Npc)
 {
-	name[0] = "Орк-воин";
+	name[ 0 ] = " Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8660;
 	voice = 18;
 	level = 10;
@@ -2728,8 +2729,8 @@ instance ORC_8660_BIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	EquipItem(self,ItMw_2H_OrcAxe_03);
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyWaSoldt",0,0,"Orc_HeadWarrior",0,0,-1);
@@ -2746,9 +2747,9 @@ func void rtn_start_8660()
 
 instance ORC_8661_BIGFIGHTER(C_Npc)
 {
-	name[0] = "Орк-воин";
+	name[ 0 ] = " Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8661;
 	voice = 18;
 	level = 10;
@@ -2773,8 +2774,8 @@ instance ORC_8661_BIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	EquipItem(self,ItMw_2H_OrcAxe_03);
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyWaSoldt",0,0,"Orc_HeadWarrior",0,0,-1);
@@ -2791,9 +2792,9 @@ func void rtn_start_8661()
 
 instance ORC_8662_BIGFIGHTER(C_Npc)
 {
-	name[0] = "Орк-воин";
+	name[ 0 ] = " Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8662;
 	voice = 18;
 	level = 10;
@@ -2818,8 +2819,8 @@ instance ORC_8662_BIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	EquipItem(self,ItMw_2H_OrcAxe_03);
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyWaSoldt",0,0,"Orc_HeadWarrior",0,0,-1);
@@ -2836,9 +2837,9 @@ func void rtn_start_8662()
 
 instance ORC_8663_BIGFIGHTER(C_Npc)
 {
-	name[0] = "Орк-воин";
+	name[ 0 ] = " Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8663;
 	voice = 18;
 	level = 10;
@@ -2863,8 +2864,8 @@ instance ORC_8663_BIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	EquipItem(self,ItMw_2H_OrcAxe_03);
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyWaSoldt",0,0,"Orc_HeadWarrior",0,0,-1);
@@ -2881,9 +2882,9 @@ func void rtn_start_8663()
 
 instance ORC_8664_BIGFIGHTER(C_Npc)
 {
-	name[0] = "Орк-воин";
+	name[ 0 ] = " Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8664;
 	voice = 18;
 	level = 10;
@@ -2908,8 +2909,8 @@ instance ORC_8664_BIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	EquipItem(self,ItMw_2H_OrcAxe_03);
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyWaSoldt",0,0,"Orc_HeadWarrior",0,0,-1);
@@ -2926,9 +2927,9 @@ func void rtn_start_8664()
 
 instance ORC_8665_BIGFIGHTER(C_Npc)
 {
-	name[0] = "Орк-воин";
+	name[ 0 ] = " Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8665;
 	voice = 18;
 	level = 10;
@@ -2953,8 +2954,8 @@ instance ORC_8665_BIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	EquipItem(self,ItMw_2H_OrcAxe_03);
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyWaSoldt",0,0,"Orc_HeadWarrior",0,0,-1);
@@ -2971,9 +2972,9 @@ func void rtn_start_8665()
 
 instance ORC_8666_BIGFIGHTER(C_Npc)
 {
-	name[0] = "Орк-воин";
+	name[ 0 ] = " Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8666;
 	voice = 18;
 	level = 10;
@@ -2998,8 +2999,8 @@ instance ORC_8666_BIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	EquipItem(self,ItMw_2H_OrcAxe_03);
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyWaSoldt",0,0,"Orc_HeadWarrior",0,0,-1);
@@ -3016,9 +3017,9 @@ func void rtn_start_8666()
 
 instance ORC_8667_BIGFIGHTER(C_Npc)
 {
-	name[0] = "Орк-воин";
+	name[ 0 ] = " Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8667;
 	voice = 18;
 	level = 10;
@@ -3043,8 +3044,8 @@ instance ORC_8667_BIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	EquipItem(self,ItMw_2H_OrcAxe_03);
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyWaSoldt",0,0,"Orc_HeadWarrior",0,0,-1);
@@ -3061,9 +3062,9 @@ func void rtn_start_8667()
 
 instance ORC_8668_BIGFIGHTER(C_Npc)
 {
-	name[0] = "Орк-воин";
+	name[ 0 ] = " Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8668;
 	voice = 18;
 	level = 10;
@@ -3088,8 +3089,8 @@ instance ORC_8668_BIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	EquipItem(self,ItMw_2H_OrcAxe_03);
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyWaSoldt",0,0,"Orc_HeadWarrior",0,0,-1);
@@ -3241,9 +3242,9 @@ func void rtn_start_8671()
 
 instance ORC_8672_BIGFIGHTER(C_Npc)
 {
-	name[0] = "Орк-воин";
+	name[ 0 ] = " Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8672;
 	voice = 18;
 	level = 10;
@@ -3268,8 +3269,8 @@ instance ORC_8672_BIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	EquipItem(self,ItMw_2H_OrcAxe_03);
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyWaSoldt",0,0,"Orc_HeadWarrior",0,0,-1);
@@ -3286,9 +3287,9 @@ func void rtn_start_8672()
 
 instance ORC_8673_BIGFIGHTER(C_Npc)
 {
-	name[0] = "Орк-воин";
+	name[ 0 ] = " Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8673;
 	voice = 18;
 	level = 10;
@@ -3313,8 +3314,8 @@ instance ORC_8673_BIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	EquipItem(self,ItMw_2H_OrcAxe_03);
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyWaSoldt",0,0,"Orc_HeadWarrior",0,0,-1);
@@ -3331,9 +3332,9 @@ func void rtn_start_8673()
 
 instance ORC_8674_BIGFIGHTER(C_Npc)
 {
-	name[0] = "Орк-воин";
+	name[ 0 ] = " Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8674;
 	voice = 18;
 	level = 10;
@@ -3358,8 +3359,8 @@ instance ORC_8674_BIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	EquipItem(self,ItMw_2H_OrcAxe_03);
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyWaSoldt",0,0,"Orc_HeadWarrior",0,0,-1);
@@ -3376,9 +3377,9 @@ func void rtn_start_8674()
 
 instance ORC_8675_BIGFIGHTER(C_Npc)
 {
-	name[0] = "Орк-воин";
+	name[ 0 ] = " Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8675;
 	voice = 18;
 	level = 10;
@@ -3403,8 +3404,8 @@ instance ORC_8675_BIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	EquipItem(self,ItMw_2H_OrcAxe_03);
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyWaSoldt",0,0,"Orc_HeadWarrior",0,0,-1);
@@ -3466,9 +3467,9 @@ func void rtn_start_8676()
 
 instance ORC_8677_BIGFIGHTER(C_Npc)
 {
-	name[0] = "Орк-воин";
+	name[ 0 ] = " Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8677;
 	voice = 18;
 	level = 10;
@@ -3493,8 +3494,8 @@ instance ORC_8677_BIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	EquipItem(self,ItMw_2H_OrcAxe_03);
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyWaSoldt",0,0,"Orc_HeadWarrior",0,0,-1);
@@ -3511,9 +3512,9 @@ func void rtn_start_8677()
 
 instance ORC_8678_BIGFIGHTER(C_Npc)
 {
-	name[0] = "Орк-воин";
+	name[ 0 ] = " Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8678;
 	voice = 18;
 	level = 10;
@@ -3538,8 +3539,8 @@ instance ORC_8678_BIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	EquipItem(self,ItMw_2H_OrcAxe_03);
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyWaSoldt",0,0,"Orc_HeadWarrior",0,0,-1);
@@ -3556,9 +3557,9 @@ func void rtn_start_8678()
 
 instance ORC_8679_BIGFIGHTER(C_Npc)
 {
-	name[0] = "Орк-воин";
+	name[ 0 ] = " Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8679;
 	voice = 18;
 	level = 10;
@@ -3583,8 +3584,8 @@ instance ORC_8679_BIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	EquipItem(self,ItMw_2H_OrcAxe_03);
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyWaSoldt",0,0,"Orc_HeadWarrior",0,0,-1);
@@ -3601,9 +3602,9 @@ func void rtn_start_8679()
 
 instance ORC_8680_BIGFIGHTER(C_Npc)
 {
-	name[0] = "Орк-воин";
+	name[ 0 ] = " Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8680;
 	voice = 18;
 	level = 10;
@@ -3628,8 +3629,8 @@ instance ORC_8680_BIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	EquipItem(self,ItMw_2H_OrcAxe_03);
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyWaSoldt",0,0,"Orc_HeadWarrior",0,0,-1);
@@ -3646,9 +3647,9 @@ func void rtn_start_8680()
 
 instance ORC_8681_BIGFIGHTER(C_Npc)
 {
-	name[0] = "Орк-воин";
+	name[ 0 ] = " Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8681;
 	voice = 18;
 	level = 10;
@@ -3673,8 +3674,8 @@ instance ORC_8681_BIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	EquipItem(self,ItMw_2H_OrcAxe_03);
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyWaSoldt",0,0,"Orc_HeadWarrior",0,0,-1);
@@ -3691,9 +3692,9 @@ func void rtn_start_8681()
 
 instance ORC_8682_BIGFIGHTER(C_Npc)
 {
-	name[0] = "Орк-воин";
+	name[ 0 ] = " Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8682;
 	voice = 18;
 	level = 10;
@@ -3718,8 +3719,8 @@ instance ORC_8682_BIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	EquipItem(self,ItMw_2H_OrcAxe_03);
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyWaSoldt",0,0,"Orc_HeadWarrior",0,0,-1);
@@ -3736,9 +3737,9 @@ func void rtn_start_8682()
 
 instance ORC_8683_BIGFIGHTER(C_Npc)
 {
-	name[0] = "Орк-воин";
+	name[ 0 ] = " Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8683;
 	voice = 18;
 	level = 10;
@@ -3763,8 +3764,8 @@ instance ORC_8683_BIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	EquipItem(self,ItMw_2H_OrcAxe_03);
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyWaSoldt",0,0,"Orc_HeadWarrior",0,0,-1);
@@ -3871,9 +3872,9 @@ func void rtn_start_8685()
 
 instance ORC_8686_BIGFIGHTER(C_Npc)
 {
-	name[0] = "Орк-воин";
+	name[ 0 ] = " Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8686;
 	voice = 18;
 	level = 10;
@@ -3898,8 +3899,8 @@ instance ORC_8686_BIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	EquipItem(self,ItMw_2H_OrcAxe_03);
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyWaSoldt",0,0,"Orc_HeadWarrior",0,0,-1);
@@ -3916,9 +3917,9 @@ func void rtn_start_8686()
 
 instance ORC_8687_BIGFIGHTER(C_Npc)
 {
-	name[0] = "Орк-воин";
+	name[ 0 ] = " Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8687;
 	voice = 18;
 	level = 10;
@@ -3943,8 +3944,8 @@ instance ORC_8687_BIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	EquipItem(self,ItMw_2H_OrcAxe_03);
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyWaSoldt",0,0,"Orc_HeadWarrior",0,0,-1);
@@ -3961,9 +3962,9 @@ func void rtn_start_8687()
 
 instance ORC_8688_BIGFIGHTER(C_Npc)
 {
-	name[0] = "Орк-воин";
+	name[ 0 ] = " Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8688;
 	voice = 18;
 	level = 10;
@@ -3988,8 +3989,8 @@ instance ORC_8688_BIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	EquipItem(self,ItMw_2H_OrcAxe_03);
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyWaSoldt",0,0,"Orc_HeadWarrior",0,0,-1);
@@ -4006,9 +4007,9 @@ func void rtn_start_8688()
 
 instance ORC_8689_BIGFIGHTER(C_Npc)
 {
-	name[0] = "Орк-воин";
+	name[ 0 ] = " Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8689;
 	voice = 18;
 	level = 10;
@@ -4033,8 +4034,8 @@ instance ORC_8689_BIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	EquipItem(self,ItMw_2H_OrcAxe_03);
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyWaSoldt",0,0,"Orc_HeadWarrior",0,0,-1);
@@ -4051,9 +4052,9 @@ func void rtn_start_8689()
 
 instance ORC_8690_BIGFIGHTER(C_Npc)
 {
-	name[0] = "Орк-воин";
+	name[ 0 ] = " Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8690;
 	voice = 18;
 	level = 10;
@@ -4078,8 +4079,8 @@ instance ORC_8690_BIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	EquipItem(self,ItMw_2H_OrcAxe_03);
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyWaSoldt",0,0,"Orc_HeadWarrior",0,0,-1);
@@ -4096,9 +4097,9 @@ func void rtn_start_8690()
 
 instance ORC_8691_BIGFIGHTER(C_Npc)
 {
-	name[0] = "Орк-воин";
+	name[ 0 ] = " Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8691;
 	voice = 18;
 	level = 10;
@@ -4123,8 +4124,8 @@ instance ORC_8691_BIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	EquipItem(self,ItMw_2H_OrcAxe_03);
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyWaSoldt",0,0,"Orc_HeadWarrior",0,0,-1);
@@ -4141,9 +4142,9 @@ func void rtn_start_8691()
 
 instance ORC_8692_BIGFIGHTER(C_Npc)
 {
-	name[0] = "Орк-воин";
+	name[ 0 ] = " Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8692;
 	voice = 18;
 	level = 10;
@@ -4168,8 +4169,8 @@ instance ORC_8692_BIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	EquipItem(self,ItMw_2H_OrcAxe_03);
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyWaSoldt",0,0,"Orc_HeadWarrior",0,0,-1);
@@ -4186,9 +4187,9 @@ func void rtn_start_8692()
 
 instance ORC_8693_BIGFIGHTER(C_Npc)
 {
-	name[0] = "Орк-воин";
+	name[ 0 ] = " Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8693;
 	voice = 18;
 	level = 10;
@@ -4213,8 +4214,8 @@ instance ORC_8693_BIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	EquipItem(self,ItMw_2H_OrcAxe_03);
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyWaSoldt",0,0,"Orc_HeadWarrior",0,0,-1);
@@ -4231,9 +4232,9 @@ func void rtn_start_8693()
 
 instance ORC_8694_BIGFIGHTER(C_Npc)
 {
-	name[0] = "Орк-воин";
+	name[ 0 ] = " Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8694;
 	voice = 18;
 	level = 10;
@@ -4258,8 +4259,8 @@ instance ORC_8694_BIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	EquipItem(self,ItMw_2H_OrcAxe_03);
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyWaSoldt",0,0,"Orc_HeadWarrior",0,0,-1);
@@ -4276,9 +4277,9 @@ func void rtn_start_8694()
 
 instance ORC_8695_BIGFIGHTER(C_Npc)
 {
-	name[0] = "Орк-воин";
+	name[ 0 ] = " Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8695;
 	voice = 18;
 	level = 10;
@@ -4303,8 +4304,8 @@ instance ORC_8695_BIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	EquipItem(self,ItMw_2H_OrcAxe_03);
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyWaSoldt",0,0,"Orc_HeadWarrior",0,0,-1);
@@ -4321,9 +4322,9 @@ func void rtn_start_8695()
 
 instance ORC_8696_BIGFIGHTER(C_Npc)
 {
-	name[0] = "Орк-воин";
+	name[ 0 ] = " Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8696;
 	voice = 18;
 	level = 10;
@@ -4348,8 +4349,8 @@ instance ORC_8696_BIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	EquipItem(self,ItMw_2H_OrcAxe_03);
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyWaSoldt",0,0,"Orc_HeadWarrior",0,0,-1);
@@ -4366,9 +4367,9 @@ func void rtn_start_8696()
 
 instance ORC_8697_BIGFIGHTER(C_Npc)
 {
-	name[0] = "Орк-воин";
+	name[ 0 ] = " Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8697;
 	voice = 18;
 	level = 10;
@@ -4393,8 +4394,8 @@ instance ORC_8697_BIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	EquipItem(self,ItMw_2H_OrcAxe_03);
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyWaSoldt",0,0,"Orc_HeadWarrior",0,0,-1);
@@ -4411,9 +4412,9 @@ func void rtn_start_8697()
 
 instance ORC_8698_BIGFIGHTER(C_Npc)
 {
-	name[0] = "Орк-воин";
+	name[ 0 ] = " Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8698;
 	voice = 18;
 	level = 10;
@@ -4438,8 +4439,8 @@ instance ORC_8698_BIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	EquipItem(self,ItMw_2H_OrcAxe_03);
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyWaSoldt",0,0,"Orc_HeadWarrior",0,0,-1);
@@ -4456,9 +4457,9 @@ func void rtn_start_8698()
 
 instance ORC_8699_BIGFIGHTER(C_Npc)
 {
-	name[0] = "Орк-воин";
+	name[ 0 ] = " Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8699;
 	voice = 18;
 	level = 10;
@@ -4483,8 +4484,8 @@ instance ORC_8699_BIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	EquipItem(self,ItMw_2H_OrcAxe_03);
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyWaSoldt",0,0,"Orc_HeadWarrior",0,0,-1);
@@ -4501,9 +4502,9 @@ func void rtn_start_8699()
 
 instance ORC_8751_BIGFIGHTER(C_Npc)
 {
-	name[0] = "Орк-воин";
+	name[ 0 ] = " Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8751;
 	voice = 18;
 	level = 10;
@@ -4528,8 +4529,8 @@ instance ORC_8751_BIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	EquipItem(self,ItMw_2H_OrcAxe_03);
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyWaSoldt",0,0,"Orc_HeadWarrior",0,0,-1);
@@ -4546,9 +4547,9 @@ func void rtn_start_8751()
 
 instance ORC_8752_BIGFIGHTER(C_Npc)
 {
-	name[0] = "Орк-воин";
+	name[ 0 ] = " Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8752;
 	voice = 18;
 	level = 10;
@@ -4573,8 +4574,8 @@ instance ORC_8752_BIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	EquipItem(self,ItMw_2H_OrcAxe_03);
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyWaSoldt",0,0,"Orc_HeadWarrior",0,0,-1);
@@ -4591,9 +4592,9 @@ func void rtn_start_8752()
 
 instance ORC_8753_BIGFIGHTER(C_Npc)
 {
-	name[0] = "Орк-воин";
+	name[ 0 ] = " Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8753;
 	voice = 18;
 	level = 10;
@@ -4618,8 +4619,8 @@ instance ORC_8753_BIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	EquipItem(self,ItMw_2H_OrcAxe_03);
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyWaSoldt",0,0,"Orc_HeadWarrior",0,0,-1);
@@ -4636,9 +4637,9 @@ func void rtn_start_8753()
 
 instance ORC_8754_BIGFIGHTER(C_Npc)
 {
-	name[0] = "Орк-воин";
+	name[ 0 ] = " Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8754;
 	voice = 18;
 	level = 10;
@@ -4663,8 +4664,8 @@ instance ORC_8754_BIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	EquipItem(self,ItMw_2H_OrcAxe_03);
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyWaSoldt",0,0,"Orc_HeadWarrior",0,0,-1);
@@ -4681,9 +4682,9 @@ func void rtn_start_8754()
 
 instance ORC_8755_BIGFIGHTER(C_Npc)
 {
-	name[0] = "Орк-воин";
+	name[ 0 ] = " Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8755;
 	voice = 18;
 	level = 10;
@@ -4708,8 +4709,8 @@ instance ORC_8755_BIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	EquipItem(self,ItMw_2H_OrcAxe_03);
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyWaSoldt",0,0,"Orc_HeadWarrior",0,0,-1);
@@ -4771,9 +4772,9 @@ func void rtn_start_8756()
 
 instance ORC_8757_BIGFIGHTER(C_Npc)
 {
-	name[0] = "Орк-воин";
+	name[ 0 ] = " Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8757;
 	voice = 18;
 	level = 10;
@@ -4798,8 +4799,8 @@ instance ORC_8757_BIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	EquipItem(self,ItMw_2H_OrcAxe_03);
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyWaSoldt",0,0,"Orc_HeadWarrior",0,0,-1);
@@ -4816,9 +4817,9 @@ func void rtn_start_8757()
 
 instance ORC_8758_BIGFIGHTER(C_Npc)
 {
-	name[0] = "Орк-воин";
+	name[ 0 ] = " Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8758;
 	voice = 18;
 	level = 10;
@@ -4843,8 +4844,8 @@ instance ORC_8758_BIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	EquipItem(self,ItMw_2H_OrcAxe_03);
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyWaSoldt",0,0,"Orc_HeadWarrior",0,0,-1);
@@ -4861,9 +4862,9 @@ func void rtn_start_8758()
 
 instance ORC_8759_BIGFIGHTER(C_Npc)
 {
-	name[0] = "Орк-воин";
+	name[ 0 ] = " Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8759;
 	voice = 18;
 	level = 10;
@@ -4888,8 +4889,8 @@ instance ORC_8759_BIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	EquipItem(self,ItMw_2H_OrcAxe_03);
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyWaSoldt",0,0,"Orc_HeadWarrior",0,0,-1);
@@ -4951,9 +4952,9 @@ func void rtn_start_8760()
 
 instance ORC_8761_BIGFIGHTER(C_Npc)
 {
-	name[0] = "Орк-воин";
+	name[ 0 ] = " Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8761;
 	voice = 18;
 	level = 10;
@@ -4978,8 +4979,8 @@ instance ORC_8761_BIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	EquipItem(self,ItMw_2H_OrcAxe_03);
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyWaSoldt",0,0,"Orc_HeadWarrior",0,0,-1);
@@ -4996,9 +4997,9 @@ func void rtn_start_8761()
 
 instance ORC_8762_BIGFIGHTER(C_Npc)
 {
-	name[0] = "Орк-воин";
+	name[ 0 ] = " Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8762;
 	voice = 18;
 	level = 10;
@@ -5023,8 +5024,8 @@ instance ORC_8762_BIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	EquipItem(self,ItMw_2H_OrcAxe_03);
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyWaSoldt",0,0,"Orc_HeadWarrior",0,0,-1);
@@ -5041,9 +5042,9 @@ func void rtn_start_8762()
 
 instance ORC_8763_BIGFIGHTER(C_Npc)
 {
-	name[0] = "Орк-воин";
+	name[ 0 ] = " Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8763;
 	voice = 18;
 	level = 10;
@@ -5068,8 +5069,8 @@ instance ORC_8763_BIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	EquipItem(self,ItMw_2H_OrcAxe_03);
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyWaSoldt",0,0,"Orc_HeadWarrior",0,0,-1);
@@ -5086,9 +5087,9 @@ func void rtn_start_8763()
 
 instance ORC_8764_BIGFIGHTER(C_Npc)
 {
-	name[0] = "Орк-воин";
+	name[ 0 ] = " Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8764;
 	voice = 18;
 	level = 10;
@@ -5113,8 +5114,8 @@ instance ORC_8764_BIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	EquipItem(self,ItMw_2H_OrcAxe_03);
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyWaSoldt",0,0,"Orc_HeadWarrior",0,0,-1);
@@ -5131,9 +5132,9 @@ func void rtn_start_8764()
 
 instance ORC_8765_BIGFIGHTER(C_Npc)
 {
-	name[0] = "Орк-воин";
+	name[ 0 ] = " Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8765;
 	voice = 18;
 	level = 10;
@@ -5158,8 +5159,8 @@ instance ORC_8765_BIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	EquipItem(self,ItMw_2H_OrcAxe_03);
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyWaSoldt",0,0,"Orc_HeadWarrior",0,0,-1);
@@ -5176,9 +5177,9 @@ func void rtn_start_8765()
 
 instance ORC_8766_BIGFIGHTER(C_Npc)
 {
-	name[0] = "Орк-воин";
+	name[ 0 ] = " Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8766;
 	voice = 18;
 	level = 10;
@@ -5203,8 +5204,8 @@ instance ORC_8766_BIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	EquipItem(self,ItMw_2H_OrcAxe_03);
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyWaSoldt",0,0,"Orc_HeadWarrior",0,0,-1);
@@ -5293,8 +5294,8 @@ instance ORC_8700_ELITEBIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyElite",DEFAULT,DEFAULT,"Orc_HeadWarrior",9,DEFAULT,-1);
 	EquipItem(self,ItMw_2H_OrcAxe_04);
@@ -5311,9 +5312,9 @@ func void rtn_start_8700()
 
 instance ORC_8701_ELITEBIGFIGHTER(C_Npc)
 {
-	name[0] = "Черный орк-воин";
+	name[ 0 ] = " Black Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8701;
 	voice = 18;
 	level = 15;
@@ -5338,8 +5339,8 @@ instance ORC_8701_ELITEBIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyElite",DEFAULT,DEFAULT,"Orc_HeadWarrior",9,DEFAULT,-1);
 	EquipItem(self,ItMw_2H_OrcAxe_04);
@@ -5356,9 +5357,9 @@ func void rtn_start_8701()
 
 instance ORC_8702_ELITEBIGFIGHTER(C_Npc)
 {
-	name[0] = "Черный орк-воин";
+	name[ 0 ] = " Black Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8702;
 	voice = 18;
 	level = 15;
@@ -5383,8 +5384,8 @@ instance ORC_8702_ELITEBIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyElite",DEFAULT,DEFAULT,"Orc_HeadWarrior",9,DEFAULT,-1);
 	EquipItem(self,ItMw_2H_OrcAxe_04);
@@ -5446,9 +5447,9 @@ func void rtn_start_8703()
 
 instance ORC_8704_ELITEBIGFIGHTER(C_Npc)
 {
-	name[0] = "Черный орк-воин";
+	name[ 0 ] = " Black Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8704;
 	voice = 18;
 	level = 15;
@@ -5473,8 +5474,8 @@ instance ORC_8704_ELITEBIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyElite",DEFAULT,DEFAULT,"Orc_HeadWarrior",9,DEFAULT,-1);
 	EquipItem(self,ItMw_2H_OrcAxe_04);
@@ -5491,9 +5492,9 @@ func void rtn_start_8704()
 
 instance ORC_8705_ELITEBIGFIGHTER(C_Npc)
 {
-	name[0] = "Черный орк-воин";
+	name[ 0 ] = " Black Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8705;
 	voice = 18;
 	level = 15;
@@ -5518,8 +5519,8 @@ instance ORC_8705_ELITEBIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyElite",DEFAULT,DEFAULT,"Orc_HeadWarrior",9,DEFAULT,-1);
 	EquipItem(self,ItMw_2H_OrcAxe_04);
@@ -5536,9 +5537,9 @@ func void rtn_start_8705()
 
 instance ORC_8706_ELITEBIGFIGHTER(C_Npc)
 {
-	name[0] = "Черный орк-воин";
+	name[ 0 ] = " Black Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8706;
 	voice = 18;
 	level = 15;
@@ -5563,8 +5564,8 @@ instance ORC_8706_ELITEBIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyElite",DEFAULT,DEFAULT,"Orc_HeadWarrior",9,DEFAULT,-1);
 	EquipItem(self,ItMw_2H_OrcAxe_04);
@@ -5653,8 +5654,8 @@ instance ORC_8708_ELITEBIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyElite",DEFAULT,DEFAULT,"Orc_HeadWarrior",9,DEFAULT,-1);
 	EquipItem(self,ItMw_2H_OrcAxe_04);
@@ -5671,9 +5672,9 @@ func void rtn_start_8708()
 
 instance ORC_8709_ELITEBIGFIGHTER(C_Npc)
 {
-	name[0] = "Черный орк-воин";
+	name[ 0 ] = " Black Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8709;
 	voice = 18;
 	level = 15;
@@ -5698,8 +5699,8 @@ instance ORC_8709_ELITEBIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyElite",DEFAULT,DEFAULT,"Orc_HeadWarrior",9,DEFAULT,-1);
 	EquipItem(self,ItMw_2H_OrcAxe_04);
@@ -5716,9 +5717,9 @@ func void rtn_start_8709()
 
 instance ORC_8710_ELITEBIGFIGHTER(C_Npc)
 {
-	name[0] = "Черный орк-воин";
+	name[ 0 ] = " Black Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8710;
 	voice = 18;
 	level = 15;
@@ -5743,8 +5744,8 @@ instance ORC_8710_ELITEBIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyElite",DEFAULT,DEFAULT,"Orc_HeadWarrior",9,DEFAULT,-1);
 	EquipItem(self,ItMw_2H_OrcAxe_04);
@@ -5761,9 +5762,9 @@ func void rtn_start_8710()
 
 instance ORC_8711_ELITEBIGFIGHTER(C_Npc)
 {
-	name[0] = "Черный орк-воин";
+	name[ 0 ] = " Black Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8711;
 	voice = 18;
 	level = 15;
@@ -5788,8 +5789,8 @@ instance ORC_8711_ELITEBIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyElite",DEFAULT,DEFAULT,"Orc_HeadWarrior",9,DEFAULT,-1);
 	EquipItem(self,ItMw_2H_OrcAxe_04);
@@ -5806,9 +5807,9 @@ func void rtn_start_8711()
 
 instance ORC_8712_ELITEBIGFIGHTER(C_Npc)
 {
-	name[0] = "Черный орк-воин";
+	name[ 0 ] = " Black Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8712;
 	voice = 18;
 	level = 15;
@@ -5833,8 +5834,8 @@ instance ORC_8712_ELITEBIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyElite",DEFAULT,DEFAULT,"Orc_HeadWarrior",9,DEFAULT,-1);
 	EquipItem(self,ItMw_2H_OrcAxe_04);
@@ -5851,9 +5852,9 @@ func void rtn_start_8712()
 
 instance ORC_8713_ELITEBIGFIGHTER(C_Npc)
 {
-	name[0] = "Черный орк-воин";
+	name[ 0 ] = " Black Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8713;
 	voice = 18;
 	level = 15;
@@ -5968,8 +5969,8 @@ instance ORC_8715_ELITEBIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyElite",DEFAULT,DEFAULT,"Orc_HeadWarrior",9,DEFAULT,-1);
 	EquipItem(self,ItMw_2H_OrcAxe_04);
@@ -5986,9 +5987,9 @@ func void rtn_start_8715()
 
 instance ORC_8716_ELITEBIGFIGHTER(C_Npc)
 {
-	name[0] = "Черный орк-воин";
+	name[ 0 ] = " Black Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8716;
 	voice = 18;
 	level = 15;
@@ -6013,8 +6014,8 @@ instance ORC_8716_ELITEBIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyElite",DEFAULT,DEFAULT,"Orc_HeadWarrior",9,DEFAULT,-1);
 	EquipItem(self,ItMw_2H_OrcAxe_04);
@@ -6031,9 +6032,9 @@ func void rtn_start_8716()
 
 instance ORC_8717_ELITEBIGFIGHTER(C_Npc)
 {
-	name[0] = "Черный орк-воин";
+	name[ 0 ] = " Black Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8717;
 	voice = 18;
 	level = 15;
@@ -6058,8 +6059,8 @@ instance ORC_8717_ELITEBIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyElite",DEFAULT,DEFAULT,"Orc_HeadWarrior",9,DEFAULT,-1);
 	EquipItem(self,ItMw_2H_OrcAxe_04);
@@ -6076,9 +6077,9 @@ func void rtn_start_8717()
 
 instance ORC_8718_ELITEBIGFIGHTER(C_Npc)
 {
-	name[0] = "Черный орк-воин";
+	name[ 0 ] = " Black Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8718;
 	voice = 18;
 	level = 15;
@@ -6103,8 +6104,8 @@ instance ORC_8718_ELITEBIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyElite",DEFAULT,DEFAULT,"Orc_HeadWarrior",9,DEFAULT,-1);
 	EquipItem(self,ItMw_2H_OrcAxe_04);
@@ -6121,9 +6122,9 @@ func void rtn_start_8718()
 
 instance ORC_8719_ELITEBIGFIGHTER(C_Npc)
 {
-	name[0] = "Черный орк-воин";
+	name[ 0 ] = " Black Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8719;
 	voice = 18;
 	level = 15;
@@ -6148,8 +6149,8 @@ instance ORC_8719_ELITEBIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyElite",DEFAULT,DEFAULT,"Orc_HeadWarrior",9,DEFAULT,-1);
 	EquipItem(self,ItMw_2H_OrcAxe_04);
@@ -6166,9 +6167,9 @@ func void rtn_start_8719()
 
 instance ORC_8720_ELITEBIGFIGHTER(C_Npc)
 {
-	name[0] = "Черный орк-воин";
+	name[ 0 ] = " Black Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8720;
 	voice = 18;
 	level = 15;
@@ -6193,8 +6194,8 @@ instance ORC_8720_ELITEBIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyElite",DEFAULT,DEFAULT,"Orc_HeadWarrior",9,DEFAULT,-1);
 	EquipItem(self,ItMw_2H_OrcAxe_04);
@@ -6211,9 +6212,9 @@ func void rtn_start_8720()
 
 instance ORC_8721_ELITEBIGFIGHTER(C_Npc)
 {
-	name[0] = "Черный орк-воин";
+	name[ 0 ] = " Black Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8721;
 	voice = 18;
 	level = 15;
@@ -6238,8 +6239,8 @@ instance ORC_8721_ELITEBIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyElite",DEFAULT,DEFAULT,"Orc_HeadWarrior",9,DEFAULT,-1);
 	EquipItem(self,ItMw_2H_OrcAxe_04);
@@ -6256,9 +6257,9 @@ func void rtn_start_8721()
 
 instance ORC_8722_ELITEBIGFIGHTER(C_Npc)
 {
-	name[0] = "Черный орк-воин";
+	name[ 0 ] = " Black Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8722;
 	voice = 18;
 	level = 15;
@@ -6283,8 +6284,8 @@ instance ORC_8722_ELITEBIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyElite",DEFAULT,DEFAULT,"Orc_HeadWarrior",9,DEFAULT,-1);
 	EquipItem(self,ItMw_2H_OrcAxe_04);
@@ -6418,8 +6419,8 @@ instance ORC_8725_ELITEBIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyElite",DEFAULT,DEFAULT,"Orc_HeadWarrior",9,DEFAULT,-1);
 	EquipItem(self,ItMw_2H_OrcAxe_04);
@@ -6436,9 +6437,9 @@ func void rtn_start_8725()
 
 instance ORC_8726_ELITEBIGFIGHTER(C_Npc)
 {
-	name[0] = "Черный орк-воин";
+	name[ 0 ] = " Black Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8726;
 	voice = 18;
 	level = 15;
@@ -6463,8 +6464,8 @@ instance ORC_8726_ELITEBIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyElite",DEFAULT,DEFAULT,"Orc_HeadWarrior",9,DEFAULT,-1);
 	EquipItem(self,ItMw_2H_OrcAxe_04);
@@ -6481,9 +6482,9 @@ func void rtn_start_8726()
 
 instance ORC_8727_ELITEBIGFIGHTER(C_Npc)
 {
-	name[0] = "Черный орк-воин";
+	name[ 0 ] = " Black Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8727;
 	voice = 18;
 	level = 15;
@@ -6508,8 +6509,8 @@ instance ORC_8727_ELITEBIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyElite",DEFAULT,DEFAULT,"Orc_HeadWarrior",9,DEFAULT,-1);
 	EquipItem(self,ItMw_2H_OrcAxe_04);
@@ -6526,9 +6527,9 @@ func void rtn_start_8727()
 
 instance ORC_8728_ELITEBIGFIGHTER(C_Npc)
 {
-	name[0] = "Черный орк-воин";
+	name[ 0 ] = " Black Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8728;
 	voice = 18;
 	level = 15;
@@ -6553,8 +6554,8 @@ instance ORC_8728_ELITEBIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyElite",DEFAULT,DEFAULT,"Orc_HeadWarrior",9,DEFAULT,-1);
 	EquipItem(self,ItMw_2H_OrcAxe_04);
@@ -6571,9 +6572,9 @@ func void rtn_start_8728()
 
 instance ORC_8729_ELITEBIGFIGHTER(C_Npc)
 {
-	name[0] = "Черный орк-воин";
+	name[ 0 ] = " Black Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8729;
 	voice = 18;
 	level = 15;
@@ -6598,8 +6599,8 @@ instance ORC_8729_ELITEBIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyElite",DEFAULT,DEFAULT,"Orc_HeadWarrior",9,DEFAULT,-1);
 	EquipItem(self,ItMw_2H_OrcAxe_04);
@@ -6616,9 +6617,9 @@ func void rtn_start_8729()
 
 instance ORC_8730_ELITEBIGFIGHTER(C_Npc)
 {
-	name[0] = "Черный орк-воин";
+	name[ 0 ] = " Black Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8730;
 	voice = 18;
 	level = 15;
@@ -6643,8 +6644,8 @@ instance ORC_8730_ELITEBIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyElite",DEFAULT,DEFAULT,"Orc_HeadWarrior",9,DEFAULT,-1);
 	EquipItem(self,ItMw_2H_OrcAxe_04);
@@ -6661,9 +6662,9 @@ func void rtn_start_8730()
 
 instance ORC_8731_ELITEBIGFIGHTER(C_Npc)
 {
-	name[0] = "Черный орк-воин";
+	name[ 0 ] = " Black Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8731;
 	voice = 18;
 	level = 15;
@@ -6751,9 +6752,9 @@ func void rtn_start_8732()
 
 instance ORC_8733_ELITEBIGFIGHTER(C_Npc)
 {
-	name[0] = "Черный орк-воин";
+	name[ 0 ] = " Black Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8733;
 	voice = 18;
 	level = 15;
@@ -6778,8 +6779,8 @@ instance ORC_8733_ELITEBIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyElite",DEFAULT,DEFAULT,"Orc_HeadWarrior",9,DEFAULT,-1);
 	EquipItem(self,ItMw_2H_OrcAxe_04);
@@ -6796,9 +6797,9 @@ func void rtn_start_8733()
 
 instance ORC_8734_ELITEBIGFIGHTER(C_Npc)
 {
-	name[0] = "Черный орк-воин";
+	name[ 0 ] = " Black Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8734;
 	voice = 18;
 	level = 15;
@@ -6823,8 +6824,8 @@ instance ORC_8734_ELITEBIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyElite",DEFAULT,DEFAULT,"Orc_HeadWarrior",9,DEFAULT,-1);
 	EquipItem(self,ItMw_2H_OrcAxe_04);
@@ -6841,9 +6842,9 @@ func void rtn_start_8734()
 
 instance ORC_8735_ELITEBIGFIGHTER(C_Npc)
 {
-	name[0] = "Черный орк-воин";
+	name[ 0 ] = " Black Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8735;
 	voice = 18;
 	level = 15;
@@ -6868,8 +6869,8 @@ instance ORC_8735_ELITEBIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyElite",DEFAULT,DEFAULT,"Orc_HeadWarrior",9,DEFAULT,-1);
 	EquipItem(self,ItMw_2H_OrcAxe_04);
@@ -6886,9 +6887,9 @@ func void rtn_start_8735()
 
 instance ORC_8736_ELITEBIGFIGHTER(C_Npc)
 {
-	name[0] = "Черный орк-воин";
+	name[ 0 ] = " Black Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8736;
 	voice = 18;
 	level = 15;
@@ -6913,8 +6914,8 @@ instance ORC_8736_ELITEBIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyElite",DEFAULT,DEFAULT,"Orc_HeadWarrior",9,DEFAULT,-1);
 	EquipItem(self,ItMw_2H_OrcAxe_04);
@@ -6931,9 +6932,9 @@ func void rtn_start_8736()
 
 instance ORC_8737_ELITEBIGFIGHTER(C_Npc)
 {
-	name[0] = "Черный орк-воин";
+	name[ 0 ] = " Black Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8737;
 	voice = 18;
 	level = 15;
@@ -6958,8 +6959,8 @@ instance ORC_8737_ELITEBIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyElite",DEFAULT,DEFAULT,"Orc_HeadWarrior",9,DEFAULT,-1);
 	EquipItem(self,ItMw_2H_OrcAxe_04);
@@ -6976,9 +6977,9 @@ func void rtn_start_8737()
 
 instance ORC_8738_ELITEBIGFIGHTER(C_Npc)
 {
-	name[0] = "Черный орк-воин";
+	name[ 0 ] = " Black Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8738;
 	voice = 18;
 	level = 15;
@@ -7003,8 +7004,8 @@ instance ORC_8738_ELITEBIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyElite",DEFAULT,DEFAULT,"Orc_HeadWarrior",9,DEFAULT,-1);
 	EquipItem(self,ItMw_2H_OrcAxe_04);
@@ -7021,9 +7022,9 @@ func void rtn_start_8738()
 
 instance ORC_8739_ELITEBIGFIGHTER(C_Npc)
 {
-	name[0] = "Черный орк-воин";
+	name[ 0 ] = " Black Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8739;
 	voice = 18;
 	level = 15;
@@ -7048,8 +7049,8 @@ instance ORC_8739_ELITEBIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyElite",DEFAULT,DEFAULT,"Orc_HeadWarrior",9,DEFAULT,-1);
 	EquipItem(self,ItMw_2H_OrcAxe_04);
@@ -7066,9 +7067,9 @@ func void rtn_start_8739()
 
 instance ORC_8740_ELITEBIGFIGHTER(C_Npc)
 {
-	name[0] = "Черный орк-воин";
+	name[ 0 ] = " Black Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8740;
 	voice = 18;
 	level = 15;
@@ -7093,8 +7094,8 @@ instance ORC_8740_ELITEBIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyElite",DEFAULT,DEFAULT,"Orc_HeadWarrior",9,DEFAULT,-1);
 	EquipItem(self,ItMw_2H_OrcAxe_04);
@@ -7111,9 +7112,9 @@ func void rtn_start_8740()
 
 instance ORC_8741_ELITEBIGFIGHTER(C_Npc)
 {
-	name[0] = "Черный орк-воин";
+	name[ 0 ] = " Black Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8741;
 	voice = 18;
 	level = 15;
@@ -7138,8 +7139,8 @@ instance ORC_8741_ELITEBIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyElite",DEFAULT,DEFAULT,"Orc_HeadWarrior",9,DEFAULT,-1);
 	EquipItem(self,ItMw_2H_OrcAxe_04);
@@ -7156,9 +7157,9 @@ func void rtn_start_8741()
 
 instance ORC_8742_ELITEBIGFIGHTER(C_Npc)
 {
-	name[0] = "Черный орк-воин";
+	name[ 0 ] = " Black Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8742;
 	voice = 18;
 	level = 15;
@@ -7183,8 +7184,8 @@ instance ORC_8742_ELITEBIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyElite",DEFAULT,DEFAULT,"Orc_HeadWarrior",9,DEFAULT,-1);
 	EquipItem(self,ItMw_2H_OrcAxe_04);
@@ -7201,9 +7202,9 @@ func void rtn_start_8742()
 
 instance ORC_8743_ELITEBIGFIGHTER(C_Npc)
 {
-	name[0] = "Черный орк-воин";
+	name[ 0 ] = " Black Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8743;
 	voice = 18;
 	level = 15;
@@ -7228,8 +7229,8 @@ instance ORC_8743_ELITEBIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyElite",DEFAULT,DEFAULT,"Orc_HeadWarrior",9,DEFAULT,-1);
 	EquipItem(self,ItMw_2H_OrcAxe_04);
@@ -7246,9 +7247,9 @@ func void rtn_start_8743()
 
 instance ORC_8744_ELITEBIGFIGHTER(C_Npc)
 {
-	name[0] = "Черный орк-воин";
+	name[ 0 ] = " Black Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8744;
 	voice = 18;
 	level = 15;
@@ -7291,9 +7292,9 @@ func void rtn_start_8744()
 
 instance ORC_8745_ELITEBIGFIGHTER(C_Npc)
 {
-	name[0] = "Черный орк-воин";
+	name[ 0 ] = " Black Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8745;
 	voice = 18;
 	level = 15;
@@ -7318,8 +7319,8 @@ instance ORC_8745_ELITEBIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyElite",DEFAULT,DEFAULT,"Orc_HeadWarrior",9,DEFAULT,-1);
 	EquipItem(self,ItMw_2H_OrcAxe_04);
@@ -7336,9 +7337,9 @@ func void rtn_start_8745()
 
 instance ORC_8746_ELITEBIGFIGHTER(C_Npc)
 {
-	name[0] = "Черный орк-воин";
+	name[ 0 ] = " Black Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8746;
 	voice = 18;
 	level = 15;
@@ -7363,8 +7364,8 @@ instance ORC_8746_ELITEBIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyElite",DEFAULT,DEFAULT,"Orc_HeadWarrior",9,DEFAULT,-1);
 	EquipItem(self,ItMw_2H_OrcAxe_04);
@@ -7381,9 +7382,9 @@ func void rtn_start_8746()
 
 instance ORC_8747_ELITEBIGFIGHTER(C_Npc)
 {
-	name[0] = "Черный орк-воин";
+	name[ 0 ] = " Black Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8747;
 	voice = 18;
 	level = 15;
@@ -7408,8 +7409,8 @@ instance ORC_8747_ELITEBIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyElite",DEFAULT,DEFAULT,"Orc_HeadWarrior",9,DEFAULT,-1);
 	EquipItem(self,ItMw_2H_OrcAxe_04);
@@ -7426,9 +7427,9 @@ func void rtn_start_8747()
 
 instance ORC_8800_COMMANDBIGFIGHTER(C_Npc)
 {
-	name[0] = "Элитный черный орк-военачальник";
+	name[ 0 ] = " Elite Black Orc Warlord " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8800;
 	voice = 18;
 	level = 100;
@@ -7453,8 +7454,8 @@ instance ORC_8800_COMMANDBIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	EquipItem(self,itmw_2h_orcsword_04);
 	CreateInvItems(self,ItRi_OrcEliteRing,1);
 	Mdl_SetVisual(self,"Orc.mds");
@@ -7478,9 +7479,9 @@ func void rtn_inbattle_8800()
 
 instance ORC_8801_COMMANDBIGFIGHTER(C_Npc)
 {
-	name[0] = "Элитный черный орк-старейшина";
+	name[ 0 ] = " Elite Black Orc Elder " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8801;
 	voice = 18;
 	level = 60;
@@ -7505,8 +7506,8 @@ instance ORC_8801_COMMANDBIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	EquipItem(self,ItMw_2H_OrcSword_02);
 	CreateInvItems(self,ItRi_OrcEliteRing,1);
 	Mdl_SetVisual(self,"Orc.mds");
@@ -7530,9 +7531,9 @@ func void rtn_inbattle_8801()
 
 instance ORC_8802_COMMANDBIGFIGHTER(C_Npc)
 {
-	name[0] = "Элитный черный орк-старейшина";
+	name[ 0 ] = " Elite Black Orc Elder " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8802;
 	voice = 18;
 	level = 60;
@@ -7557,8 +7558,8 @@ instance ORC_8802_COMMANDBIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	EquipItem(self,ItMw_2H_OrcSword_02);
 	CreateInvItems(self,ItRi_OrcEliteRing,1);
 	Mdl_SetVisual(self,"Orc.mds");
@@ -9589,8 +9590,8 @@ instance ORC_8810_ELITEBIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyElite",DEFAULT,DEFAULT,"Orc_HeadWarrior",9,DEFAULT,-1);
 	EquipItem(self,ItMw_2H_OrcAxe_04);
@@ -9607,9 +9608,9 @@ func void rtn_start_8810()
 
 instance ORC_8811_ELITEBIGFIGHTER(C_Npc)
 {
-	name[0] = "Черный орк-воин";
+	name[ 0 ] = " Black Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8811;
 	voice = 18;
 	level = 15;
@@ -9634,8 +9635,8 @@ instance ORC_8811_ELITEBIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyElite",DEFAULT,DEFAULT,"Orc_HeadWarrior",9,DEFAULT,-1);
 	EquipItem(self,ItMw_2H_OrcAxe_04);
@@ -9652,9 +9653,9 @@ func void rtn_start_8811()
 
 instance ORC_8812_ELITEBIGFIGHTER(C_Npc)
 {
-	name[0] = "Черный орк-воин";
+	name[ 0 ] = " Black Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8812;
 	voice = 18;
 	level = 15;
@@ -9679,8 +9680,8 @@ instance ORC_8812_ELITEBIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyElite",DEFAULT,DEFAULT,"Orc_HeadWarrior",9,DEFAULT,-1);
 	EquipItem(self,ItMw_2H_OrcAxe_04);
@@ -9697,9 +9698,9 @@ func void rtn_start_8812()
 
 instance ORC_8813_ELITEBIGFIGHTER(C_Npc)
 {
-	name[0] = "Черный орк-воин";
+	name[ 0 ] = " Black Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8813;
 	voice = 18;
 	level = 15;
@@ -9724,8 +9725,8 @@ instance ORC_8813_ELITEBIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyElite",DEFAULT,DEFAULT,"Orc_HeadWarrior",9,DEFAULT,-1);
 	EquipItem(self,ItMw_2H_OrcAxe_04);
@@ -9742,9 +9743,9 @@ func void rtn_start_8813()
 
 instance ORC_8814_ELITEBIGFIGHTER(C_Npc)
 {
-	name[0] = "Черный орк-воин";
+	name[ 0 ] = " Black Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8814;
 	voice = 18;
 	level = 15;
@@ -9769,8 +9770,8 @@ instance ORC_8814_ELITEBIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyElite",DEFAULT,DEFAULT,"Orc_HeadWarrior",9,DEFAULT,-1);
 	EquipItem(self,ItMw_2H_OrcAxe_04);
@@ -9787,9 +9788,9 @@ func void rtn_start_8814()
 
 instance ORC_8815_ELITEBIGFIGHTER(C_Npc)
 {
-	name[0] = "Черный орк-воин";
+	name[ 0 ] = " Black Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8815;
 	voice = 18;
 	level = 15;
@@ -9814,8 +9815,8 @@ instance ORC_8815_ELITEBIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyElite",DEFAULT,DEFAULT,"Orc_HeadWarrior",9,DEFAULT,-1);
 	EquipItem(self,ItMw_2H_OrcAxe_04);
@@ -9832,9 +9833,9 @@ func void rtn_start_8815()
 
 instance ORC_8816_ELITEBIGFIGHTER(C_Npc)
 {
-	name[0] = "Черный орк-воин";
+	name[ 0 ] = " Black Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8816;
 	voice = 18;
 	level = 15;
@@ -9859,8 +9860,8 @@ instance ORC_8816_ELITEBIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyElite",DEFAULT,DEFAULT,"Orc_HeadWarrior",9,DEFAULT,-1);
 	EquipItem(self,ItMw_2H_OrcAxe_04);
@@ -9877,9 +9878,9 @@ func void rtn_start_8816()
 
 instance ORC_8817_ELITEBIGFIGHTER(C_Npc)
 {
-	name[0] = "Черный орк-воин";
+	name[ 0 ] = " Black Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8817;
 	voice = 18;
 	level = 15;
@@ -9904,8 +9905,8 @@ instance ORC_8817_ELITEBIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyElite",DEFAULT,DEFAULT,"Orc_HeadWarrior",9,DEFAULT,-1);
 	EquipItem(self,ItMw_2H_OrcAxe_04);
@@ -9922,9 +9923,9 @@ func void rtn_start_8817()
 
 instance ORC_8818_ELITEBIGFIGHTER(C_Npc)
 {
-	name[0] = "Черный орк-воин";
+	name[ 0 ] = " Black Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8818;
 	voice = 18;
 	level = 15;
@@ -9949,8 +9950,8 @@ instance ORC_8818_ELITEBIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyElite",DEFAULT,DEFAULT,"Orc_HeadWarrior",9,DEFAULT,-1);
 	EquipItem(self,ItMw_2H_OrcAxe_04);
@@ -9967,9 +9968,9 @@ func void rtn_start_8818()
 
 instance ORC_8819_ELITEBIGFIGHTER(C_Npc)
 {
-	name[0] = "Черный орк-воин";
+	name[ 0 ] = " Black Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8819;
 	voice = 18;
 	level = 15;
@@ -9994,8 +9995,8 @@ instance ORC_8819_ELITEBIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyElite",DEFAULT,DEFAULT,"Orc_HeadWarrior",9,DEFAULT,-1);
 	EquipItem(self,ItMw_2H_OrcAxe_04);
@@ -10012,9 +10013,9 @@ func void rtn_start_8819()
 
 instance ORC_8820_ELITEBIGFIGHTER(C_Npc)
 {
-	name[0] = "Черный орк-воин";
+	name[ 0 ] = " Black Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8820;
 	voice = 18;
 	level = 15;
@@ -10039,8 +10040,8 @@ instance ORC_8820_ELITEBIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyElite",DEFAULT,DEFAULT,"Orc_HeadWarrior",9,DEFAULT,-1);
 	EquipItem(self,ItMw_2H_OrcAxe_04);
@@ -10057,9 +10058,9 @@ func void rtn_start_8820()
 
 instance ORC_8821_ELITEBIGFIGHTER(C_Npc)
 {
-	name[0] = "Черный орк-воин";
+	name[ 0 ] = " Black Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8821;
 	voice = 18;
 	level = 15;
@@ -10084,8 +10085,8 @@ instance ORC_8821_ELITEBIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyElite",DEFAULT,DEFAULT,"Orc_HeadWarrior",9,DEFAULT,-1);
 	EquipItem(self,ItMw_2H_OrcAxe_04);
@@ -10102,9 +10103,9 @@ func void rtn_start_8821()
 
 instance ORC_8822_ELITEBIGFIGHTER(C_Npc)
 {
-	name[0] = "Черный орк-воин";
+	name[ 0 ] = " Black Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8822;
 	voice = 18;
 	level = 15;
@@ -10129,8 +10130,8 @@ instance ORC_8822_ELITEBIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyElite",DEFAULT,DEFAULT,"Orc_HeadWarrior",9,DEFAULT,-1);
 	EquipItem(self,ItMw_2H_OrcAxe_04);
@@ -10147,9 +10148,9 @@ func void rtn_start_8822()
 
 instance ORC_8823_ELITEBIGFIGHTER(C_Npc)
 {
-	name[0] = "Черный орк-воин";
+	name[ 0 ] = " Black Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8823;
 	voice = 18;
 	level = 15;
@@ -10174,8 +10175,8 @@ instance ORC_8823_ELITEBIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyElite",DEFAULT,DEFAULT,"Orc_HeadWarrior",9,DEFAULT,-1);
 	EquipItem(self,ItMw_2H_OrcAxe_04);
@@ -10192,9 +10193,9 @@ func void rtn_start_8823()
 
 instance ORC_8824_ELITEBIGFIGHTER(C_Npc)
 {
-	name[0] = "Черный орк-воин";
+	name[ 0 ] = " Black Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8824;
 	voice = 18;
 	level = 15;
@@ -10219,8 +10220,8 @@ instance ORC_8824_ELITEBIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyElite",DEFAULT,DEFAULT,"Orc_HeadWarrior",9,DEFAULT,-1);
 	EquipItem(self,ItMw_2H_OrcAxe_04);
@@ -10237,9 +10238,9 @@ func void rtn_start_8824()
 
 instance ORC_8825_ELITEBIGFIGHTER(C_Npc)
 {
-	name[0] = "Черный орк-воин";
+	name[ 0 ] = " Black Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8825;
 	voice = 18;
 	level = 15;
@@ -10264,8 +10265,8 @@ instance ORC_8825_ELITEBIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyElite",DEFAULT,DEFAULT,"Orc_HeadWarrior",9,DEFAULT,-1);
 	EquipItem(self,ItMw_2H_OrcAxe_04);
@@ -10282,9 +10283,9 @@ func void rtn_start_8825()
 
 instance ORC_8826_ELITEBIGFIGHTER(C_Npc)
 {
-	name[0] = "Черный орк-воин";
+	name[ 0 ] = " Black Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8826;
 	voice = 18;
 	level = 15;
@@ -10399,8 +10400,8 @@ instance ORC_8828_ELITEBIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyElite",DEFAULT,DEFAULT,"Orc_HeadWarrior",9,DEFAULT,-1);
 	EquipItem(self,ItMw_2H_OrcAxe_04);
@@ -10417,9 +10418,9 @@ func void rtn_start_8828()
 
 instance ORC_8829_ELITEBIGFIGHTER(C_Npc)
 {
-	name[0] = "Черный орк-воин";
+	name[ 0 ] = " Black Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBF;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBF ;
 	id = 8829;
 	voice = 18;
 	level = 15;
@@ -10444,8 +10445,8 @@ instance ORC_8829_ELITEBIGFIGHTER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
-	aivar[AIV_EnemyOverride] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
+	aivar[AIV_EnemyOverride] = FALSE ;
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyElite",DEFAULT,DEFAULT,"Orc_HeadWarrior",9,DEFAULT,-1);
 	EquipItem(self,ItMw_2H_OrcAxe_04);
