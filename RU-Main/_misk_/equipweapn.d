@@ -1,3 +1,4 @@
+
 var C_Item EQUIPWEAPN;
 
 func void B_PrintTeleportTooFarAway(var int level)
@@ -29,7 +30,7 @@ instance Spell_teleportorc(C_Spell_Proto)
 	targetCollectAlgo = TARGET_COLLECT_NONE;
 };
 
-//---------------Квестовые руны-----------------------------
+// ---------------Quest runes-----------------------
 
 func int Spell_Logic_PalTeleportSecret(var int manaInvested)
 {
@@ -50,7 +51,7 @@ func int Spell_Logic_PalTeleportSecret(var int manaInvested)
 
 func void Spell_Cast_PalTeleportSecret()
 {
-	B_PrintTeleportTooFarAway(NEWWORLD_ZEN);
+	B_PrintTeleportTooFarAway( NEWWORLD_ZEN );
 	if(Npc_IsPlayer(self) && (PLAYERISTRANSFER == TRUE) && (PLAYERISTRANSFERDONE == FALSE))
 	{
 		b_transferback(self);
@@ -67,13 +68,13 @@ func void Spell_Cast_PalTeleportSecret()
 	{
 		if((FIREMAGERUNESNOT == TRUE) || (WATERMAGERUNESNOT == TRUE) || (GURUMAGERUNESNOT == TRUE) || (PALADINRUNESNOT == TRUE))
 		{
-			B_LogEntry(TOPIC_RUNEMAGICNOTWORK,"Как интересно! В отличие от Пирокара и других прочих магов, я могу использовать рунную магию. Что бы это значило?!");
+			B_LogEntry( TOPIC_RUNEMAGICNOTWORK , " How interesting! Unlike Pyrocar and other mages, I can use rune magic. What does that mean?! " );
 		}
 		else
 		{
-			B_LogEntry(TOPIC_RUNEMAGICNOTWORK,"Как интересно! В отличие от Пирокара, я могу использовать рунную магию. Что бы это значило?!");
+			B_LogEntry( TOPIC_RUNEMAGICNOTWORK , " How interesting! Unlike the Pyrocar, I can use rune magic. What does that mean?! " );
 		};
-		TESTRUNEME = TRUE;
+		TESTRUNEME = TRUE ;
 	};
 	AI_Teleport(self,"NW_PAL_SECRETCHAMBER");
 	AI_PlayAni(self,"T_HEASHOOT_2_STAND");
@@ -98,7 +99,7 @@ func int Spell_Logic_TeleportMonastery(var int manaInvested)
 
 func void Spell_Cast_TeleportMonastery()
 {
-	B_PrintTeleportTooFarAway(NEWWORLD_ZEN);
+	B_PrintTeleportTooFarAway( NEWWORLD_ZEN );
 	if(Npc_IsPlayer(self) && (PLAYERISTRANSFER == TRUE) && (PLAYERISTRANSFERDONE == FALSE))
 	{
 		b_transferback(self);
@@ -191,13 +192,13 @@ func void spell_cast_teleportdagot()
 	{
 		if((FIREMAGERUNESNOT == TRUE) || (WATERMAGERUNESNOT == TRUE) || (GURUMAGERUNESNOT == TRUE) || (PALADINRUNESNOT == TRUE))
 		{
-			B_LogEntry(TOPIC_RUNEMAGICNOTWORK,"Как интересно! В отличие от Пирокара и других прочих магов, я могу использовать рунную магию. Что бы это значило?!");
+			B_LogEntry( TOPIC_RUNEMAGICNOTWORK , " How interesting! Unlike Pyrocar and other mages, I can use rune magic. What does that mean?! " );
 		}
 		else
 		{
-			B_LogEntry(TOPIC_RUNEMAGICNOTWORK,"Как интересно! В отличие от Пирокара, я могу использовать рунную магию. Что бы это значило?!");
+			B_LogEntry( TOPIC_RUNEMAGICNOTWORK , " How interesting! Unlike the Pyrocar, I can use rune magic. What does that mean?! " );
 		};
-		TESTRUNEME = TRUE;
+		TESTRUNEME = TRUE ;
 	};
 };
 
@@ -248,13 +249,13 @@ func void spell_cast_teleportorc()
 	{
 		if(ORCTELEPORTSTATUS == FALSE)
 		{
-			AI_Teleport(self,"GRYD_072");
+			AI_Teleport(self, " GRYD_072 " );
 			AI_PlayAni(self,"T_HEASHOOT_2_STAND");
 			ORCTELEPORTSTATUS = TRUE;
 		}
 		else if(ORCTELEPORTSTATUS == TRUE)
 		{
-			AI_Teleport(self,"GRYD_060");
+			AI_Teleport(self, " GRYD_060 " );
 			AI_PlayAni(self,"T_HEASHOOT_2_STAND");
 			ORCTELEPORTSTATUS = FALSE;
 		};
@@ -267,18 +268,18 @@ func void spell_cast_teleportorc()
 	{
 		if((FIREMAGERUNESNOT == TRUE) || (WATERMAGERUNESNOT == TRUE) || (GURUMAGERUNESNOT == TRUE) || (PALADINRUNESNOT == TRUE))
 		{
-			B_LogEntry(TOPIC_RUNEMAGICNOTWORK,"Как интересно! В отличие от Пирокара и других прочих магов, я могу использовать рунную магию. Что бы это значило?!");
+			B_LogEntry( TOPIC_RUNEMAGICNOTWORK , " How interesting! Unlike Pyrocar and other mages, I can use rune magic. What does that mean?! " );
 		}
 		else
 		{
-			B_LogEntry(TOPIC_RUNEMAGICNOTWORK,"Как интересно! В отличие от Пирокара, я могу использовать рунную магию. Что бы это значило?!");
+			B_LogEntry( TOPIC_RUNEMAGICNOTWORK , " How interesting! Unlike the Pyrocar, I can use rune magic. What does that mean?! " );
 		};
 
-		TESTRUNEME = TRUE;
+		TESTRUNEME = TRUE ;
 	};
 };
 
-//----------------------старые руны-----------------------------------------
+// ----------------------old runes------------------------ -----------------
 
 func int Spell_Logic_TeleportFarm(var int manaInvested)
 {
@@ -344,7 +345,7 @@ func void spell_cast_teleportpsicamp()
 };
 
 
-//----------------новая система------------------------------------------------
+// ----------------new system------------------------------ ------------------
 
 func int Spell_Logic_TeleportXardas(var int manaInvested)
 {
@@ -357,9 +358,9 @@ func int Spell_Logic_TeleportXardas(var int manaInvested)
 	{
 		return SPL_SENDSTOP;
 	};
-	if((Kapitel >= 3) && (MeetDarkRavenSpeaker == FALSE) && (CurrentLevel == NEWWORLD_ZEN))
+	if ((Chapter >=  3 ) && (MeetDarkRavenSpeaker ==  FALSE ) && (CurrentLevel ==  NEWWORLD_ZEN ))
 	{
-		Print("Что-то мешает это сделать...");
+		Print ( " Something is preventing me from doing this... " );
 		B_Say(self,self,"$DOESNTWORK");
 		return SPL_SENDSTOP;
 	};
@@ -381,7 +382,7 @@ func void Spell_Cast_TeleportXardas()
 	{
 		b_transferback(self);
 	};
-	if((Kapitel >= 3) && (MeetDarkRavenSpeaker == FALSE) && (CurrentLevel == NEWWORLD_ZEN))
+	if ((Chapter >=  3 ) && (MeetDarkRavenSpeaker ==  FALSE ) && (CurrentLevel ==  NEWWORLD_ZEN ))
 	{
 	}
 	else
@@ -465,7 +466,7 @@ instance PC_TELEPORT_END(C_Info)
 	condition = PC_TELEPORT_end_condition;
 	information = PC_TELEPORT_end_info;
 	permanent = TRUE;
-	description = "(...закрыть)";
+	description = " (...close) " ;
 };
 
 func int PC_TELEPORT_end_condition()
@@ -489,7 +490,7 @@ instance PC_TELEPORTLOCATION_ON(C_Info)
 	condition = PC_TELEPORTLOCATION_ON_condition;
 	information = PC_TELEPORTLOCATION_ON_info;
 	permanent = TRUE;
-	description = "Телепортация в другую часть острова (Требуется: 40 магической энергии)";
+	description = " Teleport to another part of the island (Requires: 40 magical energy) " ;
 };
 
 func int PC_TELEPORTLOCATION_ON_condition()
@@ -498,7 +499,7 @@ func int PC_TELEPORTLOCATION_ON_condition()
 	{
 		if((MeetDarkRavenSpeaker == FALSE) && (MIS_ReadyForChapter3 == TRUE))
 		{
-			return FALSE;
+			return  FALSE ;
 		}
 		else
 		{
@@ -511,11 +512,11 @@ func void PC_TELEPORTLOCATION_ON_info()
 {
 	Info_ClearChoices(PC_TELEPORTLOCATION_ON);
 
-	if((CurrentLevel != NEWWORLD_ZEN) && (CurrentLevel != ITUSELDTOWER_ZEN) && (CurrentLevel != LOSTVALLEY_ZEN) && (CurrentLevel != DRAGONTEMPLE_ZEN) && (CurrentLevel != PASHALWORLD_ZEN) && (CurrentLevel != HAOSWORLD_ZEN) && (CurrentLevel != PRIORATWORLD_ZEN) && (CurrentLevel != DRAGONISLAND_ZEN) && (CurrentLevel != SHVALLEY_ZEN) && (CurrentLevel != SECRETISLAND_ZEN) && (CurrentLevel != UNDEADZONE_ZEN) && (CurrentLevel != LOSTISLAND_ZEN) && (CurrentLevel != FIRECAVE_ZEN) && (CurrentLevel != GUARDIANCHAMBERS_ZEN) && (CurrentLevel != HARADRIMARENA_ZEN) && (CurrentLevel != TEARSTEMPLE_ZEN))
+	if ((CurrentLevel !=  NEWWORLD_ZEN ) && (CurrentLevel !=  ITUSELDTOWER_ZEN ) && (CurrentLevel !=  LOSTVALLEY_ZEN ) && (CurrentLevel !=  DRAGONTEMPLE_ZEN ) && (CurrentLevel !=  HAOSWORLD_ZEN ) && (CurrentLevel ! =  HAOSWORLD ! = Level_ORZEN ) && && ( CurrentLevel != DRAGON_LAND_ZEN ) && (CurrentLevel   != SHVALLEY_ZEN) && (CurrentLevel != SECRETISLAND_ZEN) && (CurrentLevel != UNDEADZONE_ZEN) && (CurrentLevel != LOSTISLAND_ZEN) && (CurrentLevel != FIRECAVE_ZEN) && (CurrentLevel != GUARDIANCHAMBERS_ZEN) && (CurrentLevel != HARADRIMARENA_ZEN) && (CurrentLevel != TEARSTEMPLE_ZEN))
 	{
 		if((VINOCAVE_TP == TRUE) || (SAGITTA_TP == TRUE) || (SUNCIRCLE_TP == TRUE) || (BLACKTROLL_TP == TRUE) || (ADWRUINS_TP == TRUE) || (PSI_TP == TRUE) || (HUNT_TP == TRUE) || (TAVERNE_TP == TRUE) || (PASSOW_TP == TRUE) || (KLOSTER_TP == TRUE) || (BIGFARM_TP == TRUE) || (TOWN_TP == TRUE) || (XARDAS_TP == TRUE))
 		{
-			Info_AddChoice(PC_TELEPORTLOCATION_ON,"...в Хоринис",PC_TELEPORTLOCATION_ON_HOR);			
+			Info_AddChoice( PC_TELEPORTLOCATION_ON , " ... in Horinis " , PC_TELEPORTLOCATION_ON_HOR );			
 		};
 	};
 	if((CurrentLevel != ADDONWORLD_ZEN) && (CurrentLevel != ITUSELDTOWER_ZEN) && (CurrentLevel != LOSTVALLEY_ZEN) && (CurrentLevel != DRAGONTEMPLE_ZEN) && (CurrentLevel != PASHALWORLD_ZEN) && (CurrentLevel != HAOSWORLD_ZEN) && (CurrentLevel != PRIORATWORLD_ZEN) && (CurrentLevel != DRAGONISLAND_ZEN) && (CurrentLevel != SHVALLEY_ZEN) && (CurrentLevel != SECRETISLAND_ZEN) && (CurrentLevel != UNDEADZONE_ZEN) && (CurrentLevel != LOSTISLAND_ZEN) && (CurrentLevel != FIRECAVE_ZEN) && (CurrentLevel != GUARDIANCHAMBERS_ZEN) && (CurrentLevel != HARADRIMARENA_ZEN) && (CurrentLevel != TEARSTEMPLE_ZEN))
@@ -529,21 +530,21 @@ func void PC_TELEPORTLOCATION_ON_info()
 	{
 		if((SKLEP_TP == TRUE) || (PASSNW_TP == TRUE) || (OLDPSI_TP == TRUE) || (OLDFORT_TP == TRUE) || (DARKTOWER_TP == TRUE) || (ICE_TP == TRUE) || (NETBEK_TP == TRUE) || (CASTLE_TP == TRUE))
 		{
-			Info_AddChoice(PC_TELEPORTLOCATION_ON,"...в Долину Рудников",PC_TELEPORTLOCATION_ON_OW);			
+			Info_AddChoice( PC_TELEPORTLOCATION_ON , " ...to Mining Valley " , PC_TELEPORTLOCATION_ON_OW );			
 		};
 	};
 	if((CurrentLevel != ADANOSVALLEY_ZEN) && (CurrentLevel != ITUSELDTOWER_ZEN) && (CurrentLevel != LOSTVALLEY_ZEN) && (CurrentLevel != DRAGONTEMPLE_ZEN) && (CurrentLevel != PASHALWORLD_ZEN) && (CurrentLevel != HAOSWORLD_ZEN) && (CurrentLevel != PRIORATWORLD_ZEN) && (CurrentLevel != DRAGONISLAND_ZEN) && (CurrentLevel != SHVALLEY_ZEN) && (CurrentLevel != SECRETISLAND_ZEN) && (CurrentLevel != UNDEADZONE_ZEN) && (CurrentLevel != LOSTISLAND_ZEN) && (CurrentLevel != FIRECAVE_ZEN) && (CurrentLevel != GUARDIANCHAMBERS_ZEN) && (CurrentLevel != HARADRIMARENA_ZEN) && (CurrentLevel != TEARSTEMPLE_ZEN))
 	{
 		if((COMPLEX_TP == TRUE) || (LIFECIRCLE_TP == TRUE) || (PASSAV_TP == TRUE) || (PYRAMIDE_TP == TRUE) || (TEARHRAM_TP == TRUE))
 		{
-			Info_AddChoice(PC_TELEPORTLOCATION_ON,"...на Плато Древних",PC_TELEPORTLOCATION_ON_AV);			
+			Info_AddChoice( PC_TELEPORTLOCATION_ON , " ...on the Plateau of the Ancients " , PC_TELEPORTLOCATION_ON_AV );			
 		};
 	};	
-	if((CurrentLevel != ORCMOUNTAIN_ZEN) && (CurrentLevel != ITUSELDTOWER_ZEN) && (CurrentLevel != LOSTVALLEY_ZEN) && (CurrentLevel != DRAGONTEMPLE_ZEN) && (CurrentLevel != PASHALWORLD_ZEN) && (CurrentLevel != HAOSWORLD_ZEN) && (CurrentLevel != PRIORATWORLD_ZEN) && (CurrentLevel != DRAGONISLAND_ZEN) && (CurrentLevel != SHVALLEY_ZEN) && (CurrentLevel != SECRETISLAND_ZEN) && (CurrentLevel != UNDEADZONE_ZEN) && (CurrentLevel != LOSTISLAND_ZEN) && (CurrentLevel != FIRECAVE_ZEN) && (CurrentLevel != GUARDIANCHAMBERS_ZEN) && (CurrentLevel != HARADRIMARENA_ZEN) && (CurrentLevel != TEARSTEMPLE_ZEN))
+	if ((CurrentLevel !=  ORCMOUNTAIN_ZEN ) && (CurrentLevel !=  ITUSELDTOWER_ZEN ) && (CurrentLevel !=  LOSTVALLEY_ZEN ) && (CurrentLevel !=  DRAGONTEMPLE_ZEN ) && (CurrentLevel !=  PASHALWORLD_ZEN ) && (CurrentLevel !=  HAOSWORLD_ZEN ) && (CurrentLevel !=  PRIORATWORLD_ZEN ) && ( CurrentLevel !=  DRAGON_LAND_ZEN ) && (CurrentLevel != SHVALLEY_ZEN) && (CurrentLevel != SECRETISLAND_ZEN) && (CurrentLevel != UNDEADZONE_ZEN) && (CurrentLevel != LOSTISLAND_ZEN) && (CurrentLevel != FIRECAVE_ZEN) && (CurrentLevel != GUARDIANCHAMBERS_ZEN) && (CurrentLevel != HARADRIMARENA_ZEN) && (CurrentLevel != TEARSTEMPLE_ZEN))
 	{
 		if(ORCMOUNTAIN_TP == TRUE)
 		{
-			Info_AddChoice(PC_TELEPORTLOCATION_ON,"...в горы орков",PC_TELEPORTLOCATION_ON_ORM);			
+			Info_AddChoice( PC_TELEPORTLOCATION_ON , " ...to the orc mountains " , PC_TELEPORTLOCATION_ON_ORM );			
 		};
 	};	
 
@@ -561,11 +562,11 @@ func void PC_TELEPORTLOCATION_ON_ADW()
 
 	if(ADW_TP == TRUE)
 	{
-		Info_AddChoice(PC_TELEPORTLOCATION_ON,"...к хижине отшельника",PC_TELEPORTLOCATION_ON_OLDHOUSE);
+		Info_AddChoice( PC_TELEPORTLOCATION_ON , " ...to the hermitage " , PC_TELEPORTLOCATION_ON_OLDHOUSE );
 	};
 	if(PIRATCAMP_TP == TRUE)
 	{
-		Info_AddChoice(PC_TELEPORTLOCATION_ON,"...в лагерь пиратов",PC_TELEPORTLOCATION_ON_PIRATCAMP);
+		Info_AddChoice( PC_TELEPORTLOCATION_ON , " ...to the pirate camp " , PC_TELEPORTLOCATION_ON_PIRATCAMP );
 	};
 
 	Info_AddChoice(PC_TELEPORTLOCATION_ON,DIALOG_BACK,PC_TELEPORTLOCATION_ON_BACK);
@@ -577,43 +578,43 @@ func void PC_TELEPORTLOCATION_ON_HOR()
 
 	if(VINOCAVE_TP == TRUE)
 	{
-		Info_AddChoice(PC_TELEPORTLOCATION_ON,"...в западный лес",PC_TELEPORTLOCATION_ON_VINOCAVE);
+		Info_AddChoice( PC_TELEPORTLOCATION_ON , " ...to the western forest " , PC_TELEPORTLOCATION_ON_VINOCAVE );
 	};
-	if(SAGITTA_TP == TRUE)
+	if ( ARROW_TP  ==  TRUE )
 	{
-		Info_AddChoice(PC_TELEPORTLOCATION_ON,"...пещере Сагитты",PC_TELEPORTLOCATION_ON_SAGITTA);
+		Info_AddChoice( PC_TELEPORTLOCATION_ON , " ...sagitta's cave " , PC_TELEPORTLOCATION_ON_SAGITTA );
 	};
 	if(SUNCIRCLE_TP == TRUE)
 	{
-		Info_AddChoice(PC_TELEPORTLOCATION_ON,"...кругу Солнца",PC_TELEPORTLOCATION_ON_SUNCIRCLE);
+		Info_AddChoice( PC_TELEPORTLOCATION_ON , " ...circle of the Sun " , PC_TELEPORTLOCATION_ON_SUNCIRCLE );
 	};
 	if(BLACKTROLL_TP == TRUE)
 	{
-		Info_AddChoice(PC_TELEPORTLOCATION_ON,"...к логову черного тролля",PC_TELEPORTLOCATION_ON_BLACKTROLL);
+		Info_AddChoice( PC_TELEPORTLOCATION_ON , " ...to the black troll's lair " , PC_TELEPORTLOCATION_ON_BLACKTROLL );
 	};
 	if(ADWRUINS_TP == TRUE)
 	{
-		Info_AddChoice(PC_TELEPORTLOCATION_ON,"...раскопкам Магов Воды",PC_TELEPORTLOCATION_ON_ADWRUINS);
+		Info_AddChoice( PC_TELEPORTLOCATION_ON , " ...Water Mage Dig Site " , PC_TELEPORTLOCATION_ON_ADWRUINS );
 	};
 	if(PSI_TP == TRUE)
 	{
-		Info_AddChoice(PC_TELEPORTLOCATION_ON,"...лагерю Братства",PC_TELEPORTLOCATION_ON_PSI);
+		Info_AddChoice( PC_TELEPORTLOCATION_ON , " ...to the Brotherhood camp " , PC_TELEPORTLOCATION_ON_PSI );
 	};
 	if(HUNT_TP == TRUE)
 	{
-		Info_AddChoice(PC_TELEPORTLOCATION_ON,"...лагерю охотников",PC_TELEPORTLOCATION_ON_HUNT);
+		Info_AddChoice( PC_TELEPORTLOCATION_ON , " ...hunter camp " , PC_TELEPORTLOCATION_ON_HUNT );
 	};
 	if(TAVERNE_TP == TRUE)
 	{
-		Info_AddChoice(PC_TELEPORTLOCATION_ON,"...таверне 'Мертвая гарпия'",PC_TELEPORTLOCATION_ON_TAVERNE);
+		Info_AddChoice( PC_TELEPORTLOCATION_ON , " ...Dead Harpy Tavern " , PC_TELEPORTLOCATION_ON_TAVERNE );
 	};
 	if(PASSOW_TP == TRUE)
 	{
-		Info_AddChoice(PC_TELEPORTLOCATION_ON,"...проходу в Долину Рудников",PC_TELEPORTLOCATION_ON_PASSOW);
+		Info_AddChoice( PC_TELEPORTLOCATION_ON , " ...pass to Mining Valley " , PC_TELEPORTLOCATION_ON_PASSOW );
 	};
 	if(KLOSTER_TP == TRUE)
 	{
-		Info_AddChoice(PC_TELEPORTLOCATION_ON,"...монастырю Инноса",PC_TELEPORTLOCATION_ON_KLOSTER);
+		Info_AddChoice( PC_TELEPORTLOCATION_ON , " ...Innos Monastery " , PC_TELEPORTLOCATION_ON_KLOSTER );
 	};
 	if(BIGFARM_TP == TRUE)
 	{
@@ -621,11 +622,11 @@ func void PC_TELEPORTLOCATION_ON_HOR()
 	};
 	if(TOWN_TP == TRUE)
 	{
-		Info_AddChoice(PC_TELEPORTLOCATION_ON,"...восточным воротам города Хоринис",PC_TELEPORTLOCATION_ON_TOWN);
+		Info_AddChoice( PC_TELEPORTLOCATION_ON , " ...east gate of the city of Khorinis " , PC_TELEPORTLOCATION_ON_TOWN );
 	};
 	if(XARDAS_TP == TRUE)
 	{
-		Info_AddChoice(PC_TELEPORTLOCATION_ON,"...башне Ксардаса",PC_TELEPORTLOCATION_ON_XARDAS);
+		Info_AddChoice( PC_TELEPORTLOCATION_ON , " ...xardas tower " , PC_TELEPORTLOCATION_ON_XARDAS );
 	};
 
 	Info_AddChoice(PC_TELEPORTLOCATION_ON,DIALOG_BACK,PC_TELEPORTLOCATION_ON_BACK);
@@ -637,47 +638,47 @@ func void PC_TELEPORTLOCATION_ON_OW()
 
 	if(SKLEP_TP == TRUE)
 	{
-		Info_AddChoice(PC_TELEPORTLOCATION_ON,"...заброшенному склепу",PC_TELEPORTLOCATION_ON_SKLEP);
+		Info_AddChoice( PC_TELEPORTLOCATION_ON , " ...to an abandoned crypt " , PC_TELEPORTLOCATION_ON_SKLEP );
 	};
 	if(OLDPSI_TP == TRUE)
 	{
-		Info_AddChoice(PC_TELEPORTLOCATION_ON,"...лагерю Братства Спящего",PC_TELEPORTLOCATION_ON_OLDPSI);
+		Info_AddChoice( PC_TELEPORTLOCATION_ON , " ...to the Brotherhood of the Sleeper camp " , PC_TELEPORTLOCATION_ON_OLDPSI );
 	};
 	if(OLDFORT_TP == TRUE)
 	{
-		Info_AddChoice(PC_TELEPORTLOCATION_ON,"...разрушеному форту",PC_TELEPORTLOCATION_ON_OLDFORT);
+		Info_AddChoice( PC_TELEPORTLOCATION_ON , " ...destroyed fort " , PC_TELEPORTLOCATION_ON_OLDFORT );
 	};
 	if(DARKTOWER_TP == TRUE)
 	{
-		Info_AddChoice(PC_TELEPORTLOCATION_ON,"...старой башне Ксардаса",PC_TELEPORTLOCATION_ON_DARKTOWER);
+		Info_AddChoice( PC_TELEPORTLOCATION_ON , " ...to the old tower of Xardas " , PC_TELEPORTLOCATION_ON_DARKTOWER );
 	};
 	if(ICE_TP == TRUE)
 	{
-		Info_AddChoice(PC_TELEPORTLOCATION_ON,"...проходу в Новый лагерь",PC_TELEPORTLOCATION_ON_ICE);
+		Info_AddChoice( PC_TELEPORTLOCATION_ON , " ...passing to New Camp " , PC_TELEPORTLOCATION_ON_ICE );
 	};
 	if(NETBEK_TP == TRUE)
 	{
-		Info_AddChoice(PC_TELEPORTLOCATION_ON,"...разрушенному монастырю",PC_TELEPORTLOCATION_ON_NETBEK);
+		Info_AddChoice( PC_TELEPORTLOCATION_ON , " ...to the ruined monastery " , PC_TELEPORTLOCATION_ON_NETBEK );
 	};
 	if(PASSNW_TP == TRUE)
 	{
-		Info_AddChoice(PC_TELEPORTLOCATION_ON,"...проходу в Хоринис",PC_TELEPORTLOCATION_ON_PASSNW);
+		Info_AddChoice( PC_TELEPORTLOCATION_ON , " ...passage in Horinis " , PC_TELEPORTLOCATION_ON_PASSNW );
 	};
 	if(CASTLE_TP == TRUE)
 	{
-		Info_AddChoice(PC_TELEPORTLOCATION_ON,"...замку рудных баронов",PC_TELEPORTLOCATION_ON_CASTLE);
+		Info_AddChoice( PC_TELEPORTLOCATION_ON , " ...to the Ore Barons ' Castle " , PC_TELEPORTLOCATION_ON_CASTLE );
 	};
 
 	Info_AddChoice(PC_TELEPORTLOCATION_ON,DIALOG_BACK,PC_TELEPORTLOCATION_ON_BACK);
 };
 
-func void PC_TELEPORTLOCATION_ON_AV()
+func void  PC_TELEPORTLOCATION_ON_AV ()
 {
 	Info_ClearChoices(PC_TELEPORTLOCATION_ON);
 
 	if(COMPLEX_TP == TRUE)
 	{
-		Info_AddChoice(PC_TELEPORTLOCATION_ON,"...храмовой площади",PC_TELEPORTLOCATION_ON_COMPLEX);
+		Info_AddChoice( PC_TELEPORTLOCATION_ON , " ...temple square " , PC_TELEPORTLOCATION_ON_COMPLEX );
 	};
 	if(LIFECIRCLE_TP == TRUE)
 	{
@@ -685,15 +686,15 @@ func void PC_TELEPORTLOCATION_ON_AV()
 	};
 	if(PASSAV_TP == TRUE)
 	{
-		Info_AddChoice(PC_TELEPORTLOCATION_ON,"...проходу на плато Древних",PC_TELEPORTLOCATION_ON_PASSAV);
+		Info_AddChoice( PC_TELEPORTLOCATION_ON , " ...passage to the plateau of the Ancients " , PC_TELEPORTLOCATION_ON_PASSAV );
 	};
 	if(PYRAMIDE_TP == TRUE)
 	{
-		Info_AddChoice(PC_TELEPORTLOCATION_ON,"...Храму Истины",PC_TELEPORTLOCATION_ON_PYRAMIDE);
+		Info_AddChoice( PC_TELEPORTLOCATION_ON , " ...To the Temple of Truth " , PC_TELEPORTLOCATION_ON_PYRAMIDE );
 	};
 	if(TEARHRAM_TP == TRUE)
 	{
-		Info_AddChoice(PC_TELEPORTLOCATION_ON,"...Алтарю Слез",PC_TELEPORTLOCATION_ON_TEARHRAM);
+		Info_AddChoice( PC_TELEPORTLOCATION_ON , " ...To the Altar of Tears " , PC_TELEPORTLOCATION_ON_TEARHRAM );
 	};
 
 	Info_AddChoice(PC_TELEPORTLOCATION_ON,DIALOG_BACK,PC_TELEPORTLOCATION_ON_BACK);
@@ -705,7 +706,7 @@ func void PC_TELEPORTLOCATION_ON_ORM()
 
 	if(ORCMOUNTAIN_TP == TRUE)
 	{
-		Info_AddChoice(PC_TELEPORTLOCATION_ON,"...к рунному камню",PC_TELEPORTLOCATION_ON_ORCMOUNTAIN);
+		Info_AddChoice( PC_TELEPORTLOCATION_ON , " ...to runestone " , PC_TELEPORTLOCATION_ON_ORCMOUNTAIN );
 	};
 
 	Info_AddChoice(PC_TELEPORTLOCATION_ON,DIALOG_BACK,PC_TELEPORTLOCATION_ON_BACK);
@@ -717,7 +718,7 @@ func void PC_TELEPORTLOCATION_ON_OLDHOUSE()
 	var int tmpMissMana;
 
 	AI_StopProcessInfos(self);
-	self.aivar[AIV_INVINCIBLE] = FALSE;
+	self.aivar[ AIV_INVINCIBLE ] = FALSE ;
 	PLAYER_MOBSI_PRODUCTION = MOBSI_NONE;
 	TeleportCheck = FALSE;
 
@@ -729,8 +730,8 @@ func void PC_TELEPORTLOCATION_ON_OLDHOUSE()
 	else
 	{
 		tmpMissMana = 40 - self.attribute[ATR_MANA];
-		concatText = ConcatStrings("Не хватает ",IntToString(tmpMissMana));
-		concatText = ConcatStrings(concatText," магической энергии...");
+		concatText = ConcatStrings( " Missing " ,IntToString(tmpMissMana));
+		concatText = ConcatStrings(concatText, " magical energy... " );
 		AI_PrintClr(concatText,177,58,17);
 	};
 };
@@ -741,7 +742,7 @@ func void PC_TELEPORTLOCATION_ON_PIRATCAMP()
 	var int tmpMissMana;
 
 	AI_StopProcessInfos(self);
-	self.aivar[AIV_INVINCIBLE] = FALSE;
+	self.aivar[ AIV_INVINCIBLE ] = FALSE ;
 	PLAYER_MOBSI_PRODUCTION = MOBSI_NONE;
 	TeleportCheck = FALSE;
 
@@ -753,8 +754,8 @@ func void PC_TELEPORTLOCATION_ON_PIRATCAMP()
 	else
 	{
 		tmpMissMana = 40 - self.attribute[ATR_MANA];
-		concatText = ConcatStrings("Не хватает ",IntToString(tmpMissMana));
-		concatText = ConcatStrings(concatText," магической энергии...");
+		concatText = ConcatStrings( " Missing " ,IntToString(tmpMissMana));
+		concatText = ConcatStrings(concatText, " magical energy... " );
 		AI_PrintClr(concatText,177,58,17);
 	};
 };
@@ -765,7 +766,7 @@ func void PC_TELEPORTLOCATION_ON_ORCMOUNTAIN()
 	var int tmpMissMana;
 
 	AI_StopProcessInfos(self);
-	self.aivar[AIV_INVINCIBLE] = FALSE;
+	self.aivar[ AIV_INVINCIBLE ] = FALSE ;
 	PLAYER_MOBSI_PRODUCTION = MOBSI_NONE;
 	TeleportCheck = FALSE;
 
@@ -777,8 +778,8 @@ func void PC_TELEPORTLOCATION_ON_ORCMOUNTAIN()
 	else
 	{
 		tmpMissMana = 40 - self.attribute[ATR_MANA];
-		concatText = ConcatStrings("Не хватает ",IntToString(tmpMissMana));
-		concatText = ConcatStrings(concatText," магической энергии...");
+		concatText = ConcatStrings( " Missing " ,IntToString(tmpMissMana));
+		concatText = ConcatStrings(concatText, " magical energy... " );
 		AI_PrintClr(concatText,177,58,17);
 	};
 };
@@ -789,7 +790,7 @@ func void PC_TELEPORTLOCATION_ON_XARDAS()
 	var int tmpMissMana;
 
 	AI_StopProcessInfos(self);
-	self.aivar[AIV_INVINCIBLE] = FALSE;
+	self.aivar[ AIV_INVINCIBLE ] = FALSE ;
 	PLAYER_MOBSI_PRODUCTION = MOBSI_NONE;
 	LOC_XARDAS_TP_OK = TRUE;
 	TeleportCheck = FALSE;
@@ -802,8 +803,8 @@ func void PC_TELEPORTLOCATION_ON_XARDAS()
 	else
 	{
 		tmpMissMana = 40 - self.attribute[ATR_MANA];
-		concatText = ConcatStrings("Не хватает ",IntToString(tmpMissMana));
-		concatText = ConcatStrings(concatText," магической энергии...");
+		concatText = ConcatStrings( " Missing " ,IntToString(tmpMissMana));
+		concatText = ConcatStrings(concatText, " magical energy... " );
 		AI_PrintClr(concatText,177,58,17);
 	};
 };
@@ -814,7 +815,7 @@ func void PC_TELEPORTLOCATION_ON_TOWN()
 	var int tmpMissMana;
 
 	AI_StopProcessInfos(self);
-	self.aivar[AIV_INVINCIBLE] = FALSE;
+	self.aivar[ AIV_INVINCIBLE ] = FALSE ;
 	PLAYER_MOBSI_PRODUCTION = MOBSI_NONE;
 	TeleportCheck = FALSE;
 
@@ -826,8 +827,8 @@ func void PC_TELEPORTLOCATION_ON_TOWN()
 	else
 	{
 		tmpMissMana = 40 - self.attribute[ATR_MANA];
-		concatText = ConcatStrings("Не хватает ",IntToString(tmpMissMana));
-		concatText = ConcatStrings(concatText," магической энергии...");
+		concatText = ConcatStrings( " Missing " ,IntToString(tmpMissMana));
+		concatText = ConcatStrings(concatText, " magical energy... " );
 		AI_PrintClr(concatText,177,58,17);
 	};
 };
@@ -838,20 +839,20 @@ func void PC_TELEPORTLOCATION_ON_TAVERNE()
 	var int tmpMissMana;
 
 	AI_StopProcessInfos(self);
-	self.aivar[AIV_INVINCIBLE] = FALSE;
+	self.aivar[ AIV_INVINCIBLE ] = FALSE ;
 	PLAYER_MOBSI_PRODUCTION = MOBSI_NONE;
 	TeleportCheck = FALSE;
 
 	if(self.attribute[ATR_MANA] >= 40)
 	{
 		self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - 40;
-		LOC_TAVERNE_TP_OK = TRUE;
+		LOC_TAVERNE_TP_OK = TRUE ;
 	}
 	else
 	{
 		tmpMissMana = 40 - self.attribute[ATR_MANA];
-		concatText = ConcatStrings("Не хватает ",IntToString(tmpMissMana));
-		concatText = ConcatStrings(concatText," магической энергии...");
+		concatText = ConcatStrings( " Missing " ,IntToString(tmpMissMana));
+		concatText = ConcatStrings(concatText, " magical energy... " );
 		AI_PrintClr(concatText,177,58,17);
 	};
 };
@@ -862,7 +863,7 @@ func void PC_TELEPORTLOCATION_ON_PSI()
 	var int tmpMissMana;
 
 	AI_StopProcessInfos(self);
-	self.aivar[AIV_INVINCIBLE] = FALSE;
+	self.aivar[ AIV_INVINCIBLE ] = FALSE ;
 	PLAYER_MOBSI_PRODUCTION = MOBSI_NONE;
 	TeleportCheck = FALSE;
 
@@ -874,8 +875,8 @@ func void PC_TELEPORTLOCATION_ON_PSI()
 	else
 	{
 		tmpMissMana = 40 - self.attribute[ATR_MANA];
-		concatText = ConcatStrings("Не хватает ",IntToString(tmpMissMana));
-		concatText = ConcatStrings(concatText," магической энергии...");
+		concatText = ConcatStrings( " Missing " ,IntToString(tmpMissMana));
+		concatText = ConcatStrings(concatText, " magical energy... " );
 		AI_PrintClr(concatText,177,58,17);
 	};
 };
@@ -886,7 +887,7 @@ func void PC_TELEPORTLOCATION_ON_PASSOW()
 	var int tmpMissMana;
 
 	AI_StopProcessInfos(self);
-	self.aivar[AIV_INVINCIBLE] = FALSE;
+	self.aivar[ AIV_INVINCIBLE ] = FALSE ;
 	PLAYER_MOBSI_PRODUCTION = MOBSI_NONE;
 	TeleportCheck = FALSE;
 
@@ -898,8 +899,8 @@ func void PC_TELEPORTLOCATION_ON_PASSOW()
 	else
 	{
 		tmpMissMana = 40 - self.attribute[ATR_MANA];
-		concatText = ConcatStrings("Не хватает ",IntToString(tmpMissMana));
-		concatText = ConcatStrings(concatText," магической энергии...");
+		concatText = ConcatStrings( " Missing " ,IntToString(tmpMissMana));
+		concatText = ConcatStrings(concatText, " magical energy... " );
 		AI_PrintClr(concatText,177,58,17);
 	};
 };
@@ -910,7 +911,7 @@ func void PC_TELEPORTLOCATION_ON_BIGFARM()
 	var int tmpMissMana;
 
 	AI_StopProcessInfos(self);
-	self.aivar[AIV_INVINCIBLE] = FALSE;
+	self.aivar[ AIV_INVINCIBLE ] = FALSE ;
 	PLAYER_MOBSI_PRODUCTION = MOBSI_NONE;
 	TeleportCheck = FALSE;
 
@@ -922,8 +923,8 @@ func void PC_TELEPORTLOCATION_ON_BIGFARM()
 	else
 	{
 		tmpMissMana = 40 - self.attribute[ATR_MANA];
-		concatText = ConcatStrings("Не хватает ",IntToString(tmpMissMana));
-		concatText = ConcatStrings(concatText," магической энергии...");
+		concatText = ConcatStrings( " Missing " ,IntToString(tmpMissMana));
+		concatText = ConcatStrings(concatText, " magical energy... " );
 		AI_PrintClr(concatText,177,58,17);
 	};
 };
@@ -934,7 +935,7 @@ func void PC_TELEPORTLOCATION_ON_KLOSTER()
 	var int tmpMissMana;
 
 	AI_StopProcessInfos(self);
-	self.aivar[AIV_INVINCIBLE] = FALSE;
+	self.aivar[ AIV_INVINCIBLE ] = FALSE ;
 	PLAYER_MOBSI_PRODUCTION = MOBSI_NONE;
 	TeleportCheck = FALSE;
 
@@ -946,32 +947,32 @@ func void PC_TELEPORTLOCATION_ON_KLOSTER()
 	else
 	{
 		tmpMissMana = 40 - self.attribute[ATR_MANA];
-		concatText = ConcatStrings("Не хватает ",IntToString(tmpMissMana));
-		concatText = ConcatStrings(concatText," магической энергии...");
+		concatText = ConcatStrings( " Missing " ,IntToString(tmpMissMana));
+		concatText = ConcatStrings(concatText, " magical energy... " );
 		AI_PrintClr(concatText,177,58,17);
 	};
 };
 
-func void PC_TELEPORTLOCATION_ON_SAGITTA()
+func void  PC_TELEPORTLOCATION_ON_ARROW ()
 {
 	var string concatText;
 	var int tmpMissMana;
 
 	AI_StopProcessInfos(self);
-	self.aivar[AIV_INVINCIBLE] = FALSE;
+	self.aivar[ AIV_INVINCIBLE ] = FALSE ;
 	PLAYER_MOBSI_PRODUCTION = MOBSI_NONE;
 	TeleportCheck = FALSE;
 
 	if(self.attribute[ATR_MANA] >= 40)
 	{
 		self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - 40;
-		LOC_SAGITTA_TP_OK = TRUE;
+		LOC_ARROW_TP_OK = TRUE ;
 	}
 	else
 	{
 		tmpMissMana = 40 - self.attribute[ATR_MANA];
-		concatText = ConcatStrings("Не хватает ",IntToString(tmpMissMana));
-		concatText = ConcatStrings(concatText," магической энергии...");
+		concatText = ConcatStrings( " Missing " ,IntToString(tmpMissMana));
+		concatText = ConcatStrings(concatText, " magical energy... " );
 		AI_PrintClr(concatText,177,58,17);
 	};
 };
@@ -982,7 +983,7 @@ func void PC_TELEPORTLOCATION_ON_HUNT()
 	var int tmpMissMana;
 
 	AI_StopProcessInfos(self);
-	self.aivar[AIV_INVINCIBLE] = FALSE;
+	self.aivar[ AIV_INVINCIBLE ] = FALSE ;
 	PLAYER_MOBSI_PRODUCTION = MOBSI_NONE;
 	TeleportCheck = FALSE;
 
@@ -994,8 +995,8 @@ func void PC_TELEPORTLOCATION_ON_HUNT()
 	else
 	{
 		tmpMissMana = 40 - self.attribute[ATR_MANA];
-		concatText = ConcatStrings("Не хватает ",IntToString(tmpMissMana));
-		concatText = ConcatStrings(concatText," магической энергии...");
+		concatText = ConcatStrings( " Missing " ,IntToString(tmpMissMana));
+		concatText = ConcatStrings(concatText, " magical energy... " );
 		AI_PrintClr(concatText,177,58,17);
 	};
 };
@@ -1006,7 +1007,7 @@ func void PC_TELEPORTLOCATION_ON_VINOCAVE()
 	var int tmpMissMana;
 
 	AI_StopProcessInfos(self);
-	self.aivar[AIV_INVINCIBLE] = FALSE;
+	self.aivar[ AIV_INVINCIBLE ] = FALSE ;
 	PLAYER_MOBSI_PRODUCTION = MOBSI_NONE;
 	LOC_VINOCAVE_TP_OK = TRUE;
 	TeleportCheck = FALSE;
@@ -1019,8 +1020,8 @@ func void PC_TELEPORTLOCATION_ON_VINOCAVE()
 	else
 	{
 		tmpMissMana = 40 - self.attribute[ATR_MANA];
-		concatText = ConcatStrings("Не хватает ",IntToString(tmpMissMana));
-		concatText = ConcatStrings(concatText," магической энергии...");
+		concatText = ConcatStrings( " Missing " ,IntToString(tmpMissMana));
+		concatText = ConcatStrings(concatText, " magical energy... " );
 		AI_PrintClr(concatText,177,58,17);
 	};
 };
@@ -1031,7 +1032,7 @@ func void PC_TELEPORTLOCATION_ON_SUNCIRCLE()
 	var int tmpMissMana;
 
 	AI_StopProcessInfos(self);
-	self.aivar[AIV_INVINCIBLE] = FALSE;
+	self.aivar[ AIV_INVINCIBLE ] = FALSE ;
 	PLAYER_MOBSI_PRODUCTION = MOBSI_NONE;
 	TeleportCheck = FALSE;
 
@@ -1043,8 +1044,8 @@ func void PC_TELEPORTLOCATION_ON_SUNCIRCLE()
 	else
 	{
 		tmpMissMana = 40 - self.attribute[ATR_MANA];
-		concatText = ConcatStrings("Не хватает ",IntToString(tmpMissMana));
-		concatText = ConcatStrings(concatText," магической энергии...");
+		concatText = ConcatStrings( " Missing " ,IntToString(tmpMissMana));
+		concatText = ConcatStrings(concatText, " magical energy... " );
 		AI_PrintClr(concatText,177,58,17);
 	};
 };
@@ -1055,7 +1056,7 @@ func void PC_TELEPORTLOCATION_ON_ADWRUINS()
 	var int tmpMissMana;
 
 	AI_StopProcessInfos(self);
-	self.aivar[AIV_INVINCIBLE] = FALSE;
+	self.aivar[ AIV_INVINCIBLE ] = FALSE ;
 	PLAYER_MOBSI_PRODUCTION = MOBSI_NONE;
 	TeleportCheck = FALSE;
 
@@ -1067,8 +1068,8 @@ func void PC_TELEPORTLOCATION_ON_ADWRUINS()
 	else
 	{
 		tmpMissMana = 40 - self.attribute[ATR_MANA];
-		concatText = ConcatStrings("Не хватает ",IntToString(tmpMissMana));
-		concatText = ConcatStrings(concatText," магической энергии...");
+		concatText = ConcatStrings( " Missing " ,IntToString(tmpMissMana));
+		concatText = ConcatStrings(concatText, " magical energy... " );
 		AI_PrintClr(concatText,177,58,17);
 	};
 };
@@ -1079,7 +1080,7 @@ func void PC_TELEPORTLOCATION_ON_BLACKTROLL()
 	var int tmpMissMana;
 
 	AI_StopProcessInfos(self);
-	self.aivar[AIV_INVINCIBLE] = FALSE;
+	self.aivar[ AIV_INVINCIBLE ] = FALSE ;
 	PLAYER_MOBSI_PRODUCTION = MOBSI_NONE;
 	TeleportCheck = FALSE;
 
@@ -1091,8 +1092,8 @@ func void PC_TELEPORTLOCATION_ON_BLACKTROLL()
 	else
 	{
 		tmpMissMana = 40 - self.attribute[ATR_MANA];
-		concatText = ConcatStrings("Не хватает ",IntToString(tmpMissMana));
-		concatText = ConcatStrings(concatText," магической энергии...");
+		concatText = ConcatStrings( " Missing " ,IntToString(tmpMissMana));
+		concatText = ConcatStrings(concatText, " magical energy... " );
 		AI_PrintClr(concatText,177,58,17);
 	};
 };
@@ -1103,7 +1104,7 @@ func void PC_TELEPORTLOCATION_ON_CASTLE()
 	var int tmpMissMana;
 
 	AI_StopProcessInfos(self);
-	self.aivar[AIV_INVINCIBLE] = FALSE;
+	self.aivar[ AIV_INVINCIBLE ] = FALSE ;
 	PLAYER_MOBSI_PRODUCTION = MOBSI_NONE;
 	TeleportCheck = FALSE;
 
@@ -1115,8 +1116,8 @@ func void PC_TELEPORTLOCATION_ON_CASTLE()
 	else
 	{
 		tmpMissMana = 40 - self.attribute[ATR_MANA];
-		concatText = ConcatStrings("Не хватает ",IntToString(tmpMissMana));
-		concatText = ConcatStrings(concatText," магической энергии...");
+		concatText = ConcatStrings( " Missing " ,IntToString(tmpMissMana));
+		concatText = ConcatStrings(concatText, " magical energy... " );
 		AI_PrintClr(concatText,177,58,17);
 	};
 };
@@ -1127,7 +1128,7 @@ func void PC_TELEPORTLOCATION_ON_ICE()
 	var int tmpMissMana;
 
 	AI_StopProcessInfos(self);
-	self.aivar[AIV_INVINCIBLE] = FALSE;
+	self.aivar[ AIV_INVINCIBLE ] = FALSE ;
 	PLAYER_MOBSI_PRODUCTION = MOBSI_NONE;
 	TeleportCheck = FALSE;
 
@@ -1139,8 +1140,8 @@ func void PC_TELEPORTLOCATION_ON_ICE()
 	else
 	{
 		tmpMissMana = 40 - self.attribute[ATR_MANA];
-		concatText = ConcatStrings("Не хватает ",IntToString(tmpMissMana));
-		concatText = ConcatStrings(concatText," магической энергии...");
+		concatText = ConcatStrings( " Missing " ,IntToString(tmpMissMana));
+		concatText = ConcatStrings(concatText, " magical energy... " );
 		AI_PrintClr(concatText,177,58,17);
 	};
 };
@@ -1151,7 +1152,7 @@ func void PC_TELEPORTLOCATION_ON_SKLEP()
 	var int tmpMissMana;
 
 	AI_StopProcessInfos(self);
-	self.aivar[AIV_INVINCIBLE] = FALSE;
+	self.aivar[ AIV_INVINCIBLE ] = FALSE ;
 	PLAYER_MOBSI_PRODUCTION = MOBSI_NONE;
 	TeleportCheck = FALSE;
 
@@ -1163,8 +1164,8 @@ func void PC_TELEPORTLOCATION_ON_SKLEP()
 	else
 	{
 		tmpMissMana = 40 - self.attribute[ATR_MANA];
-		concatText = ConcatStrings("Не хватает ",IntToString(tmpMissMana));
-		concatText = ConcatStrings(concatText," магической энергии...");
+		concatText = ConcatStrings( " Missing " ,IntToString(tmpMissMana));
+		concatText = ConcatStrings(concatText, " magical energy... " );
 		AI_PrintClr(concatText,177,58,17);
 	};
 };
@@ -1175,7 +1176,7 @@ func void PC_TELEPORTLOCATION_ON_DARKTOWER()
 	var int tmpMissMana;
 
 	AI_StopProcessInfos(self);
-	self.aivar[AIV_INVINCIBLE] = FALSE;
+	self.aivar[ AIV_INVINCIBLE ] = FALSE ;
 	PLAYER_MOBSI_PRODUCTION = MOBSI_NONE;
 	TeleportCheck = FALSE;
 
@@ -1187,8 +1188,8 @@ func void PC_TELEPORTLOCATION_ON_DARKTOWER()
 	else
 	{
 		tmpMissMana = 40 - self.attribute[ATR_MANA];
-		concatText = ConcatStrings("Не хватает ",IntToString(tmpMissMana));
-		concatText = ConcatStrings(concatText," магической энергии...");
+		concatText = ConcatStrings( " Missing " ,IntToString(tmpMissMana));
+		concatText = ConcatStrings(concatText, " magical energy... " );
 		AI_PrintClr(concatText,177,58,17);
 	};
 };
@@ -1199,7 +1200,7 @@ func void PC_TELEPORTLOCATION_ON_OLDFORT()
 	var int tmpMissMana;
 
 	AI_StopProcessInfos(self);
-	self.aivar[AIV_INVINCIBLE] = FALSE;
+	self.aivar[ AIV_INVINCIBLE ] = FALSE ;
 	PLAYER_MOBSI_PRODUCTION = MOBSI_NONE;
 	TeleportCheck = FALSE;
 
@@ -1211,8 +1212,8 @@ func void PC_TELEPORTLOCATION_ON_OLDFORT()
 	else
 	{
 		tmpMissMana = 40 - self.attribute[ATR_MANA];
-		concatText = ConcatStrings("Не хватает ",IntToString(tmpMissMana));
-		concatText = ConcatStrings(concatText," магической энергии...");
+		concatText = ConcatStrings( " Missing " ,IntToString(tmpMissMana));
+		concatText = ConcatStrings(concatText, " magical energy... " );
 		AI_PrintClr(concatText,177,58,17);
 	};
 };
@@ -1223,7 +1224,7 @@ func void PC_TELEPORTLOCATION_ON_OLDPSI()
 	var int tmpMissMana;
 
 	AI_StopProcessInfos(self);
-	self.aivar[AIV_INVINCIBLE] = FALSE;
+	self.aivar[ AIV_INVINCIBLE ] = FALSE ;
 	PLAYER_MOBSI_PRODUCTION = MOBSI_NONE;
 	TeleportCheck = FALSE;
 
@@ -1235,8 +1236,8 @@ func void PC_TELEPORTLOCATION_ON_OLDPSI()
 	else
 	{
 		tmpMissMana = 4040 - self.attribute[ATR_MANA];
-		concatText = ConcatStrings("Не хватает ",IntToString(tmpMissMana));
-		concatText = ConcatStrings(concatText," магической энергии...");
+		concatText = ConcatStrings( " Missing " ,IntToString(tmpMissMana));
+		concatText = ConcatStrings(concatText, " magical energy... " );
 		AI_PrintClr(concatText,177,58,17);
 	};
 };
@@ -1247,7 +1248,7 @@ func void PC_TELEPORTLOCATION_ON_NETBEK()
 	var int tmpMissMana;
 
 	AI_StopProcessInfos(self);
-	self.aivar[AIV_INVINCIBLE] = FALSE;
+	self.aivar[ AIV_INVINCIBLE ] = FALSE ;
 	PLAYER_MOBSI_PRODUCTION = MOBSI_NONE;
 	TeleportCheck = FALSE;
 
@@ -1259,8 +1260,8 @@ func void PC_TELEPORTLOCATION_ON_NETBEK()
 	else
 	{
 		tmpMissMana = 40 - self.attribute[ATR_MANA];
-		concatText = ConcatStrings("Не хватает ",IntToString(tmpMissMana));
-		concatText = ConcatStrings(concatText," магической энергии...");
+		concatText = ConcatStrings( " Missing " ,IntToString(tmpMissMana));
+		concatText = ConcatStrings(concatText, " magical energy... " );
 		AI_PrintClr(concatText,177,58,17);
 	};
 };
@@ -1271,7 +1272,7 @@ func void PC_TELEPORTLOCATION_ON_PASSNW()
 	var int tmpMissMana;
 
 	AI_StopProcessInfos(self);
-	self.aivar[AIV_INVINCIBLE] = FALSE;
+	self.aivar[ AIV_INVINCIBLE ] = FALSE ;
 	PLAYER_MOBSI_PRODUCTION = MOBSI_NONE;
 	TeleportCheck = FALSE;
 
@@ -1283,8 +1284,8 @@ func void PC_TELEPORTLOCATION_ON_PASSNW()
 	else
 	{
 		tmpMissMana = 40 - self.attribute[ATR_MANA];
-		concatText = ConcatStrings("Не хватает ",IntToString(tmpMissMana));
-		concatText = ConcatStrings(concatText," магической энергии...");
+		concatText = ConcatStrings( " Missing " ,IntToString(tmpMissMana));
+		concatText = ConcatStrings(concatText, " magical energy... " );
 		AI_PrintClr(concatText,177,58,17);
 	};
 };
@@ -1295,7 +1296,7 @@ func void PC_TELEPORTLOCATION_ON_TEARHRAM()
 	var int tmpMissMana;
 
 	AI_StopProcessInfos(self);
-	self.aivar[AIV_INVINCIBLE] = FALSE;
+	self.aivar[ AIV_INVINCIBLE ] = FALSE ;
 	PLAYER_MOBSI_PRODUCTION = MOBSI_NONE;
 	TeleportCheck = FALSE;
 
@@ -1307,8 +1308,8 @@ func void PC_TELEPORTLOCATION_ON_TEARHRAM()
 	else
 	{
 		tmpMissMana = 40 - self.attribute[ATR_MANA];
-		concatText = ConcatStrings("Не хватает ",IntToString(tmpMissMana));
-		concatText = ConcatStrings(concatText," магической энергии...");
+		concatText = ConcatStrings( " Missing " ,IntToString(tmpMissMana));
+		concatText = ConcatStrings(concatText, " magical energy... " );
 		AI_PrintClr(concatText,177,58,17);
 	};
 };
@@ -1319,7 +1320,7 @@ func void PC_TELEPORTLOCATION_ON_PYRAMIDE()
 	var int tmpMissMana;
 
 	AI_StopProcessInfos(self);
-	self.aivar[AIV_INVINCIBLE] = FALSE;
+	self.aivar[ AIV_INVINCIBLE ] = FALSE ;
 	PLAYER_MOBSI_PRODUCTION = MOBSI_NONE;
 	TeleportCheck = FALSE;
 
@@ -1331,8 +1332,8 @@ func void PC_TELEPORTLOCATION_ON_PYRAMIDE()
 	else
 	{
 		tmpMissMana = 40 - self.attribute[ATR_MANA];
-		concatText = ConcatStrings("Не хватает ",IntToString(tmpMissMana));
-		concatText = ConcatStrings(concatText," магической энергии...");
+		concatText = ConcatStrings( " Missing " ,IntToString(tmpMissMana));
+		concatText = ConcatStrings(concatText, " magical energy... " );
 		AI_PrintClr(concatText,177,58,17);
 	};
 };
@@ -1343,7 +1344,7 @@ func void PC_TELEPORTLOCATION_ON_PASSAV()
 	var int tmpMissMana;
 
 	AI_StopProcessInfos(self);
-	self.aivar[AIV_INVINCIBLE] = FALSE;
+	self.aivar[ AIV_INVINCIBLE ] = FALSE ;
 	PLAYER_MOBSI_PRODUCTION = MOBSI_NONE;
 	TeleportCheck = FALSE;
 
@@ -1355,8 +1356,8 @@ func void PC_TELEPORTLOCATION_ON_PASSAV()
 	else
 	{
 		tmpMissMana = 40 - self.attribute[ATR_MANA];
-		concatText = ConcatStrings("Не хватает ",IntToString(tmpMissMana));
-		concatText = ConcatStrings(concatText," магической энергии...");
+		concatText = ConcatStrings( " Missing " ,IntToString(tmpMissMana));
+		concatText = ConcatStrings(concatText, " magical energy... " );
 		AI_PrintClr(concatText,177,58,17);
 	};
 };
@@ -1367,7 +1368,7 @@ func void PC_TELEPORTLOCATION_ON_LIFECIRCLE()
 	var int tmpMissMana;
 
 	AI_StopProcessInfos(self);
-	self.aivar[AIV_INVINCIBLE] = FALSE;
+	self.aivar[ AIV_INVINCIBLE ] = FALSE ;
 	PLAYER_MOBSI_PRODUCTION = MOBSI_NONE;
 	TeleportCheck = FALSE;
 
@@ -1379,8 +1380,8 @@ func void PC_TELEPORTLOCATION_ON_LIFECIRCLE()
 	else
 	{
 		tmpMissMana = 40 - self.attribute[ATR_MANA];
-		concatText = ConcatStrings("Не хватает ",IntToString(tmpMissMana));
-		concatText = ConcatStrings(concatText," магической энергии...");
+		concatText = ConcatStrings( " Missing " ,IntToString(tmpMissMana));
+		concatText = ConcatStrings(concatText, " magical energy... " );
 		AI_PrintClr(concatText,177,58,17);
 	};
 };
@@ -1391,7 +1392,7 @@ func void PC_TELEPORTLOCATION_ON_COMPLEX()
 	var int tmpMissMana;
 
 	AI_StopProcessInfos(self);
-	self.aivar[AIV_INVINCIBLE] = FALSE;
+	self.aivar[ AIV_INVINCIBLE ] = FALSE ;
 	PLAYER_MOBSI_PRODUCTION = MOBSI_NONE;
 	TeleportCheck = FALSE;
 
@@ -1403,8 +1404,8 @@ func void PC_TELEPORTLOCATION_ON_COMPLEX()
 	else
 	{
 		tmpMissMana = 40 - self.attribute[ATR_MANA];
-		concatText = ConcatStrings("Не хватает ",IntToString(tmpMissMana));
-		concatText = ConcatStrings(concatText," магической энергии...");
+		concatText = ConcatStrings( " Missing " ,IntToString(tmpMissMana));
+		concatText = ConcatStrings(concatText, " magical energy... " );
 		AI_PrintClr(concatText,177,58,17);
 	};
 };
@@ -1416,7 +1417,7 @@ instance PC_TELEPORT_ON(C_Info)
 	condition = PC_TELEPORT_ON_condition;
 	information = PC_TELEPORT_ON_info;
 	permanent = TRUE;
-	description = "Телепортация к...";
+	description = " Teleport to... " ;
 };
 
 func int PC_TELEPORT_ON_condition()
@@ -1435,11 +1436,11 @@ func void PC_TELEPORT_ON_info()
 	{
 		if(VINOCAVE_TP == TRUE)
 		{
-			Info_AddChoice(PC_TELEPORT_ON,"...в западный лес",PC_TELEPORT_ON_VINOCAVE);
+			Info_AddChoice( PC_TELEPORT_ON , " ...to the western forest " , PC_TELEPORT_ON_VINOCAVE );
 		};
-		if(SAGITTA_TP == TRUE)
+		if ( ARROW_TP  ==  TRUE )
 		{
-			Info_AddChoice(PC_TELEPORT_ON,"...пещере Сагитты",PC_TELEPORT_ON_SAGITTA);
+			Info_AddChoice( PC_TELEPORT_ON , " ...sagitta's cave " , PC_TELEPORT_ON_SAGITTA );
 		};
 		if(SUNCIRCLE_TP == TRUE)
 		{
@@ -1447,31 +1448,31 @@ func void PC_TELEPORT_ON_info()
 		};
 		if(BLACKTROLL_TP == TRUE)
 		{
-			Info_AddChoice(PC_TELEPORT_ON,"...к логову черного тролля",PC_TELEPORT_ON_BLACKTROLL);
+			Info_AddChoice( PC_TELEPORT_ON , " ...to the black troll's lair " , PC_TELEPORT_ON_BLACKTROLL );
 		};
 		if(ADWRUINS_TP == TRUE)
 		{
-			Info_AddChoice(PC_TELEPORT_ON,"...раскопкам Магов Воды",PC_TELEPORT_ON_ADWRUINS);
+			Info_AddChoice( PC_TELEPORT_ON , " ...Water Mage dig " , PC_TELEPORT_ON_ADWRUINS );
 		};
 		if(PSI_TP == TRUE)
 		{
-			Info_AddChoice(PC_TELEPORT_ON,"...лагерю Братства",PC_TELEPORT_ON_PSI);
+			Info_AddChoice( PC_TELEPORT_ON , " ...Fraternity Camp " , PC_TELEPORT_ON_PSI );
 		};
 		if(HUNT_TP == TRUE)
 		{
-			Info_AddChoice(PC_TELEPORT_ON,"...лагерю охотников",PC_TELEPORT_ON_HUNT);
+			Info_AddChoice( PC_TELEPORT_ON , " ...hunter camp " , PC_TELEPORT_ON_HUNT );
 		};
 		if(TAVERNE_TP == TRUE)
 		{
-			Info_AddChoice(PC_TELEPORT_ON,"...таверне 'Мертвая гарпия'",PC_TELEPORT_ON_TAVERNE);
+			Info_AddChoice( PC_TELEPORT_ON , " ...Dead Harpy Tavern " , PC_TELEPORT_ON_TAVERNE );
 		};
 		if(PASSOW_TP == TRUE)
 		{
-			Info_AddChoice(PC_TELEPORT_ON,"...проходу в Долину Рудников",PC_TELEPORT_ON_PASSOW);
+			Info_AddChoice( PC_TELEPORT_ON , " ...pass to Mining Valley " , PC_TELEPORT_ON_PASSOW );
 		};
 		if(KLOSTER_TP == TRUE)
 		{
-			Info_AddChoice(PC_TELEPORT_ON,"...монастырю Инноса",PC_TELEPORT_ON_KLOSTER);
+			Info_AddChoice( PC_TELEPORT_ON , " ...to the monastery of Innos " , PC_TELEPORT_ON_KLOSTER );
 		};
 		if(BIGFARM_TP == TRUE)
 		{
@@ -1479,64 +1480,64 @@ func void PC_TELEPORT_ON_info()
 		};
 		if(TOWN_TP == TRUE)
 		{
-			Info_AddChoice(PC_TELEPORT_ON,"...восточным воротам города Хоринис",PC_TELEPORT_ON_TOWN);
+			Info_AddChoice( PC_TELEPORT_ON , " ...east gate of the city of Khorinis " , PC_TELEPORT_ON_TOWN );
 		};
 		if(XARDAS_TP == TRUE)
 		{
-			Info_AddChoice(PC_TELEPORT_ON,"...башне Ксардаса",PC_TELEPORT_ON_XARDAS);
+			Info_AddChoice( PC_TELEPORT_ON , " ...xardas tower " , PC_TELEPORT_ON_XARDAS );
 		};
 	}
-	else if(CurrentLevel == ADDONWORLD_ZEN)
+	else  if (CurrentLevel ==  ADDONWORLD_ZEN )
 	{
 		if(ADW_TP == TRUE)
 		{
-			Info_AddChoice(PC_TELEPORT_ON,"...к хижине отшельника",PC_TELEPORT_ON_ADW);
+			Info_AddChoice( PC_TELEPORT_ON , " ...to the hermitage " , PC_TELEPORT_ON_ADW );
 		};
 		if(PIRATCAMP_TP == TRUE)
 		{
-			Info_AddChoice(PC_TELEPORT_ON,"...в лагерь пиратов",PC_TELEPORT_ON_PIRATCAMP);
+			Info_AddChoice( PC_TELEPORT_ON , " ...to the pirate camp " , PC_TELEPORT_ON_PIRATCAMP );
 		};
 	}
 	else if(CurrentLevel == OLDWORLD_ZEN)
 	{
 		if(SKLEP_TP == TRUE)
 		{
-			Info_AddChoice(PC_TELEPORT_ON,"...заброшенному склепу",PC_TELEPORT_ON_SKLEP);
+			Info_AddChoice( PC_TELEPORT_ON , " ...to an abandoned crypt " , PC_TELEPORT_ON_SKLEP );
 		};
 		if(OLDPSI_TP == TRUE)
 		{
-			Info_AddChoice(PC_TELEPORT_ON,"...лагерю Братства Спящего",PC_TELEPORT_ON_OLDPSI);
+			Info_AddChoice( PC_TELEPORT_ON , " ...camp of the Brotherhood of the Sleeper " , PC_TELEPORT_ON_OLDPSI );
 		};
 		if(OLDFORT_TP == TRUE)
 		{
-			Info_AddChoice(PC_TELEPORT_ON,"...разрушеному форту",PC_TELEPORT_ON_OLDFORT);
+			Info_AddChoice( PC_TELEPORT_ON , " ...to the destroyed fort " , PC_TELEPORT_ON_OLDFORT );
 		};
 		if(DARKTOWER_TP == TRUE)
 		{
-			Info_AddChoice(PC_TELEPORT_ON,"...старой башне Ксардаса",PC_TELEPORT_ON_DARKTOWER);
+			Info_AddChoice( PC_TELEPORT_ON , " ...old tower of Xardas " , PC_TELEPORT_ON_DARKTOWER );
 		};
 		if(ICE_TP == TRUE)
 		{
-			Info_AddChoice(PC_TELEPORT_ON,"...проходу в Новый лагерь",PC_TELEPORT_ON_ICE);
+			Info_AddChoice( PC_TELEPORT_ON , " ...passing to New Camp " , PC_TELEPORT_ON_ICE );
 		};
 		if(NETBEK_TP == TRUE)
 		{
-			Info_AddChoice(PC_TELEPORT_ON,"...разрушенному монастырю",PC_TELEPORT_ON_NETBEK);
+			Info_AddChoice( PC_TELEPORT_ON , " ...to the ruined monastery " , PC_TELEPORT_ON_NETBEK );
 		};
 		if(PASSNW_TP == TRUE)
 		{
-			Info_AddChoice(PC_TELEPORT_ON,"...проходу в Хоринис",PC_TELEPORT_ON_PASSNW);
+			Info_AddChoice( PC_TELEPORT_ON , " ...passway in Horinis " , PC_TELEPORT_ON_PASSNW );
 		};
 		if(CASTLE_TP == TRUE)
 		{
-			Info_AddChoice(PC_TELEPORT_ON,"...замку рудных баронов",PC_TELEPORT_ON_CASTLE);
+			Info_AddChoice( PC_TELEPORT_ON , " ...to the Ore Barons ' Castle " , PC_TELEPORT_ON_CASTLE );
 		};
 	}
 	else if(CurrentLevel == ADANOSVALLEY_ZEN)
 	{
 		if(COMPLEX_TP == TRUE)
 		{
-			Info_AddChoice(PC_TELEPORT_ON,"...храмовой площади",PC_TELEPORT_ON_COMPLEX);
+			Info_AddChoice( PC_TELEPORT_ON , " ...temple square " , PC_TELEPORT_ON_COMPLEX );
 		};
 		if(LIFECIRCLE_TP == TRUE)
 		{
@@ -1544,11 +1545,11 @@ func void PC_TELEPORT_ON_info()
 		};
 		if(PASSAV_TP == TRUE)
 		{
-			Info_AddChoice(PC_TELEPORT_ON,"...проходу на плато Древних",PC_TELEPORT_ON_PASSAV);
+			Info_AddChoice( PC_TELEPORT_ON , " ...passage to the plateau of the Ancients " , PC_TELEPORT_ON_PASSAV );
 		};
 		if(PYRAMIDE_TP == TRUE)
 		{
-			Info_AddChoice(PC_TELEPORT_ON,"...Храму Истины",PC_TELEPORT_ON_PYRAMIDE);
+			Info_AddChoice( PC_TELEPORT_ON , " ...To the Temple of Truth " , PC_TELEPORT_ON_PYRAMIDE );
 		};
 		if(TEARHRAM_TP == TRUE)
 		{
@@ -1559,7 +1560,7 @@ func void PC_TELEPORT_ON_info()
 	{
 		if(ORCMOUNTAIN_TP == TRUE)
 		{
-			Info_AddChoice(PC_TELEPORT_ON,"...к рунному камню",PC_TELEPORT_ON_ORCMOUNTAIN);
+			Info_AddChoice( PC_TELEPORT_ON , " ...to runestone " , PC_TELEPORT_ON_ORCMOUNTAIN );
 		};
 	};
 	
@@ -1574,7 +1575,7 @@ func void PC_TELEPORT_ON_BACK()
 func void PC_TELEPORT_ON_ADW()
 {
 	AI_StopProcessInfos(self);
-	self.aivar[AIV_INVINCIBLE] = FALSE;
+	self.aivar[ AIV_INVINCIBLE ] = FALSE ;
 	PLAYER_MOBSI_PRODUCTION = MOBSI_NONE;
 	ADW_TP_OK = TRUE;
 	TeleportCheck = FALSE;
@@ -1583,7 +1584,7 @@ func void PC_TELEPORT_ON_ADW()
 func void PC_TELEPORT_ON_PIRATCAMP()
 {
 	AI_StopProcessInfos(self);
-	self.aivar[AIV_INVINCIBLE] = FALSE;
+	self.aivar[ AIV_INVINCIBLE ] = FALSE ;
 	PLAYER_MOBSI_PRODUCTION = MOBSI_NONE;
 	PIRATCAMP_TP_OK = TRUE;
 	TeleportCheck = FALSE;
@@ -1592,7 +1593,7 @@ func void PC_TELEPORT_ON_PIRATCAMP()
 func void PC_TELEPORT_ON_ORCMOUNTAIN()
 {
 	AI_StopProcessInfos(self);
-	self.aivar[AIV_INVINCIBLE] = FALSE;
+	self.aivar[ AIV_INVINCIBLE ] = FALSE ;
 	PLAYER_MOBSI_PRODUCTION = MOBSI_NONE;
 	ORCMOUNTAIN_TP_OK = TRUE;
 	TeleportCheck = FALSE;
@@ -1601,7 +1602,7 @@ func void PC_TELEPORT_ON_ORCMOUNTAIN()
 func void PC_TELEPORT_ON_XARDAS()
 {
 	AI_StopProcessInfos(self);
-	self.aivar[AIV_INVINCIBLE] = FALSE;
+	self.aivar[ AIV_INVINCIBLE ] = FALSE ;
 	PLAYER_MOBSI_PRODUCTION = MOBSI_NONE;
 	XARDAS_TP_OK = TRUE;
 	TeleportCheck = FALSE;
@@ -1610,7 +1611,7 @@ func void PC_TELEPORT_ON_XARDAS()
 func void PC_TELEPORT_ON_TOWN()
 {
 	AI_StopProcessInfos(self);
-	self.aivar[AIV_INVINCIBLE] = FALSE;
+	self.aivar[ AIV_INVINCIBLE ] = FALSE ;
 	PLAYER_MOBSI_PRODUCTION = MOBSI_NONE;
 	TOWN_TP_OK = TRUE;
 	TeleportCheck = FALSE;
@@ -1619,16 +1620,16 @@ func void PC_TELEPORT_ON_TOWN()
 func void PC_TELEPORT_ON_TAVERNE()
 {
 	AI_StopProcessInfos(self);
-	self.aivar[AIV_INVINCIBLE] = FALSE;
+	self.aivar[ AIV_INVINCIBLE ] = FALSE ;
 	PLAYER_MOBSI_PRODUCTION = MOBSI_NONE;
-	TAVERNE_TP_OK = TRUE;
+	TAVERNE_TP_OK = TRUE ;
 	TeleportCheck = FALSE;
 };
 
 func void PC_TELEPORT_ON_PSI()
 {
 	AI_StopProcessInfos(self);
-	self.aivar[AIV_INVINCIBLE] = FALSE;
+	self.aivar[ AIV_INVINCIBLE ] = FALSE ;
 	PLAYER_MOBSI_PRODUCTION = MOBSI_NONE;
 	PSI_TP_OK = TRUE;
 	TeleportCheck = FALSE;
@@ -1637,7 +1638,7 @@ func void PC_TELEPORT_ON_PSI()
 func void PC_TELEPORT_ON_PASSOW()
 {
 	AI_StopProcessInfos(self);
-	self.aivar[AIV_INVINCIBLE] = FALSE;
+	self.aivar[ AIV_INVINCIBLE ] = FALSE ;
 	PLAYER_MOBSI_PRODUCTION = MOBSI_NONE;
 	PASSOW_TP_OK = TRUE;
 	TeleportCheck = FALSE;
@@ -1646,7 +1647,7 @@ func void PC_TELEPORT_ON_PASSOW()
 func void PC_TELEPORT_ON_BIGFARM()
 {
 	AI_StopProcessInfos(self);
-	self.aivar[AIV_INVINCIBLE] = FALSE;
+	self.aivar[ AIV_INVINCIBLE ] = FALSE ;
 	PLAYER_MOBSI_PRODUCTION = MOBSI_NONE;
 	BIGFARM_TP_OK = TRUE;
 	TeleportCheck = FALSE;
@@ -1655,25 +1656,25 @@ func void PC_TELEPORT_ON_BIGFARM()
 func void PC_TELEPORT_ON_KLOSTER()
 {
 	AI_StopProcessInfos(self);
-	self.aivar[AIV_INVINCIBLE] = FALSE;
+	self.aivar[ AIV_INVINCIBLE ] = FALSE ;
 	PLAYER_MOBSI_PRODUCTION = MOBSI_NONE;
 	KLOSTER_TP_OK = TRUE;
 	TeleportCheck = FALSE;
 };
 
-func void PC_TELEPORT_ON_SAGITTA()
+func void  PC_TELEPORT_ON_ARROW ()
 {
 	AI_StopProcessInfos(self);
-	self.aivar[AIV_INVINCIBLE] = FALSE;
+	self.aivar[ AIV_INVINCIBLE ] = FALSE ;
 	PLAYER_MOBSI_PRODUCTION = MOBSI_NONE;
-	SAGITTA_TP_OK = TRUE;
+	ARROW_TP_OK = TRUE ;
 	TeleportCheck = FALSE;
 };
 
 func void PC_TELEPORT_ON_HUNT()
 {
 	AI_StopProcessInfos(self);
-	self.aivar[AIV_INVINCIBLE] = FALSE;
+	self.aivar[ AIV_INVINCIBLE ] = FALSE ;
 	PLAYER_MOBSI_PRODUCTION = MOBSI_NONE;
 	HUNT_TP_OK = TRUE;
 	TeleportCheck = FALSE;
@@ -1682,7 +1683,7 @@ func void PC_TELEPORT_ON_HUNT()
 func void PC_TELEPORT_ON_VINOCAVE()
 {
 	AI_StopProcessInfos(self);
-	self.aivar[AIV_INVINCIBLE] = FALSE;
+	self.aivar[ AIV_INVINCIBLE ] = FALSE ;
 	PLAYER_MOBSI_PRODUCTION = MOBSI_NONE;
 	VINOCAVE_TP_OK = TRUE;
 	TeleportCheck = FALSE;
@@ -1691,7 +1692,7 @@ func void PC_TELEPORT_ON_VINOCAVE()
 func void PC_TELEPORT_ON_SUNCIRCLE()
 {
 	AI_StopProcessInfos(self);
-	self.aivar[AIV_INVINCIBLE] = FALSE;
+	self.aivar[ AIV_INVINCIBLE ] = FALSE ;
 	PLAYER_MOBSI_PRODUCTION = MOBSI_NONE;
 	SUNCIRCLE_TP_OK = TRUE;
 	TeleportCheck = FALSE;
@@ -1700,7 +1701,7 @@ func void PC_TELEPORT_ON_SUNCIRCLE()
 func void PC_TELEPORT_ON_ADWRUINS()
 {
 	AI_StopProcessInfos(self);
-	self.aivar[AIV_INVINCIBLE] = FALSE;
+	self.aivar[ AIV_INVINCIBLE ] = FALSE ;
 	PLAYER_MOBSI_PRODUCTION = MOBSI_NONE;
 	ADWRUINS_TP_OK = TRUE;
 	TeleportCheck = FALSE;
@@ -1709,7 +1710,7 @@ func void PC_TELEPORT_ON_ADWRUINS()
 func void PC_TELEPORT_ON_BLACKTROLL()
 {
 	AI_StopProcessInfos(self);
-	self.aivar[AIV_INVINCIBLE] = FALSE;
+	self.aivar[ AIV_INVINCIBLE ] = FALSE ;
 	PLAYER_MOBSI_PRODUCTION = MOBSI_NONE;
 	BLACKTROLL_TP_OK = TRUE;
 	TeleportCheck = FALSE;
@@ -1718,7 +1719,7 @@ func void PC_TELEPORT_ON_BLACKTROLL()
 func void PC_TELEPORT_ON_CASTLE()
 {
 	AI_StopProcessInfos(self);
-	self.aivar[AIV_INVINCIBLE] = FALSE;
+	self.aivar[ AIV_INVINCIBLE ] = FALSE ;
 	PLAYER_MOBSI_PRODUCTION = MOBSI_NONE;
 	CASTLE_TP_OK = TRUE;
 	TeleportCheck = FALSE;
@@ -1727,16 +1728,16 @@ func void PC_TELEPORT_ON_CASTLE()
 func void PC_TELEPORT_ON_ICE()
 {
 	AI_StopProcessInfos(self);
-	self.aivar[AIV_INVINCIBLE] = FALSE;
+	self.aivar[ AIV_INVINCIBLE ] = FALSE ;
 	PLAYER_MOBSI_PRODUCTION = MOBSI_NONE;
 	ICE_TP_OK = TRUE;
 	TeleportCheck = FALSE;
 };
 
-func void PC_TELEPORT_ON_SKLEP()
+func void  PC_TELEPORT_ON_STORE ()
 {
 	AI_StopProcessInfos(self);
-	self.aivar[AIV_INVINCIBLE] = FALSE;
+	self.aivar[ AIV_INVINCIBLE ] = FALSE ;
 	PLAYER_MOBSI_PRODUCTION = MOBSI_NONE;
 	SKLEP_TP_OK = TRUE;
 	TeleportCheck = FALSE;
@@ -1745,7 +1746,7 @@ func void PC_TELEPORT_ON_SKLEP()
 func void PC_TELEPORT_ON_DARKTOWER()
 {
 	AI_StopProcessInfos(self);
-	self.aivar[AIV_INVINCIBLE] = FALSE;
+	self.aivar[ AIV_INVINCIBLE ] = FALSE ;
 	PLAYER_MOBSI_PRODUCTION = MOBSI_NONE;
 	DARKTOWER_TP_OK = TRUE;
 	TeleportCheck = FALSE;
@@ -1754,7 +1755,7 @@ func void PC_TELEPORT_ON_DARKTOWER()
 func void PC_TELEPORT_ON_OLDFORT()
 {
 	AI_StopProcessInfos(self);
-	self.aivar[AIV_INVINCIBLE] = FALSE;
+	self.aivar[ AIV_INVINCIBLE ] = FALSE ;
 	PLAYER_MOBSI_PRODUCTION = MOBSI_NONE;
 	OLDFORT_TP_OK = TRUE;
 	TeleportCheck = FALSE;
@@ -1763,7 +1764,7 @@ func void PC_TELEPORT_ON_OLDFORT()
 func void PC_TELEPORT_ON_OLDPSI()
 {
 	AI_StopProcessInfos(self);
-	self.aivar[AIV_INVINCIBLE] = FALSE;
+	self.aivar[ AIV_INVINCIBLE ] = FALSE ;
 	PLAYER_MOBSI_PRODUCTION = MOBSI_NONE;
 	OLDPSI_TP_OK = TRUE;
 	TeleportCheck = FALSE;
@@ -1772,7 +1773,7 @@ func void PC_TELEPORT_ON_OLDPSI()
 func void PC_TELEPORT_ON_NETBEK()
 {
 	AI_StopProcessInfos(self);
-	self.aivar[AIV_INVINCIBLE] = FALSE;
+	self.aivar[ AIV_INVINCIBLE ] = FALSE ;
 	PLAYER_MOBSI_PRODUCTION = MOBSI_NONE;
 	NETBEK_TP_OK = TRUE;
 	TeleportCheck = FALSE;
@@ -1781,7 +1782,7 @@ func void PC_TELEPORT_ON_NETBEK()
 func void PC_TELEPORT_ON_PASSNW()
 {
 	AI_StopProcessInfos(self);
-	self.aivar[AIV_INVINCIBLE] = FALSE;
+	self.aivar[ AIV_INVINCIBLE ] = FALSE ;
 	PLAYER_MOBSI_PRODUCTION = MOBSI_NONE;
 	PASSNW_TP_OK = TRUE;
 	TeleportCheck = FALSE;
@@ -1790,7 +1791,7 @@ func void PC_TELEPORT_ON_PASSNW()
 func void PC_TELEPORT_ON_TEARHRAM()
 {
 	AI_StopProcessInfos(self);
-	self.aivar[AIV_INVINCIBLE] = FALSE;
+	self.aivar[ AIV_INVINCIBLE ] = FALSE ;
 	PLAYER_MOBSI_PRODUCTION = MOBSI_NONE;
 	TEARHRAM_TP_OK = TRUE;
 	TeleportCheck = FALSE;
@@ -1799,7 +1800,7 @@ func void PC_TELEPORT_ON_TEARHRAM()
 func void PC_TELEPORT_ON_PYRAMIDE()
 {
 	AI_StopProcessInfos(self);
-	self.aivar[AIV_INVINCIBLE] = FALSE;
+	self.aivar[ AIV_INVINCIBLE ] = FALSE ;
 	PLAYER_MOBSI_PRODUCTION = MOBSI_NONE;
 	PYRAMIDE_TP_OK = TRUE;
 	TeleportCheck = FALSE;
@@ -1808,7 +1809,7 @@ func void PC_TELEPORT_ON_PYRAMIDE()
 func void PC_TELEPORT_ON_PASSAV()
 {
 	AI_StopProcessInfos(self);
-	self.aivar[AIV_INVINCIBLE] = FALSE;
+	self.aivar[ AIV_INVINCIBLE ] = FALSE ;
 	PLAYER_MOBSI_PRODUCTION = MOBSI_NONE;
 	PASSAV_TP_OK = TRUE;
 	TeleportCheck = FALSE;
@@ -1817,7 +1818,7 @@ func void PC_TELEPORT_ON_PASSAV()
 func void PC_TELEPORT_ON_LIFECIRCLE()
 {
 	AI_StopProcessInfos(self);
-	self.aivar[AIV_INVINCIBLE] = FALSE;
+	self.aivar[ AIV_INVINCIBLE ] = FALSE ;
 	PLAYER_MOBSI_PRODUCTION = MOBSI_NONE;
 	LIFECIRCLE_TP_OK = TRUE;
 	TeleportCheck = FALSE;
@@ -1826,7 +1827,7 @@ func void PC_TELEPORT_ON_LIFECIRCLE()
 func void PC_TELEPORT_ON_COMPLEX()
 {
 	AI_StopProcessInfos(self);
-	self.aivar[AIV_INVINCIBLE] = FALSE;
+	self.aivar[ AIV_INVINCIBLE ] = FALSE ;
 	PLAYER_MOBSI_PRODUCTION = MOBSI_NONE;
 	COMPLEX_TP_OK = TRUE;
 	TeleportCheck = FALSE;
