@@ -1,11 +1,12 @@
 
+
 var int mana_rationday;
 var int mana_rationday_m;
 var int mana_rationday_m1;
 var int HashishFT;
 var int HashishST;
 var int HashishWFT;
-var int HasishBonusDay;
+var int HashishBonusDay;
 
 func void smokewaterpipe_s1()
 {
@@ -13,14 +14,14 @@ func void smokewaterpipe_s1()
 	her = Hlp_GetNpc(PC_Hero);
 	if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(her))
 	{
-		//print_percent_bar_none(ATR_STAMINA[0],ATR_STAMINA_MAX[0] * 10,"Выносливость",42,97);
+		// print_percent_bar_none(ATR_STAMINA[0],ATR_STAMINA_MAX[0] * 10,"Stamina",42,97);
 
 		if(CinemaMod == TRUE)
 		{
 			Wld_PlayEffect("DIALOGSCOPE_FX",hero,hero,0,0,0,FALSE);
 		};
 
-		self.aivar[AIV_INVINCIBLE] = TRUE;
+		self.aivar[ AIV_INVINCIBLE ] = TRUE ;
 		PLAYER_MOBSI_PRODUCTION = MOBSI_SMOKEWATERPIPE;
 		AI_ProcessInfos(her);
 	};
@@ -58,7 +59,7 @@ instance PC_SMOKEWATERPIPE_ADDON_HOUR(C_Info)
 	condition = pc_smokewaterpipe_addon_hour_condition;
 	information = pc_smokewaterpipe_addon_hour_info;
 	permanent = TRUE;
-	description = "Сделать затяжку.";
+	description = " Take a puff. " ;
 };
 
 func int pc_smokewaterpipe_addon_hour_condition()
@@ -72,7 +73,7 @@ func int pc_smokewaterpipe_addon_hour_condition()
 func void pc_smokewaterpipe_addon_hour_info()
 {
 	var int level;
-	var int random;
+	be int random;
 
 	if((SBMODE == TRUE) && (JointRest == FALSE))
 	{
@@ -87,31 +88,31 @@ func void pc_smokewaterpipe_addon_hour_info()
 	};
 	if(hero.guild == GIL_GUR)
 	{
-		if(MANA_RATIONDAY != Wld_GetDay())
+		if ( NO_RATIONDAY  != Wld_GetDay())
 		{
 			level = hero.level;
-			random = Hlp_Random(100);
+			random = Hlp_Random( 100 );
 
 			if(level > random)
 			{
 				B_GivePlayerXP(25);				
 				RankPoints = RankPoints + 1;
-				Print("Ваше сознание переполняют особенные ощущения!");
+				Print ( " Your mind is filled with special sensations! " );
 				B_RaiseAttribute_Bonus(self,ATR_MANA_MAX,1);
 				Npc_ChangeAttribute(self,ATR_MANA,1);
 				BONUSCOUNT += 1;
-				Npc_SetStateTime(self,0);
-				MANA_RATIONDAY = Wld_GetDay();
+				Npc_SetStateTime(self, 0 );
+				NO_RATIONDAY = Wld_GetDay();
 			}
 			else
 			{
-				Print("Ваше сознание наполняется необычной легкостью...");
+				Print ( " Your mind is filled with unusual lightness... " );
 			};
 		}
 		else
 		{
-			MANA_RATIONDAY = Wld_GetDay();
-			Print("Вы испытываете обычные ощущения.");
+			NO_RATIONDAY = Wld_GetDay();
+			Print ( " You are experiencing normal sensations. " );
 		};
 	};
 };
@@ -123,7 +124,7 @@ instance PC_SMOKEWATERPIPE_ADDON_HASHISH(C_Info)
 	condition = PC_SMOKEWATERPIPE_ADDON_HASHISH_condition;
 	information = PC_SMOKEWATERPIPE_ADDON_HASHISH_info;
 	permanent = TRUE;
-	description = "Сделать затяжку.";
+	description = " Take a puff. " ;
 };
 
 func int PC_SMOKEWATERPIPE_ADDON_HASHISH_condition()
@@ -136,11 +137,11 @@ func int PC_SMOKEWATERPIPE_ADDON_HASHISH_condition()
 
 func void PC_SMOKEWATERPIPE_ADDON_HASHISH_info()
 {
-	var int daynow;
-	var int ranskill;
+	where int daynow;
+	was int rank difference;
 
 	daynow = Wld_GetDay();
-	ranskill = Hlp_Random(100);
+	ranskill = Hlp_Random( 100 );
 
 	if(HashishWFT == FALSE)
 	{
@@ -174,7 +175,7 @@ func void PC_SMOKEWATERPIPE_ADDON_HASHISH_info()
 	{
 		if(HasishBonusDay < (daynow - 5))
 		{
-			Print("Ваc переполняет огромный прилив энергии!");
+			Print ( " You are overwhelmed with a huge burst of energy! " );
 
 			if(ranskill >= 75)
 			{
@@ -198,12 +199,12 @@ func void PC_SMOKEWATERPIPE_ADDON_HASHISH_info()
 			};
 
 			RankPoints = RankPoints + 1;
-			Npc_SetStateTime(self,0);
+			Npc_SetStateTime(self, 0 );
 			HasishBonusDay = Wld_GetDay();
 		}
 		else
 		{
-			Print("Вы испытываете обычные ощущения.");
+			Print ( " You are experiencing normal sensations. " );
 		};
 	};
 };
