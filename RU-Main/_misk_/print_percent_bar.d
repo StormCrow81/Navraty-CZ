@@ -1,3 +1,4 @@
+
 func void B_Hotkey_Sprint()
 {
 	var int bTempHealth;
@@ -149,24 +150,24 @@ func void print_threat_status(var int x_pos,var int y_pos)
 		{
 			threatPosX = FALSE;
 			canintPosX = FALSE;
-			acrobatPosX = FALSE;
-			sprintPosX = FALSE;
+			acrobatPosX = FALSE ;
+			sprintPosX = FALSE ;
 			iceshieldPosX = FALSE;
 			fireshieldPosX = FALSE;
 			healthPosX = FALSE;
-			manaPosX = FALSE;
-			regenmobsPosX = FALSE;
-			ogonekPosX = FALSE;
+			powerPosX = FALSE ;
+			rainmobsPosX = FALSE ;
+			tailPosX = FALSE ;
 			threatST = FALSE;
-			canintST = FALSE;
+			canintST = FALSE ;
 			acrobatST = FALSE;
 			sprintST = FALSE;
 			iceshieldST = FALSE;
 			fireshieldST = FALSE;
 			healthST = FALSE;
-			manaST = FALSE;
-			regenmobsST = FALSE;
-			ogonekST = FALSE;
+			disadvantage = FALSE ;
+			rain mobsST = FALSE ;
+			ogonekST = FALSE ;
 			AI_PrintClrScreen();
 		};
 	};
@@ -176,7 +177,7 @@ func void print_canint_status(var int x_pos,var int y_pos)
 {
 	if(MageRobeIsUp == TRUE)
 	{
-		if(canintST == FALSE)
+		if (speakST ==  FALSE )
 		{
 			canintST = TRUE;
 			canintPosX = threatST + canintST + acrobatST + sprintST + iceshieldST + fireshieldST + healthST + manaST + regenmobsST + ogonekST;
@@ -190,24 +191,24 @@ func void print_canint_status(var int x_pos,var int y_pos)
 		{
 			threatPosX = FALSE;
 			canintPosX = FALSE;
-			acrobatPosX = FALSE;
-			sprintPosX = FALSE;
+			acrobatPosX = FALSE ;
+			sprintPosX = FALSE ;
 			iceshieldPosX = FALSE;
 			fireshieldPosX = FALSE;
 			healthPosX = FALSE;
-			manaPosX = FALSE;
-			regenmobsPosX = FALSE;
-			ogonekPosX = FALSE;
+			powerPosX = FALSE ;
+			rainmobsPosX = FALSE ;
+			tailPosX = FALSE ;
 			threatST = FALSE;
-			canintST = FALSE;
+			canintST = FALSE ;
 			acrobatST = FALSE;
 			sprintST = FALSE;
 			iceshieldST = FALSE;
 			fireshieldST = FALSE;
 			healthST = FALSE;
-			manaST = FALSE;
-			regenmobsST = FALSE;
-			ogonekST = FALSE;
+			disadvantage = FALSE ;
+			rain mobsST = FALSE ;
+			ogonekST = FALSE ;
 			AI_PrintClrScreen();
 		};
 	};
@@ -231,24 +232,24 @@ func void print_acrobat_status(var int x_pos,var int y_pos)
 		{
 			threatPosX = FALSE;
 			canintPosX = FALSE;
-			acrobatPosX = FALSE;
-			sprintPosX = FALSE;
+			acrobatPosX = FALSE ;
+			sprintPosX = FALSE ;
 			iceshieldPosX = FALSE;
 			fireshieldPosX = FALSE;
 			healthPosX = FALSE;
-			manaPosX = FALSE;
-			regenmobsPosX = FALSE;
-			ogonekPosX = FALSE;
+			powerPosX = FALSE ;
+			rainmobsPosX = FALSE ;
+			tailPosX = FALSE ;
 			threatST = FALSE;
-			canintST = FALSE;
+			canintST = FALSE ;
 			acrobatST = FALSE;
 			sprintST = FALSE;
 			iceshieldST = FALSE;
 			fireshieldST = FALSE;
 			healthST = FALSE;
-			manaST = FALSE;
-			regenmobsST = FALSE;
-			ogonekST = FALSE;
+			disadvantage = FALSE ;
+			rain mobsST = FALSE ;
+			ogonekST = FALSE ;
 			AI_PrintClrScreen();
 		};
 	};
@@ -272,24 +273,24 @@ func void print_sprint_status(var int x_pos,var int y_pos)
 		{
 			threatPosX = FALSE;
 			canintPosX = FALSE;
-			acrobatPosX = FALSE;
-			sprintPosX = FALSE;
+			acrobatPosX = FALSE ;
+			sprintPosX = FALSE ;
 			iceshieldPosX = FALSE;
 			fireshieldPosX = FALSE;
 			healthPosX = FALSE;
-			manaPosX = FALSE;
-			regenmobsPosX = FALSE;
-			ogonekPosX = FALSE;
+			powerPosX = FALSE ;
+			rainmobsPosX = FALSE ;
+			tailPosX = FALSE ;
 			threatST = FALSE;
-			canintST = FALSE;
+			canintST = FALSE ;
 			acrobatST = FALSE;
 			sprintST = FALSE;
 			iceshieldST = FALSE;
 			fireshieldST = FALSE;
 			healthST = FALSE;
-			manaST = FALSE;
-			regenmobsST = FALSE;
-			ogonekST = FALSE;
+			disadvantage = FALSE ;
+			rain mobsST = FALSE ;
+			ogonekST = FALSE ;
 			AI_PrintClrScreen();
 		};
 	};
@@ -313,24 +314,24 @@ func void print_iceshield_status(var int x_pos,var int y_pos)
 		{
 			threatPosX = FALSE;
 			canintPosX = FALSE;
-			acrobatPosX = FALSE;
-			sprintPosX = FALSE;
+			acrobatPosX = FALSE ;
+			sprintPosX = FALSE ;
 			iceshieldPosX = FALSE;
 			fireshieldPosX = FALSE;
 			healthPosX = FALSE;
-			manaPosX = FALSE;
-			regenmobsPosX = FALSE;
-			ogonekPosX = FALSE;
+			powerPosX = FALSE ;
+			rainmobsPosX = FALSE ;
+			tailPosX = FALSE ;
 			threatST = FALSE;
-			canintST = FALSE;
+			canintST = FALSE ;
 			acrobatST = FALSE;
 			sprintST = FALSE;
 			iceshieldST = FALSE;
 			fireshieldST = FALSE;
 			healthST = FALSE;
-			manaST = FALSE;
-			regenmobsST = FALSE;
-			ogonekST = FALSE;
+			disadvantage = FALSE ;
+			rain mobsST = FALSE ;
+			ogonekST = FALSE ;
 			AI_PrintClrScreen();
 		};
 	};
@@ -354,24 +355,24 @@ func void print_fireshield_status(var int x_pos,var int y_pos)
 		{
 			threatPosX = FALSE;
 			canintPosX = FALSE;
-			acrobatPosX = FALSE;
-			sprintPosX = FALSE;
+			acrobatPosX = FALSE ;
+			sprintPosX = FALSE ;
 			iceshieldPosX = FALSE;
 			fireshieldPosX = FALSE;
 			healthPosX = FALSE;
-			manaPosX = FALSE;
-			regenmobsPosX = FALSE;
-			ogonekPosX = FALSE;
+			powerPosX = FALSE ;
+			rainmobsPosX = FALSE ;
+			tailPosX = FALSE ;
 			threatST = FALSE;
-			canintST = FALSE;
+			canintST = FALSE ;
 			acrobatST = FALSE;
 			sprintST = FALSE;
 			iceshieldST = FALSE;
 			fireshieldST = FALSE;
 			healthST = FALSE;
-			manaST = FALSE;
-			regenmobsST = FALSE;
-			ogonekST = FALSE;
+			disadvantage = FALSE ;
+			rain mobsST = FALSE ;
+			ogonekST = FALSE ;
 			AI_PrintClrScreen();
 		};
 	};
@@ -395,24 +396,24 @@ func void print_health_res(var int x_pos,var int y_pos)
 		{
 			threatPosX = FALSE;
 			canintPosX = FALSE;
-			acrobatPosX = FALSE;
-			sprintPosX = FALSE;
+			acrobatPosX = FALSE ;
+			sprintPosX = FALSE ;
 			iceshieldPosX = FALSE;
 			fireshieldPosX = FALSE;
 			healthPosX = FALSE;
-			manaPosX = FALSE;
-			regenmobsPosX = FALSE;
-			ogonekPosX = FALSE;
+			powerPosX = FALSE ;
+			rainmobsPosX = FALSE ;
+			tailPosX = FALSE ;
 			threatST = FALSE;
-			canintST = FALSE;
+			canintST = FALSE ;
 			acrobatST = FALSE;
 			sprintST = FALSE;
 			iceshieldST = FALSE;
 			fireshieldST = FALSE;
 			healthST = FALSE;
-			manaST = FALSE;
-			regenmobsST = FALSE;
-			ogonekST = FALSE;
+			disadvantage = FALSE ;
+			rain mobsST = FALSE ;
+			ogonekST = FALSE ;
 			AI_PrintClrScreen();
 		};
 	};
@@ -422,7 +423,7 @@ func void print_mana_res(var int x_pos,var int y_pos)
 {
 	if(RestoreMana == TRUE)
 	{
-		if(manaST == FALSE)
+		if (manaST ==  FALSE )
 		{
 			manaST = TRUE;
 			manaPosX = threatST + canintST + acrobatST + sprintST + iceshieldST + fireshieldST + healthST + manaST + regenmobsST + ogonekST;
@@ -436,24 +437,24 @@ func void print_mana_res(var int x_pos,var int y_pos)
 		{
 			threatPosX = FALSE;
 			canintPosX = FALSE;
-			acrobatPosX = FALSE;
-			sprintPosX = FALSE;
+			acrobatPosX = FALSE ;
+			sprintPosX = FALSE ;
 			iceshieldPosX = FALSE;
 			fireshieldPosX = FALSE;
 			healthPosX = FALSE;
-			manaPosX = FALSE;
-			regenmobsPosX = FALSE;
-			ogonekPosX = FALSE;
+			powerPosX = FALSE ;
+			rainmobsPosX = FALSE ;
+			tailPosX = FALSE ;
 			threatST = FALSE;
-			canintST = FALSE;
+			canintST = FALSE ;
 			acrobatST = FALSE;
 			sprintST = FALSE;
 			iceshieldST = FALSE;
 			fireshieldST = FALSE;
 			healthST = FALSE;
-			manaST = FALSE;
-			regenmobsST = FALSE;
-			ogonekST = FALSE;
+			disadvantage = FALSE ;
+			rain mobsST = FALSE ;
+			ogonekST = FALSE ;
 			AI_PrintClrScreen();
 		};
 	};
@@ -463,9 +464,9 @@ func void print_regenmobs_status(var int x_pos,var int y_pos)
 {
 	if(RegenSummoned == TRUE)
 	{
-		if(regenmobsST == FALSE)
+		if (rainmobsST ==  FALSE )
 		{
-			regenmobsST = TRUE;
+			rain mobsST = TRUE ;
 			regenmobsPosX = threatST + canintST + acrobatST + sprintST + iceshieldST + fireshieldST + healthST + manaST + regenmobsST + ogonekST;
 		};
 
@@ -473,28 +474,28 @@ func void print_regenmobs_status(var int x_pos,var int y_pos)
 	}
 	else
 	{
-		if(regenmobsST == TRUE)
+		if (regenmobsST ==  TRUE )
 		{
 			threatPosX = FALSE;
 			canintPosX = FALSE;
-			acrobatPosX = FALSE;
-			sprintPosX = FALSE;
+			acrobatPosX = FALSE ;
+			sprintPosX = FALSE ;
 			iceshieldPosX = FALSE;
 			fireshieldPosX = FALSE;
 			healthPosX = FALSE;
-			manaPosX = FALSE;
-			regenmobsPosX = FALSE;
-			ogonekPosX = FALSE;
+			powerPosX = FALSE ;
+			rainmobsPosX = FALSE ;
+			tailPosX = FALSE ;
 			threatST = FALSE;
-			canintST = FALSE;
+			canintST = FALSE ;
 			acrobatST = FALSE;
 			sprintST = FALSE;
 			iceshieldST = FALSE;
 			fireshieldST = FALSE;
 			healthST = FALSE;
-			manaST = FALSE;
-			regenmobsST = FALSE;
-			ogonekST = FALSE;
+			disadvantage = FALSE ;
+			rain mobsST = FALSE ;
+			ogonekST = FALSE ;
 			AI_PrintClrScreen();
 		};
 	};
@@ -502,11 +503,11 @@ func void print_regenmobs_status(var int x_pos,var int y_pos)
 
 func void print_ogonek_status(var int x_pos,var int y_pos)
 {
-	if(OgonekIsUp == TRUE)
+	if (OgonekIsUp ==  TRUE )
 	{
-		if(ogonekST == FALSE)
+		if (ogonekST ==  FALSE )
 		{
-			ogonekST = TRUE;
+			ogonekST = TRUE ;
 			ogonekPosX = threatST + canintST + acrobatST + sprintST + iceshieldST + fireshieldST + healthST + manaST + regenmobsST + ogonekST;
 		};
 
@@ -514,28 +515,28 @@ func void print_ogonek_status(var int x_pos,var int y_pos)
 	}
 	else
 	{
-		if(ogonekST == TRUE)
+		if (ogonekST ==  TRUE )
 		{
 			threatPosX = FALSE;
 			canintPosX = FALSE;
-			acrobatPosX = FALSE;
-			sprintPosX = FALSE;
+			acrobatPosX = FALSE ;
+			sprintPosX = FALSE ;
 			iceshieldPosX = FALSE;
 			fireshieldPosX = FALSE;
 			healthPosX = FALSE;
-			manaPosX = FALSE;
-			regenmobsPosX = FALSE;
-			ogonekPosX = FALSE;
+			powerPosX = FALSE ;
+			rainmobsPosX = FALSE ;
+			tailPosX = FALSE ;
 			threatST = FALSE;
-			canintST = FALSE;
+			canintST = FALSE ;
 			acrobatST = FALSE;
 			sprintST = FALSE;
 			iceshieldST = FALSE;
 			fireshieldST = FALSE;
 			healthST = FALSE;
-			manaST = FALSE;
-			regenmobsST = FALSE;
-			ogonekST = FALSE;
+			disadvantage = FALSE ;
+			rain mobsST = FALSE ;
+			ogonekST = FALSE ;
 			AI_PrintClrScreen();
 		};
 	};
@@ -615,35 +616,35 @@ func void print_arrow_count(var int x_pos,var int y_pos)
 				if(Use_Arrow == TRUE)
 				{
 					SummMunition = Npc_HasItems(hero,ItRw_Arrow);
-					Context = ConcatStrings(" Обычные стрелы: ",IntToString(SummMunition));
+					Context = ConcatStrings( " Regular Arrows: " ,IntToString(SummMunition));
 					PrintScreen("{",x_pos,y_pos,"FONT_OLD_10_WHITE_HO.tga",1);
 					PrintScreen(Context,x_pos + 1,y_pos,FONT_CurTime,1);
 				}
 				else if(Use_FireArrow == TRUE)
 				{
 					SummMunition = Npc_HasItems(hero,ItRw_Addon_FireArrow);
-					Context = ConcatStrings(" Огненные стрелы: ",IntToString(SummMunition));
+					Context = ConcatStrings( " Fire Arrows: " ,IntToString(SummMunition));
 					PrintScreen("|",x_pos,y_pos,"FONT_OLD_10_WHITE_HO.tga",1);
 					PrintScreen(Context,x_pos + 1,y_pos,FONT_CurTime,1);
 				}
 				else if(Use_PoisonArrow == TRUE)
 				{
 					SummMunition = Npc_HasItems(hero,ItRw_PoisonArrow);
-					Context = ConcatStrings(" Отравленные стрелы: ",IntToString(SummMunition));
+					Context = ConcatStrings( " Poison Arrows: " ,IntToString(SummMunition));
 					PrintScreen("/",x_pos,y_pos,"FONT_OLD_10_WHITE_HO.tga",1);
 					PrintScreen(Context,x_pos + 1,y_pos,FONT_CurTime,1);
 				}
 				else if(Use_HolyArrow == TRUE)
 				{
 					SummMunition = Npc_HasItems(hero,ItRw_HolyArrow);
-					Context = ConcatStrings(" Освященные стрелы: ",IntToString(SummMunition));
+					Context = ConcatStrings( " Holy Arrows: " ,IntToString(SummMunition));
 					PrintScreen(";",x_pos,y_pos,"FONT_OLD_10_WHITE_HO.tga",1);
 					PrintScreen(Context,x_pos + 1,y_pos,FONT_CurTime,1);
 				}
 				else if(Use_MagicArrow == TRUE)
 				{
 					SummMunition = Npc_HasItems(hero,ItRw_Addon_MagicArrow);
-					Context = ConcatStrings(" Магические стрелы: ",IntToString(SummMunition));
+					Context = ConcatStrings( " Magic Missiles: " ,IntToString(SummMunition));
 					PrintScreen(".",x_pos,y_pos,"FONT_OLD_10_WHITE_HO.tga",1);
 					PrintScreen(Context,x_pos + 1,y_pos,FONT_CurTime,1);
 				};
@@ -651,7 +652,7 @@ func void print_arrow_count(var int x_pos,var int y_pos)
 			else
 			{
 				SummMunition = Npc_HasItems(hero,ITRW_MYHUNTARROW);
-				Context = ConcatStrings(" Кереновые стрелы: ",IntToString(SummMunition));
+				Context = ConcatStrings( " Keren Arrows: " ,IntToString(SummMunition));
 				PrintScreen(":",x_pos,y_pos,"FONT_OLD_10_WHITE_HO.tga",1);
 				PrintScreen(Context,x_pos + 1,y_pos,FONT_CurTime,1);
 			};
@@ -663,21 +664,21 @@ func void print_arrow_count(var int x_pos,var int y_pos)
 				if(Use_Bolt == TRUE)
 				{
 					SummMunition = Npc_HasItems(hero,ItRw_Bolt);
-					Context = ConcatStrings(" Обычные болты: ",IntToString(SummMunition));
+					Context = ConcatStrings( " Regular bolts: " ,IntToString(SummMunition));
 					PrintScreen("}",x_pos,y_pos,"FONT_OLD_10_WHITE_HO.tga",1);
 					PrintScreen(Context,x_pos + 1,y_pos,FONT_CurTime,1);
 				}
 				else if(Use_HolyBolt == TRUE)
 				{
 					SummMunition = Npc_HasItems(hero,ItRw_HolyBolt);
-					Context = ConcatStrings(" Освященные болты: ",IntToString(SummMunition));
+					Context = ConcatStrings( " Consecrated Bolts: " ,IntToString(SummMunition));
 					PrintScreen(",",x_pos,y_pos,"FONT_OLD_10_WHITE_HO.tga",1);
 					PrintScreen(Context,x_pos + 1,y_pos,FONT_CurTime,1);
 				}
 				else if(Use_MagicBolt == TRUE)
 				{
 					SummMunition = Npc_HasItems(hero,ItRw_Addon_MagicBolt);
-					Context = ConcatStrings(" Магические болты: ",IntToString(SummMunition));
+					Context = ConcatStrings( " Magic bolts: " ,IntToString(SummMunition));
 					PrintScreen("+",x_pos,y_pos,"FONT_OLD_10_WHITE_HO.tga",1);
 					PrintScreen(Context,x_pos + 1,y_pos,FONT_CurTime,1);
 				};
@@ -685,7 +686,7 @@ func void print_arrow_count(var int x_pos,var int y_pos)
 			else
 			{
 				SummMunition = Npc_HasItems(hero,ITRW_ADDON_MAGICBOLT_SHV);
-				Context = ConcatStrings(" Стрела 'Вершителя': ",IntToString(SummMunition));
+				Context = ConcatStrings( " Arrow 'Executor': " ,IntToString(SummMunition));
 				PrintScreen("~",x_pos,y_pos,"FONT_OLD_10_WHITE_HO.tga",1);
 				PrintScreen(Context,x_pos + 1,y_pos,FONT_CurTime,1);
 			};
@@ -721,17 +722,17 @@ func void print_campinfo()
 	DT_TOTAL_DAILY_INCOME = FALSE;
 
 
-	PrintScreen("--- Общая информация по лагерю ----",5,32,"FONT_OLD_10_WHITE.tga",1);	
+	PrintScreen( " --- General information about the camp ---- " , 5 , 32 , " FONT_OLD_10_WHITE.tga " , 1 );	
 
-	concatText1 = ConcatStrings("Казна лагеря (зол.): ",IntToString(DT_BUDGET));
+	concatText1 = ConcatStrings( " Camp Treasury (gold): " ,IntToString( DT_BUDGET ));
 	PrintScreen(concatText1,5,36,"FONT_OLD_10_WHITE.tga",1);
 
-	concatText1 = ConcatStrings("Запасы магической руды (кус.): ",IntToString(DT_BUDGET_ORE));
+	concatText1 = ConcatStrings( " Magical ore reserves (cusp): " ,IntToString( DT_BUDGET_ORE ));
 	PrintScreen(concatText1,5,38,"FONT_OLD_10_WHITE.tga",1);
-	concatText1 = ConcatStrings("Запасы железной руды (кус.): ",IntToString(DT_BUDGET_IRON));
+	concatText1 = ConcatStrings( " Iron Ore Reserves (bit): " ,IntToString( DT_BUDGET_IRON ));
 	PrintScreen(concatText1,5,40,"FONT_OLD_10_WHITE.tga",1);
 
-	concatText1 = ConcatStrings("Запасы провизии (ед.): ",IntToString(DT_FOODSTOCK));
+	concatText1 = ConcatStrings( " Food stocks (unit): " ,IntToString( DT_FOODSTOCK ));
 	PrintScreen(concatText1,5,42,"FONT_OLD_10_WHITE.tga",1);
 
 	if(DT_BUDGETACTIVE == TRUE)
@@ -751,11 +752,11 @@ func void print_campinfo()
 		{
 			DT_TOTAL_DAILY_PAYMENTS += EROLWAGE;
 		};
-		if((niclasrecruiteddt == TRUE) && (NiclasIsDead == FALSE))
+		if ((NicholasRecruited ==  TRUE ) && (NicholasIsDead ==  FALSE ))
 		{
 			DT_TOTAL_DAILY_PAYMENTS += NICLASWAGE;
 		};
-		if((farimrecruiteddt == TRUE) && (FarimIsDead == FALSE))
+		if ((farimrecruiteddt ==  TRUE ) && (FarimIsDead ==  FALSE ))
 		{
 			DT_TOTAL_DAILY_PAYMENTS += FARIMWAGE;
 		};
@@ -793,30 +794,30 @@ func void print_campinfo()
 
 		if(DT_TOTAL_DAILY_INCOME > 0)
 		{
-			concatText1 = ConcatStrings("Доходы лагеря (зол. в день): ",IntToString(DT_TOTAL_DAILY_PAYMENTS));
+			concatText1 = ConcatStrings( " Camp income (gold per day): " ,IntToString( DT_TOTAL_DAILY_PAYMENTS ));
 			PrintScreen(concatText1,5,46,"FONT_OLD_10_WHITE.tga",1);
 		}
 		else
 		{
-			PrintScreen("Доходы лагеря (зол. в день): - ",5,46,"FONT_OLD_10_WHITE.tga",1);
+			PrintScreen( " Camp income (gold per day): - " , 5 , 46 , " FONT_OLD_10_WHITE.tga " , 1 );
 		};
 		if(DT_TOTAL_DAILY_PAYMENTS > 0)
 		{
-			concatText1 = ConcatStrings("Расходы на содержание (зол. в день): ",IntToString(DT_TOTAL_DAILY_PAYMENTS));
+			concatText1 = ConcatStrings( " Maintenance costs (Gold per day): " ,IntToString( DT_TOTAL_DAILY_PAYMENTS ));
 			PrintScreen(concatText1,5,48,"FONT_OLD_10_WHITE.tga",1);
 		}
 		else
 		{
-			PrintScreen("Расходы на содержание (зол. в день): - ",5,48,"FONT_OLD_10_WHITE.tga",1);
+			PrintScreen( " Maintenance costs (gold per day): - " , 5 , 48 , " FONT_OLD_10_WHITE.tga " , 1 );
 		};
 	}
 	else
 	{
-		PrintScreen("Расходы на содержание (зол. в день): - ",5,48,"FONT_OLD_10_WHITE.tga",1);
+		PrintScreen( " Maintenance costs (gold per day): - " , 5 , 48 , " FONT_OLD_10_WHITE.tga " , 1 );
 	};
 	if(DT_OREGATHER_START == TRUE)
 	{
-		if((ViperIsDead == FALSE) && (VIPERRECRUITEDDT == TRUE))
+		if ((ViperIsDead ==  FALSE ) && ( VIPERRECRUITEDDT  ==  TRUE ))
 		{
 			DT_TOTAL_DAILY_ORECOME = DT_TOTAL_DAILY_ORECOME + 75 + DELTA_VIPER;
 		};
@@ -829,23 +830,23 @@ func void print_campinfo()
 		};
 		if(DT_TOTAL_DAILY_ORECOME > 0)
 		{
-			concatText1 = ConcatStrings("Добыча магической руды (кус. в день): ",IntToString(DT_TOTAL_DAILY_ORECOME));
+			concatText1 = ConcatStrings( " Magic ore mined (pieces per day): " ,IntToString( DT_TOTAL_DAILY_ORECOME ));
 			PrintScreen(concatText1,5,50,"FONT_OLD_10_WHITE.tga",1);
 		}
 		else
 		{
-			PrintScreen("Добыча магической руды (кус. в день): - ",5,50,"FONT_OLD_10_WHITE.tga",1);
+			PrintScreen( " Extraction of magic ore (pieces per day): - " , 5 , 50 , " FONT_OLD_10_WHITE.tga " , 1 );
 		};
 	}
 	else
 	{
-		PrintScreen("Добыча магической руды (кус. в день): - ",5,50,"FONT_OLD_10_WHITE.tga",1);
+		PrintScreen( " Extraction of magic ore (pieces per day): - " , 5 , 50 , " FONT_OLD_10_WHITE.tga " , 1 );
 	};
 	if(DT_IRONGATHER_START == TRUE)
 	{
 		if(HUNTYGRIMESRECRUITEDDT == TRUE)
 		{
-			if(HuntyNWIsDead == FALSE)
+			if (HuntyNWIsDead ==  FALSE )
 			{
 				DT_TOTAL_DAILY_IRONCOME = DT_TOTAL_DAILY_IRONCOME + 75 + DELTA_HUNTY;
 			};
@@ -856,17 +857,17 @@ func void print_campinfo()
 		};
 		if(DT_TOTAL_DAILY_IRONCOME > 0)
 		{
-			concatText1 = ConcatStrings("Добыча железной руды (кус. в день): ",IntToString(DT_TOTAL_DAILY_IRONCOME));
+			concatText1 = ConcatStrings( " Iron ore production (pieces per day): " ,IntToString( DT_TOTAL_DAILY_IRONCOME ));
 			PrintScreen(concatText1,5,52,"FONT_OLD_10_WHITE.tga",1);
 		}
 		else
 		{
-			PrintScreen("Добыча железной руды (кус. в день): - ",5,52,"FONT_OLD_10_WHITE.tga",1);
+			PrintScreen( " Iron ore production (pieces per day): - " , 5 , 52 , " FONT_OLD_10_WHITE.tga " , 1 );
 		};
 	}
 	else
 	{
-		PrintScreen("Добыча железной руды (кус. в день): - ",5,52,"FONT_OLD_10_WHITE.tga",1);
+		PrintScreen( " Iron ore production (pieces per day): - " , 5 , 52 , " FONT_OLD_10_WHITE.tga " , 1 );
 	};
 	if(DT_FOODSTOCKACTIVE == TRUE)
 	{
@@ -878,7 +879,7 @@ func void print_campinfo()
 		{
 			DT_TOTAL_DAILY_FOODLOSS += EROLFOODCONS;
 		};
-		if((MIS_MYNEWMANSION == LOG_SUCCESS) && (GuardOneIsDead == FALSE))
+		if (( MIS_MYNEWMANSION  ==  LOG_SUCCESS ) && (GuardOneIsDead ==  FALSE ))
 		{
 			DT_TOTAL_DAILY_FOODLOSS += GUARD1FOODCONS;
 		};
@@ -886,7 +887,7 @@ func void print_campinfo()
 		{
 			DT_TOTAL_DAILY_FOODLOSS += GUARD2FOODCONS;
 		};
-		if((niclasrecruiteddt == TRUE) && (NiclasIsDead == FALSE))
+		if ((NicholasRecruited ==  TRUE ) && (NicholasIsDead ==  FALSE ))
 		{
 			DT_TOTAL_DAILY_FOODLOSS += NICLASFOODCONS;
 			DT_TOTAL_DAILY_FOODGATHER += NICLASHUNTFOOD;
@@ -896,7 +897,7 @@ func void print_campinfo()
 			DT_TOTAL_DAILY_FOODLOSS += TALBINFOODCONS;
 			DT_TOTAL_DAILY_FOODGATHER += TALBINHUNTFOOD;
 		};
-		if((farimrecruiteddt == TRUE) && (FarimIsDead == FALSE))
+		if ((farimrecruiteddt ==  TRUE ) && (FarimIsDead ==  FALSE ))
 		{
 			DT_TOTAL_DAILY_FOODLOSS += FARIMFOODCONS;
 			DT_TOTAL_DAILY_FOODGATHER += FARIMSUPPLIESFOOD;
@@ -909,7 +910,7 @@ func void print_campinfo()
 		{
 			DT_TOTAL_DAILY_FOODLOSS += GRIMESFOODCONS;
 		};
-		if((viperrecruiteddt == TRUE) && (ViperIsDead == FALSE))
+		if ((viperrecruiteddt ==  TRUE ) && (ViperIsDead ==  FALSE ))
 		{
 			DT_TOTAL_DAILY_FOODLOSS += VIPERFOODCONS;
 		};
@@ -956,27 +957,27 @@ func void print_campinfo()
 
 		if(DT_TOTAL_DAILY_FOODGATHER > 0)
 		{
-			concatText1 = ConcatStrings("Поставка провизии (ед. в день): ",IntToString(DT_TOTAL_DAILY_FOODGATHER));
+			concatText1 = ConcatStrings( " Food supply (units per day): " ,IntToString( DT_TOTAL_DAILY_FOODGATHER ));
 			PrintScreen(concatText1,5,54,"FONT_OLD_10_WHITE.tga",1);
 		}
 		else
 		{
-			PrintScreen("Поставка провизии (ед. в день): - ",5,54,"FONT_OLD_10_WHITE.tga",1);
+			PrintScreen( " Supply of provisions (units per day): - " , 5 , 54 , " FONT_OLD_10_WHITE.tga " , 1 );
 		};
 
 		if(DT_TOTAL_DAILY_FOODLOSS > 0)
 		{
-			concatText1 = ConcatStrings("Расход провизии (ед. в день): ",IntToString(DT_TOTAL_DAILY_FOODLOSS));
+			concatText1 = ConcatStrings( " Food consumption (units per day): " ,IntToString( DT_TOTAL_DAILY_FOODLOSS ));
 			PrintScreen(concatText1,5,56,"FONT_OLD_10_WHITE.tga",1);
 		}
 		else
 		{
-			PrintScreen("Расходы провизии (ед. в день): - ",5,56,"FONT_OLD_10_WHITE.tga",1);
+			PrintScreen( " Provision costs (units per day): - " , 5 , 56 , " FONT_OLD_10_WHITE.tga " , 1 );
 		};
 	}
 	else
 	{
-		PrintScreen("Поставка провизии (ед. в день): - ",5,54,"FONT_OLD_10_WHITE.tga",1);
-		PrintScreen("Расходы провизии (ед. в день): - ",5,56,"FONT_OLD_10_WHITE.tga",1);
+		PrintScreen( " Supply of provisions (units per day): - " , 5 , 54 , " FONT_OLD_10_WHITE.tga " , 1 );
+		PrintScreen( " Provision costs (units per day): - " , 5 , 56 , " FONT_OLD_10_WHITE.tga " , 1 );
 	};
 };
