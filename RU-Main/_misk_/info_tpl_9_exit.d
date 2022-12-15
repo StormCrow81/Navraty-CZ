@@ -1,4 +1,5 @@
 
+
 instance INFO_TPL_9_EXIT(C_Info)
 {
 	nr = 999;
@@ -47,7 +48,7 @@ instance INFO_TPL_9_HOW(C_Info)
 	condition = INFO_TPL_9_HOW_condition;
 	information = INFO_TPL_9_HOW_info;
 	permanent = TRUE;
-	description = "Как обстановка?";
+	description = " How are things? " ;
 };
 
 func int INFO_TPL_9_HOW_condition()
@@ -64,26 +65,26 @@ func void INFO_TPL_9_HOW_info()
 
 	question = Hlp_Random(3);
 
-	AI_Output(other,self,"INFO_TPL_9_HOW_01_00");	//Как обстановка?
+	AI_Output(other, self, " INFO_TPL_9_HOW_01_00 " );	// How are things?
 
 	if(question == 0)
 	{
-		AI_Output(self,other,"INFO_TPL_9_HOW_01_01");	//Пока все тихо, приятель.
+		AI_Output(self,other, " INFO_TPL_9_HOW_01_01 " );	// All quiet for now, mate.
 		AI_StopProcessInfos(self);
 	}
 	else if(question == 1)
 	{
-		AI_Output(self,other,"INFO_TPL_9_HOW_01_02");	//Все под контролем! Им не подобраться к лагерю незамеченными.
+		AI_Output(self,other, " INFO_TPL_9_HOW_01_02 " );	// Everything is under control! They can't get close to the camp without being seen.
 		AI_StopProcessInfos(self);
 	}
 	else if(question == 2)
 	{
-		AI_Output(self,other,"INFO_TPL_9_HOW_01_03");	//Пока мы здесь, этому лагерю вряд ли что-либо угрожает.
+		AI_Output(self,other, " INFO_TPL_9_HOW_01_03 " );	// As long as we're here, this camp is unlikely to be threatened.
 		AI_StopProcessInfos(self);
 	}
 	else if(question == 3)
 	{
-		AI_Output(self,other,"INFO_TPL_9_HOW_01_04");	//Тебе не о чем волноваться, парень. Мы контролируем ситуацию!
+		AI_Output(self,other, " INFO_TPL_9_HOW_01_04 " );	// You don't have to worry, boy. We've got this well in hand!
 		AI_StopProcessInfos(self);
 	};
 };
