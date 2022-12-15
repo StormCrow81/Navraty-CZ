@@ -1,9 +1,10 @@
 
+
 prototype MST_DEFAULT_MINECRAWLERQUEEN(C_Npc)
 {
-	name[0] = "Королева ползунов";
+	name[ 0 ] = " Crawler Queen " ;
 	guild = GIL_MINECRAWLER;
-	aivar[AIV_MM_REAL_ID] = ID_MINECRAWLER;
+	aivar[ AIV_MM_REAL_ID ] = ID_MINECRAWLER ;
 	level = 40;
 	attribute[ATR_STRENGTH] = 210;
 	attribute[ATR_DEXTERITY] = 50;
@@ -19,12 +20,12 @@ prototype MST_DEFAULT_MINECRAWLERQUEEN(C_Npc)
 	protection[PROT_MAGIC] = 100;
 	damagetype = DAM_EDGE;
 	fight_tactic = FAI_MINECRAWLER;
-	bodyStateInterruptableOverride = TRUE;
+	bodyStateInterruptableOverride = TRUE ;
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_MONSTER_ACTIVE_MAX;
 	aivar[AIV_MM_ThreatenBeforeAttack] = TRUE;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
 	start_aistate = ZS_MM_AllScheduler;
 	Npc_SetTalentSkill(self,NPC_TALENT_MAGE,6);
 	aivar[AIV_MM_RestStart] = OnlyRoutine;
@@ -44,9 +45,9 @@ func void set_minecrawlerqueen_visuals_EX()
 
 instance MINECRAWLERQUEEN(MST_DEFAULT_MINECRAWLERQUEEN)
 {
-	name[0] = "Королева ползунов";
+	name[ 0 ] = " Crawler Queen " ;
 	level = 40;
-	aivar[90] = TRUE;
+	aivar[ 90 ] = TRUE ;
 	attribute[ATR_STRENGTH] = 210;
 	attribute[ATR_DEXTERITY] = 50;
 	attribute[ATR_HITPOINTS_MAX] = 3500;
@@ -60,7 +61,7 @@ instance MINECRAWLERQUEEN(MST_DEFAULT_MINECRAWLERQUEEN)
 	protection[PROT_FLY] = 290;
 	protection[PROT_MAGIC] = 100;
 	set_minecrawlerqueen_visuals();
-	bodyStateInterruptableOverride = TRUE;
+	bodyStateInterruptableOverride = TRUE ;
 	CreateInvItems(self,itat_crawlerqueen,3);
 	Npc_SetToFistMode(self);
 	Mdl_SetModelScale(self,0.7,0.7,0.7);
@@ -69,9 +70,9 @@ instance MINECRAWLERQUEEN(MST_DEFAULT_MINECRAWLERQUEEN)
 
 instance POISONMINECRAWLERQUEEN(MST_DEFAULT_MINECRAWLERQUEEN)
 {
-	name[0] = "Ядовитая королева ползунов";
+	name[ 0 ] = " Poison Crawler Queen " ;
 	level = 40;
-	aivar[90] = TRUE;
+	aivar[ 90 ] = TRUE ;
 	attribute[ATR_STRENGTH] = 210;
 	attribute[ATR_DEXTERITY] = 50;
 	attribute[ATR_HITPOINTS_MAX] = 1500;
@@ -84,7 +85,7 @@ instance POISONMINECRAWLERQUEEN(MST_DEFAULT_MINECRAWLERQUEEN)
 	protection[PROT_FIRE] = 100;
 	protection[PROT_FLY] = 290;
 	protection[PROT_MAGIC] = 100;
-	bodyStateInterruptableOverride = TRUE;
+	bodyStateInterruptableOverride = TRUE ;
 	set_minecrawlerqueen_visuals_EX();
 	CreateInvItems(self,itat_crawlerqueen,3);
 	Npc_SetToFistMode(self);
