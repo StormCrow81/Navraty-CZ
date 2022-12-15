@@ -1,14 +1,15 @@
 
+
 instance ORC_8514_FARROK(C_Npc)
 {
-	name[0] = "Нар-Шаг";
+	name[ 0 ] = " Sun-Shag " ;
 	guild = GIL_ORC;
 	id = 8514;
 	voice = 18;
 	level = 50;
 	flags = 0;
-	aivar[90] = TRUE;
-	aivar[AIV_MM_REAL_ID] = ID_ORCELITE;
+	aivar[ 90 ] = TRUE ;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCELITE ;
 	npcType = NPCTYPE_AMBIENT;
 	attribute[ATR_STRENGTH] = 500;
 	attribute[ATR_DEXTERITY] = 500;
@@ -31,7 +32,7 @@ instance ORC_8514_FARROK(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyElit3",DEFAULT,DEFAULT,"Orc_HeadWarrior",2,DEFAULT,-1);
 	EquipItem(self,itmw_2h_orcsword_03);
