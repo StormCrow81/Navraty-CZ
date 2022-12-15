@@ -1,9 +1,10 @@
 
+
 instance ORC_8555_WATCHER(C_Npc)
 {
-	name[0] = "Черный орк-охранник";
+	name[ 0 ] = " Black Orc Guard " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCELITE;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCELITE ;
 	voice = 18;
 	id = 8555;
 	level = 20;
@@ -28,7 +29,7 @@ instance ORC_8555_WATCHER(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
 	EquipItem(self,ItMw_2H_OrcSword_02);
 	start_aistate = ZS_MM_AllScheduler;
 	Mdl_SetVisual(self,"Orc.mds");
