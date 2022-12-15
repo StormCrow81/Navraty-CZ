@@ -242,17 +242,17 @@ func int DIA_Xardas_FirstEXIT_Condition()
 func void DIA_Xardas_FirstEXIT_Info()
 {
 	AI_Output(other,self, " DIA_Xardas_FirstEXIT_15_00 " );	// I'm leaving immediately!
-	AI_Output(self,other, " DIA_Xardas_FirstEXIT_14_01 " );	// Good! One more thing. Try not to tell everyone that my tower is now outside the Valley of Mines. First of all, be careful with Firebenders!
-	AI_Output(self,other, " DIA_Xardas_FirstEXIT_14_02 " );	// Since I've been away from them, the Circle of Fire thinks I'm dead - and that's a very good thing.
+	AI_Output(self,other, " DIA_Xardas_FirstEXIT_14_01 " );	// Good! One more thing. Try not to tell anyone that my tower is here. Most of all, be careful with the Pyromancers!
+	AI_Output(self,other, " DIA_Xardas_FirstEXIT_14_02 " );	// Ever since I left, he Circle of Fire thinks I'm dead - and that's a very good thing.
 	AI_Output(self,other, " DIA_Xardas_FirstEXIT_14_03 " );	// And remember that the goals you are facing right now will require a lot of effort from you!
-	AI_Output(self,other, " DIA_Xardas_FirstEXIT_14_04 " );	// Of course, your strength and capabilities have become much less than when you went to battle with the Sleeper.
-	AI_Output(self,other, " DIA_Xardas_FirstEXIT_14_05 " );	// So I'm not quite sure - can you do it?
+	AI_Output(self,other, " DIA_Xardas_FirstEXIT_14_04 " );	// You suffered grievous injuries after your battl with the sleeper, including brain damage I had to heal.
+	AI_Output(self,other, " DIA_Xardas_FirstEXIT_14_05 " );	// You have lost much of your former power. I wonder, are you up to this task?
 	Mob_CreateItems("NW_CHEST_49",ItMw_Rapier,1);
 	REALPROTMAGIC = 0;
 	REALPROTFIRE = 0;
 	Wld_InsertNpc(dmt_1212_dagot,"NW_XARDAS_TOWER_IN1_28");
 	Info_ClearChoices(DIA_Xardas_FirstEXIT);
-	Info_AddChoice(DIA_Xardas_FirstEXIT, " What's all this talking about? (Difficulty: Legendary) " ,DIA_Xardas_FirstEXIT_Legend);
+	Info_AddChoice(DIA_Xardas_FirstEXIT, " What's all this defeatist talk? You know what I can do. (Difficulty: Legendary) " ,DIA_Xardas_FirstEXIT_Legend);
 	Info_AddChoice(DIA_Xardas_FirstEXIT, " Of course I can do it. (Difficulty: hard) " ,DIA_Xardas_FirstEXIT_CantStopMe);
 	Info_AddChoice(DIA_Xardas_FirstEXIT, " I have some doubts about this too. (Difficulty: Normal) " ,DIA_Xardas_FirstEXIT_DontKnow);
 	Info_AddChoice(DIA_Xardas_FirstEXIT, " Yes, this is going to be tough. I need help! (Difficulty: Easy) " ,DIA_Xardas_FirstEXIT_NeedHelp);
@@ -268,21 +268,21 @@ func void DIA_Xardas_FirstEXIT_Legend()
 	AI_Wait(hero,1);
 	AI_PlayAni(hero,"T_HEASHOOT_2_STAND");
 	AI_Wait(hero,1);
-	AI_Output(other,self, " DIA_Xardas_FirstEXIT_Legend_01_01 " );	// Why all this talk?
+	AI_Output(other,self, " DIA_Xardas_FirstEXIT_Legend_01_01 " );	// What's all this defeatist talk? You know what I can do.
 	AI_Output(other,self, " DIA_Xardas_FirstEXIT_Legend_01_02 " );	// You know as well as I do that only I can deal with the threat looming over us.
-	AI_Output(other,self, " DIA_Xardas_FirstEXIT_Legend_01_03 " );	// Otherwise, I wouldn't have spent so much time and effort trying to get me out of the Temple of the Sleeper.
+	AI_Output(other,self, " DIA_Xardas_FirstEXIT_Legend_01_03 " );	// Otherwise, You wouldn't have spent so much time and effort trying to get me out of those ruins.
 	AI_Output(other,self, " DIA_Xardas_FirstEXIT_Legend_01_04 " );	// So you'd better leave all your doubts to someone else and let me get down to business!
-	AI_Output(self,other, " DIA_Xardas_FirstEXIT_Legend_01_05 " );	// (doomed) Crazy! Are you in such a hurry to kill yourself?
-	AI_Output(self,other, " DIA_Xardas_FirstEXIT_Legend_01_06 " );	// But you can't even imagine what awaits you after you leave my tower.
+	AI_Output(self,other, " DIA_Xardas_FirstEXIT_Legend_01_05 " );	// Beliar's Eyes! Are you in such a hurry to kill yourself?
+	AI_Output(self,other, " DIA_Xardas_FirstEXIT_Legend_01_06 " );	// You can't even imagine what awaits you after you leave my tower.
 	AI_Output(other,self, " DIA_Xardas_FirstEXIT_Legend_01_07 " );	// It doesn't scare me.
-	AI_Output(self,other, " DIA_Xardas_FirstEXIT_Legend_01_08 " );	// And that's too bad! Since a person who has lost fear is already doomed to death in advance.
-	AI_Output(self,other, " DIA_Xardas_FirstEXIT_Legend_01_09 " );	// He knows no limits and does not represent a true threat from enemies.
+	AI_Output(self,other, " DIA_Xardas_FirstEXIT_Legend_01_08 " );	// A man with no fear will meet death all the sooner.
+	AI_Output(self,other, " DIA_Xardas_FirstEXIT_Legend_01_09 " );	// He knows no limits and does not see the danger that lurks around every corner.
 	AI_Output(other,self, " DIA_Xardas_FirstEXIT_Legend_01_10 " );	// Stop lecturing me! I made my choice and you can hardly convince me otherwise.
-	AI_Output(self,other, " DIA_Xardas_FirstEXIT_Legend_01_11 " );	// Good! May it be so...
+	AI_Output(self,other, " DIA_Xardas_FirstEXIT_Legend_01_11 " );	// So be it...
 	AI_Output(self,other, " DIA_Xardas_FirstEXIT_CantStopMe_01_09 " );	// And one more thing before you leave.
 	AI_Output(self,other, " DIA_Xardas_FirstEXIT_CantStopMe_01_10 " );	// There is someone here who would like to talk to you.
-	AI_Output(other,self, " DIA_Xardas_FirstEXIT_CantStopMe_01_11 " );	// True? And who is it?
-	AI_Output(self,other, " DIA_Xardas_FirstEXIT_CantStopMe_01_12 " );	// You will learn this from him if you listen carefully.
+	AI_Output(other,self, " DIA_Xardas_FirstEXIT_CantStopMe_01_11 " );	// Really? Who?
+	AI_Output(self,other, " DIA_Xardas_FirstEXIT_CantStopMe_01_12 " );	// Find out for yourself.
 	AI_Output(self,other, " DIA_Xardas_FirstEXIT_LastWordsMe_01_01 " );	// And remember - it doesn't matter who you were before! Your new journey begins here and now. And you decide your own fate...
 	GivePack = TRUE;
 	AI_StopProcessInfos(self);
@@ -330,12 +330,12 @@ func void DIA_Xardas_FirstEXIT_CantStopMe()
 	AI_Output(other,self, " DIA_Xardas_FirstEXIT_CantStopMe_01_01 " );	// Of course I can handle it. Nobody and nothing will stop me!
 	AI_Output(other,self, " DIA_Xardas_FirstEXIT_CantStopMe_01_02 " );	// The longer you delay me with your talk, the less time we have to fend off the threat from the dragons.
 	AI_Output(self,other, " DIA_Xardas_FirstEXIT_CantStopMe_01_03 " );	// Your self-confidence pleases and scares me at the same time!
-	AI_Output(self,other, " DIA_Xardas_FirstEXIT_CantStopMe_01_04 " );	// I hope you're right about your strengths. After all, your death will doom all the inhabitants of this island to death.
-	AI_Output(other,self, " DIA_Xardas_FirstEXIT_CantStopMe_01_05 " );	// Don't worry! Otherwise, I wouldn't say so.
-	AI_Output(self,other, " DIA_Xardas_FirstEXIT_CantStopMe_01_09 " );	// And one more thing before you leave.
+	AI_Output(self,other, " DIA_Xardas_FirstEXIT_CantStopMe_01_04 " );	// I hope you're right about your strength. After all, your death will doom all the inhabitants of this island to oblivion.
+	AI_Output(other,self, " DIA_Xardas_FirstEXIT_CantStopMe_01_05 " );	// Don't worry old friend.
+	AI_Output(self,other, " DIA_Xardas_FirstEXIT_CantStopMe_01_09 " );	// Oh, one more thing before you leave.
 	AI_Output(self,other, " DIA_Xardas_FirstEXIT_CantStopMe_01_10 " );	// There is someone here who would like to talk to you.
-	AI_Output(other,self, " DIA_Xardas_FirstEXIT_CantStopMe_01_11 " );	// True? And who is it?
-	AI_Output(self,other, " DIA_Xardas_FirstEXIT_CantStopMe_01_12 " );	// You will learn this from him if you listen carefully.
+	AI_Output(other,self, " DIA_Xardas_FirstEXIT_CantStopMe_01_11 " );	// Really? Who?
+	AI_Output(self,other, " DIA_Xardas_FirstEXIT_CantStopMe_01_12 " );	// someone who could teach you much, if you have ears to listen.
 	AI_Output(self,other, " DIA_Xardas_FirstEXIT_LastWordsMe_01_01 " );	// And remember - it doesn't matter who you were before! Your new journey begins here and now. And you decide your own fate...
 	GivePack = TRUE;
 	AI_StopProcessInfos(self);
@@ -385,20 +385,20 @@ func void DIA_Xardas_FirstEXIT_DontKnow()
 	AI_PlayAni(hero,"T_HEASHOOT_2_STAND");
 	AI_Wait(hero,1);
 	AI_Output(other,self, " DIA_Xardas_FirstEXIT_DontKnow_01_00 " );	// I also have some doubts about this.
-	AI_Output(self,other, " DIA_Xardas_FirstEXIT_DontKnow_01_02 " );	// Good! I will help you regain some of your former strength.
-	AI_Output(self,other, " DIA_Xardas_FirstEXIT_DontKnow_01_03 " );	// True, my supply of magical elixirs is somewhat limited. But everything I have is at your disposal.
+	AI_Output(self,other, " DIA_Xardas_FirstEXIT_DontKnow_01_02 " );	// Caution! Good! Worry not, I will help you regain some of your former strength.
+	AI_Output(self,other, " DIA_Xardas_FirstEXIT_DontKnow_01_03 " );	// My current supply of magical elixirs is somewhat limited. But everything I have is at your disposal.
 	AI_Output(self,other, " DIA_Xardas_FirstEXIT_DontKnow_01_04 " );	// Here - take it and use it wisely!
 	CreateInvItems(other,ItPo_Perm_Health,1);
 	CreateInvItems(other,ItPo_Health_02,2);
 	GivePack = TRUE;
 	AI_Print( " Received some elixirs... " );
 	AI_Output(other,self, " DIA_Xardas_FirstEXIT_DontKnow_01_05 " );	// What about armor?
-	AI_Output(self,other, " DIA_Xardas_FirstEXIT_DontKnow_01_06 " );	// Take these miner's pants. I don't have much at the moment.
+	AI_Output(self,other, " DIA_Xardas_FirstEXIT_DontKnow_01_06 " );	// Take these miner's pants. I don't have much else at the moment.
 	B_GiveInvItems(self,other,ITAR_PRISONEL,1);
 	AI_Output(self,other, " DIA_Xardas_FirstEXIT_DontKnow_01_08 " );	// And one more thing before you go...
 	AI_Output(self,other, " DIA_Xardas_FirstEXIT_DontKnow_01_09 " );	// There is someone here who would like to talk to you.
-	AI_Output(other,self, " DIA_Xardas_FirstEXIT_DontKnow_01_10 " );	// True? And who is it?
-	AI_Output(self,other, " DIA_Xardas_FirstEXIT_DontKnow_01_11 " );	// You will learn this from him if you listen carefully.
+	AI_Output(other,self, " DIA_Xardas_FirstEXIT_DontKnow_01_10 " );	// Really? Who?
+	AI_Output(self,other, " DIA_Xardas_FirstEXIT_DontKnow_01_11 " );	// Only one way to find out, yes?
 	AI_Output(self,other, " DIA_Xardas_FirstEXIT_LastWordsMe_01_01 " );	// And remember - it doesn't matter who you were before! Your new journey begins here and now. And you decide your own fate...
 	AI_Print(concatText);
 	AI_StopProcessInfos(self);
@@ -451,9 +451,9 @@ func void DIA_Xardas_FirstEXIT_NeedHelp()
 	AI_Wait(hero,1);
 	AI_Output(other,self, " DIA_Xardas_FirstEXIT_NeedHelp_01_00 " );	// Yes, it won't be easy. I need help!
 	AI_Output(other,self, " DIA_Xardas_FirstEXIT_NeedHelp_01_01 " );	// I'm not even sure if I can even get to the city alive.
-	AI_Output(self,other, " DIA_Xardas_FirstEXIT_NeedHelp_01_02 " );	// Yes, you're right. For you now this is the most important task!
-	AI_Output(self,other, " DIA_Xardas_FirstEXIT_NeedHelp_01_03 " );	// There you can already get stronger and gain strength so as not to run away from every beast you meet.
-	AI_Output(self,other, " DIA_Xardas_FirstEXIT_NeedHelp_01_06 " );	// Here, take these elixirs and magical spell scrolls!
+	AI_Output(self,other, " DIA_Xardas_FirstEXIT_NeedHelp_01_02 " );	// Yes, you're right. That will the most important task!
+	AI_Output(self,other, " DIA_Xardas_FirstEXIT_NeedHelp_01_03 " );	// There you can get stronger and regain what you have lost.
+	AI_Output(self,other, " DIA_Xardas_FirstEXIT_NeedHelp_01_06 " );	// Here, take these elixirs and spell scrolls!
 	AI_Output(self,other, " DIA_Xardas_FirstEXIT_NeedHelp_01_07 " );	// Use them to make your way to Khorinis.
 	CreateInvItems(other,ItPo_Health_02,5);
 	CreateInvItems(other,ItPo_Perm_Health,1);
@@ -463,16 +463,16 @@ func void DIA_Xardas_FirstEXIT_NeedHelp()
 	GivePack = TRUE;
 	AI_Print( " Received some elixirs and magic scrolls... " );
 	AI_Output(self,other, " DIA_Xardas_FirstEXIT_NeedHelp_01_08 " );	// But don't you dare hide them for a rainy day! Your life is too valuable to risk it.
-	AI_Output(self,other, " DIA_Xardas_FirstEXIT_NeedHelp_01_09 " );	// And here's some more gold. It will definitely come in handy for you!
+	AI_Output(self,other, " DIA_Xardas_FirstEXIT_NeedHelp_01_09 " );	// And here's some more gold. It will definitely come in handy!
 	B_GiveInvItems(self,other,ItMi_Gold,1000);
 	AI_Output(other,self, " DIA_Xardas_FirstEXIT_NeedHelp_01_10 " );	// What about armor?
-	AI_Output(self,other, " DIA_Xardas_FirstEXIT_NeedHelp_01_11 " );	// Take these miner's pants. I don't have much at the moment.
+	AI_Output(self,other, " DIA_Xardas_FirstEXIT_NeedHelp_01_11 " );	// Take these miner's pants. I don't have much else at the moment.
 	B_GiveInvItems(self,other,ITAR_Prisoner,1);
-	AI_Output(other,self, " DIA_Xardas_FirstEXIT_NeedHelp_01_12 " );	// Well, thanks! Now I won't be lost.
-	AI_Output(self,other, " DIA_Xardas_FirstEXIT_NeedHelp_01_13 " );	// I really hope so... (sarcastically) One more thing before you go.
+	AI_Output(other,self, " DIA_Xardas_FirstEXIT_NeedHelp_01_12 " );	// Thank you, this helps a lot.
+	AI_Output(self,other, " DIA_Xardas_FirstEXIT_NeedHelp_01_13 " );	// I really hope so... One more thing before you go.
 	AI_Output(self,other, " DIA_Xardas_FirstEXIT_NeedHelp_01_14 " );	// There is someone here who would like to talk to you.
-	AI_Output(other,self, " DIA_Xardas_FirstEXIT_NeedHelp_01_15 " );	// True? And who is it?
-	AI_Output(self,other, " DIA_Xardas_FirstEXIT_NeedHelp_01_16 " );	// You will learn this from him if you listen carefully.
+	AI_Output(other,self, " DIA_Xardas_FirstEXIT_NeedHelp_01_15 " );	// Really? Who?
+	AI_Output(self,other, " DIA_Xardas_FirstEXIT_NeedHelp_01_16 " );	// Ask him yourself.
 	AI_Output(self,other, " DIA_Xardas_FirstEXIT_LastWordsMe_01_01 " );	// And remember - it doesn't matter who you were before! Your new journey begins here and now. And you decide your own fate...
 	AI_StopProcessInfos(self);
 	XP_PER_VICTORY = 25;
@@ -582,19 +582,19 @@ func void dia_xardas_dagot_info()
 	if(GUARDIAN_WAY == TRUE)
 	{
 		XARDAS_SPEAKDAGOT = TRUE;
-		AI_Output(self,other, " DIA_Xardas_Dagot_01_00 " );	// So you did accept the Guardian's offer...
-		AI_Output(self,other, " DIA_Xardas_Dagot_01_01 " );	// Perhaps your decision was hasty, but nothing can be changed now.
-		AI_Output(self,other, " DIA_Xardas_Dagot_01_02 " );	// Now you can't just go off this path.
-		AI_Output(other,self, " DIA_Xardas_Dagot_01_03 " );	// The Guardian said that you, too, embarked on this path.
-		AI_Output(self,other, " DIA_Xardas_Dagot_01_04 " );	// Yes, it is.
-		AI_Output(self,other, " DIA_Xardas_Dagot_01_05 " );	// Before the Sleeper was defeated, it was the Guardians who then suggested to me a way to exorcise this demon and destroy the Barrier.
-		AI_Output(self,other, " DIA_Xardas_Dagot_01_06 " );	// That was the price for me accepting their offer - just like you did...
-		AI_Output(self,other, " DIA_Xardas_Dagot_01_07 " );	// If I had refused then, maybe we wouldn't be talking to you now... Who knows what could have happened at all.
-		AI_Output(other,self, " DIA_Xardas_Dagot_01_08 " );	// Dagoth said we'd meet again, and then he just disappeared!
-		AI_Output(self,other, " DIA_Xardas_Dagot_01_09 " );	// Did you think he would be like a babysitter to you? To meet the Guardian is an honor that falls only to the elite.
+		AI_Output(self,other, " DIA_Xardas_Dagot_01_00 " );	// So you accepted the Guardian's offer...
+		AI_Output(self,other, " DIA_Xardas_Dagot_01_01 " );	// Perhaps your decision was hasty, but that point is moot now.
+		AI_Output(self,other, " DIA_Xardas_Dagot_01_02 " );	// You are bound to this path, just like...
+		AI_Output(other,self, " DIA_Xardas_Dagot_01_03 " );	// You?
+		AI_Output(self,other, " DIA_Xardas_Dagot_01_04 " );	// Yes.
+		AI_Output(self,other, " DIA_Xardas_Dagot_01_05 " );	// Before the Sleeper was defeated, the guardians came to me with an offer. POWER. The power to save this world.
+		AI_Output(self,other, " DIA_Xardas_Dagot_01_06 " );	// There was a price, of course. There always is...
+		AI_Output(self,other, " DIA_Xardas_Dagot_01_07 " );	// If I had refused them then, perhaps we wouldn't be talking right now... I just don't know. 
+		AI_Output(other,self, " DIA_Xardas_Dagot_01_08 " );	// Dagoth said we'd meet again, and then he vanished!
+		AI_Output(self,other, " DIA_Xardas_Dagot_01_09 " );	// Did you think he would be like a babysitter to you? To meet the Guardian is an honor that falls only to the chosen few.
 		AI_Output(self,other, " DIA_Xardas_Dagot_01_09A " );	// You banished the Sleeper and thus earned this honor! As for your next meeting...
-		AI_Output(self,other, " DIA_Xardas_Dagot_01_10 " );	// If he said so, then it will be so... The time will come and you will meet him.
-		AI_Output(self,other, " DIA_Xardas_Dagot_01_11 " );	// In the meantime, leave your thoughts on this - now you have more important things to do...
+		AI_Output(self,other, " DIA_Xardas_Dagot_01_10 " );	// If he said so, then it will be... The time will come and you will meet him again.
+		AI_Output(self,other, " DIA_Xardas_Dagot_01_11 " );	// In the meantime, you have more important things to do...
 		B_LogEntry( TOPIC_GUARDIANS , " Xardas said I'll meet the Guardian again, but only when the time is right. " );
 		AI_StopProcessInfos(self);
 		Npc_ExchangeRoutine(self,"Xar");
@@ -605,7 +605,7 @@ func void dia_xardas_dagot_info()
 		AI_Output(self,other, " DIA_Xardas_Dagot_01_14 " );	// Perhaps your decision was hasty, but nothing can be changed now.
 		AI_Output(other,self, " DIA_Xardas_Dagot_01_15 " );	// The Guardian said that you, too, embarked on this path.
 		AI_Output(self,other, " DIA_Xardas_Dagot_01_16 " );	// I can't tell you more than what the Keeper told you.
-		AI_Output(self,other, " DIA_Xardas_Dagot_01_17 " );	// Quit thinking about it - you have more important things to do now...
+		AI_Output(self,other, " DIA_Xardas_Dagot_01_17 " );	// Stop thinking about it - you have more important things to do now...
 		B_LogEntry( TOPIC_GUARDIANS , " Xardas advised me to forget about it for now. " );
 		AI_StopProcessInfos(self);
 		Npc_ExchangeRoutine(self,"Xar");
@@ -674,16 +674,16 @@ func void DIA_Xardas_Hello_Info()
 	DPSMeterOn = TRUE;
 	CinemaMod = FALSE;
 	CinemaModOneTime = FALSE;
-	AI_Output(self,other, " DIA_Addon_Xardas_Hello_14_00 " );	// Finally! I thought that you and I would never meet again.
-	AI_Output(other,self, " DIA_Addon_Xardas_Hello_15_01 " );	// I feel like I've been under a pile of rocks for three weeks.
-	AI_Output(self,other, " DIA_Addon_Xardas_Hello_14_02 " );	// So it was. You survived only thanks to the magic of your armor.
+	AI_Output(self,other, " DIA_Addon_Xardas_Hello_14_00 " );	// Finally! I was afraid you were beyond saving.
+	AI_Output(other,self, " DIA_Addon_Xardas_Hello_15_01 " );	// What happened? Did you bring me back? Was I... dead?
+	AI_Output(self,other, " DIA_Addon_Xardas_Hello_14_02 " );	// Very nearly, yes. The magic in your armor kept your heart beating, despite the damage to your body.
 	Mob_CreateItems("XAR_CHEST",itpo_anpois,1);
-	AI_Output(self,other, " DIA_Addon_Xardas_Hello_14_03 " );	// I've already begun to fear that I won't be able to pull you out from under the ruins of the temple.
-	AI_Output(self,other, " DIA_Addon_Xardas_Hello_14_04 " );	// But enough about that! Now you are here.
+	AI_Output(self,other, " DIA_Addon_Xardas_Hello_14_03 " );	// It took everything I could muster to heal your broken husk. It was... tiring.
+	AI_Output(self,other, " DIA_Addon_Xardas_Hello_14_04 " );	// But enough about that! You are here now.
 	AI_Output(self,other, " DIA_Addon_Xardas_Hello_14_05 " );	// And a new threat looms over us.
 	Npc_ExchangeRoutine(self,"START");
 	Info_ClearChoices(DIA_Xardas_Hello);
-	Info_AddChoice(DIA_Xardas_Hello, " Well, at least we have enough time now. I did it! Sleeping... " ,DIA_Addon_Xardas_Hello_Dragons);
+	Info_AddChoice(DIA_Xardas_Hello, " Well, at least we have enough time now. I did it! The Sleeper... " ,DIA_Addon_Xardas_Hello_Dragons);
 	Info_AddChoice(DIA_Xardas_Hello, " What is this new threat you're talking about? " ,DIA_Addon_Xardas_Hello_Man);
 };
 
@@ -697,39 +697,39 @@ func void DIA_Addon_Xardas_Hello_Man()
 	B_RemoveNpcKill(StartHelpBug_05);
 	AI_Output(other,self, " DIA_Addon_Xardas_AddonIntro_Add_01_01 " );	// What is this new threat?
 	AI_Output(self,other, " DIA_Addon_Xardas_AddonIntro_Add_01_02 " );	// One of the ancient artifacts of evil has been returned to this world!
-	AI_Output(self,other, " DIA_Addon_Xardas_AddonIntro_Add_01_03 " );	// They call it the Claw of Beliar! And, as far as I know, it can control countless legions of the dead.
-	AI_Output(self,other, " DIA_Addon_Xardas_AddonIntro_Add_01_04 " );	// I hope I don't need to explain what will happen if he suddenly falls into the hands of the minions of the Dark God.
+	AI_Output(self,other, " DIA_Addon_Xardas_AddonIntro_Add_01_03 " );	// It is called the Claw of Beliar! Legends say it can control countless legions of the dead.
+	AI_Output(self,other, " DIA_Addon_Xardas_AddonIntro_Add_01_04 " );	// I hope I don't need to explain what will happen if it were to fall into the wrong hands.
 	AI_Output(other,self, " DIA_Addon_Xardas_AddonIntro_Add_01_05 " );	// And where is this artifact now?
-	AI_Output(self,other, " DIA_Addon_Xardas_AddonIntro_Add_01_06 " );	// Ancient records say that its last owner was the people of architects who lived on this island several millennia ago.
-	AI_Output(self,other, " DIA_Addon_Xardas_AddonIntro_Add_01_07 " );	// All of them were faithful worshipers and followers of Adanos, the god of Water and Balance.
-	AI_Output(self,other, " DIA_Addon_Xardas_AddonIntro_Add_01_08 " );	// I believe the item we're interested in might be hidden in one of their temples around here on the island.
+	AI_Output(self,other, " DIA_Addon_Xardas_AddonIntro_Add_01_06 " );	// Ancient records say that its last owners were the architects themselves. The ancient race who lived on this island eons ago.
+	AI_Output(self,other, " DIA_Addon_Xardas_AddonIntro_Add_01_07 " );	// They were faithful worshipers and followers of Adanos, the god of Water and Balance.
+	AI_Output(self,other, " DIA_Addon_Xardas_AddonIntro_Add_01_08 " );	// I believe the Claw might be hidden in one of their ruined temples here on the island.
 	AI_Output(self,other, " DIA_Addon_Xardas_AddonIntro_Add_01_09 " );	// You need to find out, and as soon as possible.
-	AI_Output(self,other, " DIA_Addon_Xardas_AddonIntro_Add_01_10 " );	// (abstractly) Recently, Waterbenders, who arrived from the Valley of Mines, became interested in the culture of architects.
-	AI_Output(self,other, " DIA_Addon_Xardas_AddonIntro_Add_01_11 " );	// They even organized something like an expedition to their shrines.
-	AI_Output(self,other, " DIA_Addon_Xardas_AddonIntro_Add_01_12 " );	// Enlist their support! With their help, it will be easier for you to find the Claw.
+	AI_Output(self,other, " DIA_Addon_Xardas_AddonIntro_Add_01_10 " );	// Recently, a group of Water Mages, new arrivals from the Valley of Mines, became interested in the culture of the architects.
+	AI_Output(self,other, " DIA_Addon_Xardas_AddonIntro_Add_01_11 " );	// They organized an expedition to the old shrines and holy places of the architects.
+	AI_Output(self,other, " DIA_Addon_Xardas_AddonIntro_Add_01_12 " );	// Enlist their aid! With their help, it might be easier for you to find the Claw.
 	addon_first = TRUE ;
 };
 
 func void DIA_Addon_Xardas_Hello_Dragons()
 {
-	AI_Output(other,self, " DIA_Xardas_Hello_15_03 " );	// Well, at least we have enough time now. I did it! Sleeping...
-	AI_Output(self,other, " DIA_Xardas_Hello_14_04 " );	// ...was exiled. You defeated him, yes, it is true - but it is not in our power to stop the war that is now flaring up.
-	AI_Output(self,other, " DIA_Xardas_Hello_14_07 " );	// With his last, furious cry, the Sleeper set the armies of darkness in motion.
-	AI_Output(self,other, " DIA_Xardas_Hello_14_08 " );	// This was an order to all creatures of darkness. A word of power that they all must obey.
-	AI_Output(self,other, " DIA_Xardas_Hello_14_09 " );	// His last order was - GO! And they went. All. Even dragons!
-	AI_Output(other,self, " DIA_Xardas_Hello_15_10 " );	// (surprised) Dragons?!
-	AI_Output(self,other, " DIA_Xardas_Hello_14_11 " );	// These are creations of ancient power! I feel their presence - even here.
-	AI_Output(self,other, " DIA_Xardas_Hello_14_12 " );	// And they gathered around them a whole army of lower beings.
+	AI_Output(other,self, " DIA_Xardas_Hello_15_03 " );	// Well, at least we have enough time now. I did it! The Sleeper...
+	AI_Output(self,other, " DIA_Xardas_Hello_14_04 " );	// ...was banished. You defeated him, yes, that is true - but it is not in our power to stop the doom that his fall caused.
+	AI_Output(self,other, " DIA_Xardas_Hello_14_07 " );	// With his final, furious cry, the Sleeper set the armies of darkness in motion.
+	AI_Output(self,other, " DIA_Xardas_Hello_14_08 " );	// It was an order to all creatures of darkness. A word of power that they all must obey.
+	AI_Output(self,other, " DIA_Xardas_Hello_14_09 " );	// His last order was - RISE! And they did. All of them. Even the dragons!
+	AI_Output(other,self, " DIA_Xardas_Hello_15_10 " );	// Dragons?!
+	AI_Output(self,other, " DIA_Xardas_Hello_14_11 " );	// Creations of ancient power! I feel their presence - even here.
+	AI_Output(self,other, " DIA_Xardas_Hello_14_12 " );	// And they have gathered around them a whole legion of lower beings.
 	AI_Output(other,self, " DIA_Xardas_Hello_15_13 " );	// And where is this army now?
-	AI_Output(self,other, " DIA_Xardas_Hello_14_14 " );	// The camp of this army is not far from here, in the Valley of Mines, near Khorinis. And she's ready to attack!
+	AI_Output(self,other, " DIA_Xardas_Hello_14_14 " );	// They are gathering in the Valley of Mines, near Khorinis. The attack is near, I can feel it!
 
 	if(Addon_zuerst == TRUE)
 	{
-		AI_Output(self,other, " DIA_Xardas_Hello_14_15 " );	// (thoughtfully) We don't have much time!
+		AI_Output(self,other, " DIA_Xardas_Hello_14_15 " );	// We don't have much time!
 	}
 	else
 	{
-		AI_Output(self,other, " DIA_Addon_Xardas_Hello_Dragons_14_06 " );	// But that's not all. There is something else that threatens us. I only recently found out about this.
+		AI_Output(self,other, " DIA_Addon_Xardas_Hello_Dragons_14_06 " );	// But that's not all. There is something else that threatens us. I only recently found out about it, to my shame.
 		Info_ClearChoices(DIA_Xardas_Hello);
 		Info_AddChoice(DIA_Xardas_Hello, " What other threat are you talking about? " ,DIA_Addon_Xardas_Hello_Man);
 	};
@@ -757,20 +757,20 @@ func void DIA_Xardas_OtherGreatWeapon_Info()
 {
 	AI_Output(other,self, " DIA_Xardas_OtherGreatWeapon_01_00 " );	// And what weapon can help me deal with dragons besides Urizel?
 	AI_Output(self,other, " DIA_Xardas_OtherGreatWeapon_01_01 " );	// There are quite a few artifacts in this world that can match the power of Urizel.
-	AI_Output(self,other, " DIA_Xardas_OtherGreatWeapon_01_02 " );	// But I only know a few of them.
-	AI_Output(other,self, " DIA_Xardas_OtherGreatWeapon_01_03 " );	// Can you tell me about it?
-	AI_Output(self,other, " DIA_Xardas_OtherGreatWeapon_01_05 " );	// Good. The first artifact worth mentioning is the magical staff. It is also called the Extinguisher of Souls!
-	AI_Output(self,other, " DIA_Xardas_OtherGreatWeapon_01_06 " );	// He possesses incredible strength, capable of mastering even the most powerful creatures of this world. Including dragons!
-	AI_Output(self,other, " DIA_Xardas_OtherGreatWeapon_01_07 " );	// True, only a very strong and experienced mage can bend him to his will!
-	AI_Output(self,other, " DIA_Xardas_OtherGreatWeapon_01_08 " );	// Otherwise, this artifact will become just a useless stick in inept hands.
-	AI_Output(other,self, " DIA_Xardas_OtherGreatWeapon_01_09 " );	// Good. And where can I look for it?
-	AI_Output(self,other, " DIA_Xardas_OtherGreatWeapon_01_10 " );	// If I had known, I would have had it a long time ago. You know, things like that don't go down the road.
-	AI_Output(other,self, " DIA_Xardas_OtherGreatWeapon_01_13 " );	// I understand. Anything else?
-	AI_Output(self,other, " DIA_Xardas_OtherGreatWeapon_01_14 " );	// The second artifact I've heard of is called Er'Hazir, which means Starfury in ancient language.
-	AI_Output(self,other, " DIA_Xardas_OtherGreatWeapon_01_15 " );	// According to legend, this bow was created by Adanos himself, so that his chosen one could bring death to his enemies!
-	AI_Output(self,other, " DIA_Xardas_OtherGreatWeapon_01_16 " );	// The arrows fired from it are endowed with a special magical power that can penetrate the strongest armor.
+	AI_Output(self,other, " DIA_Xardas_OtherGreatWeapon_01_02 " );	// But I only know of a few of them.
+	AI_Output(other,self, " DIA_Xardas_OtherGreatWeapon_01_03 " );	// Can you tell me about them?
+	AI_Output(self,other, " DIA_Xardas_OtherGreatWeapon_01_05 " );	// Good. The first artifact worth mentioning is a magical staff. It is sometimes called the Extinguisher of Souls!
+	AI_Output(self,other, " DIA_Xardas_OtherGreatWeapon_01_06 " );	// It possesses incredible strength, capable of overcoming even the most powerful creatures of this world. Including dragons!
+	AI_Output(self,other, " DIA_Xardas_OtherGreatWeapon_01_07 " );	// Unfortunately, only a very strong and experienced mage can bend it to his will!
+	AI_Output(self,other, " DIA_Xardas_OtherGreatWeapon_01_08 " );	// It's little more than a walking stick in the hands of the uninitiated.
+	AI_Output(other,self, " DIA_Xardas_OtherGreatWeapon_01_09 " );	// Where might I find this... walking stick?
+	AI_Output(self,other, " DIA_Xardas_OtherGreatWeapon_01_10 " );	// If I knew, I would be wielding it right now.
+	AI_Output(other,self, " DIA_Xardas_OtherGreatWeapon_01_13 " );	// I see. Anything else?
+	AI_Output(self,other, " DIA_Xardas_OtherGreatWeapon_01_14 " );	// The second artifact I've heard of is called Er'Hazir, which means Starfury in the ancient tongue.
+	AI_Output(self,other, " DIA_Xardas_OtherGreatWeapon_01_15 " );	// According to legend, it is a bow created by Adanos himself, so that his chosen one could bring death to his enemies!
+	AI_Output(self,other, " DIA_Xardas_OtherGreatWeapon_01_16 " );	// The arrows fired from it are endowed with a magical power that can penetrate the strongest armor.
 	AI_Output(self,other, " DIA_Xardas_OtherGreatWeapon_01_17 " );	// Once in your hands, this weapon would give us a tangible advantage in the fight against dragons.
-	AI_Output(self,other, " DIA_Xardas_OtherGreatWeapon_01_19 " );	// However, I can't tell if it actually exists. You'll have to find out for yourself.
+	AI_Output(self,other, " DIA_Xardas_OtherGreatWeapon_01_19 " );	// However, I can't be sure if it actually exists. You'll have to find out for yourself.
 	AI_Output(other,self, " DIA_Xardas_OtherGreatWeapon_01_21 " );	// I didn't expect anything else.
 };
 
@@ -796,10 +796,10 @@ func void DIA_Xardas_AWAY_Info()
 {
 	Snd_Play("LevelUp");
 	B_GivePlayerXP(50);
-	AI_Output(other,self, " DIA_Xardas_AWAY_15_00 " );	// Then let's get out of here as fast as we can!
+	AI_Output(other,self, " DIA_Xardas_AWAY_15_00 " );	// Then we should make haste and leave this place!
 	AI_Output(self,other, " DIA_Xardas_AWAY_14_01 " );	// If we run away now, it will only delay our encounter with the dragons.
 	AI_Output(self,other, " DIA_Xardas_AWAY_14_02 " );	// With the help of the soldiers and mages who live here, we can stop them before the army of darkness is fully formed.
-	AI_Output(self,other, " DIA_Xardas_AWAY_14_03 " );	// We won't get a better chance for this.
+	AI_Output(self,other, " DIA_Xardas_AWAY_14_03 " );	// We won't get a better chance than this.
 	AI_NoticePrint(3000,4098,NAME_Addon_ScareBonus);
 	RankPoints = RankPoints + 1;
 	ScareBonus = TRUE;
@@ -827,7 +827,7 @@ func void DAY_Xardas_TODO_Info()
 {
 	AI_Output(other,self, " DIA_Xardas_TODO_15_00 " );	// What can we do?
 	AI_Output(self,other, " DIA_Xardas_TODO_14_01 " );	// This time we can't handle it ourselves. Only the power of Innos can help us in the fight against these dragons.
-	AI_Output(self,other, " DIA_Xardas_TODO_14_02 " );	// In the city of Khorinis, not far from here, a squad of paladins stopped.
+	AI_Output(self,other, " DIA_Xardas_TODO_14_02 " );	// In the city of Khorinis, not far from here, a squad of paladins are located.
 	AI_Output(self,other, " DIA_Xardas_TODO_14_03 " );	// They have a powerful artifact that can help us defeat these dragons.
 	AI_Output(self,other, " DIA_Xardas_TODO_14_04 " );	// They call it the 'Eye of Innos'. You must take possession of this artifact.
 	AI_Output(self,other, " DIA_Xardas_TODO_14_05 " );	// Tell the paladins about the impending threat. You MUST convince their leader to support us!
@@ -835,14 +835,14 @@ func void DAY_Xardas_TODO_Info()
 	AI_Output(self,other, " DIA_Xardas_TODO_14_11 " );	// That sword with which you slew the Sleeper! The eye will protect you from the flames of the dragons, but to slay them, you will need a truly deadly weapon!
 	AI_Output(other,self, " DIA_Xardas_TODO_14_12 " );	// Urizel?
 	AI_Output(self,other, " DIA_Xardas_TODO_14_13 " );	// Exactly.
-	AI_Output(other,self, " DIA_Xardas_TODO_14_14 " );	// But he stayed in the Temple of the Sleeper!
-	AI_Output(self,other, " DIA_Xardas_TODO_14_15 " );	// So you'll have to go back there.
+	AI_Output(other,self, " DIA_Xardas_TODO_14_14 " );	// But it fell from my hand in the Temple of the Sleeper!
+	AI_Output(self,other, " DIA_Xardas_TODO_14_15 " );	// Then you'll have to go back there.
 	Log_CreateTopic(TOPIC_INNOSEYE,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_INNOSEYE,LOG_Running);
-	B_LogEntry( TOPIC_INNOSEYE , " A group of paladins is stationed in the city of Khorinis. They wield a powerful artifact: the 'Eye of Innos'. His power should help us against the dragon threat. I must convince the paladins to support us in this cause. " );
+	B_LogEntry( TOPIC_INNOSEYE , " A group of paladins is stationed in the city of Khorinis. They wield a powerful artifact: the 'Eye of Innos'. It's power should help us all against the dragon threat. I must convince the paladins to support me in this cause. " );
 	Log_CreateTopic(TOPIC_ORCTEMPLE,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_ORCTEMPLE,LOG_Running);
-	B_LogEntry_Quiet( TOPIC_ORCTEMPLE , " Xardas said that in addition to the Eye of Innos, in the fight against the dragons, I might need the powerful ancient blade URIZEL, with which I once slew the Sleeper. I should visit the temple of the Sleeper at the earliest opportunity, where this legendary sword should have remained. " );
+	B_LogEntry_Quiet( TOPIC_ORCTEMPLE , " Xardas said that in addition to the Eye of Innos, in the fight against the dragons, I might need the powerful ancient blade URIZEL, with which I once slew the Sleeper. I should visit the temple of the Sleeper, where I last held it. " );
 	Info_ClearChoices(DIA_Xardas_TODO);
 };
 
@@ -866,10 +866,10 @@ func int DIA_Addon_Xardas_StonePlate_Condition()
 func void DIA_Addon_Xardas_StonePlate_Info()
 {
 	B_GivePlayerXP(XP_Ambient);
-	AI_Output(other,self, " DIA_Addon_Xardas_StonePlate_15_00 " );	// What can you say about this stone tablet?
+	AI_Output(other,self, " DIA_Addon_Xardas_StonePlate_15_00 " );	// What can you tell me about this stone tablet?
 	AI_Output(self,other, " DIA_Addon_Xardas_StonePlate_14_03 " );	// At first I suspected it was a magical artifact. But then I came to the conclusion that it has no value.
 	AI_Output(self,other, " DIA_Addon_Xardas_StonePlate_14_04 " );	// I could not fully decipher the inscriptions on the tablet, but they seem to refer to the history of some ancient culture.
-	AI_Output(self,other, " DIA_Addon_Xardas_StonePlate_14_05 " );	// If you want, you can take the tablet for yourself. She is of no use to me!
+	AI_Output(self,other, " DIA_Addon_Xardas_StonePlate_14_05 " );	// If you want, you can take the tablet for yourself. It's of no use to me!
 };
 
 instance DIA_XARDAS_ORCTEMPLE(C_Info)
@@ -895,13 +895,13 @@ func void dia_xardas_orctemple_info()
 	AI_Output(other,self, " DIA_Xardas_OrcTemple_15_00 " );	// I found strange things at the entrance to the Temple of the Sleeper.
 	AI_Output(other,self, " DIA_Xardas_OrcTemple_15_01 " );	// Orc ghosts that do not react to anything and a tunnel closed by a stone slab deep into the mountain.
 	AI_Output(self,other, " DIA_Xardas_OrcTemple_14_02 " );	// You came just in time. I just figured out this issue.
-	AI_Output(self,other, " DIA_Xardas_OrcTemple_14_03 " );	// This tunnel is the road to the Temple of the Sleeper. Orcs fought their way in and cleared the rubble immediately after the fall of the Barrier.
-	AI_Output(self,other, " DIA_Xardas_OrcTemple_14_04 " );	// But then for some reason they hurriedly left that place and closed the entrance. And for a long time I could not understand why.
-	AI_Output(self,other, " DIA_Xardas_OrcTemple_14_05 " );	// But then I understood everything, seeing in this another cruel joke of Beliar.
+	AI_Output(self,other, " DIA_Xardas_OrcTemple_14_03 " );	// That tunnel is the road to the Temple of the Sleeper. Orcs fought their way in and cleared the rubble immediately after the fall of the Barrier.
+	AI_Output(self,other, " DIA_Xardas_OrcTemple_14_04 " );	// But then for some reason they hurriedly left the place and closed the entrance. For a long time I could not understand why.
+	AI_Output(self,other, " DIA_Xardas_OrcTemple_14_05 " );	// But then I understood. It's simply another joke of Beliar's.
 	AI_Output(self,other, " DIA_Xardas_OrcTemple_14_06 " );	// The Dark God finds it amusing when his servants cut each other's throats to curry favor with him.
 	AI_Output(self,other, " DIA_Xardas_OrcTemple_14_07 " );	// Looks like we'll have to deal with another serious enemy.
 	B_GivePlayerXP(XP_Ambient);
-	B_LogEntry( TOPIC_ORCTEMPLE , " Found lattice closes the passage to the Temple of the Sleeper. " );
+	B_LogEntry( TOPIC_ORCTEMPLE , " I found lattices closing the passage to the Temple of the Sleeper. " );
 };
 
 
@@ -927,12 +927,12 @@ func int dia_xardas_orctemple2_condition()
 func void dia_xardas_orctemple2_info()
 {
 	AI_Output(other,self, " DIA_Xardas_OrcTemple2_15_00 " );	// Who are you talking about?
-	AI_Output(self,other, " DIA_Xardas_OrcTemple2_14_01 " );	// I believe this is one of Beliar's chosen ones. And I do not think that he will be inferior in strength to the dragons - Beliar chooses the strongest!
+	AI_Output(self,other, " DIA_Xardas_OrcTemple2_14_01 " );	// One of Beliar's chosen ones. I do not think that he will be inferior in strength to the dragons - Beliar chooses only the most worthy!
 	AI_Output(self,other, " DIA_Xardas_OrcTemple2_14_02 " );	// I suspect that he is the new owner of Urizel.
-	AI_Output(self,other, " DIA_Xardas_OrcTemple2_14_03 " );	// The Temple of the Sleeper is a great place for such creatures, and the demonic aura of this cursed place makes it even more powerful.
-	AI_Output(self,other, " DIA_Xardas_OrcTemple2_14_04 " );	// Most likely, the orcs were not able to resist this evil. And having cleared the temple of rubble, they even saved him from unnecessary worries.
-	AI_Output(self,other, " DIA_Xardas_OrcTemple2_14_05 " );	// The ghosts that you saw at the entrance will serve as a good deterrent to anyone who intends to encroach on his peace.
-	AI_Output(self,other, " DIA_Xardas_OrcTemple2_14_06 " );	// In general, everything in this case suggests that you will once again have to go to this temple and find out what kind of evil lurks there.
+	AI_Output(self,other, " DIA_Xardas_OrcTemple2_14_03 " );	// The Temple of the Sleeper is a welcoming place for such creatures, and its demonic aura makes them even more powerful.
+	AI_Output(self,other, " DIA_Xardas_OrcTemple2_14_04 " );	// Most likely, the orcs were not able to resist this evil. And having cleared the temple of rubble, they unwittingly served his ends.
+	AI_Output(self,other, " DIA_Xardas_OrcTemple2_14_05 " );	// The ghosts that you saw at the entrance will serve as a deterrent to anyone who intends to encroach on his peace.
+	AI_Output(self,other, " DIA_Xardas_OrcTemple2_14_06 " );	// There is no choice. Return to the temple and face this evil head on.
 	B_LogEntry( TOPIC_ORCTEMPLE , " Looks like I'll have to visit the Temple of the Sleeper again and find out what evil is hiding there. " );
 };
 
@@ -960,10 +960,10 @@ func void dia_xardas_orctempledoor_info()
 {
 	AI_Output(other,self, " DIA_Xardas_OrcTempleDoor_15_00 " );	// How do I get to the Temple of the Sleeper?
 	AI_Output(other,self, " DIA_Xardas_OrcTempleDoor_15_01 " );	// There is no sign of a lever or switch near the grate.
-	AI_Output(self,other, " DIA_Xardas_OrcTempleDoor_14_02 " );	// Most likely, the orcs cast a complex spell on it, and just like that it will not open.
+	AI_Output(self,other, " DIA_Xardas_OrcTempleDoor_14_02 " );	// Most likely, the orcs cast a complex spell on it. It won't be easy to open.
 	AI_Output(self,other, " DIA_Xardas_OrcTempleDoor_14_03 " );	// I'm afraid I can't help here. You'll have to find the solution yourself.
-	AI_Output(self,other, " DIA_Xardas_OrcTempleDoor_14_04 " );	// It seems to me that the answer should be sought from the orcs.
-	B_LogEntry( TOPIC_ORCTEMPLE , " Xardas can't tell me how to open the portcullis to enter the Temple of the Sleeper. Only orcs know the answer to that. " );
+	AI_Output(self,other, " DIA_Xardas_OrcTempleDoor_14_04 " );	// It seems to me that the answer should be sought from the orcs directly.
+	B_LogEntry( TOPIC_ORCTEMPLE , " Xardas can't tell me how to open the portcullis to enter the Temple of the Sleeper. Only orcs will know the answer to that. " );
 	ORCTEMPLEGATEINFO = TRUE;
 };
 
@@ -990,12 +990,12 @@ func int dia_xardas_dmst_dead_condition()
 func void dia_xardas_dmst_dead_info()
 {
 	AI_Output(other,self, " DIA_Xardas_DMST_Dead_15_00 " );	// I was in the Temple of the Sleeper.
-	AI_Output(self,other, " DIA_Xardas_DMST_Dead_14_03 " );	// Yes?! And who was it?
-	AI_Output(other,self, " DIA_Xardas_DMST_Dead_15_04 " );	// Some sorcerer. He looked about the same as you. I mean clothes.
-	AI_Output(other,self, " DIA_Xardas_DMST_Dead_15_04A " );	// And he had this sword with him - do you recognize it?
-	AI_Output(self,other, " DIA_Xardas_DMST_Dead_14_05 " );	// Urizel? Excellent! It will come in handy for you again and again. So the necromancer... hmm... thanks to you, Beliar lost another loyal servant.
-	AI_Output(self,other, " DIA_Xardas_DMST_Dead_14_06 " );	// This sorcerer... he was able to become the chosen one of Beliar. Perhaps this opens up some hidden possibilities for...
-	AI_Output(self,other, " DIA_Xardas_DMST_Dead_14_07 " );	// Oh well... not about that now! (laughs slyly)
+	AI_Output(self,other, " DIA_Xardas_DMST_Dead_14_03 " );	// Did you face him? Beliar's champion?
+	AI_Output(other,self, " DIA_Xardas_DMST_Dead_15_04 " );	// He was a sorcerer. Reminded me of you, to be honest.
+	AI_Output(other,self, " DIA_Xardas_DMST_Dead_15_04A " );	// He had this with him.
+	AI_Output(self,other, " DIA_Xardas_DMST_Dead_14_05 " );	// Urizel? Excellent! Once more it seeks your hand. So he was a necromancer... thanks to you, Beliar has lost another loyal servant.
+	AI_Output(self,other, " DIA_Xardas_DMST_Dead_14_06 " );	// This sorcerer... he was able to become the chosen one of Beliar. Perhaps... could it be that simple?
+	AI_Output(self,other, " DIA_Xardas_DMST_Dead_14_07 " );	// Oh well... forget about that now! Ha ha!
 	B_GivePlayerXP(200);
 	XARDASKNOWSDEADMAGE = TRUE;
 };
@@ -1022,15 +1022,15 @@ func int dia_xardas_makerune_condition()
 
 func void dia_xardas_makerune_info()
 {
-	AI_Output(other,self, " DIA_Xardas_MAKERUNE_15_01 " );	// You said that even a mage could use this sword.
+	AI_Output(other,self, " DIA_Xardas_MAKERUNE_15_01 " );	// You said that even a mage could use this sword?
 	AI_Output(self,other, " DIA_Xardas_MAKERUNE_14_02 " );	// Take a closer look at it. See that blue stone at the base of the blade?
-	AI_Output(self,other, " DIA_Xardas_MAKERUNE_14_03 " );	// It contains all of Urizel's magic power.
-	AI_Output(self,other, " DIA_Xardas_MAKERUNE_14_04 " );	// If I take it from there, I can create a magic rune with the same properties.
-	AI_Output(other,self, " DIA_Xardas_MAKERUNE_15_05 " );	// Make a magical rune out of the sword?
-	AI_Output(self,other, " DIA_Xardas_MAKERUNE_14_06 " );	// In battle, her strength will not yield to that of Urizel!
-	AI_Output(self,other, " DIA_Xardas_MAKERUNE_14_07 " );	// I could do this for you, but you have to be absolutely sure you want it.
-	AI_Output(self,other, " DIA_Xardas_MAKERUNE_14_08 " );	// Think carefully, I won't be able to return the sword to its former power!
-	AI_Output(self,other, " DIA_Xardas_MAKERUNE_14_09 " );	// So what's your choice?
+	AI_Output(self,other, " DIA_Xardas_MAKERUNE_14_03 " );	// It contains all of Urizel's magical power.
+	AI_Output(self,other, " DIA_Xardas_MAKERUNE_14_04 " );	// If I remove it, I can create a special rune with the same properties.
+	AI_Output(other,self, " DIA_Xardas_MAKERUNE_15_05 " );	// You can make a magical rune out of the sword?
+	AI_Output(self,other, " DIA_Xardas_MAKERUNE_14_06 " );	// Yes, but it would mean the end of Urizel!
+	AI_Output(self,other, " DIA_Xardas_MAKERUNE_14_07 " );	// You must be absolutely certain you want this.
+	AI_Output(self,other, " DIA_Xardas_MAKERUNE_14_08 " );	// I won't be able to return the sword to its former power afterward.
+	AI_Output(self,other, " DIA_Xardas_MAKERUNE_14_09 " );	// What is your choice?
 	KNOWINFOURIZELRUNE = TRUE;
 };
 
@@ -1057,7 +1057,7 @@ func int dia_xardas_makerunedoit_condition()
 func void dia_xardas_makerunedoit_info()
 {
 	AI_Output(other,self, " DIA_Xardas_MAKERUNEDOIT_15_01 " );	// Take the stone from Urizel!
-	AI_Output(self,other, " DIA_Xardas_MAKERUNEDOIT_14_03 " );	// Is this your final decision? Do you really want me to take this stone?
+	AI_Output(self,other, " DIA_Xardas_MAKERUNEDOIT_14_03 " );	// You are certain of this?
 	Info_ClearChoices(dia_xardas_makerunedoit);
 	Info_AddChoice(dia_xardas_makerunedoit, " YES, do it! " ,dia_xardas_makerune_yes);
 	Info_AddChoice(dia_xardas_makerunedoit, " NO, don't do that! " ,dia_xardas_makerune_no);
@@ -1065,9 +1065,9 @@ func void dia_xardas_makerunedoit_info()
 
 func void dia_xardas_makerune_yes()
 {
-	AI_Output(other,self, " DIA_Xardas_MAKERUNEDOIT_15_04 " );	// YES, do it!
-	AI_Output(self,other, " DIA_Xardas_MAKERUNEDOIT_14_05 " );	// As you wish... Here, take an empty sword and a rune!
-	AI_Output(self,other, " DIA_Xardas_MAKERUNEDOIT_14_06 " );	// But keep in mind that you can use the full power of this rune only in the battle with dragons.
+	AI_Output(other,self, " DIA_Xardas_MAKERUNEDOIT_15_04 " );	// Yes, do it!
+	AI_Output(self,other, " DIA_Xardas_MAKERUNEDOIT_14_05 " );	// As you wish... Here, take this pretty butter knife and your rune!
+	AI_Output(self,other, " DIA_Xardas_MAKERUNEDOIT_14_06 " );	// But keep in mind that you can use the full power of this rune only in the battle with the dragons.
 	Npc_RemoveInvItem(other,itmw_2h_urizel);
 	CreateInvItems(other,itmw_2h_urizel_nomagic,1);
 	CreateInvItems(other,ItRu_BreathOfDeath,1);
@@ -1076,8 +1076,8 @@ func void dia_xardas_makerune_yes()
 
 func void dia_xardas_makerune_no()
 {
-	AI_Output(other,self, " DIA_Xardas_MAKERUNEDOIT_15_06 " );	// NO, don't do this!
-	AI_Output(self,other, " DIA_Xardas_MAKERUNEDOIT_14_07 " );	// As you wish. Magic power will remain in this sword!
+	AI_Output(other,self, " DIA_Xardas_MAKERUNEDOIT_15_06 " );	// No, don't do this!
+	AI_Output(self,other, " DIA_Xardas_MAKERUNEDOIT_14_07 " );	// As you wish. The sword will remain whole!
 	Info_ClearChoices(dia_xardas_makerunedoit);
 };
 
@@ -1105,7 +1105,7 @@ func void DIA_Addon_Xardas_Portal_Info()
 	AI_Output(other,self, " DIA_Addon_Xardas_AddonSuccess_15_00 " );	// Waterbenders found a portal leading to an unexplored part of the island...
 	AI_Output(self,other, " DIA_Addon_Xardas_AddonSuccess_14_01 " );	// How interesting...
 	AI_Output(self,other, " DIA_Addon_Xardas_AddonSuccess_14_02 " );	// As soon as you know anything that can really help us, let me know!
-	AI_Output(self,other, " DIA_Addon_Xardas_AddonSuccess_14_03 " );	// Beliar's artifact might be hidden somewhere. You must find him!
+	AI_Output(self,other, " DIA_Addon_Xardas_AddonSuccess_14_03 " );	// Beliar's artifact might be hidden somewhere there. You must find it!
 };
 
 
@@ -1131,7 +1131,7 @@ func int DIA_Addon_Xardas_PortalAgain_Condition()
 func void DIA_Addon_Xardas_PortalAgain_Info()
 {
 	AI_Output(other,self, " DIA_Addon_Xardas_AddonSuccess_15_17 " );	// About this unknown part of the island...
-	AI_Output(self,other, " DIA_Addon_Xardas_AddonSuccess_14_18 " );	// I'm not interested in the details. Come back if you learn anything really useful.
+	AI_Output(self,other, " DIA_Addon_Xardas_AddonSuccess_14_18 " );	// I'm not really interested in the finer details. Come back if you learn anything truly useful.
 };
 
 
@@ -1158,24 +1158,24 @@ func void DIA_Addon_Xardas_AddonSuccess_Info()
 {
 	AI_Output(other,self, " DIA_Addon_Xardas_AddonSuccess_15_03 " );	// I explored an unknown part of the island...
 	AI_Output(self,other, " DIA_Addon_Xardas_AddonSuccess_14_04 " );	// And what did you find?
-	AI_Output(other,self, " DIA_Addon_Xardas_AddonSuccess_15_05 " );	// It all ended with the Claw of Beliar falling into my hands.
-	AI_Output(self,other, " DIA_Addon_Xardas_AddonSuccess_14_06 " );	// Beliar's Claw?! Where is he now? Do you have it with you?
+	AI_Output(other,self, " DIA_Addon_Xardas_AddonSuccess_15_05 " );	// Oh, not much. Just the Claw of Beliar. Oh, and some pretty rocks!
+	AI_Output(self,other, " DIA_Addon_Xardas_AddonSuccess_14_06 " );	// Beliar's Claw?! Where is it now? Do you have it with you?
 	if(C_ScHasBeliarsWeapon())
 	{
-		AI_Output(other,self,"DIA_Addon_Xardas_AddonSuccess_15_07");	//Да, вот он.
-		AI_Output(self,other, " DIA_Addon_Xardas_AddonSuccess_14_08 " );	// How interesting...
-		AI_Output(self,other, " DIA_Addon_Xardas_AddonSuccess_14_09 " );	// This weapon can help us a lot. But it is also very dangerous.
-		AI_Output(self,other, " DIA_Addon_Xardas_AddonSuccess_14_10 " );	// Be careful! And most importantly, don't lose the Claw!
+		AI_Output(other,self,"DIA_Addon_Xardas_AddonSuccess_15_07");	//right here.
+		AI_Output(self,other, " DIA_Addon_Xardas_AddonSuccess_14_08 " );	// By the gods...
+		AI_Output(self,other, " DIA_Addon_Xardas_AddonSuccess_14_09 " );	// This weapon can change everything. But it is also very dangerous.
+		AI_Output(self,other, " DIA_Addon_Xardas_AddonSuccess_14_10 " );	// Be careful with it at all times! And most importantly, don't lose it!
 		B_GivePlayerXP(XP_Ambient * 3);
 	}
 	else
 	{
 		AI_Output(other,self, " DIA_Addon_Xardas_AddonSuccess_15_11 " );	// I don't have it anymore.
 		AI_Output(other,self, " DIA_Addon_Xardas_AddonSuccess_15_12 " );	// I gave it to the waterbenders to drown it in the sea.
-		AI_Output(self,other, " DIA_Addon_Xardas_AddonSuccess_14_13 " );	// Are you out of your mind?! Do you even realize what you gave?
-		AI_Output(self,other, " DIA_Addon_Xardas_AddonSuccess_14_14 " );	// This weapon could be of great service to us!
-		AI_Output(other,self, " DIA_Addon_Xardas_AddonSuccess_15_15 " );	// I think I made the right choice.
-		AI_Output(self,other, " DIA_Addon_Xardas_AddonSuccess_14_16 " );	// The ways of the gods are inscrutable...
+		AI_Output(self,other, " DIA_Addon_Xardas_AddonSuccess_14_13 " );	// Are you out of your mind?! Do you even realize what you have done?
+		AI_Output(self,other, " DIA_Addon_Xardas_AddonSuccess_14_14 " );	// That weapon could have been be of great service to us!
+		AI_Output(other,self, " DIA_Addon_Xardas_AddonSuccess_15_15 " );	// I made the right choice, I know it.
+		AI_Output(self,other, " DIA_Addon_Xardas_AddonSuccess_14_16 " );	// You vex me boy, like very few ever have...
 	};
 };
 
@@ -1202,9 +1202,9 @@ func int DIA_Xardas_ARTEFAKT_Condition()
 func void DIA_Xardas_ARTEFAKT_Info()
 {
 	AI_Output(other,self, " DIA_Xardas_ARTEFAKT_15_00 " );	// And what is this 'Eye of Innos'?
-	AI_Output(self,other, " DIA_Xardas_ARTEFAKT_14_01 " );	// This is an amulet. Legends say that Innos himself put some of his power into this amulet.
+	AI_Output(self,other, " DIA_Xardas_ARTEFAKT_14_01 " );	// It is an amulet. Legends say that Innos himself put some of his power into it.
 	AI_Output(self,other, " DIA_Xardas_ARTEFAKT_14_02 " );	// He will restore some of your lost power and help us defeat the dragons.
-	AI_Output(self,other, " DIA_Xardas_ARTEFAKT_14_03 " );	// It also has other hidden features. I will tell you more when you have this amulet in your hands.
+	AI_Output(self,other, " DIA_Xardas_ARTEFAKT_14_03 " );	// It also has other hidden features. I will tell you more when you have the amulet in your hands.
 };
 
 
@@ -1215,7 +1215,7 @@ instances of DIA_Xardas_PALADIN (C_Info)
 	condition = DIA_Xardas_PALADIN_Condition;
 	information = DIA_Xardas_PALADIN_Info;
 	permanent = FALSE;
-	description = " Why should paladins give me this Eye of Innos? " ;
+	description = " Why should the paladins give me the Eye of Innos? " ;
 };
 
 
@@ -1229,12 +1229,12 @@ func int DIA_Xardas_PALADIN_Condition()
 
 func void DIA_Xardas_PALADIN_Info()
 {
-	AI_Output(other,self, " DIA_Xardas_PALADIN_15_00 " );	// Why should paladins give me this Eye of Innos?
+	AI_Output(other,self, " DIA_Xardas_PALADIN_15_00 " );	// Why should the paladins give me this Eye of Innos?
 	AI_Output(self,other, " DIA_Xardas_PALADIN_14_01 " );	// Because you are the one destined to wear it.
 	AI_Output(other,self, " DIA_Xardas_PALADIN_15_02 " );	// How do you know this?
-	AI_Output(self,other, " DIA_Xardas_PALADIN_14_03 " );	// There are several reasons to believe this. Here is the most important of them: you defeated the Sleeper. If the gods had not favored you, you would have been dead long ago.
-	AI_Output(other,self, " DIA_Xardas_PALADIN_15_04 " );	// Let's assume you're right and I'm really destined to wear the Eye of Innos. And how do paladins know it's true?
-	AI_Output(self,other, " DIA_Xardas_PALADIN_14_05 " );	// The eye itself chooses who can wear it. When you put it on, all paladin doubts will be dispelled.
+	AI_Output(self,other, " DIA_Xardas_PALADIN_14_03 " );	// There are several reasons to believe it. The most important of them: you defeated the Sleeper. If the gods do not favor you, you would have been dead long ago.
+	AI_Output(other,self, " DIA_Xardas_PALADIN_15_04 " );	// Let's assume you're right and I'm really destined to wear the Eye of Innos. How will paladins know it's true?
+	AI_Output(self,other, " DIA_Xardas_PALADIN_14_05 " );	// The Eye chooses it's wearer. When you put it on, they will have no choice but to believe.
 };
 
 
@@ -1261,7 +1261,7 @@ func void DIA_Xardas_Khorinis_Info()
 {
 	AI_Output(other,self, " DIA_Xardas_Khorinis_15_00 " );	// How do I get to the city?
 	AI_Output(self,other, " DIA_Xardas_Khorinis_14_01 " );	// Just follow the path that leads from here through the mountains. The city is big, you won't miss it.
-	AI_Output(self,other, " DIA_Xardas_Khorinis_14_02 " );	// But be careful! The path to the city is full of dangers. And now you're not nearly as strong as you used to be.
+	AI_Output(self,other, " DIA_Xardas_Khorinis_14_02 " );	// But be careful! The path to the city is full of dangers. And you're not nearly as strong as you used to be.
 };
 
 
@@ -1289,8 +1289,8 @@ func void DIA_Xardas_WhereEx_Info()
 	AI_Output(other,self, " DIA_Xardas_Add_15_00 " );	// Where exactly are we now?
 	AI_Output(self,other, " DIA_Xardas_Add_14_01 " );	// As I said, not far from the city of Khorinis.
 	AI_Output(self,other, " DIA_Xardas_Add_14_02 " );	// I built my tower here.
-	AI_Output(other,self, " DIA_Xardas_Add_15_03 " );	// But it's only been a few days since we've been in the Valley of Mines...
-	AI_Output(self,other, " DIA_Xardas_Add_14_04 " );	// The servants I called to build my tower did an amazing job...
+	AI_Output(other,self, " DIA_Xardas_Add_15_03 " );	// But it's only been a few days since the barrier fell...
+	AI_Output(self,other, " DIA_Xardas_Add_14_04 " );	// The servants I called to build my tower did an amazing job didn't they?
 	AI_Output(other,self, " DIA_Xardas_Add_15_05 " );	// Yes, it looks like it.
 };
 
@@ -1318,7 +1318,7 @@ func void DIA_Xardas_EQUIPMENT_Info()
 {
 	AI_Output(other,self, " DIA_Xardas_EQUIPMENT_15_00 " );	// Where can I find better gear?
 	AI_Output(self,other, " DIA_Xardas_EQUIPMENT_14_01 " );	// The nearest place where you can get decent weapons and armor is the city of Khorinis.
-	AI_Output(self,other, " DIA_Xardas_EQUIPMENT_14_02 " );	// But down in the valley, you can find healing herbs that will help you if you get hurt in battle.
+	AI_Output(self,other, " DIA_Xardas_EQUIPMENT_14_02 " );	// But down in the valley, you can find healing herbs that will help you if you get hurt.
 	AI_Output(self,other, " DIA_Xardas_EQUIPMENT_14_03 " );	// See the lake to the right of my tower? From there, a secret passage leads into the valley.
 };
 
@@ -1346,13 +1346,13 @@ func void DIA_Xardas_ABOUTLESTER_Info()
 {
 	B_GivePlayerXP(XP_Ambient);
 	AI_Output(other,self, " DIA_Xardas_ABOUTLESTER_15_00 " );	// Have you spoken to Lester yet?
-	AI_Output(self,other, " DIA_Xardas_ABOUTLESTER_14_01 " );	// Yeah, I just bombarded him with questions. He was able to tell me a lot, but he is completely exhausted.
+	AI_Output(self,other, " DIA_Xardas_ABOUTLESTER_14_01 " );	// Yes, I bombarded him with questions. He was able to tell me much, but he is completely exhausted.
 	AI_Output(self,other, " DIA_Xardas_ABOUTLESTER_14_02 " );	// It's almost a miracle that he managed to survive. I sent him to bed.
 	AI_Output(other,self, " DIA_Xardas_ABOUTLESTER_15_03 " );	// What did he tell you?
-	AI_Output(self,other, " DIA_Xardas_ABOUTLESTER_14_04 " );	// No good, I'm afraid. He saw not only the dragon, but also people in black hooded cloaks.
-	AI_Output(other,self,"DIA_Xardas_ABOUTLESTER_15_05");	//И?
-	AI_Output(self,other, " DIA_Xardas_ABOUTLESTER_14_06 " );	// If these people exist, then their presence poses a certain threat.
-	AI_Output(self,other, " DIA_Xardas_ABOUTLESTER_14_07 " );	// And I don't like it. Here, take my ring. It will protect you from magic.
+	AI_Output(self,other, " DIA_Xardas_ABOUTLESTER_14_04 " );	// No good, I'm afraid. He not only saw the dragon, but also people in black hooded cloaks.
+	AI_Output(other,self,"DIA_Xardas_ABOUTLESTER_15_05");	//And?
+	AI_Output(self,other, " DIA_Xardas_ABOUTLESTER_14_06 " );	// If they are who I think they are, we have a new problem.
+	AI_Output(self,other, " DIA_Xardas_ABOUTLESTER_14_07 " );	// Here, take my ring. It will protect you from magic. I have a feeling you will need it soon.
 	B_GiveInvItems(self,other,ItRi_Prot_Mage_01,1);
 };
 
@@ -1382,10 +1382,10 @@ func void DIA_Xardas_FirstPal_Info()
 	AI_Output(other,self, " DIA_Xardas_FirstPal_15_00 " );	// I was in the city...
 	AI_Output(self,other, " DIA_Xardas_FirstPal_14_01 " );	// And? Were you able to speak to the paladin leader?
 	AI_Output(other,self, " DIA_Xardas_FirstPal_15_02 " );	// They won't let me in...
-	AI_Output(self,other, " DIA_Xardas_FirstPal_14_03 " );	// Nonsense! There must be a way to see him.
-	AI_Output(self,other, " DIA_Xardas_FirstPal_14_04 " );	// If all else fails, join a monastery and become a mage.
+	AI_Output(self,other, " DIA_Xardas_FirstPal_14_03 " );	// Nonsense! There must be a way in. It's a city, not a prison.
+	AI_Output(self,other, " DIA_Xardas_FirstPal_14_04 " );	// If all else fails, join the monastery and become a mage.
 	AI_Output(self,other, " DIA_Xardas_FirstPal_14_05 " );	// It's probably a morally dubious undertaking, but it will get you what you need.
-	AI_Output(self,other, " DIA_Xardas_FirstPal_14_06 " );	// If you're a mage, he'll have to face you.
+	AI_Output(self,other, " DIA_Xardas_FirstPal_14_06 " );	// If you're a mage, he'll have to give you an audience.
 };
 
 
@@ -1410,8 +1410,8 @@ func int DIA_Xardas_Next_Condition()
 
 func void DIA_Xardas_Next_Info()
 {
-	AI_Output(other,self, " DIA_Xardas_Weiter_15_00 " );	// And what do we do next?
-	AI_Output(self,other, " DIA_Xardas_Weiter_14_01 " );	// We must act according to our plan. There is no other way.
+	AI_Output(other,self, " DIA_Xardas_Weiter_15_00 " );	// What do we do next?
+	AI_Output(self,other, " DIA_Xardas_Weiter_14_01 " );	// We must stick to the plan. There is no other way.
 	AI_Output(self,other, " DIA_Xardas_Weiter_14_02 " );	// You must get the Eye of Innos, and I will continue to search for answers.
 	AI_StopProcessInfos(self);
 };
@@ -1438,12 +1438,12 @@ func int DIA_Xardas_KdfSecret_Condition()
 
 func void DIA_Xardas_KdfSecret_Info()
 {
-	AI_Output(other,self, " DIA_Xardas_KdfSecret_15_00 " );	// Why shouldn't the Circle of Fire know about you?
-	AI_Output(self,other, " DIA_Xardas_KdfSecret_14_01 " );	// I was once the highest member of the Circle. Even then, I suspected that demonic magic might be the key to this magical barrier.
-	AI_Output(self,other, " DIA_Xardas_KdfSecret_14_02 " );	// But there was no way I could convince the rest of the Circle to follow this path.
-	AI_Output(self,other, " DIA_Xardas_KdfSecret_14_03 " );	// That's why I left the Circle to study black magic.
-	AI_Output(self,other, " DIA_Xardas_KdfSecret_14_04 " );	// This is a crime that in the eyes of the Fire Mages, (stingingly) 'Initiates of Innos', always so 'Good' and 'Virtuous', will never be justified.
-	AI_Output(self,other, " DIA_Xardas_KdfSecret_14_05 " );	// They're sure I'm still alive, but they have no idea where to look for me - which is good.
+	AI_Output(other,self, " DIA_Xardas_KdfSecret_15_00 " );	// Why shouldn't the Circle of Fire find out about you?
+	AI_Output(self,other, " DIA_Xardas_KdfSecret_14_01 " );	// I was once the highest member of the Circle. Even then, I suspected that demonic magic might be the key to the barriers downfall.
+	AI_Output(self,other, " DIA_Xardas_KdfSecret_14_02 " );	// But there was no way I could convince the rest of the Circle to follow that path.
+	AI_Output(self,other, " DIA_Xardas_KdfSecret_14_03 " );	// That's why I left the Circle. To study black magic.
+	AI_Output(self,other, " DIA_Xardas_KdfSecret_14_04 " );	// That was a crime that the so called 'Initiates of Innos', always so 'Good' and 'Virtuous', will never forgive.
+	AI_Output(self,other, " DIA_Xardas_KdfSecret_14_05 " );	// They're sure I'm still alive, but they have no idea where to look for me - which suits me fine.
 };
 
 
@@ -1493,10 +1493,10 @@ func int DIA_Xardas_BACKFROMOW_Condition()
 func void DIA_Xardas_BACKFROMOW_Info()
 {
 	AI_Output(other,self, " DIA_Xardas_BACKFROMOW_15_00 " );	// I've returned from the Valley of Mines.
-	AI_Output(self,other, " DIA_Xardas_BACKFROMOW_14_01 " );	// Long overdue. And what did you see there?
-	AI_Output(other,self, " DIA_Xardas_BACKFROMOW_15_02 " );	// You were right. Everything is teeming with enemies there, even an apple has nowhere to fall.
+	AI_Output(self,other, " DIA_Xardas_BACKFROMOW_14_01 " );	// About time. And what did you see there?
+	AI_Output(other,self, " DIA_Xardas_BACKFROMOW_15_02 " );	// You were right. The place is crawling with enemies. 
 	AI_Output(other,self, " DIA_Xardas_BACKFROMOW_15_03 " );	// Orcs besiege the castle, and dragons devastate everything around.
-	AI_Output(other,self, " DIA_Xardas_BACKFROMOW_15_04 " );	// It won't be long before they attack Khorinis, if I'm not mistaken.
+	AI_Output(other,self, " DIA_Xardas_BACKFROMOW_15_04 " );	// It won't be long before they attack Khorinis, that much is for certain.
 	B_GivePlayerXP(XP_Ambient);
 };
 
@@ -1527,9 +1527,9 @@ func void DIA_Xardas_DMTSINDDA_Info()
 	};
 
 	AI_Output(other,self, " DIA_Xardas_DMTSINDDA_15_01 " );	// What the hell happened here?
-	AI_Output(self,other, " DIA_Xardas_DMTSINDDA_14_02 " );	// The enemy has found out who you really are and is planning to take the Eye of Innos.
-	AI_Output(self,other, " DIA_Xardas_DMTSINDDA_14_03 " );	// He recognized this threat. This forced him to come out of the shadows and decide on an open attack.
-	AI_Output(self,other, " DIA_Xardas_DMTSINDDA_14_04 " );	// The game of hide and seek is over. Yesterday no one knew what the enemy's attack would be. But now it's becoming too obvious.
+	AI_Output(self,other, " DIA_Xardas_DMTSINDDA_14_02 " );	// The enemy has found out who you really are and that you plan to take the Eye of Innos.
+	AI_Output(self,other, " DIA_Xardas_DMTSINDDA_14_03 " );	// He recognized the threat. You forced him to come out of the shadows and pledge to an open attack.
+	AI_Output(self,other, " DIA_Xardas_DMTSINDDA_14_04 " );	// The game of cat and mouse is over. This is war. 
 	XarMeetPsi = TRUE;
 	B_LogEntry( TOPIC_INNOSEYE , "The enemy now knows I'm looking for the Eye of Innos. I need to find it quickly before it's too late. " );
 	Info_ClearChoices(DIA_Xardas_DMTSINDDA);
@@ -1540,24 +1540,24 @@ func void DIA_Xardas_DMTSINDDA_Info()
 func void DIA_Xardas_DMTSINDDA_DMT()
 {
 	AI_Output(other,self, " DIA_Xardas_DMTSINDDA_DMT_15_00 " );	// I was attacked by mages in black robes.
-	AI_Output(self,other, " DIA_Xardas_DMTSINDDA_DMT_14_01 " );	// The enemy has many faces. The Dark Wanderers are one of them! They are the ones who prepare the foothold for the enemy.
+	AI_Output(self,other, " DIA_Xardas_DMTSINDDA_DMT_14_01 " );	// The enemy has many faces. The Dark Wanderers are simply one of them. They are the ones who prepare the way.
 	AI_Output(self,other, " DIA_Xardas_DMTSINDDA_DMT_14_02 " );	// They've taken up positions in strategic places, and now they're just waiting for an opportunity to close the trap.
-	AI_Output(self,other, " DIA_Xardas_DMTSINDDA_DMT_14_03 " );	// Stay away from them! They are powerful magicians and they will try to stop you at all costs.
+	AI_Output(self,other, " DIA_Xardas_DMTSINDDA_DMT_14_03 " );	// Stay away from them! They are powerful wizards and they will try to stop you at all costs.
 
 	if(hero.guild == GIL_KDF)
 	{
 		Log_CreateTopic(TOPIC_DEMENTOREN,LOG_MISSION);
 		Log_SetTopicStatus(TOPIC_DEMENTOREN,LOG_Running);
-		B_LogEntry( TOPIC_DEMENTOREN , " Xardas knows who these people in black robes are. They are called dark wanderers and they are very dangerous. " );
+		B_LogEntry( TOPIC_DEMENTOREN , " Xardas knows who these people in black robes are. They are called the dark wanderers and they are very dangerous. " );
 	};
 };
 
 func void DIA_Xardas_DMTSINDDA_proof()
 {
 	AI_Output(other,self, " DIA_Xardas_DMTSINDDA_Beweis_15_00 " );	// I finally got the proof that Lord Hagen demanded of me.
-	AI_Output(self,other, " DIA_Xardas_DMTSINDDA_Beweis_14_01 " );	// What else is proof?
+	AI_Output(self,other, " DIA_Xardas_DMTSINDDA_Beweis_14_01 " );	// Proof?
 	AI_Output(other,self, " DIA_Xardas_DMTSINDDA_Beweis_15_02 " );	// I received a letter from Garond, leader of the paladins in the Valley of Mines. In it, he asks for reinforcements.
-	AI_Output(self,other, " DIA_Xardas_DMTSINDDA_Beweis_14_03 " );	// That should be enough to convince a war veteran. Excellent.
+	AI_Output(self,other, " DIA_Xardas_DMTSINDDA_Beweis_14_03 " );	// Ah yes, That should be enough to convince that old war hound. Excellent.
 	Info_AddChoice(DIA_Xardas_DMTSINDDA, " And what's our next step? " ,DIA_Xardas_DMTSINDDA_DMT_WhatToDo);
 	B_GivePlayerXP(XP_Ambient);
 };
@@ -1568,8 +1568,8 @@ func void DIA_Xardas_DMTSINDDA_DMT_WhatToDo()
 	AI_Output(self,other, " DIA_Xardas_DMTSINDDA_DMT_WhatToDo_14_01 " );	// Go and take the letter from Garond to Lord Hagen, and get him to let you take the Eye of Innos.
 	AI_Output(self,other, " DIA_Xardas_DMTSINDDA_DMT_WhatToDo_14_02 " );	// Then go to the monastery and talk to Pirokar. He should give you the Eye.
 	AI_Output(self,other, " DIA_Xardas_DMTSINDDA_DMT_WhatToDo_14_03 " );	// Nothing is more important right now than securing this artifact.
-	AI_Output(self,other, " DIA_Xardas_DMTSINDDA_DMT_WhatToDo_14_04 " );	// Go before it's too late. The enemy will also try to put their paws on him.
-	B_LogEntry( TOPIC_INNOSEYE , " The eye is located in the firebenders' monastery. I hope Lord Hagen grants me access to it when I bring him a letter from Lord Garond. Archmage Pyrocar will not allow me to wear this amulet without Hagen's approval. " );
+	AI_Output(self,other, " DIA_Xardas_DMTSINDDA_DMT_WhatToDo_14_04 " );	// Go before it's too late. The enemy will also try to acquire it.
+	B_LogEntry( TOPIC_INNOSEYE , " The eye is located in the Fire mage's monastery. I hope Lord Hagen grants me access to it when I bring him a letter from Lord Garond. Archmage Pyrocar will not allow me to wear the amulet without Hagen's approval. " );
 	AI_StopProcessInfos(self);
 	Npc_ExchangeRoutine(PC_Psionic,"XardasTow");
 };
@@ -1596,9 +1596,9 @@ func int DIA_Xardas_INNOSEYEBROKEN_Condition()
 func void DIA_Xardas_INNOSEYEBROKEN_Info()
 {
 	AI_Output(other,self, " DIA_Xardas_INNOSEYEBROKEN_15_00 " );	// Innos' eye has been destroyed.
-	AI_Output(self,other, " DIA_Xardas_INNOSEYEBROKEN_14_01 " );	// What are you talking about? Destroyed!
-	AI_Output(other,self, " DIA_Xardas_INNOSEYEBROKEN_15_02 " );	// I found it in the northern forests - unfortunately, I could only find fragments.
-	AI_Output(self,other, " DIA_Xardas_INNOSEYEBROKEN_14_03 " );	// This was our only chance to face these dragons. And we failed it!
+	AI_Output(self,other, " DIA_Xardas_INNOSEYEBROKEN_14_01 " );	// What are you talking about? Destroyed how?
+	AI_Output(other,self, " DIA_Xardas_INNOSEYEBROKEN_15_02 " );	// I found it in the northern forests - but only fragments.
+	AI_Output(self,other, " DIA_Xardas_INNOSEYEBROKEN_14_03 " );	// This was our only chance to face the dragons. And we failed!
 	MIS_SCKnowsInnosEyeIsBroken = TRUE;
 	B_GivePlayerXP(XP_Ambient);
 	Info_ClearChoices(DIA_Xardas_INNOSEYEBROKEN);
@@ -1607,8 +1607,8 @@ func void DIA_Xardas_INNOSEYEBROKEN_Info()
 
 func void DIA_Xardas_INNOSEYEBROKEN_wasnun()
 {
-	AI_Output(other,self, " DIA_Xardas_INNOSEYEBROKEN_wasnun_15_00 " );	// And now what?
-	AI_Output(self,other, " DIA_Xardas_INNOSEYEBROKEN_wasnun_14_01 " );	// This is a painful blow. We must readjust. I have to retire and weigh everything.
+	AI_Output(other,self, " DIA_Xardas_INNOSEYEBROKEN_wasnun_15_00 " );	// What happens now?
+	AI_Output(self,other, " DIA_Xardas_INNOSEYEBROKEN_wasnun_14_01 " );	// This is a painful blow. We must readjust. I have to retire and think this through.
 	AI_Output(self,other, " DIA_Xardas_INNOSEYEBROKEN_wasnun_14_02 " );	// In the meantime, you go to the city and talk to Vatras, the Water Mage. Perhaps he knows what to do.
 	B_LogEntry( TOPIC_INNOSEYE , " Xardas was not very pleased with the destruction of the Eye of Innos. The water mage Vatras in the city of Khorinis may be our only hope. " );
 	MIS_Xardas_GoToVatrasInnoseye = LOG_Running;
@@ -1636,13 +1636,13 @@ func int DIA_Xardas_RITUALREQUEST_Condition()
 func void DIA_Xardas_RITUALREQUEST_Info()
 {
 	AI_Output(other,self, " DIA_Xardas_RITUALREQUEST_15_00 " );	// Vatras sent me to you.
-	AI_Output(self,other, " DIA_Xardas_RITUALREQUEST_14_01 " );	// This is good. What did he tell you?
-	AI_Output(other,self, " DIA_Xardas_RITUALREQUEST_15_02 " );	// He said something about a reversible fire circle ritual.
-	AI_Output(self,other, " DIA_Xardas_RITUALREQUEST_14_03 " );	// Old rascal...(laughs) I already know what he wants to do. You came to invite me to him.
-	AI_Output(other,self, " DIA_Xardas_RITUALREQUEST_15_04 " );	// So it is. When will you hit the road?
+	AI_Output(self,other, " DIA_Xardas_RITUALREQUEST_14_01 " );	// Good, good. What did he tell you?
+	AI_Output(other,self, " DIA_Xardas_RITUALREQUEST_15_02 " );	// He said something about a reversible fire circle ritual?
+	AI_Output(self,other, " DIA_Xardas_RITUALREQUEST_14_03 " );	// The old fox...(laughs) I already know what he wants to do. You came to invite me to him.
+	AI_Output(other,self, " DIA_Xardas_RITUALREQUEST_15_04 " );	// Yes, actually. When will you hit the road?
 	if((hero.guild == GIL_KDF) || (hero.guild == GIL_DJG) || (hero.guild == GIL_PAL) || (hero.guild == GIL_GUR) || (hero.guild == GIL_TPL) || (hero.guild == GIL_KDW) || (hero.guild == GIL_KDM))
 	{
-		AI_Output(self,other, " DIA_Xardas_RITUALREQUEST_14_05 " );	// Don't keep Vatras waiting. I'm leaving immediately. And you must complete your task, and then join me again.
+		AI_Output(self,other, " DIA_Xardas_RITUALREQUEST_14_05 " );	// I shan't keep Vatras waiting. I'm leaving immediately. And you must complete your task, and then join me again.
 		AI_StopProcessInfos(self);
 		B_LogEntry( TOPIC_INNOSEYE , " Xardas has agreed to participate in the ritual in the Circle of the Sun. " );
 		B_GivePlayerXP(XP_Ambient);
@@ -1651,8 +1651,8 @@ func void DIA_Xardas_RITUALREQUEST_Info()
 	}
 	else
 	{
-		AI_Output(self,other, " DIA_Xardas_RITUALREQUEST_14_06 " );	// I need to make sure you're ready to fight back against the dragons.
-		AI_Output(self,other, " DIA_Xardas_RITUALREQUEST_14_07 " );	// And you don't make that impression yet!
+		AI_Output(self,other, " DIA_Xardas_RITUALREQUEST_14_06 " );	// I need to make sure you're ready to fight against the dragons.
+		AI_Output(self,other, " DIA_Xardas_RITUALREQUEST_14_07 " );	// Right now, you are not! Return when you are!
 		B_LogEntry( TOPIC_INNOSEYE , " Xardas will not appear at the Circle of the Sun ritual until he is confident that I can handle the dragons. " );
 	};
 	B_GivePlayerXP(XP_Ambient);
@@ -1679,9 +1679,9 @@ func int DIA_Xardas_WHYNOTNOW_Condition()
 
 func void DIA_Xardas_WHYNOTNOW_Info()
 {
-	AI_Output(other,self, " DIA_Xardas_WARUMNICHTJETZT_15_00 " );	// Why don't you go meet Vatras RIGHT NOW?
-	AI_Output(other,self, " DIA_Xardas_WARUMNICHTJETZT_15_01 " );	// Sometimes I just don't understand you.
-	AI_Output(self,other, " DIA_Xardas_WARUMNICHTJETZT_14_02 " );	// (annoyed) Don't you dare talk to me like that. If not for me, your good-for-nothing body would still rot in this temple.
+	AI_Output(other,self, " DIA_Xardas_WARUMNICHTJETZT_15_00 " );	// Why don't you go meet Vatras right now?
+	AI_Output(other,self, " DIA_Xardas_WARUMNICHTJETZT_15_01 " );	// Sometimes I just don't understand you old man.
+	AI_Output(self,other, " DIA_Xardas_WARUMNICHTJETZT_14_02 " );	// Don't you talk to me like that. If not for me, your good-for-nothing body would still be rotting in that temple.
 	Info_AddChoice(DIA_Xardas_WARUMNICHTJETZT, " Don't worry! Just tell me what I need to do. " ,DIA_Xardas_WARUMNICHTJETZT_wastun);
 	Info_AddChoice(DIA_Xardas_WARUMNICHTJETZT, " Then at least tell me why you hesitate. " ,DIA_Xardas_WARUMNICHTJETZT_grund);
 };
@@ -1689,10 +1689,10 @@ func void DIA_Xardas_WHYNOTNOW_Info()
 func void DIA_Xardas_WHYNOTNOW_reason()
 {
 	AI_Output(other,self, " DIA_Xardas_WARUMNICHTJETZT_grund_15_00 " );	// Then at least explain to me why you hesitate.
-	AI_Output(self,other, " DIA_Xardas_WARUMNICHTJETZT_grund_14_01 " );	// Ever since I moved away from the Firebenders, I've tried to stay away from them.
-	AI_Output(self,other, " DIA_Xardas_WARUMNICHTJETZT_grund_14_02 " );	// And I'm not going to change this habit, unless I really have a choice.
-	AI_Output(self,other, " DIA_Xardas_WARUMNICHTJETZT_grund_14_03 " );	// But before I stand before the reproachful eyes of these mages, I first want to make sure that you have any chance against the dragons.
-	AI_Output(self,other, " DIA_Xardas_WARUMNICHTJETZT_grund_14_04 " );	// With your miserable gear, though, you won't get very far. Come back when you're strong enough.
+	AI_Output(self,other, " DIA_Xardas_WARUMNICHTJETZT_grund_14_01 " );	// Ever since I left the Fire Mages, I've tried to stay away from them.
+	AI_Output(self,other, " DIA_Xardas_WARUMNICHTJETZT_grund_14_02 " );	// And I'm not going to change that now, unless I have no choice.
+	AI_Output(self,other, " DIA_Xardas_WARUMNICHTJETZT_grund_14_03 " );	// Before I stand before the reproachful eyes of those hypocrites again, I first want to make sure that you have a chance against the dragons.
+	AI_Output(self,other, " DIA_Xardas_WARUMNICHTJETZT_grund_14_04 " );	// With your miserable gear, though, you won't last long. Come back when you're strong enough.
 	AI_StopProcessInfos(self);
 };
 
@@ -1724,7 +1724,7 @@ func int DIA_Xardas_READY_Condition()
 func void DIA_Xardas_READY_Info()
 {
 	AI_Output(other,self, " DIA_Xardas_BEREIT_15_00 " );	// I'm ready to fight dragons.
-	AI_Output(self,other, " DIA_Xardas_BEREIT_14_01 " );	// Then let's not waste time. I immediately go to the Circle of the Sun. And you complete your tasks. I will meet you there.
+	AI_Output(self,other, " DIA_Xardas_BEREIT_14_01 " );	// Then let's not waste time. I will immediately go to the Circle of the Sun. And you must complete your tasks. I will meet you there.
 	AI_StopProcessInfos(self);
 	B_LogEntry( TOPIC_INNOSEYE , " Xardas has agreed to participate in the ritual in the Circle of the Sun. " );
 	B_GivePlayerXP(XP_Ambient);
@@ -1754,7 +1754,7 @@ func int DIA_Xardas_BINGESPANNT_Condition()
 
 func void DIA_Xardas_BINGESPANNT_Info()
 {
-	AI_Output(other,self, " DIA_Xardas_BINGESPANNT_15_00 " );	// Will this conversion ritual work?
+	AI_Output(other,self, " DIA_Xardas_BINGESPANNT_15_00 " );	// Will this ritual work?
 	AI_Output(self,other, " DIA_Xardas_BINGESPANNT_14_01 " );	// I'm not entirely sure. It depends on what exactly Vatras is going to do.
 };
 
@@ -1779,23 +1779,23 @@ func int DIA_Xardas_PYROWILLNICHT_Condition()
 
 func void DIA_Xardas_PYROWILLNOT_Info()
 {
-	AI_Output(other,self, " DIA_Xardas_PYROWILLNICHT_15_00 " );	// The pyrocar refuses to take part in the ritual.
-	AI_Output(other,self, " DIA_Xardas_PYROWILLNICHT_15_01 " );	// First he wants proof that he can trust you.
-	AI_Output(self,other, " DIA_Xardas_PYROWILLNICHT_14_02 " );	// Oh, really! Pyrocar. How interesting.
-	AI_Output(self,other, " DIA_Xardas_PYROWILLNICHT_14_03 " );	// This old weirdo is getting completely unbearable. But I think I have something that will help you.
-	AI_Output(self,other, " DIA_Xardas_PYROWILLNICHT_14_04 " );	// When I left the Order of the Fire Mages, I took a few things with me from the monastery.
-	AI_Output(self,other, " DIA_Xardas_PYROWILLNICHT_14_06 " );	// I didn't want paladins or firebenders to turn my tower upside down and find these things.
-	AI_Output(self,other, " DIA_Xardas_PYROWILLNICHT_14_07 " );	// So I hid them in a safe place where mages would never think to look for them.
-	AI_Output(other,self, " DIA_Xardas_PYROWILLNICHT_15_08 " );	// And where is it?
-	AI_Output(self,other, " DIA_Xardas_PYROWILLNICHT_14_09 " );	// Some of them are in a locked chest at Sekoba's farm.
+	AI_Output(other,self, " DIA_Xardas_PYROWILLNICHT_15_00 " );	// Pyrocar refuses to take part in the ritual.
+	AI_Output(other,self, " DIA_Xardas_PYROWILLNICHT_15_01 " );	// He wants proof that he can trust you.
+	AI_Output(self,other, " DIA_Xardas_PYROWILLNICHT_14_02 " );	// Oh, really! How interesting.
+	AI_Output(self,other, " DIA_Xardas_PYROWILLNICHT_14_03 " );	// That old fool hasn't changed one bit. But I think I have something that will help you.
+	AI_Output(self,other, " DIA_Xardas_PYROWILLNICHT_14_04 " );	// When I left the Order, I took a few things with me from the monastery.
+	AI_Output(self,other, " DIA_Xardas_PYROWILLNICHT_14_06 " );	// I didn't want paladins or firebenders to turn my tower upside down and find them.
+	AI_Output(self,other, " DIA_Xardas_PYROWILLNICHT_14_07 " );	// So I hid them in a safe place where the high and mighty mages would never think to look.
+	AI_Output(other,self, " DIA_Xardas_PYROWILLNICHT_15_08 " );	// And where is that?
+	AI_Output(self,other, " DIA_Xardas_PYROWILLNICHT_14_09 " );	// A locked chest at Sekob's farm. Hidden in plain sight.
 	Sekob_RoomFree = TRUE;
 	AI_Output(other,self, " DIA_Xardas_PYROWILLNICHT_15_10 " );	// Do you trust this Sekob?
-	AI_Output(self,other, " DIA_Xardas_PYROWILLNICHT_14_11 " );	// No. But you can buy him and he won't ask stupid questions. Also, this chest is locked. Here is the key.
+	AI_Output(self,other, " DIA_Xardas_PYROWILLNICHT_14_11 " );	// No. But you can buy him and he won't ask stupid questions. Also, the chest is locked. Here is the key.
 	CreateInvItems(self,ItKe_CHEST_SEKOB_XARDASBOOK_MIS,1);
 	B_GiveInvItems(self,other,ItKe_CHEST_SEKOB_XARDASBOOK_MIS,1);
-	AI_Output(self,other, " DIA_Xardas_PYROWILLNICHT_14_12 " );	// There, among other things, there is a very old book. When Pirokar sees this book, he will understand that it is from me.
-	AI_Output(self,other, " DIA_Xardas_PYROWILLNICHT_14_13 " );	// I don't need her anymore. Therefore, let it serve at least such a purpose.
-	B_LogEntry( TOPIC_INNOSEYE , " Xardas gave me the key to the chest at Sekoba's farm. I must take the book in it to Pyrokar. " );
+	AI_Output(self,other, " DIA_Xardas_PYROWILLNICHT_14_12 " );	// There, among other things, you will find very old book. When Pyrokar sees it, he will understand that it is from me.
+	AI_Output(self,other, " DIA_Xardas_PYROWILLNICHT_14_13 " );	// I don't need it anymore. Let it serve one last purpose.
+	B_LogEntry( TOPIC_INNOSEYE , " Xardas gave me the key to the chest at Sekob's farm. I must take the book in it to Pyrokar. " );
 };
 
 
@@ -1821,7 +1821,7 @@ func void DIA_Xardas_RitualInnosEyeRepairImportant_Info()
 {
 	AI_Output(self,other, " DIA_Xardas_Add_14_06 " );	// Now that the Eye of Innos has been restored, you must face the dragons!
 	AI_Output(self,other, " DIA_Xardas_Add_14_07 " );	// They all serve Beliar, god of darkness.
-	AI_Output(self,other, " DIA_Xardas_Add_14_08 " );	// But there must also be an earth power that controls them. Now it has become obvious to me.
+	AI_Output(self,other, " DIA_Xardas_Add_14_08 " );	// But there must also be an earthly power that controls them. That much has revealed itself to me.
 	AI_Output(self,other, " DIA_Xardas_Add_14_09 " );	// Find the source of this power.
 	AI_Output(self,other, " DIA_Xardas_Add_14_10 " );	// And as soon as you figure it out, come back to me right away!
 	Info_ClearChoices(DIA_Xardas_RitualInnosEyeRepairImportant);
@@ -1857,10 +1857,10 @@ func int DIA_Xardas_WASNUN_Condition()
 
 func void DIA_Xardas_WASNUN_Info()
 {
-	AI_Output(other,self, " DIA_Xardas_WASNUN_15_00 " );	// Innos' eye restored. What's next?
+	AI_Output(other,self, " DIA_Xardas_WASNUN_15_00 " );	// Innos' eye is restored. What's next?
 	AI_Output(self,other, " DIA_Xardas_WASNUN_14_01 " );	// Don't forget to put it on when you finally face the dragons.
 	AI_Output(self,other, " DIA_Xardas_WASNUN_14_04 " );	// And remember that you may need Urizel to fight these darkspawn.
-	AI_Output(self,other, " DIA_Xardas_WASNUN_14_05 " );	// The power of this sword is undoubtedly a great help in the work that lies ahead of you.
+	AI_Output(self,other, " DIA_Xardas_WASNUN_14_05 " );	// The power of the sword is undoubtedly a great ally in the foul work that lies ahead of you.
 	AI_Output(self,other, " DIA_Xardas_WASNUN_14_06 " );	// That's all I wanted to tell you.
 
 	if(MIS_ReadyforChapter4 == TRUE)
@@ -1918,7 +1918,7 @@ func void DIA_Xardas_PERM4_Info()
 {
 	AI_Output(other,self, " DIA_Xardas_PERM4_15_00 " );	// What's new?
 	AI_Output(self,other, " DIA_Xardas_PERM4_14_01 " );	// The dark wanderers haven't left yet! They won't stop until they finish you.
-	AI_Output(self,other, " DIA_Xardas_PERM4_14_02 " );	// Kill the dragons in the Valley of Mines and find out who is behind these attacks. Otherwise, their strength will only grow even more.
+	AI_Output(self,other, " DIA_Xardas_PERM4_14_02 " );	// Kill the dragons in the Valley of Mines and find out who is behind these attacks. Otherwise, their strength will only grow.
 };
 
 instance DIA_Xardas_KAP5_EXIT(C_Info)
@@ -1987,15 +1987,15 @@ func int dia_xardas_preteach_condition()
 
 func void dia_xardas_preteach_info()
 {
-	AI_Output(other,self, " DIA_Xardas_PreTeach_15_00 " );	// Now can I learn necromancer magic?
+	AI_Output(other,self, " DIA_Xardas_PreTeach_15_00 " );	// Now can I learn Necromancy?
 	AI_Output(self,other, " DIA_Xardas_PreTeach_05_01 " );	// Teaching you how to create runes of dark magic is not a problem. But this will require you to know magic circles.
-	AI_Output(self,other, " DIA_Xardas_PreTeach_05_02 " );	// I can teach you this if you have enough experience.
-	AI_Output(self,other, " DIA_Xardas_PreTeach_05_03 " );	// Truly, the magic of darkness is one of the most powerful and destructive magics of all that exist in this world.
+	AI_Output(self,other, " DIA_Xardas_PreTeach_05_02 " );	// I can teach you if you have enough experience.
+	AI_Output(self,other, " DIA_Xardas_PreTeach_05_03 " );	// Truly, the magic of darkness is a force of destruction that few can challenge.
 	AI_Output(self,other, " DIA_Xardas_PreTeach_05_04 " );	// Remember this, and try to use this knowledge wisely!
 	XARDAS_TEACHRUNES = TRUE;
 	XARDAS_TACHCIRCLE = TRUE ;
 	Log_CreateTopic(TOPIC_ADDON_DMTTEACHER,LOG_NOTE);
-	B_LogEntry( TOPIC_ADDON_DMTTEACHER , " Xardas will teach me how to create necromancer runes and help me learn magic circles. " );
+	B_LogEntry( TOPIC_ADDON_DMTTEACHER , " Xardas will teach me how to create necromancy runes and help me learn magic circles. " );
 };
 
 
@@ -2021,18 +2021,18 @@ func int dia_xardas_sactanome_condition()
 func void dia_xardas_sactanome_info()
 {
 	AI_Output(other,self, " DIA_Xardas_SactaNome_01_00 " );	// What else can you teach me?
-	AI_Output(self,other, " DIA_Xardas_SactaNome_01_01 " );	// There are many secrets that you did not know.
+	AI_Output(self,other, " DIA_Xardas_SactaNome_01_01 " );	// There are many secrets awaiting you.
 	AI_Output(self,other, " DIA_Xardas_SactaNome_01_02 " );	// But you must understand that some secret knowledge of dark magic is fraught with great danger.
 	AI_Output(other,self, " DIA_Xardas_SactaNome_01_04 " );	// What is this secret knowledge?
 	AI_Output(self,other, " DIA_Xardas_SactaNome_01_05 " );	// One of these mysteries is the art of Sakta Nomen!
 	AI_Output(other,self, " DIA_Xardas_SactaNome_01_06 " );	// Sakta Nomen?
-	AI_Output(self,other, " DIA_Xardas_SactaNome_01_07 " );	// In the language of demons, this means 'Blood Offering', which in itself already reflects the essence of this art.
+	AI_Output(self,other, " DIA_Xardas_SactaNome_01_07 " );	// In the language of demons, this means 'Blood Offering', a term that is quite fitting, to be sure.
 	AI_Output(other,self, " DIA_Xardas_SactaNome_01_08 " );	// Can you be more specific?
 	AI_Output(self,other, " DIA_Xardas_SactaNome_01_09 " );	// Sakta Nomen will allow you to use magical runes and scrolls of dark magic even if you don't have enough mana.
 	AI_Output(other,self, " DIA_Xardas_SactaNome_01_10 " );	// But how?
-	AI_Output(self,other, " DIA_Xardas_SactaNome_01_11 " );	// Due to your life energy! Each spell cast will take away your strength until your magical energy reserves are restored sufficiently.
-	AI_Output(self,other, " DIA_Xardas_SactaNome_01_13 " );	// Therefore, you should use this ability only when circumstances really require it. Otherwise, she can easily kill you!
-	AI_Output(other,self, " DIA_Xardas_SactaNome_01_16 " );	// Okay, I got it.
+	AI_Output(self,other, " DIA_Xardas_SactaNome_01_11 " );	// Your life force will fuel your spells! Each spell cast will drain your very vitality until your mana reserves are restored sufficiently.
+	AI_Output(self,other, " DIA_Xardas_SactaNome_01_13 " );	// Therefore, you should use this ability only when circumstances really require it. Otherwise, it can and will kill you!
+	AI_Output(other,self, " DIA_Xardas_SactaNome_01_16 " );	// I see...
 	XARDAS_TEACHSACTANOME = TRUE;
 	Log_CreateTopic(TOPIC_ADDON_DMTTEACHER,LOG_NOTE);
 	B_LogEntry( TOPIC_ADDON_DMTTEACHER , " Xardas will teach me the art of Sakta Nomen, which means 'Blood Sacrifice' in demon language. With this ability, I can use dark runes and scrolls at the expense of my life force, in case my magical energy is not enough to cast the spell . " );
@@ -2063,14 +2063,14 @@ func void dia_xardas_teachsactanome_info()
 	AI_Output(other,self, " DIA_Xardas_TeachSactaNome_01_00 " );	// Teach me the art of Sakta Nomen!
 	AI_Output(self,other, " DIA_Xardas_TeachSactaNome_01_01 " );	// Are you really sure about this?
 	Info_ClearChoices(dia_xardas_teachsactanome);
-	Info_AddChoice(dia_xardas_teachsactanome, " Not yet. " ,dia_xardas_teachsactanome_no);
-	Info_AddChoice(dia_xardas_teachsactanome,"Да, уверен.",dia_xardas_teachsactanome_yes);
+	Info_AddChoice(dia_xardas_teachsactanome, " Actually, no. " ,dia_xardas_teachsactanome_no);
+	Info_AddChoice(dia_xardas_teachsactanome,"Yes, I am sure.",dia_xardas_teachsactanome_yes);
 };
 
 func void dia_xardas_teachsactanome_no()
 {
 	AI_Output(other,self, " DIA_Xardas_TeachSactaNome_No_01_00 " );	// Not yet.
-	AI_Output(self,other, " DIA_Xardas_TeachSactaNome_No_01_01 " );	// Okay, whatever you say.
+	AI_Output(self,other, " DIA_Xardas_TeachSactaNome_No_01_01 " );	// As you wish.
 	Info_ClearChoices(dia_xardas_teachsactanome);
 };
 
@@ -2085,7 +2085,7 @@ func void dia_xardas_teachsactanome_yes()
 		Wld_PlayEffect("SFX_Circle",self,self,0,0,0,FALSE);
 		AI_Output(self,other, " DIA_Xardas_TeachSactaNome_Yes_01_01 " );	// Then know the true power of dark magic, and may your sacrifice not be in vain...
 		AI_PlayAni(self,"T_PRACTICEMAGIC5");
-		AI_Output(self,other, " DIA_Xardas_TeachSactaNome_Yes_01_02 " );	// SAVE SHADAR NOMEN TAR MADAR SATAG!
+		AI_Output(self,other, " DIA_Xardas_TeachSactaNome_Yes_01_02 " );	// KLAATU VERATA NIKTO!
 		AI_PlayAni(self,"T_PRACTICEMAGIC5");
 		AI_Output(self,other, " DIA_Xardas_TeachSactaNome_Yes_01_03 " );	// Use the knowledge you have gained wisely, and may the crimson Darkness guide your path!
 		other.lp = other.lp - 50;
@@ -2099,7 +2099,7 @@ func void dia_xardas_teachsactanome_yes()
 	}
 	else if(other.lp < 50)
 	{
-		AI_Output(self,other, " DIA_Xardas_TeachSactaNome_01_05 " );	// You're not ready to master this knowledge yet!
+		AI_Output(self,other, " DIA_Xardas_TeachSactaNome_01_05 " );	// You're not ready to master this technique yet!
 		Info_ClearChoices(dia_xardas_teachsactanome);
 	}
 	else
@@ -2116,7 +2116,7 @@ instance DIA_XARDAS_EXPLAINCIRCLES(C_Info)
 	condition = dia_xardas_explaincircles_condition;
 	information = dia_xardas_explaincircles_info;
 	permanent = FALSE;
-	description = " Explain to me what is the meaning of Magic Circles? " ;
+	description = " Explain to me the meaning of Magic Circles? " ;
 };
 
 
@@ -2403,7 +2403,7 @@ func void dia_xardas_cantrade_info()
 	AI_Output(other,self, " DIA_Xardas_CanTrade_01_01 " );	// Where can I get the scrolls of dark magic spells?
 	AI_Output(self,other, " DIA_Xardas_CanTrade_01_02 " );	// Good question... You really need magic scrolls to make some runes.
 	AI_Output(self,other, " DIA_Xardas_CanTrade_01_03 " );	// Some of them you might not be able to find from other mages or merchants.
-	AI_Output(self,other, " DIA_Xardas_CanTrade_01_04 " );	// But I still have a few rare instances left.
+	AI_Output(self,other, " DIA_Xardas_CanTrade_01_04 " );	// But I still have a few rare copies left.
 };
 
 
@@ -2497,8 +2497,8 @@ func void DIA_Xardas_CIRCLE_1()
 		AI_Output(self,other, " DIA_Xardas_CIRCLE_14_02 " );	// Each rune contains the structure of a special magic spell.
 		AI_Output(self,other, " DIA_Xardas_CIRCLE_14_03 " );	// By using your own magical power, you can release the rune's magic.
 		AI_Output(self,other, " DIA_Xardas_CIRCLE_14_04 " );	// But unlike scrolls, which are essentially magic formulas, rune magic maintains the structure of the spell at all times.
-		AI_Output(self,other, " DIA_Xardas_CIRCLE_14_05 " );	// Each rune contains a magical power that you can take away at any time.
-		AI_Output(self,other, " DIA_Xardas_CIRCLE_14_06 " );	// Just like with the scroll, the moment you use a rune, your own magic power is consumed.
+		AI_Output(self,other, " DIA_Xardas_CIRCLE_14_05 " );	// Each rune contains a magical power that you will carry with you always.
+		AI_Output(self,other, " DIA_Xardas_CIRCLE_14_06 " );	// Just like with the scroll, the moment you use a rune, your own mana reserves are consumed.
 		AI_Output(self,other, " DIA_Xardas_CIRCLE_14_07 " );	// With each new Circle you will learn more and more about runes.
 	};
 	Info_ClearChoices(DIA_Xardas_CIRCLE);
@@ -2511,7 +2511,7 @@ func void DIA_Xardas_CIRCLE_2()
 		AI_Output(self,other, " DIA_Xardas_CIRCLE_14_09 " );	// You've already learned to understand runes. It's time to deepen your knowledge.
 		AI_Output(self,other, " DIA_Xardas_CIRCLE_14_10 " );	// As you enter the Second Circle, you will learn the basics of more powerful spells.
 		AI_Output(self,other, " DIA_Xardas_CIRCLE_14_11 " );	// But in order to know the true secrets of magic, you have a lot to learn.
-		AI_Output(self,other, " DIA_Xardas_CIRCLE_14_12 " );	// You already know that you can use any rune countless times, but only until you use up your own magic power.
+		AI_Output(self,other, " DIA_Xardas_CIRCLE_14_12 " );	// You already know that you can use any rune countless times, but only until you use up your own magical reserves.
 		AI_Output(self,other, " DIA_Xardas_CIRCLE_14_13 " );	// But before you do anything, think about whether it makes sense. You have the power to sow death and destruction with ease.
 		AI_Output(self,other, " DIA_Xardas_CIRCLE_14_14 " );	// But a true magician uses it only when necessary.
 		AI_Output(self,other, " DIA_Xardas_CIRCLE_14_15 " );	// Learn to assess the situation, and you will know the true power of the runes.
@@ -2523,12 +2523,12 @@ func void DIA_Xardas_CIRCLE_3()
 {
 	if(B_TeachMagicCircle(self,other,3))
 	{
-		AI_Output(self,other, " DIA_Xardas_CIRCLE_14_16 " );	// The Third Circle is one of the most important stages in the life of every magician. When you reach it, you complete your search.
+		AI_Output(self,other, " DIA_Xardas_CIRCLE_14_16 " );	// The Third Circle is one of the most important stages in the life of every magician. When you reach it, your search is almost at an end.
 		AI_Output(self,other, " DIA_Xardas_CIRCLE_14_17 " );	// You have already crossed a significant stage on the path of magic. You have learned how to use runes.
-		AI_Output(self,other, " DIA_Xardas_CIRCLE_14_18 " );	// This knowledge will serve as the basis for the next step. Use runes carefully.
-		AI_Output(self,other, " DIA_Xardas_CIRCLE_14_19 " );	// You can use them or not. But you must make a choice.
-		AI_Output(self,other, " DIA_Xardas_CIRCLE_14_20 " );	// Once you've made your choice, use your power without hesitation.
-		AI_Output(self,other, " DIA_Xardas_CIRCLE_14_21 " );	// Find your way, and then you will know the power of decision.
+		AI_Output(self,other, " DIA_Xardas_CIRCLE_14_18 " );	// This knowledge will serve as the basis for the next step. The careful or careless use of runes.
+		AI_Output(self,other, " DIA_Xardas_CIRCLE_14_19 " );	// The choice you make will sear your soul, or build it up into something altogether new.
+		AI_Output(self,other, " DIA_Xardas_CIRCLE_14_20 " );	// Once you've made your choice, use your power without hesitation, or learn self control.
+		AI_Output(self,other, " DIA_Xardas_CIRCLE_14_21 " );	// Only you can decide. Find your own way, Mage.
 	};
 	Info_ClearChoices(DIA_Xardas_CIRCLE);
 };
@@ -2537,14 +2537,14 @@ func void DIA_Xardas_CIRCLE_4()
 {
 	if(B_TeachMagicCircle(self,other,4))
 	{
-		AI_Output(self,other, " DIA_Xardas_CIRCLE_14_22 " );	// You have completed the first three Circles. It's time for you to learn the secrets of magic.
+		AI_Output(self,other, " DIA_Xardas_CIRCLE_14_22 " );	// You have completed the first three Circles. It's time for you to learn the true secrets of magic.
 		AI_Output(self,other, " DIA_Xardas_CIRCLE_14_23 " );	// The basis of rune magic is stone. A magical stone mined from magical ore.
-		AI_Output(self,other, " DIA_Xardas_CIRCLE_14_24 " );	// This is the same ore that is mined in the mines. In the temples, she is endowed with magical formulas, and there the runes turn into tools of our power.
-		AI_Output(self,other, " DIA_Xardas_CIRCLE_14_25 " );	// You now have all the knowledge that the temples have accumulated.
+		AI_Output(self,other, " DIA_Xardas_CIRCLE_14_24 " );	// This is the same ore that is mined in the mines. In the temples, it is endowed with magical formulas, and there the runes turn into tools of our power.
+		AI_Output(self,other, " DIA_Xardas_CIRCLE_14_25 " );	// You now have all the knowledge that the temples have accumulated over millennia.
 		AI_Output(self,other, " DIA_Xardas_CIRCLE_14_27 " );	// Learn magic and you will discover the secret of power.
-		AI_Output(self,other, " DIA_Xardas_CIRCLE_14_28 " );	// And one more thing. Entering the fourth circle of magic - you are honored to wear the vestments of higher dark magicians.
-		AI_Output(self,other, " DIA_Xardas_CIRCLE_14_29 " );	// Few have been able to do this. Now you are one of the chosen ones of the God of Darkness!
-		AI_Output(self,other, " DIA_Xardas_CIRCLE_14_30 " );	// Here, take this robe and magical staff in recognition of your status.
+		AI_Output(self,other, " DIA_Xardas_CIRCLE_14_28 " );	// And one more thing. Upon entering the fourth circle of magic - you will allowed to wear the vestments of the higher dark magicians.
+		AI_Output(self,other, " DIA_Xardas_CIRCLE_14_29 " );	// Few ever come this far. You are now one of the chosen ones of the God of Darkness!
+		AI_Output(self,other, " DIA_Xardas_CIRCLE_14_30 " );	// Here, take this robe and magical staff in recognition of your status, oh great Necromage.
 		CreateInvItems(other,ItMW_Addon_Stab03,1);
 		CreateInvItems(self,itar_dmt_h,1);
 		B_GiveInvItems(self,other,itar_dmt_h,1);
@@ -2574,11 +2574,11 @@ func int dia_xardas_preteach_mana_condition()
 func void dia_xardas_preteach_mana_info()
 {
 	AI_Output(other,self, " DIA_Xardas_PreTeach_Mana_15_00 " );	// Can you increase magic power?
-	AI_Output(self,other, " DIA_Xardas_PreTeach_Mana_05_01 " );	// Naturally. But you should know something about it.
-	AI_Output(self,other, " DIA_Xardas_PreTeach_Mana_05_03 " );	// Magical energy or, more simply, mana is a fundamental moment for any magician or wizard.
-	AI_Output(self,other, " DIA_Xardas_PreTeach_Mana_05_04 " );	// We use it to cast magical spells using the power of runes. But it is not unlimited!
+	AI_Output(self,other, " DIA_Xardas_PreTeach_Mana_05_01 " );	// Naturally. But you should know something about first.
+	AI_Output(self,other, " DIA_Xardas_PreTeach_Mana_05_03 " );	// Magical energy or, more simply, mana, is the fundamental essence of any magician or wizard.
+	AI_Output(self,other, " DIA_Xardas_PreTeach_Mana_05_04 " );	// We use it to cast spells using the power of runes. But it is not unlimited!
 	AI_Output(self,other, " DIA_Xardas_PreTeach_Mana_05_05 " );	// Therefore, you must understand that in addition to increasing your magical abilities, you must also learn how to use magical energy wisely and only when necessary.
-	AI_Output(self,other, " DIA_Xardas_PreTeach_Mana_05_06 " );	// Only then can you become a truly great mage of Darkness!
+	AI_Output(self,other, " DIA_Xardas_PreTeach_Mana_05_06 " );	// Only then can you become a truly great sorceror of Darkness!
 	XARDAS_TEACHMANA = TRUE;
 };
 
@@ -2706,30 +2706,30 @@ func int dia_xardas_tellaboutkreol_condition()
 func void dia_xardas_tellaboutkreol_info()
 {
 	AI_Output(other,self, " DIA_Xardas_TellAboutKreol_01_00 " );	// Do you know Lang's Demon language?
-	AI_Output(self,other, " DIA_Xardas_TellAboutKreol_01_01 " );	// WHAT? How did you know about this ancient language?
+	AI_Output(self,other, " DIA_Xardas_TellAboutKreol_01_01 " );	// WHAT? How did you find out about that?
 	AI_Output(other,self, " DIA_Xardas_TellAboutKreol_01_02 " );	// Guardian Tegon said that...
-	AI_Output(self,other, " DIA_Xardas_TellAboutKreol_01_03 " );	// (interrupting) You don't have to continue! Everything became clear to me...
-	AI_Output(self,other, " DIA_Xardas_TellAboutKreol_01_04 " );	// If I understand correctly, in order to pass the keeper's test, you need to learn this language.
+	AI_Output(self,other, " DIA_Xardas_TellAboutKreol_01_03 " );	// You don't have to continue! It's clear to me...
+	AI_Output(self,other, " DIA_Xardas_TellAboutKreol_01_04 " );	// Let me guess, in order to pass the keeper's test, you need to learn this language.
 	AI_Output(self,other, " DIA_Xardas_TellAboutKreol_01_05 " );	// And he probably also asked you to familiarize yourself with the ancient records that are here in the upper hall of my tower.
 	AI_Output(self,other, " DIA_Xardas_TellAboutKreol_01_06 " );	// You might even think that I can teach it to you...
 	AI_Output(other,self, " DIA_Xardas_TellAboutKreol_01_07 " );	// That's what I wanted to ask you.
-	AI_Output(self,other, " DIA_Xardas_TellAboutKreol_01_08 " );	// Alas, I can't do it. My knowledge of Lang's demon language is very meager and unlikely to help you in your trial.
+	AI_Output(self,other, " DIA_Xardas_TellAboutKreol_01_08 " );	// Alas, I can't. My knowledge of Lang's demon language is very meager and unlikely to help you in your trial.
 	AI_Output(other,self, " DIA_Xardas_TellAboutKreol_01_11 " );	// But the Keeper said you'd help me solve this problem!
-	AI_Output(self,other, " DIA_Xardas_TellAboutKreol_01_12 " );	// But he didn't say that I'll be the one to teach you this language. You need to find someone who perfectly owns this knowledge!
+	AI_Output(self,other, " DIA_Xardas_TellAboutKreol_01_12 " );	// But he didn't say that I'll be the one to teach you this language, did he? You need to find someone else!
 	AI_Output(other,self, " DIA_Xardas_TellAboutKreol_01_15 " );	// And do you have someone in mind?
-	AI_Output(self,other, " DIA_Xardas_TellAboutKreol_01_18 " );	// Yes. His name is Creole... He is a necromancer and a very powerful sorcerer. In terms of strength, he will not yield even to the Guardians!
-	AI_Output(self,other, " DIA_Xardas_TellAboutKreol_01_19 " );	// Creole is a true follower of the Dark God, and he can even be called one of Beliar's chosen ones!
+	AI_Output(self,other, " DIA_Xardas_TellAboutKreol_01_18 " );	// Yes. His name is Kreol... He is a necromancer and a very powerful sorcerer. In terms of strength, he rivals even the guardians!
+	AI_Output(self,other, " DIA_Xardas_TellAboutKreol_01_19 " );	// Kreol is a true follower of the Dark God, and he can even be called one of Beliar's chosen!
 	AI_Output(self,other, " DIA_Xardas_TellAboutKreol_01_22 " );	// However, he won't teach you without a good reason. You will have to impress him.
 	AI_Output(self,other, " DIA_Xardas_TellAboutKreol_01_23 " );	// I can't tell you exactly how, but I'm sure it won't be easy.
-	AI_Output(self,other, " DIA_Xardas_TellAboutKreol_01_24 " );	// Creole has a very cool temper, so try to be nice to him. Otherwise, he will easily make something completely indecent out of you ... (laughs)
-	AI_Output(other,self, " DIA_Xardas_TellAboutKreol_01_25 " );	// Where can I find this... Creole?
-	AI_Output(self,other, " DIA_Xardas_TellAboutKreol_01_26 " );	// It seems that not so long ago he settled somewhere in the Valley of Mines. Try to start looking for him there.
+	AI_Output(self,other, " DIA_Xardas_TellAboutKreol_01_24 " );	// Kreol has a temper, so be careful around him. Otherwise, your corpse will carry his luggage. Ha!
+	AI_Output(other,self, " DIA_Xardas_TellAboutKreol_01_25 " );	// Where can I find this corpse botherer?
+	AI_Output(self,other, " DIA_Xardas_TellAboutKreol_01_26 " );	// I seem to remeber he recently settled in the Valley of Mines. Start your search there.
 	XARDASTELLABOUTKREOL = TRUE;
 	Log_CreateTopic(TOPIC_FINDKREOL,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_FINDKREOL,LOG_Running);
 	MIS_FINDKREOL = LOG_Running;
-	B_LogEntry( TOPIC_FINDKREOL , " Xardas told me about the powerful necromancer Kreol. It seems that only he can teach me the language of demons. Xardas believes that Kreol found his home somewhere in the Valley of Mines. " );
-	Log_AddEntry( TOPIC_FINDKREOL , " Xardas also warned that Creole has a very tough temper. I should be nicer to him if I meet him - otherwise it could end very badly for me. " );
+	B_LogEntry( TOPIC_FINDKREOL , " Xardas told me about the powerful necromancer Kreol. It seems that only he can teach me the language of demons. Xardas believes that he made his home somewhere in the Valley of Mines. " );
+	Log_AddEntry( TOPIC_FINDKREOL , " Xardas also warned that Kreol has a very bad temper. I should be nice to him if I meet him - otherwise it could end very badly for me. " );
 };
 
 
@@ -2757,38 +2757,38 @@ func void dia_xardas_tellaboutresurect_info()
 
 	if(Wld_IsTime(9,0,21,0) == TRUE)
 	{
-		AI_Output(self,other, " DIA_Xardas_TellAboutResurect_01_01 " );	// Well, then ask if there is.
-		AI_Output(other,self, " DIA_Xardas_TellAboutResurect_01_02 " );	// Hmm... Xardas, you are a necromancer and master the art of summoning the dead.
-		AI_Output(self,other, " DIA_Xardas_TellAboutResurect_01_03 " );	// Any necromancer has this ability. Wait, and why should I tell you about this?
-		AI_Output(other,self, " DIA_Xardas_TellAboutResurect_01_04 " );	// I need to talk to one person and beat some information out of him.
-		AI_Output(other,self, " DIA_Xardas_TellAboutResurect_01_05 " );	// But the problem is that this person has long been dead.
+		AI_Output(self,other, " DIA_Xardas_TellAboutResurect_01_01 " );	// Well then, out with it.
+		AI_Output(other,self, " DIA_Xardas_TellAboutResurect_01_02 " );	// Hmm... Xardas, you are a necromancer and master of the art of summoning the dead.
+		AI_Output(self,other, " DIA_Xardas_TellAboutResurect_01_03 " );	// Any necromancer has this power. Wait, where are you going with this?
+		AI_Output(other,self, " DIA_Xardas_TellAboutResurect_01_04 " );	// I need to talk to a certain person and beat some information out of him.
+		AI_Output(other,self, " DIA_Xardas_TellAboutResurect_01_05 " );	// But the problem is that he's long dead.
 		AI_Output(self,other, " DIA_Xardas_TellAboutResurect_01_07 " );	// And what do you want from me?
 		AI_Output(other,self, " DIA_Xardas_TellAboutResurect_01_08 " );	// Is there any way you can bring him back to life so I can talk to him?
-		AI_Output(self,other, " DIA_Xardas_TellAboutResurect_01_09 " );	// Nonsense! No one can revive an already dead person, not even a necromancer.
-		AI_Output(self,other, " DIA_Xardas_TellAboutResurect_01_11 " );	// I can turn his rotten flesh into a zombie servant. But I'm afraid you won't get anything out of it.
-		AI_Output(other,self, " DIA_Xardas_TellAboutResurect_01_12 " );	// There's not much left of his flesh now, just a couple of bones.
-		AI_Output(self,other, " DIA_Xardas_TellAboutResurect_01_13 " );	// A couple of bones, you say?
-		AI_Output(self,other, " DIA_Xardas_TellAboutResurect_01_17 " );	// There is one ritual - the ritual of summoning the soul of the deceased. It is not the easiest, very dangerous and will require a lot of magical energy.
+		AI_Output(self,other, " DIA_Xardas_TellAboutResurect_01_09 " );	// Nonsense! No one can revive the mind of a dead person, not even a necromancer.
+		AI_Output(self,other, " DIA_Xardas_TellAboutResurect_01_11 " );	// I can turn his rotten flesh into a zombie servant, his skeleton into a soldier that serves only me. But his mind? No. That is lost.
+		AI_Output(other,self, " DIA_Xardas_TellAboutResurect_01_12 " );	// You're right. He'll be naught but bones by now anyway.
+		AI_Output(self,other, " DIA_Xardas_TellAboutResurect_01_13 " );	// Bones, you say?
+		AI_Output(self,other, " DIA_Xardas_TellAboutResurect_01_17 " );	// Oh alright. There is a ritual that may help you. It entails summoning the soul of the deceased. It is dangerous, requires much energy, and is far from simple.
 		AI_Output(self,other, " DIA_Xardas_TellAboutResurect_01_18 " );	// But if you really really need it...
-		AI_Output(self,other, " DIA_Xardas_TellAboutResurect_01_20 " );	// Hmmm... well, good! But in order to carry out this ritual, I need one thing.
-		AI_Output(other,self, " DIA_Xardas_TellAboutResurect_01_21 " );	// Which one?
-		AI_Output(self,other, " DIA_Xardas_TellAboutResurect_01_22 " );	// I need the remains of the one whose soul we will summon. The same bones will do!
-		AI_Output(self,other, " DIA_Xardas_TellAboutResurect_01_23 " );	// Just don't bring the whole skeleton here! One small bone is enough for me.
-		AI_Output(other,self, " DIA_Xardas_TellAboutResurect_01_25 " );	// I've already grabbed one copy just in case.
-		AI_Output(self,other, " DIA_Xardas_TellAboutResurect_01_26 " );	// Yes? Hmmm... and you are prudent! Show her to me.
-		AI_Output(other,self, " DIA_Xardas_TellAboutResurect_01_27 " );	// Here, take this.
+		AI_Output(self,other, " DIA_Xardas_TellAboutResurect_01_20 " );	// Hmmm... FINE! But in order to carry out this ritual, I need one thing.
+		AI_Output(other,self, " DIA_Xardas_TellAboutResurect_01_21 " );	// Yes?
+		AI_Output(self,other, " DIA_Xardas_TellAboutResurect_01_22 " );	// I need the remains of the one whose soul we will summon. Those very bones you mentioned.
+		AI_Output(self,other, " DIA_Xardas_TellAboutResurect_01_23 " );	// Just don't bring the whole skeleton here! One small bone is enough.
+		AI_Output(other,self, " DIA_Xardas_TellAboutResurect_01_25 " );	// I've already grabbed one just in case.
+		AI_Output(self,other, " DIA_Xardas_TellAboutResurect_01_26 " );	// How prudent. Show it to me.
+		AI_Output(other,self, " DIA_Xardas_TellAboutResurect_01_27 " );	// Here.
 		B_GiveInvItems(other,self,itat_skeletonbonealef,1);
 		AI_Output(other,self, " DIA_Xardas_TellAboutResurect_01_29 " );	// Now can we start the ritual?
-		AI_Output(self,other, " DIA_Xardas_TellAboutResurect_01_30 " );	// Yes, of course. But I want to warn you right away: this ritual, so to speak, has some very unpleasant side effects.
-		AI_Output(self,other, " DIA_Xardas_TellAboutResurect_01_32 " );	// First, you'll only have five minutes to talk to your soul. After that, she will become free from the spell's spell.
-		AI_Output(other,self, " DIA_Xardas_TellAboutResurect_01_33 " );	// And if she refuses to talk to me, let alone answer my questions?
-		AI_Output(self,other, " DIA_Xardas_TellAboutResurect_01_34 " );	// She will not be able to do this - otherwise she will never know peace anywhere else. So feel free to ask your questions!
-		AI_Output(other,self, " DIA_Xardas_TellAboutResurect_01_35 " );	// And secondly? What will happen after that?
-		AI_Output(self,other, " DIA_Xardas_TellAboutResurect_01_36 " );	// I think the summoned soul will not be very happy to be disturbed and will probably try to kill the person who dared to disturb her peace.
+		AI_Output(self,other, " DIA_Xardas_TellAboutResurect_01_30 " );	// Yes, of course. But I want to warn you right away: this ritual has some very unpleasant side effects.
+		AI_Output(self,other, " DIA_Xardas_TellAboutResurect_01_32 " );	// First, you'll only have five minutes to talk to your soul. After that, it will become free from the spell's grasp.
+		AI_Output(other,self, " DIA_Xardas_TellAboutResurect_01_33 " );	// And if it refuses to talk to me, let alone answer my questions?
+		AI_Output(self,other, " DIA_Xardas_TellAboutResurect_01_34 " );	// It will not be able to - otherwise it will never know peace, on any plane of existence. It will be... compelled to answer.
+		AI_Output(other,self, " DIA_Xardas_TellAboutResurect_01_35 " );	// Alright. Anything else?
+		AI_Output(self,other, " DIA_Xardas_TellAboutResurect_01_36 " );	// Souls summoned this way tend to be... unhappy that someone has disturbed them. It may get violent.
 		AI_Output(self,other, " DIA_Xardas_TellAboutResurect_01_46 " );	// Therefore, think carefully before you decide to implement what you have planned.
 		AI_Output(self,other, " DIA_Xardas_TellAboutResurect_01_47 " );	// So what do you say?
 		AlefRitualTell = TRUE;
-		B_LogEntry( TOPIC_VIPERNUGGETS , " It turned out not to be as bad as I thought. Xardas is ready to help me by performing a soul summoning ritual and summoning the soul of Aleph to our world. He also warned me that this is a very dangerous ritual. I will only have five minutes, to ask the soul questions that interest me - after that I will lose control over the soul. And then it will try to kill me. " );
+		B_LogEntry( TOPIC_VIPERNUGGETS , " There was a solution after all. Xardas is ready to help me by performing a soul summoning ritual and summoning the soul of Aleph to this world. He also warned me that this is a very dangerous ritual. I will only have five minutes, to ask the soul questions that interest me - after that I will lose control. And then it might try to kill me. " );
 		Info_ClearChoices(dia_xardas_tellaboutresurect);
 		Info_AddChoice(dia_xardas_tellaboutresurect, " No. Wait a minute! " ,dia_xardas_tellaboutresurect_answer1);
 		Info_AddChoice(dia_xardas_tellaboutresurect, " Let's start the ritual! " ,dia_xardas_tellaboutresurect_answer2);
@@ -2803,7 +2803,7 @@ func void dia_xardas_tellaboutresurect_info()
 func void dia_xardas_tellaboutresurect_answer1()
 {
 	AI_Output(other,self, " DIA_Xardas_TellAboutResurect_Answer1_01_00 " );	// No. Wait a minute!
-	AI_Output(self,other, " DIA_Xardas_TellAboutResurect_Answer1_01_01 " );	// Good. As you say.
+	AI_Output(self,other, " DIA_Xardas_TellAboutResurect_Answer1_01_01 " );	// Confusticate you, boy.
 	Info_ClearChoices(dia_xardas_tellaboutresurect);
 };
 
@@ -2818,15 +2818,15 @@ func void dia_xardas_tellaboutresurect_answer2()
 	AI_UseMob(self,"BOOK",-1);
 	AI_PlayAni(self,"T_PRACTICEMAGIC5");
 	AI_UseMob(self,"BOOK",1);
-	AI_Output(self,other, " DIA_Xardas_TellAboutResurect_Answer2_01_01 " );	// Retreat light... Come darkness!
+	AI_Output(self,other, " DIA_Xardas_TellAboutResurect_Answer2_01_01 " );	// Retreat from the light... Come into the darkness!
 	AI_UseMob(self,"BOOK",-1);
 	AI_PlayAni(self,"T_PRACTICEMAGIC4");
 	AI_UseMob(self,"BOOK",1);
-	AI_Output(self,other, " DIA_Xardas_TellAboutResurect_Answer2_01_02 " );	// Pave the way... Let the Soul pass!
+	AI_Output(self,other, " DIA_Xardas_TellAboutResurect_Answer2_01_02 " );	// Disembodied ones, pave the way... Let this soul pass!
 	AI_UseMob(self,"BOOK",-1);
 	AI_PlayAni(self,"T_PRACTICEMAGIC3");
 	AI_UseMob(self,"BOOK",1);
-	AI_Output(self,other, " DIA_Xardas_TellAboutResurect_Answer2_01_03 " );	// SHAKAN TAR MADAR! Come to my call...!
+	AI_Output(self,other, " DIA_Xardas_TellAboutResurect_Answer2_01_03 " );	// SHAKAN TAR MADAR! Heed my call...!
 	AI_UseMob(self,"BOOK",-1);
 	AI_PlayAni(self,"T_PRACTICEMAGIC2");
 	AI_TurnToNPC(self,other);
@@ -2841,8 +2841,8 @@ func void dia_xardas_tellaboutresurect_answer3()
 	Wld_PlayEffect("FX_EarthQuake",self,self,0,0,0,FALSE);
 	Wld_PlayEffect("SFX_Circle",self,self,0,0,0,FALSE);
 	AI_PlayAni(self,"T_PRACTICEMAGIC5");
-	AI_Output(self,other, " DIA_Xardas_TellAboutResurect_Answer3_01_00 " );	// That's it! The soul is already here.
-	AI_Output(self,other, " DIA_Xardas_TellAboutResurect_Answer3_01_01 " );	// Remember what I told you and don't waste your time.
+	AI_Output(self,other, " DIA_Xardas_TellAboutResurect_Answer3_01_00 " );	// That's it! The soul is here.
+	AI_Output(self,other, " DIA_Xardas_TellAboutResurect_Answer3_01_01 " );	// Remember what I told you and don't waste any time.
 	Wld_InsertNpc(alef_soul,"NW_XARDAS_SOUL");
 	ALEFRESURECTRITUAL = TRUE;
 	Info_ClearChoices(dia_xardas_tellaboutresurect);
@@ -2851,10 +2851,10 @@ func void dia_xardas_tellaboutresurect_answer3()
 
 func void dia_xardas_tellaboutresurect_answer5()
 {
-	AI_Output(other,self,"DIA_Xardas_TellAboutResurect_Answer5_01_00");	//Хорошо.
-	AI_Output(self,other, " DIA_Xardas_TellAboutResurect_Answer5_01_01 " );	// (weakens) Hurry up...
+	AI_Output(other,self,"DIA_Xardas_TellAboutResurect_Answer5_01_00");	//Ok.
+	AI_Output(self,other, " DIA_Xardas_TellAboutResurect_Answer5_01_01 " );	// Hurry up...
 	AI_Output(other,self, " DIA_Xardas_TellAboutResurect_Answer5_01_02 " );	// What's wrong with you?!
-	AI_Output(self,other,"DIA_Xardas_TellAboutResurect_Answer5_01_03");	//Я... не...
+	AI_Output(self,other,"DIA_Xardas_TellAboutResurect_Answer5_01_03");	//I... can't...
 	AI_StopProcessInfos(self);
 	Npc_ExchangeRoutine(self,"DRAINED");
 };
@@ -2884,16 +2884,16 @@ func void dia_xardas_resurectalef_info()
 
 	if(Wld_IsTime(9,0,21,0) == TRUE)
 	{
-		AI_Output(self,other,"DIA_Xardas_ResurectAlef_01_01");	//Да?
-		AI_Output(other,self, " DIA_Xardas_ResurectAlef_01_02 " );	// Let's call this soul. I'm ready.
+		AI_Output(self,other,"DIA_Xardas_ResurectAlef_01_01");	//Yes?
+		AI_Output(other,self, " DIA_Xardas_ResurectAlef_01_02 " );	// Let's call the soul. I'm ready.
 		AI_Output(self,other, " DIA_Xardas_ResurectAlef_01_03 " );	// Are you sure about this?
 		Info_ClearChoices(dia_xardas_tellaboutresurect);
 		Info_AddChoice(dia_xardas_resurectalef, " No. I changed my mind! " ,dia_xardas_resurectalef_answer1);
-		Info_AddChoice(dia_xardas_resurrectalef, " Yes, you! " ,dia_xardas_resurrectalef_answer2);
+		Info_AddChoice(dia_xardas_resurrectalef, " Yes, do it! " ,dia_xardas_resurrectalef_answer2);
 	}
 	else
 	{
-		AI_Output(self,other, " DIA_Xardas_ResurectAlef_01_99 " );	// Let's talk about it tomorrow! Now I want to rest...
+		AI_Output(self,other, " DIA_Xardas_ResurectAlef_01_99 " );	// Let's talk about it tomorrow! For now I want to rest...
 		AI_StopProcessInfos(self);
 	};
 };
@@ -2916,15 +2916,15 @@ func void dia_xardas_resurectalef_answer2()
 	AI_UseMob(self,"BOOK",-1);
 	AI_PlayAni(self,"T_PRACTICEMAGIC5");
 	AI_UseMob(self,"BOOK",1);
-	AI_Output(self,other, " DIA_Xardas_ResurectAlef_Answer2_01_01 " );	// Retreat light... Come darkness!
+	AI_Output(self,other, " DIA_Xardas_ResurectAlef_Answer2_01_01 " );	// Retreat from the light... Come into the darkness!
 	AI_UseMob(self,"BOOK",-1);
 	AI_PlayAni(self,"T_PRACTICEMAGIC4");
 	AI_UseMob(self,"BOOK",1);
-	AI_Output(self,other, " DIA_Xardas_ResurectAlef_Answer2_01_02 " );	// Pave the way... Let the Soul pass!
+	AI_Output(self,other, " DIA_Xardas_ResurectAlef_Answer2_01_02 " );	// Disembodied ones, pave the way... Let this soul pass!
 	AI_UseMob(self,"BOOK",-1);
 	AI_PlayAni(self,"T_PRACTICEMAGIC3");
 	AI_UseMob(self,"BOOK",1);
-	AI_Output(self,other, " DIA_Xardas_ResurectAlef_Answer2_01_03 " );	// SHAKAN TAR MADAR! Come to my call...!
+	AI_Output(self,other, " DIA_Xardas_ResurectAlef_Answer2_01_03 " );	// SHAKAN TAR MADAR! Heed my call...!
 	AI_UseMob(self,"BOOK",-1);
 	AI_PlayAni(self,"T_PRACTICEMAGIC2");
 	AI_UseMob(self,"BOOK",-1);
@@ -2940,7 +2940,7 @@ func void dia_xardas_resurectalef_answer3()
 	Wld_PlayEffect("FX_EarthQuake",self,self,0,0,0,FALSE);
 	Wld_PlayEffect("SFX_Circle",self,self,0,0,0,FALSE);
 	AI_PlayAni(self,"T_PRACTICEMAGIC5");
-	AI_Output(self,other, " DIA_Xardas_ResurectAlef_Answer3_01_00 " );	// That's it! The soul is already here.
+	AI_Output(self,other, " DIA_Xardas_ResurectAlef_Answer3_01_00 " );	// That's it! The soul is here.
 	AI_Output(self,other, " DIA_Xardas_ResurectAlef_Answer3_01_01 " );	// Remember what I told you and don't waste your time.
 	Wld_InsertNpc(alef_soul,"NW_XARDAS_SOUL");
 	ALEFRESURECTRITUAL = TRUE;
@@ -2950,10 +2950,10 @@ func void dia_xardas_resurectalef_answer3()
 
 func void dia_xardas_resurectalef_answer4()
 {
-	AI_Output(other, self, " DIA_Xardas_ResurectAlef_Answer4_01_00 " );	// Good
-	AI_Output(self,other, " DIA_Xardas_ResurectAlef_Answer4_01_01 " );	// (weakens) Hurry up...
+	AI_Output(other, self, " DIA_Xardas_ResurectAlef_Answer4_01_00 " );	// Good.
+	AI_Output(self,other, " DIA_Xardas_ResurectAlef_Answer4_01_01 " );	// Hurry up...
 	AI_Output(other,self, " DIA_Xardas_ResurectAlef_Answer4_01_02 " );	// What's wrong with you?!
-	AI_Output(self,other,"DIA_Xardas_ResurectAlef_Answer4_01_03");	//Я... не...
+	AI_Output(self,other,"DIA_Xardas_ResurectAlef_Answer4_01_03");	//I... can't...
 	Npc_ExchangeRoutine(self,"DRAINED");
 	AI_StopProcessInfos(self);
 };
@@ -2966,7 +2966,7 @@ instance DIA_XARDAS_FINDDARKSOUL(C_Info)
 	condition = dia_xardas_finddarksoul_condition;
 	information = dia_xardas_finddarksoul_info;
 	permanent = FALSE;
-	description = " Do the words of Mora Ulartu mean anything to you? " ;
+	description = " Do the words Mora Ulartu mean anything to you? " ;
 };
 
 
@@ -2980,28 +2980,28 @@ func int dia_xardas_finddarksoul_condition()
 
 func void dia_xardas_finddarksoul_info()
 {
-	AI_Output(other,self, " DIA_Xardas_FindDarkSoul_01_00 " );	// Do Mora Ulartu's words mean anything to you?
+	AI_Output(other,self, " DIA_Xardas_FindDarkSoul_01_00 " );	// Do the words Mora Ulartu mean anything to you?
 	AI_Output(self,other, " DIA_Xardas_FindDarkSoul_01_01 " );	// Hmmm... You never cease to amaze me... how did you know about this?
 	AI_Output(other,self, " DIA_Xardas_FindDarkSoul_01_02 " );	// It's not that important, trust me. Can you tell me about this spell?
-	AI_Output(self,other, " DIA_Xardas_FindDarkSoul_01_03 " );	// Hmm... (surprised) Well, I don't know much myself, but I'll try to briefly explain its essence to you...
-	AI_Output(self,other, " DIA_Xardas_FindDarkSoul_01_05 " );	// As far as I know Mora Ulartu is a very ancient powerful spell. It is sometimes also called the Dungeon of Souls.
-	AI_Output(self,other, " DIA_Xardas_FindDarkSoul_01_06 " );	// It came from those time immemorial, when humanity was just beginning its journey in this world.
-	AI_Output(self,other, " DIA_Xardas_FindDarkSoul_01_07 " );	// It is not known exactly how this spell got into this world, but, apparently, Beliar himself had a hand in this!
-	AI_Output(self,other, " DIA_Xardas_FindDarkSoul_01_08 " );	// I don't think I need to explain to you why this spell is needed - its name speaks for itself.
-	AI_Output(other,self, " DIA_Xardas_FindDarkSoul_01_09 " );	// Tell me, how can I get Mora Ulartu?
-	AI_Output(self,other, " DIA_Xardas_FindDarkSoul_01_10 " );	// (surprised) Why are you doing this?
-	AI_Output(other,self, " DIA_Xardas_FindDarkSoul_01_14 " );	// I need this spell to capture the soul of one demon.
-	AI_Output(self,other, " DIA_Xardas_FindDarkSoul_01_15 " );	// Ha! How long have you been into demon hunting? (laughs) This is, you know, extremely dangerous business!
-	AI_Output(self,other, " DIA_Xardas_FindDarkSoul_01_17 " );	// Well, if you really want to mess with it - be your way.
-	AI_Output(self,other, " DIA_Xardas_FindDarkSoul_01_18 " );	// True, I'm afraid my help will not be so significant in this matter. I will say right away - I do not have this spell.
+	AI_Output(self,other, " DIA_Xardas_FindDarkSoul_01_03 " );	// Hmm... Well, I don't know much myself, but I'll try to briefly explain its essence to you...
+	AI_Output(self,other, " DIA_Xardas_FindDarkSoul_01_05 " );	// As far as I know Mora Ulartu is a very ancient, very powerful spell. It is sometimes also called the Dungeon of Souls.
+	AI_Output(self,other, " DIA_Xardas_FindDarkSoul_01_06 " );	// It originated from time immemorial, when humanity was just beginning its journey in this world.
+	AI_Output(self,other, " DIA_Xardas_FindDarkSoul_01_07 " );	// It is not known exactly how this spell came into this world, but, apparently, Beliar himself had a hand in this!
+	AI_Output(self,other, " DIA_Xardas_FindDarkSoul_01_08 " );	// I don't think I need to explain to you why this spell is dangerous - its name speaks for itself.
+	AI_Output(other,self, " DIA_Xardas_FindDarkSoul_01_09 " );	// Tell me, how can I learn Mora Ulartu?
+	AI_Output(self,other, " DIA_Xardas_FindDarkSoul_01_10 " );	// Why are you doing this?
+	AI_Output(other,self, " DIA_Xardas_FindDarkSoul_01_14 " );	// I need the spell to capture the soul of a demon.
+	AI_Output(self,other, " DIA_Xardas_FindDarkSoul_01_15 " );	// Ha! How long have you been into demon hunting? Do you have an inkling of the danger this poses?
+	AI_Output(self,other, " DIA_Xardas_FindDarkSoul_01_17 " );	// Well, if you really want to mess with it - I suppose I can't stop you.
+	AI_Output(self,other, " DIA_Xardas_FindDarkSoul_01_18 " );	// However, I'm afraid I cannot be of much help in this matter. I do not know this spell.
 	AI_Output(self,other, " DIA_Xardas_FindDarkSoul_01_19 " );	// But maybe I can give you a hint where you should start looking.
 	AI_Output(other,self, " DIA_Xardas_FindDarkSoul_01_20 " );	// I feel like this won't be easy!
-	AI_Output(self,other, " DIA_Xardas_FindDarkSoul_01_23 " );	// Mora Ulartu is not just a spell. This is Beliar's gift to those who, in his opinion, are worthy of owning this secret knowledge!
+	AI_Output(self,other, " DIA_Xardas_FindDarkSoul_01_23 " );	// Mora Ulartu is not just a spell. It is Beliar's gift to those who, in his opinion, are worthy of the utmost secrets of the black places.
 	AI_Output(self,other, " DIA_Xardas_FindDarkSoul_01_24 " );	// And I don't think he will consider you worthy!
 	if(other.guild == GIL_KDF)
 	{
-		AI_Output(self,other, " DIA_Xardas_FindDarkSoul_01_25 " );	// Besides, you're a firebender, servant of Innos!
-		AI_Output(self,other, " DIA_Xardas_FindDarkSoul_01_26 " );	// I'm afraid you don't stand a chance!
+		AI_Output(self,other, " DIA_Xardas_FindDarkSoul_01_25 " );	// Besides, you're a pyromancer, a servant of his hated brother!
+		AI_Output(self,other, " DIA_Xardas_FindDarkSoul_01_26 " );	// I'm afraid you don't have a chance!
 		CHANCEGETDARKSOUL = 1;
 	}
 	else if(other.guild == GIL_PAL)
@@ -3012,59 +3012,59 @@ func void dia_xardas_finddarksoul_info()
 	}
 	else if(other.guild == GIL_KDW)
 	{
-		AI_Output(self,other, " DIA_Xardas_FindDarkSoul_01_29 " );	// Plus, you're a waterbender, servant of Adanos!
-		AI_Output(self,other, " DIA_Xardas_FindDarkSoul_01_30 " );	// Though there isn't much enmity between him and Beliar, I don't think it's worth counting on much.
+		AI_Output(self,other, " DIA_Xardas_FindDarkSoul_01_29 " );	// Plus, you're a Hydromancer, a servant of Adanos!
+		AI_Output(self,other, " DIA_Xardas_FindDarkSoul_01_30 " );	// Though there isn't much enmity between him and Beliar, I don't think it's worth counting on.
 		CHANCEGETDARKSOUL = 25;
 	}
 	else if(other.guild == GIL_KDM)
 	{
-		AI_Output(self,other, " DIA_Xardas_FindDarkSoul_01_31 " );	// Although, on the other hand, the fact that you are a dark magician is definitely a plus in this matter.
-		AI_Output(self,other, " DIA_Xardas_FindDarkSoul_01_32 " );	// But I don't think you should count on it too much anyway.
+		AI_Output(self,other, " DIA_Xardas_FindDarkSoul_01_31 " );	// The fact that you are a Necromancer is definitely a plus in this regard.
+		AI_Output(self,other, " DIA_Xardas_FindDarkSoul_01_32 " );	// But I don't think you should count on it too much. Beliar is fickle.
 		CHANCEGETDARKSOUL = 50;
 	}
 	else
 	{
-		AI_Output(self,other, " DIA_Xardas_FindDarkSoul_01_33 " );	// Although on the other hand - you did not make a vow to other gods!
-		AI_Output(self,other, " DIA_Xardas_FindDarkSoul_01_34 " );	// Perhaps this can be your advantage in this matter... (thoughtfully)
+		AI_Output(self,other, " DIA_Xardas_FindDarkSoul_01_33 " );	// You have never been loyal to the other gods.
+		AI_Output(self,other, " DIA_Xardas_FindDarkSoul_01_34 " );	// Perhaps this can be to your advantage in this matter...
 		CHANCEGETDARKSOUL = 75;
 	};
 	AI_Output(self,other, " DIA_Xardas_FindDarkSoul_01_35 " );	// You should try anyway.
 	AI_Output(other,self, " DIA_Xardas_FindDarkSoul_01_36 " );	// And what do I need to do in order for Beliar to grant me Mora Ulartu?
 	AI_Output(self,other, " DIA_Xardas_FindDarkSoul_01_37 " );	// You need to offer the Dark God something special in exchange for his gift...
-	AI_Output(self,other, " DIA_Xardas_FindDarkSoul_01_40 " );	// Perhaps your soul could interest him - but I think this option is not beneficial for you yourself ... (laughs)
-	AI_Output(self,other, " DIA_Xardas_FindDarkSoul_01_42 " );	// I think there's one more thing Beliar would like to have.
-	AI_Output(other,self, " DIA_Xardas_FindDarkSoul_01_43 " );	// Which one?
-	AI_Output(self,other, " DIA_Xardas_FindDarkSoul_01_46 " );	// There is one very powerful artifact - the Triramar Amulet.
-	AI_Output(self,other, " DIA_Xardas_FindDarkSoul_01_47 " );	// I don't know exactly who created it - but I'm guessing it was Beliar himself!
-	AI_Output(self,other, " DIA_Xardas_FindDarkSoul_01_48 " );	// How else to explain that from the time of its creation until the last moment, the artifact was in one of the temples dedicated to the Dark God.
-	AI_Output(self,other, " DIA_Xardas_FindDarkSoul_01_49 " );	// True, now the situation has changed somewhat. About half a century ago, the paladins destroyed this temple.
+	AI_Output(self,other, " DIA_Xardas_FindDarkSoul_01_40 " );	// Perhaps your soul could interest him - but don't I think this option is very beneficial for you. Ha ha ha!
+	AI_Output(self,other, " DIA_Xardas_FindDarkSoul_01_42 " );	// I think there's one thing Beliar would actually like to have.
+	AI_Output(other,self, " DIA_Xardas_FindDarkSoul_01_43 " );	// Pray tell?
+	AI_Output(self,other, " DIA_Xardas_FindDarkSoul_01_46 " );	// There is a powerful artifact - the Triramar Amulet.
+	AI_Output(self,other, " DIA_Xardas_FindDarkSoul_01_47 " );	// I don't know exactly who created it - but my theory is it was Beliar himself!
+	AI_Output(self,other, " DIA_Xardas_FindDarkSoul_01_48 " );	// How else to explain that from the time of its creation until this very moment, the artifact has only ever been found in temples dedicated to the Dark God.
+	AI_Output(self,other, " DIA_Xardas_FindDarkSoul_01_49 " );	// However, the situation has changed somewhat. About half a century ago, the paladins destroyed these temples.
 	AI_Output(self,other, " DIA_Xardas_FindDarkSoul_01_52 " );	// They didn't ignore the artifact itself. Unable to destroy it, they safely hid it from prying eyes.
-	AI_Output(self,other, " DIA_Xardas_FindDarkSoul_01_53 " );	// And the power of Innos helped them resist the wrath of Beliar, who wanted to return him to himself.
+	AI_Output(self,other, " DIA_Xardas_FindDarkSoul_01_53 " );	// And the power of Innos helped them resist the wrath of Beliar, who wanted it back at all costs.
 	AI_Output(other,self, " DIA_Xardas_FindDarkSoul_01_54 " );	// What's so special about it?
 	AI_Output(self,other, " DIA_Xardas_FindDarkSoul_01_55 " );	// One of the four essences of the Dark God is hidden in it. For those who served Beliar, this artifact was the source of their power...
-	AI_Output(self,other, " DIA_Xardas_FindDarkSoul_01_57 " );	// ...and for the Dark God, he was an integral part of himself!
+	AI_Output(self,other, " DIA_Xardas_FindDarkSoul_01_57 " );	// ...and for the Dark God, it was an integral part of himself!
 	AI_Output(other,self, " DIA_Xardas_FindDarkSoul_01_58 " );	// Are you saying that if the Dark God gets this amulet back, he will give me...
-	AI_Output(self,other, " DIA_Xardas_FindDarkSoul_01_59 " );	// (interrupting) As I said, this can only interest Beliar. Beliar is cunning and cunning!
-	AI_Output(self,other, " DIA_Xardas_FindDarkSoul_01_61 " );	// Of course, he will be glad to have this artifact back, but his gratitude may end there.
-	AI_Output(self,other, " DIA_Xardas_FindDarkSoul_01_63 " );	// In addition, if the paladins find out about this, you yourself will understand what threatens you.
-	AI_Output(other,self, " DIA_Xardas_FindDarkSoul_01_65 " );	// Where do paladins store this artifact?
-	AI_Output(self,other, " DIA_Xardas_FindDarkSoul_01_66 " );	// They hid it somewhere on the island, I guess. But it is unlikely that it is kept in the city or in the monastery.
-	AI_Output(self,other, " DIA_Xardas_FindDarkSoul_01_68 " );	// Most likely, this place is securely hidden from prying eyes, and it is almost impossible to get there.
+	AI_Output(self,other, " DIA_Xardas_FindDarkSoul_01_59 " );	// AHEM. As I said, this can only be of interest to Beliar. He is cunning beyond mortal thought!
+	AI_Output(self,other, " DIA_Xardas_FindDarkSoul_01_61 " );	// Of course, he will be glad to have this artifact back, but his gratitude may very well end there.
+	AI_Output(self,other, " DIA_Xardas_FindDarkSoul_01_63 " );	// In addition, if the paladins find out about this, your life is forfeit in their sight.
+	AI_Output(other,self, " DIA_Xardas_FindDarkSoul_01_65 " );	// Where do the paladins store this artifact?
+	AI_Output(self,other, " DIA_Xardas_FindDarkSoul_01_66 " );	// They hid it somewhere on the island, I suppose. But it is unlikely that it is kept in the city or in the monastery.
+	AI_Output(self,other, " DIA_Xardas_FindDarkSoul_01_68 " );	// Most likely, this place is securely hidden from prying eyes, and will by its very nature be hard to reach.
 	if(Npc_KnowsInfo(other,dia_pal_199_ritter_firstwarn) || Npc_KnowsInfo(other,dia_pal_199_ritter_hagen))
 	{
 		AI_Output(other,self, " DIA_Xardas_FindDarkSoul_01_69 " );	// Maybe they keep it in the royal fort Azgan?
-		AI_Output(self,other, " DIA_Xardas_FindDarkSoul_01_70 " );	// I don't think so. It's too crowded!
+		AI_Output(self,other, " DIA_Xardas_FindDarkSoul_01_70 " );	// I don't think so. It's too visible!
 	};
-	AI_Output(other,self, " DIA_Xardas_FindDarkSoul_01_74 " );	// And how do you know all this yourself?
-	AI_Output(self,other, " DIA_Xardas_FindDarkSoul_01_75 " );	// I'm a former firebender! This never happens without them knowing!
+	AI_Output(other,self, " DIA_Xardas_FindDarkSoul_01_74 " );	// And how do you know all this?
+	AI_Output(self,other, " DIA_Xardas_FindDarkSoul_01_75 " );	// I'm a former firebender! It is common knowledge among the upper echelon of the Circle.
 	AI_Output(other,self, " DIA_Xardas_FindDarkSoul_01_76 " );	// What should I do if I do find a way to get this amulet?
 	AI_Output(self,other, " DIA_Xardas_FindDarkSoul_01_77 " );	// Say a prayer to Beliar and lay the amulet at the foot of his altar. And after that, ask him to grant you Mora Ulartu.
-	AI_Output(self,other, " DIA_Xardas_FindDarkSoul_01_81 " );	// And one more thing... keep me posted. If you know anything about the amulet, let me know.
-	AI_Output(self,other, " DIA_Xardas_FindDarkSoul_01_85 " );	// Now you can go.
+	AI_Output(self,other, " DIA_Xardas_FindDarkSoul_01_81 " );	// And one more thing... keep me notified. If you find anything about the amulet, let me know.
+	AI_Output(self,other, " DIA_Xardas_FindDarkSoul_01_85 " );	// Now, go.
 	TELLABOUTDS = TRUE;
 	XARDASLINE = TRUE;
 	Wld_InsertNpc(pal_187_melhior,"NW_CITY_HABOUR_MELHIOR");
-	B_LogEntry( TOPIC_GOLDDRAGONPORTAL , " Xardas told me about Mora Ulartu's ancient spell, the Dungeon of Souls. This spell can only be cast by Beliar himself, and my chances of doing so are not very high. However, Xardas told me how it is possible to get the favor of the Dark God. To do this, I it is necessary to get a certain Amulet of Triramar - a powerful artifact in which Beliar invested part of his divine power, captured by the paladins during the destruction of one of the temples of the Dark God. But where the paladins hide this artifact, I will have to find out myself. " );
+	B_LogEntry( TOPIC_GOLDDRAGONPORTAL , " Xardas told me about the spell Mora Ulartu, the Dungeon of Souls. This spell can only be granted by Beliar himself, and my chances of doing so are not very high. However, Xardas told me how it is possible to curry the favor of the Dark God. To do this, I it is necessary to get a certain Amulet of Triramar - a powerful artifact in which Beliar invested part of his divine power, captured by the paladins during the destruction of one of the temples of the Dark God. But where the paladins hide this artifact, I will have to find out myself. " );
 	Log_AddEntry( TOPIC_GOLDDRAGONPORTAL , " If I manage to get the artifact, I should offer a prayer to the Dark God, place the amulet on his altar and ask Beliar to grant me the spell I need. And hope that he hears my request. " );
 };
 
@@ -3076,7 +3076,7 @@ instance DIA_XARDAS_FINDETLU (C_Info)
 	condition = dia_xardas_findetlu_condition;
 	information = dia_xardas_findetlu_info;
 	permanent = FALSE;
-	description = " I found out where the paladins hide the Amulet of Triramar. " ;
+	description = " I found out where the paladins hid the Amulet of Triramar. " ;
 };
 
 
@@ -3091,36 +3091,36 @@ func int dia_xardas_findetlu_condition()
 func void dia_xardas_findetlu_info()
 {
 	B_GivePlayerXP(200);
-	AI_Output(other,self, " DIA_Xardas_FindEtlu_01_00 " );	// I found out where the paladins hide the Amulet of Triramar.
+	AI_Output(other,self, " DIA_Xardas_FindEtlu_01_00 " );	// I found out where the paladins hid the Amulet of Triramar.
 	AI_Output(self,other, " DIA_Xardas_FindEtlu_01_01 " );	// And where is it?
 	AI_Output(other,self, " DIA_Xardas_FindEtlu_01_02 " );	// On the island of Etlu.
-	AI_Output(self,other, " DIA_Xardas_FindEtlu_01_03 " );	// Etlu? (thoughtfully) Yes, they hid it well.
+	AI_Output(self,other, " DIA_Xardas_FindEtlu_01_03 " );	// Etlu? Yes, very clever.
 	AI_Output(other,self, " DIA_Xardas_FindEtlu_01_04 " );	// I also learned how to get there.
 	AI_Output(other,self, " DIA_Xardas_FindEtlu_01_05 " );	// Here in Khorinis there is a magical portal that leads straight to this island.
-	AI_Output(self,other, " DIA_Xardas_FindEtlu_01_06 " );	// Portal? Where did he come from?
+	AI_Output(self,other, " DIA_Xardas_FindEtlu_01_06 " );	// Portal? Where did it come from?
 	AI_Output(other,self, " DIA_Xardas_FindEtlu_01_07 " );	// It was built by the paladins.
-	AI_Output(self,other, " DIA_Xardas_FindEtlu_01_08 " );	// M-yes...(laughs) Irony of fate! Then you just have to find this portal.
-	AI_Output(self,other, " DIA_Xardas_FindEtlu_01_13 " );	// But like I said, the paladins on the island won't welcome your visit.
-	AI_Output(self,other, " DIA_Xardas_FindEtlu_01_15 " );	// This is a restricted area! And anyone who dares to break this rule and show up there without an invitation, only one thing awaits ...
+	AI_Output(self,other, " DIA_Xardas_FindEtlu_01_08 " );	// Oh, the ironies of fate! Then you have to find this portal.
+	AI_Output(self,other, " DIA_Xardas_FindEtlu_01_13 " );	// Be sure, the paladins on the island won't welcome your visit.
+	AI_Output(self,other, " DIA_Xardas_FindEtlu_01_15 " );	// That is a restricted area! Only death awaits the uninvited...
 	if(hero.guild == GIL_PAL)
 	{
-		AI_Output(self,other, " DIA_Xardas_FindEtlu_01_18 " );	// Even though you're a paladin!
-		AI_Output(self,other, " DIA_Xardas_FindEtlu_01_19 " );	// There, on the island, your status won't save you anymore!
+		AI_Output(self,other, " DIA_Xardas_FindEtlu_01_18 " );	// Even though you're a paladin yourself.
+		AI_Output(self,other, " DIA_Xardas_FindEtlu_01_19 " );	// There, on that island, your status won't save you!
 	}
 	else if(hero.guild == GIL_KDF)
 	{
-		AI_Output(self,other, " DIA_Xardas_FindEtlu_01_20 " );	// Even though you're a Firebender!
-		AI_Output(self,other, " DIA_Xardas_FindEtlu_01_21 " );	// There, on the island, your status won't save you anymore!
+		AI_Output(self,other, " DIA_Xardas_FindEtlu_01_20 " );	// Even though you're a Fire Mage!
+		AI_Output(self,other, " DIA_Xardas_FindEtlu_01_21 " );	// There, on that island, your status won't save you!
 	}
 	else  if (hero.guild ==  GIL_KDW )
 	{
-		AI_Output(self,other, " DIA_Xardas_FindEtlu_01_22 " );	// Even though you're a Waterbender!
-		AI_Output(self,other, " DIA_Xardas_FindEtlu_01_23 " );	// There, on the island, your status won't save you anymore!
+		AI_Output(self,other, " DIA_Xardas_FindEtlu_01_22 " );	// Even though you're a Water Mage!
+		AI_Output(self,other, " DIA_Xardas_FindEtlu_01_23 " );	// There, on that island, your status won't save you!
 	};
 	AI_Output(self,other, " DIA_Xardas_FindEtlu_01_24 " );	// Before you go there, prepare well. A tough fight awaits you!
 	AI_Output(self,other, " DIA_Xardas_FindEtlu_01_25 " );	// Paladins will fight to the death protecting this artifact!
-	AI_Output(self,other, " DIA_Xardas_FindEtlu_01_27 " );	// And don't you dare wear that amulet! You just don't have the strength to resist his might.
-	B_LogEntry( TOPIC_GOLDDRAGONPORTAL , " Xardas said don't expect a warm welcome on the island. Looks like I'll have to cut my way with my sword. Also, don't try to put on the amulet, otherwise it will just kill me. " );
+	AI_Output(self,other, " DIA_Xardas_FindEtlu_01_27 " );	// And don't you dare wear that amulet! You just don't have the strength to resist its influence.
+	B_LogEntry( TOPIC_GOLDDRAGONPORTAL , " Xardas said to not expect a warm welcome on the island. Looks like I'll have to cut my way through. Also, I shouldn't wear the amulet. It might end badly. " );
 };
 
 
@@ -3146,7 +3146,7 @@ func int dia_xardas_askaboutpeaceway_condition()
 func void dia_xardas_askaboutpeaceway_info()
 {
 	AI_Output(other,self, " DIA_Xardas_AskAboutPeaceWay_01_00 " );	// One more question.
-	AI_Output(self,other, " DIA_Xardas_AskAboutPeaceWay_01_01 " );	// And which one?
+	AI_Output(self,other, " DIA_Xardas_AskAboutPeaceWay_01_01 " );	// Of course.
 	AI_Output(other,self, " DIA_Xardas_AskAboutPeaceWay_01_03 " );	// Is there any other way to get this amulet from the paladins?
 	AI_Output(self,other, " DIA_Xardas_AskAboutPeaceWay_01_04 " );	// Like I said, I don't know.
 	if((other.guild == GIL_PAL) || (other.guild == GIL_KDF))
@@ -3154,7 +3154,7 @@ func void dia_xardas_askaboutpeaceway_info()
 		AI_Output(self,other, " DIA_Xardas_AskAboutPeaceWay_01_05 " );	// Perhaps, if I were you, I would try to ask for help from the owner of the amulet - Beliar!
 		if(other.guild == GIL_PAL)
 		{
-			AI_Output(self,other, " DIA_Xardas_AskAboutPeaceWay_01_06 " );	// But you are the paladin of Innos! He probably won't help you.
+			AI_Output(self,other, " DIA_Xardas_AskAboutPeaceWay_01_06 " );	// But you are a paladin of Innos! He certainly won't help you.
 		}
 		else
 		{
@@ -3208,19 +3208,19 @@ func void dia_xardas_findamulet_info()
 
 	AI_Output(other,self, " DIA_Xardas_FindAmulet_01_00 " );	// I got the Triramar Amulet!
 	AI_Output(self,other, " DIA_Xardas_FindAmulet_01_01 " );	// WHAT?! Have you succeeded?
-	AI_Output(self,other, " DIA_Xardas_FindAmulet_01_03 " );	// You never cease to amaze me. It's time for me to get used to it though.
+	AI_Output(self,other, " DIA_Xardas_FindAmulet_01_03 " );	// You never cease to amaze me. I thought I would be used to it by now.
 
 	if(CountPalmora >= 5)
 	{
-		AI_Output(self,other, " DIA_Xardas_FindAmulet_01_04 " );	// I hope you are not tormented by the advice that because of this amulet you had to send so many people to the next world?
-		AI_Output(self,other, " DIA_Xardas_FindAmulet_01_08 " );	// You may have made a mistake... okay, stop talking.
+		AI_Output(self,other, " DIA_Xardas_FindAmulet_01_04 " );	// I hope you are not tormented by the amount of lives you had to take to acquire the amulet?
+		AI_Output(self,other, " DIA_Xardas_FindAmulet_01_08 " );	// You may have made a mistake... but it's too late now.
 	};
 
 	AI_Output(self,other, " DIA_Xardas_FindAmulet_01_09 " );	// Now, in order to get Mora Ulartu, you just have to perform the ceremony of offering a gift to Beliar.
 	AI_Output(self,other, " DIA_Xardas_FindAmulet_01_10 " );	// Go to the nearest altar of the Dark God, lay the amulet at its base and ask for the Dungeon of Souls!
 	AI_Output(self,other, " DIA_Xardas_FindAmulet_01_11 " );	// You'll find one of these altars on the top floor of my tower.
-	AI_Output(self,other, " DIA_Xardas_FindAmulet_01_12 " );	// And remember - the Dark God is cunning and cunning! Do not think that if you give him this amulet, you will definitely receive your reward!
-	AI_Output(other,self, " DIA_Xardas_FindAmulet_01_14 " );	// I hope all my efforts don't go to waste!
+	AI_Output(self,other, " DIA_Xardas_FindAmulet_01_12 " );	// And remember - the Dark God is cunning! Do not think that if you give him this amulet, you will definitely receive your reward!
+	AI_Output(other,self, " DIA_Xardas_FindAmulet_01_14 " );	// I hope all my effort wasn't for nothing!
 	) ; _ _ _ _ _
 	AI_StopProcessInfos(self);
 };
@@ -3249,27 +3249,27 @@ func void dia_xardas_getsuperbeliarweapon_info()
 {
 	B_GivePlayerXP(100);
 	AI_Output(other,self, " DIA_Xardas_GetSuperBeliarWeapon_01_00 " );	// The dark god gave me Mora Ulartu!
-	AI_Output(self,other, " DIA_Xardas_GetSuperBeliarWeapon_01_01 " );	// WHAT?! (sighs) Sometimes it seems to me that nothing is impossible for you at all...
+	AI_Output(self,other, " DIA_Xardas_GetSuperBeliarWeapon_01_01 " );	// WHAT?! (sighs) Sometimes it seems to me that nothing is impossible for you, boy...
 	AI_Output(self,other, " DIA_Xardas_GetSuperBeliarWeapon_01_07 " );	// You now have a powerful artifact in your hands that grants you the Soul Catcher ability!
-	AI_Output(other,self,"DIA_Xardas_GetSuperBeliarWeapon_01_08");	//Ловца Душ?
-	AI_Output(self,other, " DIA_Xardas_GetSuperBeliarWeapon_01_09 " );	// Yes! Very few people have this knowledge...
-	AI_Output(self,other, " DIA_Xardas_GetSuperBeliarWeapon_01_12 " );	// Basically, these are demons and similar creatures that inherited this ability at birth, or were given this knowledge. True, not all, but only the most powerful of them!
+	AI_Output(other,self,"DIA_Xardas_GetSuperBeliarWeapon_01_08");	//Soul Catcher?
+	AI_Output(self,other, " DIA_Xardas_GetSuperBeliarWeapon_01_09 " );	// Yes! Very few people have even heard of it...
+	AI_Output(self,other, " DIA_Xardas_GetSuperBeliarWeapon_01_12 " );	// Basically, these are demons and similar creatures that inherit this ability at birth, or were given this knowledge. True, not all, but only the most powerful of them!
 	AI_Output(self,other, " DIA_Xardas_GetSuperBeliarWeapon_01_13 " );	// For people, this knowledge is practically inaccessible... although, as it turned out, there are exceptions.
 	AI_Output(other,self, " DIA_Xardas_GetSuperBeliarWeapon_01_14 " );	// But why do we need souls?
-	AI_Output(self,other, " DIA_Xardas_GetSuperBeliarWeapon_01_15 " );	// You yourself still do not realize what you own now...
-	AI_Output(self,other, " DIA_Xardas_GetSuperBeliarWeapon_01_16 " );	// The soul is the most valuable thing a living being has! It is the source of our magical power, which we use to create magic.
+	AI_Output(self,other, " DIA_Xardas_GetSuperBeliarWeapon_01_15 " );	// You still do not realize what you have in your hands...
+	AI_Output(self,other, " DIA_Xardas_GetSuperBeliarWeapon_01_16 " );	// The soul is the most valuable thing a living being has! It is the source of our magical power, the very thing we use to cast our spells!
 	AI_Output(self,other, " DIA_Xardas_GetSuperBeliarWeapon_01_17 " );	// In addition, the soul of a living being has a number of other unusual properties. But I don't know much about them.
-	AI_Output(self,other, " DIA_Xardas_GetSuperBeliarWeapon_01_19 " );	// That's why this substance is so highly valued - it's the key to limitless power!
-	AI_Output(other,self, " DIA_Xardas_GetSuperBeliarWeapon_01_20 " );	// Explain how to use all this knowledge?
+	AI_Output(self,other, " DIA_Xardas_GetSuperBeliarWeapon_01_19 " );	// That's why this substance is so highly valued by all non-mortal intelligences - it's the key to limitless power!
+	AI_Output(other,self, " DIA_Xardas_GetSuperBeliarWeapon_01_20 " );	// How do I use this knowledge?
 	AI_Output(self,other, " DIA_Xardas_GetSuperBeliarWeapon_01_21 " );	// It's not that hard. You have Mora Ulartu - this is quite enough to prevent the soul from slipping away after the death of its owner ...
-	AI_Output(self,other, " DIA_Xardas_GetSuperBeliarWeapon_01_22 " );	// However, you can't use her power.
-	AI_Output(self,other, " DIA_Xardas_GetSuperBeliarWeapon_01_24 " );	// People don't know how to handle them the way the same demons do, for example - to devour them, thereby increasing their strength and power.
+	AI_Output(self,other, " DIA_Xardas_GetSuperBeliarWeapon_01_22 " );	// However, you can't use the power the way demons can.
+	AI_Output(self,other, " DIA_Xardas_GetSuperBeliarWeapon_01_24 " );	// For example - to devour them, thereby increasing the strength and power of the demon.
 	AI_Output(other,self, " DIA_Xardas_GetSuperBeliarWeapon_01_25 " );	// Then what should I do with them?
 	AI_Output(self,other, " DIA_Xardas_GetSuperBeliarWeapon_01_26 " );	// Perhaps the Dark God will accept the souls you captured as a gift. And in return, you can ask him for something of value.
-	AI_Output(other,self, " DIA_Xardas_GetSuperBeliarWeapon_01_29 " );	// Okay, I'm clear.
+	AI_Output(other,self, " DIA_Xardas_GetSuperBeliarWeapon_01_29 " );	// I see.
 	KNOWSHOWDEALSOULS = TRUE;
 	Log_CreateTopic(TOPIC_SUPERBELIARWEAPON_UPG,LOG_NOTE);
-	B_LogEntry( TOPIC_SUPERBELIARWEAPON_UPG , " The Mora Ulartu rune I received gave me the Soul Catcher ability, with which I can captivate and capture the souls of any creature. I can present the collected souls as a gift to the Dark God, not forgetting to beg something from him for myself useful. " );
+	B_LogEntry( TOPIC_SUPERBELIARWEAPON_UPG , " The Mora Ulartu rune I received gave me the Soul Catcher ability, with which I can captivate and capture the souls of any creature. I can present the collected souls as a gift to the Dark God, not forgetting to beg something from him for myself. " );
 };
 
 
@@ -3296,19 +3296,19 @@ func void dia_xardas_getsupersoul_info()
 {
 	B_GivePlayerXP(300);
 	AI_Output(other,self, " DIA_Xardas_GetSuperSoul_01_00 " );	// I have the soul of the archdemon S'enyak!
-	AI_Output(self,other, " DIA_Xardas_GetSuperSoul_01_01 " );	// S'anyaka?! Hmmm... (snickeringly) You didn't waste your time, did you?
-	AI_Output(self,other, " DIA_Xardas_GetSuperSoul_01_02 " );	// In your hands is truly a real treasure!
-	AI_Output(self,other, " DIA_Xardas_GetSuperSoul_01_05 " );	// An archdemon's soul is unlike any other. Her magic power is huge and you will simply not be able to cope with it.
-	AI_Output(self,other, " DIA_Xardas_GetSuperSoul_01_06 " );	// You'll need some powerful magical artifact. By investing the magical core of the soul into it, you can increase its power!
+	AI_Output(self,other, " DIA_Xardas_GetSuperSoul_01_01 " );	// S'anyak?! Hmmm... You didn't waste time, did you?
+	AI_Output(self,other, " DIA_Xardas_GetSuperSoul_01_02 " );	// You are in possession of a true treasure, my boy!
+	AI_Output(self,other, " DIA_Xardas_GetSuperSoul_01_05 " );	// An archdemon's soul is unlike any other. Their magical power is huge and you will simply not be able to cope with it.
+	AI_Output(self,other, " DIA_Xardas_GetSuperSoul_01_06 " );	// You'll need a powerful magical artifact. By investing the soul into it, you can increase its power!
 	AI_Output(other,self, " DIA_Xardas_GetSuperSoul_01_08 " );	// And what should this item be?
-	AI_Output(self,other, " DIA_Xardas_GetSuperSoul_01_09 " );	// To begin with, it must have the magical essence of creation, because only the structure of such artifacts allows one to enclose the magical power of the soul in them.
+	AI_Output(self,other, " DIA_Xardas_GetSuperSoul_01_09 " );	// To begin with, it must have the magical essence of creation, because only the structure of such artifacts allows one to enclose the magical power of souls in them.
 	AI_Output(other,self, " DIA_Xardas_GetSuperSoul_01_10 " );	// How about Beliar's Claw?
-	AI_Output(self,other, " DIA_Xardas_GetSuperSoul_01_11 " );	// Claw? I think he would be perfect for this. After all, he was created by magic - the dark magic of Beliar!
-	AI_Output(other,self, " DIA_Xardas_GetSuperSoul_01_14 " );	// How do I then transfer the soul of the archdemon to this artifact?
+	AI_Output(self,other, " DIA_Xardas_GetSuperSoul_01_11 " );	// The Claw? I think it would be perfect, in fact. After all, it was created by magic - the dark magic of Beliar himself!
+	AI_Output(other,self, " DIA_Xardas_GetSuperSoul_01_14 " );	// How do I transfer the soul of the archdemon to this artifact?
 	AI_Output(self,other, " DIA_Xardas_GetSuperSoul_01_15 " );	// Any magical altar of the Dark God will do. His aura will allow you to perform the soul transfer ritual.
 	AI_Output(self,other, " DIA_Xardas_GetSuperSoul_01_17 " );	// All you need is the favor of Beliar himself!
 	TELLCANSUPERBELIARWEAPON = TRUE;
-	B_LogEntry( TOPIC_SUPERBELIARWEAPON_UPG , " In order to use the power of the imprisoned soul of the archdemon S'enyak, I need an artifact that can absorb its power. The Claw of Beliar is best for this. be kind to me. " );
+	B_LogEntry( TOPIC_SUPERBELIARWEAPON_UPG , " In order to use the power of the imprisoned soul of the archdemon S'enyak, I need an artifact that can absorb its power. The Claw of Beliar is best for this. " );
 };
 
 
@@ -3335,18 +3335,18 @@ func void dia_xardas_goblinbringscroll_info()
 {
 	AI_Output(other,self, " DIA_Xardas_GoblinBringScroll_01_00 " );	// I need a scroll of banishment.
 	AI_Output(other,self, " DIA_Xardas_GoblinBringScroll_01_01 " );	// Do you have one?
-	AI_Output(self,other, " DIA_Xardas_GoblinBringScroll_01_02 " );	// This is a dangerous spell, and I won't give it to you without explanation!
+	AI_Output(self,other, " DIA_Xardas_GoblinBringScroll_01_02 " );	// That is a dangerous spell, and I won't give it to you without explanation!
 	AI_Output(self,other, " DIA_Xardas_GoblinBringScroll_01_03 " );	// Why do you need this scroll?
 	Info_ClearChoices(dia_xardas_goblinbringscroll);
-	Info_AddChoice(dia_xardas_goblinbringscroll, " I can't tell you about this. " ,dia_xardas_goblinbringscroll_ok);
-	Info_AddChoice(dia_xardas_goblinbringscroll, " I need him for our cause. " ,dia_xardas_goblinbringscroll_no_1);
-	Info_AddChoice(dia_xardas_goblinbringscroll, " To exorcise one strange creature. " ,dia_xardas_goblinbringscroll_no_2);
-	Info_AddChoice(dia_xardas_goblinbringscroll, " This is for my friend Mad. " ,dia_xardas_goblinbringscroll_no_3);
+	Info_AddChoice(dia_xardas_goblinbringscroll, " I can't tell you. " ,dia_xardas_goblinbringscroll_ok);
+	Info_AddChoice(dia_xardas_goblinbringscroll, " I need it for our cause. " ,dia_xardas_goblinbringscroll_no_1);
+	Info_AddChoice(dia_xardas_goblinbringscroll, " To exorcise a very strange creature. " ,dia_xardas_goblinbringscroll_no_2);
+	Info_AddChoice(dia_xardas_goblinbringscroll, " It's is for my friend Mad. " ,dia_xardas_goblinbringscroll_no_3);
 };
 
 func void dia_xardas_goblinbringscroll_ok()
 {
-	AI_Output(other,self, " DIA_Xardas_GoblinBringScroll_Ok_01_00 " );	// I can't tell you about it.
+	AI_Output(other,self, " DIA_Xardas_GoblinBringScroll_Ok_01_00 " );	// I can't tell you.
 	AI_Output(self,other, " DIA_Xardas_GoblinBringScroll_Ok_01_01 " );	// In that case, I won't help you!
 };
 
@@ -3356,7 +3356,7 @@ func void dia_xardas_goblinbringscroll_no_1()
 	AI_Output(other,self, " DIA_Xardas_GoblinBringScroll_No_1_01_00 " );	// I need it for our common cause.
 	AI_Output(self,other, " DIA_Xardas_GoblinBringScroll_No_1_01_01 " );	// Nonsense! I know what we need for our business!
 	AI_Output(self,other, " DIA_Xardas_GoblinBringScroll_No_1_01_02 " );	// And I see no reason why I should give you this scroll.
-	AI_Output(self,other, " DIA_Xardas_GoblinBringScroll_No_1_01_03 " );	// Now go do what needs to be done. (angrily) And don't you dare bother me any more!
+	AI_Output(self,other, " DIA_Xardas_GoblinBringScroll_No_1_01_03 " );	// Now go do what needs to be done. And don't you dare bother me any more!
 	B_LogEntry( TOPIC_GOBLINAWAY , " Xardas refused to give me the scroll of banishment. " );
 	AI_StopProcessInfos(self);
 };
@@ -3364,17 +3364,17 @@ func void dia_xardas_goblinbringscroll_no_1()
 func void dia_xardas_goblinbringscroll_no_2()
 {
 	B_GivePlayerXP(100);
-	AI_Output(other,self, " DIA_Xardas_GoblinBringScroll_No_2_01_00 " );	// To banish one strange creature.
-	AI_Output(self,other, " DIA_Xardas_GoblinBringScroll_No_2_01_01 " );	// What other creature?! What are you talking about?
-	AI_Output(other,self, " DIA_Xardas_GoblinBringScroll_No_2_01_02 " );	// One goblin! Imagine, he also turned out to be a speaker.
+	AI_Output(other,self, " DIA_Xardas_GoblinBringScroll_No_2_01_00 " );	// To banish a very strange creature.
+	AI_Output(self,other, " DIA_Xardas_GoblinBringScroll_No_2_01_01 " );	// What creature?! What are you talking about?
+	AI_Output(other,self, " DIA_Xardas_GoblinBringScroll_No_2_01_02 " );	// A goblin! The talking variety.
 	AI_Output(self,other, " DIA_Xardas_GoblinBringScroll_No_2_01_03 " );	// Yes? I think I know what you're talking about.
 	AI_Output(self,other, " DIA_Xardas_GoblinBringScroll_No_2_01_04 " );	// Did you meet him near my old tower in the Valley of Mines?
-	AI_Output(other,self, " DIA_Xardas_GoblinBringScroll_No_2_01_05 " );	// Exactly! And how did you know about it?
-	AI_Output(self,other, " DIA_Xardas_GoblinBringScroll_No_2_01_06 " );	// (sarcastically) Guessed! But let's not waste time discussing any nonsense.
-	AI_Output(self,other, " DIA_Xardas_GoblinBringScroll_No_2_01_07 " );	// Okay, I'll give you this scroll, and only because I should have done it myself a long time ago!
+	AI_Output(other,self, " DIA_Xardas_GoblinBringScroll_No_2_01_05 " );	// Exactly! How did you know?
+	AI_Output(self,other, " DIA_Xardas_GoblinBringScroll_No_2_01_06 " );	// Just a guess! But let's not waste time discussing any nonsense.
+	AI_Output(self,other, " DIA_Xardas_GoblinBringScroll_No_2_01_07 " );	// Okay, I'll give you the scroll, and only because I should have done it myself a long time ago!
 	AI_Output(self,other, " DIA_Xardas_GoblinBringScroll_No_2_01_09 " );	// I somehow forgot about this... but you will correct my mistake.
 	AI_Output(self,other, " DIA_Xardas_GoblinBringScroll_No_2_01_10 " );	// Though this scavenger spawn should have been punished for running away from me first!
-	AI_Output(self,other, " DIA_Xardas_GoblinBringScroll_No_2_01_11 " );	// But this happens - the summoned beings are not always obedient to the voice of their master.
+	AI_Output(self,other, " DIA_Xardas_GoblinBringScroll_No_2_01_11 " );	// Summoned beings are not always obedient to the voice of their master.
 	AI_Output(self,other, " DIA_Xardas_GoblinBringScroll_No_2_01_12 " );	// Here, hold the scroll, and remember that it can only be used once and in close proximity to the summoned creature.
 	B_GiveInvItems(self,other,itwr_xardasgoblinscroll,1);
 	AI_Output(self,other, " DIA_Xardas_GoblinBringScroll_No_2_01_13 " );	// Now go and try not to distract me with any more trifles!
@@ -3385,9 +3385,9 @@ func void dia_xardas_goblinbringscroll_no_2()
 func void dia_xardas_goblinbringscroll_no_3()
 {
 	B_GivePlayerXP(50);
-	AI_Output(other,self, " DIA_Xardas_GoblinBringScroll_No_3_01_01 " );	// This is for my friend Mad. I met him in the Colony.
+	AI_Output(other,self, " DIA_Xardas_GoblinBringScroll_No_3_01_01 " );	// It's for my friend Mad. I met him in the Colony.
 	AI_Output(self,other, " DIA_Xardas_GoblinBringScroll_No_3_01_02 " );	// I think you're lying.
-	AI_Output(self,other, " DIA_Xardas_GoblinBringScroll_No_3_01_08 " );	// Better go and do what you gotta do. And don't you dare distract me over trifles!
+	AI_Output(self,other, " DIA_Xardas_GoblinBringScroll_No_3_01_08 " );	// Better go and do what you have to do. And don't you dare distract me over trifles!
 	B_LogEntry( TOPIC_GOBLINAWAY , " Xardas refused to give me the scroll of banishment. " );
 	AI_StopProcessInfos(self);
 };
@@ -3415,25 +3415,25 @@ func int day_xardas_canbenecrom_condition()
 func void dia_xardas_canbenecrom_info()
 {
 	AI_Output(other,self, " DIA_Xardas_CanBeNecrom_01_00 " );	// Can you enlighten me on the mysteries of dark magic?
-	AI_Output(self,other, " DIA_Xardas_CanBeNecrom_01_01 " );	// Hmmm...(thoughtfully) Your request surprises me a little!
+	AI_Output(self,other, " DIA_Xardas_CanBeNecrom_01_01 " );	// Hmmm... Your request surprises me!
 	AI_Output(self,other, " DIA_Xardas_CanBeNecrom_01_03 " );	// I didn't even expect to hear such a question from you.
 	AI_Output(self,other, " DIA_Xardas_CanBeNecrom_01_04 " );	// Of course, I understand your desire to become a magician and master the power of magical runes.
-	AI_Output(self,other, " DIA_Xardas_CanBeNecrom_01_05 " );	// But for this there are much easier ways than the path of the necromancer and the demon caster.
+	AI_Output(self,other, " DIA_Xardas_CanBeNecrom_01_05 " );	// But there are much easier ways than the path of the necromancer and the demon summoner.
 	AI_Output(self,other, " DIA_Xardas_CanBeNecrom_01_06 " );	// Few people dare to enter it - after all, it is incredibly difficult and dangerous!
-	AI_Output(self,other, " DIA_Xardas_CanBeNecrom_01_07 " );	// And besides, the path of the dark magician is the path of complete loneliness... (gloomy)
+	AI_Output(self,other, " DIA_Xardas_CanBeNecrom_01_07 " );	// And besides, the path of the dark magician is the path of complete loneliness...
 	AI_Output(other,self, " DIA_Xardas_CanBeNecrom_01_08 " );	// It doesn't scare me.
-	AI_Output(self,other, " DIA_Xardas_CanBeNecrom_01_10 " );	// But are there few representatives of other deities on the island? How about the same magicians of Water or Fire?
+	AI_Output(self,other, " DIA_Xardas_CanBeNecrom_01_10 " );	// There representatives of other deities on the island? How about the magicians of Water or Fire?
 	AI_Output(self,other, " DIA_Xardas_CanBeNecrom_01_11 " );	// Because they can also give you what you're looking for.
-	AI_Output(other,self, " DIA_Xardas_CanBeNecrom_01_14 " );	// I feel that darkness is my abode. That is where my purpose lies!
-	AI_Output(self,other, " DIA_Xardas_CanBeNecrom_01_15 " );	// (thoughtfully) Hmmm...
+	AI_Output(other,self, " DIA_Xardas_CanBeNecrom_01_14 " );	// I feel that darkness is my true home. That is where my purpose lies!
+	AI_Output(self,other, " DIA_Xardas_CanBeNecrom_01_15 " );	// I must admit, I sensed that about you...
 	AI_Output(other,self, " DIA_Xardas_CanBeNecrom_01_17 " );	// So will you help me become a necromancer?
-	AI_Output(self,other, " DIA_Xardas_CanBeNecrom_01_18 " );	// Well, good! However, I can't make that decision right away.
+	AI_Output(self,other, " DIA_Xardas_CanBeNecrom_01_18 " );	// I can't make such decision right away.
 	AI_Output(self,other, " DIA_Xardas_CanBeNecrom_01_21 " );	// I need time to think about this...
 	HARDASTIMERBENDM = Wld_GetDay();
 	MIS_BECOMEKDM = LOG_Running;
 	Log_CreateTopic(TOPIC_BECOMEKDM,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_BECOMEKDM,LOG_Running);
-	B_LogEntry( TOPIC_BECOMEKDM , " I asked Xardas to accept me as a dark mage and teach me the secrets of necromancer magic. Xardas replied that he needed to think about this issue for a few days. " );
+	B_LogEntry( TOPIC_BECOMEKDM , " I asked Xardas to accept me as a dark mage and teach me the secrets of necromancy. Xardas replied that he needed to think about it for a few days. " );
 };
 
 
@@ -3461,13 +3461,13 @@ func void dia_xardas_canbenecromok_info()
 {
 	AI_Output(other,self, " DIA_Xardas_CanBeNecromOk_01_00 " );	// Have you thought about my request?
 	AI_Output(self,other, " DIA_Xardas_CanBeNecromOk_01_03 " );	// I agree to accept you as my apprentice and teach you the secrets of Dark magic.
-	AI_Output(self,other, " DIA_Xardas_CanBeNecromOk_01_04 " );	// However, you should understand that once you make this decision, you can't just change your choice.
-	AI_Output(self,other, " DIA_Xardas_CanBeNecromOk_01_05 " );	// Therefore, you must be fully aware of the correctness of your actions.
+	AI_Output(self,other, " DIA_Xardas_CanBeNecromOk_01_04 " );	// However, you should understand that once you make this decision, you will never be able to turn back.
+	AI_Output(self,other, " DIA_Xardas_CanBeNecromOk_01_05 " );	// Therefore, you must be fully aware of the consequences of this decision.
 	AI_Output(self,other, " DIA_Xardas_CanBeNecromOk_01_06 " );	// So, are you ready to make a vow to the Dark God and dedicate your life to studying the magic of Darkness?
-	B_LogEntry( TOPIC_BECOMEKDM , " Xardas agrees to take me as his apprentice and teach me dark magic. " );
+	B_LogEntry( TOPIC_BECOMEKDM , " Xardas agreed to take me as his apprentice and teach me dark magic. " );
 	Info_ClearChoices(dia_xardas_canbenecromok);
-	Info_AddChoice(dia_xardas_canbenecromok, " Ok, I'm ready. " ,dia_xardas_canbenecromok_yes);
-	Info_AddChoice(dia_xardas_canbenecromok, " I need to think. " ,dia_xardas_canbenecromok_no);
+	Info_AddChoice(dia_xardas_canbenecromok, " Yes, I'm ready. " ,dia_xardas_canbenecromok_yes);
+	Info_AddChoice(dia_xardas_canbenecromok, " I need to think about it actually. " ,dia_xardas_canbenecromok_no);
 };
 
 func void dia_xardas_canbenecromok_yes()
@@ -3476,10 +3476,10 @@ func void dia_xardas_canbenecromok_yes()
 	AI_Output(other,self, " DIA_Xardas_CanBeNecromOk_Yes_01_00 " );	// I'm ready.
 	AI_Output(self,other, " DIA_Xardas_CanBeNecromOk_Yes_01_01 " );	// So be it!
 	AI_Output(self,other, " DIA_Xardas_CanBeNecromOk_Yes_01_02 " );	// By the power given to me by Beliar, I accept you into the ranks of the followers of his sacred cult.
-	AI_Output(self,other, " DIA_Xardas_CanBeNecromOk_Yes_01_03 " );	// (grimly) And may the crimson Darkness guard your path and your soul.
+	AI_Output(self,other, " DIA_Xardas_CanBeNecromOk_Yes_01_03 " );	// May the crimson Darkness guard your path and bind your soul.
 	AI_Output(self,other, " DIA_Xardas_CanBeNecromOk_Yes_01_04 " );	// That's it! Now you are part of the darkness and your life is inseparably connected with it.
 	AI_Output(self,other, " DIA_Xardas_CanBeNecromOk_Yes_01_05 " );	// But you must understand that this still does not make you a full-fledged dark magician!
-	AI_Output(self,other, " DIA_Xardas_CanBeNecromOk_Yes_01_06 " );	// You still have a lot to learn and a lot to learn.
+	AI_Output(self,other, " DIA_Xardas_CanBeNecromOk_Yes_01_06 " );	// You still have a lot to learn and a lot to experience.
 	AI_Output(self,other, " DIA_Xardas_CanBeNecromOk_Yes_01_07 " );	// For now, accept this robe of a disciple of Darkness as a sign that you now belong to our Circle.
 	AI_Output(self,other, " DIA_Xardas_CanBeNecromOk_Yes_01_08 " );	// And one more thing. Since you are now my student, accept this ring.
 	B_GiveInvItems(self,other,ITRI_XARDASPLACE,1);
@@ -3522,7 +3522,7 @@ func void dia_xardas_canbenecromok_yes()
 func void dia_xardas_canbenecromok_no()
 {
 	AI_Output(other,self, " DIA_Xardas_CanBeNecromOk_No_01_00 " );	// I need to think.
-	AI_Output(self,other, " DIA_Xardas_CanBeNecromOk_No_01_01 " );	// Good! I'm not rushing you to answer. This is a responsible step!
+	AI_Output(self,other, " DIA_Xardas_CanBeNecromOk_No_01_01 " );	// Good! I'm not rushing you to answer. This is the fate of your very soul!
 	Info_ClearChoices(dia_xardas_canbenecromok);
 };
 
@@ -3548,10 +3548,10 @@ func int day_xardas_canbenecromokonce_condition()
 
 func void dia_xardas_canbenecromokonce_info()
 {
-	AI_Output(other,self, " DIA_Xardas_CanBeNecromOkOnce_01_00 " );	// I want to take the path of the Dark Magician.
+	AI_Output(other,self, " DIA_Xardas_CanBeNecromOkOnce_01_00 " );	// I want to take the path of the Dark Mage.
 	AI_Output(self,other, " DIA_Xardas_CanBeNecromOkOnce_01_01 " );	// Are you ready to make a vow to the Dark God and devote your life to studying the magic of Darkness?
 	Info_ClearChoices(dia_xardas_canbenecromoconce);
-	Info_AddChoice(dia_xardas_canbenecromokonce, " male, female. " ,dia_xardas_canbenecromokonce_yes);
+	Info_AddChoice(dia_xardas_canbenecromokonce, " Yes, I am. " ,dia_xardas_canbenecromokonce_yes);
 	Info_AddChoice(dia_xardas_canbenecromokonce, " I need to think. " ,dia_xardas_canbenecromokonce_no);
 };
 
@@ -3563,10 +3563,10 @@ func void dia_xardas_canbenecromokonce_yes()
 		AI_Output(other,self, " DIA_Xardas_CanBeNecromOkOnce_Yes_01_00 " );	// I'm ready.
 		AI_Output(self,other, " DIA_Xardas_CanBeNecromOkOnce_Yes_01_01 " );	// So be it!
 		AI_Output(self,other, " DIA_Xardas_CanBeNecromOkOnce_Yes_01_02 " );	// By the power given to me by Beliar, I accept you into the ranks of the followers of his sacred cult.
-		AI_Output(self,other, " DIA_Xardas_CanBeNecromOkOnce_Yes_01_03 " );	// (grimly) And may the crimson Darkness guard your path and your soul.
+		AI_Output(self,other, " DIA_Xardas_CanBeNecromOkOnce_Yes_01_03 " );	// May the crimson Darkness guard your path and bind your soul.
 		AI_Output(self,other, " DIA_Xardas_CanBeNecromOkOnce_Yes_01_04 " );	// That's it! Now you are part of the darkness and your life is inseparably connected with it.
 		AI_Output(self,other, " DIA_Xardas_CanBeNecromOkOnce_Yes_01_05 " );	// But you must understand that this still does not make you a full-fledged dark magician!
-		AI_Output(self,other, " DIA_Xardas_CanBeNecromOkOnce_Yes_01_06 " );	// You still have a lot to learn and a lot to learn.
+		AI_Output(self,other, " DIA_Xardas_CanBeNecromOkOnce_Yes_01_06 " );	// You still have a lot to learn and a lot to experience.
 		AI_Output(self,other, " DIA_Xardas_CanBeNecromOkOnce_Yes_01_07 " );	// For now, accept this robe of a disciple of Darkness as a sign that you now belong to our Circle.
 		AI_Output(self,other, " DIA_Xardas_CanBeNecromOkOnce_Yes_01_08 " );	// And one more thing. Since you are now my student, accept this ring.
 		B_GiveInvItems(self,other,ITRI_XARDASPLACE,1);
