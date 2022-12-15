@@ -1,13 +1,14 @@
 
+
 instance ORC_8550_URNAZUL(C_Npc)
 {
-	name[0] = "Ур-Тралл, вождь орков";
+	name[ 0 ] = " Ur-Thrall, Chieftain of the Orcs " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCELITE;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCELITE ;
 	voice = 18;
 	id = 8550;
 	level = 500;
-	aivar[90] = TRUE;
+	aivar[ 90 ] = TRUE ;
 	aivar[94] = NPC_EPIC;
 	attribute[ATR_STRENGTH] = 750;
 	attribute[ATR_DEXTERITY] = 450;
@@ -30,7 +31,7 @@ instance ORC_8550_URNAZUL(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
 	EquipItem(self,ITMW_2H_ORCSWORD_04);
 	start_aistate = ZS_MM_AllScheduler;
 	Mdl_SetVisual(self,"Orc.mds");
@@ -46,9 +47,9 @@ instance ORC_8550_URNAZUL(C_Npc)
 
 instance ORC_7550_GORKAR(C_Npc)
 {
-	name[0] = "Гор Кар, шаман горных орков";
+	name[ 0 ] = " Gor Kar, Mountain Orc Shaman " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCSHAMAN;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCSHAMAN ;
 	voice = 18;
 	id = 7550;
 	level = 150;
@@ -73,7 +74,7 @@ instance ORC_7550_GORKAR(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
 	EquipItem(self,itmw_orcstaff);
 	aivar[AIV_MagicUser] = MAGIC_ALWAYS_MINE;
 	start_aistate = ZS_MM_AllScheduler;
@@ -86,9 +87,9 @@ instance ORC_7550_GORKAR(C_Npc)
 
 instance ORC_7551_PREACHSHAMAN(C_Npc)
 {
-	name[0] = "Верховный шаман орков";
+	name[ 0 ] = " High Orc Shaman " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCSHAMAN;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCSHAMAN ;
 	voice = 18;
 	id = 7551;
 	level = 150;
@@ -113,7 +114,7 @@ instance ORC_7551_PREACHSHAMAN(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
 	EquipItem(self,itmw_orcstaff);
 	aivar[AIV_MagicUser] = MAGIC_ALWAYS_MINE;
 	start_aistate = ZS_MM_AllScheduler;
