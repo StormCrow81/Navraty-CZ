@@ -1,13 +1,14 @@
 
+
 instance ORC_8504_ELITE(C_Npc)
 {
-	name[0] = "Черный орк-воин";
+	name[ 0 ] = " Black Orc Warrior " ;
 	guild = GIL_ORC;
 	id = 8504;
 	voice = 18;
 	level = 15;
 	flags = ORCTEMPLENPCFLAGS;
-	aivar[AIV_MM_REAL_ID] = ID_ORCWARRIOR;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCWARRIOR ;
 	npcType = NPCTYPE_AMBIENT;
 	attribute[ATR_STRENGTH] = 125;
 	attribute[ATR_DEXTERITY] = 225;
@@ -30,7 +31,7 @@ instance ORC_8504_ELITE(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyElit1",DEFAULT,DEFAULT,"Orc_HeadWarrior",2,DEFAULT,-1);
 	EquipItem(self,ItMw_2H_OrcSword_02);
