@@ -3609,7 +3609,7 @@ func void dia_xardas_canbenecromokonce_yes()
 func void dia_xardas_canbenecromokonce_no()
 {
 	AI_Output(other,self, " DIA_Xardas_CanBeNecromOkOnce_No_01_00 " );	// I need to think.
-	AI_Output(self,other, " DIA_Xardas_CanBeNecromOkOnce_No_01_01 " );	// Good! I'm not rushing you to answer. This is a responsible step!
+	AI_Output(self,other, " DIA_Xardas_CanBeNecromOkOnce_No_01_01 " );	// Good! I'm not rushing you to answer. This is the fate of your vey soul!
 	Info_ClearChoices(dia_xardas_canbenecromoconce);
 };
 
@@ -3640,12 +3640,12 @@ func void dia_xardas_ndm_howkdm_info()
 	AI_Output(self,other, " DIA_Xardas_NDM_HowKDM_01_04 " );	// This is an opportunity to gain knowledge that leads to near-limitless power!
 	AI_Output(self,other, " DIA_Xardas_NDM_HowKDM_01_07 " );	// A lot depends on how strong your spirit is and how great your wisdom is!
 	AI_Output(other,self, " DIA_Xardas_NDM_HowKDM_01_08 " );	// What do you mean?
-	AI_Output(self,other, " DIA_Xardas_NDM_HowKDM_01_09 " );	// For an unprepared person, this knowledge can drive you crazy or just kill you!
-	AI_Output(self,other, " DIA_Xardas_NDM_HowKDM_01_10 " );	// And I don't want the same to happen to you.
+	AI_Output(self,other, " DIA_Xardas_NDM_HowKDM_01_09 " );	// For an unprepared person, this knowledge can drive you mad or just plain kill you!
+	AI_Output(self,other, " DIA_Xardas_NDM_HowKDM_01_10 " );	// And I don't want that to happen to you.
 	AI_Output(other,self, " DIA_Xardas_NDM_HowKDM_01_11 " );	// So, it turns out that I'm not ready yet?
 	AI_Output(self,other, " DIA_Xardas_NDM_HowKDM_01_12 " );	// Yes, your spirit is still weak and not ready to take on such a heavy burden.
 	AI_Output(self,other, " DIA_Xardas_NDM_HowKDM_01_13 " );	// In order to become a true magician of Darkness, you will have to spend a long time in diligent training, strengthening your spirit and mind.
-	AI_Output(self,other, " DIA_Xardas_NDM_HowKDM_01_14 " );	// And only after that you can become someone who can rightfully call himself a necromancer!
+	AI_Output(self,other, " DIA_Xardas_NDM_HowKDM_01_14 " );	// And only after that can you become someone who can rightfully call himself a necromancer!
 	B_LogEntry( TOPIC_BECOMEKDM , " In order for Xardas to initiate me as a dark mage, I need to strengthen my spiritual power. " );
 };
 
@@ -3672,21 +3672,21 @@ func int dia_xardas_ndm_mana_condition()
 func void dia_xardas_ndm_mana_info()
 {
 	AI_Output(other,self, " DIA_Xardas_NDM_Mana_01_00 " );	// Am I worthy to become a dark magician?
-	AI_Output(self,other, " DIA_Xardas_NDM_Mana_01_01 " );	// Possibly. Now I will look into your soul and we will know the answer.
+	AI_Output(self,other, " DIA_Xardas_NDM_Mana_01_01 " );	// Possibly. I will look into your soul and we will know the answer.
 
 	if((other.attribute[ATR_MANA_MAX] >= 75) && (ATR_INTELLECT >= 30))
 	{
 		B_GivePlayerXP(300);
-		AI_Output(self,other, " DIA_Xardas_NDM_Mana_01_03 " );	// Hmmm... (looks closely)
+		AI_Output(self,other, " DIA_Xardas_NDM_Mana_01_03 " );	// Hmmm...
 		AI_Output(self,other, " DIA_Xardas_NDM_Mana_01_04 " );	// YES! I feel great spiritual power in you. And your mind is ready for the test of Darkness.
 		AI_Output(self,other, " DIA_Xardas_NDM_Mana_01_07 " );	// Now I can initiate you into the secrets of the magic of Darkness and elevate you to the status of a Necromancer.
-		AI_Output(self,other, " DIA_Xardas_NDM_Mana_01_08 " );	// Congratulations, you are admitted to the circle of the elite!
+		AI_Output(self,other, " DIA_Xardas_NDM_Mana_01_08 " );	// Congratulations, you are hereby admitted to the circle of the elite!
 		B_LogEntry( TOPIC_BECOMEKDM , " Xardas believes I am now worthy of becoming a necromancer. " );
 		XARDAS_AGREEDBEKDM = TRUE;
 	}
 	else
 	{
-		AI_Output(self,other, " DIA_Xardas_NDM_Mana_01_09 " );	// Hmmm... (looks closely)
+		AI_Output(self,other, " DIA_Xardas_NDM_Mana_01_09 " );	// Hmmm...
 		AI_Output(self,other, " DIA_Xardas_NDM_Mana_01_10 " );	// No, you're not worthy yet.
 		AI_Output(self,other, " DIA_Xardas_NDM_Mana_01_11 " );	// So don't waste my time.
 
@@ -3707,7 +3707,7 @@ instance DIA_Xardas_NDM_LastStand(C_Info)
 	condition = DIA_Xardas_NDM_LastStand_condition;
 	information = DIA_Xardas_NDM_LastStand_info;
 	permanent = FALSE;
-	description = " Now will you initiate me into dark mages? " ;
+	description = " Now will you initiate me into the dark mages? " ;
 };
 
 func int DIA_Xardas_NDM_LastStand_condition()
@@ -3720,19 +3720,19 @@ func int DIA_Xardas_NDM_LastStand_condition()
 
 func void DIA_Xardas_NDM_LastStand_info()
 {
-	AI_Output(other,self, " DIA_Xardas_NDM_LastStand_01_01 " );	// Now you will initiate me into dark magicians?
+	AI_Output(other,self, " DIA_Xardas_NDM_LastStand_01_01 " );	// Now you will initiate me into the dark magicians?
 	AI_Output(self,other, " DIA_Xardas_NDM_LastStand_01_02 " );	// Yes... I think you're ready for the rite of passage.
 	AI_Output(self,other, " DIA_Xardas_NDM_LastStand_01_03 " );	// But according to ancient custom, each student must first pass a severe test. And you are no exception.
 	AI_Output(other,self, " DIA_Xardas_NDM_LastStand_01_04 " );	// What should I do?
-	AI_Output(self,other, " DIA_Xardas_NDM_LastStand_01_05 " );	// You must kill the most innocent firebender acolyte.
+	AI_Output(self,other, " DIA_Xardas_NDM_LastStand_01_05 " );	// You must kill an innocent shepherd of Innos.
 	AI_Output(other,self, " DIA_Xardas_NDM_LastStand_01_06 " );	// What?! Is there no other way?
-	AI_Output(self,other, " DIA_Xardas_NDM_LastStand_01_07 " );	// No and cannot be. You yourself must understand whose death the Dark God most desires.
+	AI_Output(self,other, " DIA_Xardas_NDM_LastStand_01_07 " );	// No. You must understand that death is what the Dark God most desires.
 	AI_Output(self,other, " DIA_Xardas_NDM_LastStand_01_08 " );	// Beliar gives his patronage and power only to those who completely give their soul to his service.
 	AI_Output(self,other, " DIA_Xardas_NDM_LastStand_01_09 " );	// Do what I told you, and you will gain the power of the crimson darkness of Beliar!
 	MIS_Xardas_LastStand_Done = LOG_Running;
 	Log_CreateTopic(TOPIC_XARDAS_DEMON,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_XARDAS_DEMON,LOG_Running);
-	B_LogEntry( TOPIC_XARDAS_DEMON , " Xardas will initiate me into the dark mages only after I pass the final test. In order to earn Beliar's favor, I must find and kill the most innocent fire mage acolyte. According to Xardas, there is no other way. " );
+	B_LogEntry( TOPIC_XARDAS_DEMON , " Xardas will initiate me into the dark mages only after I pass the final test. In order to earn Beliar's favor, I must find and kill "a shepherd" of Innos. Perhaps I should venture to the Fire Mage's monastary? " );
 };
 
 
@@ -3759,8 +3759,8 @@ func void DIA_Xardas_NDM_LastStand_Done_info()
 	B_GivePlayerXP(1000);
 	AI_Output(other,self, " DIA_Xardas_NDM_LastStand_Done_01_01 " );	// I killed a fire mage acolyte!
 	AI_Output(self,other, " DIA_Xardas_NDM_LastStand_Done_01_02 " );	// Good. Thus, you proved that you are completely on the side of Beliar.
-	AI_Output(self,other, " DIA_Xardas_NDM_LastStand_Done_01_03 " );	// I'm sure the Dark God himself will be extremely pleased with you!
-	AI_Output(self,other, " DIA_Xardas_NDM_LastStand_Done_01_04 " );	// And now, as I promised, I can accept you into the circle of necromancers and demon casters at any time!
+	AI_Output(self,other, " DIA_Xardas_NDM_LastStand_Done_01_03 " );	// I'm sure the Dark God will be extremely pleased with you!
+	AI_Output(self,other, " DIA_Xardas_NDM_LastStand_Done_01_04 " );	// And now, as I promised, I can accept you into the circle of necromancers and demon summoners at any time!
 	MIS_Xardas_LastStand_Done = LOG_SUCCESS;
 	B_LogEntry( TOPIC_XARDAS_DEMON , " I've passed the last test, and now I can finally become a dark mage. " );
 	Log_SetTopicStatus(TOPIC_XARDAS_DEMON,LOG_SUCCESS);
@@ -3790,8 +3790,8 @@ func void dia_xardas_makemekdm_info()
 	CheckHeroGuild[0] = TRUE;
 	Mdl_ApplyOverlayMds(hero,"Humans_Mage.mds");
 	AI_Output(other,self, " DIA_Xardas_MakeMeKDM_01_00 " );	// Initiate me into dark mages!
-	AI_Output(self,other, " DIA_Xardas_MakeMeKDM_01_01 " );	// (imperiously) Good! You have proven yourself worthy of this honor.
-	AI_Output(self,other, " DIA_Xardas_MakeMeKDM_01_02 " );	// From now on, you belong to the Sacred Circle of dark magicians - necromancers and demon casters.
+	AI_Output(self,other, " DIA_Xardas_MakeMeKDM_01_01 " );	// Good! You have proven yourself worthy of this honor.
+	AI_Output(self,other, " DIA_Xardas_MakeMeKDM_01_02 " );	// From now on, you belong to the Sacred Circle of dark magicians - necromancers and demon summoners.
 	AI_Output(self,other, " DIA_Xardas_MakeMeKDM_01_03 " );	// Here! Accept this robe from me in recognition of your status.
 	CreateInvItems(self,itar_dmt_l,1);
 	B_GiveInvItems(self,other,itar_dmt_l,1);
@@ -3804,8 +3804,8 @@ func void dia_xardas_makemekdm_info()
 	CreateInvItems(self,ITMW_2H_KMR_BLACKSTAFF_01,1);
 	B_GiveInvItems(self,other,ITMW_2H_KMR_BLACKSTAFF_01,1);
 	AI_Output(self,other, " DIA_Xardas_MakeMeKDM_01_05 " );	// Now your fate is inextricably linked with the crimson darkness of Beliar! Remember this.
-	AI_Output(self,other, " DIA_Xardas_MakeMeKDM_01_06 " );	// Draw your strength from her and absorb her wisdom like mother's milk.
-	AI_Output(self,other, " DIA_Xardas_MakeMeKDM_01_07 " );	// And may she keep your way!
+	AI_Output(self,other, " DIA_Xardas_MakeMeKDM_01_06 " );	// Draw your strength from him and absorb his wisdom like mother's milk.
+	AI_Output(self,other, " DIA_Xardas_MakeMeKDM_01_07 " );	// And may he keep your way!
 	AI_StopProcessInfos(self);
 };
 
@@ -3830,34 +3830,34 @@ func int dia_xardas_ndm_aboutdarkmagic_condition()
 
 func void dia_xardas_ndm_aboutdarkmagic_info()
 {
-	AI_Output(other,self, " DIA_Xardas_NDM_AboutDarkMagic_01_00 " );	// Tell me about the magic of the Dark.
+	AI_Output(other,self, " DIA_Xardas_NDM_AboutDarkMagic_01_00 " );	// Tell me about the magic of Shadow.
 	AI_Output(self,other, " DIA_Xardas_NDM_AboutDarkMagic_01_04 " );	// Beliar's magic is one of the most sinister and destructive magics of all that exist in this world!
-	AI_Output(self,other, " DIA_Xardas_NDM_AboutDarkMagic_01_05 " );	// After all, in its power of destruction, no other can be compared with it.
+	AI_Output(self,other, " DIA_Xardas_NDM_AboutDarkMagic_01_05 " );	// After all, it cannot be compared to any other force in the Universe.
 	AI_Output(self,other, " DIA_Xardas_NDM_AboutDarkMagic_01_06 " );	// And its only purpose is to enslave and destroy!
-	AI_Output(self,other, " DIA_Xardas_NDM_AboutDarkMagic_01_10 " );	// But you must understand that only an experienced magician can wield such power.
-	AI_Output(self,other, " DIA_Xardas_NDM_AboutDarkMagic_01_11 " );	// She will most likely just kill the newcomer... Dark magic is insidious, just like Beliar himself.
+	AI_Output(self,other, " DIA_Xardas_NDM_AboutDarkMagic_01_10 " );	// But you must understand that only an experienced sorceror can wield such power.
+	AI_Output(self,other, " DIA_Xardas_NDM_AboutDarkMagic_01_11 " );	// It will most likely just kill an inexperienced caster... Dark magic is insidious, just like Beliar himself.
 	if(other.guild == GIL_KDM)
 	{
 		AI_Output(self,other, " DIA_Xardas_NDM_AboutDarkMagic_01_13 " );	// That's not all.
 		AI_Output(other,self, " DIA_Xardas_NDM_AboutDarkMagic_01_14 " );	// What else?
-		AI_Output(self,other, " DIA_Xardas_NDM_AboutDarkMagic_01_15 " );	// With the advantages that the study of dark magic opens up for you, one cannot but note one more of its features.
-		AI_Output(self,other, " DIA_Xardas_NDM_AboutDarkMagic_01_17 " );	// Only the magic of dark runes will allow you to summon various creatures of Darkness to yourself.
+		AI_Output(self,other, " DIA_Xardas_NDM_AboutDarkMagic_01_15 " );	// With the advantages that the study of dark magic opens up for you, you start to see more of its intricacy.
+		AI_Output(self,other, " DIA_Xardas_NDM_AboutDarkMagic_01_17 " );	// Only the magic of dark runes will allow you to summon various creatures of evil to yourself.
 		AI_Output(self,other, " DIA_Xardas_NDM_AboutDarkMagic_01_18 " );	// But this also has its difficulties.
 		AI_Output(self,other, " DIA_Xardas_NDM_AboutDarkMagic_01_20 " );	// The creatures you have summoned may sometimes simply refuse to obey you.
-		AI_Output(self,other, " DIA_Xardas_NDM_AboutDarkMagic_01_22 " );	// You may be too weak to command them.
+		AI_Output(self,other, " DIA_Xardas_NDM_AboutDarkMagic_01_22 " );	// Or you may be too weak to command them.
 		AI_Output(other,self, " DIA_Xardas_NDM_AboutDarkMagic_01_23 " );	// And then what?
 		AI_Output(self,other, " DIA_Xardas_NDM_AboutDarkMagic_01_24 " );	// If this happens, then most likely they will just try to kill you.
 		AI_Output(self,other, " DIA_Xardas_NDM_AboutDarkMagic_01_28 " );	// Creatures of Darkness are very strong and dangerous. Not to mention demons.
 		AI_Output(self,other, " DIA_Xardas_NDM_AboutDarkMagic_01_33 " );	// Remember one very important thing - the key to success in this business lies in your power.
-		AI_Output(other,self, " DIA_Xardas_NDM_AboutDarkMagic_01_34 " );	// What does this mean?
-		AI_Output(self,other, " DIA_Xardas_NDM_AboutDarkMagic_01_35 " );	// This means that the more experienced you become, the more chances you'll have to bend the creature you've summoned to your will.
-		AI_Output(self,other, " DIA_Xardas_NDM_AboutDarkMagic_01_36 " );	// And, accordingly, the more it will serve you!
+		AI_Output(other,self, " DIA_Xardas_NDM_AboutDarkMagic_01_34 " );	// What does that mean?
+		AI_Output(self,other, " DIA_Xardas_NDM_AboutDarkMagic_01_35 " );	// That means that the more experienced you become, the more chances you'll have to bend the creature you've summoned to your will.
+		AI_Output(self,other, " DIA_Xardas_NDM_AboutDarkMagic_01_36 " );	// And, accordingly, the better it will serve you!
 		XARDASMENTIONABOUTDEMONOLOG = TRUE;
 	}
 	else
 	{
 		AI_Output(other,self, " DIA_Xardas_NDM_AboutDarkMagic_01_38 " );	// Got it. Anything else?
-		AI_Output(self,other, " DIA_Xardas_NDM_AboutDarkMagic_01_39 " );	// No, that's all. The rest you will learn when you yourself become a dark magician.
+		AI_Output(self,other, " DIA_Xardas_NDM_AboutDarkMagic_01_39 " );	// No, that's all. The rest you will learn when you become a dark magician.
 	};
 };
 
