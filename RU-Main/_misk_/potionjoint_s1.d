@@ -1,4 +1,5 @@
 
+
 var int jointmisc2count;
 var int jointmisc3count;
 
@@ -8,14 +9,14 @@ func void potionjoint_s1()
 	her = Hlp_GetNpc(PC_Hero);
 	if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(her))
 	{
-		//print_percent_bar_none(ATR_STAMINA[0],ATR_STAMINA_MAX[0] * 10,"Выносливость",42,97);
+		// print_percent_bar_none(ATR_STAMINA[0],ATR_STAMINA_MAX[0] * 10,"Stamina",42,97);
 
 		if(CinemaMod == TRUE)
 		{
 			Wld_PlayEffect("DIALOGSCOPE_FX",hero,hero,0,0,0,FALSE);
 		};
 
-		self.aivar[AIV_INVINCIBLE] = TRUE;
+		self.aivar[ AIV_INVINCIBLE ] = TRUE ;
 		PLAYER_MOBSI_PRODUCTION = MOBSI_POTIONJOINT;
 		AI_ProcessInfos(her);
 	};
@@ -50,7 +51,7 @@ instance PC_JOINTMISC1(C_Info)
 	condition = pc_jointmisc1_condition;
 	information = pc_jointmisc1_info;
 	permanent = TRUE;
-	description = "Обработать болотник.";
+	description = " Process the swamp. " ;
 };
 
 func int pc_jointmisc1_condition()
@@ -74,8 +75,8 @@ func void pc_jointmisc1_info()
 	}
 	else
 	{
-		//Print(PRINT_ProdItemsMissing);
-		AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
+		// Print(PRINT_ProdItemsMissing);
+		AI_PrintClr(PRINT_ProdItemsMissing, 177 , 58 , 17 );
 		B_Say(self,self,"$MISSINGINGREDIENTS");
 	};
 	b_endproductiondialog();
@@ -87,7 +88,7 @@ instance PC_JOINTMISC2(C_Info)
 	condition = pc_jointmisc2_condition;
 	information = pc_jointmisc2_info;
 	permanent = TRUE;
-	description = "Специальная обработка болотника.";
+	description = " Special processing of the bogweed. " ;
 };
 
 func int pc_jointmisc2_condition()
@@ -104,15 +105,15 @@ func void pc_jointmisc2_info()
 
 	if((KNOW_JOINTRECIPE == TRUE) && (Npc_HasItems(hero,ItPl_SwampHerb) >= 8) && (Npc_HasItems(hero,ItPl_Temp_Herb) >= 1))
 	{
-		Info_AddChoice(pc_jointmisc2,"Изготовить 'Зов Мечты'",pc_jointmisc2_Joint_03);
+		Info_AddChoice(pc_jointmisc2, " Craft 'Dream Call' " ,pc_jointmisc2_Joint_03);
 	};
 	if((KNOW_JOINTRECIPE == TRUE) && (Npc_HasItems(hero,ItPl_SwampHerb) >= 4) && (Npc_HasItems(hero,ItPl_Temp_Herb) >= 1))
 	{
-		Info_AddChoice(pc_jointmisc2,"Изготовить 'Северный Темный'",pc_jointmisc2_Joint_02);
+		Info_AddChoice(pc_jointmisc2, " Craft 'Northern Dark' " ,pc_jointmisc2_Joint_02);
 	};
 	if((Green_Extrem == TRUE) && (Npc_HasItems(hero,ItPl_SwampHerb) >= 2) && (Npc_HasItems(hero,ItPl_Temp_Herb) >= 1))
 	{
-		Info_AddChoice(pc_jointmisc2,"Изготовить 'Зеленого послушника'",pc_jointmisc2_Joint_01);
+		Info_AddChoice(pc_jointmisc2, " Craft 'Green Acolyte' " ,pc_jointmisc2_Joint_01);
 	};
 
 	Info_AddChoice(pc_jointmisc2,DIALOG_BACK,pc_jointmisc2_Back_Info);
@@ -129,22 +130,22 @@ func void pc_jointmisc2_Joint_03()
 	Npc_RemoveInvItems(hero,ItPl_SwampHerb,8);
 	Npc_RemoveInvItems(hero,ItPl_Temp_Herb,1);
 	CreateInvItems(hero,itmi_joint_03,1);
-	//Print("Изготовлен 'Зов Мечты'!");
-	AI_PrintClr("Изготовлен 'Зов Мечты'!",83,152,48);
+	// Print("Dream Call made!");
+	AI_PrintClr( " 'Dream Call' done! " , 83 , 152 , 48 );
 	//B_Say(self,self,"$ITEMREADY");
 	Info_ClearChoices(pc_jointmisc2);
 
 	if((KNOW_JOINTRECIPE == TRUE) && (Npc_HasItems(hero,ItPl_SwampHerb) >= 8) && (Npc_HasItems(hero,ItPl_Temp_Herb) >= 1))
 	{
-		Info_AddChoice(pc_jointmisc2,"Изготовить 'Зов Мечты'",pc_jointmisc2_Joint_03);
+		Info_AddChoice(pc_jointmisc2, " Craft 'Dream Call' " ,pc_jointmisc2_Joint_03);
 	};
 	if((KNOW_JOINTRECIPE == TRUE) && (Npc_HasItems(hero,ItPl_SwampHerb) >= 4) && (Npc_HasItems(hero,ItPl_Temp_Herb) >= 1))
 	{
-		Info_AddChoice(pc_jointmisc2,"Изготовить 'Северный Темный'",pc_jointmisc2_Joint_02);
+		Info_AddChoice(pc_jointmisc2, " Craft 'Northern Dark' " ,pc_jointmisc2_Joint_02);
 	};
 	if((Green_Extrem == TRUE) && (Npc_HasItems(hero,ItPl_SwampHerb) >= 2) && (Npc_HasItems(hero,ItPl_Temp_Herb) >= 1))
 	{
-		Info_AddChoice(pc_jointmisc2,"Изготовить 'Зеленого послушника'",pc_jointmisc2_Joint_01);
+		Info_AddChoice(pc_jointmisc2, " Craft 'Green Acolyte' " ,pc_jointmisc2_Joint_01);
 	};
 
 	Info_AddChoice(pc_jointmisc2,DIALOG_BACK,pc_jointmisc2_Back_Info);
@@ -156,22 +157,22 @@ func void pc_jointmisc2_Joint_02()
 	Npc_RemoveInvItems(hero,ItPl_SwampHerb,4);
 	Npc_RemoveInvItems(hero,ItPl_Temp_Herb,1);
 	CreateInvItems(hero,itmi_joint_02,1);
-	//Print("Изготовлен 'Северный Темный'!");
-	AI_PrintClr("Изготовлен 'Северный Темный'!",83,152,48);
+	// Print("Northern Dark made!");
+	AI_PrintClr( " 'Northern Dark' made! " , 83 , 152 , 48 );
 	//B_Say(self,self,"$ITEMREADY");
 	Info_ClearChoices(pc_jointmisc2);
 
 	if((KNOW_JOINTRECIPE == TRUE) && (Npc_HasItems(hero,ItPl_SwampHerb) >= 8) && (Npc_HasItems(hero,ItPl_Temp_Herb) >= 1))
 	{
-		Info_AddChoice(pc_jointmisc2,"Изготовить 'Зов Мечты'",pc_jointmisc2_Joint_03);
+		Info_AddChoice(pc_jointmisc2, " Craft 'Dream Call' " ,pc_jointmisc2_Joint_03);
 	};
 	if((KNOW_JOINTRECIPE == TRUE) && (Npc_HasItems(hero,ItPl_SwampHerb) >= 4) && (Npc_HasItems(hero,ItPl_Temp_Herb) >= 1))
 	{
-		Info_AddChoice(pc_jointmisc2,"Изготовить 'Северный Темный'",pc_jointmisc2_Joint_02);
+		Info_AddChoice(pc_jointmisc2, " Craft 'Northern Dark' " ,pc_jointmisc2_Joint_02);
 	};
 	if((Green_Extrem == TRUE) && (Npc_HasItems(hero,ItPl_SwampHerb) >= 2) && (Npc_HasItems(hero,ItPl_Temp_Herb) >= 1))
 	{
-		Info_AddChoice(pc_jointmisc2,"Изготовить 'Зеленого послушника'",pc_jointmisc2_Joint_01);
+		Info_AddChoice(pc_jointmisc2, " Craft 'Green Acolyte' " ,pc_jointmisc2_Joint_01);
 	};
 
 	Info_AddChoice(pc_jointmisc2,DIALOG_BACK,pc_jointmisc2_Back_Info);
@@ -183,22 +184,22 @@ func void pc_jointmisc2_Joint_01()
 	Npc_RemoveInvItems(hero,ItPl_SwampHerb,2);
 	Npc_RemoveInvItems(hero,ItPl_Temp_Herb,1);
 	CreateInvItems(hero,ItMi_Addon_Joint_01,1);
-	//Print("Изготовлен 'Зеленый послушник'!");
-	AI_PrintClr("Изготовлен 'Зеленый послушник'!",83,152,48);
+	// Print("The 'Green Acolyte' is made!");
+	AI_PrintClr( " 'Green Acolyte' made! " , 83 , 152 , 48 );
 	//B_Say(self,self,"$ITEMREADY");
 	Info_ClearChoices(pc_jointmisc2);
 
 	if((KNOW_JOINTRECIPE == TRUE) && (Npc_HasItems(hero,ItPl_SwampHerb) >= 8) && (Npc_HasItems(hero,ItPl_Temp_Herb) >= 1))
 	{
-		Info_AddChoice(pc_jointmisc2,"Изготовить 'Зов Мечты'",pc_jointmisc2_Joint_03);
+		Info_AddChoice(pc_jointmisc2, " Craft 'Dream Call' " ,pc_jointmisc2_Joint_03);
 	};
 	if((KNOW_JOINTRECIPE == TRUE) && (Npc_HasItems(hero,ItPl_SwampHerb) >= 4) && (Npc_HasItems(hero,ItPl_Temp_Herb) >= 1))
 	{
-		Info_AddChoice(pc_jointmisc2,"Изготовить 'Северный Темный'",pc_jointmisc2_Joint_02);
+		Info_AddChoice(pc_jointmisc2, " Craft 'Northern Dark' " ,pc_jointmisc2_Joint_02);
 	};
 	if((Green_Extrem == TRUE) && (Npc_HasItems(hero,ItPl_SwampHerb) >= 2) && (Npc_HasItems(hero,ItPl_Temp_Herb) >= 1))
 	{
-		Info_AddChoice(pc_jointmisc2,"Изготовить 'Зеленого послушника'",pc_jointmisc2_Joint_01);
+		Info_AddChoice(pc_jointmisc2, " Craft 'Green Acolyte' " ,pc_jointmisc2_Joint_01);
 	};
 
 	Info_AddChoice(pc_jointmisc2,DIALOG_BACK,pc_jointmisc2_Back_Info);
