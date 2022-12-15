@@ -1,13 +1,14 @@
 
+
 instance ORC_8509_SHAMAN(C_Npc)
 {
-	name[0] = "Шаман орков";
+	name[ 0 ] = " Orc Shaman " ;
 	guild = GIL_ORC;
 	id = 8509;
 	voice = 18;
 	level = 15;
 	flags = ORCTEMPLENPCFLAGS;
-	aivar[AIV_MM_REAL_ID] = ID_ORCSHAMAN;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCSHAMAN ;
 	npcType = NPCTYPE_AMBIENT;
 	attribute[ATR_STRENGTH] = 100;
 	attribute[ATR_DEXTERITY] = 170;
