@@ -1,8 +1,9 @@
-var int rakeplace[50];
+
+var int rakeplace[ 50 ];
 
 const int Greg_FirstSecret = 1;
 const int RAKE_BUDDEL_DIST_MAX = 300;
-const int RAKE_BUDDEL_DIST_MIN = 200;
+const  int  RAKE_BUDDEL_DIST_MIN = 200 ;
 
 func void GraveOpen_s1()
 {
@@ -21,8 +22,8 @@ func void hiddenfind_s1()
 			Wld_PlayEffect("DIALOGSCOPE_FX",hero,hero,0,0,0,FALSE);
 		};
 
-		//print_percent_bar_none(ATR_STAMINA[0],ATR_STAMINA_MAX[0] * 10,"Выносливость",42,97);
-		self.aivar[AIV_INVINCIBLE] = TRUE;
+		// print_percent_bar_none(ATR_STAMINA[0],ATR_STAMINA_MAX[0] * 10,"Stamina",42,97);
+		self.aivar[ AIV_INVINCIBLE ] = TRUE ;
 		PLAYER_MOBSI_PRODUCTION = MOBSI_HIDDENFIND;
 		AI_ProcessInfos(her);
 	};
@@ -67,7 +68,7 @@ instance PC_HIDDENFIND_ADDON_HOUR(C_Info)
 	condition = pc_hiddenfind_addon_hour_condition;
 	information = pc_hiddenfind_addon_hour_info;
 	permanent = TRUE;
-	description = "Копать.";
+	description = " Dig. " ;
 };
 
 
@@ -170,7 +171,7 @@ func void pc_hiddenfind_addon_hour_info()
 			RAKEPLACE[15] = TRUE;
 			TreasureBonus += 1;
 			RankPoints = RankPoints + 1;
-			Wld_InsertItem(ItMw_Schwert4,"ADW_ENTRANCE_RAKEPLACE_04");
+			Wld_InsertItem(ItMw_Schwert4, " ADW_ENTRANCE_RAKEPLACE_04 " );
 			PlaceRespPirate = "ADW_ENTRANCE_2_PIRATECAMP_22";
 			TrapPirUp = TRUE;
 			hiddenfindtreasuresuccess(ItMw_Schwert4);
@@ -242,7 +243,7 @@ func void pc_hiddenfind_addon_hour_info()
 			TreasureBonus += 1;
 			RankPoints = RankPoints + 1;
 			Wld_InsertItem(ItPo_Mana_03,"ADW_BANDITSCAMP_RAKEPLACE_02");
-			PlaceRespPirate = "ADW_SENAT_MONSTER_04";
+			PlaceRespPirate = " ADW_SENAT_MONSTER_04 " ;
 			TrapPirUp = TRUE;
 			hiddenfindtreasuresuccess(ItPo_Mana_03);
 		}
