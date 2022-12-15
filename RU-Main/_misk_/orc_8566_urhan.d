@@ -1,9 +1,10 @@
 
+
 instance ORC_8566_URHAN(C_Npc)
 {
-	name[0] = "Хаг-Тар";
+	name[ 0 ] = " Hag-Tar " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCELITE;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCELITE ;
 	voice = 18;
 	id = 8566;
 	level = 75;
@@ -28,7 +29,7 @@ instance ORC_8566_URHAN(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_MONSTER_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
 	EquipItem(self,itmw_2h_orcsword_04);
 	start_aistate = ZS_MM_AllScheduler;
 	Mdl_SetVisual(self,"Orc.mds");
