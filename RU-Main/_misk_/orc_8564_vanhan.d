@@ -1,9 +1,10 @@
 
+
 instance ORC_8564_VANHAN(C_Npc)
 {
-	name[0] = "Призрак орка-шамана";
+	name[ 0 ] = " Orc Shaman Ghost " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCSHAMAN;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCSHAMAN ;
 	voice = 18;
 	id = 8564;
 	level = 150;
@@ -29,7 +30,7 @@ instance ORC_8564_VANHAN(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
 	EquipItem(self,itmw_orcstaff);
 	CreateInvItems(self,itke_orcshaman_shv,1);
 	aivar[AIV_MagicUser] = MAGIC_ALWAYS_MINE;
