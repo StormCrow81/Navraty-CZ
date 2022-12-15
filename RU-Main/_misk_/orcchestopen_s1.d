@@ -1,4 +1,5 @@
 
+
 func void orcchestopen_s1()
 {
 	var C_Npc her;
@@ -18,6 +19,6 @@ func void orcoldchestopen_s1()
 		Npc_RemoveInvItems(hero,ItKe_OldOrcKey,1);
 		MIS_OldOrcKey = LOG_Success;
 		Log_SetTopicStatus(TOPIC_OldOrcKey,LOG_Success);
-		B_LogEntry(TOPIC_OldOrcKey,"Я нашел сундук, к которому подходит ключ.");
+		B_LogEntry(TOPIC_OldOrcKey, " I found a chest that matches the key. " );
 	};
 };
