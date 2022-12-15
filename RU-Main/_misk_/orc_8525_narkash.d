@@ -1,14 +1,15 @@
 
+
 instance ORC_8525_NARKASH(C_Npc)
 {
-	name[0] = "Нар-Каш";
+	name[ 0 ] = " Sun-Kash " ;
 	guild = GIL_ORC;
 	id = 8525;
 	voice = 18;
 	level = 50;
 	flags = 0;
-	aivar[90] = TRUE;
-	aivar[AIV_MM_REAL_ID] = ID_ORCELITE;
+	aivar[ 90 ] = TRUE ;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCELITE ;
 	npcType = NPCTYPE_AMBIENT;
 	attribute[ATR_STRENGTH] = 250;
 	attribute[ATR_DEXTERITY] = 250;
@@ -31,7 +32,7 @@ instance ORC_8525_NARKASH(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyElite",DEFAULT,DEFAULT,"Orc_HeadWarrior",9,DEFAULT,-1);
 	EquipItem(self,ItMw_2H_OrcSword_02);
