@@ -1,4 +1,5 @@
 
+
 instance ORC_8511_WARRIOR(C_Npc)
 {
 	name[0] = NAME_ORCWARRIOR;
@@ -7,7 +8,7 @@ instance ORC_8511_WARRIOR(C_Npc)
 	voice = 18;
 	level = 10;
 	flags = ORCTEMPLENPCFLAGS;
-	aivar[AIV_MM_REAL_ID] = ID_ORCWARRIOR;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCWARRIOR ;
 	npcType = NPCTYPE_AMBIENT;
 	attribute[ATR_STRENGTH] = 100;
 	attribute[ATR_DEXTERITY] = 150;
@@ -30,7 +31,7 @@ instance ORC_8511_WARRIOR(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
 	Mdl_SetVisual(self,"Orc.mds");
 	Mdl_SetVisualBody(self,"Orc_BodyWaSoldt",0,0,"Orc_HeadWarrior",0,DEFAULT,-1);
 	EquipItem(self,ItMw_2H_OrcAxe_03);
