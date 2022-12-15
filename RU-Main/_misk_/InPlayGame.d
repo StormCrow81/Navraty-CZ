@@ -1,4 +1,5 @@
 
+
 var int playerbone1;
 var int playerbone2;
 var int playerbone3;
@@ -35,18 +36,18 @@ var int npcbone2rethrow;
 var int npcbone3rethrow;
 var int npcbone4rethrow;
 var int npcbone5rethrow;
-var int stavka;
+var int item;
 var int madestavka;
-var int canmadestavka;
+was int canmadestavka;
 var int addstavka;
 var int madeaddstavka;
 
 var string playercombination;
 var string npccombination;
-var string lowstavkatext;
-var string midstavkatext;
-var string highstavkatext;
-var string veryhighstavkatext;
+var string lowsyllabicText;
+var string midlineText;
+var string highStringText;
+var string veryhighstavekatext;
 var int gameresult;
 
 func void countcombination()
@@ -64,32 +65,32 @@ func void countcombination()
 				{
 					if(TWOCOUNT == 2)
 					{
-						PLAYERCOMBINATION = ConcatStrings(PLAYERCOMBINATION,"фул-хаус на '1' и '2'");
+						PLAYERCOMBINATION = ConcatStrings( PLAYERCOMBINATION , " full house of '1' and '2' " );
 						PLAYERCOMB = 24;
 					}
 					else if(THREECOUNT == 2)
 					{
-						PLAYERCOMBINATION = ConcatStrings(PLAYERCOMBINATION,"фул-хаус на '1' и '3'");
+						PLAYERCOMBINATION = ConcatStrings( PLAYERCOMBINATION , " full house of '1' and '3' " );
 						PLAYERCOMB = 21;
 					}
 					else if(FOURCOUNT == 2)
 					{
-						PLAYERCOMBINATION = ConcatStrings(PLAYERCOMBINATION,"фул-хаус на '1' и '4'");
+						PLAYERCOMBINATION = ConcatStrings( PLAYERCOMBINATION , " full house of '1' and '4' " );
 						PLAYERCOMB = 26;
 					}
 					else if(FIVECOUNT == 2)
 					{
-						PLAYERCOMBINATION = ConcatStrings(PLAYERCOMBINATION,"фул-хаус на '1' и '5'");
+						PLAYERCOMBINATION = ConcatStrings( PLAYERCOMBINATION , " full house of '1' and '5' " );
 						PLAYERCOMB = 27;
 					}
 					else if(SIXCOUNT == 2)
 					{
-						PLAYERCOMBINATION = ConcatStrings(PLAYERCOMBINATION,"фул-хаус на '1' и '6'");
+						PLAYERCOMBINATION = ConcatStrings( PLAYERCOMBINATION , " full house of '1' and '6' " );
 						PLAYERCOMB = 28;
 					}
 					else
 					{
-						PLAYERCOMBINATION = ConcatStrings(PLAYERCOMBINATION,"тройка на '1'");
+						PLAYERCOMBINATION = ConcatStrings( PLAYERCOMBINATION , " triple of '1' " );
 						PLAYERCOMB = 16;
 					};
 				}
@@ -97,32 +98,32 @@ func void countcombination()
 				{
 					if(ONECOUNT == 2)
 					{
-						PLAYERCOMBINATION = ConcatStrings(PLAYERCOMBINATION,"фул-хаус на '2' и '1'");
+						PLAYERCOMBINATION = ConcatStrings( PLAYERCOMBINATION , " full house of '2' and '1' " );
 						PLAYERCOMB = 24;
 					}
 					else if(THREECOUNT == 2)
 					{
-						PLAYERCOMBINATION = ConcatStrings(PLAYERCOMBINATION,"фул-хаус на '2' и '3'");
+						PLAYERCOMBINATION = ConcatStrings( PLAYERCOMBINATION , " full house of '2' and '3' " );
 						PLAYERCOMB = 26;
 					}
 					else if(FOURCOUNT == 2)
 					{
-						PLAYERCOMBINATION = ConcatStrings(PLAYERCOMBINATION,"фул-хаус на '2' и '4'");
+						PLAYERCOMBINATION = ConcatStrings( PLAYERCOMBINATION , " full house of '2' and '4' " );
 						PLAYERCOMB = 27;
 					}
 					else if(FIVECOUNT == 2)
 					{
-						PLAYERCOMBINATION = ConcatStrings(PLAYERCOMBINATION,"фул-хаус на '2' и '5'");
+						PLAYERCOMBINATION = ConcatStrings( PLAYERCOMBINATION , " full house of '2' and '5' " );
 						PLAYERCOMB = 28;
 					}
 					else if(SIXCOUNT == 2)
 					{
-						PLAYERCOMBINATION = ConcatStrings(PLAYERCOMBINATION,"фул-хаус на '2' и '6'");
+						PLAYERCOMBINATION = ConcatStrings( PLAYERCOMBINATION , " full house of '2' and '6' " );
 						PLAYERCOMB = 29;
 					}
 					else
 					{
-						PLAYERCOMBINATION = ConcatStrings(PLAYERCOMBINATION,"тройка на '2'");
+						PLAYERCOMBINATION = ConcatStrings( PLAYERCOMBINATION , " triple of '2' " );
 						PLAYERCOMB = 17;
 					};
 				}
@@ -130,32 +131,32 @@ func void countcombination()
 				{
 					if(ONECOUNT == 2)
 					{
-						PLAYERCOMBINATION = ConcatStrings(PLAYERCOMBINATION,"фул-хаус на '3' и '1'");
+						PLAYERCOMBINATION = ConcatStrings( PLAYERCOMBINATION , " full house of '3' and '1' " );
 						PLAYERCOMB = 21;
 					}
 					else if(TWOCOUNT == 2)
 					{
-						PLAYERCOMBINATION = ConcatStrings(PLAYERCOMBINATION,"фул-хаус на '3' и '2'");
+						PLAYERCOMBINATION = ConcatStrings( PLAYERCOMBINATION , " full house of '3' and '2' " );
 						PLAYERCOMB = 26;
 					}
 					else if(FOURCOUNT == 2)
 					{
-						PLAYERCOMBINATION = ConcatStrings(PLAYERCOMBINATION,"фул-хаус на '3' и '4'");
+						PLAYERCOMBINATION = ConcatStrings( PLAYERCOMBINATION , " full house of '3' and '4' " );
 						PLAYERCOMB = 28;
 					}
 					else if(FIVECOUNT == 2)
 					{
-						PLAYERCOMBINATION = ConcatStrings(PLAYERCOMBINATION,"фул-хаус на '3' и '5'");
+						PLAYERCOMBINATION = ConcatStrings( PLAYERCOMBINATION , " full house of '3' and '5' " );
 						PLAYERCOMB = 29;
 					}
 					else if(SIXCOUNT == 2)
 					{
-						PLAYERCOMBINATION = ConcatStrings(PLAYERCOMBINATION,"фул-хаус на '3' и '6'");
+						PLAYERCOMBINATION = ConcatStrings( PLAYERCOMBINATION , " full house of '3' and '6' " );
 						PLAYERCOMB = 30;
 					}
 					else
 					{
-						PLAYERCOMBINATION = ConcatStrings(PLAYERCOMBINATION,"тройка на '3'");
+						PLAYERCOMBINATION = ConcatStrings( PLAYERCOMBINATION , " triple of '3' " );
 						PLAYERCOMB = 18;
 					};
 				}
@@ -163,32 +164,32 @@ func void countcombination()
 				{
 					if(ONECOUNT == 2)
 					{
-						PLAYERCOMBINATION = ConcatStrings(PLAYERCOMBINATION,"фул-хаус на '4' и '1'");
+						PLAYERCOMBINATION = ConcatStrings( PLAYERCOMBINATION , " full house of '4' and '1' " );
 						PLAYERCOMB = 26;
 					}
 					else if(TWOCOUNT == 2)
 					{
-						PLAYERCOMBINATION = ConcatStrings(PLAYERCOMBINATION,"фул-хаус на '4' и '2'");
+						PLAYERCOMBINATION = ConcatStrings( PLAYERCOMBINATION , " full house of '4' and '2' " );
 						PLAYERCOMB = 27;
 					}
 					else if(THREECOUNT == 2)
 					{
-						PLAYERCOMBINATION = ConcatStrings(PLAYERCOMBINATION,"фул-хаус на '4' и '3'");
+						PLAYERCOMBINATION = ConcatStrings( PLAYERCOMBINATION , " full house of '4' and '3' " );
 						PLAYERCOMB = 28;
 					}
 					else if(FIVECOUNT == 2)
 					{
-						PLAYERCOMBINATION = ConcatStrings(PLAYERCOMBINATION,"фул-хаус на '4' и '5'");
+						PLAYERCOMBINATION = ConcatStrings( PLAYERCOMBINATION , " full house of '4' and '5' " );
 						PLAYERCOMB = 30;
 					}
 					else if(SIXCOUNT == 2)
 					{
-						PLAYERCOMBINATION = ConcatStrings(PLAYERCOMBINATION,"фул-хаус на '4' и '6'");
+						PLAYERCOMBINATION = ConcatStrings( PLAYERCOMBINATION , " full house of '4' and '6' " );
 						PLAYERCOMB = 31;
 					}
 					else
 					{
-						PLAYERCOMBINATION = ConcatStrings(PLAYERCOMBINATION,"тройка на '4'");
+						PLAYERCOMBINATION = ConcatStrings( PLAYERCOMBINATION , " triple of '4' " );
 						PLAYERCOMB = 19;
 					};
 				}
@@ -196,63 +197,63 @@ func void countcombination()
 				{
 					if(ONECOUNT == 2)
 					{
-						PLAYERCOMBINATION = ConcatStrings(PLAYERCOMBINATION,"фул-хаус на '5' и '1'");
+						PLAYERCOMBINATION = ConcatStrings( PLAYERCOMBINATION , " full house of '5' and '1' " );
 						PLAYERCOMB = 27;
 					}
 					else if(TWOCOUNT == 2)
 					{
-						PLAYERCOMBINATION = ConcatStrings(PLAYERCOMBINATION,"фул-хаус на '5' и '2'");
+						PLAYERCOMBINATION = ConcatStrings( PLAYERCOMBINATION , " full house of '5' and '2' " );
 						PLAYERCOMB = 28;
 					}
 					else if(THREECOUNT == 2)
 					{
-						PLAYERCOMBINATION = ConcatStrings(PLAYERCOMBINATION,"фул-хаус на '5' и '3'");
+						PLAYERCOMBINATION = ConcatStrings( PLAYERCOMBINATION , " full house of '5' and '3' " );
 						PLAYERCOMB = 29;
 					}
 					else if(FOURCOUNT == 2)
 					{
-						PLAYERCOMBINATION = ConcatStrings(PLAYERCOMBINATION,"фул-хаус на '5' и '4'");
+						PLAYERCOMBINATION = ConcatStrings( PLAYERCOMBINATION , " full house of '5' and '4' " );
 						PLAYERCOMB = 30;
 					}
 					else if(SIXCOUNT == 2)
 					{
-						PLAYERCOMBINATION = ConcatStrings(PLAYERCOMBINATION,"фул-хаус на '5' и '6'");
+						PLAYERCOMBINATION = ConcatStrings( PLAYERCOMBINATION , " full house of '5' and '6' " );
 						PLAYERCOMB = 32;
 					}
 					else
 					{
-						PLAYERCOMBINATION = ConcatStrings(PLAYERCOMBINATION,"тройка на '5'");
+						PLAYERCOMBINATION = ConcatStrings( PLAYERCOMBINATION , " triple of '5' " );
 						PLAYERCOMB = 20;
 					};
 				}
 				else if(ONECOUNT == 2)
 				{
-					PLAYERCOMBINATION = ConcatStrings(PLAYERCOMBINATION,"фул-хаус на '6' и '1'");
+					PLAYERCOMBINATION = ConcatStrings( PLAYERCOMBINATION , " full house of '6' and '1' " );
 					PLAYERCOMB = 28;
 				}
 				else if(TWOCOUNT == 2)
 				{
-					PLAYERCOMBINATION = ConcatStrings(PLAYERCOMBINATION,"фул-хаус на '6' и '2'");
+					PLAYERCOMBINATION = ConcatStrings( PLAYERCOMBINATION , " full house of '6' and '2' " );
 					PLAYERCOMB = 29;
 				}
 				else if(THREECOUNT == 2)
 				{
-					PLAYERCOMBINATION = ConcatStrings(PLAYERCOMBINATION,"фул-хаус на '6' и '3'");
+					PLAYERCOMBINATION = ConcatStrings( PLAYERCOMBINATION , " full house of '6' and '3' " );
 					PLAYERCOMB = 30;
 				}
 				else if(FOURCOUNT == 2)
 				{
-					PLAYERCOMBINATION = ConcatStrings(PLAYERCOMBINATION,"фул-хаус на '6' и '4'");
+					PLAYERCOMBINATION = ConcatStrings( PLAYERCOMBINATION , " full house of '6' and '4' " );
 					PLAYERCOMB = 31;
 				}
 				else if(FIVECOUNT == 2)
 				{
-					PLAYERCOMBINATION = ConcatStrings(PLAYERCOMBINATION,"фул-хаус на '6' и '5'");
+					PLAYERCOMBINATION = ConcatStrings( PLAYERCOMBINATION , " full house of '6' and '5' " );
 					PLAYERCOMB = 32;
 				}
 				else
 				{
-					PLAYERCOMBINATION = ConcatStrings(PLAYERCOMBINATION,"тройка на '6'");
+					PLAYERCOMBINATION = ConcatStrings( PLAYERCOMBINATION , " triple of '6' " );
 					PLAYERCOMB = 21;
 				};
 			};
@@ -265,27 +266,27 @@ func void countcombination()
 				{
 					if(TWOCOUNT == 2)
 					{
-						PLAYERCOMBINATION = ConcatStrings(PLAYERCOMBINATION,"две пары на '1' и '2'");
+						PLAYERCOMBINATION = ConcatStrings( PLAYERCOMBINATION , " two pairs for '1' and '2' " );
 						PLAYERCOMB = 7;
 					}
 					else if(THREECOUNT == 2)
 					{
-						PLAYERCOMBINATION = ConcatStrings(PLAYERCOMBINATION,"две пары на '1' и '3'");
+						PLAYERCOMBINATION = ConcatStrings( PLAYERCOMBINATION , " two pairs for '1' and '3' " );
 						PLAYERCOMB = 8;
 					}
 					else if(FOURCOUNT == 2)
 					{
-						PLAYERCOMBINATION = ConcatStrings(PLAYERCOMBINATION,"две пары на '1' и '4'");
+						PLAYERCOMBINATION = ConcatStrings( PLAYERCOMBINATION , " two pairs for '1' and '4' " );
 						PLAYERCOMB = 9;
 					}
 					else if(FIVECOUNT == 2)
 					{
-						PLAYERCOMBINATION = ConcatStrings(PLAYERCOMBINATION,"две пары на '1' и '5'");
+						PLAYERCOMBINATION = ConcatStrings( PLAYERCOMBINATION , " two pairs for '1' and '5' " );
 						PLAYERCOMB = 10;
 					}
 					else if(SIXCOUNT == 2)
 					{
-						PLAYERCOMBINATION = ConcatStrings(PLAYERCOMBINATION,"две пары на '1' и '6'");
+						PLAYERCOMBINATION = ConcatStrings( PLAYERCOMBINATION , " two pairs for '1' and '6' " );
 						PLAYERCOMB = 11;
 					}
 					else
@@ -298,22 +299,22 @@ func void countcombination()
 				{
 					if(THREECOUNT == 2)
 					{
-						PLAYERCOMBINATION = ConcatStrings(PLAYERCOMBINATION,"две пары на '2' и '3'");
+						PLAYERCOMBINATION = ConcatStrings( PLAYERCOMBINATION , " two pairs for '2' and '3' " );
 						PLAYERCOMB = 9;
 					}
 					else if(FOURCOUNT == 2)
 					{
-						PLAYERCOMBINATION = ConcatStrings(PLAYERCOMBINATION,"две пары на '2' и '4'");
+						PLAYERCOMBINATION = ConcatStrings( PLAYERCOMBINATION , " two pairs for '2' and '4' " );
 						PLAYERCOMB = 10;
 					}
 					else if(FIVECOUNT == 2)
 					{
-						PLAYERCOMBINATION = ConcatStrings(PLAYERCOMBINATION,"две пары на '2' и '5'");
+						PLAYERCOMBINATION = ConcatStrings( PLAYERCOMBINATION , " two pairs for '2' and '5' " );
 						PLAYERCOMB = 11;
 					}
 					else if(SIXCOUNT == 2)
 					{
-						PLAYERCOMBINATION = ConcatStrings(PLAYERCOMBINATION,"две пары на '2' и '6'");
+						PLAYERCOMBINATION = ConcatStrings( PLAYERCOMBINATION , " two pairs for '2' and '6' " );
 						PLAYERCOMB = 12;
 					}
 					else
@@ -326,17 +327,17 @@ func void countcombination()
 				{
 					if(FOURCOUNT == 2)
 					{
-						PLAYERCOMBINATION = ConcatStrings(PLAYERCOMBINATION,"две пары на '3' и '4'");
+						PLAYERCOMBINATION = ConcatStrings( PLAYERCOMBINATION , " two pairs for '3' and '4' " );
 						PLAYERCOMB = 11;
 					}
 					else if(FIVECOUNT == 2)
 					{
-						PLAYERCOMBINATION = ConcatStrings(PLAYERCOMBINATION,"две пары на '3' и '5'");
+						PLAYERCOMBINATION = ConcatStrings( PLAYERCOMBINATION , " two pairs for '3' and '5' " );
 						PLAYERCOMB = 12;
 					}
 					else if(SIXCOUNT == 2)
 					{
-						PLAYERCOMBINATION = ConcatStrings(PLAYERCOMBINATION,"две пары на '3' и '6'");
+						PLAYERCOMBINATION = ConcatStrings( PLAYERCOMBINATION , " two pairs for '3' and '6' " );
 						PLAYERCOMB = 13;
 					}
 					else
@@ -349,12 +350,12 @@ func void countcombination()
 				{
 					if(FIVECOUNT == 2)
 					{
-						PLAYERCOMBINATION = ConcatStrings(PLAYERCOMBINATION,"две пары на '4' и '5'");
+						PLAYERCOMBINATION = ConcatStrings( PLAYERCOMBINATION , " two pairs for '4' and '5' " );
 						PLAYERCOMB = 13;
 					}
 					else if(SIXCOUNT == 2)
 					{
-						PLAYERCOMBINATION = ConcatStrings(PLAYERCOMBINATION,"две пары на '4' и '6'");
+						PLAYERCOMBINATION = ConcatStrings( PLAYERCOMBINATION , " two pairs for '4' and '6' " );
 						PLAYERCOMB = 14;
 					}
 					else
@@ -367,7 +368,7 @@ func void countcombination()
 				{
 					if(SIXCOUNT == 2)
 					{
-						PLAYERCOMBINATION = ConcatStrings(PLAYERCOMBINATION,"две пары на '5' и '6'");
+						PLAYERCOMBINATION = ConcatStrings( PLAYERCOMBINATION , " two pairs for '5' and '6' " );
 						PLAYERCOMB = 15;
 					}
 					else
@@ -387,7 +388,7 @@ func void countcombination()
 		{
 			if((ONECOUNT == 1) && (TWOCOUNT == 1) && (THREECOUNT == 1) && (FOURCOUNT == 1) && (FIVECOUNT == 1))
 			{
-				PLAYERCOMBINATION = ConcatStrings(PLAYERCOMBINATION,"младший стрит");
+				PLAYERCOMBINATION = ConcatStrings( PLAYERCOMBINATION , " low street " );
 				PLAYERCOMB = 22;
 			};
 		};
@@ -395,7 +396,7 @@ func void countcombination()
 		{
 			if((TWOCOUNT == 1) && (THREECOUNT == 1) && (FOURCOUNT == 1) && (FIVECOUNT == 1) && (SIXCOUNT == 1))
 			{
-				PLAYERCOMBINATION = ConcatStrings(PLAYERCOMBINATION,"старший стрит");
+				PLAYERCOMBINATION = ConcatStrings( PLAYERCOMBINATION , " high street " );
 				PLAYERCOMB = 23;
 			};
 		};
@@ -483,7 +484,7 @@ func void countcombination()
 	else
 	{
 		NPCCOMB = 0;
-		NPCCOMBINATION = "У противника: ";
+		NPCCOMBINATION = " Enemy: " ;
 		if(NPCCOMB == 0)
 		{
 			if((NPCONECOUNT == 3) || (NPCTWOCOUNT == 3) || (NPCTHREECOUNT == 3) || (NPCFOURCOUNT == 3) || (NPCFIVECOUNT == 3) || (NPCSIXCOUNT == 3))
@@ -492,32 +493,32 @@ func void countcombination()
 				{
 					if(NPCTWOCOUNT == 2)
 					{
-						NPCCOMBINATION = ConcatStrings(NPCCOMBINATION,"фул-хаус на '1' и '2'");
+						NPCCOMBINATION = ConcatStrings( NPCCOMBINATION , " full house on '1' and '2' " );
 						NPCCOMB = 24;
 					}
 					else if(NPCTHREECOUNT == 2)
 					{
-						NPCCOMBINATION = ConcatStrings(NPCCOMBINATION,"фул-хаус на '1' и '3'");
+						NPCCOMBINATION = ConcatStrings( NPCCOMBINATION , " full house on '1' and '3' " );
 						NPCCOMB = 21;
 					}
 					else if(NPCFOURCOUNT == 2)
 					{
-						NPCCOMBINATION = ConcatStrings(NPCCOMBINATION,"фул-хаус на '1' и '4'");
+						NPCCOMBINATION = ConcatStrings( NPCCOMBINATION , " full house on '1' and '4' " );
 						NPCCOMB = 26;
 					}
 					else if(NPCFIVECOUNT == 2)
 					{
-						NPCCOMBINATION = ConcatStrings(NPCCOMBINATION,"фул-хаус на '1' и '5'");
+						NPCCOMBINATION = ConcatStrings( NPCCOMBINATION , " full house on '1' and '5' " );
 						NPCCOMB = 27;
 					}
 					else if(NPCSIXCOUNT == 2)
 					{
-						NPCCOMBINATION = ConcatStrings(NPCCOMBINATION,"фул-хаус на '1' и '6'");
+						NPCCOMBINATION = ConcatStrings( NPCCOMBINATION , " full house on '1' and '6' " );
 						NPCCOMB = 28;
 					}
 					else
 					{
-						NPCCOMBINATION = ConcatStrings(NPCCOMBINATION,"тройка на '1'");
+						NPCCOMBINATION = ConcatStrings( NPCCOMBINATION , " triple of '1' " );
 						NPCCOMB = 16;
 					};
 				}
@@ -525,32 +526,32 @@ func void countcombination()
 				{
 					if(NPCONECOUNT == 2)
 					{
-						NPCCOMBINATION = ConcatStrings(NPCCOMBINATION,"фул-хаус на '2' и '1'");
+						NPCCOMBINATION = ConcatStrings( NPCCOMBINATION , " full house on '2' and '1' " );
 						NPCCOMB = 24;
 					}
 					else if(NPCTHREECOUNT == 2)
 					{
-						NPCCOMBINATION = ConcatStrings(NPCCOMBINATION,"фул-хаус на '2' и '3'");
+						NPCCOMBINATION = ConcatStrings( NPCCOMBINATION , " full house on '2' and '3' " );
 						NPCCOMB = 26;
 					}
 					else if(NPCFOURCOUNT == 2)
 					{
-						NPCCOMBINATION = ConcatStrings(NPCCOMBINATION,"фул-хаус на '2' и '4'");
+						NPCCOMBINATION = ConcatStrings( NPCCOMBINATION , " full house on '2' and '4' " );
 						NPCCOMB = 27;
 					}
 					else if(NPCFIVECOUNT == 2)
 					{
-						NPCCOMBINATION = ConcatStrings(NPCCOMBINATION,"фул-хаус на '2' и '5'");
+						NPCCOMBINATION = ConcatStrings( NPCCOMBINATION , " full house on '2' and '5' " );
 						NPCCOMB = 28;
 					}
 					else if(NPCSIXCOUNT == 2)
 					{
-						NPCCOMBINATION = ConcatStrings(NPCCOMBINATION,"фул-хаус на '2' и '6'");
+						NPCCOMBINATION = ConcatStrings( NPCCOMBINATION , " full house on '2' and '6' " );
 						NPCCOMB = 29;
 					}
 					else
 					{
-						NPCCOMBINATION = ConcatStrings(NPCCOMBINATION,"тройка на '2'");
+						NPCCOMBINATION = ConcatStrings( NPCCOMBINATION , " triple of '2' " );
 						NPCCOMB = 17;
 					};
 				}
@@ -558,32 +559,32 @@ func void countcombination()
 				{
 					if(NPCONECOUNT == 2)
 					{
-						NPCCOMBINATION = ConcatStrings(NPCCOMBINATION,"фул-хаус на '3' и '1'");
+						NPCCOMBINATION = ConcatStrings( NPCCOMBINATION , " full house on '3' and '1' " );
 						NPCCOMB = 21;
 					}
 					else if(NPCTWOCOUNT == 2)
 					{
-						NPCCOMBINATION = ConcatStrings(NPCCOMBINATION,"фул-хаус на '3' и '2'");
+						NPCCOMBINATION = ConcatStrings( NPCCOMBINATION , " full house on '3' and '2' " );
 						NPCCOMB = 26;
 					}
 					else if(NPCFOURCOUNT == 2)
 					{
-						NPCCOMBINATION = ConcatStrings(NPCCOMBINATION,"фул-хаус на '3' и '4'");
+						NPCCOMBINATION = ConcatStrings( NPCCOMBINATION , " full house on '3' and '4' " );
 						NPCCOMB = 28;
 					}
 					else if(NPCFIVECOUNT == 2)
 					{
-						NPCCOMBINATION = ConcatStrings(NPCCOMBINATION,"фул-хаус на '3' и '5'");
+						NPCCOMBINATION = ConcatStrings( NPCCOMBINATION , " full house on '3' and '5' " );
 						NPCCOMB = 29;
 					}
 					else if(NPCSIXCOUNT == 2)
 					{
-						NPCCOMBINATION = ConcatStrings(NPCCOMBINATION,"фул-хаус на '3' и '6'");
+						NPCCOMBINATION = ConcatStrings( NPCCOMBINATION , " full house on '3' and '6' " );
 						NPCCOMB = 30;
 					}
 					else
 					{
-						NPCCOMBINATION = ConcatStrings(NPCCOMBINATION,"тройка на '3'");
+						NPCCOMBINATION = ConcatStrings( NPCCOMBINATION , " triple of '3' " );
 						NPCCOMB = 18;
 					};
 				}
@@ -591,32 +592,32 @@ func void countcombination()
 				{
 					if(NPCONECOUNT == 2)
 					{
-						NPCCOMBINATION = ConcatStrings(NPCCOMBINATION,"фул-хаус на '4' и '1'");
+						NPCCOMBINATION = ConcatStrings( NPCCOMBINATION , " full house on '4' and '1' " );
 						NPCCOMB = 26;
 					}
 					else if(NPCTWOCOUNT == 2)
 					{
-						NPCCOMBINATION = ConcatStrings(NPCCOMBINATION,"фул-хаус на '4' и '2'");
+						NPCCOMBINATION = ConcatStrings( NPCCOMBINATION , " full house on '4' and '2' " );
 						NPCCOMB = 27;
 					}
 					else if(NPCTHREECOUNT == 2)
 					{
-						NPCCOMBINATION = ConcatStrings(NPCCOMBINATION,"фул-хаус на '4' и '3'");
+						NPCCOMBINATION = ConcatStrings( NPCCOMBINATION , " full house on '4' and '3' " );
 						NPCCOMB = 28;
 					}
 					else if(NPCFIVECOUNT == 2)
 					{
-						NPCCOMBINATION = ConcatStrings(NPCCOMBINATION,"фул-хаус на '4' и '5'");
+						NPCCOMBINATION = ConcatStrings( NPCCOMBINATION , " full house on '4' and '5' " );
 						NPCCOMB = 30;
 					}
 					else if(NPCSIXCOUNT == 2)
 					{
-						NPCCOMBINATION = ConcatStrings(NPCCOMBINATION,"фул-хаус на '4' и '6'");
+						NPCCOMBINATION = ConcatStrings( NPCCOMBINATION , " full house on '4' and '6' " );
 						NPCCOMB = 31;
 					}
 					else
 					{
-						NPCCOMBINATION = ConcatStrings(NPCCOMBINATION,"тройка на '4'");
+						NPCCOMBINATION = ConcatStrings( NPCCOMBINATION , " triple of '4' " );
 						NPCCOMB = 19;
 					};
 				}
@@ -624,63 +625,63 @@ func void countcombination()
 				{
 					if(NPCONECOUNT == 2)
 					{
-						NPCCOMBINATION = ConcatStrings(NPCCOMBINATION,"фул-хаус на '5' и '1'");
+						NPCCOMBINATION = ConcatStrings( NPCCOMBINATION , " full house on '5' and '1' " );
 						NPCCOMB = 27;
 					}
 					else if(NPCTWOCOUNT == 2)
 					{
-						NPCCOMBINATION = ConcatStrings(NPCCOMBINATION,"фул-хаус на '5' и '2'");
+						NPCCOMBINATION = ConcatStrings( NPCCOMBINATION , " full house on '5' and '2' " );
 						NPCCOMB = 28;
 					}
 					else if(NPCTHREECOUNT == 2)
 					{
-						NPCCOMBINATION = ConcatStrings(NPCCOMBINATION,"фул-хаус на '5' и '3'");
+						NPCCOMBINATION = ConcatStrings( NPCCOMBINATION , " full house on '5' and '3' " );
 						NPCCOMB = 29;
 					}
 					else if(NPCFOURCOUNT == 2)
 					{
-						NPCCOMBINATION = ConcatStrings(NPCCOMBINATION,"фул-хаус на '5' и '4'");
+						NPCCOMBINATION = ConcatStrings( NPCCOMBINATION , " full house on '5' and '4' " );
 						NPCCOMB = 30;
 					}
 					else if(NPCSIXCOUNT == 2)
 					{
-						NPCCOMBINATION = ConcatStrings(NPCCOMBINATION,"фул-хаус на '5' и '6'");
+						NPCCOMBINATION = ConcatStrings( NPCCOMBINATION , " full house on '5' and '6' " );
 						NPCCOMB = 32;
 					}
 					else
 					{
-						NPCCOMBINATION = ConcatStrings(NPCCOMBINATION,"тройка на '5'");
+						NPCCOMBINATION = ConcatStrings( NPCCOMBINATION , " triple of '5' " );
 						NPCCOMB = 20;
 					};
 				}
 				else if(NPCONECOUNT == 2)
 				{
-					NPCCOMBINATION = ConcatStrings(NPCCOMBINATION,"фул-хаус на '6' и '1'");
+					NPCCOMBINATION = ConcatStrings( NPCCOMBINATION , " full house on '6' and '1' " );
 					NPCCOMB = 28;
 				}
 				else if(NPCTWOCOUNT == 2)
 				{
-					NPCCOMBINATION = ConcatStrings(NPCCOMBINATION,"фул-хаус на '6' и '2'");
+					NPCCOMBINATION = ConcatStrings( NPCCOMBINATION , " full house on '6' and '2' " );
 					NPCCOMB = 29;
 				}
 				else if(NPCTHREECOUNT == 2)
 				{
-					NPCCOMBINATION = ConcatStrings(NPCCOMBINATION,"фул-хаус на '6' и '3'");
+					NPCCOMBINATION = ConcatStrings( NPCCOMBINATION , " full house on '6' and '3' " );
 					NPCCOMB = 30;
 				}
 				else if(NPCFOURCOUNT == 2)
 				{
-					NPCCOMBINATION = ConcatStrings(NPCCOMBINATION,"фул-хаус на '6' и '4'");
+					NPCCOMBINATION = ConcatStrings( NPCCOMBINATION , " full house on '6' and '4' " );
 					NPCCOMB = 31;
 				}
 				else if(NPCFIVECOUNT == 2)
 				{
-					NPCCOMBINATION = ConcatStrings(NPCCOMBINATION,"фул-хаус на '6' и '5'");
+					NPCCOMBINATION = ConcatStrings( NPCCOMBINATION , " full house on '6' and '5' " );
 					NPCCOMB = 32;
 				}
 				else
 				{
-					NPCCOMBINATION = ConcatStrings(NPCCOMBINATION,"тройка на '6'");
+					NPCCOMBINATION = ConcatStrings( NPCCOMBINATION , " triple of '6' " );
 					NPCCOMB = 21;
 				};
 			};
@@ -693,27 +694,27 @@ func void countcombination()
 				{
 					if(NPCTWOCOUNT == 2)
 					{
-						NPCCOMBINATION = ConcatStrings(NPCCOMBINATION,"две пары на '1' и '2'");
+						NPCCOMBINATION = ConcatStrings( NPCCOMBINATION , " two pairs for '1' and '2' " );
 						NPCCOMB = 7;
 					}
 					else if(NPCTHREECOUNT == 2)
 					{
-						NPCCOMBINATION = ConcatStrings(NPCCOMBINATION,"две пары на '1' и '3'");
+						NPCCOMBINATION = ConcatStrings( NPCCOMBINATION , " two pairs per '1' and '3' " );
 						NPCCOMB = 8;
 					}
 					else if(NPCFOURCOUNT == 2)
 					{
-						NPCCOMBINATION = ConcatStrings(NPCCOMBINATION,"две пары на '1' и '4'");
+						NPCCOMBINATION = ConcatStrings( NPCCOMBINATION , " two pairs per '1' and '4' " );
 						NPCCOMB = 9;
 					}
 					else if(NPCFIVECOUNT == 2)
 					{
-						NPCCOMBINATION = ConcatStrings(NPCCOMBINATION,"две пары на '1' и '5'");
+						NPCCOMBINATION = ConcatStrings( NPCCOMBINATION , " two pairs per '1' and '5' " );
 						NPCCOMB = 10;
 					}
 					else if(NPCSIXCOUNT == 2)
 					{
-						NPCCOMBINATION = ConcatStrings(NPCCOMBINATION,"две пары на '1' и '6'");
+						NPCCOMBINATION = ConcatStrings( NPCCOMBINATION , " two pairs per '1' and '6' " );
 						NPCCOMB = 11;
 					}
 					else
@@ -726,22 +727,22 @@ func void countcombination()
 				{
 					if(NPCTHREECOUNT == 2)
 					{
-						NPCCOMBINATION = ConcatStrings(NPCCOMBINATION,"две пары на '2' и '3'");
+						NPCCOMBINATION = ConcatStrings( NPCCOMBINATION , " two pairs per '2' and '3' " );
 						NPCCOMB = 9;
 					}
 					else if(NPCFOURCOUNT == 2)
 					{
-						NPCCOMBINATION = ConcatStrings(NPCCOMBINATION,"две пары на '2' и '4'");
+						NPCCOMBINATION = ConcatStrings( NPCCOMBINATION , " two pairs per '2' and '4' " );
 						NPCCOMB = 10;
 					}
 					else if(NPCFIVECOUNT == 2)
 					{
-						NPCCOMBINATION = ConcatStrings(NPCCOMBINATION,"две пары на '2' и '5'");
+						NPCCOMBINATION = ConcatStrings( NPCCOMBINATION , " two pairs for '2' and '5' " );
 						NPCCOMB = 11;
 					}
 					else if(NPCSIXCOUNT == 2)
 					{
-						NPCCOMBINATION = ConcatStrings(NPCCOMBINATION,"две пары на '2' и '6'");
+						NPCCOMBINATION = ConcatStrings( NPCCOMBINATION , " two pairs per '2' and '6' " );
 						NPCCOMB = 12;
 					}
 					else
@@ -754,17 +755,17 @@ func void countcombination()
 				{
 					if(NPCFOURCOUNT == 2)
 					{
-						NPCCOMBINATION = ConcatStrings(NPCCOMBINATION,"две пары на '3' и '4'");
+						NPCCOMBINATION = ConcatStrings( NPCCOMBINATION , " two pairs per '3' and '4' " );
 						NPCCOMB = 11;
 					}
 					else if(NPCFIVECOUNT == 2)
 					{
-						NPCCOMBINATION = ConcatStrings(NPCCOMBINATION,"две пары на '3' и '5'");
+						NPCCOMBINATION = ConcatStrings( NPCCOMBINATION , " two pairs per '3' and '5' " );
 						NPCCOMB = 12;
 					}
 					else if(NPCSIXCOUNT == 2)
 					{
-						NPCCOMBINATION = ConcatStrings(NPCCOMBINATION,"две пары на '3' и '6'");
+						NPCCOMBINATION = ConcatStrings( NPCCOMBINATION , " two pairs for '3' and '6' " );
 						NPCCOMB = 13;
 					}
 					else
@@ -777,12 +778,12 @@ func void countcombination()
 				{
 					if(NPCFIVECOUNT == 2)
 					{
-						NPCCOMBINATION = ConcatStrings(NPCCOMBINATION,"две пары на '4' и '5'");
+						NPCCOMBINATION = ConcatStrings( NPCCOMBINATION , " two pairs per '4' and '5' " );
 						NPCCOMB = 13;
 					}
 					else if(NPCSIXCOUNT == 2)
 					{
-						NPCCOMBINATION = ConcatStrings(NPCCOMBINATION,"две пары на '4' и '6'");
+						NPCCOMBINATION = ConcatStrings( NPCCOMBINATION , " two pairs for '4' and '6' " );
 						NPCCOMB = 14;
 					}
 					else
@@ -795,7 +796,7 @@ func void countcombination()
 				{
 					if(NPCSIXCOUNT == 2)
 					{
-						NPCCOMBINATION = ConcatStrings(NPCCOMBINATION,"две пары на '5' и '6'");
+						NPCCOMBINATION = ConcatStrings( NPCCOMBINATION , " two pairs per '5' and '6' " );
 						NPCCOMB = 15;
 					}
 					else
@@ -815,7 +816,7 @@ func void countcombination()
 		{
 			if((NPCONECOUNT == 1) && (NPCTWOCOUNT == 1) && (NPCTHREECOUNT == 1) && (NPCFOURCOUNT == 1) && (NPCFIVECOUNT == 1))
 			{
-				NPCCOMBINATION = ConcatStrings(NPCCOMBINATION,"младший стрит");
+				NPCCOMBINATION = ConcatStrings( NPCCOMBINATION , " low street " );
 				NPCCOMB = 22;
 			};
 		};
@@ -823,7 +824,7 @@ func void countcombination()
 		{
 			if((NPCTWOCOUNT == 1) && (NPCTHREECOUNT == 1) && (NPCFOURCOUNT == 1) && (NPCFIVECOUNT == 1) && (NPCSIXCOUNT == 1))
 			{
-				NPCCOMBINATION = ConcatStrings(NPCCOMBINATION,"старший стрит");
+				NPCCOMBINATION = ConcatStrings( NPCCOMBINATION , " high street " );
 				NPCCOMB = 23;
 			};
 		};
@@ -1216,11 +1217,11 @@ func void npcrethrow()
 					{
 						NPCBONE3RETHROW = TRUE;
 					};
-					if((NPCBONE4 != 1) && (NPCBONE4 != 2))
+					if (( NPCBONE4  !=  1 ) && ( NPCBONE4  !=  2 ))
 					{
 						NPCBONE4RETHROW = TRUE;
 					};
-					if((NPCBONE5 != 1) && (NPCBONE5 != 2))
+					if (( NPCBONE5  !=  1 ) && ( NPCBONE5  !=  2 ))
 					{
 						NPCBONE5RETHROW = TRUE;
 					};
@@ -1242,11 +1243,11 @@ func void npcrethrow()
 					{
 						NPCBONE3RETHROW = TRUE;
 					};
-					if((NPCBONE4 != 1) && (NPCBONE4 != 3))
+					if (( NPCBONE4  !=  1 ) && ( NPCBONE4  !=  3 ))
 					{
 						NPCBONE4RETHROW = TRUE;
 					};
-					if((NPCBONE5 != 1) && (NPCBONE5 != 3))
+					if (( NPCBONE5  !=  1 ) && ( NPCBONE5  !=  3 ))
 					{
 						NPCBONE5RETHROW = TRUE;
 					};
@@ -1268,11 +1269,11 @@ func void npcrethrow()
 					{
 						NPCBONE3RETHROW = TRUE;
 					};
-					if((NPCBONE4 != 1) && (NPCBONE4 != 4))
+					if (( NPCBONE4  !=  1 ) && ( NPCBONE4  !=  4 ))
 					{
 						NPCBONE4RETHROW = TRUE;
 					};
-					if((NPCBONE5 != 1) && (NPCBONE5 != 4))
+					if (( NPCBONE5  !=  1 ) && ( NPCBONE5  !=  4 ))
 					{
 						NPCBONE5RETHROW = TRUE;
 					};
@@ -1291,11 +1292,11 @@ func void npcrethrow()
 					{
 						NPCBONE3RETHROW = TRUE;
 					};
-					if((NPCBONE4 != 2) && (NPCBONE4 != 3))
+					if (( NPCBONE4  !=  2 ) && ( NPCBONE4  !=  3 ))
 					{
 						NPCBONE4RETHROW = TRUE;
 					};
-					if((NPCBONE5 != 2) && (NPCBONE5 != 3))
+					if (( NPCBONE5  !=  2 ) && ( NPCBONE5  !=  3 ))
 					{
 						NPCBONE5RETHROW = TRUE;
 					};
@@ -1317,11 +1318,11 @@ func void npcrethrow()
 					{
 						NPCBONE3RETHROW = TRUE;
 					};
-					if((NPCBONE4 != 1) && (NPCBONE4 != 5))
+					if (( NPCBONE4  !=  1 ) && ( NPCBONE4  !=  5 ))
 					{
 						NPCBONE4RETHROW = TRUE;
 					};
-					if((NPCBONE5 != 1) && (NPCBONE5 != 5))
+					if (( NPCBONE5  !=  1 ) && ( NPCBONE5  !=  5 ))
 					{
 						NPCBONE5RETHROW = TRUE;
 					};
@@ -1340,11 +1341,11 @@ func void npcrethrow()
 					{
 						NPCBONE3RETHROW = TRUE;
 					};
-					if((NPCBONE4 != 2) && (NPCBONE4 != 4))
+					if (( NPCBONE4  !=  2 ) && ( NPCBONE4  !=  4 ))
 					{
 						NPCBONE4RETHROW = TRUE;
 					};
-					if((NPCBONE5 != 2) && (NPCBONE5 != 4))
+					if (( NPCBONE5  !=  2 ) && ( NPCBONE5  !=  4 ))
 					{
 						NPCBONE5RETHROW = TRUE;
 					};
@@ -1366,11 +1367,11 @@ func void npcrethrow()
 					{
 						NPCBONE3RETHROW = TRUE;
 					};
-					if((NPCBONE4 != 1) && (NPCBONE4 != 6))
+					if (( NPCBONE4  !=  1 ) && ( NPCBONE4  !=  6 ))
 					{
 						NPCBONE4RETHROW = TRUE;
 					};
-					if((NPCBONE5 != 1) && (NPCBONE5 != 6))
+					if (( NPCBONE5  !=  1 ) && ( NPCBONE5  !=  6 ))
 					{
 						NPCBONE5RETHROW = TRUE;
 					};
@@ -1389,11 +1390,11 @@ func void npcrethrow()
 					{
 						NPCBONE3RETHROW = TRUE;
 					};
-					if((NPCBONE4 != 2) && (NPCBONE4 != 5))
+					if (( NPCBONE4  !=  2 ) && ( NPCBONE4  !=  5 ))
 					{
 						NPCBONE4RETHROW = TRUE;
 					};
-					if((NPCBONE5 != 2) && (NPCBONE5 != 5))
+					if (( NPCBONE5  !=  2 ) && ( NPCBONE5  !=  5 ))
 					{
 						NPCBONE5RETHROW = TRUE;
 					};
@@ -1412,11 +1413,11 @@ func void npcrethrow()
 					{
 						NPCBONE3RETHROW = TRUE;
 					};
-					if((NPCBONE4 != 3) && (NPCBONE4 != 4))
+					if (( NPCBONE4  !=  3 ) && ( NPCBONE4  !=  4 ))
 					{
 						NPCBONE4RETHROW = TRUE;
 					};
-					if((NPCBONE5 != 3) && (NPCBONE5 != 4))
+					if (( NPCBONE5  !=  3 ) && ( NPCBONE5  !=  4 ))
 					{
 						NPCBONE5RETHROW = TRUE;
 					};
@@ -1438,11 +1439,11 @@ func void npcrethrow()
 					{
 						NPCBONE3RETHROW = TRUE;
 					};
-					if((NPCBONE4 != 2) && (NPCBONE4 != 6))
+					if (( NPCBONE4  !=  2 ) && ( NPCBONE4  !=  6 ))
 					{
 						NPCBONE4RETHROW = TRUE;
 					};
-					if((NPCBONE5 != 2) && (NPCBONE5 != 6))
+					if (( NPCBONE5  !=  2 ) && ( NPCBONE5  !=  6 ))
 					{
 						NPCBONE5RETHROW = TRUE;
 					};
@@ -1461,11 +1462,11 @@ func void npcrethrow()
 					{
 						NPCBONE3RETHROW = TRUE;
 					};
-					if((NPCBONE4 != 3) && (NPCBONE4 != 5))
+					if (( NPCBONE4  !=  3 ) && ( NPCBONE4  !=  5 ))
 					{
 						NPCBONE4RETHROW = TRUE;
 					};
-					if((NPCBONE5 != 3) && (NPCBONE5 != 5))
+					if (( NPCBONE5  !=  3 ) && ( NPCBONE5  !=  5 ))
 					{
 						NPCBONE5RETHROW = TRUE;
 					};
@@ -1487,11 +1488,11 @@ func void npcrethrow()
 					{
 						NPCBONE3RETHROW = TRUE;
 					};
-					if((NPCBONE4 != 4) && (NPCBONE4 != 5))
+					if (( NPCBONE4  !=  4 ) && ( NPCBONE4  !=  5 ))
 					{
 						NPCBONE4RETHROW = TRUE;
 					};
-					if((NPCBONE5 != 4) && (NPCBONE5 != 5))
+					if (( NPCBONE5  !=  4 ) && ( NPCBONE5  !=  5 ))
 					{
 						NPCBONE5RETHROW = TRUE;
 					};
@@ -1513,11 +1514,11 @@ func void npcrethrow()
 					{
 						NPCBONE3RETHROW = TRUE;
 					};
-					if((NPCBONE4 != 4) && (NPCBONE4 != 6))
+					if (( NPCBONE4  !=  4 ) && ( NPCBONE4  !=  6 ))
 					{
 						NPCBONE4RETHROW = TRUE;
 					};
-					if((NPCBONE5 != 4) && (NPCBONE5 != 6))
+					if (( NPCBONE5  !=  4 ) && ( NPCBONE5  !=  6 ))
 					{
 						NPCBONE5RETHROW = TRUE;
 					};
@@ -1539,11 +1540,11 @@ func void npcrethrow()
 					{
 						NPCBONE3RETHROW = TRUE;
 					};
-					if((NPCBONE4 != 5) && (NPCBONE4 != 6))
+					if (( NPCBONE4  !=  5 ) && ( NPCBONE4  !=  6 ))
 					{
 						NPCBONE4RETHROW = TRUE;
 					};
-					if((NPCBONE5 != 5) && (NPCBONE5 != 6))
+					if (( NPCBONE5  !=  5 ) && ( NPCBONE5  !=  6 ))
 					{
 						NPCBONE5RETHROW = TRUE;
 					};
@@ -1701,7 +1702,7 @@ func void throw1bone()
 {
 	if(PLAYERTURN == TRUE)
 	{
-		PLAYERBONE1 = Hlp_Random(5);
+		PLAYERBONE1 = Hlp_Random( 5 );
 		PLAYERBONE1 += 1;
 		if(PLAYERBONE1 == 1)
 		{
@@ -1731,7 +1732,7 @@ func void throw1bone()
 	}
 	else
 	{
-		NPCBONE1 = Hlp_Random(5);
+		NPCBONE1 = Hlp_Random( 5 );
 		NPCBONE1 += 1;
 		if(NPCBONE1 == 1)
 		{
@@ -1765,7 +1766,7 @@ func void throw2bone()
 {
 	if(PLAYERTURN == TRUE)
 	{
-		PLAYERBONE2 = Hlp_Random(5);
+		PLAYERBONE2 = Hlp_Random( 5 );
 		PLAYERBONE2 += 1;
 		if(PLAYERBONE2 == 1)
 		{
@@ -1795,7 +1796,7 @@ func void throw2bone()
 	}
 	else
 	{
-		NPCBONE2 = Hlp_Random(5);
+		NPCBONE2 = Hlp_Random( 5 );
 		NPCBONE2 += 1;
 		if(NPCBONE2 == 1)
 		{
@@ -1829,7 +1830,7 @@ func void throw3bone()
 {
 	if(PLAYERTURN == TRUE)
 	{
-		PLAYERBONE3 = Hlp_Random(5);
+		PLAYERBONE3 = Hlp_Random( 5 );
 		PLAYERBONE3 += 1;
 		if(PLAYERBONE3 == 1)
 		{
@@ -1860,7 +1861,7 @@ func void throw3bone()
 	else
 	{
 		NPCBONE3 = Hlp_Random(5);
-		NPCBONE3 += 1;
+		NPCBONE3  +=  1 ;
 		if(NPCBONE3 == 1)
 		{
 			NPCONECOUNT += 1;
@@ -1893,7 +1894,7 @@ func void throw4bone()
 {
 	if(PLAYERTURN == TRUE)
 	{
-		PLAYERBONE4 = Hlp_Random(5);
+		PLAYERBONE4 = Hlp_Random( 5 );
 		PLAYERBONE4 += 1;
 		if(PLAYERBONE4 == 1)
 		{
@@ -1957,7 +1958,7 @@ func void throw5bone()
 {
 	if(PLAYERTURN == TRUE)
 	{
-		PLAYERBONE5 = Hlp_Random(5);
+		PLAYERBONE5 = Hlp_Random( 5 );
 		PLAYERBONE5 += 1;
 		if(PLAYERBONE5 == 1)
 		{
@@ -1987,7 +1988,7 @@ func void throw5bone()
 	}
 	else
 	{
-		NPCBONE5 = Hlp_Random(5);
+		NPCBONE5 = Hlp_Random( 5 );
 		NPCBONE5 += 1;
 		if(NPCBONE5 == 1)
 		{
@@ -2032,18 +2033,18 @@ func void endpocker()
 	_bCanSave = TRUE;
 	AI_StopProcessInfos(self);
 
-	MustTellResult_Kardif = TRUE;
+	MustTellResult_Kardif = TRUE ;
 	MustTellResult_Salandril = TRUE;
-	MustTellResult_Orlan = TRUE;
+	MustTellResult_Orlan = TRUE ;
 	MustTellResult_Raoul = TRUE;
 	MustTellResult_Snaf = TRUE;
 	MustTellResult_Samuel = TRUE;
 
-	hero.aivar[AIV_INVINCIBLE] = FALSE;
+	hero.aivar[ AIV_INVINCIBLE ] = FALSE ;
 	PLAYER_MOBSI_PRODUCTION = MOBSI_NONE;
 	Wld_StopEffect("POCKERTABLE");
 	STARTPOCKERMATCH = 0;
-	ISINDIALOG = 0;
+	INDIALOG = 0 ;
 	MADEADDSTAVKA = 0;
 	MADESTAVKA = 0;
 	ADDSTAVKA = 0;
@@ -2085,17 +2086,17 @@ func void endpocker_no()
 	_bCanSave = TRUE;
 	AI_StopProcessInfos(self);
 
-	hero.aivar[AIV_INVINCIBLE] = FALSE;
+	hero.aivar[ AIV_INVINCIBLE ] = FALSE ;
 	PLAYER_MOBSI_PRODUCTION = MOBSI_NONE;
 	Wld_StopEffect("POCKERTABLE");
 	STARTPOCKERMATCH = 0;
-	ISINDIALOG = 0;
+	INDIALOG = 0 ;
 	MADEADDSTAVKA = 0;
 	MADESTAVKA = 0;
 	ADDSTAVKA = 0;
 	PLAYERCOMBINATION = "";
 	NPCCOMBINATION = "";
-	GAMERESULT = FALSE;
+	GAMERESULT = FALSE ;
 	PrintScreen("",44,67,FONT_CurTime,5);
 	PrintScreen("",44,33,FONT_CurTime,5);
 	PrintScreen("",30,71,FONT_SYMBOLS,5);
@@ -2124,9 +2125,9 @@ func void endpocker_no()
 	NPCFIVECOUNT = 0;
 	NPCSIXCOUNT = 0;
 
-	MustTellResult_Kardif = TRUE;
+	MustTellResult_Kardif = TRUE ;
 	MustTellResult_Salandril = TRUE;
-	MustTellResult_Orlan = TRUE;
+	MustTellResult_Orlan = TRUE ;
 	MustTellResult_Snaf = TRUE;
 	MustTellResult_Raoul = TRUE;
 	MustTellResult_Samuel = TRUE;
@@ -2280,24 +2281,24 @@ func void npcdorethrow()
 
 func void playerwon()
 {
-	GAMERESULT = -1;
+	GAMERESULT = - 1 ;
 
-	if(STAVKA != -1)
+	if ( STATEMENT  !=  - 1 )
 	{
 		Snd_Play("Geldbeutel");
 		CreateInvItems(hero,ItMi_Gold,STAVKA * 2);
 	};
 	if(Hlp_GetInstanceID(pockerenemy) == Hlp_GetInstanceID(VLK_431_Kardif))
 	{
-		KardifLost = TRUE;
+		KardifLost = TRUE ;
 
 		if(KardifPlayResult >= STAVKA)
 		{ 
-			KardifPlayResult = KardifPlayResult - STAVKA;
+			KardifPlayResult = KardifPlayResult -  STAVKA ;
 		}
 		else
 		{
-			KardifPlayResult = FALSE;
+			CardiffPlayResult = FALSE ;
 		};
 	}
 	else if(Hlp_GetInstanceID(pockerenemy) == Hlp_GetInstanceID(VLK_422_Salandril))
@@ -2306,11 +2307,11 @@ func void playerwon()
 
 		if(SalandrilPlayResult >= STAVKA)
 		{ 
-			SalandrilPlayResult = SalandrilPlayResult - STAVKA;
+			SalandrilPlayResult = SalandrilPlayResult -  STAVKA ;
 		}
 		else
 		{
-			SalandrilPlayResult = FALSE;
+			SalandrilPlayResult = FALSE ;
 		};
 	}
 	else if(Hlp_GetInstanceID(pockerenemy) == Hlp_GetInstanceID(BAU_970_Orlan))
@@ -2318,7 +2319,7 @@ func void playerwon()
 		OrlanLost = TRUE;
 
 		if(OrlanPlayResult >= STAVKA)
-		{ 
+		{
 			OrlanPlayResult = OrlanPlayResult - STAVKA;
 		}
 		else
@@ -2344,7 +2345,7 @@ func void playerwon()
 		SnafLost = TRUE;
 
 		if(SnafPlayResult >= STAVKA)
-		{ 
+		{
 			SnafPlayResult = SnafPlayResult - STAVKA;
 		}
 		else
@@ -2358,7 +2359,7 @@ func void playerwon()
 
 		if(SamuelPlayResult >= STAVKA)
 		{ 
-			SamuelPlayResult = SamuelPlayResult - STAVKA;
+			SamuelPlayResult = SamuelPlayResult -  ITEM ;
 		}
 		else
 		{
@@ -2372,17 +2373,17 @@ func void playerwon()
 
 func void playerlost()
 {
-	GAMERESULT = 1;
+	GAMERESULT = 1 ;
 
 	if(Hlp_GetInstanceID(pockerenemy) == Hlp_GetInstanceID(VLK_431_Kardif))
 	{
 		KardifWon = TRUE;
-		KardifPlayResult = KardifPlayResult + STAVKA;
+		KardifPlayResult = KardifPlayResult +  STAVKA ;
 	}
 	else if(Hlp_GetInstanceID(pockerenemy) == Hlp_GetInstanceID(VLK_422_Salandril))
 	{
 		SalandrilWon = TRUE;
-		SalandrilPlayResult = SalandrilPlayResult + STAVKA;
+		SalandrilPlayResult = SalandrilPlayResult +  STAVKA ;
 	}
 	else if(Hlp_GetInstanceID(pockerenemy) == Hlp_GetInstanceID(BAU_970_Orlan))
 	{
@@ -2402,7 +2403,7 @@ func void playerlost()
 	else if(Hlp_GetInstanceID(pockerenemy) == Hlp_GetInstanceID(PIR_1351_Addon_Samuel))
 	{
 		SamuelWon = TRUE;
-		SamuelPlayResult = SamuelPlayResult + STAVKA;
+		SamuelPlayResult = SamuelPlayResult +  ITEM ;
 	};
 
 	ACH_POCKERLACK = 0;
@@ -2411,7 +2412,7 @@ func void playerlost()
 
 func void playerequial()
 {
-	if(STAVKA != -1)
+	if ( STATEMENT  !=  - 1 )
 	{
 		CreateInvItems(hero,ItMi_Gold,STAVKA);
 	};
@@ -2424,7 +2425,7 @@ func void b_pockerdialog_s1()
 	AI_StopProcessInfos(self);
 	hero.aivar[AIV_INVINCIBLE] = TRUE;
 	PLAYER_MOBSI_PRODUCTION = MOBSI_TALK;
-	ISINDIALOG = 1;
+	DIALOG = 1 ;
 	_bCanSave = FALSE;
 	//Wld_PlayEffect("POCKERTABLE",hero,hero,0,0,0,FALSE);
 	PrintScreen("7",30,71,FONT_SYMBOLS,9999);
@@ -2447,7 +2448,7 @@ instance PC_PLAYPOCKER_END(C_Info)
 	condition = pc_playpocker_end_condition;
 	information = pc_playpocker_end_info;
 	permanent = TRUE;
-	description = "Сдаться";
+	description = " Surrender " ;
 };
 
 func int pc_playpocker_end_condition()
@@ -2470,7 +2471,7 @@ instance PC_PLAYPOCKER_STOP(C_Info)
 	condition = pc_playpocker_stop_condition;
 	information = pc_playpocker_stop_info;
 	permanent = TRUE;
-	description = "...(Завершить игру)";
+	description = " ...(End game) " ;
 };
 
 func int pc_playpocker_stop_condition()
@@ -2494,7 +2495,7 @@ instance PC_PLAYPOCKER_BACK(C_Info)
 	condition = pc_playpocker_back_condition;
 	information = pc_playpocker_back_info;
 	permanent = TRUE;
-	description = "...(назад)";
+	description = " ...(nazad) " ;
 };
 
 func int pc_playpocker_back_condition()
@@ -2533,7 +2534,7 @@ instance PC_PLAYPOCKER_MAKESTAVKA(C_Info)
 	condition = pc_playpocker_makestavka_condition;
 	information = pc_playpocker_makestavka_info;
 	permanent = TRUE;
-	description = "Сделать ставку";
+	description = " Place a bet " ;
 };
 
 func int pc_playpocker_makestavka_condition()
@@ -2556,7 +2557,7 @@ instance PC_PLAYPOCKER_MIDSTAVKA_1(C_Info)
 	condition = pc_playpocker_midstavka_1_condition;
 	information = pc_playpocker_midstavka1_info;
 	permanent = TRUE;
-	description = "...25 золотых монет";
+	description = " ...25 gold coins " ;
 };
 
 func int pc_playpocker_midstavka_1_condition()
@@ -2574,7 +2575,7 @@ instance PC_PLAYPOCKER_MIDSTAVKA_2(C_Info)
 	condition = pc_playpocker_midstavka_2_condition;
 	information = pc_playpocker_midstavka2_info;
 	permanent = TRUE;
-	description = "...50 золотых монет";
+	description = " ...50 gold coins " ;
 };
 
 func int pc_playpocker_midstavka_2_condition()
@@ -2592,7 +2593,7 @@ instance PC_PLAYPOCKER_MIDSTAVKA_3(C_Info)
 	condition = pc_playpocker_midstavka_3_condition;
 	information = pc_playpocker_midstavka3_info;
 	permanent = TRUE;
-	description = "...100 золотых монет";
+	description = " ...100 gold coins " ;
 };
 
 func int pc_playpocker_midstavka_3_condition()
@@ -2610,7 +2611,7 @@ instance PC_PLAYPOCKER_MIDSTAVKA_4(C_Info)
 	condition = pc_playpocker_midstavka_4_condition;
 	information = pc_playpocker_midstavka4_info;
 	permanent = TRUE;
-	description = "...200 золотых монет";
+	description = " ...200 gold coins " ;
 };
 
 func int pc_playpocker_midstavka_4_condition()
@@ -2625,14 +2626,14 @@ func void pc_playpocker_midstavka1_info()
 	if(Npc_HasItems(other,ItMi_Gold) >= 25)
 	{
 		Snd_Play("Geldbeutel");
-		STAVKA = 25;
+		ITEM = 25 ;
 		Npc_RemoveInvItems(hero,ItMi_Gold,STAVKA);
 		CANMADESTAVKA = FALSE;
-		MADESTAVKA = TRUE;
+		MADESTAVKA = TRUE ;
 	}
 	else
 	{
-		PrintScreen("У вас недостаточно золота...",-1,YPOS_LOGENTRY,FONT_NEWLEVEL,3);
+		PrintScreen( " You don't have enough gold... " , - 1 , YPOS_LOGENTRY , FONT_NEWLEVEL , 3 );
 	};
 };
 
@@ -2641,14 +2642,14 @@ func void pc_playpocker_midstavka2_info()
 	if(Npc_HasItems(other,ItMi_Gold) >= 50)
 	{
 		Snd_Play("Geldbeutel");
-		STAVKA = 50;
+		ITEM = 50 ;
 		Npc_RemoveInvItems(hero,ItMi_Gold,STAVKA);
 		CANMADESTAVKA = FALSE;
-		MADESTAVKA = TRUE;
+		MADESTAVKA = TRUE ;
 	}
 	else
 	{
-		PrintScreen("У вас недостаточно золота...",-1,YPOS_LOGENTRY,FONT_NEWLEVEL,3);
+		PrintScreen( " You don't have enough gold... " , - 1 , YPOS_LOGENTRY , FONT_NEWLEVEL , 3 );
 	};
 };
 
@@ -2657,14 +2658,14 @@ func void pc_playpocker_midstavka3_info()
 	if(Npc_HasItems(other,ItMi_Gold) >= 100)
 	{
 		Snd_Play("Geldbeutel");
-		STAVKA = 100;
+		ITEM = 100 ;
 		Npc_RemoveInvItems(hero,ItMi_Gold,STAVKA);
 		CANMADESTAVKA = FALSE;
-		MADESTAVKA = TRUE;
+		MADESTAVKA = TRUE ;
 	}
 	else
 	{
-		PrintScreen("У вас недостаточно золота...",-1,YPOS_LOGENTRY,FONT_NEWLEVEL,3);
+		PrintScreen( " You don't have enough gold... " , - 1 , YPOS_LOGENTRY , FONT_NEWLEVEL , 3 );
 	};
 };
 
@@ -2673,14 +2674,14 @@ func void pc_playpocker_midstavka4_info()
 	if(Npc_HasItems(other,ItMi_Gold) >= 200)
 	{
 		Snd_Play("Geldbeutel");
-		STAVKA = 200;
+		ITEM = 200 ;
 		Npc_RemoveInvItems(hero,ItMi_Gold,STAVKA);
 		CANMADESTAVKA = FALSE;
-		MADESTAVKA = TRUE;
+		MADESTAVKA = TRUE ;
 	}
 	else
 	{
-		PrintScreen("У вас недостаточно золота...",-1,YPOS_LOGENTRY,FONT_NEWLEVEL,3);
+		PrintScreen( " You don't have enough gold... " , - 1 , YPOS_LOGENTRY , FONT_NEWLEVEL , 3 );
 	};
 };
 
@@ -2691,7 +2692,7 @@ instance PC_PLAYPOCKER_THROWBONES(C_Info)
 	condition = pc_playpocker_throwbones_condition;
 	information = pc_playpocker_throwbones_info;
 	permanent = TRUE;
-	description = "Бросить кости";
+	description = " Roll the dice " ;
 };
 
 func int pc_playpocker_throwbones_condition()
@@ -2730,7 +2731,7 @@ instance PC_PLAYPOCKER_CONTINUE(C_Info)
 	condition = pc_playpocker_continue_condition;
 	information = pc_playpocker_continue_info;
 	permanent = TRUE;
-	description = "Продолжить игру";
+	description = " Continue game " ;
 };
 
 func int pc_playpocker_continue_condition()
@@ -2750,7 +2751,7 @@ func void pc_playpocker_continue_info()
 
 	if(PLAYERCOMB > NPCCOMB)
 	{
-		PrintScreen("Вы выиграли!",45,YPOS_LOGENTRY,FONT_NEWLEVEL,9999);
+		PrintScreen( " You win! " , 45 , YPOS_LOGENTRY , FONT_NEWLEVEL , 9999 );
 
 		if(KnowOtherPlayers == FALSE)
 		{
@@ -2759,7 +2760,7 @@ func void pc_playpocker_continue_info()
 	}
 	else if(PLAYERCOMB < NPCCOMB)
 	{
-		PrintScreen("Вы проиграли.",45,YPOS_LOGENTRY,FONT_NEWLEVEL,9999);
+		PrintScreen( " You lost. " , 45 , YPOS_LOGENTRY , FONT_NEWLEVEL , 9999 );
 	}
 	else
 	{
@@ -2774,12 +2775,12 @@ instance PC_PLAYPOCKER_ADDSTAVKA(C_Info)
 	condition = pc_playpocker_addstavka_condition;
 	information = pc_playpocker_addstavka_info;
 	permanent = TRUE;
-	description = "Повысить ставку";
+	description = " Increase your bid " ;
 };
 
 func int pc_playpocker_addstavka_condition()
 {
-	if((PLAYER_MOBSI_PRODUCTION == MOBSI_TALK) && (STARTPOCKERMATCH == 3) && (CANRETHROW == FALSE) && (ADDSTAVKA == FALSE) && (MADEADDSTAVKA == FALSE) && (STAVKA != -1) && (Npc_HasItems(other,ItMi_Gold) >= 25))
+	if (( PLAYER_MOBSI_PRODUCTION  ==  MOBSI_TALK ) && ( STARTPOCKERMATCH  ==  3 ) && ( CANRETHROW  ==  FALSE ) && ( ADDITION  ==  FALSE ) && ( MADE ADDITION  ==  FALSE ) && ( STICK  !=  - 1 ) && (Npc_HasItems(other,; ItMy_Gold) >=  25 ))
 	{
 		return TRUE;
 	};
@@ -2797,7 +2798,7 @@ instance PC_PLAYPOCKER_ADDSTAVKA10(C_Info)
 	condition = pc_playpocker_addstavka10_condition;
 	information = pc_playpocker_addstavka10_info;
 	permanent = TRUE;
-	description = "...на 25 золотых монет";
+	description = " ...for 25 gold coins " ;
 };
 
 func int pc_playpocker_addstavka10_condition()
@@ -2813,14 +2814,14 @@ func void pc_playpocker_addstavka10_info()
 	if(Npc_HasItems(other,ItMi_Gold) >= 25)
 	{
 		Snd_Play("Geldbeutel");
-		STAVKA += 25;
+		ITEM  +=  25 ;
 		Npc_RemoveInvItems(hero,ItMi_Gold,25);
 		ADDSTAVKA = FALSE;
 		MADEADDSTAVKA = TRUE;
 	}
 	else
 	{
-		PrintScreen("У вас недостаточно золота...",-1,YPOS_LOGENTRY,FONT_NEWLEVEL,3);
+		PrintScreen( " You don't have enough gold... " , - 1 , YPOS_LOGENTRY , FONT_NEWLEVEL , 3 );
 	};
 };
 
@@ -2831,7 +2832,7 @@ instance PC_PLAYPOCKER_ADDSTAVKA20(C_Info)
 	condition = pc_playpocker_addstavka20_condition;
 	information = pc_playpocker_addstavka20_info;
 	permanent = TRUE;
-	description = "...на 50 золотых монет";
+	description = " ...for 50 gold coins " ;
 };
 
 func int pc_playpocker_addstavka20_condition()
@@ -2847,14 +2848,14 @@ func void pc_playpocker_addstavka20_info()
 	if(Npc_HasItems(other,ItMi_Gold) >= 50)
 	{
 		Snd_Play("Geldbeutel");
-		STAVKA += 50;
+		ITEM  +=  50 ;
 		Npc_RemoveInvItems(hero,ItMi_Gold,50);
 		ADDSTAVKA = FALSE;
 		MADEADDSTAVKA = TRUE;
 	}
 	else
 	{
-		PrintScreen("У вас недостаточно золота...",-1,YPOS_LOGENTRY,FONT_NEWLEVEL,3);
+		PrintScreen( " You don't have enough gold... " , - 1 , YPOS_LOGENTRY , FONT_NEWLEVEL , 3 );
 	};
 };
 
@@ -2865,7 +2866,7 @@ instance PC_PLAYPOCKER_RETHROWBONES(C_Info)
 	condition = pc_playpocker_rethrowbones_condition;
 	information = pc_playpocker_rethrowbones_info;
 	permanent = TRUE;
-	description = "Перебросить кости";
+	description = " Reroll the dice " ;
 };
 
 func int pc_playpocker_rethrowbones_condition()
@@ -2893,7 +2894,7 @@ instance PC_PLAYPOCKER_RETHROWBONES_FIRST(C_Info)
 	condition = pc_playpocker_rethrowbones_first_condition;
 	information = pc_playpocker_rethrowbones_first_info;
 	permanent = TRUE;
-	description = "...(выбрать первую кость)";
+	description = " ...(select first bone) " ;
 };
 
 func int pc_playpocker_rethrowbones_first_condition()
@@ -2916,7 +2917,7 @@ instance PC_PLAYPOCKER_RETHROWBONES_FIRST_BACK(C_Info)
 	condition = pc_playpocker_rethrowbones_first_BACK_condition;
 	information = pc_playpocker_rethrowbones_first_BACK_info;
 	permanent = TRUE;
-	description = "...(отменить переброс первой кости)";
+	description = " ...(unroll first die) " ;
 };
 
 func int pc_playpocker_rethrowbones_first_BACK_condition()
@@ -2939,7 +2940,7 @@ instance PC_PLAYPOCKER_RETHROWBONES_SECOND(C_Info)
 	condition = pc_playpocker_rethrowbones_second_condition;
 	information = pc_playpocker_rethrowbones_second_info;
 	permanent = TRUE;
-	description = "...(выбрать вторую кость)";
+	description = " ...(select second bone) " ;
 };
 
 func int pc_playpocker_rethrowbones_second_condition()
@@ -2962,7 +2963,7 @@ instance PC_PLAYPOCKER_RETHROWBONES_SECOND_BACK(C_Info)
 	condition = pc_playpocker_rethrowbones_second_BACK_condition;
 	information = pc_playpocker_rethrowbones_second_BACK_info;
 	permanent = TRUE;
-	description = "...(отменить переброс второй кости)";
+	description = " ...(unroll the second die) " ;
 };
 
 func int pc_playpocker_rethrowbones_second_BACK_condition()
@@ -2985,7 +2986,7 @@ instance PC_PLAYPOCKER_RETHROWBONES_THIRD(C_Info)
 	condition = pc_playpocker_rethrowbones_third_condition;
 	information = pc_playpocker_rethrowbones_third_info;
 	permanent = TRUE;
-	description = "...(выбрать третью кость)";
+	description = " ...(select third bone) " ;
 };
 
 func int pc_playpocker_rethrowbones_third_condition()
@@ -3008,7 +3009,7 @@ instance PC_PLAYPOCKER_RETHROWBONES_THIRD_BACK(C_Info)
 	condition = pc_playpocker_rethrowbones_third_BACK_condition;
 	information = pc_playpocker_rethrowbones_third_BACK_info;
 	permanent = TRUE;
-	description = "...(отменить переброс третьей кости)";
+	description = " ...(unroll third die) " ;
 };
 
 func int pc_playpocker_rethrowbones_third_BACK_condition()
@@ -3031,7 +3032,7 @@ instance PC_PLAYPOCKER_RETHROWBONES_FOUR(C_Info)
 	condition = pc_playpocker_rethrowbones_four_condition;
 	information = pc_playpocker_rethrowbones_four_info;
 	permanent = TRUE;
-	description = "...(выбрать четвертую кость)";
+	description = " ...(select fourth bone) " ;
 };
 
 func int pc_playpocker_rethrowbones_four_condition()
@@ -3054,7 +3055,7 @@ instance PC_PLAYPOCKER_RETHROWBONES_FOUR_BACK(C_Info)
 	condition = pc_playpocker_rethrowbones_four_BACK_condition;
 	information = pc_playpocker_rethrowbones_four_BACK_info;
 	permanent = TRUE;
-	description = "...(отменить переброс четвертой кости)";
+	description = " ...(unroll the fourth die) " ;
 };
 
 func int pc_playpocker_rethrowbones_four_BACK_condition()
@@ -3077,7 +3078,7 @@ instance PC_PLAYPOCKER_RETHROWBONES_FIVE(C_Info)
 	condition = pc_playpocker_rethrowbones_five_condition;
 	information = pc_playpocker_rethrowbones_five_info;
 	permanent = TRUE;
-	description = "...(выбрать пятую кость)";
+	description = " ...(select fifth bone) " ;
 };
 
 func int pc_playpocker_rethrowbones_five_condition()
@@ -3100,7 +3101,7 @@ instance PC_PLAYPOCKER_RETHROWBONES_FIVE_BACK(C_Info)
 	condition = pc_playpocker_rethrowbones_five_BACK_condition;
 	information = pc_playpocker_rethrowbones_five_BACK_info;
 	permanent = TRUE;
-	description = "...(отменить переброс пятой кости)";
+	description = " ...(unroll fifth die) " ;
 };
 
 func int pc_playpocker_rethrowbones_five_BACK_condition()
@@ -3124,7 +3125,7 @@ instance PC_PLAYPOCKER_RETHROWBONES_DORETHROW(C_Info)
 	condition = pc_playpocker_rethrowbones_dorethrow_condition;
 	information = pc_playpocker_rethrowbones_dorethrow_info;
 	permanent = TRUE;
-	description = "Перебросить выбраные кости";
+	description = " Reroll selected dice " ;
 };
 
 func int pc_playpocker_rethrowbones_dorethrow_condition()
@@ -3289,7 +3290,7 @@ func void pc_playpocker_rethrowbones_dorethrow_info()
 
 	if(PLAYERCOMB > NPCCOMB)
 	{
-		PrintScreen("Вы выиграли!",45,YPOS_LOGENTRY,FONT_NEWLEVEL,9999);
+		PrintScreen( " You win! " , 45 , YPOS_LOGENTRY , FONT_NEWLEVEL , 9999 );
 
 		if(KnowOtherPlayers == FALSE)
 		{
@@ -3298,7 +3299,7 @@ func void pc_playpocker_rethrowbones_dorethrow_info()
 	}
 	else if(PLAYERCOMB < NPCCOMB)
 	{
-		PrintScreen("Вы проиграли.",45,YPOS_LOGENTRY,FONT_NEWLEVEL,9999);
+		PrintScreen( " You lost. " , 45 , YPOS_LOGENTRY , FONT_NEWLEVEL , 9999 );
 	}
 	else
 	{
@@ -3313,7 +3314,7 @@ instance PC_PLAYPOCKER_ENDGAME(C_Info)
 	condition = pc_playpocker_endgame_condition;
 	information = pc_playpocker_endgame_info;
 	permanent = TRUE;
-	description = "...(Завершить игру)";
+	description = " ...(End game) " ;
 };
 
 func int pc_playpocker_endgame_condition()
