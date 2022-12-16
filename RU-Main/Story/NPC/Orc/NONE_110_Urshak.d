@@ -1,11 +1,12 @@
 
+
 instance NONE_110_Urshak(Mst_Default_OrcShaman)
 {
-	name[0] = "Ур-Шак";
+	name[ 0 ] = " Ur-Shak " ;
 	guild = GIL_FRIENDLY_ORC;
 	id = 110;
-	aivar[AIV_MM_REAL_ID] = ID_ORCSHAMAN;
-	aivar[93] = TRUE;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCSHAMAN ;
+	aivar[ 93 ] = TRUE ;
 	voice = 18;
 	flags = 0;
 	level = 1;
