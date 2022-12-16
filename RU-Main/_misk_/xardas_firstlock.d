@@ -5890,13 +5890,13 @@ func void DIA_Xardas_Pirate_Curse_info()
 	AI_Output(other,self, " DIA_Xardas_Pirate_Curse_00_03 " );	// And the pirate captain who wears this ring has lost a good part of his crew because of it.
 	AI_Output(self,other, " DIA_Xardas_Pirate_Curse_00_04 " );	// This is not a problem. Let him remove it, and the curse will immediately disappear!
 	AI_Output(other,self, " DIA_Xardas_Pirate_Curse_00_05 " );	// That's the point, he can't do it! As soon as he tried to remove the ring, it almost sent him to the next world.
-	AI_Output(self,other, " DIA_Xardas_Pirate_Curse_00_06 " );	// Hmmm... (thoughtfully) I couldn't imagine that.
+	AI_Output(self,other, " DIA_Xardas_Pirate_Curse_00_06 " );	// Hmmm... I didn't expect that.
 	AI_Output(other,self, " DIA_Xardas_Pirate_Curse_00_07 " );	// He offers you a deal: you release him from the curse, and he will give you the ring.
 	AI_Output(self,other, " DIA_Xardas_Pirate_Curse_00_08 " );	// Good. I will try to help him, but for this I need to know exactly how it all began.
 	AI_Output(other,self, " DIA_Xardas_Pirate_Curse_00_09 " );	// It was like this...(tells Greg's story)...
-	AI_Output(self,other, " DIA_Xardas_Pirate_Curse_00_10 " );	// Then everything is clear to me! His curse hangs not only on him, but also on those who remained in that cave.
+	AI_Output(self,other, " DIA_Xardas_Pirate_Curse_00_10 " );	// Everything is clear to me! His curse hangs not only on him, but also on those who remained in that cave.
 	AI_Output(self,other, " DIA_Xardas_Pirate_Curse_00_11 " );	// If their cursed souls are appeased, the curse's power will be slightly weakened, allowing him to remove the ring.
-	AI_Output(other,self, " DIA_Xardas_Pirate_Curse_00_12 " );	// It is unlikely that he will stick his head in there again. His memories are too fresh!
+	AI_Output(other,self, " DIA_Xardas_Pirate_Curse_00_12 " );	// It is unlikely that he will stick his head in there again I'd wager!
 	AI_Output(self,other, " DIA_Xardas_Pirate_Curse_00_13 " );	// Then YOU do it for him! Kill those damned pirates and give me back this ring.
 	XarCurseClear = TRUE;
 	; _ _ _ _
@@ -5926,16 +5926,16 @@ func void DIA_Xardas_Pirate_Done_info()
 	AI_Output(other,self, " DIA_Xardas_Pirate_Done_00_01 " );	// Hold your ring.
 	B_GiveInvItems(other,self,ItRi_DarkCurse,1);
 	Npc_RemoveInvItems(self,ItRi_DarkCurse,1);
-	AI_Output(self,other, " DIA_Xardas_Pirate_Done_00_02 " );	// (pretty) It's finally mine. You have no idea how much I've been waiting for this moment!
+	AI_Output(self,other, " DIA_Xardas_Pirate_Done_00_02 " );	// It's finally mine. You have no idea how long I've been waiting for this moment!
 	AI_Output(other,self, " DIA_Xardas_Pirate_Done_00_03 " );	// What about my reward?
 	AI_Output(self,other, " DIA_Xardas_Pirate_Done_00_04 " );	// Don't worry! I have prepared a special gift for you.
 	B_GiveInvItems(self,other,ItPo_ElixirSHadow,1);
 	AI_Output(other,self, " DIA_Xardas_Pirate_Done_00_05 " );	// Some kind of elixir?
-	AI_Output(self,other, " DIA_Xardas_Pirate_Done_00_06 " );	// Not some, but the rarest specimen! So use it wisely.
+	AI_Output(self,other, " DIA_Xardas_Pirate_Done_00_06 " );	// Not just any elixir, but the rarest of specimens! So use it wisely.
 	AI_Output(other,self, " DIA_Xardas_Pirate_Done_00_07 " );	// Okay, thanks.
 	MIS_PirateRing = LOG_Success;
 	Log_SetTopicStatus(TOPIC_PirateRing,LOG_Success);
-	B_LogEntry(TOPIC_PirateRing, " I gave the ring to Xardas and received the reward he deserved. " );
+	B_LogEntry(TOPIC_PirateRing, " I gave the ring to Xardas and received the reward he had for me. " );
 };
 
 instance DIA_NONE_100_Xardas_WhyHere(C_Info)
@@ -5962,27 +5962,27 @@ func void DIA_NONE_100_Xardas_WhyHere_info()
 	AI_Output(other,self, " DIA_Xardas_WhyHere_01_00 " );	// I need to talk to you.
 	AI_Output(self,other, " DIA_Xardas_WhyHere_01_01 " );	// What happened?
 	AI_Output(other,self, " DIA_Xardas_WhyHere_01_02 " );	// I heard from an orc shaman that dragons don't serve Beliar at all! This is true?
-	AI_Output(self,other, " DIA_Xardas_WhyHere_01_03 " );	// (calmly) Let me explain something to you.
+	AI_Output(self,other, " DIA_Xardas_WhyHere_01_03 " );	// Let me explain something to you.
  	AI_Output(self,other, " DIA_Xardas_WhyHere_01_04 " );	// Recent events have made it clear to me that the threat does not come from where we thought.
 	AI_Output(self,other, " DIA_Xardas_WhyHere_01_05 " );	// Only stupid people tend to blame the orcs for all their troubles! In fact, things are somewhat different.
 	AI_Output(self,other, " DIA_Xardas_WhyHere_01_06 " );	// You've already met the Guardians, haven't you?
-	AI_Output(other,self, " DIA_Xardas_WhyHere_01_07 " );	// Met. Just in your tower.
+	AI_Output(other,self, " DIA_Xardas_WhyHere_01_07 " );	// Yes, one was just in your tower.
 	AI_Output(self,other, " DIA_Xardas_WhyHere_01_08 " );	// Then you should know the reasons why they came here.
-	AI_Output(other,self, " DIA_Xardas_WhyHere_01_09 " );	// Of course. Keeper Dagoth told me about them.
-	AI_Output(self,other, " DIA_Xardas_WhyHere_01_10 " );	// And you are not at all embarrassed that the ancient creators turned to you?
-	AI_Output(other,self, " DIA_Xardas_WhyHere_01_11 " );	// What's wrong with that? I did kill the Sleeper after all. Or did you forget?
-	AI_Output(self,other, " DIA_Xardas_WhyHere_01_12 " );	// Yes, that's right... (thoughtfully) But isn't that too much honor?
-	AI_Output(self,other, " DIA_Xardas_WhyHere_01_13 " );	// Sleeper was a strong demon, I don't deny it. But even before you, many heroes sent more terrible creatures to the kingdom of Beliar!
+	AI_Output(other,self, " DIA_Xardas_WhyHere_01_09 " );	// Of course. Keeper Dagoth told me about it.
+	AI_Output(self,other, " DIA_Xardas_WhyHere_01_10 " );	// And you are not at all concerned that the ancient creators set their sights on you?
+	AI_Output(other,self, " DIA_Xardas_WhyHere_01_11 " );	// I did kill the Sleeper after all. Or did you forget?
+	AI_Output(self,other, " DIA_Xardas_WhyHere_01_12 " );	// Yes, that's right... But was it truly that great of a feat?
+	AI_Output(self,other, " DIA_Xardas_WhyHere_01_13 " );	// The Sleeper was a strong demon, I don't deny it. But many heroes have defeated even more powerful evils!
 	AI_Output(other,self, " DIA_Xardas_WhyHere_01_14 " );	// What do you mean by that?
-	AI_Output(self,other, " DIA_Xardas_WhyHere_01_15 " );	// It seems to me that by doing so they are trying to distract you from your main purpose.
-	AI_Output(self,other, " DIA_Xardas_WhyHere_01_16 " );	// So that you do not interfere with them, or vice versa, so that you help in the implementation of their plans.
-	AI_Output(self,other, " DIA_Xardas_WhyHere_01_17 " );	// I thought about this for a long time, but it was the orcs who helped me figure it out to the end!
+	AI_Output(self,other, " DIA_Xardas_WhyHere_01_15 " );	// It seems to me that they are trying to distract you from your main purpose.
+	AI_Output(self,other, " DIA_Xardas_WhyHere_01_16 " );	// So that you do not interfere with them, or vice versa, thereby actually helping them fulfill their plans.
+	AI_Output(self,other, " DIA_Xardas_WhyHere_01_17 " );	// I thought about this for a long time, but it was the orcs who helped me finally put two and two together!
 	AI_Output(other,self, " DIA_Xardas_WhyHere_01_18 " );	// Then what are the Guardians up to?
 	AI_Output(self,other, " DIA_Xardas_WhyHere_01_19 " );	// I think they want to destroy this world!
-	AI_Output(other,self, " DIA_Xardas_WhyHere_01_20 " );	// Wow! Interesting, why would they?
-	AI_Output(self,other, " DIA_Xardas_WhyHere_01_21 " );	// I can't answer this question, because their plans are still a mystery to me.
-	AI_Output(self,other, " DIA_Xardas_WhyHere_01_22 " );	// But one thing I know for sure: you are far from the last role in all this.
-	AI_Output(self,other, " DIA_Xardas_WhyHere_01_23 " );	// And we need to act decisively! We have very little time left.
+	AI_Output(other,self, " DIA_Xardas_WhyHere_01_20 " );	// Why would they want to do that?
+	AI_Output(self,other, " DIA_Xardas_WhyHere_01_21 " );	// I can't answer that question, because their plans are still a mystery to me.
+	AI_Output(self,other, " DIA_Xardas_WhyHere_01_22 " );	// But one thing I know for sure: you have a role in this.
+	AI_Output(self,other, " DIA_Xardas_WhyHere_01_23 " );	// We need to act decisively! We have very little time left.
 	B_LogEntry(TOPIC_TrueDragonMasters, " Xardas believes that the Guardians are playing a double game, and that it is from them, and not from the orcs, that the main danger to this world comes. " );
 };
 
@@ -6006,15 +6006,15 @@ func int DIA_NONE_100_Xardas_WhatDo_condition()
 
 func void DIA_NONE_100_Xardas_WhatDo_info()
 {
-	AI_Output(other,self, " DIA_Xardas_WhatDo_01_00 " );	// And what do we do then?
+	AI_Output(other,self, " DIA_Xardas_WhatDo_01_00 " );	// So what do we do then?
 	AI_Output(self,other, " DIA_Xardas_WhatDo_01_01 " );	// We need to deal with the dragons first! At the most decisive moment, they can interfere with us.
 	AI_Output(other,self, " DIA_Xardas_WhatDo_01_02 " );	// Aren't dragons in league with orcs?
 	AI_Output(self,other, " DIA_Xardas_WhatDo_01_03 " );	// These ancient creatures are born from powerful elemental magic. And the call of the Sleeper only awakened them from their sleep!
 	AI_Output(self,other, " DIA_Xardas_WhatDo_01_04 " );	// They are more likely to obey the will of the Guardians than anyone else.
 	AI_Output(other,self, " DIA_Xardas_WhatDo_01_05 " );	// But it always seemed to me that dragons serve Beliar!
-	AI_Output(self,other, " DIA_Xardas_WhatDo_01_06 " );	// (seriously) No, it's not. Dragons don't serve anyone!
-	AI_Output(self,other, " DIA_Xardas_WhatDo_01_07 " );	// They are too powerful to be mere pawns in this endless war of the gods.
-	AI_Output(self,other, " DIA_Xardas_WhatDo_01_08 " );	// And only the power of their creators may be able to control them. And their creators are Guardians!
+	AI_Output(self,other, " DIA_Xardas_WhatDo_01_06 " );	// No, the dragons don't serve anyone!
+	AI_Output(self,other, " DIA_Xardas_WhatDo_01_07 " );	// They are too powerful to be mere pawns in the endless wars of the gods.
+	AI_Output(self,other, " DIA_Xardas_WhatDo_01_08 " );	// Only the power of their creators may be able to control them. And their creators are the Guardians!
 	MIS_TrueDragonMasters = LOG_Success;
 	Log_SetTopicStatus(TOPIC_TrueDragonMasters,LOG_Success);
 	B_LogEntry(TOPIC_TrueDragonMasters, " Xardas told me to proceed with our plan. I need to slay the dragons in the Mine Valley! " );
@@ -6041,9 +6041,9 @@ func int DIA_NONE_100_Xardas_Scare_condition()
 func void DIA_NONE_100_Xardas_Scare_info()
 {
 	AI_Output(other,self, " DIA_Xardas_Scare_01_00 " );	// Aren't you afraid that the Guardians will hear your words?
-	AI_Output(self,other, " DIA_Xardas_Scare_01_01 " );	// (calmly) You're forgetting one thing. It's still my tower.
-	AI_Output(self,other, " DIA_Xardas_Scare_01_02 " );	// And, of course, I made sure to feel completely safe here.
-	AI_Output(self,other, " DIA_Xardas_Scare_01_03 " );	// So don't worry! No one will ever know about our conversation.
+	AI_Output(self,other, " DIA_Xardas_Scare_01_01 " );	// You're forgetting one thing. It's still my tower.
+	AI_Output(self,other, " DIA_Xardas_Scare_01_02 " );	// I have taken many precautions, many safeguards.
+	AI_Output(self,other, " DIA_Xardas_Scare_01_03 " );	// So don't worry! No one will know about our conversation.
 };
 
 instance DIA_Xardas_DarkMageBuySwords(C_Info)
@@ -6053,7 +6053,7 @@ instance DIA_Xardas_DarkMageBuySwords(C_Info)
 	condition = DIA_Xardas_DarkMageBuySwords_condition;
 	information = DIA_Xardas_DarkMageBuySwords_info;
 	permanent = FALSE;
-	description = " Could you be interested in this weapon? " ;
+	description = " Would you be interested in this weapon? " ;
 };
 
 func int DIA_Xardas_DarkMageBuySwords_condition()
@@ -6069,8 +6069,8 @@ func void DIA_Xardas_DarkMageBuySwords_info()
 	B_GivePlayerXP(200);
 	AI_Output(other,self, " DIA_Xardas_DarkMageBuySwords_01_00 " );	// Would you be interested in this weapon?
 	B_GiveInvItems(other,self,ITMW_FAKESWORD_01,1);
-	AI_Output(self,other, " DIA_Xardas_DarkMageBuySwords_01_03 " );	// Well, well... Yes, interesting stuff! But I don't need it.
-	AI_Output(self,other, " DIA_Xardas_DarkMageBuySwords_01_04 " );	// So you'd better look for someone else who's interested in her.
+	AI_Output(self,other, " DIA_Xardas_DarkMageBuySwords_01_03 " );	// Well, well... Yes, very interesting! But I don't need it.
+	AI_Output(self,other, " DIA_Xardas_DarkMageBuySwords_01_04 " );	// You'd better look for someone else.
 	B_GiveInvItems(self,other,ITMW_FAKESWORD_01,1);
 };
 
@@ -6099,10 +6099,10 @@ func void DIA_Xardas_OldTeleports_info()
 	AI_Output(self,other, " DIA_Xardas_OldTeleports_01_01 " );	// As far as I know, they were used by the druids who once lived on this island.
 	AI_Output(self,other, " DIA_Xardas_OldTeleports_01_02 " );	// These stones served them as a means of quickly moving around the island, similar to those teleportation platforms that were in the Valley of Mines.
 	AI_Output(other,self, " DIA_Xardas_OldTeleports_01_03 " );	// Have you tried to use them yourself?
-	AI_Output(self,other, " DIA_Xardas_OldTeleports_01_04 " );	// Tried but no luck so far...
-	AI_Output(self,other, " DIA_Xardas_OldTeleports_01_05 " );	// I guess they require some artifacts from the druids themselves to use them.
+	AI_Output(self,other, " DIA_Xardas_OldTeleports_01_04 " );	// I tried but no luck so far...
+	AI_Output(self,other, " DIA_Xardas_OldTeleports_01_05 " );	// My guess is that they require some artifacts from the druids themselves to use them.
 	AI_Output(self,other, " DIA_Xardas_OldTeleports_01_06 " );	// But I still don't know which ones exactly.
-	AI_Output(other,self, " DIA_Xardas_OldTeleports_01_07 " );	// It turns out that they are absolutely useless for us?
+	AI_Output(other,self, " DIA_Xardas_OldTeleports_01_07 " );	// So they are useless to us?
 	AI_Output(self,other, " DIA_Xardas_OldTeleports_01_08 " );	// Not really... I managed to figure out the move process itself.
 	AI_Output(self,other, " DIA_Xardas_OldTeleports_01_09 " );	// To do this, I created a magic rune of teleportation that will use the power of these runestones.
 	AI_Output(self,other, " DIA_Xardas_OldTeleports_01_10 " );	// However, the question is how to activate the stones themselves!
@@ -6111,7 +6111,7 @@ func void DIA_Xardas_OldTeleports_info()
 	AI_Output(self,other, " DIA_Xardas_OldTeleports_01_13 " );	// So I'll give you my rune, and you find a way to bring these stones to life.
 	B_GiveInvItems(self,other,ItRu_GlobalTeleport, 1 );
 	AI_Output(other,self, " DIA_Xardas_OldTeleports_01_14 " );	// Okay, I'll try.
-	B_LogEntry(TOPIC_OldTeleports, " According to Xardas, these runestones were used by the druids to move around the island. He does not know how to activate the stones themselves, but he was able to create a teleportation rune that can later use their magical power. Now I need to find the druid artifacts, using which it will be possible to make these stones work. " );
+	B_LogEntry(TOPIC_OldTeleports, " According to Xardas, these runestones were used by the druids to move around the island. He does not know how to activate the stones themselves, but he was able to create a teleportation rune that can later use their magical power. Now I need to find the druid artifacts, upon which it will be possible to make these stones work. " );
 	XarSeekDruidArt = TRUE;
 };
 
@@ -6138,7 +6138,7 @@ func void DIA_Xardas_OldTeleports_Done_info()
 	B_GivePlayerXP(200);
 	AI_Output(other,self, " DIA_Xardas_OldTeleports_Done_01_00 " );	// I found a way to activate the runestones.
 	AI_Output(self,other, " DIA_Xardas_OldTeleports_Done_01_01 " );	// Great! Now, with their help, you will be able to move around the island the way the druids themselves once did.
-	AI_Output(self,other, " DIA_Xardas_OldTeleports_Done_01_02 " );	// And keep the rune I gave you. She will still be useful to you.
+	AI_Output(self,other, " DIA_Xardas_OldTeleports_Done_01_02 " );	// And keep the rune I gave you. It will still be useful to you.
 	MIS_OldTeleports = LOG_Success;
 	Log_SetTopicStatus(TOPIC_OldTeleports,LOG_Success);
 	B_LogEntry(TOPIC_OldTeleports, " I informed Xardas that I was able to activate the runestones. He advised me to use them later on to move around the island, as the druids themselves once did. " );
@@ -6168,14 +6168,14 @@ func void DIA_Xardas_Fregarah_info()
 	AI_Output(other,self, " DIA_Xardas_Fregarah_01_00 " );	// Tell me about the stone giant.
 	AI_Output(self,other, " DIA_Xardas_Fregarah_01_01 " );	// What?! What are you talking about?
 	AI_Output(other,self, " DIA_Xardas_Fregarah_01_02 " );	// About the creature that blocked your path to the temple during the expedition of the Fire Mages to the mountains of Khorinis.
-	AI_Output(self,other, " DIA_Xardas_Fregarah_01_03 " );	// Ahhh... That's it! You somehow got to know this story. From whom?
+	AI_Output(self,other, " DIA_Xardas_Fregarah_01_03 " );	// Ahhh... I see! You somehow got to know this story. From whom?
 	AI_Output(other,self, " DIA_Xardas_Fregarah_01_04 " );	// I read it in one of the books in the library of the monastery.
-	AI_Output(other,self, " DIA_Xardas_Fregarah_01_05 " );	// Pyrocar also confirmed the existence of this golem!
-	AI_Output(self,other, " DIA_Xardas_Fregarah_01_06 " );	// Still... (chuckling) He was just as scared then as if a real dragon had appeared in front of his nose now!
-	AI_Output(other,self, " DIA_Xardas_Fregarah_01_07 " );	// What do you know about him?
+	AI_Output(other,self, " DIA_Xardas_Fregarah_01_05 " );	// Pyrocar also confirmed the existence of this golem.
+	AI_Output(self,other, " DIA_Xardas_Fregarah_01_06 " );	// Still... He was just as scared then as if a dragon had appeared in front of his nose!
+	AI_Output(other,self, " DIA_Xardas_Fregarah_01_07 " );	// What do you know about it?
 	AI_Output(self,other, " DIA_Xardas_Fregarah_01_08 " );	// Same as you. No more and no less!
-	AI_Output(self,other, " DIA_Xardas_Fregarah_01_09 " );	// And anyway, I'm too busy right now to bother myself with some overgrown stone golem.
-	AI_Output(self,other, " DIA_Xardas_Fregarah_01_10 " );	// So if you want to know more, look for my notes regarding this creature. Here in the tower.
+	AI_Output(self,other, " DIA_Xardas_Fregarah_01_09 " );	// And anyway, I'm too busy right now to bother myself with some overgrown statue.
+	AI_Output(self,other, " DIA_Xardas_Fregarah_01_10 " );	// So if you want to know more, look for my notes regarding the creature. Here in the tower.
 	AI_StopProcessInfos(self);
 	Wld_InsertItem(ItWr_Fregarah,"FP_ITEM_XARDAS_07");
 };
