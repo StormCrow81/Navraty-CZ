@@ -108,7 +108,7 @@ func void DIA_Wegelagerer_Question_Info()
 {
 	AI_Output(other,self, " DIA_1051_Wegelagerer_Question_15_00 " );	// I just asked.
 	AI_Output(self,other, " DIA_1051_Wegelagerer_Question_07_01 " );	// Got it. But what are YOU doing here?
-	AI_Output(self,other, " DIA_1051_Wegelagerer_Question_07_02 " );	// Okay. This is our road and we don't like it when someone bothers us here.
+	AI_Output(self,other, " DIA_1051_Wegelagerer_Question_07_02 " );	// This is our road and we don't like it when someone bothers us here.
 	Info_ClearChoices(DIA_1051_Wegelagerer_Question);
 	if ((MIS_NovizenChase == LOG_Running) && (MIS_SCKnowsInnosEyeIsBroken ==  FALSE ))
 	{
@@ -129,7 +129,7 @@ func void DIA_1051_Wegelagerer_Question_Novice()
 func void DIA_1051_Wegelagerer_Question_Novice_Who()
 {
 	AI_Output(other,self, " DIA_1051_Wegelagerer_Question_Novice_Who_15_00 " );	// And who?
-	AI_Output(self,other,"DIA_1051_Wegelagerer_Question_Novice_Who_07_01");	//Тебя!
+	AI_Output(self,other,"DIA_1051_Wegelagerer_Question_Novice_Who_07_01");	//You!
 	BDT_1051_Wegelagerer_Angriff = TRUE ;
 	Npc_SetRefuseTalk(self,40);
 	Info_ClearChoices(DIA_1051_Wegelagerer_Question);
@@ -140,7 +140,7 @@ func void DIA_1051_Wegelagerer_Question_MyConcern()
 	AI_Output(other,self, " DIA_1051_Wegelagerer_Question_MyConcern_15_00 " );	// It's none of your business.
 	AI_Output(self,other, " DIA_1051_Wegelagerer_Question_MyConcern_07_01 " );	// What do you mean by that? Are you running into trouble?
 	Info_ClearChoices(DIA_1051_Wegelagerer_Question);
-	Info_AddChoice(DIA_1051_Wegelagerer_Question, " No, nothing. No trouble needed. " ,DIA_1051_Wegelagerer_Question_MyConcern_No);
+	Info_AddChoice(DIA_1051_Wegelagerer_Question, " No, nothing. No trouble. " ,DIA_1051_Wegelagerer_Question_MyConcern_No);
 	Info_AddChoice(DIA_1051_Wegelagerer_Question, " If you like it. " ,DIA_1051_Wegelagerer_Question_MyConcern_Yes);
 };
 
@@ -164,7 +164,7 @@ func void DIA_1051_Wegelagerer_Question_MyConcern_Yes()
 func void DIA_1051_Wegelagerer_Question_LookAround()
 {
 	AI_Output(other,self, " DIA_1051_Wegelagerer_Question_LookAround_15_00 " );	// I'm just admiring nature.
-	AI_Output(self,other, " DIA_1051_Wegelagerer_Question_LookAround_07_01 " );	// Admire further, but don't bother us anymore.
+	AI_Output(self,other, " DIA_1051_Wegelagerer_Question_LookAround_07_01 " );	// Admire all you want, but don't bother us anymore.
 	AI_StopProcessInfos(self);
 };
 
@@ -192,7 +192,7 @@ func int DIA_Router_ATTACK_Condition()
 
 func void DIA_Hijacker_ATTACK_Info()
 {
-	AI_Output(self,other, " DIA_Wegelagerer_ANGRIFF_07_00 " );	// Now you will receive.
+	AI_Output(self,other, " DIA_Wegelagerer_ANGRIFF_07_00 " );	// Now you'll  get it.
 	AI_StopProcessInfos(self);
 	Npc_SetRefuseTalk(self,40);
 	self.aivar[AIV_EnemyOverride] = FALSE ;
