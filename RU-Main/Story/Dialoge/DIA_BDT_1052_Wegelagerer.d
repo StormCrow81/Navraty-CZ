@@ -44,8 +44,8 @@ func int DIA_1052_Wegelagerer_Hello_Condition()
 
 func void DIA_1052_Wegelagerer_Hello_Info()
 {
-	AI_Output(other,self,"DIA_1052_Wegelagerer_Hello_15_00");	//Кто ты?
-	AI_Output(self,other, " DIA_1052_Wegelagerer_Hello_06_01 " );	// What is this? Interrogation?
+	AI_Output(other,self,"DIA_1052_Wegelagerer_Hello_15_00");	//Who are you?
+	AI_Output(self,other, " DIA_1052_Wegelagerer_Hello_06_01 " );	// What is this? An interrogation?
 	AI_Output(self,other, " DIA_1052_Wegelagerer_Hello_06_02 " );	// I don't have anything to tell you, but you might want to talk to my friend.
 	AI_Output(self,other, " DIA_1052_Wegelagerer_Hello_06_03 " );	// But be careful, he doesn't like strangers.
 };
@@ -72,7 +72,7 @@ func int DIA_Wegelagerer_ANGRIFF2_Condition()
 
 func void DIA_Router_ATTACK2_Info()
 {
-	AI_Output(self,other, " DIA_Wegelagerer_ANGRIFF2_06_00 " );	// Okay, buddy. Now you will receive.
+	AI_Output(self,other, " DIA_Wegelagerer_ANGRIFF2_06_00 " );	// Okay, buddy. Time to pay.
 	AI_StopProcessInfos(self);
 	Npc_SetRefuseTalk(self,40);
 	self.aivar[AIV_EnemyOverride] = FALSE ;
