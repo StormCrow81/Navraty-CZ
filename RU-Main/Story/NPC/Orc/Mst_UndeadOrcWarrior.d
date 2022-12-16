@@ -1,9 +1,10 @@
 
+
 prototype Mst_Default_UndeadOrcWarrior(C_Npc)
 {
-	name[0] = "Орк-нежить";
+	name[ 0 ] = " Undead Orc " ;
 	guild = GIL_UNDEADORC;
-	aivar[AIV_MM_REAL_ID] = ID_UNDEADORCWARRIOR;
+	aivar[ AIV_MM_REAL_ID ] = ID_UNDEADORCWARRIOR ;
 	level = 25;
 	attribute[ATR_STRENGTH] = 450;
 	attribute[ATR_DEXTERITY] = 450;
@@ -26,14 +27,14 @@ prototype Mst_Default_UndeadOrcWarrior(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_MONSTER_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
 };
 
 prototype MST_DEFAULT_UNDEADORCSHAMAN(C_Npc)
 {
-	name[0] = "Шаман-нежить";
+	name[ 0 ] = " Undead Shaman " ;
 	guild = GIL_UNDEADORC;
-	aivar[AIV_MM_REAL_ID] = ID_UNDEADORCSHAMAN;
+	aivar[ AIV_MM_REAL_ID ] = ID_UNDEADORCSHAMAN ;
 	voice = 18;
 	level = 30;
 	attribute[ATR_STRENGTH] = 300;
@@ -58,7 +59,7 @@ prototype MST_DEFAULT_UNDEADORCSHAMAN(C_Npc)
 	senses_range = PERC_DIST_MONSTER_ACTIVE_MAX;
 	aivar[AIV_MagicUser] = MAGIC_ALWAYS;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
 	Npc_SetTalentSkill(self,NPC_TALENT_MAGE,6);
 };
 
@@ -93,7 +94,7 @@ instance UndeadOrcWarrior(Mst_Default_UndeadOrcWarrior)
 
 instance UNDEADORCWARRIORELITE(Mst_Default_UndeadOrcWarrior)
 {
-	name[0] = "Орк-лич";
+	name[ 0 ] = " Orc-lich " ;
 	level = 40;
 	attribute[ATR_STRENGTH] = 550;
 	attribute[ATR_DEXTERITY] = 550;
@@ -121,7 +122,7 @@ instance UNDEADORCWARRIORELITE(Mst_Default_UndeadOrcWarrior)
 instance UNDEADORCSHAMAN(MST_DEFAULT_UNDEADORCSHAMAN)
 {
 	b_setvisuals_undeadorcshaman();
-	EquipItem(self,itmw_orcstaff_undead);
+	EquipItem(self, itmw_orcstaff_undead);
 	CreateInvItems(self,ITMI_ZOMBIECORPSE,1);
 	start_aistate = ZS_MM_AllScheduler;
 	aivar[AIV_MM_RestStart] = OnlyRoutine;
@@ -129,11 +130,11 @@ instance UNDEADORCSHAMAN(MST_DEFAULT_UNDEADORCSHAMAN)
 
 instance UNDEADORCSHAMAN_1(MST_DEFAULT_UNDEADORCSHAMAN)
 {
-	name[0] = "Варрак-Бек";
-	aivar[AIV_MM_REAL_ID] = ID_UNDEADORCSHAMAN;
+	name[ 0 ] = " Varrak-Bek " ;
+	aivar[ AIV_MM_REAL_ID ] = ID_UNDEADORCSHAMAN ;
 	level = 100;
-	aivar[90] = TRUE;
-	aivar[94] = NPC_LEGEND;
+	aivar[ 90 ] = TRUE ;
+	aivar[ 94 ] = NPC_LEGEND ;
 	attribute[ATR_STRENGTH] = 300;
 	attribute[ATR_DEXTERITY] = 300;
 	attribute[ATR_HITPOINTS_MAX] = 15000;
@@ -156,10 +157,10 @@ instance UNDEADORCSHAMAN_1(MST_DEFAULT_UNDEADORCSHAMAN)
 	aivar[AIV_MagicUser] = MAGIC_ALWAYS;
 	senses_range = PERC_DIST_MONSTER_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
 	b_setvisuals_undeadorcshaman();
 	effect = "SPELLFX_MAGIC_SMOKE";
-	EquipItem(self,itmw_orcstaff_undead);
+	EquipItem(self, itmw_orcstaff_undead);
 	CreateInvItems(self,ITMI_ZOMBIECORPSE,1);
 	Npc_SetTalentSkill(self,NPC_TALENT_MAGE,6);
 	CreateInvItems(self,itmi_rockcrystal_ot1,1);
@@ -169,11 +170,11 @@ instance UNDEADORCSHAMAN_1(MST_DEFAULT_UNDEADORCSHAMAN)
 
 instance UNDEADORCSHAMAN_2(MST_DEFAULT_UNDEADORCSHAMAN)
 {
-	name[0] = "Хош-Мах";
-	aivar[AIV_MM_REAL_ID] = ID_UNDEADORCSHAMAN;
+	name[ 0 ] = " Hosh-Mah " ;
+	aivar[ AIV_MM_REAL_ID ] = ID_UNDEADORCSHAMAN ;
 	level = 100;
-	aivar[90] = TRUE;
-	aivar[94] = NPC_LEGEND;
+	aivar[ 90 ] = TRUE ;
+	aivar[ 94 ] = NPC_LEGEND ;
 	attribute[ATR_STRENGTH] = 300;
 	attribute[ATR_DEXTERITY] = 300;
 	attribute[ATR_HITPOINTS_MAX] = 15000;
@@ -196,11 +197,11 @@ instance UNDEADORCSHAMAN_2(MST_DEFAULT_UNDEADORCSHAMAN)
 	aivar[AIV_MagicUser] = MAGIC_ALWAYS;
 	senses_range = PERC_DIST_MONSTER_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
 	b_setvisuals_undeadorcshaman();
 	effect = "SPELLFX_MAGIC_SMOKE";
 	Npc_SetTalentSkill(self,NPC_TALENT_MAGE,6);
-	EquipItem(self,itmw_orcstaff_undead);
+	EquipItem(self, itmw_orcstaff_undead);
 	CreateInvItems(self,ITMI_ZOMBIECORPSE,1);
 	CreateInvItems(self,itmi_rockcrystal_ot2,1);
 	start_aistate = ZS_MM_AllScheduler;
@@ -209,11 +210,11 @@ instance UNDEADORCSHAMAN_2(MST_DEFAULT_UNDEADORCSHAMAN)
 
 instance UNDEADORCSHAMAN_3(MST_DEFAULT_UNDEADORCSHAMAN)
 {
-	name[0] = "Ур-Анаг";
-	aivar[AIV_MM_REAL_ID] = ID_UNDEADORCSHAMAN;
+	name[ 0 ] = " Ur-Anag " ;
+	aivar[ AIV_MM_REAL_ID ] = ID_UNDEADORCSHAMAN ;
 	level = 100;
-	aivar[90] = TRUE;
-	aivar[94] = NPC_LEGEND;
+	aivar[ 90 ] = TRUE ;
+	aivar[ 94 ] = NPC_LEGEND ;
 	attribute[ATR_STRENGTH] = 300;
 	attribute[ATR_DEXTERITY] = 300;
 	attribute[ATR_HITPOINTS_MAX] = 15000;
@@ -236,11 +237,11 @@ instance UNDEADORCSHAMAN_3(MST_DEFAULT_UNDEADORCSHAMAN)
 	aivar[AIV_MagicUser] = MAGIC_ALWAYS;
 	senses_range = PERC_DIST_MONSTER_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
 	b_setvisuals_undeadorcshaman();
 	effect = "SPELLFX_MAGIC_SMOKE";
 	Npc_SetTalentSkill(self,NPC_TALENT_MAGE,6);
-	EquipItem(self,itmw_orcstaff_undead);
+	EquipItem(self, itmw_orcstaff_undead);
 	CreateInvItems(self,itmi_rockcrystal_ot3,1);
 	CreateInvItems(self,ITMI_ZOMBIECORPSE,1);
 	start_aistate = ZS_MM_AllScheduler;
@@ -249,11 +250,11 @@ instance UNDEADORCSHAMAN_3(MST_DEFAULT_UNDEADORCSHAMAN)
 
 instance UNDEADORCSHAMAN_4(MST_DEFAULT_UNDEADORCSHAMAN)
 {
-	name[0] = "Ван-Граш";
-	aivar[AIV_MM_REAL_ID] = ID_UNDEADORCSHAMAN;
+	name[ 0 ] = " Van-Grasch " ;
+	aivar[ AIV_MM_REAL_ID ] = ID_UNDEADORCSHAMAN ;
 	level = 100;
-	aivar[90] = TRUE;
-	aivar[94] = NPC_LEGEND;
+	aivar[ 90 ] = TRUE ;
+	aivar[ 94 ] = NPC_LEGEND ;
 	attribute[ATR_STRENGTH] = 300;
 	attribute[ATR_DEXTERITY] = 300;
 	attribute[ATR_HITPOINTS_MAX] = 15000;
@@ -276,11 +277,11 @@ instance UNDEADORCSHAMAN_4(MST_DEFAULT_UNDEADORCSHAMAN)
 	aivar[AIV_MagicUser] = MAGIC_ALWAYS;
 	senses_range = PERC_DIST_MONSTER_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
 	b_setvisuals_undeadorcshaman();
 	effect = "SPELLFX_MAGIC_SMOKE";
 	Npc_SetTalentSkill(self,NPC_TALENT_MAGE,6);
-	EquipItem(self,itmw_orcstaff_undead);
+	EquipItem(self, itmw_orcstaff_undead);
 	CreateInvItems(self,itmi_rockcrystal_ot4,1);
 	CreateInvItems(self,ITMI_ZOMBIECORPSE,1);
 	start_aistate = ZS_MM_AllScheduler;
@@ -290,9 +291,9 @@ instance UNDEADORCSHAMAN_4(MST_DEFAULT_UNDEADORCSHAMAN)
 
 prototype MST_DEFAULT_UNDEADORCWARRIORSH(C_Npc)
 {
-	name[0] = "Орк-призрак";
+	name[ 0 ] = " Ghost Orc " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCWARRIOR;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCWARRIOR ;
 	voice = 18;
 	level = 10;
 	flags = ORCTEMPLENPCFLAGS;
@@ -317,14 +318,14 @@ prototype MST_DEFAULT_UNDEADORCWARRIORSH(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
 };
 
 prototype MST_DEFAULT_UNDEADORCELITESH(C_Npc)
 {
-	name[0] = "Черный орк-призрак";
+	name[ 0 ] = " Ghost Black Orc " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCELITE;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCELITE ;
 	voice = 18;
 	level = 10;
 	flags = ORCTEMPLENPCFLAGS;
@@ -349,14 +350,14 @@ prototype MST_DEFAULT_UNDEADORCELITESH(C_Npc)
 	senses = SENSE_HEAR | SENSE_SEE;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
 };
 
 prototype MST_DEFAULT_UNDEADORCSHAMANSH(C_Npc)
 {
-	name[0] = "Шаман-призрак";
+	name[ 0 ] = " Ghost Shaman " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCSHAMAN;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCSHAMAN ;
 	voice = 18;
 	level = 10;
 	flags = ORCTEMPLENPCFLAGS;
@@ -382,7 +383,7 @@ prototype MST_DEFAULT_UNDEADORCSHAMANSH(C_Npc)
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MagicUser] = MAGIC_ALWAYS;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
 };
 
 func void b_setvisuals_orcsh()
