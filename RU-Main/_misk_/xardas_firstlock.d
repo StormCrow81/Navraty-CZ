@@ -6200,21 +6200,21 @@ func int DIA_Xardas_StonnosHronics_condition()
 
 func void DIA_Xardas_StonnosHronics_info()
 {
-	AI_Output(other,self, " DIA_Xardas_StonnosHronics_01_01 " );	// I've read your posts.
-	AI_Output(self,other, " DIA_Xardas_StonnosHronics_01_02 " );	// What other records?
+	AI_Output(other,self, " DIA_Xardas_StonnosHronics_01_01 " );	// I've read your records.
+	AI_Output(self,other, " DIA_Xardas_StonnosHronics_01_02 " );	// Which ones?
 	AI_Output(other,self, " DIA_Xardas_StonnosHronics_01_03 " );	// Well, about that stone golem.
-	AI_Output(self,other, " DIA_Xardas_StonnosHronics_01_04 " );	// (grouchily) Ah, you're all about that. So what?
+	AI_Output(self,other, " DIA_Xardas_StonnosHronics_01_04 " );	// Ah, THAT. And?
 	AI_Output(other,self, " DIA_Xardas_StonnosHronics_01_05 " );	// Now I need your advice.
-	AI_Output(self,other, " DIA_Xardas_StonnosHronics_01_06 " );	// (chuckling) You won't just leave me alone, will you?
+	AI_Output(self,other, " DIA_Xardas_StonnosHronics_01_06 " );	// You just won't leave me alone, will you?
 	AI_Output(self,other, " DIA_Xardas_StonnosHronics_01_07 " );	// Well, okay. If you are so interested, I will help you.
-	AI_Output(self,other, " DIA_Xardas_StonnosHronics_01_08 " );	// As far as I remember, one of the books describing those events was kept in my old flooded tower. Look for her there.
+	AI_Output(self,other, " DIA_Xardas_StonnosHronics_01_08 " );	// As far as I remember, one of the books describing those events was kept in my old flooded tower. Look for it there.
 	AI_Output(self,other, " DIA_Xardas_StonnosHronics_01_09 " );	// It's probably in my old chest. Here is the key to it.
 	B_GiveInvItems(self,other,itke_xardasowt,1);
 	AI_Output(other,self, " DIA_Xardas_StonnosHronics_01_10 " );	// Thank you.
 
      if(Npc_HasItems(hero,ItWr_Fregarah) >= 1)
 	{
-		AI_Output(self,other, " DIA_Xardas_StonnosHronics_01_11 " );	// (grouchily) Give me back my notes! I still need them myself.
+		AI_Output(self,other, " DIA_Xardas_StonnosHronics_01_11 " );	// Give me back my notes! I still need them.
 	     B_GiveInvItems(other,self,ItWr_Fregarah,1);
 		Npc_RemoveInvItems(self,ItWr_Fregarah,1);
 	};
@@ -6244,13 +6244,13 @@ func void DIA_Xardas_HauntedLighthouse_info()
 {
 	B_GivePlayerXP(250);
 	AI_Output(other,self, " DIA_Xardas_HauntedLighthouse_01_01 " );	// Are you good at magical signs?
-	AI_Output(self,other, " DIA_Xardas_HauntedLighthouse_01_02 " );	// What are the questions? I am a mage. Naturally, I understand them.
+	AI_Output(self,other, " DIA_Xardas_HauntedLighthouse_01_02 " );	// What kind of question is that? I am a mage. Naturally, I understand them.
 	AI_Output(other,self, " DIA_Xardas_HauntedLighthouse_01_03 " );	// Then help me understand what one of them means.
-	AI_Output(self,other, " DIA_Xardas_HauntedLighthouse_01_04 " );	// Tell me what he looked like.
+	AI_Output(self,other, " DIA_Xardas_HauntedLighthouse_01_04 " );	// Tell me what it looked like.
 	AI_Output(other,self, " DIA_Xardas_HauntedLighthouse_01_05 " );	// Well, like... like a pentagram inside a pentagonal figure.
-	AI_Output(self,other, " DIA_Xardas_HauntedLighthouse_01_06 " );	// It's a curse mark! And quite ancient... Where did you find it?
+	AI_Output(self,other, " DIA_Xardas_HauntedLighthouse_01_06 " );	// A curse mark! And quite ancient... Where did you find it?
 	AI_Output(other,self, " DIA_Xardas_HauntedLighthouse_01_07 " );	// At the old lighthouse near Khorinis.
-	AI_Output(self,other, " DIA_Xardas_HauntedLighthouse_01_08 " );	// Clear. But to understand where he came from, I need to know what really happened there.
+	AI_Output(self,other, " DIA_Xardas_HauntedLighthouse_01_08 " );	// I see. In order to understand the curse, I must know what happened there. Find out what you can.
 	B_LogEntry(TOPIC_HauntedLighthouse, " I told Xardas about the magic sign I found at the lighthouse. According to him, this is a sign of a curse. But to find out the reason for the sign, we need to understand what exactly happened there. " );
 
 	if((MIS_HauntedLighthouse == LOG_Running) && (FindOldSkeleton == TRUE) && (FindOldRing == TRUE) && (KnowStefan == TRUE))
@@ -6302,18 +6302,18 @@ func void DIA_Xardas_HauntedLighthouse_Again_info()
 func void DIA_Xardas_HauntedLighthouse_FindSkel()
 {
 	B_GivePlayerXP(150);
-	AI_Output(other,self, " DIA_Xardas_HauntedLighthouse_FindSkel_01_01 " );	// I know what happened at the lighthouse. A few years ago there was a murder.
+	AI_Output(other,self, " DIA_Xardas_HauntedLighthouse_FindSkel_01_01 " );	// I know what happened at the lighthouse. Years ago there was a murder there.
 	AI_Output(other,self, " DIA_Xardas_HauntedLighthouse_FindSkel_01_02 " );	// Hannah, the innkeeper, told me that...
-	AI_Output(self,other, " DIA_Xardas_HauntedLighthouse_FindSkel_01_03 " );	// I'm not interested in the details! Your words are enough.
-	AI_Output(other,self, " DIA_Xardas_HauntedLighthouse_FindSkel_01_04 " );	// And what do you think about it?
-	AI_Output(self,other, " DIA_Xardas_HauntedLighthouse_FindSkel_01_05 " );	// Such an incident could very well have caused corruption or a curse. Then the appearance of ghosts at the lighthouse is quite understandable.
-	AI_Output(other,self, " DIA_Xardas_HauntedLighthouse_FindSkel_01_06 " );	// How to remove this curse?
-	AI_Output(self,other, " DIA_Xardas_HauntedLighthouse_FindSkel_01_07 " );	// (thoughtfully) It won't be easy. First of all, it is necessary to understand the reason for the murder. And in this you can only be helped by the spirit of that murdered poor fellow.
+	AI_Output(self,other, " DIA_Xardas_HauntedLighthouse_FindSkel_01_03 " );	// I'm not interested in the details! Give me a rough idea.
+	AI_Output(other,self, " DIA_Xardas_HauntedLighthouse_FindSkel_01_04 " );	// What do you think about it?
+	AI_Output(self,other, " DIA_Xardas_HauntedLighthouse_FindSkel_01_05 " );	// Such an incident could very well have caused corruption or a curse. Therefore the appearance of ghosts at the lighthouse is quite understandable.
+	AI_Output(other,self, " DIA_Xardas_HauntedLighthouse_FindSkel_01_06 " );	// How do I remove this curse?
+	AI_Output(self,other, " DIA_Xardas_HauntedLighthouse_FindSkel_01_07 " );	// It won't be easy. First of all, it is necessary to understand the reason for the murder. And in this you can only be helped by the spirit of the murder victim.
 	AI_Output(other,self, " DIA_Xardas_HauntedLighthouse_FindSkel_01_08 " );	// Can you summon him?
-	AI_Output(self,other, " DIA_Xardas_HauntedLighthouse_FindSkel_01_09 " );	// You can handle it yourself, but I have enough things to do without you.
+	AI_Output(self,other, " DIA_Xardas_HauntedLighthouse_FindSkel_01_09 " );	// You can handle it yourself, I am very busy right now.
 	AI_Output(self,other, " DIA_Xardas_HauntedLighthouse_FindSkel_01_10 " );	// Here's a scroll for you. Its power will allow you to summon the spirit of the slain at the place of his death.
 	B_GiveInvItems(self,other,ItMi_XardasMagicScroll,1);
-	AI_Output(self,other, " DIA_Xardas_HauntedLighthouse_FindSkel_01_11 " );	// Just be careful. Spirits do not like the living. If he talks to you, it can already be considered a great success!
+	AI_Output(self,other, " DIA_Xardas_HauntedLighthouse_FindSkel_01_11 " );	// Just be careful. Spirits do not like the living. If he talks to you, it can already be considered a great breakthrough!
 	XardasGiveScroll = TRUE;
 	B_LogEntry(TOPIC_HauntedLighthouse, " I told Xardas about what happened at the lighthouse. Now I need to talk to the spirit of the victim in order to understand why he was killed. Xardas gave me a magic scroll to read at the lighthouse near the murder site. " );
 	AI_StopProcessInfos(self);
@@ -6340,7 +6340,7 @@ func int DIA_Xardas_DealStoryDLH_condition()
 func void DIA_Xardas_DealStoryDLH_info()
 {
 	B_GivePlayerXP(250);
-	AI_Output(other,self, " DIA_Xardas_DealStoryDLH_01_01 " );	// I used your scroll and summoned the spirit of the slain.
+	AI_Output(other,self, " DIA_Xardas_DealStoryDLH_01_01 " );	// I used your scroll and summoned the spirit of the murdered man.
 	AI_Output(other,self, " DIA_Xardas_DealStoryDLH_01_02 " );	// He told me everything he knew. And now I have only one question - how to remove the curse itself?
 	AI_Output(self,other, " DIA_Xardas_DealStoryDLH_01_03 " );	// It seems to me that only the repentance of the killer himself in the face of his victim will help to remove it.
 	AI_Output(self,other, " DIA_Xardas_DealStoryDLH_01_04 " );	// You must find the killer and bring him to the lighthouse, where he will have to ask for forgiveness from the spirit you summoned.
@@ -6348,7 +6348,7 @@ func void DIA_Xardas_DealStoryDLH_info()
 	AI_Output(other,self, " DIA_Xardas_DealStoryDLH_01_06 " );	// And if not?
 	AI_Output(self,other, " DIA_Xardas_DealStoryDLH_01_07 " );	// Then, most likely, he will die.
 	CanGoLH = TRUE;
-	B_LogEntry(TOPIC_HauntedLighthouse, " According to Xardas, only the killer's repentance in the face of a ghost will remove the curse from the lighthouse. I will have to find the one who killed Stefan and take him to the lighthouse so that he asks for forgiveness from the murdered one. And where to look for him now, after so much years? I'll try to ask around at the port. " );
+	B_LogEntry(TOPIC_HauntedLighthouse, " According to Xardas, only the killer's repentance in the face of a ghost will remove the curse from the lighthouse. I will have to find the one who killed Stefan and take him to the lighthouse so that he asks for forgiveness from the murdered one. And where to look for him now, after so many years? I'll try to ask around at the port. " );
 };
 
 // ------------------------------ Xar's Servants--------------- -------------------------
@@ -6488,15 +6488,15 @@ func void DIA_Fregeal_Hello_Info()
 	AI_Output(other,self, " DIA_Fregeal_Hello_01_01 " );	// I'm just walking around. What are you doing here?
 	AI_Output(self,other, " DIA_Fregeal_Hello_01_02 " );	// I live here.
 	AI_Output(other,self, " DIA_Fregeal_Hello_01_03 " );	// Live?! Alone, in the forest?
-	AI_Output(self,other, " DIA_Fregeal_Hello_01_04 " );	// Why is this forest so bad for you?
+	AI_Output(self,other, " DIA_Fregeal_Hello_01_04 " );	// Is that sso strange?
 	AI_Output(other,self, " DIA_Fregeal_Hello_01_05 " );	// There are a whole bunch of dangerous creatures here. Not to mention orcs...
-	AI_Output(self,other, " DIA_Fregeal_Hello_01_06 " );	// They won't touch me. I pose no threat to them. As are they for me.
-	AI_Output(other,self, " DIA_Fregeal_Hello_01_07 " );	// Are you saying that animals don't touch you?
-	AI_Output(self,other, " DIA_Fregeal_Hello_01_08 " );	// You grasp everything on the fly.
+	AI_Output(self,other, " DIA_Fregeal_Hello_01_06 " );	// They won't touch me. I pose no threat to them, or they to me.
+	AI_Output(other,self, " DIA_Fregeal_Hello_01_07 " );	// Are you saying that animals don't bother you?
+	AI_Output(self,other, " DIA_Fregeal_Hello_01_08 " );	// You are quite perceptive.
 	AI_Output(other,self, " DIA_Fregeal_Hello_01_09 " );	// What about orcs?
-	AI_Output(self,other, " DIA_Fregeal_Hello_01_10 " );	// I haven't seen them here yet. But I doubt that they dare to attack me.
-	AI_Output(other,self, " DIA_Fregeal_Hello_01_11 " );	// Orc is a pretty strong opponent.
-	AI_Output(self,other, " DIA_Fregeal_Hello_01_12 " );	// Yes. But my forest brothers will protect me if necessary.
+	AI_Output(self,other, " DIA_Fregeal_Hello_01_10 " );	// I haven't seen them here yet. But I doubt that they would dare to attack me.
+	AI_Output(other,self, " DIA_Fregeal_Hello_01_11 " );	// An Orc is a pretty strong opponent.
+	AI_Output(self,other, " DIA_Fregeal_Hello_01_12 " );	// Yes. But my forest brethren will protect me if necessary.
 	AI_Output(self,other, " DIA_Fregeal_Hello_01_13 " );	// So don't worry about me.
 };
 
@@ -6521,10 +6521,10 @@ func void DIA_Fregeal_WhatName_Info()
 {
 	AI_Output(other,self, " DIA_Fregeal_WhatName_01_00 " );	// What's your name?
 	AI_Output(self,other, " DIA_Fregeal_WhatName_01_01 " );	// My name is Fregial.
-	AI_Output(other,self, " DIA_Fregeal_WhatName_01_02 " );	// Hmmm... Quite an unusual name for a simple herbalist.
-	AI_Output(self,other, " DIA_Fregeal_WhatName_01_03 " );	// You know, names are not chosen. My name came to me from my grandfather.
+	AI_Output(other,self, " DIA_Fregeal_WhatName_01_02 " );	// Hmmm... Quite an unusual name.
+	AI_Output(self,other, " DIA_Fregeal_WhatName_01_03 " );	// Names are not chosen. My name came to me from my grandfather.
 	AI_Output(self,other, " DIA_Fregeal_WhatName_01_04 " );	// I guess he had reason to call me that.
-	AI_Output(self,other, " DIA_Fregeal_WhatName_01_05 " );	// But it doesn't matter now. I'm used to it and don't intend to change.
+	AI_Output(self,other, " DIA_Fregeal_WhatName_01_05 " );	// But it doesn't matter now. I'm used to it and don't intend to change it.
 };
 
 var int FregealCanTrade;
@@ -6549,9 +6549,9 @@ func int DIA_Fregeal_WhatDo_Condition()
 func void DIA_Fregeal_WhatDo_Info()
 {
 	AI_Output(other,self, " DIA_Fregeal_WhatDo_01_00 " );	// What are you doing here?
-	AI_Output(self,other, " DIA_Fregeal_WhatDo_01_01 " );	// I'm a regular herbalist. I collect plants, and then I prepare various drugs and decoctions from them.
+	AI_Output(self,other, " DIA_Fregeal_WhatDo_01_01 " );	// I'm an herbalist. I collect plants, and then I prepare various drugs and decoctions from them.
 	AI_Output(other,self, " DIA_Fregeal_WhatDo_01_02 " );	// What, for example?
-	AI_Output(self,other, " DIA_Fregeal_WhatDo_01_03 " );	// Mostly healing, curing various ailments.
+	AI_Output(self,other, " DIA_Fregeal_WhatDo_01_03 " );	// Mostly healing draughts, curing various ailments.
 	AI_Output(self,other, " DIA_Fregeal_WhatDo_01_04 " );	// If you happen to be sick, I can sell you some of them.
 	AI_Output(self,other, " DIA_Fregeal_WhatDo_01_05 " );	// You'll see how quickly they get you back on your feet.
 	AI_Output(other,self, " DIA_Fregeal_WhatDo_01_06 " );	// Sounds tempting.
@@ -6607,7 +6607,7 @@ func void DIA_Fregeal_SwampSecret_info()
 {
 	B_GivePlayerXP(300);
 	AI_Output(other,self, " DIA_Fregeal_SwampSecret_01_00 " );	// What do you know about the plant called swamp grass?
-	AI_Output(self,other, " DIA_Fregeal_SwampSecret_01_01 " );	// (thoughtfully) Not very much. Why are you interested in this?
+	AI_Output(self,other, " DIA_Fregeal_SwampSecret_01_01 " );	// Not very much. Why are you interested in this?
 	AI_Output(other,self, " DIA_Fregeal_SwampSecret_01_02 " );	// It seems to me that the effect of its influence on consciousness is extremely unusual for a simple plant.
 	AI_Output(self,other, " DIA_Fregeal_SwampSecret_01_03 " );	// Ahh... So you want to know why smoking swamp grass has such a strong effect on a person's magic power and consciousness?
 	AI_Output(other,self, " DIA_Fregeal_SwampSecret_01_04 " );	// That's right.
@@ -6616,9 +6616,9 @@ func void DIA_Fregeal_SwampSecret_info()
 	AI_Output(other,self, " DIA_Fregeal_SwampSecret_01_07 " );	// Elemental magic? What do you mean?
 	AI_Output(self,other, " DIA_Fregeal_SwampSecret_01_08 " );	// Usually the gift of magic is transferred to a person from one of the gods. Innos bestows it on Fire Mages, Adanos on Water Mages, and Beliar on Dark Mages.
 	AI_Output(self,other, " DIA_Fregeal_SwampSecret_01_09 " );	// But there are also much more powerful forces in the world than those to which the gods themselves belong.
-	AI_Output(self,other, " DIA_Fregeal_SwampSecret_01_10 " );	// Perhaps the swamp grass has some of that power. And when a person smokes it, he fills himself with such a small fraction of this power.
+	AI_Output(self,other, " DIA_Fregeal_SwampSecret_01_10 " );	// Perhaps the swamp grass has some of that power. And when a person smokes it, he fills himself with a small fraction of this power.
 	AI_Output(other,self, " DIA_Fregeal_SwampSecret_01_11 " );	// Are you saying that any port drunk who smokes this herb will sooner or later become a powerful magician?
-	AI_Output(self,other, " DIA_Fregeal_SwampSecret_01_12 " );	// Of course not! To begin with, this person must have great fortitude and devote himself to long meditations. A mere ignoramus cannot do this.
-	AI_Output(self,other, " DIA_Fregeal_SwampSecret_01_13 " );	// But this is all just my guess. Only by learning more about the element that nourishes this herb with magic, it will be possible to understand whether this is really so.
-	B_LogEntry(TOPIC_SwampSecret,"Herbalist Fregial believes that the swamp grass contains a piece of the magical power of the very elements that gave birth to this world. I somehow hardly believe this, but Fregial does not come across as a stoned madman. If he is right, then the only way to learn the secret of swamp grass is to find out which element bestows a particle of its magic on it and how it happens.But where to look for the answer to this question?After all, the elements existed before this world and hardly any of the ordinary people wrote monographs about them. Maybe some ancient artifact that has absorbed the power of the elements can shed light on this mystery.");
+	AI_Output(self,other, " DIA_Fregeal_SwampSecret_01_12 " );	// Of course not! To begin with, this person must have great fortitude and devote himself to long meditations. A mere ignoramus cannot do that.
+	AI_Output(self,other, " DIA_Fregeal_SwampSecret_01_13 " );	// But this is all just a guess. Only by learning more about the element that nourishes this herb with magic, will it be possible to understand whether this is really so.
+	B_LogEntry(TOPIC_SwampSecret,"Herbalist Fregial believes that the swamp grass contains a piece of the magical power of the very elements that gave birth to this world. I hardly believe this, but Fregial does not come across as a stoned madman. If he is right, then the only way to learn the secret of swamp grass is to find out which element bestows a particle of its magic on it and how it happens.But where to look for the answer to this question? After all, the elements existed before this world. Maybe some ancient artifact that has absorbed the power of the elements can shed light on this mystery.");
 };
