@@ -159,7 +159,7 @@ func int DIA_Addon_Paul_HunoVerdacht_Condition()
 func void DIA_Addon_Paul_HunoVerdacht_Info()
 {
 	AI_Output(other,self, " DIA_Addon_Paul_HunoVerdacht_15_00 " );	// Huno is suspected of being involved in the attack...
-	AI_Output(self,other, " DIA_Addon_Paul_HunoVerdacht_03_01 " );	// I don't know anything about this!
+	AI_Output(self,other, " DIA_Addon_Paul_HunoVerdacht_03_01 " );	// I don't know anything about that!
 };
 
 
@@ -186,7 +186,7 @@ func int DIA_Addon_Paul_HunoArbeit_Condition()
 func void DIA_Addon_Paul_HunoArbeit_Info()
 {
 	AI_Output(other,self, " DIA_Addon_Paul_HunoArbeit_15_00 " );	// But you work for Huno! So you must know something!
-	AI_Output(self,other, " DIA_Addon_Paul_HunoArbeit_03_01 " );	// (in desperation) I don't know anything - honestly! I have to go!
+	AI_Output(self,other, " DIA_Addon_Paul_HunoArbeit_03_01 " );	// I don't know anything - honestly! I have to go!
 	Npc_ExchangeRoutine(self,"AWAY");
 	AI_StopProcessInfos(self);
 };
@@ -215,7 +215,7 @@ func int DIA_Addon_Paul_FearEsteban_Condition()
 func void DIA_Addon_Paul_FearEsteban_Info()
 {
 	AI_Output(other,self, " DIA_Addon_Paul_FearEsteban_15_00 " );	// Do you know what Esteban will do to you if he finds out you're covering for Huno?
-	AI_Output(self,other, " DIA_Addon_Paul_FearEsteban_03_01 " );	// Guy! Leave me alone. I have nothing to do with this.
+	AI_Output(self,other, " DIA_Addon_Paul_FearEsteban_03_01 " );	// Leave me alone. I'll have nothing to do with this.
 	Npc_ExchangeRoutine(self,"PRESTART");
 	AI_StopProcessInfos(self);
 };
@@ -243,18 +243,18 @@ func int DIA_Addon_Paul_MaulPaul_Condition()
 
 func void DIA_Addon_Paul_MaulPaul_Info()
 {
-	AI_Output(other,self, " DIA_Addon_Paul_MaulPaul_15_00 " );	// (friendly) Paul, tell me what you know or I'll smash you all over this wall!
+	AI_Output(other,self, " DIA_Addon_Paul_MaulPaul_15_00 " );	// Paul, tell me what you know or I'll smash you all over this wall!
 	AI_Output(self,other, " DIA_Addon_Paul_MaulPaul_03_01 " );	// You can't beat me up just because you work for the boss.
-	AI_Output(other,self, " DIA_Addon_Paul_MaulPaul_15_02 " );	// (kindly) I can!
+	AI_Output(other,self, " DIA_Addon_Paul_MaulPaul_15_02 " );	// Can't I?
 	AI_Output(self,other, " DIA_Addon_Paul_MaulPaul_03_03 " );	// Don't talk nonsense!
-	AI_Output(other,self, " DIA_Addon_Paul_MaulPaul_15_04 " );	// (impatiently) Paul...
-	AI_Output(self,other, " DIA_Addon_Paul_MaulPaul_03_05 " );	// (feverishly) All I know is that Huno and Esteban have some kind of disagreement.
-	AI_Output(self,other, " DIA_Addon_Paul_MaulPaul_03_06 " );	// (feverishly) In front of me, he constantly swears at Esteban. That he messed up his business and all that...
+	AI_Output(other,self, " DIA_Addon_Paul_MaulPaul_15_04 " );	// Paul...
+	AI_Output(self,other, " DIA_Addon_Paul_MaulPaul_03_05 " );	// All I know is that Huno and Esteban have some kind of disagreement.
+	AI_Output(self,other, " DIA_Addon_Paul_MaulPaul_03_06 " );	// In front of me, he constantly swears at Esteban. That he messed up his business and all that...
 	AI_Output(self,other, " DIA_Addon_Paul_MaulPaul_03_07 " );	// I only listened and never said anything.
 	AI_Output(other,self, " DIA_Addon_Paul_MaulPaul_15_08 " );	// Great! See, it wasn't that hard.
 	Npc_ExchangeRoutine(self,"START");
 	Paul_TellAll = TRUE;
-	B_LogEntry(Topic_Addon_Esteban, " Paul said that Huno hates Esteban because he does his business. " );
+	B_LogEntry(Topic_Addon_Esteban, " Paul said that Huno hates Esteban because he hurt his business. " );
 };
 
 
