@@ -43,8 +43,8 @@ func void DIA_tramp_HELLO_Info()
 	AI_Output(self,other, " DIA_Landstreicher_HALLO_09_02 " );	// You're already the second one here, rushing around as if stung by a blood fly.
 	Info_ClearChoices(DIA_tramp_HELLO);
 	Info_AddChoice(DIA_Landstreicher_HALLO, " I must go on. " ,DIA_Landstreicher_HALLO_weg);
-	Info_AddChoice(DIA_tramp_HELLO, " Где первый? " ,DIA_tramp_HELLO_where);
-	Info_AddChoice(DIA_tramp_HALLO, " Кто второй? " ,DIA_tramp_HALLO_who);
+	Info_AddChoice(DIA_tramp_HELLO, " Where is the first? " ,DIA_tramp_HELLO_where);
+	Info_AddChoice(DIA_tramp_HALLO, " The second one? " ,DIA_tramp_HALLO_who);
 };
 
 func void DIA_vagrant_HELLO_wo()
@@ -57,7 +57,7 @@ func void DIA_tramp_HELLO_who()
 {
 	AI_Output(other,self, " DIA_Landstreicher_HALLO_wer_15_00 " );	// Who was that?
 	AI_Output(self,other, " DIA_Landstreicher_HALLO_wer_09_01 " );	// He looked like one of those big-headed novices from the monastery.
-	AI_Output(self,other, " DIA_Landstreicher_HALLO_wer_09_02 " );	// Say what you want, but I don't think these guys are all right in the head.
+	AI_Output(self,other, " DIA_Landstreicher_HALLO_wer_09_02 " );	// Say what you want, but I don't think those guys are all right in the head.
 	if(hero.guild == GIL_KDF)
 	{
 		AI_Output(self,other, " DIA_Landstreicher_HALLO_wer_09_03 " );	// Just look at your ridiculous rags. I wouldn't dare go out like that even at night. (laughs)
@@ -68,15 +68,15 @@ func void DIA_tramp_HELLO_who()
 func void DIA_vagrant_HELLO_who_caution()
 {
 	AI_Output(other,self, " DIA_Landstreicher_HALLO_wer_vorsicht_15_00 " );	// Hold your tongue. I myself was a novice in a monastery.
-	AI_Output(self,other, " DIA_Landstreicher_HALLO_wer_vorsicht_09_01 " );	// (laughs) Oh, you poor thing. This explains something.
-	AI_Output(self,other, " DIA_Landstreicher_HALLO_wer_vorsicht_09_02 " );	// Nothing personal. Walk with God. You're a busy man, I won't keep you.
-	Info_AddChoice(DIA_Landstreicher_HALLO, " Somebody needs to teach you good manners. " ,DIA_Landstreicher_HALLO_wer_vorsicht_Manieren);
+	AI_Output(self,other, " DIA_Landstreicher_HALLO_wer_vorsicht_09_01 " );	// Oh, you poor thing. That explains a lot.
+	AI_Output(self,other, " DIA_Landstreicher_HALLO_wer_vorsicht_09_02 " );	// Nothing personal. Walk with the gods. You're a busy man, I won't keep you.
+	Info_AddChoice(DIA_Landstreicher_HALLO, " Somebody needs to teach you manners. " ,DIA_Landstreicher_HALLO_wer_vorsicht_Manieren);
 };
 
 func void DIA_tramp_HELLO_who_careful_manners()
 {
-	AI_Output(other,self, " DIA_Landstreicher_HALLO_wer_vorsicht_Manieren_15_00 " );	// Someone needs to teach you good manners.
-	AI_Output(self,other, " DIA_Landstreicher_HALLO_wer_vorsicht_Manieren_09_01 " );	// Okay, don't be offended. But if you really want to fight, then go ahead.
+	AI_Output(other,self, " DIA_Landstreicher_HALLO_wer_vorsicht_Manieren_15_00 " );	// Someone needs to teach you manners.
+	AI_Output(self,other, " DIA_Landstreicher_HALLO_wer_vorsicht_Manieren_09_01 " );	// Don't be so touchy. But if you really want to fight, then go ahead.
 	AI_Output(self,other, " DIA_Landstreicher_HALLO_wer_vorsicht_Manieren_09_02 " );	// Show me what you acolytes can do.
 	AI_StopProcessInfos(self);
 	B_Attack(self,other,AR_NONE,1);
