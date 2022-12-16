@@ -1,9 +1,10 @@
 
+
 prototype Mst_Default_OrcElite(C_Npc)
 {
-	name[0] = "Черный орк-воин";
+	name[ 0 ] = " Black Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCWARRIOR;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCWARRIOR ;
 	voice = 18;
 	level = 15;
 	attribute[ATR_STRENGTH] = 290;
@@ -31,7 +32,7 @@ prototype Mst_Default_OrcElite(C_Npc)
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_ThreatenBeforeAttack] = TRUE;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
 };
 
 func void B_SetVisuals_OrcElite()
@@ -108,9 +109,9 @@ func void b_setvisuals_orcelite_red_6()
 
 instance VB_ORKELITE_01(Mst_Default_OrcElite)
 {
-	name[0] = "Элитный черный орк-предводитель";
+	name[ 0 ] = " Elite Black Orc Leader " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCELITE;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCELITE ;
 	voice = 18;
 	level = 100;
 	attribute[ATR_STRENGTH] = 410;
@@ -134,7 +135,7 @@ instance VB_ORKELITE_01(Mst_Default_OrcElite)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
 	B_SetVisuals_OrcElite_VB_01();
 	EquipItem(self,itmw_2h_orcsword_04);
 	CreateInvItems(self,ItRi_OrcEliteRing,1);
@@ -144,9 +145,9 @@ instance VB_ORKELITE_01(Mst_Default_OrcElite)
 
 instance VB_ORKELITE_02(Mst_Default_OrcElite)
 {
-	name[0] = "Элитный черный орк-предводитель";
+	name[ 0 ] = " Elite Black Orc Leader " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCELITE;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCELITE ;
 	voice = 18;
 	level = 100;
 	attribute[ATR_STRENGTH] = 410;
@@ -170,7 +171,7 @@ instance VB_ORKELITE_02(Mst_Default_OrcElite)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
 	B_SetVisuals_OrcElite_VB_02();
 	EquipItem(self,itmw_2h_orcsword_04);
 	CreateInvItems(self,ItRi_OrcEliteRing,1);
@@ -180,9 +181,9 @@ instance VB_ORKELITE_02(Mst_Default_OrcElite)
 
 instance ORKELITE_TEST(Mst_Default_OrcElite)
 {
-	name[0] = "Элитный черный орк-предводитель";
+	name[ 0 ] = " Elite Black Orc Leader " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCELITE;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCELITE ;
 	voice = 18;
 	level = 100;
 	attribute[ATR_STRENGTH] = 410;
@@ -206,7 +207,7 @@ instance ORKELITE_TEST(Mst_Default_OrcElite)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
 	b_setvisuals_orcelite_red_6();
 	EquipItem(self,itmw_2h_orcsword_04);
 	CreateInvItems(self,ItRi_OrcEliteRing,1);
@@ -216,9 +217,9 @@ instance ORKELITE_TEST(Mst_Default_OrcElite)
 
 instance ORKELITE_BOWMENROAM(Mst_Default_OrcElite)
 {
-	name[0] = "Черный орк-арбалетчик";
+	name[ 0 ] = " Black Orc Crossbowman " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBOWMEN;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBOWMEN ;
 	voice = 18;
 	level = 15;
 	attribute[ATR_STRENGTH] = 260;
@@ -241,9 +242,9 @@ instance ORKELITE_BOWMENROAM(Mst_Default_OrcElite)
 	fight_tactic = FAI_ELITEORC;
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
-	aivar[AIV_MM_ThreatenBeforeAttack] = FALSE;
+	aivar[AIV_MM_ThreatenBeforeAttack] = FALSE ;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
 	B_SetVisuals_OrcElite();
 	EquipItem(self,ItMw_2H_OrcAxe_04);
 	EquipItem(self,itrw_crossbow_orc);
@@ -254,9 +255,9 @@ instance ORKELITE_BOWMENROAM(Mst_Default_OrcElite)
 
 instance ORKELITE_BOWMENREST(Mst_Default_OrcElite)
 {
-	name[0] = "Черный орк-арбалетчик";
+	name[ 0 ] = " Black Orc Crossbowman " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBOWMEN;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBOWMEN ;
 	voice = 18;
 	level = 15;
 	attribute[ATR_STRENGTH] = 260;
@@ -279,9 +280,9 @@ instance ORKELITE_BOWMENREST(Mst_Default_OrcElite)
 	fight_tactic = FAI_ELITEORC;
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
-	aivar[AIV_MM_ThreatenBeforeAttack] = FALSE;
+	aivar[AIV_MM_ThreatenBeforeAttack] = FALSE ;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
 	B_SetVisuals_OrcElite();
 	EquipItem(self,ItMw_2H_OrcAxe_03);
 	EquipItem(self,itrw_crossbow_orc);
@@ -292,9 +293,9 @@ instance ORKELITE_BOWMENREST(Mst_Default_OrcElite)
 
 instance ORKELITE_BOWMENSIT(Mst_Default_OrcElite)
 {
-	name[0] = "Черный орк-арбалетчик";
+	name[ 0 ] = " Black Orc Crossbowman " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBOWMEN;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBOWMEN ;
 	voice = 18;
 	level = 15;
 	attribute[ATR_STRENGTH] = 260;
@@ -317,9 +318,9 @@ instance ORKELITE_BOWMENSIT(Mst_Default_OrcElite)
 	fight_tactic = FAI_ELITEORC;
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
-	aivar[AIV_MM_ThreatenBeforeAttack] = FALSE;
+	aivar[AIV_MM_ThreatenBeforeAttack] = FALSE ;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
 	B_SetVisuals_OrcElite();
 	EquipItem(self,ItMw_2H_OrcAxe_04);
 	EquipItem(self,itrw_crossbow_orc);
@@ -330,9 +331,9 @@ instance ORKELITE_BOWMENSIT(Mst_Default_OrcElite)
 
 instance ORKELITE_ADDON1(Mst_Default_OrcElite)
 {
-	name[0] = "Черный орк-воин";
+	name[ 0 ] = " Black Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCWARRIOR;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCWARRIOR ;
 	voice = 18;
 	level = 15;
 	attribute[ATR_STRENGTH] = 290;
@@ -356,7 +357,7 @@ instance ORKELITE_ADDON1(Mst_Default_OrcElite)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
 	B_SetVisuals_OrcElite();
 	EquipItem(self,ItMw_2H_OrcAxe_04);
 	start_aistate = ZS_MM_AllScheduler;
@@ -365,9 +366,9 @@ instance ORKELITE_ADDON1(Mst_Default_OrcElite)
 
 instance ORKELITE_ADDON1_SI(Mst_Default_OrcElite)
 {
-	name[0] = "Черный орк-воин";
+	name[ 0 ] = " Black Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCWARRIOR;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCWARRIOR ;
 	voice = 18;
 	level = 19;
 	attribute[ATR_STRENGTH] = 290;
@@ -391,7 +392,7 @@ instance ORKELITE_ADDON1_SI(Mst_Default_OrcElite)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
 	B_SetVisuals_OrcElite();
 	EquipItem(self,ItMw_2H_OrcAxe_04);
 	start_aistate = ZS_MM_AllScheduler;
@@ -400,9 +401,9 @@ instance ORKELITE_ADDON1_SI(Mst_Default_OrcElite)
 
 instance ORKELITE_ADDON1R(Mst_Default_OrcElite)
 {
-	name[0] = "Черный орк-воин";
+	name[ 0 ] = " Black Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCWARRIOR;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCWARRIOR ;
 	voice = 18;
 	level = 15;
 	attribute[ATR_STRENGTH] = 290;
@@ -426,7 +427,7 @@ instance ORKELITE_ADDON1R(Mst_Default_OrcElite)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
 	B_SetVisuals_OrcElite();
 	EquipItem(self,ItMw_2H_OrcAxe_04);
 	start_aistate = ZS_MM_AllScheduler;
@@ -435,9 +436,9 @@ instance ORKELITE_ADDON1R(Mst_Default_OrcElite)
 
 instance ORKELITE_ADDON1S(Mst_Default_OrcElite)
 {
-	name[0] = "Черный орк-воин";
+	name[ 0 ] = " Black Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCWARRIOR;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCWARRIOR ;
 	voice = 18;
 	level = 15;
 	attribute[ATR_STRENGTH] = 290;
@@ -461,7 +462,7 @@ instance ORKELITE_ADDON1S(Mst_Default_OrcElite)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
 	B_SetVisuals_OrcElite();
 	EquipItem(self,ItMw_2H_OrcAxe_04);
 	start_aistate = ZS_MM_AllScheduler;
@@ -470,9 +471,9 @@ instance ORKELITE_ADDON1S(Mst_Default_OrcElite)
 
 instance ORKELITE_ADDON2(Mst_Default_OrcElite)
 {
-	name[0] = "Элитный черный орк-воин";
+	name[ 0 ] = " Elite Black Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBOWMEN;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBOWMEN ;
 	voice = 18;
 	level = 17;
 	attribute[ATR_STRENGTH] = 320;
@@ -495,9 +496,9 @@ instance ORKELITE_ADDON2(Mst_Default_OrcElite)
 	fight_tactic = FAI_ELITEORC;
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
-	aivar[AIV_MM_ThreatenBeforeAttack] = FALSE;
+	aivar[AIV_MM_ThreatenBeforeAttack] = FALSE ;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
 	b_setvisuals_orcelite_brown();
 	EquipItem(self,ItMw_2H_OrcSword_01);
 	EquipItem(self,itrw_crossbow_orc);
@@ -508,9 +509,9 @@ instance ORKELITE_ADDON2(Mst_Default_OrcElite)
 
 instance ORKELITE_ADDON2R(Mst_Default_OrcElite)
 {
-	name[0] = "Элитный черный орк-воин";
+	name[ 0 ] = " Elite Black Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBOWMEN;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBOWMEN ;
 	voice = 18;
 	level = 17;
 	attribute[ATR_STRENGTH] = 320;
@@ -533,9 +534,9 @@ instance ORKELITE_ADDON2R(Mst_Default_OrcElite)
 	fight_tactic = FAI_ELITEORC;
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
-	aivar[AIV_MM_ThreatenBeforeAttack] = FALSE;
+	aivar[AIV_MM_ThreatenBeforeAttack] = FALSE ;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
 	b_setvisuals_orcelite_brown();
 	EquipItem(self,ItMw_2H_OrcSword_01);
 	EquipItem(self,itrw_crossbow_orc);
@@ -546,9 +547,9 @@ instance ORKELITE_ADDON2R(Mst_Default_OrcElite)
 
 instance ORKELITE_ADDON2S(Mst_Default_OrcElite)
 {
-	name[0] = "Элитный черный орк-воин";
+	name[ 0 ] = " Elite Black Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBOWMEN;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBOWMEN ;
 	voice = 18;
 	level = 17;
 	attribute[ATR_STRENGTH] = 320;
@@ -571,9 +572,9 @@ instance ORKELITE_ADDON2S(Mst_Default_OrcElite)
 	fight_tactic = FAI_ELITEORC;
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
-	aivar[AIV_MM_ThreatenBeforeAttack] = FALSE;
+	aivar[AIV_MM_ThreatenBeforeAttack] = FALSE ;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
 	b_setvisuals_orcelite_brown();
 	EquipItem(self,ItMw_2H_OrcSword_01);
 	EquipItem(self,itrw_crossbow_orc);
@@ -584,9 +585,9 @@ instance ORKELITE_ADDON2S(Mst_Default_OrcElite)
 
 instance ORKELITE_ADDON3(Mst_Default_OrcElite)
 {
-	name[0] = "Элитный черный орк-старейшина";
+	name[ 0 ] = " Elite Black Orc Elder " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCELITE;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCELITE ;
 	voice = 18;
 	level = 50;
 	attribute[ATR_STRENGTH] = 350;
@@ -610,7 +611,7 @@ instance ORKELITE_ADDON3(Mst_Default_OrcElite)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
 	b_setvisuals_orcelite_silver();
 	EquipItem(self,ItMw_2H_OrcSword_02);
 	CreateInvItems(self,ItRi_OrcEliteRing,1);
@@ -620,9 +621,9 @@ instance ORKELITE_ADDON3(Mst_Default_OrcElite)
 
 instance ORKELITE_ADDON3R(Mst_Default_OrcElite)
 {
-	name[0] = "Элитный черный орк-старейшина";
+	name[ 0 ] = " Elite Black Orc Elder " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCELITE;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCELITE ;
 	voice = 18;
 	level = 50;
 	attribute[ATR_STRENGTH] = 350;
@@ -646,7 +647,7 @@ instance ORKELITE_ADDON3R(Mst_Default_OrcElite)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
 	b_setvisuals_orcelite_silver();
 	EquipItem(self,ItMw_2H_OrcSword_02);
 	CreateInvItems(self,ItRi_OrcEliteRing,1);
@@ -656,12 +657,12 @@ instance ORKELITE_ADDON3R(Mst_Default_OrcElite)
 
 instance ORKELITE_ADDON3R_DIEGO(Mst_Default_OrcElite)
 {
-	name[0] = "Нрукох, элитный орк-берсерк";
+	name[ 0 ] = " Nrukoh, Elite Orc Berserker " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCELITE;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCELITE ;
 	voice = 18;
 	level = 65;
-	aivar[90] = TRUE;
+	aivar[ 90 ] = TRUE ;
 	aivar[94] = NPC_UNCOMMON;
 	attribute[ATR_STRENGTH] = 400;
 	attribute[ATR_DEXTERITY] = 350;
@@ -681,11 +682,11 @@ instance ORKELITE_ADDON3R_DIEGO(Mst_Default_OrcElite)
 	HitChance[NPC_TALENT_CROSSBOW] = 100;
 	damagetype = DAM_EDGE;
 	fight_tactic = FAI_ELITEORC;
-	bodyStateInterruptableOverride = TRUE;
+	bodyStateInterruptableOverride = TRUE ;
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
 	b_setvisuals_orcelite_silver();
 	EquipItem(self,ItMw_2H_OrcSword_02);
 	CreateInvItems(self,ItRi_OrcEliteRing,1);
@@ -696,9 +697,9 @@ instance ORKELITE_ADDON3R_DIEGO(Mst_Default_OrcElite)
 
 instance ORKELITE_ADDON3S(Mst_Default_OrcElite)
 {
-	name[0] = "Элитный черный орк-старейшина";
+	name[ 0 ] = " Elite Black Orc Elder " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCELITE;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCELITE ;
 	voice = 18;
 	level = 50;
 	attribute[ATR_STRENGTH] = 350;
@@ -722,7 +723,7 @@ instance ORKELITE_ADDON3S(Mst_Default_OrcElite)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
 	b_setvisuals_orcelite_silver();
 	EquipItem(self,ItMw_2H_OrcSword_02);
 	CreateInvItems(self,ItRi_OrcEliteRing,1);
@@ -732,9 +733,9 @@ instance ORKELITE_ADDON3S(Mst_Default_OrcElite)
 
 instance ORKELITE_BODYGUARD(Mst_Default_OrcElite)
 {
-	name[0] = "Элитный черный орк-телохранитель";
+	name[ 0 ] = " Elite Black Orc Bodyguard " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCELITE;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCELITE ;
 	voice = 18;
 	level = 20;
 	attribute[ATR_STRENGTH] = 340;
@@ -758,7 +759,7 @@ instance ORKELITE_BODYGUARD(Mst_Default_OrcElite)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
 	b_setvisuals_orcelite_brown();
 	EquipItem(self,itmw_2h_orcsword_03);
 	start_aistate = ZS_MM_AllScheduler;
@@ -767,9 +768,9 @@ instance ORKELITE_BODYGUARD(Mst_Default_OrcElite)
 
 instance ORKELITE_ADDON4(Mst_Default_OrcElite)
 {
-	name[0] = "Элитный черный орк-военачальник";
+	name[ 0 ] = " Elite Black Orc Warlord " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCELITE;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCELITE ;
 	voice = 18;
 	level = 75;
 	attribute[ATR_STRENGTH] = 370;
@@ -793,7 +794,7 @@ instance ORKELITE_ADDON4(Mst_Default_OrcElite)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
 	b_setvisuals_orcelite_gold();
 	EquipItem(self,itmw_2h_orcsword_03);
 	CreateInvItems(self,ItRi_OrcEliteRing,1);
@@ -803,9 +804,9 @@ instance ORKELITE_ADDON4(Mst_Default_OrcElite)
 
 instance ORKELITE_ADDON4R(Mst_Default_OrcElite)
 {
-	name[0] = "Элитный черный орк-военачальник";
+	name[ 0 ] = " Elite Black Orc Warlord " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCELITE;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCELITE ;
 	voice = 18;
 	level = 75;
 	attribute[ATR_STRENGTH] = 370;
@@ -829,7 +830,7 @@ instance ORKELITE_ADDON4R(Mst_Default_OrcElite)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
 	b_setvisuals_orcelite_gold();
 	EquipItem(self,itmw_2h_orcsword_03);
 	CreateInvItems(self,ItRi_OrcEliteRing,1);
@@ -839,9 +840,9 @@ instance ORKELITE_ADDON4R(Mst_Default_OrcElite)
 
 instance ORKELITE_ADDON4S(Mst_Default_OrcElite)
 {
-	name[0] = "Элитный черный орк-военачальник";
+	name[ 0 ] = " Elite Black Orc Warlord " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCELITE;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCELITE ;
 	voice = 18;
 	level = 75;
 	attribute[ATR_STRENGTH] = 410;
@@ -865,7 +866,7 @@ instance ORKELITE_ADDON4S(Mst_Default_OrcElite)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
 	b_setvisuals_orcelite_gold();
 	EquipItem(self,itmw_2h_orcsword_04);
 	CreateInvItems(self,ItRi_OrcEliteRing,1);
@@ -875,9 +876,9 @@ instance ORKELITE_ADDON4S(Mst_Default_OrcElite)
 
 instance OrcElite_Roam(Mst_Default_OrcElite)
 {
-	name[0] = "Черный орк-воин";
+	name[ 0 ] = " Black Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCELITE;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCELITE ;
 	voice = 18;
 	level = 15;
 	attribute[ATR_STRENGTH] = 290;
@@ -901,7 +902,7 @@ instance OrcElite_Roam(Mst_Default_OrcElite)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
 	B_SetVisuals_OrcElite();
 	EquipItem(self,ItMw_2H_OrcAxe_04);
 	start_aistate = ZS_MM_AllScheduler;
@@ -910,9 +911,9 @@ instance OrcElite_Roam(Mst_Default_OrcElite)
 
 instance OrcElite_Rest(Mst_Default_OrcElite)
 {
-	name[0] = "Черный орк-воин";
+	name[ 0 ] = " Black Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCELITE;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCELITE ;
 	voice = 18;
 	level = 15;
 	attribute[ATR_STRENGTH] = 290;
@@ -936,7 +937,7 @@ instance OrcElite_Rest(Mst_Default_OrcElite)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
 	B_SetVisuals_OrcElite();
 	EquipItem(self,ItMw_2H_OrcAxe_04);
 	start_aistate = ZS_MM_AllScheduler;
@@ -945,9 +946,9 @@ instance OrcElite_Rest(Mst_Default_OrcElite)
 
 instance ORCELITE_DRINK(Mst_Default_OrcElite)
 {
-	name[0] = "Черный орк-воин";
+	name[ 0 ] = " Black Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCELITE;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCELITE ;
 	voice = 18;
 	level = 15;
 	attribute[ATR_STRENGTH] = 290;
@@ -971,7 +972,7 @@ instance ORCELITE_DRINK(Mst_Default_OrcElite)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
 	B_SetVisuals_OrcElite();
 	EquipItem(self,ItMw_2H_OrcAxe_04);
 	start_aistate = ZS_MM_AllScheduler;
@@ -980,13 +981,13 @@ instance ORCELITE_DRINK(Mst_Default_OrcElite)
 
 instance OrkElite_AntiPaladinOrkOberst(Mst_Default_OrcElite)
 {
-	name[0] = "Фангарх";
+	name[ 0 ] = " Fangarh " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCELITE;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCELITE ;
 	voice = 18;
 	level = 100;
-	aivar[90] = TRUE;
-	aivar[94] = NPC_LEGEND;
+	aivar[ 90 ] = TRUE ;
+	aivar[ 94 ] = NPC_LEGEND ;
 	attribute[ATR_STRENGTH] = 500;
 	attribute[ATR_DEXTERITY] = 300;
 	attribute[ATR_HITPOINTS_MAX] = 10000;
@@ -1008,7 +1009,7 @@ instance OrkElite_AntiPaladinOrkOberst(Mst_Default_OrcElite)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
 	b_setvisuals_orcelite_red();
 	EquipItem(self,itmw_2h_orcsword_04);
 	CreateInvItems(self,ItRi_OrcEliteRing,1);
@@ -1020,9 +1021,9 @@ instance OrkElite_AntiPaladinOrkOberst(Mst_Default_OrcElite)
 
 instance OrcElite_AntiPaladin(Mst_Default_OrcElite)
 {
-	name[0] = "Элитный черный орк-старейшина";
+	name[ 0 ] = " Elite Black Orc Elder " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCELITE;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCELITE ;
 	voice = 18;
 	level = 50;
 	attribute[ATR_STRENGTH] = 350;
@@ -1046,7 +1047,7 @@ instance OrcElite_AntiPaladin(Mst_Default_OrcElite)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
 	b_setvisuals_orcelite_silver();
 	EquipItem(self,ItMw_2H_OrcSword_02);
 	CreateInvItems(self,ItRi_OrcEliteRing,1);
@@ -1056,10 +1057,10 @@ instance OrcElite_AntiPaladin(Mst_Default_OrcElite)
 
 instance OrcElite_AntiPaladin1(Mst_Default_OrcElite)
 {
-	name[0] = "Элитный черный орк-старейшина";
+	name[ 0 ] = " Elite Black Orc Elder " ;
 	id = 111;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCELITE;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCELITE ;
 	voice = 18;
 	flags = 0;
 	level = 50;
@@ -1084,8 +1085,8 @@ instance OrcElite_AntiPaladin1(Mst_Default_OrcElite)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
-	aivar[AIV_EnemyOverride] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
+	aivar[AIV_EnemyOverride] = TRUE ;
 	b_setvisuals_orcelite_silver();
 	EquipItem(self,ItMw_2H_OrcSword_02);
 	CreateInvItems(self,ItRi_OrcEliteRing,1);
@@ -1095,10 +1096,10 @@ instance OrcElite_AntiPaladin1(Mst_Default_OrcElite)
 
 instance OrcElite_AntiPaladin2(Mst_Default_OrcElite)
 {
-	name[0] = "Элитный черный орк-старейшина";
+	name[ 0 ] = " Elite Black Orc Elder " ;
 	id = 112;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCELITE;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCELITE ;
 	voice = 18;
 	flags = 0;
 	level = 50;
@@ -1123,8 +1124,8 @@ instance OrcElite_AntiPaladin2(Mst_Default_OrcElite)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
-	aivar[AIV_EnemyOverride] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
+	aivar[AIV_EnemyOverride] = TRUE ;
 	b_setvisuals_orcelite_silver();
 	EquipItem(self,ItMw_2H_OrcSword_02);
 	CreateInvItems(self,ItRi_OrcEliteRing,1);
@@ -1134,10 +1135,10 @@ instance OrcElite_AntiPaladin2(Mst_Default_OrcElite)
 
 instance OrcElite_AntiPaladin3(Mst_Default_OrcElite)
 {
-	name[0] = "Элитный черный орк-старейшина";
+	name[ 0 ] = " Elite Black Orc Elder " ;
 	id = 113;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCELITE;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCELITE ;
 	voice = 18;
 	flags = 0;
 	level = 50;
@@ -1162,8 +1163,8 @@ instance OrcElite_AntiPaladin3(Mst_Default_OrcElite)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
-	aivar[AIV_EnemyOverride] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
+	aivar[AIV_EnemyOverride] = TRUE ;
 	b_setvisuals_orcelite_silver();
 	EquipItem(self,ItMw_2H_OrcSword_02);
 	CreateInvItems(self,ItRi_OrcEliteRing,1);
@@ -1173,13 +1174,13 @@ instance OrcElite_AntiPaladin3(Mst_Default_OrcElite)
 
 instance OrkElite_AntiPaladinOrkOberst_DI(Mst_Default_OrcElite)
 {
-	name[0] = "Ур-Ватах";
+	name[ 0 ] = " Ur-Watah " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCELITE;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCELITE ;
 	voice = 18;
 	level = 100;
-	aivar[90] = TRUE;
-	aivar[94] = NPC_LEGEND;
+	aivar[ 90 ] = TRUE ;
+	aivar[ 94 ] = NPC_LEGEND ;
 	attribute[ATR_STRENGTH] = 650;
 	attribute[ATR_DEXTERITY] = 250;
 	attribute[ATR_HITPOINTS_MAX] = 25000;
@@ -1201,11 +1202,11 @@ instance OrkElite_AntiPaladinOrkOberst_DI(Mst_Default_OrcElite)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
 	b_setvisuals_orcelite_red_2();
-	aivar[AIV_EnemyOverride] = TRUE;
+	aivar[AIV_EnemyOverride] = TRUE ;
 	EquipItem(self,itmw_2h_orcsword_04);
-	CreateInvItems(self,ItKe_OrkKnastDI_MIS,1);
+	CreateInvItems(self,ItKe_OrkKnastDI_MIS, 1 );
 	CreateInvItems(self,ItRi_OrcEliteRing,1);
 	CreateInvItems(self,ItPo_Perm_STR,1);
 	start_aistate = ZS_MM_AllScheduler;
@@ -1214,13 +1215,13 @@ instance OrkElite_AntiPaladinOrkOberst_DI(Mst_Default_OrcElite)
 
 instance ORKELITE_ADW_LEADER(Mst_Default_OrcElite)
 {
-	name[0] = "Ур-Катан";
+	name[ 0 ] = " Ur-Katan " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCELITE;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCELITE ;
 	voice = 18;
 	level = 100;
-	aivar[90] = TRUE;
-	aivar[94] = NPC_LEGEND;
+	aivar[ 90 ] = TRUE ;
+	aivar[ 94 ] = NPC_LEGEND ;
 	attribute[ATR_STRENGTH] = 450;
 	attribute[ATR_DEXTERITY] = 250;
 	attribute[ATR_HITPOINTS_MAX] = 10000;
@@ -1242,7 +1243,7 @@ instance ORKELITE_ADW_LEADER(Mst_Default_OrcElite)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
 	b_setvisuals_orcelite_red_3();
 	EquipItem(self,itmw_2h_orcsword_04);
 	CreateInvItems(self,ItRi_OrcEliteRing,1);
@@ -1254,9 +1255,9 @@ instance ORKELITE_ADW_LEADER(Mst_Default_OrcElite)
 
 instance ORKELITE_GENERAL_NW(Mst_Default_OrcElite)
 {
-	name[0] = "Ур-Гат, вождь Орды";
+	name[ 0 ] = " Ur-Gath, Warchief of the Horde " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCELITE;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCELITE ;
 	voice = 18;
 	level = 100;
 	attribute[ATR_STRENGTH] = 700;
@@ -1280,7 +1281,7 @@ instance ORKELITE_GENERAL_NW(Mst_Default_OrcElite)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
 	b_setvisuals_orcelite_red_4();
 	EquipItem(self,itmw_2h_orcsword_04);
 	CreateInvItems(self,ItRi_OrcEliteRing,1);
@@ -1291,9 +1292,9 @@ instance ORKELITE_GENERAL_NW(Mst_Default_OrcElite)
 
 instance ORKELITE_GENERAL_OW(Mst_Default_OrcElite)
 {
-	name[0] = "Элитный черный орк-предводитель";
+	name[ 0 ] = " Elite Black Orc Leader " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCELITE;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCELITE ;
 	voice = 18;
 	level = 100;
 	attribute[ATR_STRENGTH] = 410;
@@ -1317,7 +1318,7 @@ instance ORKELITE_GENERAL_OW(Mst_Default_OrcElite)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
 	b_setvisuals_orcelite_red_5();
 	EquipItem(self,itmw_2h_orcsword_04);
 	CreateInvItems(self,ItRi_OrcEliteRing,1);
@@ -1327,10 +1328,10 @@ instance ORKELITE_GENERAL_OW(Mst_Default_OrcElite)
 
 instance OrcElite_DIOberst1_Rest(Mst_Default_OrcElite)
 {
-	name[0] = "Элитный черный орк-старейшина";
+	name[ 0 ] = " Elite Black Orc Elder " ;
 	id = 113;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCELITE;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCELITE ;
 	voice = 18;
 	flags = 0;
 	level = 50;
@@ -1355,8 +1356,8 @@ instance OrcElite_DIOberst1_Rest(Mst_Default_OrcElite)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
-	aivar[AIV_EnemyOverride] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
+	aivar[AIV_EnemyOverride] = TRUE ;
 	b_setvisuals_orcelite_silver();
 	EquipItem(self,ItMw_2H_OrcSword_02);
 	CreateInvItems(self,ItRi_OrcEliteRing,1);
@@ -1366,10 +1367,10 @@ instance OrcElite_DIOberst1_Rest(Mst_Default_OrcElite)
 
 instance OrcElite_DIOberst2_Rest(Mst_Default_OrcElite)
 {
-	name[0] = "Элитный черный орк-старейшина";
+	name[ 0 ] = " Elite Black Orc Elder " ;
 	id = 113;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCELITE;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCELITE ;
 	voice = 18;
 	flags = 0;
 	level = 50;
@@ -1394,8 +1395,8 @@ instance OrcElite_DIOberst2_Rest(Mst_Default_OrcElite)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
-	aivar[AIV_EnemyOverride] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
+	aivar[AIV_EnemyOverride] = TRUE ;
 	b_setvisuals_orcelite_silver();
 	EquipItem(self,ItMw_2H_OrcSword_02);
 	CreateInvItems(self,ItRi_OrcEliteRing,1);
@@ -1405,10 +1406,10 @@ instance OrcElite_DIOberst2_Rest(Mst_Default_OrcElite)
 
 instance OrcElite_DIOberst3_Rest(Mst_Default_OrcElite)
 {
-	name[0] = "Элитный черный орк-старейшина";
+	name[ 0 ] = " Elite Black Orc Elder " ;
 	id = 113;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCELITE;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCELITE ;
 	voice = 18;
 	flags = 0;
 	level = 50;
@@ -1433,8 +1434,8 @@ instance OrcElite_DIOberst3_Rest(Mst_Default_OrcElite)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
-	aivar[AIV_EnemyOverride] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
+	aivar[AIV_EnemyOverride] = TRUE ;
 	b_setvisuals_orcelite_silver();
 	EquipItem(self,ItMw_2H_OrcSword_02);
 	CreateInvItems(self,ItRi_OrcEliteRing,1);
@@ -1444,9 +1445,9 @@ instance OrcElite_DIOberst3_Rest(Mst_Default_OrcElite)
 
 instance ORKELITE_ADDON3_CHKFLG_1(Mst_Default_OrcElite)
 {
-	name[0] = "Элитный черный орк-старейшина";
+	name[ 0 ] = " Elite Black Orc Elder " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCELITE;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCELITE ;
 	voice = 18;
 	level = 50;
 	attribute[ATR_STRENGTH] = 350;
@@ -1470,7 +1471,7 @@ instance ORKELITE_ADDON3_CHKFLG_1(Mst_Default_OrcElite)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
 	b_setvisuals_orcelite_silver();
 	EquipItem(self,ItMw_2H_OrcSword_02);
 	CreateInvItems(self,ItRi_OrcEliteRing,1);
@@ -1480,9 +1481,9 @@ instance ORKELITE_ADDON3_CHKFLG_1(Mst_Default_OrcElite)
 
 instance ORKELITE_ADDON3_CHKFLG_2(Mst_Default_OrcElite)
 {
-	name[0] = "Элитный черный орк-старейшина";
+	name[ 0 ] = " Elite Black Orc Elder " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCELITE;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCELITE ;
 	voice = 18;
 	level = 50;
 	attribute[ATR_STRENGTH] = 350;
@@ -1506,7 +1507,7 @@ instance ORKELITE_ADDON3_CHKFLG_2(Mst_Default_OrcElite)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
 	b_setvisuals_orcelite_silver();
 	EquipItem(self,ItMw_2H_OrcSword_02);
 	CreateInvItems(self,ItRi_OrcEliteRing,1);
@@ -1516,9 +1517,9 @@ instance ORKELITE_ADDON3_CHKFLG_2(Mst_Default_OrcElite)
 
 instance ORKELITE_ADDON3_CHKFLG_3(Mst_Default_OrcElite)
 {
-	name[0] = "Элитный черный орк-старейшина";
+	name[ 0 ] = " Elite Black Orc Elder " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCELITE;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCELITE ;
 	voice = 18;
 	level = 50;
 	attribute[ATR_STRENGTH] = 350;
@@ -1542,7 +1543,7 @@ instance ORKELITE_ADDON3_CHKFLG_3(Mst_Default_OrcElite)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
 	b_setvisuals_orcelite_silver();
 	EquipItem(self,ItMw_2H_OrcSword_02);
 	CreateInvItems(self,ItRi_OrcEliteRing,1);
@@ -1552,9 +1553,9 @@ instance ORKELITE_ADDON3_CHKFLG_3(Mst_Default_OrcElite)
 
 instance ORKELITE_ADDON3_CHKFLG_4(Mst_Default_OrcElite)
 {
-	name[0] = "Элитный черный орк-старейшина";
+	name[ 0 ] = " Elite Black Orc Elder " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCELITE;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCELITE ;
 	voice = 18;
 	level = 50;
 	attribute[ATR_STRENGTH] = 350;
@@ -1578,7 +1579,7 @@ instance ORKELITE_ADDON3_CHKFLG_4(Mst_Default_OrcElite)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
 	b_setvisuals_orcelite_silver();
 	EquipItem(self,ItMw_2H_OrcSword_02);
 	CreateInvItems(self,ItRi_OrcEliteRing,1);
@@ -1588,9 +1589,9 @@ instance ORKELITE_ADDON3_CHKFLG_4(Mst_Default_OrcElite)
 
 instance ORKELITE_ADDON3_CHKFLG_5(Mst_Default_OrcElite)
 {
-	name[0] = "Элитный черный орк-старейшина";
+	name[ 0 ] = " Elite Black Orc Elder " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCELITE;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCELITE ;
 	voice = 18;
 	level = 50;
 	attribute[ATR_STRENGTH] = 350;
@@ -1614,7 +1615,7 @@ instance ORKELITE_ADDON3_CHKFLG_5(Mst_Default_OrcElite)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
 	b_setvisuals_orcelite_silver();
 	EquipItem(self,ItMw_2H_OrcSword_02);
 	CreateInvItems(self,ItRi_OrcEliteRing,1);
@@ -1624,9 +1625,9 @@ instance ORKELITE_ADDON3_CHKFLG_5(Mst_Default_OrcElite)
 
 instance ORKELITE_ADDON3_CHKFLG_6(Mst_Default_OrcElite)
 {
-	name[0] = "Элитный черный орк-старейшина";
+	name[ 0 ] = " Elite Black Orc Elder " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCELITE;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCELITE ;
 	voice = 18;
 	level = 50;
 	attribute[ATR_STRENGTH] = 350;
@@ -1650,7 +1651,7 @@ instance ORKELITE_ADDON3_CHKFLG_6(Mst_Default_OrcElite)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
 	b_setvisuals_orcelite_silver();
 	EquipItem(self,ItMw_2H_OrcSword_02);
 	CreateInvItems(self,ItRi_OrcEliteRing,1);
@@ -1660,9 +1661,9 @@ instance ORKELITE_ADDON3_CHKFLG_6(Mst_Default_OrcElite)
 
 instance ORKELITE_ADDON3_CHKFLG_7(Mst_Default_OrcElite)
 {
-	name[0] = "Элитный черный орк-старейшина";
+	name[ 0 ] = " Elite Black Orc Elder " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCELITE;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCELITE ;
 	voice = 18;
 	level = 50;
 	attribute[ATR_STRENGTH] = 350;
@@ -1686,7 +1687,7 @@ instance ORKELITE_ADDON3_CHKFLG_7(Mst_Default_OrcElite)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
 	b_setvisuals_orcelite_silver();
 	EquipItem(self,ItMw_2H_OrcSword_02);
 	CreateInvItems(self,ItRi_OrcEliteRing,1);
@@ -1696,9 +1697,9 @@ instance ORKELITE_ADDON3_CHKFLG_7(Mst_Default_OrcElite)
 
 instance ORKELITE_ADDON3_CHKFLG_8(Mst_Default_OrcElite)
 {
-	name[0] = "Элитный черный орк-старейшина";
+	name[ 0 ] = " Elite Black Orc Elder " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCELITE;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCELITE ;
 	voice = 18;
 	level = 50;
 	attribute[ATR_STRENGTH] = 350;
@@ -1722,7 +1723,7 @@ instance ORKELITE_ADDON3_CHKFLG_8(Mst_Default_OrcElite)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
 	b_setvisuals_orcelite_silver();
 	EquipItem(self,ItMw_2H_OrcSword_02);
 	CreateInvItems(self,ItRi_OrcEliteRing,1);
@@ -1732,9 +1733,9 @@ instance ORKELITE_ADDON3_CHKFLG_8(Mst_Default_OrcElite)
 
 instance ORKELITE_ADDON3_CHKFLG_9(Mst_Default_OrcElite)
 {
-	name[0] = "Элитный черный орк-старейшина";
+	name[ 0 ] = " Elite Black Orc Elder " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCELITE;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCELITE ;
 	voice = 18;
 	level = 50;
 	attribute[ATR_STRENGTH] = 350;
@@ -1758,7 +1759,7 @@ instance ORKELITE_ADDON3_CHKFLG_9(Mst_Default_OrcElite)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
 	b_setvisuals_orcelite_silver();
 	EquipItem(self,ItMw_2H_OrcSword_02);
 	CreateInvItems(self,ItRi_OrcEliteRing,1);
@@ -1768,9 +1769,9 @@ instance ORKELITE_ADDON3_CHKFLG_9(Mst_Default_OrcElite)
 
 instance ORKELITE_ADDON3_CHKFLG_10(Mst_Default_OrcElite)
 {
-	name[0] = "Элитный черный орк-старейшина";
+	name[ 0 ] = " Elite Black Orc Elder " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCELITE;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCELITE ;
 	voice = 18;
 	level = 50;
 	attribute[ATR_STRENGTH] = 350;
@@ -1794,7 +1795,7 @@ instance ORKELITE_ADDON3_CHKFLG_10(Mst_Default_OrcElite)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
 	b_setvisuals_orcelite_silver();
 	EquipItem(self,ItMw_2H_OrcSword_02);
 	CreateInvItems(self,ItRi_OrcEliteRing,1);
@@ -1804,9 +1805,9 @@ instance ORKELITE_ADDON3_CHKFLG_10(Mst_Default_OrcElite)
 
 instance ORKELITE_ADDON3_CHKFLG_11(Mst_Default_OrcElite)
 {
-	name[0] = "Элитный черный орк-старейшина";
+	name[ 0 ] = " Elite Black Orc Elder " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCELITE;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCELITE ;
 	voice = 18;
 	level = 50;
 	attribute[ATR_STRENGTH] = 350;
@@ -1830,7 +1831,7 @@ instance ORKELITE_ADDON3_CHKFLG_11(Mst_Default_OrcElite)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
 	b_setvisuals_orcelite_silver();
 	EquipItem(self,ItMw_2H_OrcSword_02);
 	CreateInvItems(self,ItRi_OrcEliteRing,1);
@@ -1840,9 +1841,9 @@ instance ORKELITE_ADDON3_CHKFLG_11(Mst_Default_OrcElite)
 
 instance ORKELITE_ADDON3_CHKFLG_12(Mst_Default_OrcElite)
 {
-	name[0] = "Элитный черный орк-старейшина";
+	name[ 0 ] = " Elite Black Orc Elder " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCELITE;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCELITE ;
 	voice = 18;
 	level = 50;
 	attribute[ATR_STRENGTH] = 350;
@@ -1866,7 +1867,7 @@ instance ORKELITE_ADDON3_CHKFLG_12(Mst_Default_OrcElite)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
 	b_setvisuals_orcelite_silver();
 	EquipItem(self,ItMw_2H_OrcSword_02);
 	CreateInvItems(self,ItRi_OrcEliteRing,1);
@@ -1876,9 +1877,9 @@ instance ORKELITE_ADDON3_CHKFLG_12(Mst_Default_OrcElite)
 
 instance ORKELITE_ADDON3_CHKFLG_13(Mst_Default_OrcElite)
 {
-	name[0] = "Элитный черный орк-старейшина";
+	name[ 0 ] = " Elite Black Orc Elder " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCELITE;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCELITE ;
 	voice = 18;
 	level = 50;
 	attribute[ATR_STRENGTH] = 350;
@@ -1902,7 +1903,7 @@ instance ORKELITE_ADDON3_CHKFLG_13(Mst_Default_OrcElite)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
 	b_setvisuals_orcelite_silver();
 	EquipItem(self,ItMw_2H_OrcSword_02);
 	CreateInvItems(self,ItRi_OrcEliteRing,1);
@@ -1912,9 +1913,9 @@ instance ORKELITE_ADDON3_CHKFLG_13(Mst_Default_OrcElite)
 
 instance ORKELITE_ADDON3_CHKFLG_14(Mst_Default_OrcElite)
 {
-	name[0] = "Элитный черный орк-старейшина";
+	name[ 0 ] = " Elite Black Orc Elder " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCELITE;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCELITE ;
 	voice = 18;
 	level = 50;
 	attribute[ATR_STRENGTH] = 350;
@@ -1938,7 +1939,7 @@ instance ORKELITE_ADDON3_CHKFLG_14(Mst_Default_OrcElite)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
 	b_setvisuals_orcelite_silver();
 	EquipItem(self,ItMw_2H_OrcSword_02);
 	CreateInvItems(self,ItRi_OrcEliteRing,1);
@@ -1948,9 +1949,9 @@ instance ORKELITE_ADDON3_CHKFLG_14(Mst_Default_OrcElite)
 
 instance ORKELITE_ADDON3_CHKFLG_15(Mst_Default_OrcElite)
 {
-	name[0] = "Элитный черный орк-старейшина";
+	name[ 0 ] = " Elite Black Orc Elder " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCELITE;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCELITE ;
 	voice = 18;
 	level = 50;
 	attribute[ATR_STRENGTH] = 350;
@@ -1974,7 +1975,7 @@ instance ORKELITE_ADDON3_CHKFLG_15(Mst_Default_OrcElite)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
 	b_setvisuals_orcelite_silver();
 	EquipItem(self,ItMw_2H_OrcSword_02);
 	CreateInvItems(self,ItRi_OrcEliteRing,1);
@@ -1984,9 +1985,9 @@ instance ORKELITE_ADDON3_CHKFLG_15(Mst_Default_OrcElite)
 
 instance ORKELITE_ADDON3_CHKFLG_16(Mst_Default_OrcElite)
 {
-	name[0] = "Элитный черный орк-старейшина";
+	name[ 0 ] = " Elite Black Orc Elder " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCELITE;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCELITE ;
 	voice = 18;
 	level = 50;
 	attribute[ATR_STRENGTH] = 350;
@@ -2010,7 +2011,7 @@ instance ORKELITE_ADDON3_CHKFLG_16(Mst_Default_OrcElite)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
 	b_setvisuals_orcelite_silver();
 	EquipItem(self,ItMw_2H_OrcSword_02);
 	CreateInvItems(self,ItRi_OrcEliteRing,1);
@@ -2020,9 +2021,9 @@ instance ORKELITE_ADDON3_CHKFLG_16(Mst_Default_OrcElite)
 
 instance ORKELITE_ADDON3_CHKFLG_17(Mst_Default_OrcElite)
 {
-	name[0] = "Элитный черный орк-старейшина";
+	name[ 0 ] = " Elite Black Orc Elder " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCELITE;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCELITE ;
 	voice = 18;
 	level = 50;
 	attribute[ATR_STRENGTH] = 350;
@@ -2046,7 +2047,7 @@ instance ORKELITE_ADDON3_CHKFLG_17(Mst_Default_OrcElite)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
 	b_setvisuals_orcelite_silver();
 	EquipItem(self,ItMw_2H_OrcSword_02);
 	CreateInvItems(self,ItRi_OrcEliteRing,1);
@@ -2056,9 +2057,9 @@ instance ORKELITE_ADDON3_CHKFLG_17(Mst_Default_OrcElite)
 
 instance ORKELITE_ADDON3_CHKFLG_18(Mst_Default_OrcElite)
 {
-	name[0] = "Элитный черный орк-старейшина";
+	name[ 0 ] = " Elite Black Orc Elder " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCELITE;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCELITE ;
 	voice = 18;
 	level = 50;
 	attribute[ATR_STRENGTH] = 350;
@@ -2082,7 +2083,7 @@ instance ORKELITE_ADDON3_CHKFLG_18(Mst_Default_OrcElite)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
 	b_setvisuals_orcelite_silver();
 	EquipItem(self,ItMw_2H_OrcSword_02);
 	CreateInvItems(self,ItRi_OrcEliteRing,1);
@@ -2092,9 +2093,9 @@ instance ORKELITE_ADDON3_CHKFLG_18(Mst_Default_OrcElite)
 
 instance ORKELITE_ADDON3_CHKFLG_19(Mst_Default_OrcElite)
 {
-	name[0] = "Элитный черный орк-старейшина";
+	name[ 0 ] = " Elite Black Orc Elder " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCELITE;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCELITE ;
 	voice = 18;
 	level = 50;
 	attribute[ATR_STRENGTH] = 350;
@@ -2118,7 +2119,7 @@ instance ORKELITE_ADDON3_CHKFLG_19(Mst_Default_OrcElite)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
 	b_setvisuals_orcelite_silver();
 	EquipItem(self,ItMw_2H_OrcSword_02);
 	CreateInvItems(self,ItRi_OrcEliteRing,1);
@@ -2128,9 +2129,9 @@ instance ORKELITE_ADDON3_CHKFLG_19(Mst_Default_OrcElite)
 
 instance ORKELITE_ADDON3_CHKFLG_20(Mst_Default_OrcElite)
 {
-	name[0] = "Элитный черный орк-старейшина";
+	name[ 0 ] = " Elite Black Orc Elder " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCELITE;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCELITE ;
 	voice = 18;
 	level = 50;
 	attribute[ATR_STRENGTH] = 350;
@@ -2154,7 +2155,7 @@ instance ORKELITE_ADDON3_CHKFLG_20(Mst_Default_OrcElite)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
 	b_setvisuals_orcelite_silver();
 	EquipItem(self,ItMw_2H_OrcSword_02);
 	CreateInvItems(self,ItRi_OrcEliteRing,1);
@@ -2164,9 +2165,9 @@ instance ORKELITE_ADDON3_CHKFLG_20(Mst_Default_OrcElite)
 
 instance ORKELITE_ADDON3_CHKFLG_21(Mst_Default_OrcElite)
 {
-	name[0] = "Элитный черный орк-старейшина";
+	name[ 0 ] = " Elite Black Orc Elder " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCELITE;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCELITE ;
 	voice = 18;
 	level = 50;
 	attribute[ATR_STRENGTH] = 350;
@@ -2190,7 +2191,7 @@ instance ORKELITE_ADDON3_CHKFLG_21(Mst_Default_OrcElite)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
 	b_setvisuals_orcelite_silver();
 	EquipItem(self,ItMw_2H_OrcSword_02);
 	CreateInvItems(self,ItRi_OrcEliteRing,1);
@@ -2200,9 +2201,9 @@ instance ORKELITE_ADDON3_CHKFLG_21(Mst_Default_OrcElite)
 
 instance ORKELITE_ADDON3_CHKFLG_22(Mst_Default_OrcElite)
 {
-	name[0] = "Элитный черный орк-старейшина";
+	name[ 0 ] = " Elite Black Orc Elder " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCELITE;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCELITE ;
 	voice = 18;
 	level = 50;
 	attribute[ATR_STRENGTH] = 350;
@@ -2226,7 +2227,7 @@ instance ORKELITE_ADDON3_CHKFLG_22(Mst_Default_OrcElite)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
 	b_setvisuals_orcelite_silver();
 	EquipItem(self,ItMw_2H_OrcSword_02);
 	CreateInvItems(self,ItRi_OrcEliteRing,1);
@@ -2236,9 +2237,9 @@ instance ORKELITE_ADDON3_CHKFLG_22(Mst_Default_OrcElite)
 
 instance ORKELITE_ADDON3_CHKFLG_23(Mst_Default_OrcElite)
 {
-	name[0] = "Элитный черный орк-старейшина";
+	name[ 0 ] = " Elite Black Orc Elder " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCELITE;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCELITE ;
 	voice = 18;
 	level = 50;
 	attribute[ATR_STRENGTH] = 350;
@@ -2262,7 +2263,7 @@ instance ORKELITE_ADDON3_CHKFLG_23(Mst_Default_OrcElite)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
 	b_setvisuals_orcelite_silver();
 	EquipItem(self,ItMw_2H_OrcSword_02);
 	CreateInvItems(self,ItRi_OrcEliteRing,1);
@@ -2272,9 +2273,9 @@ instance ORKELITE_ADDON3_CHKFLG_23(Mst_Default_OrcElite)
 
 instance ORKELITE_ADDON3_CHKFLG_24(Mst_Default_OrcElite)
 {
-	name[0] = "Элитный черный орк-старейшина";
+	name[ 0 ] = " Elite Black Orc Elder " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCELITE;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCELITE ;
 	voice = 18;
 	level = 50;
 	attribute[ATR_STRENGTH] = 350;
@@ -2298,7 +2299,7 @@ instance ORKELITE_ADDON3_CHKFLG_24(Mst_Default_OrcElite)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
 	b_setvisuals_orcelite_silver();
 	EquipItem(self,ItMw_2H_OrcSword_02);
 	CreateInvItems(self,ItRi_OrcEliteRing,1);
@@ -2308,9 +2309,9 @@ instance ORKELITE_ADDON3_CHKFLG_24(Mst_Default_OrcElite)
 
 instance ORKELITE_ADDON3_CHKFLG_25(Mst_Default_OrcElite)
 {
-	name[0] = "Элитный черный орк-старейшина";
+	name[ 0 ] = " Elite Black Orc Elder " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCELITE;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCELITE ;
 	voice = 18;
 	level = 50;
 	attribute[ATR_STRENGTH] = 350;
@@ -2334,7 +2335,7 @@ instance ORKELITE_ADDON3_CHKFLG_25(Mst_Default_OrcElite)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
 	b_setvisuals_orcelite_silver();
 	EquipItem(self,ItMw_2H_OrcSword_02);
 	CreateInvItems(self,ItRi_OrcEliteRing,1);
@@ -2344,9 +2345,9 @@ instance ORKELITE_ADDON3_CHKFLG_25(Mst_Default_OrcElite)
 
 instance ORKELITE_ADDON3_CHKFLG_26(Mst_Default_OrcElite)
 {
-	name[0] = "Элитный черный орк-старейшина";
+	name[ 0 ] = " Elite Black Orc Elder " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCELITE;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCELITE ;
 	voice = 18;
 	level = 50;
 	attribute[ATR_STRENGTH] = 350;
@@ -2370,7 +2371,7 @@ instance ORKELITE_ADDON3_CHKFLG_26(Mst_Default_OrcElite)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
 	b_setvisuals_orcelite_silver();
 	EquipItem(self,ItMw_2H_OrcSword_02);
 	CreateInvItems(self,ItRi_OrcEliteRing,1);
@@ -2380,9 +2381,9 @@ instance ORKELITE_ADDON3_CHKFLG_26(Mst_Default_OrcElite)
 
 instance ORKELITE_ADDON3_CHKFLG_27(Mst_Default_OrcElite)
 {
-	name[0] = "Элитный черный орк-старейшина";
+	name[ 0 ] = " Elite Black Orc Elder " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCELITE;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCELITE ;
 	voice = 18;
 	level = 50;
 	attribute[ATR_STRENGTH] = 350;
@@ -2406,7 +2407,7 @@ instance ORKELITE_ADDON3_CHKFLG_27(Mst_Default_OrcElite)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
 	b_setvisuals_orcelite_silver();
 	EquipItem(self,ItMw_2H_OrcSword_02);
 	CreateInvItems(self,ItRi_OrcEliteRing,1);
@@ -2416,9 +2417,9 @@ instance ORKELITE_ADDON3_CHKFLG_27(Mst_Default_OrcElite)
 
 instance ORKELITE_ADDON3_CHKFLG_28_WITHKEY(Mst_Default_OrcElite)
 {
-	name[0] = "Элитный черный орк-старейшина";
+	name[ 0 ] = " Elite Black Orc Elder " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCELITE;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCELITE ;
 	voice = 18;
 	level = 50;
 	attribute[ATR_STRENGTH] = 350;
@@ -2442,7 +2443,7 @@ instance ORKELITE_ADDON3_CHKFLG_28_WITHKEY(Mst_Default_OrcElite)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
 	b_setvisuals_orcelite_silver();
 	EquipItem(self,ItMw_2H_OrcSword_02);
 	CreateInvItems(self,ItRi_OrcEliteRing,1);
@@ -2453,9 +2454,9 @@ instance ORKELITE_ADDON3_CHKFLG_28_WITHKEY(Mst_Default_OrcElite)
 
 instance ORKELITE_ADDON3_CHKFLG_28(Mst_Default_OrcElite)
 {
-	name[0] = "Элитный черный орк-старейшина";
+	name[ 0 ] = " Elite Black Orc Elder " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCELITE;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCELITE ;
 	voice = 18;
 	level = 50;
 	attribute[ATR_STRENGTH] = 350;
@@ -2479,7 +2480,7 @@ instance ORKELITE_ADDON3_CHKFLG_28(Mst_Default_OrcElite)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
 	b_setvisuals_orcelite_silver();
 	EquipItem(self,ItMw_2H_OrcSword_02);
 	CreateInvItems(self,ItRi_OrcEliteRing,1);
@@ -2489,9 +2490,9 @@ instance ORKELITE_ADDON3_CHKFLG_28(Mst_Default_OrcElite)
 
 instance ORKELITE_ADDON4_CHKFLG_29(Mst_Default_OrcElite)
 {
-	name[0] = "Элитный черный орк-военачальник";
+	name[ 0 ] = " Elite Black Orc Warlord " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCELITE;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCELITE ;
 	voice = 18;
 	level = 75;
 	attribute[ATR_STRENGTH] = 410;
@@ -2515,7 +2516,7 @@ instance ORKELITE_ADDON4_CHKFLG_29(Mst_Default_OrcElite)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
 	b_setvisuals_orcelite_gold();
 	EquipItem(self,itmw_2h_orcsword_04);
 	CreateInvItems(self,ItRi_OrcEliteRing,1);
@@ -2525,9 +2526,9 @@ instance ORKELITE_ADDON4_CHKFLG_29(Mst_Default_OrcElite)
 
 instance ORKELITE_ADDON3_NWCHKFLG_01(Mst_Default_OrcElite)
 {
-	name[0] = "Элитный черный орк-старейшина";
+	name[ 0 ] = " Elite Black Orc Elder " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCELITE;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCELITE ;
 	voice = 18;
 	level = 50;
 	attribute[ATR_STRENGTH] = 350;
@@ -2551,7 +2552,7 @@ instance ORKELITE_ADDON3_NWCHKFLG_01(Mst_Default_OrcElite)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
 	b_setvisuals_orcelite_silver();
 	EquipItem(self,ItMw_2H_OrcSword_02);
 	CreateInvItems(self,ItRi_OrcEliteRing,1);
@@ -2561,9 +2562,9 @@ instance ORKELITE_ADDON3_NWCHKFLG_01(Mst_Default_OrcElite)
 
 instance ORKELITE_ADDON3_NWCHKFLG_02(Mst_Default_OrcElite)
 {
-	name[0] = "Элитный черный орк-старейшина";
+	name[ 0 ] = " Elite Black Orc Elder " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCELITE;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCELITE ;
 	voice = 18;
 	level = 50;
 	attribute[ATR_STRENGTH] = 350;
@@ -2587,7 +2588,7 @@ instance ORKELITE_ADDON3_NWCHKFLG_02(Mst_Default_OrcElite)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
 	b_setvisuals_orcelite_silver();
 	EquipItem(self,ItMw_2H_OrcSword_02);
 	CreateInvItems(self,ItRi_OrcEliteRing,1);
@@ -2597,9 +2598,9 @@ instance ORKELITE_ADDON3_NWCHKFLG_02(Mst_Default_OrcElite)
 
 instance ORKELITE_ADDON3_NWCHKFLG_03(Mst_Default_OrcElite)
 {
-	name[0] = "Элитный черный орк-старейшина";
+	name[ 0 ] = " Elite Black Orc Elder " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCELITE;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCELITE ;
 	voice = 18;
 	level = 50;
 	attribute[ATR_STRENGTH] = 350;
@@ -2623,7 +2624,7 @@ instance ORKELITE_ADDON3_NWCHKFLG_03(Mst_Default_OrcElite)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
 	b_setvisuals_orcelite_silver();
 	EquipItem(self,ItMw_2H_OrcSword_02);
 	CreateInvItems(self,ItRi_OrcEliteRing,1);
@@ -2633,9 +2634,9 @@ instance ORKELITE_ADDON3_NWCHKFLG_03(Mst_Default_OrcElite)
 
 instance ORKELITE_ADDON3_NWCHKFLG_04(Mst_Default_OrcElite)
 {
-	name[0] = "Элитный черный орк-старейшина";
+	name[ 0 ] = " Elite Black Orc Elder " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCELITE;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCELITE ;
 	voice = 18;
 	level = 50;
 	attribute[ATR_STRENGTH] = 350;
@@ -2659,7 +2660,7 @@ instance ORKELITE_ADDON3_NWCHKFLG_04(Mst_Default_OrcElite)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
 	b_setvisuals_orcelite_silver();
 	EquipItem(self,ItMw_2H_OrcSword_02);
 	CreateInvItems(self,ItRi_OrcEliteRing,1);
@@ -2669,9 +2670,9 @@ instance ORKELITE_ADDON3_NWCHKFLG_04(Mst_Default_OrcElite)
 
 instance ORKELITE_ADDON3_NWCHKFLG_05(Mst_Default_OrcElite)
 {
-	name[0] = "Элитный черный орк-старейшина";
+	name[ 0 ] = " Elite Black Orc Elder " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCELITE;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCELITE ;
 	voice = 18;
 	level = 50;
 	attribute[ATR_STRENGTH] = 350;
@@ -2695,7 +2696,7 @@ instance ORKELITE_ADDON3_NWCHKFLG_05(Mst_Default_OrcElite)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
 	b_setvisuals_orcelite_silver();
 	EquipItem(self,ItMw_2H_OrcSword_02);
 	CreateInvItems(self,ItRi_OrcEliteRing,1);
@@ -2705,9 +2706,9 @@ instance ORKELITE_ADDON3_NWCHKFLG_05(Mst_Default_OrcElite)
 
 instance ORKELITE_ADDON3_NWCHKFLG_06(Mst_Default_OrcElite)
 {
-	name[0] = "Элитный черный орк-старейшина";
+	name[ 0 ] = " Elite Black Orc Elder " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCELITE;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCELITE ;
 	voice = 18;
 	level = 50;
 	attribute[ATR_STRENGTH] = 350;
@@ -2731,7 +2732,7 @@ instance ORKELITE_ADDON3_NWCHKFLG_06(Mst_Default_OrcElite)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
 	b_setvisuals_orcelite_silver();
 	EquipItem(self,ItMw_2H_OrcSword_02);
 	CreateInvItems(self,ItRi_OrcEliteRing,1);
@@ -2741,9 +2742,9 @@ instance ORKELITE_ADDON3_NWCHKFLG_06(Mst_Default_OrcElite)
 
 instance ORKELITE_ADDON3_NWCHKFLG_07(Mst_Default_OrcElite)
 {
-	name[0] = "Элитный черный орк-старейшина";
+	name[ 0 ] = " Elite Black Orc Elder " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCELITE;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCELITE ;
 	voice = 18;
 	level = 50;
 	attribute[ATR_STRENGTH] = 350;
@@ -2767,7 +2768,7 @@ instance ORKELITE_ADDON3_NWCHKFLG_07(Mst_Default_OrcElite)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
 	b_setvisuals_orcelite_silver();
 	EquipItem(self,ItMw_2H_OrcSword_02);
 	CreateInvItems(self,ItRi_OrcEliteRing,1);
@@ -2777,9 +2778,9 @@ instance ORKELITE_ADDON3_NWCHKFLG_07(Mst_Default_OrcElite)
 
 instance ORKELITE_ADDON3_NWCHKFLG_08(Mst_Default_OrcElite)
 {
-	name[0] = "Элитный черный орк-старейшина";
+	name[ 0 ] = " Elite Black Orc Elder " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCELITE;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCELITE ;
 	voice = 18;
 	level = 50;
 	attribute[ATR_STRENGTH] = 350;
@@ -2803,7 +2804,7 @@ instance ORKELITE_ADDON3_NWCHKFLG_08(Mst_Default_OrcElite)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
 	b_setvisuals_orcelite_silver();
 	EquipItem(self,ItMw_2H_OrcSword_02);
 	CreateInvItems(self,ItRi_OrcEliteRing,1);
@@ -2813,9 +2814,9 @@ instance ORKELITE_ADDON3_NWCHKFLG_08(Mst_Default_OrcElite)
 
 instance ORKELITE_ADDON3_NWCHKFLG_09(Mst_Default_OrcElite)
 {
-	name[0] = "Элитный черный орк-старейшина";
+	name[ 0 ] = " Elite Black Orc Elder " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCELITE;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCELITE ;
 	voice = 18;
 	level = 50;
 	attribute[ATR_STRENGTH] = 350;
@@ -2839,7 +2840,7 @@ instance ORKELITE_ADDON3_NWCHKFLG_09(Mst_Default_OrcElite)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
 	b_setvisuals_orcelite_silver();
 	EquipItem(self,ItMw_2H_OrcSword_02);
 	CreateInvItems(self,ItRi_OrcEliteRing,1);
@@ -2849,9 +2850,9 @@ instance ORKELITE_ADDON3_NWCHKFLG_09(Mst_Default_OrcElite)
 
 instance ORKELITE_ADDON3_NWCHKFLG_10(Mst_Default_OrcElite)
 {
-	name[0] = "Элитный черный орк-старейшина";
+	name[ 0 ] = " Elite Black Orc Elder " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCELITE;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCELITE ;
 	voice = 18;
 	level = 50;
 	attribute[ATR_STRENGTH] = 350;
@@ -2875,7 +2876,7 @@ instance ORKELITE_ADDON3_NWCHKFLG_10(Mst_Default_OrcElite)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
 	b_setvisuals_orcelite_silver();
 	EquipItem(self,ItMw_2H_OrcSword_02);
 	CreateInvItems(self,ItRi_OrcEliteRing,1);
@@ -2885,9 +2886,9 @@ instance ORKELITE_ADDON3_NWCHKFLG_10(Mst_Default_OrcElite)
 
 instance ORKELITE_ADDON3_NWCHKFLG_11(Mst_Default_OrcElite)
 {
-	name[0] = "Элитный черный орк-старейшина";
+	name[ 0 ] = " Elite Black Orc Elder " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCELITE;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCELITE ;
 	voice = 18;
 	level = 50;
 	attribute[ATR_STRENGTH] = 350;
@@ -2911,7 +2912,7 @@ instance ORKELITE_ADDON3_NWCHKFLG_11(Mst_Default_OrcElite)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
 	b_setvisuals_orcelite_silver();
 	EquipItem(self,ItMw_2H_OrcSword_02);
 	CreateInvItems(self,ItRi_OrcEliteRing,1);
@@ -2921,9 +2922,9 @@ instance ORKELITE_ADDON3_NWCHKFLG_11(Mst_Default_OrcElite)
 
 instance ORKELITE_ADDON3_NWCHKFLG_12(Mst_Default_OrcElite)
 {
-	name[0] = "Элитный черный орк-старейшина";
+	name[ 0 ] = " Elite Black Orc Elder " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCELITE;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCELITE ;
 	voice = 18;
 	level = 50;
 	attribute[ATR_STRENGTH] = 350;
@@ -2947,7 +2948,7 @@ instance ORKELITE_ADDON3_NWCHKFLG_12(Mst_Default_OrcElite)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
 	b_setvisuals_orcelite_silver();
 	EquipItem(self,ItMw_2H_OrcSword_02);
 	CreateInvItems(self,ItRi_OrcEliteRing,1);
@@ -2957,9 +2958,9 @@ instance ORKELITE_ADDON3_NWCHKFLG_12(Mst_Default_OrcElite)
 
 instance ORKELITE_ADDON3_NWCHKFLG_13(Mst_Default_OrcElite)
 {
-	name[0] = "Элитный черный орк-старейшина";
+	name[ 0 ] = " Elite Black Orc Elder " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCELITE;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCELITE ;
 	voice = 18;
 	level = 50;
 	attribute[ATR_STRENGTH] = 350;
@@ -2983,7 +2984,7 @@ instance ORKELITE_ADDON3_NWCHKFLG_13(Mst_Default_OrcElite)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
 	b_setvisuals_orcelite_silver();
 	EquipItem(self,ItMw_2H_OrcSword_02);
 	CreateInvItems(self,ItRi_OrcEliteRing,1);
@@ -2993,9 +2994,9 @@ instance ORKELITE_ADDON3_NWCHKFLG_13(Mst_Default_OrcElite)
 
 instance ORKELITE_ADDON3_NWCHKFLG_14(Mst_Default_OrcElite)
 {
-	name[0] = "Элитный черный орк-старейшина";
+	name[ 0 ] = " Elite Black Orc Elder " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCELITE;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCELITE ;
 	voice = 18;
 	level = 50;
 	attribute[ATR_STRENGTH] = 350;
@@ -3019,7 +3020,7 @@ instance ORKELITE_ADDON3_NWCHKFLG_14(Mst_Default_OrcElite)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
 	b_setvisuals_orcelite_silver();
 	EquipItem(self,ItMw_2H_OrcSword_02);
 	CreateInvItems(self,ItRi_OrcEliteRing,1);
@@ -3029,9 +3030,9 @@ instance ORKELITE_ADDON3_NWCHKFLG_14(Mst_Default_OrcElite)
 
 instance ORKELITE_ADDON3_NWCHKFLG_15(Mst_Default_OrcElite)
 {
-	name[0] = "Элитный черный орк-старейшина";
+	name[ 0 ] = " Elite Black Orc Elder " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCELITE;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCELITE ;
 	voice = 18;
 	level = 50;
 	attribute[ATR_STRENGTH] = 350;
@@ -3055,7 +3056,7 @@ instance ORKELITE_ADDON3_NWCHKFLG_15(Mst_Default_OrcElite)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
 	b_setvisuals_orcelite_silver();
 	EquipItem(self,ItMw_2H_OrcSword_02);
 	CreateInvItems(self,ItRi_OrcEliteRing,1);
@@ -3065,9 +3066,9 @@ instance ORKELITE_ADDON3_NWCHKFLG_15(Mst_Default_OrcElite)
 
 instance ORKELITE_ADDON3_NWCHKFLG_16(Mst_Default_OrcElite)
 {
-	name[0] = "Элитный черный орк-старейшина";
+	name[ 0 ] = " Elite Black Orc Elder " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCELITE;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCELITE ;
 	voice = 18;
 	level = 50;
 	attribute[ATR_STRENGTH] = 350;
@@ -3091,7 +3092,7 @@ instance ORKELITE_ADDON3_NWCHKFLG_16(Mst_Default_OrcElite)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
 	b_setvisuals_orcelite_silver();
 	EquipItem(self,ItMw_2H_OrcSword_02);
 	CreateInvItems(self,ItRi_OrcEliteRing,1);
@@ -3101,9 +3102,9 @@ instance ORKELITE_ADDON3_NWCHKFLG_16(Mst_Default_OrcElite)
 
 instance ORKELITE_ADDON3_NWCHKFLG_17(Mst_Default_OrcElite)
 {
-	name[0] = "Элитный черный орк-старейшина";
+	name[ 0 ] = " Elite Black Orc Elder " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCELITE;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCELITE ;
 	voice = 18;
 	level = 50;
 	attribute[ATR_STRENGTH] = 350;
@@ -3127,7 +3128,7 @@ instance ORKELITE_ADDON3_NWCHKFLG_17(Mst_Default_OrcElite)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
 	b_setvisuals_orcelite_silver();
 	EquipItem(self,ItMw_2H_OrcSword_02);
 	CreateInvItems(self,ItRi_OrcEliteRing,1);
@@ -3137,9 +3138,9 @@ instance ORKELITE_ADDON3_NWCHKFLG_17(Mst_Default_OrcElite)
 
 instance ORKELITE_ADDON3_NWCHKFLG_18(Mst_Default_OrcElite)
 {
-	name[0] = "Элитный черный орк-старейшина";
+	name[ 0 ] = " Elite Black Orc Elder " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCELITE;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCELITE ;
 	voice = 18;
 	level = 50;
 	attribute[ATR_STRENGTH] = 350;
@@ -3163,7 +3164,7 @@ instance ORKELITE_ADDON3_NWCHKFLG_18(Mst_Default_OrcElite)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
 	b_setvisuals_orcelite_silver();
 	EquipItem(self,ItMw_2H_OrcSword_02);
 	CreateInvItems(self,ItRi_OrcEliteRing,1);
@@ -3173,9 +3174,9 @@ instance ORKELITE_ADDON3_NWCHKFLG_18(Mst_Default_OrcElite)
 
 instance ORKELITE_ADDON3_NWCHKFLG_19(Mst_Default_OrcElite)
 {
-	name[0] = "Элитный черный орк-старейшина";
+	name[ 0 ] = " Elite Black Orc Elder " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCELITE;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCELITE ;
 	voice = 18;
 	level = 50;
 	attribute[ATR_STRENGTH] = 350;
@@ -3199,7 +3200,7 @@ instance ORKELITE_ADDON3_NWCHKFLG_19(Mst_Default_OrcElite)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
 	b_setvisuals_orcelite_silver();
 	EquipItem(self,ItMw_2H_OrcSword_02);
 	CreateInvItems(self,ItRi_OrcEliteRing,1);
@@ -3209,9 +3210,9 @@ instance ORKELITE_ADDON3_NWCHKFLG_19(Mst_Default_OrcElite)
 
 instance ORKELITE_ADDON3_NWCHKFLG_20(Mst_Default_OrcElite)
 {
-	name[0] = "Элитный черный орк-старейшина";
+	name[ 0 ] = " Elite Black Orc Elder " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCELITE;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCELITE ;
 	voice = 18;
 	level = 50;
 	attribute[ATR_STRENGTH] = 350;
@@ -3235,7 +3236,7 @@ instance ORKELITE_ADDON3_NWCHKFLG_20(Mst_Default_OrcElite)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
 	b_setvisuals_orcelite_silver();
 	EquipItem(self,ItMw_2H_OrcSword_02);
 	CreateInvItems(self,ItRi_OrcEliteRing,1);
@@ -3245,9 +3246,9 @@ instance ORKELITE_ADDON3_NWCHKFLG_20(Mst_Default_OrcElite)
 
 instance ORKELITE_ADDON3_NWCHKFLG_21(Mst_Default_OrcElite)
 {
-	name[0] = "Элитный черный орк-старейшина";
+	name[ 0 ] = " Elite Black Orc Elder " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCELITE;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCELITE ;
 	voice = 18;
 	level = 50;
 	attribute[ATR_STRENGTH] = 350;
@@ -3271,7 +3272,7 @@ instance ORKELITE_ADDON3_NWCHKFLG_21(Mst_Default_OrcElite)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
 	b_setvisuals_orcelite_silver();
 	EquipItem(self,ItMw_2H_OrcSword_02);
 	CreateInvItems(self,ItRi_OrcEliteRing,1);
@@ -3281,9 +3282,9 @@ instance ORKELITE_ADDON3_NWCHKFLG_21(Mst_Default_OrcElite)
 
 instance ORKELITE_ADDON3_NWCHKFLG_22(Mst_Default_OrcElite)
 {
-	name[0] = "Элитный черный орк-старейшина";
+	name[ 0 ] = " Elite Black Orc Elder " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCELITE;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCELITE ;
 	voice = 18;
 	level = 50;
 	attribute[ATR_STRENGTH] = 350;
@@ -3307,7 +3308,7 @@ instance ORKELITE_ADDON3_NWCHKFLG_22(Mst_Default_OrcElite)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
 	b_setvisuals_orcelite_silver();
 	EquipItem(self,ItMw_2H_OrcSword_02);
 	CreateInvItems(self,ItRi_OrcEliteRing,1);
@@ -3317,9 +3318,9 @@ instance ORKELITE_ADDON3_NWCHKFLG_22(Mst_Default_OrcElite)
 
 instance ORKELITE_ADDON3_NWCHKFLG_23(Mst_Default_OrcElite)
 {
-	name[0] = "Элитный черный орк-старейшина";
+	name[ 0 ] = " Elite Black Orc Elder " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCELITE;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCELITE ;
 	voice = 18;
 	level = 50;
 	attribute[ATR_STRENGTH] = 350;
@@ -3343,7 +3344,7 @@ instance ORKELITE_ADDON3_NWCHKFLG_23(Mst_Default_OrcElite)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
 	b_setvisuals_orcelite_silver();
 	EquipItem(self,ItMw_2H_OrcSword_02);
 	CreateInvItems(self,ItRi_OrcEliteRing,1);
@@ -3353,9 +3354,9 @@ instance ORKELITE_ADDON3_NWCHKFLG_23(Mst_Default_OrcElite)
 
 instance ORKELITE_ADDON3_NWCHKFLG_24(Mst_Default_OrcElite)
 {
-	name[0] = "Элитный черный орк-старейшина";
+	name[ 0 ] = " Elite Black Orc Elder " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCELITE;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCELITE ;
 	voice = 18;
 	level = 50;
 	attribute[ATR_STRENGTH] = 350;
@@ -3379,7 +3380,7 @@ instance ORKELITE_ADDON3_NWCHKFLG_24(Mst_Default_OrcElite)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
 	b_setvisuals_orcelite_silver();
 	EquipItem(self,ItMw_2H_OrcSword_02);
 	CreateInvItems(self,ItRi_OrcEliteRing,1);
@@ -3389,9 +3390,9 @@ instance ORKELITE_ADDON3_NWCHKFLG_24(Mst_Default_OrcElite)
 
 instance ORKELITE_ADDON3_NWCHKFLG_25(Mst_Default_OrcElite)
 {
-	name[0] = "Элитный черный орк-старейшина";
+	name[ 0 ] = " Elite Black Orc Elder " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCELITE;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCELITE ;
 	voice = 18;
 	level = 50;
 	attribute[ATR_STRENGTH] = 350;
@@ -3415,7 +3416,7 @@ instance ORKELITE_ADDON3_NWCHKFLG_25(Mst_Default_OrcElite)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
 	b_setvisuals_orcelite_silver();
 	EquipItem(self,ItMw_2H_OrcSword_02);
 	CreateInvItems(self,ItRi_OrcEliteRing,1);
@@ -3425,9 +3426,9 @@ instance ORKELITE_ADDON3_NWCHKFLG_25(Mst_Default_OrcElite)
 
 instance ORKELITE_ADDON3_NWCHKFLG_26(Mst_Default_OrcElite)
 {
-	name[0] = "Элитный черный орк-старейшина";
+	name[ 0 ] = " Elite Black Orc Elder " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCELITE;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCELITE ;
 	voice = 18;
 	level = 50;
 	attribute[ATR_STRENGTH] = 350;
@@ -3451,7 +3452,7 @@ instance ORKELITE_ADDON3_NWCHKFLG_26(Mst_Default_OrcElite)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
 	b_setvisuals_orcelite_silver();
 	EquipItem(self,ItMw_2H_OrcSword_02);
 	CreateInvItems(self,ItRi_OrcEliteRing,1);
@@ -3461,9 +3462,9 @@ instance ORKELITE_ADDON3_NWCHKFLG_26(Mst_Default_OrcElite)
 
 instance ORKELITE_ADDON3_NWCHKFLG_27(Mst_Default_OrcElite)
 {
-	name[0] = "Элитный черный орк-старейшина";
+	name[ 0 ] = " Elite Black Orc Elder " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCELITE;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCELITE ;
 	voice = 18;
 	level = 50;
 	attribute[ATR_STRENGTH] = 350;
@@ -3487,7 +3488,7 @@ instance ORKELITE_ADDON3_NWCHKFLG_27(Mst_Default_OrcElite)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
 	b_setvisuals_orcelite_silver();
 	EquipItem(self,ItMw_2H_OrcSword_02);
 	CreateInvItems(self,ItRi_OrcEliteRing,1);
@@ -3497,9 +3498,9 @@ instance ORKELITE_ADDON3_NWCHKFLG_27(Mst_Default_OrcElite)
 
 instance ORKELITE_ADDON3_NWCHKFLG_28(Mst_Default_OrcElite)
 {
-	name[0] = "Элитный черный орк-старейшина";
+	name[ 0 ] = " Elite Black Orc Elder " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCELITE;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCELITE ;
 	voice = 18;
 	level = 50;
 	attribute[ATR_STRENGTH] = 350;
@@ -3523,7 +3524,7 @@ instance ORKELITE_ADDON3_NWCHKFLG_28(Mst_Default_OrcElite)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
 	b_setvisuals_orcelite_silver();
 	EquipItem(self,ItMw_2H_OrcSword_02);
 	CreateInvItems(self,ItRi_OrcEliteRing,1);
@@ -3533,9 +3534,9 @@ instance ORKELITE_ADDON3_NWCHKFLG_28(Mst_Default_OrcElite)
 
 instance ORKELITE_ADDON3_NWCHKFLG_29(Mst_Default_OrcElite)
 {
-	name[0] = "Элитный черный орк-старейшина";
+	name[ 0 ] = " Elite Black Orc Elder " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCELITE;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCELITE ;
 	voice = 18;
 	level = 50;
 	attribute[ATR_STRENGTH] = 350;
@@ -3559,7 +3560,7 @@ instance ORKELITE_ADDON3_NWCHKFLG_29(Mst_Default_OrcElite)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
 	b_setvisuals_orcelite_silver();
 	EquipItem(self,ItMw_2H_OrcSword_02);
 	CreateInvItems(self,ItRi_OrcEliteRing,1);
@@ -3569,9 +3570,9 @@ instance ORKELITE_ADDON3_NWCHKFLG_29(Mst_Default_OrcElite)
 
 instance ORKELITE_ADDON3_NWCHKFLG_30(Mst_Default_OrcElite)
 {
-	name[0] = "Элитный черный орк-старейшина";
+	name[ 0 ] = " Elite Black Orc Elder " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCELITE;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCELITE ;
 	voice = 18;
 	level = 50;
 	attribute[ATR_STRENGTH] = 350;
@@ -3595,7 +3596,7 @@ instance ORKELITE_ADDON3_NWCHKFLG_30(Mst_Default_OrcElite)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
 	b_setvisuals_orcelite_silver();
 	EquipItem(self,ItMw_2H_OrcSword_02);
 	CreateInvItems(self,ItRi_OrcEliteRing,1);
@@ -3605,9 +3606,9 @@ instance ORKELITE_ADDON3_NWCHKFLG_30(Mst_Default_OrcElite)
 
 instance ORKELITE_ADDON3_NWCHKFLG_31(Mst_Default_OrcElite)
 {
-	name[0] = "Элитный черный орк-старейшина";
+	name[ 0 ] = " Elite Black Orc Elder " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCELITE;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCELITE ;
 	voice = 18;
 	level = 50;
 	attribute[ATR_STRENGTH] = 350;
@@ -3631,7 +3632,7 @@ instance ORKELITE_ADDON3_NWCHKFLG_31(Mst_Default_OrcElite)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
 	b_setvisuals_orcelite_silver();
 	EquipItem(self,ItMw_2H_OrcSword_02);
 	CreateInvItems(self,ItRi_OrcEliteRing,1);
@@ -3641,9 +3642,9 @@ instance ORKELITE_ADDON3_NWCHKFLG_31(Mst_Default_OrcElite)
 
 instance ORKELITE_ADDON3_NWCHKFLG_32(Mst_Default_OrcElite)
 {
-	name[0] = "Элитный черный орк-старейшина";
+	name[ 0 ] = " Elite Black Orc Elder " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCELITE;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCELITE ;
 	voice = 18;
 	level = 50;
 	attribute[ATR_STRENGTH] = 350;
@@ -3667,7 +3668,7 @@ instance ORKELITE_ADDON3_NWCHKFLG_32(Mst_Default_OrcElite)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
 	b_setvisuals_orcelite_silver();
 	EquipItem(self,ItMw_2H_OrcSword_02);
 	CreateInvItems(self,ItRi_OrcEliteRing,1);
@@ -3677,9 +3678,9 @@ instance ORKELITE_ADDON3_NWCHKFLG_32(Mst_Default_OrcElite)
 
 instance ORKELITE_ADDON3_NWCHKFLG_33(Mst_Default_OrcElite)
 {
-	name[0] = "Элитный черный орк-старейшина";
+	name[ 0 ] = " Elite Black Orc Elder " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCELITE;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCELITE ;
 	voice = 18;
 	level = 50;
 	attribute[ATR_STRENGTH] = 350;
@@ -3703,7 +3704,7 @@ instance ORKELITE_ADDON3_NWCHKFLG_33(Mst_Default_OrcElite)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
 	b_setvisuals_orcelite_silver();
 	EquipItem(self,ItMw_2H_OrcSword_02);
 	CreateInvItems(self,ItRi_OrcEliteRing,1);
@@ -3713,9 +3714,9 @@ instance ORKELITE_ADDON3_NWCHKFLG_33(Mst_Default_OrcElite)
 
 instance ORKELITE_ADDON3_NWCHKFLG_34(Mst_Default_OrcElite)
 {
-	name[0] = "Элитный черный орк-старейшина";
+	name[ 0 ] = " Elite Black Orc Elder " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCELITE;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCELITE ;
 	voice = 18;
 	level = 50;
 	attribute[ATR_STRENGTH] = 350;
@@ -3739,7 +3740,7 @@ instance ORKELITE_ADDON3_NWCHKFLG_34(Mst_Default_OrcElite)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
 	b_setvisuals_orcelite_silver();
 	EquipItem(self,ItMw_2H_OrcSword_02);
 	CreateInvItems(self,ItRi_OrcEliteRing,1);
@@ -3749,9 +3750,9 @@ instance ORKELITE_ADDON3_NWCHKFLG_34(Mst_Default_OrcElite)
 
 instance ORKELITE_ADDON3_NWCHKFLG_35(Mst_Default_OrcElite)
 {
-	name[0] = "Элитный черный орк-старейшина";
+	name[ 0 ] = " Elite Black Orc Elder " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCELITE;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCELITE ;
 	voice = 18;
 	level = 50;
 	attribute[ATR_STRENGTH] = 350;
@@ -3775,7 +3776,7 @@ instance ORKELITE_ADDON3_NWCHKFLG_35(Mst_Default_OrcElite)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
 	b_setvisuals_orcelite_silver();
 	EquipItem(self,ItMw_2H_OrcSword_02);
 	CreateInvItems(self,ItRi_OrcEliteRing,1);
@@ -3785,9 +3786,9 @@ instance ORKELITE_ADDON3_NWCHKFLG_35(Mst_Default_OrcElite)
 
 instance ORKELITE_ADDON3_NWCHKFLG_36(Mst_Default_OrcElite)
 {
-	name[0] = "Элитный черный орк-старейшина";
+	name[ 0 ] = " Elite Black Orc Elder " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCELITE;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCELITE ;
 	voice = 18;
 	level = 50;
 	attribute[ATR_STRENGTH] = 350;
@@ -3811,7 +3812,7 @@ instance ORKELITE_ADDON3_NWCHKFLG_36(Mst_Default_OrcElite)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
 	b_setvisuals_orcelite_silver();
 	EquipItem(self,ItMw_2H_OrcSword_02);
 	CreateInvItems(self,ItRi_OrcEliteRing,1);
@@ -3821,9 +3822,9 @@ instance ORKELITE_ADDON3_NWCHKFLG_36(Mst_Default_OrcElite)
 
 instance ORKELITE_ADDON4_NWCHKFLG_01(Mst_Default_OrcElite)
 {
-	name[0] = "Элитный черный орк-военачальник";
+	name[ 0 ] = " Elite Black Orc Warlord " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCELITE;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCELITE ;
 	voice = 18;
 	level = 75;
 	attribute[ATR_STRENGTH] = 410;
@@ -3847,7 +3848,7 @@ instance ORKELITE_ADDON4_NWCHKFLG_01(Mst_Default_OrcElite)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
 	b_setvisuals_orcelite_gold();
 	EquipItem(self,itmw_2h_orcsword_04);
 	CreateInvItems(self,ItRi_OrcEliteRing,1);
@@ -3857,9 +3858,9 @@ instance ORKELITE_ADDON4_NWCHKFLG_01(Mst_Default_OrcElite)
 
 instance ORKELITE_ADDON4_NWCHKFLG_02(Mst_Default_OrcElite)
 {
-	name[0] = "Элитный черный орк-военачальник";
+	name[ 0 ] = " Elite Black Orc Warlord " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCELITE;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCELITE ;
 	voice = 18;
 	level = 75;
 	attribute[ATR_STRENGTH] = 410;
@@ -3883,7 +3884,7 @@ instance ORKELITE_ADDON4_NWCHKFLG_02(Mst_Default_OrcElite)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
 	b_setvisuals_orcelite_gold();
 	EquipItem(self,itmw_2h_orcsword_04);
 	CreateInvItems(self,ItRi_OrcEliteRing,1);
@@ -3893,9 +3894,9 @@ instance ORKELITE_ADDON4_NWCHKFLG_02(Mst_Default_OrcElite)
 
 instance ORKELITE_ADDON4_NWCHKFLG_03(Mst_Default_OrcElite)
 {
-	name[0] = "Элитный черный орк-военачальник";
+	name[ 0 ] = " Elite Black Orc Warlord " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCELITE;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCELITE ;
 	voice = 18;
 	level = 75;
 	attribute[ATR_STRENGTH] = 410;
@@ -3919,7 +3920,7 @@ instance ORKELITE_ADDON4_NWCHKFLG_03(Mst_Default_OrcElite)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
 	b_setvisuals_orcelite_gold();
 	EquipItem(self,itmw_2h_orcsword_04);
 	CreateInvItems(self,ItRi_OrcEliteRing,1);
@@ -3929,9 +3930,9 @@ instance ORKELITE_ADDON4_NWCHKFLG_03(Mst_Default_OrcElite)
 
 instance ORKELITE_ADDON3_OWCHKFLG_01(Mst_Default_OrcElite)
 {
-	name[0] = "Элитный черный орк-старейшина";
+	name[ 0 ] = " Elite Black Orc Elder " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCELITE;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCELITE ;
 	voice = 18;
 	level = 50;
 	attribute[ATR_STRENGTH] = 350;
@@ -3955,7 +3956,7 @@ instance ORKELITE_ADDON3_OWCHKFLG_01(Mst_Default_OrcElite)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
 	b_setvisuals_orcelite_silver();
 	EquipItem(self,ItMw_2H_OrcSword_02);
 	CreateInvItems(self,ItRi_OrcEliteRing,1);
@@ -3965,9 +3966,9 @@ instance ORKELITE_ADDON3_OWCHKFLG_01(Mst_Default_OrcElite)
 
 instance ORKELITE_ADDON3_CHKFLG_DRAKAR_01(Mst_Default_OrcElite)
 {
-	name[0] = "Элитный черный орк-старейшина";
+	name[ 0 ] = " Elite Black Orc Elder " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCELITE;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCELITE ;
 	voice = 18;
 	level = 50;
 	attribute[ATR_STRENGTH] = 350;
@@ -3991,7 +3992,7 @@ instance ORKELITE_ADDON3_CHKFLG_DRAKAR_01(Mst_Default_OrcElite)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
 	b_setvisuals_orcelite_silver();
 	EquipItem(self,ItMw_2H_OrcSword_02);
 	start_aistate = ZS_MM_AllScheduler;
@@ -4000,9 +4001,9 @@ instance ORKELITE_ADDON3_CHKFLG_DRAKAR_01(Mst_Default_OrcElite)
 
 instance ORKELITE_ADDON3_CHKFLG_DRAKAR_02(Mst_Default_OrcElite)
 {
-	name[0] = "Элитный черный орк-старейшина";
+	name[ 0 ] = " Elite Black Orc Elder " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCELITE;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCELITE ;
 	voice = 18;
 	level = 50;
 	attribute[ATR_STRENGTH] = 350;
@@ -4026,7 +4027,7 @@ instance ORKELITE_ADDON3_CHKFLG_DRAKAR_02(Mst_Default_OrcElite)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
 	b_setvisuals_orcelite_silver();
 	EquipItem(self,ItMw_2H_OrcSword_02);
 	start_aistate = ZS_MM_AllScheduler;
@@ -4035,9 +4036,9 @@ instance ORKELITE_ADDON3_CHKFLG_DRAKAR_02(Mst_Default_OrcElite)
 
 instance ORKELITE_ADDON3_CHKFLG_DRAKAR_03(Mst_Default_OrcElite)
 {
-	name[0] = "Элитный черный орк-старейшина";
+	name[ 0 ] = " Elite Black Orc Elder " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCELITE;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCELITE ;
 	voice = 18;
 	level = 50;
 	attribute[ATR_STRENGTH] = 350;
@@ -4061,7 +4062,7 @@ instance ORKELITE_ADDON3_CHKFLG_DRAKAR_03(Mst_Default_OrcElite)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
 	b_setvisuals_orcelite_silver();
 	EquipItem(self,ItMw_2H_OrcSword_02);
 	CreateInvItems(self,itke_drakar_key_01,1);
@@ -4071,9 +4072,9 @@ instance ORKELITE_ADDON3_CHKFLG_DRAKAR_03(Mst_Default_OrcElite)
 
 instance ORKELITE_ADDON3_CHKFLG_DRAKAR_04(Mst_Default_OrcElite)
 {
-	name[0] = "Элитный черный орк-старейшина";
+	name[ 0 ] = " Elite Black Orc Elder " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCELITE;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCELITE ;
 	voice = 18;
 	level = 50;
 	attribute[ATR_STRENGTH] = 350;
@@ -4097,7 +4098,7 @@ instance ORKELITE_ADDON3_CHKFLG_DRAKAR_04(Mst_Default_OrcElite)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
 	b_setvisuals_orcelite_silver();
 	EquipItem(self,ItMw_2H_OrcSword_02);
 	start_aistate = ZS_MM_AllScheduler;
@@ -4106,9 +4107,9 @@ instance ORKELITE_ADDON3_CHKFLG_DRAKAR_04(Mst_Default_OrcElite)
 
 instance ORKELITE_ADDON3_CHKFLG_DRAKAR_05(Mst_Default_OrcElite)
 {
-	name[0] = "Элитный черный орк-старейшина";
+	name[ 0 ] = " Elite Black Orc Elder " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCELITE;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCELITE ;
 	voice = 18;
 	level = 50;
 	attribute[ATR_STRENGTH] = 350;
@@ -4132,22 +4133,22 @@ instance ORKELITE_ADDON3_CHKFLG_DRAKAR_05(Mst_Default_OrcElite)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
 	b_setvisuals_orcelite_silver();
 	EquipItem(self,ItMw_2H_OrcSword_02);
-	CreateInvItems(self,itke_drakar_key_capitan,1);
+	CreateInvItems(self,itke_drakar_key_capitan, 1 );
 	start_aistate = ZS_MM_AllScheduler;
 	aivar[AIV_MM_RoamStart] = OnlyRoutine;
 };
 
-instance ORKELITE_ADDON4_CHKFLG_DRAKAR_CAPITAN(Mst_Default_OrcElite)
+instance ORKELITE_ADDON4_CHKFLG_DRAKAR_CAPITAN (Mst_Default_OrcElite)
 {
-	name[0] = "Раш-Гар";
+	name[ 0 ] = " Rush-Hand " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCELITE;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCELITE ;
 	voice = 18;
 	level = 100;
-	aivar[90] = TRUE;
+	aivar[ 90 ] = TRUE ;
 	attribute[ATR_STRENGTH] = 450;
 	attribute[ATR_DEXTERITY] = 250;
 	attribute[ATR_HITPOINTS_MAX] = 10000;
@@ -4169,7 +4170,7 @@ instance ORKELITE_ADDON4_CHKFLG_DRAKAR_CAPITAN(Mst_Default_OrcElite)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
 	b_setvisuals_orcelite_gold();
 	EquipItem(self,ItMw_2H_OrcSword_02);
 	CreateInvItems(self,itwr_orcsorder,1);
@@ -4179,9 +4180,9 @@ instance ORKELITE_ADDON4_CHKFLG_DRAKAR_CAPITAN(Mst_Default_OrcElite)
 
 instance ORKELITE_CASTLE_01(Mst_Default_OrcElite)
 {
-	name[0] = "Элитный черный орк-военачальник";
+	name[ 0 ] = " Elite Black Orc Warlord " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCELITE;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCELITE ;
 	voice = 18;
 	level = 75;
 	attribute[ATR_STRENGTH] = 370;
@@ -4205,7 +4206,7 @@ instance ORKELITE_CASTLE_01(Mst_Default_OrcElite)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
 	b_setvisuals_orcelite_gold();
 	EquipItem(self,itmw_2h_orcsword_03);
 	CreateInvItems(self,ItRi_OrcEliteRing,1);
@@ -4215,9 +4216,9 @@ instance ORKELITE_CASTLE_01(Mst_Default_OrcElite)
 
 instance ORKELITE_CASTLE_02(Mst_Default_OrcElite)
 {
-	name[0] = "Элитный черный орк-военачальник";
+	name[ 0 ] = " Elite Black Orc Warlord " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCELITE;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCELITE ;
 	voice = 18;
 	level = 75;
 	attribute[ATR_STRENGTH] = 370;
@@ -4241,7 +4242,7 @@ instance ORKELITE_CASTLE_02(Mst_Default_OrcElite)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
 	b_setvisuals_orcelite_gold();
 	EquipItem(self,itmw_2h_orcsword_03);
 	CreateInvItems(self,ItRi_OrcEliteRing,1);
@@ -4251,9 +4252,9 @@ instance ORKELITE_CASTLE_02(Mst_Default_OrcElite)
 
 instance ORKELITE_CASTLE_03(Mst_Default_OrcElite)
 {
-	name[0] = "Элитный черный орк-военачальник";
+	name[ 0 ] = " Elite Black Orc Warlord " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCELITE;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCELITE ;
 	voice = 18;
 	level = 75;
 	attribute[ATR_STRENGTH] = 370;
@@ -4277,7 +4278,7 @@ instance ORKELITE_CASTLE_03(Mst_Default_OrcElite)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
 	b_setvisuals_orcelite_gold();
 	EquipItem(self,itmw_2h_orcsword_03);
 	CreateInvItems(self,ItRi_OrcEliteRing,1);
@@ -4287,9 +4288,9 @@ instance ORKELITE_CASTLE_03(Mst_Default_OrcElite)
 
 instance ORKELITE_CASTLE_04(Mst_Default_OrcElite)
 {
-	name[0] = "Элитный черный орк-военачальник";
+	name[ 0 ] = " Elite Black Orc Warlord " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCELITE;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCELITE ;
 	voice = 18;
 	level = 75;
 	attribute[ATR_STRENGTH] = 370;
@@ -4313,7 +4314,7 @@ instance ORKELITE_CASTLE_04(Mst_Default_OrcElite)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
 	b_setvisuals_orcelite_gold();
 	EquipItem(self,itmw_2h_orcsword_03);
 	CreateInvItems(self,ItRi_OrcEliteRing,1);
@@ -4323,9 +4324,9 @@ instance ORKELITE_CASTLE_04(Mst_Default_OrcElite)
 
 instance ORKELITE_CASTLE_05(Mst_Default_OrcElite)
 {
-	name[0] = "Элитный черный орк-военачальник";
+	name[ 0 ] = " Elite Black Orc Warlord " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCELITE;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCELITE ;
 	voice = 18;
 	level = 75;
 	attribute[ATR_STRENGTH] = 370;
@@ -4349,7 +4350,7 @@ instance ORKELITE_CASTLE_05(Mst_Default_OrcElite)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
 	b_setvisuals_orcelite_gold();
 	EquipItem(self,itmw_2h_orcsword_03);
 	CreateInvItems(self,ItRi_OrcEliteRing,1);
@@ -4359,9 +4360,9 @@ instance ORKELITE_CASTLE_05(Mst_Default_OrcElite)
 
 instance ORKELITE_UDAR(Mst_Default_OrcElite)
 {
-	name[0] = "Элитный черный орк-старейшина";
+	name[ 0 ] = " Elite Black Orc Elder " ;
 	guild = GIL_DRACONIAN;
-	aivar[AIV_MM_REAL_ID] = ID_ORCELITE;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCELITE ;
 	voice = 18;
 	level = 50;
 	attribute[ATR_STRENGTH] = 350;
@@ -4385,7 +4386,7 @@ instance ORKELITE_UDAR(Mst_Default_OrcElite)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
 	b_setvisuals_orcelite_silver();
 	EquipItem(self,ItMw_2H_OrcSword_02);
 	start_aistate = ZS_MM_AllScheduler;
@@ -4394,9 +4395,9 @@ instance ORKELITE_UDAR(Mst_Default_OrcElite)
 
 instance ORKELITE_ADDON3_CHK_GATE(Mst_Default_OrcElite)
 {
-	name[0] = "Элитный черный орк-старейшина";
+	name[ 0 ] = " Elite Black Orc Elder " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCELITE;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCELITE ;
 	voice = 18;
 	level = 50;
 	attribute[ATR_STRENGTH] = 350;
@@ -4420,7 +4421,7 @@ instance ORKELITE_ADDON3_CHK_GATE(Mst_Default_OrcElite)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
 	b_setvisuals_orcelite_silver();
 	EquipItem(self,ItMw_2H_OrcSword_02);
 	CreateInvItems(self,ItRi_OrcEliteRing,1);
@@ -4430,9 +4431,9 @@ instance ORKELITE_ADDON3_CHK_GATE(Mst_Default_OrcElite)
 
 instance ORKELITE_ADDON_FARM(Mst_Default_OrcElite)
 {
-	name[0] = "Элитный черный орк-воин";
+	name[ 0 ] = " Elite Black Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBOWMEN;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBOWMEN ;
 	voice = 18;
 	level = 17;
 	attribute[ATR_STRENGTH] = 320;
@@ -4455,9 +4456,9 @@ instance ORKELITE_ADDON_FARM(Mst_Default_OrcElite)
 	fight_tactic = FAI_ELITEORC;
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
-	aivar[AIV_MM_ThreatenBeforeAttack] = FALSE;
+	aivar[AIV_MM_ThreatenBeforeAttack] = FALSE ;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
 	b_setvisuals_orcelite_brown();
 	EquipItem(self,ItMw_2H_OrcSword_01);
 	start_aistate = ZS_MM_AllScheduler;
@@ -4466,9 +4467,9 @@ instance ORKELITE_ADDON_FARM(Mst_Default_OrcElite)
 
 instance OrkElite_Addon2_Gonez(Mst_Default_OrcElite)
 {
-	name[0] = "Черный орк-гонец";
+	name[ 0 ] = " Black Orc Messenger " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBOWMEN;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBOWMEN ;
 	voice = 18;
 	level = 17;
 	attribute[ATR_STRENGTH] = 210;
@@ -4491,9 +4492,9 @@ instance OrkElite_Addon2_Gonez(Mst_Default_OrcElite)
 	fight_tactic = FAI_ELITEORC;
 	senses = SENSE_HEAR | SENSE_SEE;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
-	aivar[AIV_MM_ThreatenBeforeAttack] = FALSE;
+	aivar[AIV_MM_ThreatenBeforeAttack] = FALSE ;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
 	B_SetVisuals_OrcElite_Brown();
 	EquipItem(self,ItMw_2H_OrcSword_01);
 	EquipItem(self,ItRw_Crossbow_Orc);
@@ -4503,13 +4504,13 @@ instance OrkElite_Addon2_Gonez(Mst_Default_OrcElite)
 	aivar[AIV_MM_RoamStart] = OnlyRoutine;
 };
 
-//------------------------Отряд Персиваля------------------------------
+// ------------------------ Percival's Troop---------------------- --------
 
 instance OrkElite_Warrior_Persival_01(Mst_Default_OrcElite)
 {
-	name[0] = "Черный орк-воин";
+	name[ 0 ] = " Black Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCWARRIOR;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCWARRIOR ;
 	voice = 18;
 	level = 15;
 	attribute[ATR_STRENGTH] = 290;
@@ -4533,7 +4534,7 @@ instance OrkElite_Warrior_Persival_01(Mst_Default_OrcElite)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
 	B_SetVisuals_OrcElite();
 	EquipItem(self,ItMw_2H_OrcAxe_04);
 	start_aistate = ZS_MM_AllScheduler;
@@ -4542,9 +4543,9 @@ instance OrkElite_Warrior_Persival_01(Mst_Default_OrcElite)
 
 instance OrkElite_Warrior_Persival_02(Mst_Default_OrcElite)
 {
-	name[0] = "Черный орк-воин";
+	name[ 0 ] = " Black Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCWARRIOR;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCWARRIOR ;
 	voice = 18;
 	level = 15;
 	attribute[ATR_STRENGTH] = 290;
@@ -4568,7 +4569,7 @@ instance OrkElite_Warrior_Persival_02(Mst_Default_OrcElite)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
 	B_SetVisuals_OrcElite();
 	EquipItem(self,ItMw_2H_OrcAxe_04);
 	start_aistate = ZS_MM_AllScheduler;
@@ -4577,9 +4578,9 @@ instance OrkElite_Warrior_Persival_02(Mst_Default_OrcElite)
 
 instance OrkElite_Warrior_Persival_03(Mst_Default_OrcElite)
 {
-	name[0] = "Черный орк-воин";
+	name[ 0 ] = " Black Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCWARRIOR;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCWARRIOR ;
 	voice = 18;
 	level = 15;
 	attribute[ATR_STRENGTH] = 290;
@@ -4603,18 +4604,18 @@ instance OrkElite_Warrior_Persival_03(Mst_Default_OrcElite)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
 	B_SetVisuals_OrcElite();
 	EquipItem(self,ItMw_2H_OrcAxe_04);
 	start_aistate = ZS_MM_AllScheduler;
 	aivar[AIV_MM_RoamStart] = OnlyRoutine;
 };
 
-instance OrkElite_Arbaletchik_Persival_01(Mst_Default_OrcElite)
+instance OrkElite_Arbaletchik_Persival_01 (Mst_Default_OrcElite)
 {
-	name[0] = "Черный орк-арбалетчик";
+	name[ 0 ] = " Black Orc Crossbowman " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBOWMEN;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBOWMEN ;
 	voice = 18;
 	level = 15;
 	attribute[ATR_STRENGTH] = 260;
@@ -4637,47 +4638,9 @@ instance OrkElite_Arbaletchik_Persival_01(Mst_Default_OrcElite)
 	fight_tactic = FAI_ELITEORC;
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
-	aivar[AIV_MM_ThreatenBeforeAttack] = FALSE;
+	aivar[AIV_MM_ThreatenBeforeAttack] = FALSE ;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
-	B_SetVisuals_OrcElite();
-	EquipItem(self,ItMw_2H_OrcAxe_04);
-	EquipItem(self,itrw_crossbow_orc);
-	CreateInvItems(self,ItRw_Bolt,10);
-	start_aistate = ZS_MM_AllScheduler;
-	aivar[AIV_MM_RoamStart] = OnlyRoutine;
-};
-
-instance OrkElite_Arbaletchik_Persival_02(Mst_Default_OrcElite)
-{
-	name[0] = "Черный орк-арбалетчик";
-	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBOWMEN;
-	voice = 18;
-	level = 15;
-	attribute[ATR_STRENGTH] = 260;
-	attribute[ATR_DEXTERITY] = 250;
-	attribute[ATR_HITPOINTS_MAX] = 1450;
-	attribute[ATR_HITPOINTS] = 1450;
-	attribute[ATR_MANA_MAX] = 0;
-	attribute[ATR_MANA] = 0;
-	protection[PROT_BLUNT] = 120;
-	protection[PROT_EDGE] = 120;
-	protection[PROT_POINT] = 160;
-	protection[PROT_FIRE] = 50;
-	protection[PROT_FLY] = 50;
-	protection[PROT_MAGIC] = 25;
-	HitChance[NPC_TALENT_1H] = 50;
-	HitChance[NPC_TALENT_2H] = 50;
-	HitChance[NPC_TALENT_BOW] = 100;
-	HitChance[NPC_TALENT_CROSSBOW] = 80;
-	damagetype = DAM_EDGE;
-	fight_tactic = FAI_ELITEORC;
-	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
-	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
-	aivar[AIV_MM_ThreatenBeforeAttack] = FALSE;
-	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
 	B_SetVisuals_OrcElite();
 	EquipItem(self,ItMw_2H_OrcAxe_04);
 	EquipItem(self,itrw_crossbow_orc);
@@ -4686,11 +4649,11 @@ instance OrkElite_Arbaletchik_Persival_02(Mst_Default_OrcElite)
 	aivar[AIV_MM_RoamStart] = OnlyRoutine;
 };
 
-instance OrkElite_Arbaletchik_Persival_03(Mst_Default_OrcElite)
+instance OrkElite_Arbaletchik_Persival_02 (Mst_Default_OrcElite)
 {
-	name[0] = "Черный орк-арбалетчик";
+	name[ 0 ] = " Black Orc Crossbowman " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBOWMEN;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBOWMEN ;
 	voice = 18;
 	level = 15;
 	attribute[ATR_STRENGTH] = 260;
@@ -4713,9 +4676,9 @@ instance OrkElite_Arbaletchik_Persival_03(Mst_Default_OrcElite)
 	fight_tactic = FAI_ELITEORC;
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
-	aivar[AIV_MM_ThreatenBeforeAttack] = FALSE;
+	aivar[AIV_MM_ThreatenBeforeAttack] = FALSE ;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
 	B_SetVisuals_OrcElite();
 	EquipItem(self,ItMw_2H_OrcAxe_04);
 	EquipItem(self,itrw_crossbow_orc);
@@ -4724,11 +4687,11 @@ instance OrkElite_Arbaletchik_Persival_03(Mst_Default_OrcElite)
 	aivar[AIV_MM_RoamStart] = OnlyRoutine;
 };
 
-instance OrkElite_Arbaletchik_Persival_04(Mst_Default_OrcElite)
+instance OrkElite_Arbaletchik_Persival_03 (Mst_Default_OrcElite)
 {
-	name[0] = "Черный орк-арбалетчик";
+	name[ 0 ] = " Black Orc Crossbowman " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBOWMEN;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBOWMEN ;
 	voice = 18;
 	level = 15;
 	attribute[ATR_STRENGTH] = 260;
@@ -4751,9 +4714,9 @@ instance OrkElite_Arbaletchik_Persival_04(Mst_Default_OrcElite)
 	fight_tactic = FAI_ELITEORC;
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
-	aivar[AIV_MM_ThreatenBeforeAttack] = FALSE;
+	aivar[AIV_MM_ThreatenBeforeAttack] = FALSE ;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
 	B_SetVisuals_OrcElite();
 	EquipItem(self,ItMw_2H_OrcAxe_04);
 	EquipItem(self,itrw_crossbow_orc);
@@ -4762,11 +4725,11 @@ instance OrkElite_Arbaletchik_Persival_04(Mst_Default_OrcElite)
 	aivar[AIV_MM_RoamStart] = OnlyRoutine;
 };
 
-instance OrkElite_Arbaletchik_Persival_05(Mst_Default_OrcElite)
+instance OrkElite_Arbaletchik_Persival_04 (Mst_Default_OrcElite)
 {
-	name[0] = "Черный орк-арбалетчик";
+	name[ 0 ] = " Black Orc Crossbowman " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBOWMEN;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBOWMEN ;
 	voice = 18;
 	level = 15;
 	attribute[ATR_STRENGTH] = 260;
@@ -4789,9 +4752,9 @@ instance OrkElite_Arbaletchik_Persival_05(Mst_Default_OrcElite)
 	fight_tactic = FAI_ELITEORC;
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
-	aivar[AIV_MM_ThreatenBeforeAttack] = FALSE;
+	aivar[AIV_MM_ThreatenBeforeAttack] = FALSE ;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
 	B_SetVisuals_OrcElite();
 	EquipItem(self,ItMw_2H_OrcAxe_04);
 	EquipItem(self,itrw_crossbow_orc);
@@ -4800,11 +4763,11 @@ instance OrkElite_Arbaletchik_Persival_05(Mst_Default_OrcElite)
 	aivar[AIV_MM_RoamStart] = OnlyRoutine;
 };
 
-instance OrkElite_Arbaletchik_Persival_06(Mst_Default_OrcElite)
+instance OrkElite_Arbaletchik_Persival_05 (Mst_Default_OrcElite)
 {
-	name[0] = "Черный орк-арбалетчик";
+	name[ 0 ] = " Black Orc Crossbowman " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBOWMEN;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBOWMEN ;
 	voice = 18;
 	level = 15;
 	attribute[ATR_STRENGTH] = 260;
@@ -4827,9 +4790,9 @@ instance OrkElite_Arbaletchik_Persival_06(Mst_Default_OrcElite)
 	fight_tactic = FAI_ELITEORC;
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
-	aivar[AIV_MM_ThreatenBeforeAttack] = FALSE;
+	aivar[AIV_MM_ThreatenBeforeAttack] = FALSE ;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
 	B_SetVisuals_OrcElite();
 	EquipItem(self,ItMw_2H_OrcAxe_04);
 	EquipItem(self,itrw_crossbow_orc);
@@ -4838,11 +4801,11 @@ instance OrkElite_Arbaletchik_Persival_06(Mst_Default_OrcElite)
 	aivar[AIV_MM_RoamStart] = OnlyRoutine;
 };
 
-instance OrkElite_Arbaletchik_Persival_07(Mst_Default_OrcElite)
+instance OrkElite_Arbaletchik_Persival_06 (Mst_Default_OrcElite)
 {
-	name[0] = "Черный орк-арбалетчик";
+	name[ 0 ] = " Black Orc Crossbowman " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBOWMEN;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBOWMEN ;
 	voice = 18;
 	level = 15;
 	attribute[ATR_STRENGTH] = 260;
@@ -4865,9 +4828,9 @@ instance OrkElite_Arbaletchik_Persival_07(Mst_Default_OrcElite)
 	fight_tactic = FAI_ELITEORC;
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
-	aivar[AIV_MM_ThreatenBeforeAttack] = FALSE;
+	aivar[AIV_MM_ThreatenBeforeAttack] = FALSE ;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
 	B_SetVisuals_OrcElite();
 	EquipItem(self,ItMw_2H_OrcAxe_04);
 	EquipItem(self,itrw_crossbow_orc);
@@ -4876,11 +4839,11 @@ instance OrkElite_Arbaletchik_Persival_07(Mst_Default_OrcElite)
 	aivar[AIV_MM_RoamStart] = OnlyRoutine;
 };
 
-instance OrkElite_Arbaletchik_Persival_08(Mst_Default_OrcElite)
+instance OrkElite_Arbaletchik_Persival_07 (Mst_Default_OrcElite)
 {
-	name[0] = "Черный орк-арбалетчик";
+	name[ 0 ] = " Black Orc Crossbowman " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBOWMEN;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBOWMEN ;
 	voice = 18;
 	level = 15;
 	attribute[ATR_STRENGTH] = 260;
@@ -4903,9 +4866,9 @@ instance OrkElite_Arbaletchik_Persival_08(Mst_Default_OrcElite)
 	fight_tactic = FAI_ELITEORC;
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
-	aivar[AIV_MM_ThreatenBeforeAttack] = FALSE;
+	aivar[AIV_MM_ThreatenBeforeAttack] = FALSE ;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
 	B_SetVisuals_OrcElite();
 	EquipItem(self,ItMw_2H_OrcAxe_04);
 	EquipItem(self,itrw_crossbow_orc);
@@ -4914,11 +4877,11 @@ instance OrkElite_Arbaletchik_Persival_08(Mst_Default_OrcElite)
 	aivar[AIV_MM_RoamStart] = OnlyRoutine;
 };
 
-instance OrkElite_Arbaletchik_Persival_09(Mst_Default_OrcElite)
+instance OrkElite_Arbaletchik_Persival_08 (Mst_Default_OrcElite)
 {
-	name[0] = "Черный орк-арбалетчик";
+	name[ 0 ] = " Black Orc Crossbowman " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBOWMEN;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBOWMEN ;
 	voice = 18;
 	level = 15;
 	attribute[ATR_STRENGTH] = 260;
@@ -4941,9 +4904,47 @@ instance OrkElite_Arbaletchik_Persival_09(Mst_Default_OrcElite)
 	fight_tactic = FAI_ELITEORC;
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
-	aivar[AIV_MM_ThreatenBeforeAttack] = FALSE;
+	aivar[AIV_MM_ThreatenBeforeAttack] = FALSE ;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
+	B_SetVisuals_OrcElite();
+	EquipItem(self,ItMw_2H_OrcAxe_04);
+	EquipItem(self,itrw_crossbow_orc);
+	CreateInvItems(self,ItRw_Bolt,10);
+	start_aistate = ZS_MM_AllScheduler;
+	aivar[AIV_MM_RoamStart] = OnlyRoutine;
+};
+
+instance OrkElite_Arbaletchik_Persival_09 (Mst_Default_OrcElite)
+{
+	name[ 0 ] = " Black Orc Crossbowman " ;
+	guild = GIL_ORC;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBOWMEN ;
+	voice = 18;
+	level = 15;
+	attribute[ATR_STRENGTH] = 260;
+	attribute[ATR_DEXTERITY] = 250;
+	attribute[ATR_HITPOINTS_MAX] = 1450;
+	attribute[ATR_HITPOINTS] = 1450;
+	attribute[ATR_MANA_MAX] = 0;
+	attribute[ATR_MANA] = 0;
+	protection[PROT_BLUNT] = 120;
+	protection[PROT_EDGE] = 120;
+	protection[PROT_POINT] = 160;
+	protection[PROT_FIRE] = 50;
+	protection[PROT_FLY] = 50;
+	protection[PROT_MAGIC] = 25;
+	HitChance[NPC_TALENT_1H] = 50;
+	HitChance[NPC_TALENT_2H] = 50;
+	HitChance[NPC_TALENT_BOW] = 100;
+	HitChance[NPC_TALENT_CROSSBOW] = 80;
+	damagetype = DAM_EDGE;
+	fight_tactic = FAI_ELITEORC;
+	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
+	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
+	aivar[AIV_MM_ThreatenBeforeAttack] = FALSE ;
+	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
 	B_SetVisuals_OrcElite();
 	EquipItem(self,ItMw_2H_OrcAxe_04);
 	EquipItem(self,itrw_crossbow_orc);
@@ -4954,9 +4955,9 @@ instance OrkElite_Arbaletchik_Persival_09(Mst_Default_OrcElite)
 
 instance OrkElite_Elder_Persival_01(Mst_Default_OrcElite)
 {
-	name[0] = "Элитный черный орк-старейшина";
+	name[ 0 ] = " Elite Black Orc Elder " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCELITE;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCELITE ;
 	voice = 18;
 	level = 50;
 	attribute[ATR_STRENGTH] = 350;
@@ -4980,7 +4981,7 @@ instance OrkElite_Elder_Persival_01(Mst_Default_OrcElite)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
 	b_setvisuals_orcelite_silver();
 	EquipItem(self,ItMw_2H_OrcSword_02);
 	CreateInvItems(self,ItRi_OrcEliteRing,1);
@@ -4990,9 +4991,9 @@ instance OrkElite_Elder_Persival_01(Mst_Default_OrcElite)
 
 instance ORC_PW_SCOUT(Mst_Default_OrcElite)
 {
-	name[0] = "Черный орк-воин";
+	name[ 0 ] = " Black Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCWARRIOR;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCWARRIOR ;
 	voice = 18;
 	level = 19;
 	attribute[ATR_STRENGTH] = 290;
@@ -5016,19 +5017,19 @@ instance ORC_PW_SCOUT(Mst_Default_OrcElite)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
 	B_SetVisuals_OrcElite();
 	EquipItem(self,ItMw_2H_OrcAxe_04);
-	CreateInvItems(self,ItMi_Addon_Masiafadept_Kopf,1);
+	CreateInvItems(self,ItMi_Addon_Masiafadept_Head, 1 );
 	start_aistate = ZS_MM_AllScheduler;
 	aivar[AIV_MM_RoamStart] = OnlyRoutine;
 };
 
 instance OrcElite_Roam_Harad(Mst_Default_OrcElite)
 {
-	name[0] = "Элитный черный орк-воин";
+	name[ 0 ] = " Elite Black Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCWARRIOR;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCWARRIOR ;
 	voice = 18;
 	level = 17;
 	attribute[ATR_STRENGTH] = 320;
@@ -5051,9 +5052,9 @@ instance OrcElite_Roam_Harad(Mst_Default_OrcElite)
 	fight_tactic = FAI_ELITEORC;
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
-	aivar[AIV_MM_ThreatenBeforeAttack] = FALSE;
+	aivar[AIV_MM_ThreatenBeforeAttack] = FALSE ;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
 	b_setvisuals_orcelite_brown();
 	EquipItem(self,ItMw_2H_OrcSword_01);
 	CreateInvItems(self,ItMi_BlackOrcTalisman,1);
@@ -5063,9 +5064,9 @@ instance OrcElite_Roam_Harad(Mst_Default_OrcElite)
 
 instance OrcWarrior_MineGuard_Elite(Mst_Default_OrcElite)
 {
-	name[0] = "Орк-охранник";
+	name[ 0 ] = " Orc Guard " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBOWMEN;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBOWMEN ;
 	voice = 18;
 	level = 15;
 	attribute[ATR_STRENGTH] = 260;
@@ -5088,9 +5089,9 @@ instance OrcWarrior_MineGuard_Elite(Mst_Default_OrcElite)
 	fight_tactic = FAI_ELITEORC;
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
-	aivar[AIV_MM_ThreatenBeforeAttack] = FALSE;
+	aivar[AIV_MM_ThreatenBeforeAttack] = FALSE ;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
 	B_SetVisuals_OrcElite();
 	EquipItem(self,ItMw_2H_OrcAxe_04);
 	EquipItem(self,itrw_crossbow_orc);
@@ -5101,9 +5102,9 @@ instance OrcWarrior_MineGuard_Elite(Mst_Default_OrcElite)
 
 instance ORKELITE_CHKFLG_SYLVIODRAKAR_CAPITAN(Mst_Default_OrcElite)
 {
-	name[0] = "Фаргот, капитан дракара";
+	name[ 0 ] = " Fargot, Drakar Captain " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCELITE;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCELITE ;
 	voice = 18;
 	level = 100;
 	attribute[ATR_STRENGTH] = 500;
@@ -5127,7 +5128,7 @@ instance ORKELITE_CHKFLG_SYLVIODRAKAR_CAPITAN(Mst_Default_OrcElite)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
 	b_setvisuals_orcelite_gold();
 	EquipItem(self,ItMw_2H_OrcSword_02);
 	start_aistate = ZS_MM_AllScheduler;
@@ -5135,13 +5136,13 @@ instance ORKELITE_CHKFLG_SYLVIODRAKAR_CAPITAN(Mst_Default_OrcElite)
 	CreateInvItems(self,ItKe_ShipOrcCap,1);
 };
 
-//------------------Ирдорат------------------------
+// ------------------Ministry-------------------------
 
 instance OrcElite_Roam_DI(Mst_Default_OrcElite)
 {
-	name[0] = "Черный орк-воин";
+	name[ 0 ] = " Black Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCELITE;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCELITE ;
 	voice = 18;
 	level = 15;
 	attribute[ATR_STRENGTH] = 390;
@@ -5165,7 +5166,7 @@ instance OrcElite_Roam_DI(Mst_Default_OrcElite)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
 	B_SetVisuals_OrcElite();
 	EquipItem(self,ItMw_2H_OrcAxe_04);
 	start_aistate = ZS_MM_AllScheduler;
@@ -5174,9 +5175,9 @@ instance OrcElite_Roam_DI(Mst_Default_OrcElite)
 
 instance ORKELITE_ADDON2_DI(Mst_Default_OrcElite)
 {
-	name[0] = "Элитный черный орк-воин";
+	name[ 0 ] = " Elite Black Orc Warrior " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCBOWMEN;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCBOWMEN ;
 	voice = 18;
 	level = 17;
 	attribute[ATR_STRENGTH] = 420;
@@ -5199,9 +5200,9 @@ instance ORKELITE_ADDON2_DI(Mst_Default_OrcElite)
 	fight_tactic = FAI_ELITEORC;
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
-	aivar[AIV_MM_ThreatenBeforeAttack] = FALSE;
+	aivar[AIV_MM_ThreatenBeforeAttack] = FALSE ;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
 	b_setvisuals_orcelite_brown();
 	EquipItem(self,ItMw_2H_OrcSword_01);
 	EquipItem(self,itrw_crossbow_orc);
@@ -5212,9 +5213,9 @@ instance ORKELITE_ADDON2_DI(Mst_Default_OrcElite)
 
 instance ORKELITE_ADDON3_DI(Mst_Default_OrcElite)
 {
-	name[0] = "Элитный черный орк-старейшина";
+	name[ 0 ] = " Elite Black Orc Elder " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCELITE;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCELITE ;
 	voice = 18;
 	level = 50;
 	attribute[ATR_STRENGTH] = 450;
@@ -5238,7 +5239,7 @@ instance ORKELITE_ADDON3_DI(Mst_Default_OrcElite)
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar [ AIV_MM_FollowInWater ] = TRUE ;
 	b_setvisuals_orcelite_silver();
 	EquipItem(self,ItMw_2H_OrcSword_02);
 	CreateInvItems(self,ItRi_OrcEliteRing,1);
