@@ -1,9 +1,10 @@
 
+
 prototype Mst_Default_OrcShaman(C_Npc)
 {
-	name[0] = "Орк-шаман";
+	name[ 0 ] = " Orc Shaman " ;
 	guild = GIL_ORC;
-	aivar[AIV_MM_REAL_ID] = ID_ORCSHAMAN;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCSHAMAN ;
 	voice = 18;
 	level = 10;
 	attribute[ATR_STRENGTH] = 100;
@@ -26,10 +27,10 @@ prototype Mst_Default_OrcShaman(C_Npc)
 	fight_tactic = FAI_HUMAN_MASTER;
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = PERC_DIST_ORC_ACTIVE_MAX;
-	aivar[AIV_MM_ThreatenBeforeAttack] = FALSE;
+	aivar[AIV_MM_ThreatenBeforeAttack] = FALSE ;
 	aivar[AIV_MagicUser] = MAGIC_ALWAYS;
 	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
+	aivar [ AIV_MM_FollowInWater ] = FALSE ;
 	Npc_SetTalentSkill(self,NPC_TALENT_MAGE,6);
 };
 
@@ -49,7 +50,7 @@ func void b_setvisuals_orcshaman_common()
 
 instance OrcShaman_Common(Mst_Default_OrcShaman)
 {
-	aivar[AIV_MM_REAL_ID] = ID_ORCSHAMAN;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCSHAMAN ;
 	EquipItem(self,itmw_orcstaff);
 	b_setvisuals_orcshaman_common();
 	start_aistate = ZS_MM_AllScheduler;
@@ -58,7 +59,7 @@ instance OrcShaman_Common(Mst_Default_OrcShaman)
 
 instance OrcShaman_Pray_01(Mst_Default_OrcShaman)
 {
-	aivar[AIV_MM_REAL_ID] = ID_ORCSHAMAN;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCSHAMAN ;
 	EquipItem(self,itmw_orcstaff);
 	b_setvisuals_orcshaman_common();
 	start_aistate = ZS_MM_AllScheduler;
@@ -67,7 +68,7 @@ instance OrcShaman_Pray_01(Mst_Default_OrcShaman)
 
 instance OrcShaman_Pray_02(Mst_Default_OrcShaman)
 {
-	aivar[AIV_MM_REAL_ID] = ID_ORCSHAMAN;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCSHAMAN ;
 	EquipItem(self,itmw_orcstaff);
 	b_setvisuals_orcshaman_common();
 	start_aistate = ZS_MM_AllScheduler;
@@ -76,7 +77,7 @@ instance OrcShaman_Pray_02(Mst_Default_OrcShaman)
 
 instance OrcShaman_Pray_03(Mst_Default_OrcShaman)
 {
-	aivar[AIV_MM_REAL_ID] = ID_ORCSHAMAN;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCSHAMAN ;
 	EquipItem(self,itmw_orcstaff);
 	b_setvisuals_orcshaman_common();
 	start_aistate = ZS_MM_AllScheduler;
@@ -85,7 +86,7 @@ instance OrcShaman_Pray_03(Mst_Default_OrcShaman)
 
 instance OrcShaman_Elite(Mst_Default_OrcShaman)
 {
-	aivar[AIV_MM_REAL_ID] = ID_ORCSHAMAN;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCSHAMAN ;
 	attribute[ATR_HITPOINTS_MAX] = 3000;
 	attribute[ATR_HITPOINTS] = 3000;
 	EquipItem(self,itmw_orcstaff);
@@ -96,7 +97,7 @@ instance OrcShaman_Elite(Mst_Default_OrcShaman)
 
 instance OrcShaman_Sit(Mst_Default_OrcShaman)
 {
-	aivar[AIV_MM_REAL_ID] = ID_ORCSHAMAN;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCSHAMAN ;
 	EquipItem(self,itmw_orcstaff);
 	b_setvisuals_orcshaman_common();
 	start_aistate = ZS_MM_AllScheduler;
@@ -105,7 +106,7 @@ instance OrcShaman_Sit(Mst_Default_OrcShaman)
 
 instance GorkOrcShaman_Sit(Mst_Default_OrcShaman)
 {
-	name[0] = "Горный орк-шаман";
+	name[ 0 ] = " Mountain Orc Shaman " ;
 	level = 20;
 	attribute[ATR_STRENGTH] = 300;
 	attribute[ATR_DEXTERITY] = 370;
@@ -113,7 +114,7 @@ instance GorkOrcShaman_Sit(Mst_Default_OrcShaman)
 	attribute[ATR_HITPOINTS] = 1350;
 	attribute[ATR_MANA_MAX] = 1000;
 	attribute[ATR_MANA] = 1000;
-	aivar[AIV_MM_REAL_ID] = ID_ORCSHAMAN;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCSHAMAN ;
 	EquipItem(self,itmw_orcstaff);
 	b_setvisuals_orcshaman_common();
 	start_aistate = ZS_MM_AllScheduler;
@@ -122,7 +123,7 @@ instance GorkOrcShaman_Sit(Mst_Default_OrcShaman)
 
 instance MorkOrcShaman_Sit(Mst_Default_OrcShaman)
 {
-	name[0] = "Горный орк-шаман";
+	name[ 0 ] = " Mountain Orc Shaman " ;
 	level = 20;
 	guild = GIL_GOBBO_SKELETON;
 	flags = NPC_FLAG_IMMORTAL;
@@ -132,7 +133,7 @@ instance MorkOrcShaman_Sit(Mst_Default_OrcShaman)
 	attribute[ATR_HITPOINTS] = 13500;
 	attribute[ATR_MANA_MAX] = 1000;
 	attribute[ATR_MANA] = 1000;
-	aivar[AIV_MM_REAL_ID] = ID_ORCSHAMAN;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCSHAMAN ;
 	EquipItem(self,itmw_orcstaff);
 	b_setvisuals_orcshaman_common();
 	start_aistate = ZS_MM_AllScheduler;
@@ -141,9 +142,9 @@ instance MorkOrcShaman_Sit(Mst_Default_OrcShaman)
 
 instance ORCSHAMAN_ELITE_SIT(Mst_Default_OrcShaman)
 {
-	name[0] = "Верховный орк-шаман";
+	name[ 0 ] = " High Orc Shaman " ;
 	level = 15;
-	aivar[AIV_MM_REAL_ID] = ID_ORCSHAMAN;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCSHAMAN ;
 	attribute[ATR_STRENGTH] = 150;
 	attribute[ATR_DEXTERITY] = 190;
 	attribute[ATR_HITPOINTS_MAX] = 3500;
@@ -162,9 +163,9 @@ instance ORCSHAMAN_ELITE_SIT(Mst_Default_OrcShaman)
 
 instance GorkEliteShaman_Sit(Mst_Default_OrcShaman)
 {
-	name[0] = "Верховный орк-шаман клана";
+	name[ 0 ] = " Clan High Orc Shaman " ;
 	level = 35;
-	aivar[AIV_MM_REAL_ID] = ID_ORCSHAMAN;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCSHAMAN ;
 	attribute[ATR_STRENGTH] = 450;
 	attribute[ATR_DEXTERITY] = 490;
 	attribute[ATR_HITPOINTS_MAX] = 1500;
@@ -183,11 +184,11 @@ instance GorkEliteShaman_Sit(Mst_Default_OrcShaman)
 
 instance MorkEliteShaman_Sit(Mst_Default_OrcShaman)
 {
-	name[0] = "Верховный орк-шаман клана";
+	name[ 0 ] = " Clan High Orc Shaman " ;
 	level = 35;
 	guild = GIL_GOBBO_SKELETON;
 	flags = NPC_FLAG_IMMORTAL;
-	aivar[AIV_MM_REAL_ID] = ID_ORCSHAMAN;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCSHAMAN ;
 	attribute[ATR_STRENGTH] = 4500;
 	attribute[ATR_DEXTERITY] = 490;
 	attribute[ATR_HITPOINTS_MAX] = 15000;
@@ -206,7 +207,7 @@ instance MorkEliteShaman_Sit(Mst_Default_OrcShaman)
 
 instance ORCSHAMAN_REST(Mst_Default_OrcShaman)
 {
-	aivar[AIV_MM_REAL_ID] = ID_ORCSHAMAN;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCSHAMAN ;
 	EquipItem(self,itmw_orcstaff);
 	b_setvisuals_orcshaman_common();
 	start_aistate = ZS_MM_AllScheduler;
@@ -215,19 +216,19 @@ instance ORCSHAMAN_REST(Mst_Default_OrcShaman)
 
 instance ORCSHAMAN_ROAM(Mst_Default_OrcShaman)
 {
-	aivar[AIV_MM_REAL_ID] = ID_ORCSHAMAN;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCSHAMAN ;
 	EquipItem(self,itmw_orcstaff);
 	b_setvisuals_orcshaman_common();
 	start_aistate = ZS_MM_AllScheduler;
 	aivar[AIV_MM_RoamStart] = OnlyRoutine;
 };
 
-instance OrcShaman_Hosh_Pak(Mst_Default_OrcShaman)
+instance OrcShaman_Hosh_Pak (Mst_Default_OrcShaman)
 {
-	name[0] = "Хош-Пак ";
+	name[ 0 ] = " Double-Pak " ;
 	level = 50;
-	aivar[AIV_MM_REAL_ID] = ID_ORCSHAMAN;
-	aivar[90] = TRUE;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCSHAMAN ;
+	aivar[ 90 ] = TRUE ;
 	attribute[ATR_STRENGTH] = 200;
 	attribute[ATR_DEXTERITY] = 250;
 	attribute[ATR_HITPOINTS_MAX] = 5000;
@@ -246,10 +247,10 @@ instance OrcShaman_Hosh_Pak(Mst_Default_OrcShaman)
 
 instance Orc_8572_UrHoshNar(Mst_Default_OrcShaman)
 {
-	name[0] = "Хош-Нар";
+	name[ 0 ] = " Hosh-Nar " ;
 	level = 50;
-	aivar[AIV_MM_REAL_ID] = ID_ORCSHAMAN;
-	aivar[90] = TRUE;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCSHAMAN ;
+	aivar[ 90 ] = TRUE ;
 	attribute[ATR_STRENGTH] = 200;
 	attribute[ATR_DEXTERITY] = 250;
 	attribute[ATR_HITPOINTS_MAX] = 5000;
@@ -268,10 +269,10 @@ instance Orc_8572_UrHoshNar(Mst_Default_OrcShaman)
 
 instance ORCSHAMAN_VAN_XAN(Mst_Default_OrcShaman)
 {
-	name[0] = "Ур-Хан";
+	name[ 0 ] = " Ur-Khan " ;
 	level = 50;
-	aivar[AIV_MM_REAL_ID] = ID_ORCSHAMAN;
-	aivar[90] = TRUE;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCSHAMAN ;
+	aivar[ 90 ] = TRUE ;
 	attribute[ATR_STRENGTH] = 200;
 	attribute[ATR_DEXTERITY] = 250;
 	attribute[ATR_HITPOINTS_MAX] = 5000;
@@ -290,10 +291,10 @@ instance ORCSHAMAN_VAN_XAN(Mst_Default_OrcShaman)
 
 instance OrcShaman_Sit_CanyonLibraryKey(Mst_Default_OrcShaman)
 {
-	name[0] = "Фар-Наг";
+	name[ 0 ] = " Far-Nag " ;
 	level = 50;
-	aivar[AIV_MM_REAL_ID] = ID_ORCSHAMAN;
-	aivar[90] = TRUE;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCSHAMAN ;
+	aivar[ 90 ] = TRUE ;
 	attribute[ATR_STRENGTH] = 200;
 	attribute[ATR_DEXTERITY] = 250;
 	attribute[ATR_HITPOINTS_MAX] = 5000;
@@ -313,10 +314,10 @@ instance OrcShaman_Sit_CanyonLibraryKey(Mst_Default_OrcShaman)
 
 instance ORCSHAMAN_LEADER1(Mst_Default_OrcShaman)
 {
-	name[0] = "Вар-Шат";
+	name[ 0 ] = " Var-Shat " ;
 	level = 50;
-	aivar[AIV_MM_REAL_ID] = ID_ORCSHAMAN;
-	aivar[90] = TRUE;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCSHAMAN ;
+	aivar[ 90 ] = TRUE ;
 	attribute[ATR_STRENGTH] = 200;
 	attribute[ATR_DEXTERITY] = 250;
 	attribute[ATR_HITPOINTS_MAX] = 5000;
@@ -336,10 +337,10 @@ instance ORCSHAMAN_LEADER1(Mst_Default_OrcShaman)
 
 instance ORCSHAMAN_LEADER2(Mst_Default_OrcShaman)
 {
-	name[0] = "Вар-Каз";
+	name[ 0 ] = " Var-Kaz " ;
 	level = 50;
-	aivar[AIV_MM_REAL_ID] = ID_ORCSHAMAN;
-	aivar[90] = TRUE;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCSHAMAN ;
+	aivar[ 90 ] = TRUE ;
 	attribute[ATR_STRENGTH] = 200;
 	attribute[ATR_DEXTERITY] = 250;
 	attribute[ATR_HITPOINTS_MAX] = 5000;
@@ -359,10 +360,10 @@ instance ORCSHAMAN_LEADER2(Mst_Default_OrcShaman)
 
 instance ORCSHAMAN_LEADER3(Mst_Default_OrcShaman)
 {
-	name[0] = "Вар-Хаш";
+	name[ 0 ] = " Var-Hash " ;
 	level = 50;
-	aivar[AIV_MM_REAL_ID] = ID_ORCSHAMAN;
-	aivar[90] = TRUE;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCSHAMAN ;
+	aivar[ 90 ] = TRUE ;
 	attribute[ATR_STRENGTH] = 200;
 	attribute[ATR_DEXTERITY] = 250;
 	attribute[ATR_HITPOINTS_MAX] = 5000;
@@ -382,10 +383,10 @@ instance ORCSHAMAN_LEADER3(Mst_Default_OrcShaman)
 
 instance ORCSHAMAN_LEADER4(Mst_Default_OrcShaman)
 {
-	name[0] = "Вар-Наз";
+	name[ 0 ] = " Var-Naz " ;
 	level = 70;
-	aivar[AIV_MM_REAL_ID] = ID_ORCSHAMAN;
-	aivar[90] = TRUE;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCSHAMAN ;
+	aivar[ 90 ] = TRUE ;
 	attribute[ATR_STRENGTH] = 200;
 	attribute[ATR_DEXTERITY] = 250;
 	attribute[ATR_HITPOINTS_MAX] = 5000;
@@ -405,10 +406,10 @@ instance ORCSHAMAN_LEADER4(Mst_Default_OrcShaman)
 
 instance ORCSHAMAN_LEADER5(Mst_Default_OrcShaman)
 {
-	name[0] = "Вар-Хат";
+	name[ 0 ] = " Var-Khat " ;
 	level = 70;
-	aivar[AIV_MM_REAL_ID] = ID_ORCSHAMAN;
-	aivar[90] = TRUE;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCSHAMAN ;
+	aivar[ 90 ] = TRUE ;
 	attribute[ATR_STRENGTH] = 200;
 	attribute[ATR_DEXTERITY] = 250;
 	attribute[ATR_HITPOINTS_MAX] = 5000;
@@ -428,10 +429,10 @@ instance ORCSHAMAN_LEADER5(Mst_Default_OrcShaman)
 
 instance ORCSHAMAN_TEMPLE(Mst_Default_OrcShaman)
 {
-	name[0] = "Вар-Тар";
+	name[ 0 ] = " War-Tar " ;
 	level = 70;
-	aivar[AIV_MM_REAL_ID] = ID_ORCSHAMAN;
-	aivar[90] = TRUE;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCSHAMAN ;
+	aivar[ 90 ] = TRUE ;
 	attribute[ATR_STRENGTH] = 200;
 	attribute[ATR_DEXTERITY] = 250;
 	attribute[ATR_HITPOINTS_MAX] = 5000;
@@ -451,10 +452,10 @@ instance ORCSHAMAN_TEMPLE(Mst_Default_OrcShaman)
 
 instance ORCSHAMAN_UR_DAH(Mst_Default_OrcShaman)
 {
-	name[0] = "Ур-Дах";
+	name[ 0 ] = " Ur-Dah " ;
 	level = 50;
-	aivar[AIV_MM_REAL_ID] = ID_ORCSHAMAN;
-	aivar[90] = TRUE;
+	aivar[ AIV_MM_REAL_ID ] = ID_ORCSHAMAN ;
+	aivar[ 90 ] = TRUE ;
 	attribute[ATR_STRENGTH] = 200;
 	attribute[ATR_DEXTERITY] = 250;
 	attribute[ATR_HITPOINTS_MAX] = 5000;
