@@ -41,21 +41,21 @@ func void DIA_1061_Guard_Hello_Info()
 {
 	AI_Output(self,other, " DIA_1061_Wache_Hallo_01_00 " );	// Stop! You can't come here.
 	AI_Output(other,self, " DIA_1061_Wache_Hallo_15_01 " );	// I want to talk to your leader.
-	AI_Output(self,other, " DIA_1061_Wache_Hallo_01_02 " );	// (ironic) Oh, I see, you want to talk to my boss. Well, then OF COURSE, I'll let you pass.
-	AI_Output(self,other, " DIA_1061_Wache_Hallo_01_03 " );	// (deadly serious) But only if you say his name. And if not, I'll have to kill you! Good?
+	AI_Output(self,other, " DIA_1061_Wache_Hallo_01_02 " );	// Oh, I see, you want to talk to my boss. Well, then OF COURSE, I'll let you pass.
+	AI_Output(self,other, " DIA_1061_Wache_Hallo_01_03 " );	// But only if you say his name. And if not, I'll have to kill you! Good?
 	Info_ClearChoices(DIA_1061_Wache_Hallo);
 	Info_AddChoice(DIA_1061_Guard_Hello, " Ли " ,DIA_1061_Guard_Hello_Lee);
 	if((Bdt13_Dexter_verraten == TRUE) || (Ranger_SCKnowsDexter == TRUE))
 	{
 		Info_AddChoice(DIA_1061_Wache_Hallo, " Dexter " ,DIA_1061_Wache_Hallo_Dexter);
 	};
-	Info_AddChoice(DIA_1061_Wache_Hello, " Диего " ,DIA_1061_Wache_Hello_Diego);
-	Info_AddChoice(DIA_1061_Wache_Hello, " Не знаю " ,DIA_1061_Wache_Hello_Huhnung);
+	Info_AddChoice(DIA_1061_Wache_Hello, " Diego" ,DIA_1061_Wache_Hello_Diego);
+	Info_AddChoice(DIA_1061_Wache_Hello, " No idea " ,DIA_1061_Wache_Hello_Huhnung);
 };
 
 func void DIA_1061_Guard_Hello_Lee()
 {
-	AI_Output(other,self,"DIA_1061_Wache_Hallo_Lee_15_00");	//Ли.
+	AI_Output(other,self,"DIA_1061_Wache_Hallo_Lee_15_00");	//Lee?
 	AI_Output(self,other, " DIA_1061_Wache_Hallo_Lee_01_01 " );	// Well, what can I say? You just signed your own death warrant, boy!
 	Info_ClearChoices(DIA_1061_Wache_Hallo);
 	AI_StopProcessInfos(self);
@@ -65,7 +65,7 @@ func void DIA_1061_Guard_Hello_Lee()
 func void DIA_1061_Guard_Hello_Dexter()
 {
 	AI_Output(other,self, " DIA_1061_Wache_Hallo_Dexter_15_00 " );	// Dexter.
-	AI_Output(self,other, " DIA_1061_Wache_Hallo_Dexter_01_01 " );	// Well... it looks like you really know our boss. Okay, I'll let you through. But I'm warning you.
+	AI_Output(self,other, " DIA_1061_Wache_Hallo_Dexter_01_01 " );	// Well... it looks like you really do know our boss. Okay, I'll let you through. But I'm warning you.
 	AI_Output(self,other, " DIA_1061_Wache_Hallo_Dexter_01_02 " );	// If you get too close to someone, you won't get out of there alive!
 	AI_Output(self,other, " DIA_1061_Wache_Hallo_Dexter_01_03 " );	// So take a deep breath and keep your sword sheathed. You will find Dexter in the house.
 	Knows_Dexter = TRUE;
