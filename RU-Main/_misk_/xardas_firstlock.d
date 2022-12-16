@@ -2494,9 +2494,9 @@ func void DIA_Xardas_CIRCLE_1()
 	if(B_TeachMagicCircle(self,other,1))
 	{
 		AI_Output(self,other, " DIA_Xardas_CIRCLE_14_01 " );	// By joining the First Circle, you will learn how to use magical runes.
-		AI_Output(self,other, " DIA_Xardas_CIRCLE_14_02 " );	// Each rune contains the structure of a special magic spell.
-		AI_Output(self,other, " DIA_Xardas_CIRCLE_14_03 " );	// By using your own magical power, you can release the rune's magic.
-		AI_Output(self,other, " DIA_Xardas_CIRCLE_14_04 " );	// But unlike scrolls, which are essentially magic formulas, rune magic maintains the structure of the spell at all times.
+		AI_Output(self,other, " DIA_Xardas_CIRCLE_14_02 " );	// Each rune contains the arcane structure of a special magic spell.
+		AI_Output(self,other, " DIA_Xardas_CIRCLE_14_03 " );	// By using your own magical fcus, you can release the rune's inherent magical potential.
+		AI_Output(self,other, " DIA_Xardas_CIRCLE_14_04 " );	// But unlike scrolls, which are essentially magical formulae, rune magic maintains the structure of the spell in this reality
 		AI_Output(self,other, " DIA_Xardas_CIRCLE_14_05 " );	// Each rune contains a magical power that you will carry with you always.
 		AI_Output(self,other, " DIA_Xardas_CIRCLE_14_06 " );	// Just like with the scroll, the moment you use a rune, your own mana reserves are consumed.
 		AI_Output(self,other, " DIA_Xardas_CIRCLE_14_07 " );	// With each new Circle you will learn more and more about runes.
@@ -2527,7 +2527,7 @@ func void DIA_Xardas_CIRCLE_3()
 		AI_Output(self,other, " DIA_Xardas_CIRCLE_14_17 " );	// You have already crossed a significant stage on the path of magic. You have learned how to use runes.
 		AI_Output(self,other, " DIA_Xardas_CIRCLE_14_18 " );	// This knowledge will serve as the basis for the next step. The careful or careless use of runes.
 		AI_Output(self,other, " DIA_Xardas_CIRCLE_14_19 " );	// The choice you make will sear your soul, or build it up into something altogether new.
-		AI_Output(self,other, " DIA_Xardas_CIRCLE_14_20 " );	// Once you've made your choice, use your power without hesitation, or learn self control.
+		AI_Output(self,other, " DIA_Xardas_CIRCLE_14_20 " );	// Once you've made your choice, use your power without hesitation, or practice self control.
 		AI_Output(self,other, " DIA_Xardas_CIRCLE_14_21 " );	// Only you can decide. Find your own way, Mage.
 	};
 	Info_ClearChoices(DIA_Xardas_CIRCLE);
@@ -3416,7 +3416,7 @@ func void dia_xardas_canbenecrom_info()
 {
 	AI_Output(other,self, " DIA_Xardas_CanBeNecrom_01_00 " );	// Can you enlighten me on the mysteries of dark magic?
 	AI_Output(self,other, " DIA_Xardas_CanBeNecrom_01_01 " );	// Hmmm... Your request surprises me!
-	AI_Output(self,other, " DIA_Xardas_CanBeNecrom_01_03 " );	// I didn't even expect to hear such a question from you.
+	AI_Output(self,other, " DIA_Xardas_CanBeNecrom_01_03 " );	// I didn't expect to hear such a question from you.
 	AI_Output(self,other, " DIA_Xardas_CanBeNecrom_01_04 " );	// Of course, I understand your desire to become a magician and master the power of magical runes.
 	AI_Output(self,other, " DIA_Xardas_CanBeNecrom_01_05 " );	// But there are much easier ways than the path of the necromancer and the demon summoner.
 	AI_Output(self,other, " DIA_Xardas_CanBeNecrom_01_06 " );	// Few people dare to enter it - after all, it is incredibly difficult and dangerous!
@@ -3425,7 +3425,7 @@ func void dia_xardas_canbenecrom_info()
 	AI_Output(self,other, " DIA_Xardas_CanBeNecrom_01_10 " );	// There representatives of other deities on the island? How about the magicians of Water or Fire?
 	AI_Output(self,other, " DIA_Xardas_CanBeNecrom_01_11 " );	// Because they can also give you what you're looking for.
 	AI_Output(other,self, " DIA_Xardas_CanBeNecrom_01_14 " );	// I feel that darkness is my true home. That is where my purpose lies!
-	AI_Output(self,other, " DIA_Xardas_CanBeNecrom_01_15 " );	// I must admit, I sensed that about you...
+	AI_Output(self,other, " DIA_Xardas_CanBeNecrom_01_15 " );	// I must admit, I sensed that about you from the first day we met.
 	AI_Output(other,self, " DIA_Xardas_CanBeNecrom_01_17 " );	// So will you help me become a necromancer?
 	AI_Output(self,other, " DIA_Xardas_CanBeNecrom_01_18 " );	// I can't make such decision right away.
 	AI_Output(self,other, " DIA_Xardas_CanBeNecrom_01_21 " );	// I need time to think about this...
@@ -3884,24 +3884,24 @@ func int dia_xardas_ndm_aboutdemonolog_condition()
 func void dia_xardas_ndm_aboutdemonolog_info()
 {
 	AI_Output(other,self, " DIA_Xardas_NDM_AboutDemonolog_01_00 " );	// Tell me about demons.
-	AI_Output(self,other, " DIA_Xardas_NDM_AboutDemonolog_01_01 " );	// Good. Demons are a separate type of dark creatures and the most terrible creatures of Beliar!
+	AI_Output(self,other, " DIA_Xardas_NDM_AboutDemonolog_01_01 " );	// Good. Demons are a separate type of entity all together and the most terrible creatures of Beliar!
 	AI_Output(self,other, " DIA_Xardas_NDM_AboutDemonolog_01_04 " );	// They are the most dangerous creatures that can be found in our world, not counting the dragons.
-	AI_Output(self,other, " DIA_Xardas_NDM_AboutDemonolog_01_08 " );	// Demons are highly immune to magic, and it is extremely difficult to bend them to your will!
+	AI_Output(self,other, " DIA_Xardas_NDM_AboutDemonolog_01_08 " );	// Demons are highly resistant to magic, and it is extremely difficult to bend them to your will!
 	AI_Output(other,self, " DIA_Xardas_NDM_AboutDemonolog_01_09 " );	// Is there a way to fix this?
 	AI_Output(self,other, " DIA_Xardas_NDM_AboutDemonolog_01_10 " );	// For this, there is a separate area of ​​knowledge in dark magic - demonology.
 	AI_Output(self,other, " DIA_Xardas_NDM_AboutDemonolog_01_12 " );	// After studying it, you will discover the ability to summon these terrible creatures into this world.
 	AI_Output(self,other, " DIA_Xardas_NDM_AboutDemonolog_01_13 " );	// And besides, knowledge of demonology will allow you to learn how to create a rune that will help you with this.
-	AI_Output(self,other, " DIA_Xardas_NDM_AboutDemonolog_01_14 " );	// However, you can only use her power once. After that, the power of the rune will dry up.
-	AI_Output(self,other, " DIA_Xardas_NDM_AboutDemonolog_01_17 " );	// Later, knowledge of demonology will allow you to summon higher demons!
-	AI_Output(self,other, " DIA_Xardas_NDM_AboutDemonolog_01_18 " );	// They are an order of magnitude stronger than their normal counterparts, and this gives a lot more advantages.
+	AI_Output(self,other, " DIA_Xardas_NDM_AboutDemonolog_01_14 " );	// However, you can only use its power once. After that, the power of the rune will dry up.
+	AI_Output(self,other, " DIA_Xardas_NDM_AboutDemonolog_01_17 " );	// Later, greater knowledge of demonology will allow you to summon higher demons!
+	AI_Output(self,other, " DIA_Xardas_NDM_AboutDemonolog_01_18 " );	// They are an order of magnitude stronger than their normal counterparts, and this provides us a lot more advantages.
 	AI_Output(self,other, " DIA_Xardas_NDM_AboutDemonolog_01_19 " );	// However, bending them to your will will also be much more difficult!
 	AI_Output(other,self, " DIA_Xardas_NDM_AboutDemonolog_01_20 " );	// Can you teach me demonology?
 	AI_Output(self,other, " DIA_Xardas_NDM_AboutDemonolog_01_21 " );	// Since you are a dark magician, I will explain to you the basic principles of demonology and teach you how to create a rune to summon these creatures.
-	AI_Output(self,other, " DIA_Xardas_NDM_AboutDemonolog_01_22 " );	// True, you can only master her power when you discover the fourth circle of magic.
+	AI_Output(self,other, " DIA_Xardas_NDM_AboutDemonolog_01_22 " );	// Although, you can only master its power when you discover the fourth circle of magic.
 	AI_Output(self,other, " DIA_Xardas_NDM_AboutDemonolog_01_23 " );	// And of course, in order to comprehend all this knowledge, you will need to have enough experience.
 	XARDASTELLABOUTDEMONOLOG = TRUE;
 	Log_CreateTopic(TOPIC_ADDON_DMTTEACHER,LOG_NOTE);
-	B_LogEntry( TOPIC_ADDON_DMTTEACHER , " Xardas will be able to teach me the art of demonology, the knowledge of which will give me the ability to summon demons to me. " );
+	B_LogEntry( TOPIC_ADDON_DMTTEACHER , " Xardas will be able to teach me the art of demonology, the knowledge of which will give me the ability to summon demons to serve me. " );
 };
 
 
@@ -3927,7 +3927,7 @@ func int dia_xardas_ndm_teachdemenolog_condition()
 func void dia_xardas_ndm_teachdemolog_info()
 {
 	AI_Output(other,self, " DIA_Hokurn_Teach_15_00 " );	// Let's start training.
-	AI_Output(self,other, " DIA_Xardas_NDM_TeachDemonolog_01_01 " );	// If you think you're ready for this, I'll teach you everything I know myself.
+	AI_Output(self,other, " DIA_Xardas_NDM_TeachDemonolog_01_01 " );	// If you think you're ready for this, I'll teach you everything I know.
 	Info_ClearChoices(dia_xardas_ndm_teachdemolog);
 	Info_AddChoice(dia_xardas_ndm_teachdemolog,Dialog_Back,dia_xardas_ndm_teachdemolog_back);
 
@@ -3945,7 +3945,7 @@ func void dia_xardas_ndm_teachdemolog_back()
 {
 	if(XARDASTEACHCASTDEMON_LORD == TRUE)
 	{
-		AI_Output(self,other, " DIA_Xardas_NDM_TeachDemonolog_BACK_01_00 " );	// Now it's up to you to summon the highest demons themselves.
+		AI_Output(self,other, " DIA_Xardas_NDM_TeachDemonolog_BACK_01_00 " );	// Now it's up to you to summon the highest demons yourself.
 		AI_Output(self,other, " DIA_Xardas_NDM_TeachDemonolog_BACK_01_01 " );	// But be careful! Remember that subduing these creatures is incredibly difficult.
 		AI_Output(self,other, " DIA_Xardas_NDM_TeachDemonolog_BACK_01_02 " );	// A mistake in this case is tantamount to certain death.
 	};
@@ -3963,7 +3963,7 @@ func void dia_xardas_ndm_teachdemolog_simple()
 
 	if((XARDASTEACHCASTDEMON_SIMPLE == FALSE) && (XARDASTEACHCASTDEMON_LORD == FALSE))
 	{
-		Info_AddChoice(dia_xardas_ndm_teachdemonolog,b_buildlearnstringfordemonolog( " Изучить демонологию. " ,B_GetLearnCostTalent(other, NPC_TALENT_DEMONOLOG , 1 )),dia_xardas_ndm_teachdemenolog_simple);
+		Info_AddChoice(dia_xardas_ndm_teachdemonolog,b_buildlearnstringfordemonolog( " Learn demonology. " ,B_GetLearnCostTalent(other, NPC_TALENT_DEMONOLOG , 1 )),dia_xardas_ndm_teachdemenolog_simple);
 	};
 	if((XARDASTEACHCASTDEMON_SIMPLE == TRUE) && (XARDASTEACHCASTDEMON_LORD == FALSE) && (	DemonologSkill[0] >= 3))
 	{
@@ -4034,12 +4034,12 @@ func void dia_xardas_ndm_tasks_info()
 {
 	AI_Output(other,self, " DIA_Xardas_NDM_Tasks_01_00 " );	// Do you have any errands for me?
 	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_01_01 " );	// Hmmm... Since you're my apprentice now, I actually have a couple of simple errands for you.
-	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_01_02 " );	// However, you must remember that the main thing is the threat from the dragons. This is your main goal!
+	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_01_02 " );	// However, you must remember that our main objective is the threat from the dragons. That is your main goal!
 	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_01_03 " );	// Okay, now about the task itself...
-	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_01_04 " );	// For experimentation, I need a large number of different ingredients, most of which you will not find in a simple trading shop.
-	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_01_05 " );	// I don't have much free time to look for them myself. And I want you to bring me these very ingredients.
-	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_01_06 " );	// As a necromancer, I'm most interested in human remains - dead flesh, bones and skulls. The latter is particularly preferred.
-	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_01_07 " );	// But the most valuable thing for me is the heart of a demon! It will be the hardest to get.
+	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_01_04 " );	// For experimentation, I need a large number of different ingredients, most of which you will not find in a simple alchemist's shop.
+	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_01_05 " );	// I don't have much free time to look for them myself. I need you to find them for me.
+	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_01_06 " );	// As a necromancer, I'm most interested in human remains - dessicated flesh, bones and skulls. The latter is particularly important.
+	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_01_07 " );	// But the most valuable thing for me is the heart of a demon! It will also be the hardest to acquire.
 	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_01_08 " );	// If you happen to have any of the above, feel free to bring it to me.
 	XARDASTASKSBEGUN = TRUE;
 	XARDASBUYBONES = TRUE;
@@ -4075,7 +4075,7 @@ func void dia_xardas_buybones_info()
 	var int countexp;
 	var int goldplus;
 	AI_Output(other,self, " DIA_Xardas_BuyBones_01_00 " );	// I have some of the ingredients you need...
-	AI_Output(self,other, " DIA_Xardas_BuyBones_01_01 " );	// Great! Then let's take a look at them.
+	AI_Output(self,other, " DIA_Xardas_BuyBones_01_01 " );	// Great! Then let's take a look.
 
 	if(Npc_HasItems(other,ItAt_GoblinBone) > 0)
 	{
@@ -4095,8 +4095,8 @@ func void dia_xardas_buybones_info()
 		goldplus = Npc_HasItems(other,ItAt_SkeletonBone);
 		B_GiveInvItems(other,self,ItAt_SkeletonBone,Npc_HasItems(other,ItAt_SkeletonBone));
 		Npc_RemoveInvItems(self,ItAt_SkeletonBone,Npc_HasItems(self,ItAt_SkeletonBone));
-		AI_Output(self,other, " DIA_Xardas_BuyBones_01_09 " );	// Well, well... it looks like the bones of a skeleton. Quite good!
-		AI_Output(self,other, " DIA_Xardas_BuyBones_01_10 " );	// Although, of course, you could bring a little more of them.
+		AI_Output(self,other, " DIA_Xardas_BuyBones_01_09 " );	// Well, well... it looks like the bones of a human skeleton. Good!
+		AI_Output(self,other, " DIA_Xardas_BuyBones_01_10 " );	// Why so stingy? You could bring a little more you know.
 		AI_Output(self,other, " DIA_Xardas_BuyBones_01_12 " );	// Okay, I think this should be enough for the first time.
 		B_GiveInvItems(self,other,ItMi_Gold,goldplus * 8);
 		AI_Output(self,other, " DIA_Xardas_BuyBones_01_16 " );	// Anything else?
@@ -4118,7 +4118,7 @@ func void dia_xardas_buybones_info()
 		B_GiveInvItems(other,self,ItMi_Plazma,Npc_HasItems(other,ItMi_Plazma));
 		Npc_RemoveInvItems(self,ItMi_Plazma,Npc_HasItems(self,ItMi_Plazma));
 		AI_Output(other,self, " DIA_Xardas_HarmUndead_Done_01_01 " );	// I brought you ectoplasm.
-		AI_Output(self,other, " DIA_Xardas_HarmUndead_Done_01_02 " );	// (pretty) Not bad, very good!
+		AI_Output(self,other, " DIA_Xardas_HarmUndead_Done_01_02 " );	// Quite rare! Very nice.
 		B_GiveInvItems(self,other,ItMi_Gold,goldplus * 50);
 		AI_Output(self,other, " DIA_Xardas_BuyBones_01_08 " );	// What else did you bring me?
 	};
@@ -4129,7 +4129,7 @@ func void dia_xardas_buybones_info()
 		B_GiveInvItems(other,self,ItMi_Skull,Npc_HasItems(other,ItMi_Skull));
 		Npc_RemoveInvItems(self,ItMi_Skull,Npc_HasItems(self,ItMi_Skull));
 		AI_Output(self,other, " DIA_Xardas_BuyBones_01_17 " );	// Hmmm... I see your search was not in vain. The skull is a fairly rare ingredient.
-		AI_Output(self,other, " DIA_Xardas_BuyBones_01_19 " );	// Your efforts will be appreciated.
+		AI_Output(self,other, " DIA_Xardas_BuyBones_01_19 " );	// Your efforts are appreciated.
 		B_GiveInvItems(self,other,ItMi_Gold,goldplus * 250);
 		AI_Output(self,other, " DIA_Xardas_BuyBones_01_21 " );	// What else do you have?
 	};
@@ -4140,7 +4140,7 @@ func void dia_xardas_buybones_info()
 		B_GiveInvItems(other,self,ItAt_DemonHeart,Npc_HasItems(other,ItAt_DemonHeart));
 		Npc_RemoveInvItems(self,ItAt_DemonHeart,Npc_HasItems(self,ItAt_DemonHeart));
 		AI_Output(self,other, " DIA_Xardas_BuyBones_01_22 " );	// Incredible!
-		AI_Output(self,other, " DIA_Xardas_BuyBones_01_25 " );	// Demon heart is the most valuable ingredient you could bring.
+		AI_Output(self,other, " DIA_Xardas_BuyBones_01_25 " );	// A demon's heart is the most valuable ingredient you could bring.
 		AI_Output(self,other, " DIA_Xardas_BuyBones_01_26 " );	// You did a great job and deserve a special award.
 		AI_Output(self,other, " DIA_Xardas_BuyBones_01_27 " );	// So, the choice is yours...
 		Info_ClearChoices(dia_xardas_buybones);
@@ -4205,23 +4205,23 @@ func void dia_xardas_ndm_tasks_one_info()
 	AI_Output(other,self, " DIA_Xardas_NDM_Tasks_One_01_00 " );	// What are the orders?
 	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_One_01_01 " );	// Not too hard to start with. As you know, I used to be in the Order of the Fire Mages.
 	AI_Output(other,self, " DIA_Xardas_NDM_Tasks_One_01_02 " );	// Yes, you talked about it.
-	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_One_01_03 " );	// So, in those days, as a servant of Innos, I was engaged in one very curious study from the point of view of magic.
-	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_One_01_04 " );	// At that time, I achieved serious success in this. But, unfortunately, he did not have time to finish the job.
-	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_One_01_05 " );	// And when I left the order, I had to leave all the records related to these experiments in the monastery. Which I later regretted a lot.
+	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_One_01_03 " );	// So, in those days, as a servant of Innos, I was engaged in one very curious study regarding magic.
+	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_One_01_04 " );	// At that time, I achieved serious success in this. But, unfortunately, did not have time to finish the job.
+	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_One_01_05 " );	// And when I left the order, I had to leave all the records related to these experiments in the monastery. Which I have come to regret.
 	AI_Output(other,self, " DIA_Xardas_NDM_Tasks_One_01_06 " );	// But why didn't you take them with you right away?
-	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_One_01_07 " );	// Then I did not imagine that someday I would need them so much.
+	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_One_01_07 " );	// I did not think I would need them again.
 	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_One_01_08 " );	// I want these records back! Go to the monastery and take them from there.
 	AI_Output(other,self, " DIA_Xardas_NDM_Tasks_One_01_09 " );	// Okay, I'll try.
-	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_One_01_10 " );	// No 'trying'! (seriously) Just do it...
-	AI_Output(other,self, " DIA_Xardas_NDM_Tasks_One_01_11 " );	// Well, since I have no choice, tell me - where exactly to look for them?
+	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_One_01_10 " );	// There is no try! Just do it...
+	AI_Output(other,self, " DIA_Xardas_NDM_Tasks_One_01_11 " );	// Well, since I have no choice, tell me - where exactly should I look for them?
 	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_One_01_12 " );	// Part of the documents was kept in the monastery library. Getting there will not be easy - only the Fire Mages themselves have the keys to it.
 	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_One_01_13 " );	// (smirking) But I'm sure you can come up with something.
 	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_One_01_14 " );	// The rest of the notes are probably gathering dust in my old cell. And I still have the key with me - here, take it.
 	B_GiveInvItems(self,other,ItKe_KDFPlayer,1);
 	AI_Output(other,self, " DIA_Xardas_NDM_Tasks_One_01_15 " );	// Are you sure about this? For so many years, they could have been hidden anywhere.
 	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_One_01_16 " );	// I don't think so. Pyrokar and other mages felt that these studies were a waste of time.
-	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_One_01_17 " );	// For them, these documents were never of much value. And hardly anything has changed since then.
-	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_One_01_18 " );	// Okay, go ahead and get me these papers.
+	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_One_01_17 " );	// For them, those documents were never of much value. And hardly anything has changed since then.
+	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_One_01_18 " );	// Okay, go and get me my papers.
 	Mob_CreateItems("BOOKSHELF_CONT_7",itwr_xardasdocs_2,1);
 	Mob_CreateItems("BOOKSHELF_CONT_10",itwr_xardasdocs_1,1);
 	MIS_XARDASNDMTASKSONE = LOG_Running;
@@ -4258,23 +4258,23 @@ func void dia_xardas_ndm_tasks_one_done_info()
 	Npc_RemoveInvItems(other,itwr_xardasdocs_1,1);
 	Npc_RemoveInvItems(other,itwr_xardasdocs_2,1);
 	B_UseFakeScroll();
-	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_One_Done_01_01 " );	// (looking) Yes, that's really what I needed.
-	AI_Output(other,self, " DIA_Xardas_NDM_Tasks_One_Done_01_02 " );	// And what are you going to do now?
-	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_One_Done_01_03 " );	// Now I intend to finally complete my research, and the papers you found will help me a lot in this.
+	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_One_Done_01_01 " );	// That's them. Thank you.
+	AI_Output(other,self, " DIA_Xardas_NDM_Tasks_One_Done_01_02 " );	// What are you going to do now?
+	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_One_Done_01_03 " );	// Now I intend to finally complete my research, and the papers you found will aid me in that regard.
 	AI_Output(other,self, " DIA_Xardas_NDM_Tasks_One_Done_01_04 " );	// And what is written in them?
-	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_One_Done_01_05 " );	// (angrily) You're too curious! And then - I do not think that you will be able to fully understand the essence of my research.
-	AI_Output(other,self, " DIA_Xardas_NDM_Tasks_One_Done_01_06 " );	// So you try first.
-	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_One_Done_01_07 " );	// That's insolent! Hmmm... good. These manuscripts contain the approximate formula for a complex magical spell that I have been working on for many years.
+	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_One_Done_01_05 " );	// You're too curious! I do not think that you will be able to fully understand the essence of my research.
+	AI_Output(other,self, " DIA_Xardas_NDM_Tasks_One_Done_01_06 " );	// Try me.
+	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_One_Done_01_07 " );	// Hmmm... fine. These manuscripts contain the approximate formulae for a complex spell that I have been working on for many years.
 	AI_Output(other,self, " DIA_Xardas_NDM_Tasks_One_Done_01_08 " );	// What is this spell?
 	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_One_Done_01_09 " );	// It resembles the one you used to transfer the energy of the magic ore to Urizel before going to the temple of the Sleeper.
-	AI_Output(other,self, " DIA_Xardas_NDM_Tasks_One_Done_01_10 " );	// Aha! It seems that everything is clear.
-	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_One_Done_01_11 " );	// Yes, but this time the purpose of the spell is slightly different. It will allow you to take all the magic power of any creature!
-	AI_Output(other,self, " DIA_Xardas_NDM_Tasks_One_Done_01_12 " );	// But why are you doing this?
-	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_One_Done_01_13 " );	// (angrily) But that doesn't concern you anymore! And I think you're asking too many questions.
+	AI_Output(other,self, " DIA_Xardas_NDM_Tasks_One_Done_01_10 " );	// Ah, I see.
+	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_One_Done_01_11 " );	// Yes, but this time the purpose of the spell is slightly different. It will allow you to drain all the magic power from any creature!
+	AI_Output(other,self, " DIA_Xardas_NDM_Tasks_One_Done_01_12 " );	// That seems... useful. You have a target in mind I assume?
+	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_One_Done_01_13 " );	// You're asking too many questions. It's starting to annoy me.
 	AI_Output(other,self, " DIA_Xardas_NDM_Tasks_One_Done_01_14 " );	// I'm just curious.
-	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_One_Done_01_15 " );	// (sarcastically) Absolutely! However, now you should be worried about something else.
-	AI_Output(other,self, " DIA_Xardas_NDM_Tasks_One_Done_01_16 " );	// Again, you're on your own - I haven't forgotten about the dragons!
-	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_One_Done_01_17 " );	// Then why are you pestering me with your endless questions? You better go and get busy.
+	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_One_Done_01_15 " );	// You have other things to spend your time on, don't you?
+	AI_Output(other,self, " DIA_Xardas_NDM_Tasks_One_Done_01_16 " );	// I haven't forgotten about the dragons you cantankerous old bastard!
+	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_One_Done_01_17 " );	// Then why are you pestering me with your endless questions? Go play hero and leave me in peace!
 	MANUSCRIPTS1 = TRUE ;
 	HARDASTIMERBENDM = Wld_GetDay();
 	B_LogEntry( TOPIC_XARDASNDMTASKSONE , " I brought Xardas his old entries. " );
@@ -4300,15 +4300,15 @@ func int dia_xardas_ndm_tasks_one_new_condition()
 
 func void dia_xardas_ndm_tasks_one_new_info()
 {
-	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_One_New_01_01 " );	// (angrily) Wait!
-	AI_Output(other,self,"DIA_Xardas_NDM_Tasks_One_New_01_02");	//Что такое?
+	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_One_New_01_01 " );	// Wait!
+	AI_Output(other,self,"DIA_Xardas_NDM_Tasks_One_New_01_02");	//What is it?
 	B_UseFakeScroll();
-	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_One_New_01_03 " );	// The second part of the manuscript you brought me is actually nothing but a cheap fake! Strange that I didn't notice it right away.
+	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_One_New_01_03 " );	// The second part of the manuscript you brought me is a sloppy forgery! Strange that I didn't notice it right away.
 	AI_Output(other,self, " DIA_Xardas_NDM_Tasks_One_New_01_04 " );	// How can this be?
-	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_One_New_01_05 " );	// I don't know and don't want to know! The only thing that interests me at the moment is my original manuscript, which I don't have at the moment.
+	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_One_New_01_05 " );	// I don't know and don't want to know! The only thing that interests me at the moment is my original manuscript!
 	AI_Output(other,self, " DIA_Xardas_NDM_Tasks_One_New_01_06 " );	// But where to look for it now?
-	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_One_New_01_07 " );	// Hmmm... She must have been kidnapped by one of the overly curious Firebenders!
-	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_One_New_01_08 " );	// I doubt any of these hypocrites would admit to being interested in forbidden knowledge. But there is nothing left but to ask around.
+	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_One_New_01_07 " );	// Hmmm... It must have been taken by an overly overly curious Fire Mage!
+	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_One_New_01_08 " );	// I doubt any of those hypocrites would admit to being interested in forbidden knowledge. But there is nothing left but to ask around.
 	RUK3 = TRUE;
 	; _ _ _ _ _ _
 	AI_StopProcessInfos(self);
@@ -4338,12 +4338,12 @@ func void dia_xardas_ndm_tasks_one_new1_info()
 	AI_Output(other,self, " DIA_Xardas_NDM_Tasks_One_New_01_09 " );	// I found the original manuscript.
 	B_GiveInvItems(other,self,itwr_xardasdocs_3,1);
 	Npc_RemoveInvItems(self,itwr_xardasdocs_3,1);
-	AI_Output(self,other,"DIA_Xardas_NDM_Tasks_One_New_01_10");	//И где же?
-	AI_Output(other,self, " DIA_Xardas_NDM_Tasks_One_New_01_11 " );	// At the fire mage named Trevius. Unfortunately, he is dead.
+	AI_Output(self,other,"DIA_Xardas_NDM_Tasks_One_New_01_10");	//Where was it?
+	AI_Output(other,self, " DIA_Xardas_NDM_Tasks_One_New_01_11 " );	// The fire mage named Trevius had it on him. At least, his corpse did.
 	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_One_New_01_12 " );	// Did you kill him?
-	AI_Output(other,self, " DIA_Xardas_NDM_Tasks_One_New_01_13 " );	// No, of course not! I found him in one of the caves, and next to his body was a real demon.
-	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_One_New_01_14 " );	// Now everything is clear to me ... (mockingly) That's what it means to stick your nose into other people's secrets!
-	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_One_New_01_15 " );	// But now it's not so important. The manuscript has returned to me and I can continue my research!
+	AI_Output(other,self, " DIA_Xardas_NDM_Tasks_One_New_01_13 " );	// No, I found him in one of the caves, and next to his body was a dead demon.
+	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_One_New_01_14 " );	// Ha! That's what you get for playing with true fire. Bloody amateur.
+	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_One_New_01_15 " );	// But that is of no importance. The manuscript has returned to me and I can continue my research!
 	B_GiveInvItems(self,hero,ItMi_Gold,1000);
 	MIS_XARDASNDMTASKSONE = LOG_SUCCESS;
 	Log_SetTopicStatus(TOPIC_XARDASNDMTASKSONE,LOG_SUCCESS);
@@ -4378,29 +4378,29 @@ func void dia_xardas_ndm_tasks_one_two_info()
 	if (( XARDASTIMERBENDM  <= (daynow -  1 )) &&  ! Npc_IsDead(vlk_6027_taliasan))
 	{
 		AI_Output(self,other, " DIA_Xardas_NDM_Tasks_One_Two_01_01 " );	// Yes, you're just in time! The other day I went through the notes you brought me from the monastery.
-		AI_Output(self,other, " DIA_Xardas_NDM_Tasks_One_Two_01_02 " );	// They certainly helped me in my research, but along with this, even more incomprehensible questions arose that I cannot answer.
-		AI_Output(self,other, " DIA_Xardas_NDM_Tasks_One_Two_01_03 " );	// I guess to sort of deal with them, I need one more thing. Or several. But I know exactly where to start.
-		AI_Output(other,self,"DIA_Xardas_NDM_Tasks_One_Two_01_04");	//С чего?
+		AI_Output(self,other, " DIA_Xardas_NDM_Tasks_One_Two_01_02 " );	// They certainly helped me in my research, but also raised more questions than answers.
+		AI_Output(self,other, " DIA_Xardas_NDM_Tasks_One_Two_01_03 " );	// I guess in order to deal with them, I need one more thing. Or several. But I know exactly where to start.
+		AI_Output(other,self,"DIA_Xardas_NDM_Tasks_One_Two_01_04");	//What?
 		AI_Output(self,other, " DIA_Xardas_NDM_Tasks_One_Two_01_05 " );	// I'm interested in a rather rare book known as 'The Wasted Way'.
-		AI_Output(self,other, " DIA_Xardas_NDM_Tasks_One_Two_01_06 " );	// If my memory serves me, it was once owned by a magician, whose name I, unfortunately, have already forgotten.
-		AI_Output(self,other, " DIA_Xardas_NDM_Tasks_One_Two_01_07 " );	// However, he will not give it away just like that - he valued this treasure too much. At one time I already tried to get this tome from him.
+		AI_Output(self,other, " DIA_Xardas_NDM_Tasks_One_Two_01_06 " );	// If my memory serves me, it was once owned by a magician, whose name I seem to have forgotten.
+		AI_Output(self,other, " DIA_Xardas_NDM_Tasks_One_Two_01_07 " );	// However, he will not give it away just like that - he valued that treasure too much. I have tried and failed personally.
 		AI_Output(other,self, " DIA_Xardas_NDM_Tasks_One_Two_01_08 " );	// Where can I find this mage?
 		AI_Output(self,other, " DIA_Xardas_NDM_Tasks_One_Two_01_09 " );	// If I knew that, I wouldn't be asking for your help!
 		AI_Output(self,other, " DIA_Xardas_NDM_Tasks_One_Two_01_10 " );	// I would just send a couple of my servants to him, who would convince him to give me the book.
-		AI_Output(other,self, " DIA_Xardas_NDM_Tasks_One_Two_01_11 " );	// Looks like you. Well, do you know anything else about him?
-		AI_Output(self,other, " DIA_Xardas_NDM_Tasks_One_Two_01_12 " );	// I just remembered that he once served as a city magician in Khorinis. Surely someone in town knows where to find it.
-		AI_Output(other,self, " DIA_Xardas_NDM_Tasks_One_Two_01_13 " );	// Okay, I'll try to find this magician and bring you a book.
-		AI_Output(self,other, " DIA_Xardas_NDM_Tasks_One_Two_01_14 " );	// Try hard! (snickeringly) You won't let me be disappointed in my decision to take you as an apprentice, will you?
+		AI_Output(other,self, " DIA_Xardas_NDM_Tasks_One_Two_01_11 " );	// So like you. Well, do you know anything else about him?
+		AI_Output(self,other, " DIA_Xardas_NDM_Tasks_One_Two_01_12 " );	// I just know that he once served as a court wizard in Khorinis. Surely someone in town knows where to find him.
+		AI_Output(other,self, " DIA_Xardas_NDM_Tasks_One_Two_01_13 " );	// Okay, I'll try to find this magician and bring you the book.
+		AI_Output(self,other, " DIA_Xardas_NDM_Tasks_One_Two_01_14 " );	// Good, after all, you won't let me be disappointed in my decision to take you as an apprentice, will you?
 		MIS_XARDASNDMTASKSTWO = LOG_Running;
 		Log_CreateTopic(TOPIC_XARDASNDMTASKSTWO,LOG_MISSION);
 		Log_SetTopicStatus(TOPIC_XARDASNDMTASKSTWO,LOG_Running);
 		if(TALIASANTELLWHOMAGE == TRUE)
 		{
-			B_LogEntry( TOPIC_XARDASNDMTASKSTWO , " Now Xardas wants me to get him one rare book called 'The Waste Way'. According to him, the last owner of this relic was a magician who lived in Khorinis. If you can get this book anywhere, then only with him. Not the former city magician - Gallahad, did Xardas mean ?! " );
+			B_LogEntry( TOPIC_XARDASNDMTASKSTWO , " Now Xardas wants me to get him a rare book called 'The Wasted Way'. According to him, the last owner of this relic was a magician who lived in Khorinis. If I can get this book anywhere, then only with him. Did he mean the former court wizard, Gallahad?! " );
 		}
 		else
 		{
-			B_LogEntry( TOPIC_XARDASNDMTASKSTWO , " Now Xardas wants me to get him one rare book called 'The Waste Way'. According to him, the last owner of this relic was a magician who lived in Khorinis. If you can get this book anywhere, then only with him. True, Xardas could not tell me where to look for this magician. " );
+			B_LogEntry( TOPIC_XARDASNDMTASKSTWO , " Now Xardas wants me to get him a rare book called 'The Wasted Way'. According to him, the last owner of this relic was a magician who lived in Khorinis. If I can get this book anywhere, then only with him. Xardas could not tell me where to look for this magician. " );
 		};
 	}
 	else
@@ -4432,7 +4432,7 @@ func int dia_xardas_ndm_tasks_one_twodonekill_condition()
 func void dia_xardas_ndm_tasks_one_twodonekill_info()
 {
 	AI_Output(other,self, " DIA_Xardas_NDM_Tasks_One_TwoDoneKill_01_01 " );	// I found that mage. His name is Gallahad.
-	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_One_TwoDoneKill_01_02 " );	// Oh, yes... now I remember him too. And where is he now?
+	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_One_TwoDoneKill_01_02 " );	// Oh, yes... now I remember him. And where is he now?
 	AI_Output(other,self, " DIA_Xardas_NDM_Tasks_One_TwoDoneKill_01_03 " );	// He lives in the city.
 	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_One_TwoDoneKill_01_04 " );	// What about the book I asked you to bring?
 	TELLABOUTGALLAHAD = TRUE;
@@ -4440,15 +4440,15 @@ func void dia_xardas_ndm_tasks_one_twodonekill_info()
 	{
 		B_GivePlayerXP(100);
 		AI_Output(other,self, " DIA_Xardas_NDM_Tasks_One_TwoDoneKill_01_05 " );	// He doesn't have it.
-		AI_Output(self,other, " DIA_Xardas_NDM_Tasks_One_TwoDoneKill_01_06 " );	// How is it not?!
+		AI_Output(self,other, " DIA_Xardas_NDM_Tasks_One_TwoDoneKill_01_06 " );	// How is that possible?!
 		AI_Output(other,self, " DIA_Xardas_NDM_Tasks_One_TwoDoneKill_01_07 " );	// Gallahad said he sold it to a traveling merchant a long time ago and...
-		AI_Output(self,other, " DIA_Xardas_NDM_Tasks_One_TwoDoneKill_01_08 " );	// What?! And did you believe him?
-		AI_Output(other,self,"DIA_Xardas_NDM_Tasks_One_TwoDoneKill_01_09");	//Ну...
-		AI_Output(self,other, " DIA_Xardas_NDM_Tasks_One_TwoDoneKill_01_10 " );	// Stupid! He's got you wrapped around his finger like a snotty boy! Only an idiot would trade knowledge for money!
+		AI_Output(self,other, " DIA_Xardas_NDM_Tasks_One_TwoDoneKill_01_08 " );	// What?! And you believed him?
+		AI_Output(other,self,"DIA_Xardas_NDM_Tasks_One_TwoDoneKill_01_09");	//Well...
+		AI_Output(self,other, " DIA_Xardas_NDM_Tasks_One_TwoDoneKill_01_10 " );	// Fool! He's got you wrapped around his finger like an amateur! Only an idiot would trade knowledge for money!
 		AI_Output(self,other, " DIA_Xardas_NDM_Tasks_One_TwoDoneKill_01_11 " );	// And besides, Gallahad is a magician, albeit a useless one! For any of us, the secrets of magic are far more important than the dull sheen of despicable metal. He would never do that!
-		AI_Output(other,self, " DIA_Xardas_NDM_Tasks_One_TwoDoneKill_01_12 " );	// And now what to do?
-		AI_Output(self,other, " DIA_Xardas_NDM_Tasks_One_TwoDoneKill_01_13 " );	// (grouchily) Nothing for you. And I will send a couple of my demons to this worm. I think they can convince him to give me this book.
-		AI_Output(self,other, " DIA_Xardas_NDM_Tasks_One_TwoDoneKill_01_14 " );	// You can get on with more pressing matters for now. But be prepared that I still need your services.
+		AI_Output(other,self, " DIA_Xardas_NDM_Tasks_One_TwoDoneKill_01_12 " );	// Dammit, what now?
+		AI_Output(self,other, " DIA_Xardas_NDM_Tasks_One_TwoDoneKill_01_13 " );	// I will send a couple of my servants to this worm. I think they can convince him to give me the book.
+		AI_Output(self,other, " DIA_Xardas_NDM_Tasks_One_TwoDoneKill_01_14 " );	// You can get on with more pressing matters. But be prepared that I still need your services, if you're capable of following basic orders.
 		MIS_XARDASNDMTASKSTWO = LOG_FAILED;
 		XARDASTIMERQUEST = Wld_GetDay();
 		B_LogEntry_Failed(TOPIC_XARDASNDMTASKSTWO);
@@ -4457,10 +4457,10 @@ func void dia_xardas_ndm_tasks_one_twodonekill_info()
 	else if(XARDASMISSBOOK == TRUE)
 	{
 		AI_Output(other,self, " DIA_Xardas_NDM_Tasks_One_TwoDoneKill_01_15 " );	// He still has it, but Gallahad did not want to give it to me.
-		AI_Output(self,other, " DIA_Xardas_NDM_Tasks_One_TwoDoneKill_01_16 " );	// It's worse for him! Let's see how he talks when I send a couple of my demons to him.
-		AI_Output(self,other, " DIA_Xardas_NDM_Tasks_One_TwoDoneKill_01_17 " );	// I think they can convince him to give me this book.
-		AI_Output(other,self, " DIA_Xardas_NDM_Tasks_One_TwoDoneKill_01_18 " );	// Aren't the measures too steep?
-		AI_Output(self,other, " DIA_Xardas_NDM_Tasks_One_TwoDoneKill_01_19 " );	// (angrily) Are you still going to teach me what to do?
+		AI_Output(self,other, " DIA_Xardas_NDM_Tasks_One_TwoDoneKill_01_16 " );	// A mistake on his part. Let's see how he likes it when I send a couple of my servants to visit him.
+		AI_Output(self,other, " DIA_Xardas_NDM_Tasks_One_TwoDoneKill_01_17 " );	// I think they can convince him to give me the book.
+		AI_Output(other,self, " DIA_Xardas_NDM_Tasks_One_TwoDoneKill_01_18 " );	// Is that really necessary?
+		AI_Output(self,other, " DIA_Xardas_NDM_Tasks_One_TwoDoneKill_01_19 " );	// (angrily) Are you telling me what to do, apprentice?
 		Info_ClearChoices(dia_xardas_ndm_tasks_one_twodonekill);
 		Info_AddChoice(dia_xardas_ndm_tasks_one_twodonekill, " No, no! Do as you please. " ,dia_xardas_ndm_tasks_one_twodonekill_killgalah);
 		Info_AddChoice(dia_xardas_ndm_tasks_one_twodonekill, " I think I can fix this problem myself. " ,dia_xardas_ndm_tasks_one_twodonekill_dontworry);
@@ -4470,14 +4470,14 @@ func void dia_xardas_ndm_tasks_one_twodonekill_info()
 func void dia_xardas_ndm_tasks_one_twodonekill_killgalah()
 {
 	B_GivePlayerXP(300);
-	AI_Output(other,self, " DIA_Xardas_NDM_Tasks_One_TwoDoneKill_KillGalah_01_01 " );	// No, what are you! Do what you know.
-	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_One_TwoDoneKill_KillGalah_01_02 " );	// (sarcastically) Exactly.
+	AI_Output(other,self, " DIA_Xardas_NDM_Tasks_One_TwoDoneKill_KillGalah_01_01 " );	// No, do as you see fit.
+	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_One_TwoDoneKill_KillGalah_01_02 " );	// That's what I thought.
 	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_One_TwoDoneKill_KillGalah_01_03 " );	// You can get on with more pressing matters for now. But be prepared that I still need your services.
 	B_KillNpc(vlk_6027_taliasan);
 	MIS_XARDASNDMTASKSTWO = LOG_SUCCESS;
 	XARDASTIMERQUEST = Wld_GetDay();
 	Log_SetTopicStatus(TOPIC_XARDASNDMTASKSTWO,LOG_SUCCESS);
-	B_LogEntry( TOPIC_XARDASNDMTASKSTWO , " Xardas is going to send a couple of his demons to Gallahad to knock the book out of him. Looks like Gallahad is done! " );
+	B_LogEntry( TOPIC_XARDASNDMTASKSTWO , " Xardas is going to send a couple of his servants to Gallahad to knock the book out of him. Looks like Gallahad is done! " );
 	Info_ClearChoices(dia_xardas_ndm_tasks_one_twodonekill);
 };
 
@@ -4485,10 +4485,10 @@ func void dia_xardas_ndm_tasks_one_twodonekill_dontworry()
 {
 	B_GivePlayerXP(150);
 	AI_Output(other,self, " DIA_Xardas_NDM_Tasks_One_TwoDoneKill_DontWorry_01_01 " );	// I just think I can fix this problem myself.
-	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_One_TwoDoneKill_DontWorry_01_02 " );	// (in disbelief) Are you sure about that?
-	AI_Output(other,self, " DIA_Xardas_NDM_Tasks_One_TwoDoneKill_DontWorry_01_03 " );	// Absolutely! And besides, I do not think that Gallahad deserved such a fate.
-	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_One_TwoDoneKill_DontWorry_01_04 " );	// Good. But look, don't come back to me without a book, otherwise my demons will take care of you!
-	B_LogEntry( TOPIC_XARDASNDMTASKSTWO , " I told Xardas about my conversation with Gallahad. After listening to me, Xardas already wanted to send a couple of his demons to the magician to beat the book out of him. But I managed to dissuade him from this idea. Now I should think about how get this book. " );
+	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_One_TwoDoneKill_DontWorry_01_02 " );	// Are you sure about that?
+	AI_Output(other,self, " DIA_Xardas_NDM_Tasks_One_TwoDoneKill_DontWorry_01_03 " );	// Absolutely! And besides, I do not think that Gallahad deserves such a fate.
+	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_One_TwoDoneKill_DontWorry_01_04 " );	// Good. But don't come back to me without that book, otherwise my demons will take care of you as well!
+	B_LogEntry( TOPIC_XARDASNDMTASKSTWO , " I told Xardas about my conversation with Gallahad. After listening to me, Xardas wanted to send a couple of his demons to the magician to beat the book out of him. But I managed to dissuade him from this idea. Now I should think about how get that book. " );
 	Info_ClearChoices(dia_xardas_ndm_tasks_one_twodonekill);
 };
 
@@ -4518,10 +4518,10 @@ func void dia_xardas_ndm_tasks_two_done_info()
 	AI_Output(other,self, " DIA_Xardas_NDM_Tasks_Two_Done_01_01 " );	// I have the book!
 	B_GiveInvItems(other,self,itwr_umsonst_01, 1 );
 	B_UseFakeScroll();
-	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_Two_Done_01_02 " );	// (angrily) That's what I thought - a few pages missing!
+	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_Two_Done_01_02 " );	// As I feared - there are pages missing!
 	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_Two_Done_01_03 " );	// But don't reproach yourself for this - it's not your fault. I should have guessed!
 	AI_Output(other,self, " DIA_Xardas_NDM_Tasks_Two_Done_01_04 " );	// And now what?
-	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_Two_Done_01_05 " );	// I hope this trouble doesn't prevent me from continuing my experiment... (thoughtfully) Although it's too early to talk about it.
+	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_Two_Done_01_05 " );	// I hope this doesn't prevent me from continuing my experiment... (thoughtfully) Although it's too early to talk about it.
 	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_Two_Done_01_06 " );	// I need to study everything written here. In the meantime, you can get on with more pressing matters.
 	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_Two_Done_01_07 " );	// But be prepared, I'll still need your services.
 	MIS_XARDASNDMTASKSTWO = LOG_SUCCESS;
@@ -4557,25 +4557,25 @@ func void dia_xardas_ndm_tasks_two_donedead_info()
 	if(TELLABOUTGALLAHAD == TRUE)
 	{
 		AI_Output(self,other, " DIA_Xardas_NDM_Tasks_Two_DoneDead_01_02 " );	// You mean Gallahad?
-		AI_Output(other,self, " DIA_Xardas_NDM_Tasks_Two_DoneDead_01_03 " );	// Yes. Looks like someone slapped the poor guy!
+		AI_Output(other,self, " DIA_Xardas_NDM_Tasks_Two_DoneDead_01_03 " );	// Yes. Looks like someone murdered the poor guy!
 	}
 	else
 	{
 		AI_Output(self,other, " DIA_Xardas_NDM_Tasks_Two_DoneDead_01_04 " );	// What are you talking about?
 		AI_Output(other,self, " DIA_Xardas_NDM_Tasks_Two_DoneDead_01_05 " );	// I'm talking about the magician who had the book you needed. His name was Gallahad.
-		AI_Output(other,self, " DIA_Xardas_NDM_Tasks_Two_DoneDead_01_06 " );	// He lived in the port quarter of Khorinis. Looks like the poor thing was slapped by someone.
+		AI_Output(other,self, " DIA_Xardas_NDM_Tasks_Two_DoneDead_01_06 " );	// He lived in the port quarter of Khorinis. Looks like the poor man was executed.
 	};
-	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_Two_DoneDead_01_07 " );	// Well, okay. What about the book?
+	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_Two_DoneDead_01_07 " );	// How very sad. What about the book?
 	AI_Output(other,self, " DIA_Xardas_NDM_Tasks_Two_DoneDead_01_08 " );	// He didn't have it with him.
-	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_Two_DoneDead_01_09 " );	// Are you sure about this?
+	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_Two_DoneDead_01_09 " );	// Are you sure?
 	AI_Output(other,self, " DIA_Xardas_NDM_Tasks_Two_DoneDead_01_10 " );	// Absolutely.
 	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_Two_DoneDead_01_11 " );	// Well, if so, then maybe he just hid it somewhere well.
-	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_Two_DoneDead_01_12 " );	// I'll send a few of my servants out to find it. They will find this book!
+	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_Two_DoneDead_01_12 " );	// I'll send a few of my demonic servants out to find it. They are very... perceptive.
 	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_Two_DoneDead_01_13 " );	// In the meantime, you can get on with more pressing matters. But be prepared, I still need your services.
 	MIS_XARDASNDMTASKSTWO = LOG_SUCCESS;
 	XARDASTIMERQUEST = Wld_GetDay();
 	Log_SetTopicStatus(TOPIC_XARDASNDMTASKSTWO,LOG_SUCCESS);
-	B_LogEntry( TOPIC_XARDASNDMTASKSTWO , " I brought the news of Gallahad's death to Xardas and also told him that he did not have the book with him. Maybe Gallahad just hid it well from prying eyes. Xardas will send some of his servants to look for her, but I can do other things. " );
+	B_LogEntry( TOPIC_XARDASNDMTASKSTWO , " I brought the news of Gallahad's death to Xardas and also told him that he did not have the book with him. Maybe Gallahad just hid it well from prying eyes. Xardas will send some of his servants to look for it, but I can focus on other things. " );
 };
 
 instance DIA_XARDAS_NDM_TASKS_FOUR(C_Info)
@@ -4603,32 +4603,32 @@ func int dia_xardas_ndm_tasks_four_condition()
 func void dia_xardas_ndm_tasks_four_info()
 {
 	AI_Output(other,self, " DIA_Xardas_NDM_Tasks_Four_01_00 " );	// Do you still need my help?
-	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_Four_01_01 " );	// (grimly) Yes. Just this time, try to take my order as seriously as possible! It is much more complicated than the ones I gave you earlier.
-	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_Four_01_02 " );	// So... The other day I went through the notes you brought me from the monastery again.
+	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_Four_01_01 " );	// Yes. Just this time, try to take my order as seriously as possible! It is much more complicated than the ones I gave you earlier.
+	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_Four_01_02 " );	// So... The other day I went through the notes you brought me from the monastery.
 	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_Four_01_03 " );	// And after much thought, I came to the conclusion that I need one more thing to complete the research.
-	AI_Output(other,self,"DIA_Xardas_NDM_Tasks_Four_01_04");	//Какая?
-	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_Four_01_05 " );	// We are talking about one of the oldest tomes dedicated to the magic of necromancers - the Necronomicon!
+	AI_Output(other,self,"DIA_Xardas_NDM_Tasks_Four_01_04");	//Yes?
+	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_Four_01_05 " );	// We are talking about one of the oldest tomes dedicated to the art of necromancy - the Necronomicon!
 	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_Four_01_06 " );	// Have you ever heard of this artifact?
 	AI_Output(other,self, " DIA_Xardas_NDM_Tasks_Four_01_07 " );	// Honestly, no.
-	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_Four_01_08 " );	// I thought so... (smiles) Few people know about its existence. But for me, it's even better!
-	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_Four_01_09 " );	// I also don't know much about this artifact. But my information is quite enough to take possession of this treasure.
+	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_Four_01_08 " );	// I thought so... (smiles) Few people know of its existence. Few among the living, anyway.
+	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_Four_01_09 " );	// I have just enough information to potentially acquire it.
 	AI_Output(other,self, " DIA_Xardas_NDM_Tasks_Four_01_10 " );	// So you know where to look for it?
-	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_Four_01_11 " );	// I didn't say that! But I know someone who will help us with this.
+	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_Four_01_11 " );	// I didn't say that! But I know someone who could help us with that.
 	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_Four_01_12 " );	// His name is Nergal! He was one of the most powerful necromancers of his time and the last master of the Necronomicon.
-	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_Four_01_13 " );	// Unfortunately, Nergal's soul has long since passed into the world of shadows... and it will not be so easy to find out in whose hands the Necronomicon is now.
+	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_Four_01_13 " );	// Unfortunately, Nergal's soul has long since passed into the realm of shadows... and it will not be so easy to find out in whose hands the Necronomicon is now.
 	AI_Output(other,self, " DIA_Xardas_NDM_Tasks_Four_01_14 " );	// And what are you planning to do?
-	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_Four_01_15 " );	// It's simple! Knowledge of the dark runes of the necromancer will help me summon the spirit of Nergal into this world, but I will need your help as well.
+	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_Four_01_15 " );	// It's simple! Knowledge of the dark runes will help me summon the spirit of Nergal into this world, but I will need your help in this.
 	AI_Output(other,self, " DIA_Xardas_NDM_Tasks_Four_01_16 " );	// What should I do?
-	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_Four_01_17 " );	// (serious) Somewhere in the eastern part of this valley is the old tower of this necromancer. Your path is right there!
+	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_Four_01_17 " );	// Somewhere in the eastern part of this valley is the old tower of Nergal. Your path starts there!
 	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_Four_01_18 " );	// I don't know what exactly awaits you there, but I think you'll understand everything when you get there.
-	AI_Output(other,self, " DIA_Xardas_NDM_Tasks_Four_01_19 " );	// Well, I think there will be no problems with this.
-	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_Four_01_20 " );	// Maybe... (snidely) But as far as I know, the entrance to this tower is closed. You'll have to figure out how to get there yourself.
-	AI_Output(other,self, " DIA_Xardas_NDM_Tasks_Four_01_21 " );	// I didn't expect anything else.
+	AI_Output(other,self, " DIA_Xardas_NDM_Tasks_Four_01_19 " );	// Well, how hard could that be?
+	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_Four_01_20 " );	// Maybe... But as far as I know, the entrance to the tower is closed. You'll have to figure out how to get in there yourself.
+	AI_Output(other,self, " DIA_Xardas_NDM_Tasks_Four_01_21 " );	// I expected nothing less.
 	MIS_XARDASTASKSFOUR = LOG_Running;
 	Log_CreateTopic(TOPIC_XARDASTASKSFOUR,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_XARDASTASKSFOUR,LOG_Running);
 	; _ _ _ _ _ _
-	Log_AddEntry( TOPIC_XARDASTASKSFOUR , " First, I need to go to the old Nergal tower. What awaits me there, I will find out on the spot. But the problem is that the entrance to the Nergal tower is closed and it is impossible to get there. Who could help me? " );
+	Log_AddEntry( TOPIC_XARDASTASKSFOUR , " First, I need to go to the tower of the Necromancer Nergal. What awaits me there, I will find out on the spot. But the problem is that the entrance to the tower is closed and it is impossible to get there. Who could help me? " );
 };
 
 
@@ -4655,17 +4655,17 @@ func void dia_xardas_ndm_tasks_fourprogress_info()
 {
 	B_GivePlayerXP(200);
 	AI_Output(other,self, " DIA_Xardas_NDM_Tasks_FourProgress_01_00 " );	// I've been to Nergal's tower.
-	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_FourProgress_01_01 " );	// (admiringly) Did you succeed? Looks like I gave you this job for a reason.
-	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_FourProgress_01_02 " );	// Tell me what did you find out?
-	AI_Output(other,self, " DIA_Xardas_NDM_Tasks_FourProgress_01_03 " );	// Nothing interesting. But I did manage to find something.
-	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_FourProgress_01_04 " );	// And what is this?
+	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_FourProgress_01_01 " );	// Did you succeed? Looks like I gave you this job for a reason.
+	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_FourProgress_01_02 " );	// Tell me what you found?
+	AI_Output(other,self, " DIA_Xardas_NDM_Tasks_FourProgress_01_03 " );	// Not much, but I did manage to find something.
+	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_FourProgress_01_04 " );	// And what might that be?
 	AI_Output(other,self, " DIA_Xardas_NDM_Tasks_FourProgress_01_05 " );	// I think it's better if you take a look at it yourself.
 	B_GiveInvItems(other,self,itmi_nergalcorpse,1);
 	Npc_RemoveInvItems(self,itmi_nergalcorpse,1);
 	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_FourProgress_01_06 " );	// That's right! This is just what I needed.
-	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_FourProgress_01_07 " );	// Now, nothing will stop me from summoning Nergal's soul into this world. And I will know the secret of the Necronomicon!
+	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_FourProgress_01_07 " );	// Now, nothing will stop me from summoning Nergal's soul into this world. And I will know the location of the Necronomicon!
 	AI_Output(other,self, " DIA_Xardas_NDM_Tasks_FourProgress_01_08 " );	// What should I do?
-	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_FourProgress_01_09 " );	// Nothing yet. You can do other things.
+	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_FourProgress_01_09 " );	// Nothing yet. You can focus on other things for now.
 	) ; _ _ _ _ _
 	RITUALNERGALTIMER = Wld_GetDay();
 };
@@ -4695,12 +4695,12 @@ func int dia_xardas_ndm_tasks_fourprogresstwo_condition()
 func void dia_xardas_ndm_tasks_fourprogresstwo_info()
 {
 	AI_Output(other,self, " DIA_Xardas_NDM_Tasks_FourProgressTwo_01_00 " );	// When can you perform this ritual?
-	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_FourProgressTwo_01_01 " );	// (thinking) I can't tell you exactly. The call of the soul is an extremely difficult task in itself!
-	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_FourProgressTwo_01_02 " );	// And if we are talking about a powerful magician, like Nergal was, then it is completely deadly!
+	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_FourProgressTwo_01_01 " );	// I can't tell you exactly. The call of souls is an extremely difficult task.
+	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_FourProgressTwo_01_02 " );	// And if we are talking about a powerful magician, like Nergal was, then it is potentially deadly!
 	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_FourProgressTwo_01_03 " );	// Rushing here is highly undesirable. It is necessary to think over every little thing, otherwise any mistake can cost you your life!
-	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_FourProgressTwo_01_04 " );	// By the way...(grouchily) Why did you ask about this?
-	AI_Output(other,self, " DIA_Xardas_NDM_Tasks_FourProgressTwo_01_05 " );	// I would like to participate in this ritual. You do not mind?
-	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_FourProgressTwo_01_06 " );	// Hmmm... I really need a few helpers to perform this ritual.
+	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_FourProgressTwo_01_04 " );	// By the way... Why did you ask about this?
+	AI_Output(other,self, " DIA_Xardas_NDM_Tasks_FourProgressTwo_01_05 " );	// I would like to participate in this ritual. Would you mind?
+	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_FourProgressTwo_01_06 " );	// Hmmm... I actually need a few helpers to perform this ritual.
 	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_FourProgressTwo_01_07 " );	// Well, I don't mind.
 	RITUALNERGALPREPARE = TRUE;
 	B_LogEntry( TOPIC_XARDASTASKSFOUR , " Xardas has no objection to me taking part in the ritual to summon the soul of the necromancer Nergal. " );
@@ -4739,10 +4739,10 @@ func void dia_xardas_ndm_tasks_fourritualready_info()
 		AI_Output(self,other, " DIA_Xardas_NDM_Tasks_FourRitualReady_01_03 " );	// Listen carefully and remember. As you probably already noticed, next to you on the floor is a magic pentagram.
 		AI_Output(self,other, " DIA_Xardas_NDM_Tasks_FourRitualReady_01_04 " );	// Stand at the end of the star to my left and don't leave that spot until I tell you to.
 		AI_Output(self,other, " DIA_Xardas_NDM_Tasks_FourRitualReady_01_05 " );	// In other words, don't go inside the pentagram itself. It is very important!
-		AI_Output(other,self,"DIA_Xardas_NDM_Tasks_FourRitualReady_01_06");	//Почему?
+		AI_Output(other,self,"DIA_Xardas_NDM_Tasks_FourRitualReady_01_06");	//Why?
 		AI_Output(self,other, " DIA_Xardas_NDM_Tasks_FourRitualReady_01_07 " );	// During the ritual, everyone who takes part in it forms a single magical barrier.
-		AI_Output(self,other, " DIA_Xardas_NDM_Tasks_FourRitualReady_01_08 " );	// When Nergal's soul comes to this world, this barrier will protect us from her rampage.
-		AI_Output(self,other, " DIA_Xardas_NDM_Tasks_FourRitualReady_01_09 " );	// So try to take this very seriously.
+		AI_Output(self,other, " DIA_Xardas_NDM_Tasks_FourRitualReady_01_08 " );	// When Nergal's soul comes to this world, this barrier will protect us from his wrath.
+		AI_Output(self,other, " DIA_Xardas_NDM_Tasks_FourRitualReady_01_09 " );	// So try to take this seriously.
 		AI_Output(other,self, " DIA_Xardas_NDM_Tasks_FourRitualReady_01_10 " );	// I got it.
 		AI_Output(self,other, " DIA_Xardas_NDM_Tasks_FourRitualReady_01_11 " );	// Then let's not waste time - let's start the ritual!
 		B_LogEntry( TOPIC_XARDASTASKSFOUR , " Everything is ready for Xardas to perform the ritual. " );
@@ -4751,14 +4751,14 @@ func void dia_xardas_ndm_tasks_fourritualready_info()
 	}
 	else
 	{
-		AI_Output(self,other, " DIA_Xardas_NDM_Tasks_FourRitualReady_01_12 " );	// (grouchily) Not yet. Come back later!
+		AI_Output(self,other, " DIA_Xardas_NDM_Tasks_FourRitualReady_01_12 " );	// Not yet. Come back later!
 	};
 };
 
 func void dia_xardas_ndm_tasks_fourritualready_ok()
 {
-	AI_Output(other,self,"DIA_Xardas_NDM_Tasks_FourRitualReady_Ok_01_01");	//Я готов.
-	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_FourRitualReady_Ok_01_02 " );	// Great! Remember what I told you and everything will be fine.
+	AI_Output(other,self,"DIA_Xardas_NDM_Tasks_FourRitualReady_Ok_01_01");	//I'm ready.
+	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_FourRitualReady_Ok_01_02 " );	// Good! Remember what I told you and everything will be fine.
 	RITUALNERGALREADY = TRUE;
 	AI_StopProcessInfos(self);
 	Npc_ExchangeRoutine(self,"WaitForPlayerRitual");
@@ -4792,8 +4792,8 @@ func int dia_xardas_ritualpreparehurry_condition()
 
 func void dia_xardas_ritualpreparehurry_info()
 {
-	AI_Output(self,other, " DIA_Xardas_RitualPrepareHurry_01_01 " );	// (grouchily) What are you waiting for?! Stand on the end of the pentagram, which is to my left, and we will begin the ritual.
-	AI_Output(other,self,"DIA_Xardas_RitualPrepareHurry_01_02");	//Уже иду.
+	AI_Output(self,other, " DIA_Xardas_RitualPrepareHurry_01_01 " );	// What are you waiting for?! Stand on the end of the pentagram, which is to my left, and we will begin the ritual.
+	AI_Output(other,self,"DIA_Xardas_RitualPrepareHurry_01_02");	//On my way.
 	AI_StopProcessInfos(self);
 };
 
@@ -4821,7 +4821,7 @@ func void dia_xardas_ritualprepare_info()
 {
 	AI_Output(self,other, " DIA_Xardas_RitualPrepare_01_01 " );	// So let's get started. And remember - do not go within the limits of the pentagram!
 	AI_Output(other,self, " DIA_Xardas_RitualPrepare_01_02 " );	// I got it! Let's get started already.
-	AI_Output(self,other,"DIA_Xardas_RitualPrepare_01_03");	//Хорошо.
+	AI_Output(self,other,"DIA_Xardas_RitualPrepare_01_03");	//Alright.
 	AI_StopProcessInfos(self);
 	XARDASFINISHRITUALBEGAN = TRUE;
 	Npc_ExchangeRoutine(self,"XardasRitual");
@@ -4852,28 +4852,28 @@ func void dia_xardas_ritualdone_info()
 {
 	self.name[ 0 ] = " Xardas " ;
 	B_GivePlayerXP(1000);
-	AI_Output(self,other, " DIA_Xardas_RitualDone_01_01 " );	// (powerfully) It's over - the ritual is complete!
+	AI_Output(self,other, " DIA_Xardas_RitualDone_01_01 " );	// It's over - the ritual is complete!
 	AI_Output(other,self, " DIA_Xardas_RitualDone_01_02 " );	// And what did you find out?
-	AI_Output(self,other, " DIA_Xardas_RitualDone_01_03 " );	// Enough to get your hands on the Necronomicon now!
-	AI_Output(self,other, " DIA_Xardas_RitualDone_01_04 " );	// Hmmm. And this necromancer turned out to be more powerful than I thought. I had a hard time getting the truth out of him!
-	AI_Output(self,other, " DIA_Xardas_RitualDone_01_05 " );	// But now it's over! It remains to go and pick up this artifact where it is now.
-	AI_Output(other,self, " DIA_Xardas_RitualDone_01_06 " );	// And where is this place?
+	AI_Output(self,other, " DIA_Xardas_RitualDone_01_03 " );	// Enough to get our hands on the Necronomicon now!
+	AI_Output(self,other, " DIA_Xardas_RitualDone_01_04 " );	// This necromancer turned out to be more powerful than I thought. I had a hard time getting the truth out of him!
+	AI_Output(self,other, " DIA_Xardas_RitualDone_01_05 " );	// But now it's over! It remains now only to go fetch the book.
+	AI_Output(other,self, " DIA_Xardas_RitualDone_01_06 " );	// And where is it?
 	AI_Output(self,other, " DIA_Xardas_RitualDone_01_07 " );	// Very close. On the west coast of the island stands the dark stronghold of Acheron!
-	AI_Output(self,other, " DIA_Xardas_RitualDone_01_08 " );	// It's a huge black tower with tall pointed spiers. You may have seen her before.
-	AI_Output(other,self, " DIA_Xardas_RitualDone_01_09 " );	// I remember something...
-	AI_Output(self,other, " DIA_Xardas_RitualDone_01_10 " );	// So. At the very top of this monolith, Nergal hid the Necronomicon!
+	AI_Output(self,other, " DIA_Xardas_RitualDone_01_08 " );	// It's a huge black tower with tall pointed spires. You may have seen it before.
+	AI_Output(other,self, " DIA_Xardas_RitualDone_01_09 " );	// I remember something to that effect...
+	AI_Output(self,other, " DIA_Xardas_RitualDone_01_10 " );	// At the very top of this monolith, Nergal hid the Necronomicon!
 	AI_Output(other,self, " DIA_Xardas_RitualDone_01_11 " );	// And you didn't know about it?
-	AI_Output(self,other, " DIA_Xardas_RitualDone_01_12 " );	// I guessed, but couldn't check. The entrance to the tower was guarded by an immortal creature that was born by the Darkness itself!
+	AI_Output(self,other, " DIA_Xardas_RitualDone_01_12 " );	// I guessed, but couldn't check. The entrance to the tower is guarded by an immortal creature born of the Darkness itself!
 	AI_Output(self,other, " DIA_Xardas_RitualDone_01_13 " );	// And how to deal with it then, I didn't know either. But now, after meeting Nergal, everything has changed.
 	AI_Output(other,self, " DIA_Xardas_RitualDone_01_14 " );	// Then you should visit there again!
-	AI_Output(self,other, " DIA_Xardas_RitualDone_01_15 " );	// (grouchily) Not for me, but for you! I'm too busy with other urgent matters right now.
+	AI_Output(self,other, " DIA_Xardas_RitualDone_01_15 " );	// You are the errand boy around here my apprentice. I'm too busy with other urgent matters right now.
 	AI_Output(other,self, " DIA_Xardas_RitualDone_01_16 " );	// Okay. And how can I defeat this immortal being?
 	AI_Output(self,other, " DIA_Xardas_RitualDone_01_17 " );	// It's very simple. His weakness is his opposite!
-	AI_Output(self,other, " DIA_Xardas_RitualDone_01_18 " );	// Since this creature was created by the magic of Darkness, the magic light should kill it!
-	AI_Output(other,self, " DIA_Xardas_RitualDone_01_19 " );	// Yes, really easy.
-	AI_Output(self,other, " DIA_Xardas_RitualDone_01_20 " );	// Then act. Go and bring me the Necronomicon!
+	AI_Output(self,other, " DIA_Xardas_RitualDone_01_18 " );	// Since this creature was created by the magic of Darkness, magical light should kill it!
+	AI_Output(other,self, " DIA_Xardas_RitualDone_01_19 " );	// Simplicity itself...
+	AI_Output(self,other, " DIA_Xardas_RitualDone_01_20 " );	// Then do it. Go and bring me the Necronomicon!
 	XARDASTELLMEOSTA = TRUE ;
-	B_LogEntry( TOPIC_XARDASTASKSFOUR , " The ritual of summoning the necromancer Nergal is completed, and now we know where to look for the Necronomicon. It is located on top of a dark tower located on the western coast of the island. The entrance to the tower is guarded by an immortal creature generated by Darkness itself. Now it is also impossible to cope with it will be difficult - this creature can kill a simple light. " );
+	B_LogEntry( TOPIC_XARDASTASKSFOUR , " The ritual of summoning the necromancer Nergal is completed, and now we know where to look for the Necronomicon. It is located on top of a dark tower located on the western coast of the island. The entrance to the tower is guarded by an immortal creature generated by Darkness itself. The beast may be intimidating, but it can be killed by mere light. " );
 	AI_StopProcessInfos(self);
 	Npc_ExchangeRoutine(self,"Xar");
 	PC_Psionic.aivar[AIV_EnemyOverride] = FALSE ;
@@ -4908,18 +4908,18 @@ func void dia_xardas_ritualfail_info()
 {
 	self.name[ 0 ] = " Xardas " ;
 	B_GivePlayerXP(100);
-	AI_Output(self,other, " DIA_Xardas_RitualFail_01_01 " );	// (angrily) Stupid! What have you done?!
+	AI_Output(self,other, " DIA_Xardas_RitualFail_01_01 " );	// Stupid boy! What have you done?!
 	AI_Output(self,other, " DIA_Xardas_RitualFail_01_02 " );	// I told you not to dare to go inside the pentagram!
 	AI_Output(self,other, " DIA_Xardas_RitualFail_01_03 " );	// Now, because of your stupidity, we'll never know the secret of the Necronomicon!
-	AI_Output(other,self, " DIA_Xardas_RitualFail_01_04 " );	// Don't worry! I know where we can find him.
+	AI_Output(other,self, " DIA_Xardas_RitualFail_01_04 " );	// Don't worry! I know where we can find it.
 	AI_Output(self,other, " DIA_Xardas_RitualFail_01_05 " );	// What?! What the hell are you talking about?
-	AI_Output(self,other, " DIA_Xardas_RitualFail_01_06 " );	// Nergal's soul is dead! But only she could tell us about it ...
-	AI_Output(other,self, " DIA_Xardas_RitualFail_01_08 " );	// Before trying to kill me, Nergal revealed this secret to me and told me how to get the artifact you were interested in.
+	AI_Output(self,other, " DIA_Xardas_RitualFail_01_06 " );	// Nergal's soul is gone! Only he could tell us about it ...
+	AI_Output(other,self, " DIA_Xardas_RitualFail_01_08 " );	// Before trying to kill me, Nergal revealed the secret to me and told me how to get the artifact.
 	AI_Output(self,other, " DIA_Xardas_RitualFail_01_09 " );	// But that can't be! Why on earth would Nergal do this?
-	AI_Output(other,self, " DIA_Xardas_RitualFail_01_10 " );	// I have no idea. And does it matter now?
+	AI_Output(other,self, " DIA_Xardas_RitualFail_01_10 " );	// I have no idea. Does it matter now?
 	AI_Output(self,other, " DIA_Xardas_RitualFail_01_11 " );	// Hmmm... Well, if you really know how to get the Necronomicon, go and get it for me!
-	AI_Output(self,other, " DIA_Xardas_RitualFail_01_12 " );	// And I hope you're not lying. I don't like being made into an idiot!
-	B_LogEntry( TOPIC_XARDASTASKSFOUR , " Xardas did not believe that I was able to extract the secret of the Necronomicon from Nergal. I should have brought this artifact to him to convince him otherwise. " );
+	AI_Output(self,other, " DIA_Xardas_RitualFail_01_12 " );	// And I hope you're not lying. I don't like being played for a fool!
+	B_LogEntry( TOPIC_XARDASTASKSFOUR , " Xardas did not believe that I was able to extract the secret of the Necronomicon from Nergal. I should bring the artifact to him to convince him otherwise. " );
 	AI_StopProcessInfos(self);
 	Npc_ExchangeRoutine(self,"Xar");
 	PC_Psionic.aivar[AIV_EnemyOverride] = FALSE ;
@@ -4954,39 +4954,39 @@ func void dia_xardas_ndm_tasks_fourdone_info()
 {
 	B_GivePlayerXP(2000);
 	AI_Output(other,self, " DIA_Xardas_NDM_Tasks_FourDone_01_01 " );	// I have the Necronomicon!
-	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_FourDone_01_04 " );	// Very good! Now let me see this treasure! I'm already burning with impatience to see it with my own eyes.
-	AI_Output(other,self,"DIA_Xardas_NDM_Tasks_FourDone_01_06");	//Вот.
+	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_FourDone_01_04 " );	// Very good! Let me see this treasure! I'm burning with impatience to see it with my own eyes.
+	AI_Output(other,self,"DIA_Xardas_NDM_Tasks_FourDone_01_06");	//Here.
 	B_GiveInvItems(other,self,itwr_necronomicon,1);
-	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_FourDone_01_07 " );	// Finally! Now I have this book in my hands! You have no idea what she means to me.
-	AI_Output(other,self,"DIA_Xardas_NDM_Tasks_FourDone_01_08");	//И что же?
-	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_FourDone_01_09 " );	// Any dark magician dreams of taking possession of this treasure, and now I am HIS OWNER!
-	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_FourDone_01_10 " );	// No wonder Nergal was such a powerful necromancer in life. All thanks to the Necronomicon!
-	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_FourDone_01_11 " );	// And even after death, its owner did not lose his power at all.
-	AI_Output(other,self, " DIA_Xardas_NDM_Tasks_FourDone_01_12 " );	// Got it. And now what?
-	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_FourDone_01_13 " );	// Nothing... (laughs) Or were you hoping for some kind of representation of the capabilities of this artifact?
-	AI_Output(other,self, " DIA_Xardas_NDM_Tasks_FourDone_01_14 " );	// No, just asking.
-	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_FourDone_01_15 " );	// Remember! The Necronomicon does not endow its owner with power itself, it only carries wisdom and knowledge, which are the key to possessing the first.
-	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_FourDone_01_16 " );	// By the way, I want to ask you - have you already tried to read it yourself?
+	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_FourDone_01_07 " );	// Finally! I finally have the book in my hands! You have no idea what this means to me.
+	AI_Output(other,self,"DIA_Xardas_NDM_Tasks_FourDone_01_08");	//I'm sure you'll enlighten me.
+	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_FourDone_01_09 " );	// Any dark magician dreams of taking possession of this tome, and now I am it's MASTER!
+	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_FourDone_01_10 " );	// No wonder Nergal was such a powerful necromancer in life. It was all thanks to the Necronomicon!
+	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_FourDone_01_11 " );	// His power survived even bodily death... was he... on the path to Lichdom? Could it be?
+	AI_Output(other,self, " DIA_Xardas_NDM_Tasks_FourDone_01_12 " );	// Lichdom?
+	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_FourDone_01_13 " );	// Nothing... Forget I said anything. Just an old man's foolishness.
+	AI_Output(other,self, " DIA_Xardas_NDM_Tasks_FourDone_01_14 " );	// Ah.
+	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_FourDone_01_15 " );	// Remember! The Necronomicon does not endow its owner with power itself, it only carries wisdom and knowledge, which are the true keys to power.
+	AI_Output(self,other, " DIA_Xardas_NDM_Tasks_FourDone_01_16 " );	// By the way, I want to ask you - have you tried to read it yourself?
 	if(((NECRONOMICONBONUS == TRUE) && (NECRONOMICONBONUSTRY == TRUE)) || ((NECRONOMICONBONUS == TRUE) && (NECRONOMICONBONUSTRY == FALSE)))
 	{
 		AI_Output(other,self, " DIA_Xardas_NDM_Tasks_FourDone_01_17 " );	// Yes, I read it.
-		AI_Output(self,other, " DIA_Xardas_NDM_Tasks_FourDone_01_18 " );	// You should have figured it out by then...(mighty) And surely this experience was not in vain for you!
-		AI_Output(other,self,"DIA_Xardas_NDM_Tasks_FourDone_01_19");	//Ты прав.
-		AI_Output(self,other, " DIA_Xardas_NDM_Tasks_FourDone_01_20 " );	// (slyly) I don't doubt it. But okay, enough about that already! We have more important things to do.
+		AI_Output(self,other, " DIA_Xardas_NDM_Tasks_FourDone_01_18 " );	// My my my... You truly have a limitless thirst for knowledge, don't you!
+		AI_Output(other,self,"DIA_Xardas_NDM_Tasks_FourDone_01_19");	//You're right.
+		AI_Output(self,other, " DIA_Xardas_NDM_Tasks_FourDone_01_20 " );	// (slyly) I don't doubt it. But enough about that! We have more important things to do.
 	}
 	else if((NECRONOMICONBONUS == FALSE) && (NECRONOMICONBONUSTRY == TRUE))
 	{
-		AI_Output(other,self, " DIA_Xardas_NDM_Tasks_FourDone_01_22 " );	// I tried but didn't work. The book did not want to reveal its secrets!
-		AI_Output(self,other, " DIA_Xardas_NDM_Tasks_FourDone_01_23 " );	// (slyly) That's understandable. After all, it is subject only to the will of dark magicians, and you are not one. But now it doesn't matter anymore!
-		AI_Output(self,other, " DIA_Xardas_NDM_Tasks_FourDone_01_24 " );	// So enough about that already! We have more important things to do.
+		AI_Output(other,self, " DIA_Xardas_NDM_Tasks_FourDone_01_22 " );	// I tried but it made no sense. The words swam and shimmered in my sight!
+		AI_Output(self,other, " DIA_Xardas_NDM_Tasks_FourDone_01_23 " );	// That's understandable. After all, it is subject only to the will of dark magicians, and you are not one. 
+		AI_Output(self,other, " DIA_Xardas_NDM_Tasks_FourDone_01_24 " );	// Enough about that. We have more important things to do.
 	}
 	else if((NECRONOMICONBONUS == FALSE) && (NECRONOMICONBONUSTRY == FALSE))
 	{
-		AI_Output(other,self, " DIA_Xardas_NDM_Tasks_FourDone_01_26 " );	// No, I haven't tried it. Was it necessary?
-		AI_Output(self,other, " DIA_Xardas_NDM_Tasks_FourDone_01_27 " );	// (surprised) Have you tried it? You surprise me a little.
-		AI_Output(self,other, " DIA_Xardas_NDM_Tasks_FourDone_01_28 " );	// Get your hands on such a treasure and not try to find out its secret? I don't understand this.
-		AI_Output(other,self, " DIA_Xardas_NDM_Tasks_FourDone_01_29 " );	// It just so happened. It just wasn't up to it.
-		AI_Output(self,other, " DIA_Xardas_NDM_Tasks_FourDone_01_30 " );	// Well, that's your own business. Now enough about that! We have more important things to do.
+		AI_Output(other,self, " DIA_Xardas_NDM_Tasks_FourDone_01_26 " );	// No, I haven't tried it. Should I have?
+		AI_Output(self,other, " DIA_Xardas_NDM_Tasks_FourDone_01_27 " );	// You surprise me.
+		AI_Output(self,other, " DIA_Xardas_NDM_Tasks_FourDone_01_28 " );	// You get your hands on an arcane treasure and you're not even curious? I don't understand.
+		AI_Output(other,self, " DIA_Xardas_NDM_Tasks_FourDone_01_29 " );	// I had no inclination to. Is that so strange?
+		AI_Output(self,other, " DIA_Xardas_NDM_Tasks_FourDone_01_30 " );	// Well, that's your own business I suppose. Now enough about that! We have more important things to do.
 	};
 	MIS_XARDASTASKSFOUR = LOG_SUCCESS;
 	Log_SetTopicStatus(TOPIC_XARDASTASKSFOUR,LOG_SUCCESS);
@@ -5016,24 +5016,24 @@ func int dia_xardas_bringnecronomiconnoquest_condition()
 func void dia_xardas_bringnecronomiconnoquest_info()
 {
 	B_GivePlayerXP(200);
-	AI_Output(other,self, " DIA_Xardas_BringNecronomiconNoQuest_01_00 " );	// I have something very interesting for you.
+	AI_Output(other,self, " DIA_Xardas_BringNecronomiconNoQuest_01_00 " );	// I have something you might find interesting.
 	AI_Output(self,other, " DIA_Xardas_BringNecronomiconNoQuest_01_01 " );	// Yes? What are you talking about?
 	AI_Output(other,self, " DIA_Xardas_BringNecronomiconNoQuest_01_02 " );	// Here, take a look for yourself.
 	B_GiveInvItems(other,self,itwr_necronomicon,1);
-	AI_Output(self,other, " DIA_Xardas_BringNecronomiconNoQuest_01_03 " );	// (surprised) Incredible! Where did you find this book?
-	AI_Output(other,self, " DIA_Xardas_BringNecronomiconNoQuest_01_04 " );	// In one old tower. Looks like a pretty valuable item!
-	AI_Output(self,other, " DIA_Xardas_BringNecronomiconNoQuest_01_05 " );	// (indignantly) Valuable thing?! Do you even have the slightest idea what it is?
-	AI_Output(other,self, " DIA_Xardas_BringNecronomiconNoQuest_01_06 " );	// What is this?
-	AI_Output(self,other, " DIA_Xardas_BringNecronomiconNoQuest_01_07 " );	// (with reproach) This THING, as you put it, is nothing but the Necronomicon - the oldest tome dedicated to the magic of necromancers!
-	AI_Output(self,other, " DIA_Xardas_BringNecronomiconNoQuest_01_08 " );	// Any dark magician dreams of taking possession of this treasure. Not to mention that, until recently, no one even knew exactly where this artifact was hidden!
-	AI_Output(other,self, " DIA_Xardas_BringNecronomiconNoQuest_01_09 " );	// It turns out I'm very lucky.
-	AI_Output(self,other, " DIA_Xardas_BringNecronomiconNoQuest_01_10 " );	// And not only you... (slyly) Me too!
-	AI_Output(self,other, " DIA_Xardas_BringNecronomiconNoQuest_01_11 " );	// You wouldn't mind if I kept this book, would you? It's useless to you anyway.
+	AI_Output(self,other, " DIA_Xardas_BringNecronomiconNoQuest_01_03 " );	// Incredible! Where did you find this book?
+	AI_Output(other,self, " DIA_Xardas_BringNecronomiconNoQuest_01_04 " );	// In an old tower. It look valuable, am I right?
+	AI_Output(self,other, " DIA_Xardas_BringNecronomiconNoQuest_01_05 " );	// Valuable?! Do you even have the slightest idea what this is?
+	AI_Output(other,self, " DIA_Xardas_BringNecronomiconNoQuest_01_06 " );	// A beat up old book?
+	AI_Output(self,other, " DIA_Xardas_BringNecronomiconNoQuest_01_07 " );	// This 'book', as you call it, is nothing but the Necronomicon - the oldest tome dedicated to the art of Necromancy!
+	AI_Output(self,other, " DIA_Xardas_BringNecronomiconNoQuest_01_08 " );	// Any dark magician dreams of taking possession of this treasure. Not to mention that, until recently, no one even knew exactly where it was hidden!
+	AI_Output(other,self, " DIA_Xardas_BringNecronomiconNoQuest_01_09 " );	// Lucky me?.
+	AI_Output(self,other, " DIA_Xardas_BringNecronomiconNoQuest_01_10 " );	// Lucky US, my boy!
+	AI_Output(self,other, " DIA_Xardas_BringNecronomiconNoQuest_01_11 " );	// You wouldn't mind if I kept it, would you? It's useless to you anyway.
 	AI_Output(other,self, " DIA_Xardas_BringNecronomiconNoQuest_01_13 " );	// Why is that?
-	AI_Output(self,other, " DIA_Xardas_BringNecronomiconNoQuest_01_14 " );	// Her secrets are subject only to the will of dark magicians. For the rest, it is of absolutely no value.
+	AI_Output(self,other, " DIA_Xardas_BringNecronomiconNoQuest_01_14 " );	// It's secrets are subject only to the will of dark magicians. For anyone else, it's barely kindling.
 	AI_Output(other,self, " DIA_Xardas_BringNecronomiconNoQuest_01_15 " );	// Well, if you really need it, you can take it.
-	AI_Output(self,other, " DIA_Xardas_BringNecronomiconNoQuest_01_16 " );	// Thank you. To be honest, I didn't expect anything else.
-	AI_Output(self,other, " DIA_Xardas_BringNecronomiconNoQuest_01_17 " );	// And I, in turn, will give something more useful for you than this book.
+	AI_Output(self,other, " DIA_Xardas_BringNecronomiconNoQuest_01_16 " );	// Thank you.
+	AI_Output(self,other, " DIA_Xardas_BringNecronomiconNoQuest_01_17 " );	// And I, in turn, will give you something you might be interested in.
 
 	if((other.guild == GIL_KDF) || (other.guild == GIL_KDW) || (other.guild == GIL_GUR) || (other.guild == GIL_KDM) || (other.guild == GIL_NOV) || (other.guild == GIL_NDM) || (other.guild == GIL_NDW))
 	{
@@ -5047,7 +5047,7 @@ func void dia_xardas_bringnecronomiconnoquest_info()
 	};
 
 	AI_Output(self,other, " DIA_Xardas_BringNecronomiconNoQuest_01_24 " );	// Would that suit you?
-	AI_Output(other,self,"DIA_Xardas_BringNecronomiconNoQuest_01_25");	//Вполне.
+	AI_Output(other,self,"DIA_Xardas_BringNecronomiconNoQuest_01_25");	//Nicely, thanks.
 };
 
 instance DIA_XARDAS_PYROKINEZ(C_Info)
@@ -5071,12 +5071,12 @@ func int dia_xardas_pyrokinez_condition()
 func void dia_xardas_pyrokinez_info()
 {
 	AI_Output(other,self, " DIA_Xardas_HarmUndead_01_00 " );	// What is that rune on your desk?
-	AI_Output(self,other, " DIA_Xardas_HarmUndead_01_01 " );	// Oh, this one? (looking around) It contains a spell to destroy the undead. Pretty rare, by the way.
-	AI_Output(self,other, " DIA_Xardas_HarmUndead_01_02 " );	// And for those who deal with the creatures of Beliar - it is also truly priceless!
-	AI_Output(other,self, " DIA_Xardas_HarmUndead_01_03 " );	// Impressive. Is there any way I can get one like this?
-	AI_Output(self,other, " DIA_Xardas_HarmUndead_01_04 " );	// I understand your interest. Well, I can give it to you.
+	AI_Output(self,other, " DIA_Xardas_HarmUndead_01_01 " );	// Oh, this one? It contains a spell to destroy the undead. Pretty rare, by the way.
+	AI_Output(self,other, " DIA_Xardas_HarmUndead_01_02 " );	// And for those who deal with the creatures of Beliar - it is also pretty priceless!
+	AI_Output(other,self, " DIA_Xardas_HarmUndead_01_03 " );	// Impressive. Is there any way I can get one like it?
+	AI_Output(self,other, " DIA_Xardas_HarmUndead_01_04 " );	// I understand your interest. I can give it to you.
 	AI_Output(self,other, " DIA_Xardas_HarmUndead_01_05 " );	// But first, you'll have to do me a little favor.
-	AI_Output(self,other, " DIA_Xardas_HarmUndead_01_07 " );	// Bring me five clots of ectoplasm. It will serve me to create a new, more powerful rune.
+	AI_Output(self,other, " DIA_Xardas_HarmUndead_01_07 " );	// Bring me five clots of ectoplasm. It will allow me to create a new, more powerful rune.
 	MIS_Pyrokinez = LOG_Running;
 	Log_CreateTopic(TOPIC_XARDAS_PYROKINEZ,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_XARDAS_PYROKINEZ,LOG_Running);
@@ -5108,13 +5108,13 @@ func void DIA_Xardas_Pyrokinez_Done_info()
 	AI_Output(other,self, " DIA_Xardas_HarmUndead_Done_01_01 " );	// I brought you ectoplasm.
 	B_GiveInvItems(other,self,ITMI_PLAZMA,5);
 	Npc_RemoveInvItems(self,ITMI_PLAZMA,5);
-	AI_Output(self,other, " DIA_Xardas_HarmUndead_Done_01_02 " );	// (pretty) Not bad, very good!
-	AI_Output(self,other, " DIA_Xardas_HarmUndead_Done_01_03 " );	// And here is your rune. I'm sure you'll like it!
+	AI_Output(self,other, " DIA_Xardas_HarmUndead_Done_01_02 " );	// Wonderful, my boy!
+	AI_Output(self,other, " DIA_Xardas_HarmUndead_Done_01_03 " );	// And here is your rune. I'm sure you'll find use for it!
  	B_GiveInvItems(self,other,ItRu_HarmUndead,1);
  	AI_Output(self,other, " DIA_Xardas_HarmUndead_Done_01_04 " );	// Use it against the most powerful undead.
 	MIS_Pyrokinez = LOG_SUCCESS;
 	Log_SetTopicStatus(TOPIC_XARDAS_PYROKINEZ,LOG_SUCCESS);
-	B_LogEntry( TOPIC_XARDAS_PYROKINEZ , " I brought ectoplasm to Xardas. I have the rune! " );
+	B_LogEntry( TOPIC_XARDAS_PYROKINEZ , " I brought the ectoplasm to Xardas. I have the rune! " );
 };
 
 
@@ -5138,12 +5138,12 @@ func int DIA_Xardas_RobaUp_condition()
 
 func void DIA_Xardas_RobaUp_info()
 {
-	AI_Output(other,self, " DIA_Xardas_RobaUp_01_00 " );	// Can I improve my robe? I feel like she doesn't protect me well enough.
-	AI_Output(self,other, " DIA_Xardas_RobaUp_01_01 " );	// Well, if Beliar himself is favorable to you, then perhaps you can consecrate your robe.
+	AI_Output(other,self, " DIA_Xardas_RobaUp_01_00 " );	// Can I improve my robe? I feel like it doesn't protect me well enough.
+	AI_Output(self,other, " DIA_Xardas_RobaUp_01_01 " );	// Well, if Beliar is favorable to you, then perhaps you can consecrate your robe.
 	AI_Output(self,other, " DIA_Xardas_RobaUp_01_02 " );	// And keep in mind that only the robes of the highest dark magician can be consecrated!
 	AI_Output(other,self, " DIA_Xardas_RobaUp_01_03 " );	// Sanctify?! Is dark magic capable of such a thing?
-	AI_Output(self,other, " DIA_Xardas_RobaUp_01_04 " );	// For a long time, one means has been known by which the servants of Beliar consecrate various objects - mainly their robes.
-	AI_Output(self,other, " DIA_Xardas_RobaUp_01_05 " );	// This elixir is called 'Breath of Death', and it's just not to be found anywhere.
+	AI_Output(self,other, " DIA_Xardas_RobaUp_01_04 " );	// For a long time, certain means have existed by which the servants of Beliar consecrate various objects - mainly their equipment.
+	AI_Output(self,other, " DIA_Xardas_RobaUp_01_05 " );	// This elixir is called 'Breath of Death', and it is exceedingly rare.
 	AI_Output(self,other, " DIA_Xardas_RobaUp_01_06 " );	// Unfortunately, the recipe for this elixir has long been lost. I can only assume that it was divided into two or three parts.
 	AI_Output(self,other, " DIA_Xardas_RobaUp_01_07 " );	// So you'll have to figure this out on your own, I'm no help here.
 	AI_Output(other,self, " DIA_Xardas_RobaUp_01_08 " );	// And if I still manage to get this elixir - what should I do with it?
@@ -5151,12 +5151,12 @@ func void DIA_Xardas_RobaUp_info()
 	AI_Output(self,other, " DIA_Xardas_RobaUp_01_10 " );	// And then you will need to turn to Beliar himself with a certain prayer.
 	AI_Output(self,other, " DIA_Xardas_RobaUp_01_11 " );	// Remember: SHATAR ATN BOLMAR KRAT ISAK MOTAL!
 	AI_Output(self,other, " DIA_Xardas_RobaUp_01_12 " );	// And if Beliar considers that you are worthy of his attention, he will consecrate your robe.
-	AI_Output(other,self, " DIA_Xardas_RobaUp_01_13 " );	// Nothing else?
-	AI_Output(self,other, " DIA_Xardas_RobaUp_01_14 " );	// No way! I have already warned you that the path of the dark magician is difficult and dangerous.
+	AI_Output(other,self, " DIA_Xardas_RobaUp_01_13 " );	// Anything else?
+	AI_Output(self,other, " DIA_Xardas_RobaUp_01_14 " );	// I have already warned you that the path of the dark magician is difficult and dangerous.
 	AI_Output(self,other, " DIA_Xardas_RobaUp_01_15 " );	// Don't be a lost sheep now! Go and try to find this recipe.
 	Log_CreateTopic(TOPIC_XARDAS_ROBA,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_XARDAS_ROBA,LOG_Running);
-	B_LogEntry( TOPIC_XARDAS_ROBA , " I asked Xardas about my robe. He told me that it is possible to improve it, but it is very difficult. In order to have a chance of success, you need to get as many soul stones as possible. I also need a special elixir, but how almost no one knows how to cook it. The mentor hinted that there may be no more than two or three separate parts of the recipe on the island that I need. Well, I should go through all the dark corners and shake the local undead. " );
+	B_LogEntry( TOPIC_XARDAS_ROBA , " I asked Xardas about my robe. He told me that it is possible to improve it, but it is very difficult. In order to have a chance of success, you need to get as many soul stones as possible. I also need a special elixir, but now almost no one knows how to cook it. My mentor hinted that there may be no more than two or three separate parts of the recipe on the island that I need. Well, I should go through all the dark corners and shake the local undead. " );
 	MIS_ROBA_XARDAS = LOG_Running;
 };
 
@@ -5182,7 +5182,7 @@ func void DIA_Xardas_RobaUp_Find_info()
 {
 	B_GivePlayerXP(1500);
 	AI_Output(other,self, " DIA_Xardas_RobaUp_Find_00_01 " );	// I found the recipe for 'Breath of Death'.
-	AI_Output(self,other, " DIA_Xardas_RobaUp_Find_00_02 " );	// (respectfully) You never cease to amaze me! Tell me, did you manage to find both parts of the recipe?
+	AI_Output(self,other, " DIA_Xardas_RobaUp_Find_00_02 " );	// You never cease to amaze me! Tell me, did you manage to find both parts of the recipe?
 	AI_Output(other,self, " DIA_Xardas_RobaUp_Find_00_03 " );	// Of course.
 	AI_Output(self,other, " DIA_Xardas_RobaUp_Find_00_04 " );	// And I hope you've already read the formula for making this potion?
 	AI_Output(other,self, " DIA_Xardas_RobaUp_Find_00_05 " );	// Of course.
@@ -5192,10 +5192,10 @@ func void DIA_Xardas_RobaUp_Find_info()
 	Npc_RemoveInvItems(hero,itwr_death1,2);
 	Npc_RemoveInvItems(hero,itwr_death2,1);
 	AI_Output(self,other, " DIA_Xardas_RobaUp_Find_00_08 " );	// Finally! You can't imagine how long I wanted to get these ancient records.
-	AI_Output(self,other, " DIA_Xardas_RobaUp_Find_00_09 " );	// And so that you do not decide that you will leave me empty-handed for this...
-	AI_Output(self,other, " DIA_Xardas_RobaUp_Find_00_10 " );	// ...I will personally prepare this elixir for you!
-	AI_Output(other,self, " DIA_Xardas_RobaUp_Find_00_11 " );	// I did not even count on such help.
-	AI_Output(self,other, " DIA_Xardas_RobaUp_Find_00_12 " );	// No thanks. Come back in three days - I believe by this time the elixir will be ready.
+	AI_Output(self,other, " DIA_Xardas_RobaUp_Find_00_09 " );	// And so that you will not think me ungrateful...
+	AI_Output(self,other, " DIA_Xardas_RobaUp_Find_00_10 " );	// ...I will personally prepare the elixir for you!
+	AI_Output(other,self, " DIA_Xardas_RobaUp_Find_00_11 " );	// I won't say no to some help.
+	AI_Output(self,other, " DIA_Xardas_RobaUp_Find_00_12 " );	// Come back in three days - I believe by this time the elixir will be ready.
 	MIS_ROBA_XARDAS = LOG_SUCCESS;
 	HARDASTIMERBENDM = Wld_GetDay();
 	Log_SetTopicStatus(TOPIC_XARDAS_ROBA,LOG_SUCCESS);
@@ -5229,7 +5229,7 @@ func void DIA_Xardas_RobaUp_Potion_Done_info()
 	AI_Output(other,self, " DIA_Xardas_RobaUp_Potion_Done_01_00 " );	// How's my elixir doing?
 	AI_Output(self,other, " DIA_Xardas_RobaUp_Potion_Done_01_01 " );	// It's ready. Here, you can take it.
 	B_GiveInvItems(self,other,ITPO_BREATH_OF_DEATH,1);
-	AI_Output(other,self,"DIA_Xardas_RobaUp_Potion_Done_01_02");	//Спасибо.
+	AI_Output(other,self,"DIA_Xardas_RobaUp_Potion_Done_01_02");	//Thank you.
 };
 
 instances of DIA_Xardas_RobaUp_NoRitual (C_Info)
@@ -5253,11 +5253,11 @@ func int DIA_Xardas_RobaUp_NoRitual_condition()
 func void DIA_Xardas_RobaUp_NoRitual_info()
 {
 	AI_Output(other,self, " DIA_Xardas_RobaUp_NoRitual_00_01 " );	// I have a little problem.
-	AI_Output(self,other, " DIA_Xardas_RobaUp_NoRitual_00_02 " );	// (curiously) What else is this?
+	AI_Output(self,other, " DIA_Xardas_RobaUp_NoRitual_00_02 " );	// What might that be?
 	AI_Output(other,self, " DIA_Xardas_RobaUp_NoRitual_00_03 " );	// Beliar didn't want to bless my robe. What should I do?
-	AI_Output(self,other, " DIA_Xardas_RobaUp_NoRitual_00_04 " );	// No wonder! It means that by your deeds you have not yet earned his favor.
+	AI_Output(self,other, " DIA_Xardas_RobaUp_NoRitual_00_04 " );	// It means that you have not yet earned his favor by your deeds.
 	AI_Output(self,other, " DIA_Xardas_RobaUp_NoRitual_00_05 " );	// You can use his gifts only if the Dark God has full confidence in you as a faithful servant.
-	AI_Output(self,other, " DIA_Xardas_RobaUp_NoRitual_00_06 " );	// Yes, and one more thing: if you bring a stone with the soul of a special creature, the effect will be much more interesting.
+	AI_Output(self,other, " DIA_Xardas_RobaUp_NoRitual_00_06 " );	// And one more thing: if you bring along a stone with the soul of a special creature, the effect will be much more interesting.
 };
 
 DIA_Xardas_Mechi (C_Info) instances
@@ -5280,16 +5280,16 @@ func int DIA_Xardas_Mechi_condition()
 
 func void DIA_Xardas_Mechi_info()
 {
-	AI_Output(self,other, " DIA_Xardas_Mechi_00_01 " );	// Wait, I have one request for you.
-	AI_Output(self,other, " DIA_Xardas_Mechi_00_02 " );	// You've dealt with a cursed weapon before, haven't you?
-	AI_Output(other,self, " DIA_Xardas_Mechi_00_03 " );	// Maybe, I don't remember exactly.
-	AI_Output(self,other, " DIA_Xardas_Mechi_00_04 " );	// I want to warn you right away - this weapon is very dangerous for people! So don't even think about using it.
+	AI_Output(self,other, " DIA_Xardas_Mechi_00_01 " );	// Wait, I have a request for you.
+	AI_Output(self,other, " DIA_Xardas_Mechi_00_02 " );	// You've dealt with cursed weapons before, haven't you?
+	AI_Output(other,self, " DIA_Xardas_Mechi_00_03 " );	// Of course.
+	AI_Output(self,other, " DIA_Xardas_Mechi_00_04 " );	// I want to warn you right away - this weapon is very dangerous! So don't even think about using it.
 	AI_Output(other,self, " DIA_Xardas_Mechi_00_05 " );	// But why?
-	AI_Output(self,other, " DIA_Xardas_Mechi_00_06 " );	// Only the powerful undead wear it, and their magic can sometimes drive anyone crazy.
-	AI_Output(self,other, " DIA_Xardas_Mechi_00_07 " );	// Even someone as strong as you!
-	AI_Output(self,other, " DIA_Xardas_Mechi_00_08 " );	// (imperiously) That's why I want to ask you to bring me every cursed weapon you can find.
+	AI_Output(self,other, " DIA_Xardas_Mechi_00_06 " );	// Only powerful undead wear it, and their magic can drive the living mad.
+	AI_Output(self,other, " DIA_Xardas_Mechi_00_07 " );	// Even someone as strong willed as you!
+	AI_Output(self,other, " DIA_Xardas_Mechi_00_08 " );	// That's why I want to ask you to bring me every cursed weapon you can find.
 	AI_Output(self,other, " DIA_Xardas_Mechi_00_09 " );	// In my tower, under the protection of my servants, it will no longer harm the ordinary inhabitants of this world.
-	AI_Output(self,other, " DIA_Xardas_Mechi_00_10 " );	// Well, your efforts will be well paid. Deal?
+	AI_Output(self,other, " DIA_Xardas_Mechi_00_10 " );	// You will, of course, be paid. Deal?
 	AI_Output(other,self, " DIA_Xardas_Mechi_00_11 " );	// Okay, I'll keep that in mind.
 	B_LogEntry(Topic_OutTrader, " Xardas will buy from me all the cursed weapons I bring him. " );
 	AI_StopProcessInfos(self);
@@ -5518,16 +5518,16 @@ func void DIA_Xardas_SleeperMask_info()
 {
 	AI_Output(other,self, " DIA_Xardas_SleeperMask_00_01 " );	// I have a Sleeper mask with me.
 	AI_Output(self,other, " DIA_Xardas_SleeperMask_00_02 " );	// Interesting! Where did you get it from?
-	AI_Output(other,self, " DIA_Xardas_SleeperMask_00_03 " );	// Inherited from one necromancer from the temple of the orcs.
-	AI_Output(self,other, " DIA_Xardas_SleeperMask_00_04 " );	// Come on, let me take a look at her!
+	AI_Output(other,self, " DIA_Xardas_SleeperMask_00_03 " );	// I acquired it from a necromancer from the temple of the orcs.
+	AI_Output(self,other, " DIA_Xardas_SleeperMask_00_04 " );	// Come on, let me take a look at it!
 	AI_Output(other,self, " DIA_Xardas_SleeperMask_00_05 " );	// Here, look.
 	B_GiveInvItems(other,self,ITMI_HELMSLEEPER_MIS,1);
 	Npc_RemoveInvItems(self,ITMI_HELMSLEEPER_MIS,1);
-	AI_Output(self,other, " DIA_Xardas_SleeperMask_00_06 " );	// Hmmm... (appreciatively) There's dark magic in her! A very evil and powerful item.
-	AI_Output(self,other, " DIA_Xardas_SleeperMask_00_07 " );	// I am sure that her previous owner did not part with him of his own free will.
-	AI_Output(other,self, " DIA_Xardas_SleeperMask_00_08 " );	// Of course! But I'm interested in another question - can I use it myself?
-	AI_Output(self,other, " DIA_Xardas_SleeperMask_00_10 " );	// Well... (thoughtfully) Subordinating this magical artifact to my will seems quite possible to me.
-	AI_Output(self,other, " DIA_Xardas_SleeperMask_00_11 " );	// True, in this case, part of his magic power will go away, and he will no longer be as effective as he is now.
+	AI_Output(self,other, " DIA_Xardas_SleeperMask_00_06 " );	// Hmmm... There's dark magic in this! A very evil and powerful item to be sure.
+	AI_Output(self,other, " DIA_Xardas_SleeperMask_00_07 " );	// I take it that its previous owner did not part with it of his own free will?
+	AI_Output(other,self, " DIA_Xardas_SleeperMask_00_08 " );	// Not at all. But I'm interested in another question - can I use it myself?
+	AI_Output(self,other, " DIA_Xardas_SleeperMask_00_10 " );	// Well... Subjugating this magical artifact to a new will seems quite possible.
+	AI_Output(self,other, " DIA_Xardas_SleeperMask_00_11 " );	// It might even lose some of its power when worn by someone other than its owner.
 	AI_Output(self,other, " DIA_Xardas_SleeperMask_00_12 " );	// However, even then, you'll need to have a lot of power to wear it!
 
 	if ((hero.guild !=  GIL_KDF ) || (hero.guild !=  GIL_KDW ) || (hero.guild !=  GIL_KDM ) || (hero.guild !=  GIL_GUR ))
@@ -5555,7 +5555,7 @@ func void DIA_Xardas_SleeperMask_Leave()
 {
 	B_GivePlayerXP(2000);
 	AI_Output(other,self, " DIA_Xardas_SleeperMask_Leave_00_01 " );	// Then you'd better keep it to yourself.
-	AI_Output(self,other, " DIA_Xardas_SleeperMask_Leave_00_02 " );	// Wise decision...(enough) I'll definitely find a use for it!
+	AI_Output(self,other, " DIA_Xardas_SleeperMask_Leave_00_02 " );	// Wise decision...I'll definitely find a use for it!
 	DestroyMask = TRUE;
 	Info_ClearChoices(DIA_Xardas_SleeperMask);
 };
@@ -5585,30 +5585,30 @@ func int DIA_Xardas_Druid_condition()
 func void DIA_Xardas_Druid_info()
 {
 	B_GivePlayerXP(100);
-	AI_Output(other,self, " DIA_Xardas_Druid_00_01 " );	// Do you know anything about druid magic?
-	AI_Output(self,other, " DIA_Xardas_Druid_00_02 " );	// Maybe I know. Why is she suddenly interested in you?
-	AI_Output(other,self, " DIA_Xardas_Druid_00_03 " );	// I have one problem. Saturas said that the magic of the druids would help me solve it.
+	AI_Output(other,self, " DIA_Xardas_Druid_00_01 " );	// Do you know anything about druidic magic?
+	AI_Output(self,other, " DIA_Xardas_Druid_00_02 " );	// A bit. Why does it interest you?
+	AI_Output(other,self, " DIA_Xardas_Druid_00_03 " );	// I have a problem. Saturas said that the magic of the druids would help me solve it.
 	AI_Output(self,other, " DIA_Xardas_Druid_00_04 " );	// What's the point?
-	AI_Output(other,self, " DIA_Xardas_Druid_00_05 " );	// I need to bring one dead tree back to life. Just don't ask what and why!
-	AI_Output(self,other, " DIA_Xardas_Druid_00_06 " );	// This doesn't bother me much. But your question really interested me.
-	AI_Output(self,other, " DIA_Xardas_Druid_00_07 " );	// Wait a minute... so where are my notes...
+	AI_Output(other,self, " DIA_Xardas_Druid_00_05 " );	// I need to bring a dead tree back to life. Just don't ask what and why!
+	AI_Output(self,other, " DIA_Xardas_Druid_00_06 " );	// I don't care about the details. But your question really interests me.
+	AI_Output(self,other, " DIA_Xardas_Druid_00_07 " );	// Wait a minute... where are my notes...
 	B_UseFakeScroll();
-	AI_Output(self,other, " DIA_Xardas_Druid_00_08 " );	// Yep, found it. Yes, this is indeed possible.
+	AI_Output(self,other, " DIA_Xardas_Druid_00_08 " );	// Found it. Yes, this is indeed possible.
 	AI_Output(self,other, " DIA_Xardas_Druid_00_09 " );	// A dedicated druid will have no trouble doing this, but for those unfamiliar with their magic...
-	AI_Output(self,other, " DIA_Xardas_Druid_00_10 " );	// ...well, it won't be easy. But I can help you with this.
+	AI_Output(self,other, " DIA_Xardas_Druid_00_10 " );	// ...well, it won't be easy. But I can help you.
 	AI_Output(other,self, " DIA_Xardas_Druid_00_11 " );	// What is required of me?
-	AI_Output(self,other, " DIA_Xardas_Druid_00_12 " );	// (strictly) First, your attention. It says in my notes that a certain plant called the Root of Life by the druids has the effect you want!
+	AI_Output(self,other, " DIA_Xardas_Druid_00_12 " );	// First, your attention. It says in my notes that a certain plant called the Root of Life has the effect you want!
 	AI_Output(other,self, " DIA_Xardas_Druid_00_13 " );	// Root of Life? And where can I look for it?
 	AI_Output(self,other, " DIA_Xardas_Druid_00_14 " );	// Don't bother looking. It cannot be found or gardened anywhere, it can only be obtained by an experienced druid!
-	AI_Output(other,self, " DIA_Xardas_Druid_00_15 " );	// Can you tell me how to do this?
-	AI_Output(self,other, " DIA_Xardas_Druid_00_16 " );	// I don't think so. It took me years to master the secrets of druidic magic. I'm not ready to spend them again to teach you them.
+	AI_Output(other,self, " DIA_Xardas_Druid_00_15 " );	// Can you tell me how to do it?
+	AI_Output(self,other, " DIA_Xardas_Druid_00_16 " );	// I don't think so. It took me years to study the secrets of druidic magic. I'm not ready to spend them again to teach you.
 	AI_Output(self,other, " DIA_Xardas_Druid_00_17 " );	// Bring me what I need and I'll make it for you myself.
-	AI_Output(other,self, " DIA_Xardas_Druid_00_18 " );	// Well, you can. And what do you need?
-	AI_Output(self,other, " DIA_Xardas_Druid_00_19 " );	// Hmmm... (thoughtfully) Wait a minute!
+	AI_Output(other,self, " DIA_Xardas_Druid_00_18 " );	// And what would you need?
+	AI_Output(self,other, " DIA_Xardas_Druid_00_19 " );	// Hmmm... Wait a minute!
 	B_UseFakeScroll();
 	AI_Output(self,other, " DIA_Xardas_Druid_00_20 " );	// Remember: I need royal sorrel, fiery root, which will serve as the basis of the recipe...
 	AI_Output(self,other, " DIA_Xardas_Druid_00_21 " );	// ...three leaves of medicinal herb, troll's cherry as a reagent, and...
-	AI_Output(self,other, " DIA_Xardas_Druid_00_22 " );	// (thoughtfully) This is going to be the hardest part... I also need a cactus flower!
+	AI_Output(self,other, " DIA_Xardas_Druid_00_22 " );	// This is going to be the hardest part... I also need a cactus flower!
 	AI_Output(other,self, " DIA_Xardas_Druid_00_23 " );	// Cactus flower?
 	AI_Output(self,other, " DIA_Xardas_Druid_00_24 " );	// Yes! This plant grows in abundance only in very hot conditions. It will be extremely difficult to find a similar specimen on this island.
 
@@ -5616,14 +5616,14 @@ func void DIA_Xardas_Druid_info()
 	if(Npc_HasItems(hero,ItPl_CactusFlower) > 0)
 	{
 		AI_Output(other,self, " DIA_Xardas_Druid_00_25 " );	// Don't worry! I already have one of these.
-		AI_Output(self,other, " DIA_Xardas_Druid_00_26 " );	// (surprised) Well, if so, then bring me all the other ingredients and I'll make you a Life Root!
+		AI_Output(self,other, " DIA_Xardas_Druid_00_26 " );	// Well, if so, then bring me all the other ingredients and I'll make you a Life Root!
 	}
 	else
 	{
 		AI_Output(self,other, " DIA_Xardas_Druid_00_27 " );	// But anyway, I can't do anything without it.
 	};
 
-	AI_Output(other,self,"DIA_Xardas_Druid_00_37");	//Понимаю.
+	AI_Output(other,self,"DIA_Xardas_Druid_00_37");	//I understand.
 	B_LogEntry(TOPIC_AdanosCrone, " It looks like there is nothing in the world that Xardas does not know about. He will prepare for me a magical plant - the Root of Life, capable of restoring vitality to a dead tree. To create it, you need: royal sorrel, fire root, troll cherry , three leaves of medicinal grass and a cactus flower. The latter will not be easy to find, since it grows only in very hot places. Something tells me that I could find this plant on a plateau ... " );
 	XardasDoMagicRoot = TRUE;
 	RootIsUp = TRUE;
@@ -5662,7 +5662,7 @@ func void DIA_Xardas_MagicRoot_info()
 		Npc_RemoveInvItems(hero,ItPl_Health_Herb_01,3);
 		Npc_RemoveInvItems(hero,ITPL_SUPER_HERB,1);
 		Npc_RemoveInvItems(hero,ItPl_Perm_Herb,1);
-		AI_Output(self,other, " DIA_Xardas_MagicRoot_00_04 " );	// Now be patient. Exactly one day later, your plant will be ready.
+		AI_Output(self,other, " DIA_Xardas_MagicRoot_00_04 " );	// Now be patient. Exactly one day from now, your plant will be ready.
 		XardasDoMagicRootDay = Wld_GetDay();
 		XardasDoMagicRootYes = TRUE;
 		AI_StopProcessInfos(self);
@@ -5701,7 +5701,7 @@ func void DIA_Xardas_MagicRoot_Done_info()
 {
 	AI_Output(self,other, " DIA_Xardas_MagicRoot_Done_00_01 " );	// The Root of Life is done! Here, you can take it.
 	B_GiveInvItems(self,other,ItPl_MagicRoot,1);
-	AI_Output(other,self,"DIA_Xardas_MagicRoot_Done_00_02");	//Спасибо.
+	AI_Output(other,self,"DIA_Xardas_MagicRoot_Done_00_02");	//Thanks.
 	B_LogEntry(TOPIC_AdanosCrone, " Xardas made a Life Root for me! Time to return to the plateau. " );
 	AI_StopProcessInfos(self);
 	Npc_ExchangeRoutine(self,"Xar");
@@ -5731,26 +5731,26 @@ func int DIA_Xardas_SeekerSoul_condition()
 func void DIA_Xardas_SeekerSoul_info()
 {
 	AI_Output(other,self, " DIA_Xardas_SeekerSoul_00_01 " );	// I have something with me here.
-	AI_Output(self,other, " DIA_Xardas_SeekerSoul_00_02 " );	// (grouchily) Be precise! What you have there?
-	AI_Output(other,self,"DIA_Xardas_SeekerSoul_00_03");	//Вот.
+	AI_Output(self,other, " DIA_Xardas_SeekerSoul_00_02 " );	// What is it now?
+	AI_Output(other,self,"DIA_Xardas_SeekerSoul_00_03");	//Have a look.
 	B_GiveInvItems(other,self,ITMI_SeekerSoul,1);
-	AI_Output(self,other, " DIA_Xardas_SeekerSoul_00_04 " );	// (thoughtfully) It looks like a dark soul crystal. Where did you get it from?
-	AI_Output(other,self, " DIA_Xardas_SeekerSoul_00_05 " );	// Inherited from one evil creature. And what is this thing?
+	AI_Output(self,other, " DIA_Xardas_SeekerSoul_00_04 " );	// It looks like a dark soul crystal. Where did you get it from?
+	AI_Output(other,self, " DIA_Xardas_SeekerSoul_00_05 " );	// Found it on a truly evil beast. What is it?
 	AI_Output(self,other, " DIA_Xardas_SeekerSoul_00_06 " );	// Well, to put it simply, it's just an ordinary heart.
 	AI_Output(other,self, " DIA_Xardas_SeekerSoul_00_07 " );	// It doesn't look very much like a heart.
 	AI_Output(self,other, " DIA_Xardas_SeekerSoul_00_08 " );	// There are creatures of flesh and blood, and you have seen their hearts more than once.
 	AI_Output(self,other, " DIA_Xardas_SeekerSoul_00_09 " );	// And there are those that are generated by magic. They are not often seen in this world, and they are all extremely dangerous.
-	AI_Output(other,self, " DIA_Xardas_SeekerSoul_00_10 " );	// I agree with you on this. And this... heart can be used for something?
+	AI_Output(other,self, " DIA_Xardas_SeekerSoul_00_10 " );	// You don't say. And this... heart can be used for something?
 	AI_Output(self,other, " DIA_Xardas_SeekerSoul_00_11 " );	// Good question! Let me think...
-	AI_Output(self,other, " DIA_Xardas_SeekerSoul_00_12 " );	// I had entries that mentioned one rare magic elixir. For its preparation, these crystals were just needed.
-	AI_Output(self,other, " DIA_Xardas_SeekerSoul_00_13 " );	// Wait a minute...
+	AI_Output(self,other, " DIA_Xardas_SeekerSoul_00_12 " );	// I had entries that mentioned a rare magical elixir with hearts like this as its main ingredient.
+	AI_Output(self,other, " DIA_Xardas_SeekerSoul_00_13 " );	// Hang on...
 	B_UseFakeScroll();
-	AI_Output(self,other, " DIA_Xardas_SeekerSoul_00_14 " );	// Aha, here they are!
+	AI_Output(self,other, " DIA_Xardas_SeekerSoul_00_14 " );	// Aha, here it is!
 	B_UseFakeScroll();
 	AI_Output(self,other, " DIA_Xardas_SeekerSoul_00_15 " );	// It says here that ten dark soul crystals are needed to make this elixir.
 	AI_Output(self,other, " DIA_Xardas_SeekerSoul_00_16 " );	// However, it is also said that the effect of this potion is extremely unpredictable.
-	AI_Output(other,self, " DIA_Xardas_SeekerSoul_00_17 " );	// And what does this mean?
-	AI_Output(self,other, " DIA_Xardas_SeekerSoul_00_18 " );	// As I understand it, it can increase your strength, or it can give you agility. It affects everyone differently.
+	AI_Output(other,self, " DIA_Xardas_SeekerSoul_00_17 " );	// And what does that mean?
+	AI_Output(self,other, " DIA_Xardas_SeekerSoul_00_18 " );	// As I understand it, it can increase your strength, or it can make you more agile. It affects everyone differently.
 	AI_Output(self,other, " DIA_Xardas_SeekerSoul_00_19 " );	// Anyway, if you bring me the crystals, I'll brew this elixir for you...
 	B_GiveInvItems(self,other,ITMI_SeekerSoul,1);
 	MIS_SeekerSoul = LOG_Running;
@@ -5843,15 +5843,15 @@ func int DIA_Xardas_Pirate_Start_condition()
 
 func void DIA_Xardas_Pirate_Start_info()
 {
-	AI_Output(self,other, " DIA_Xardas_Pirate_Start_00_01 " );	// Good to have you here! I have a little deal for you.
-	AI_Output(other,self, " DIA_Xardas_Pirate_Start_00_02 " );	// I'm listening carefully.
-	AI_Output(self,other, " DIA_Xardas_Pirate_Start_00_03 " );	// I learned that before their arrival in Khorinis, the paladins sank a pirate ship.
+	AI_Output(self,other, " DIA_Xardas_Pirate_Start_00_01 " );	// Good to see you! I have a little deal for you.
+	AI_Output(other,self, " DIA_Xardas_Pirate_Start_00_02 " );	// I'm listening.
+	AI_Output(self,other, " DIA_Xardas_Pirate_Start_00_03 " );	// I learned that before their arrival in Khorinis, the paladins sunk a pirate ship.
 	AI_Output(other,self, " DIA_Xardas_Pirate_Start_00_04 " );	// Since when do you have an interest in pirates?
-	AI_Output(self,other, " DIA_Xardas_Pirate_Start_00_05 " );	// (grouchily) First, listen to the end, and only then ask a question! So...
-	AI_Output(self,other, " DIA_Xardas_Pirate_Start_00_06 " );	// At one time, before destroying one of the temples of Beliar, the paladins took out a lot of valuable items from there.
-	AI_Output(self,other, " DIA_Xardas_Pirate_Start_00_07 " );	// There was one ring among them. Unsightly in appearance, but possessing great power in the hands of a knowledgeable person!
+	AI_Output(self,other, " DIA_Xardas_Pirate_Start_00_05 " );	// May I finish?
+	AI_Output(self,other, " DIA_Xardas_Pirate_Start_00_06 " );	// Once, before destroying one of the temples of Beliar, the paladins looted the place.
+	AI_Output(self,other, " DIA_Xardas_Pirate_Start_00_07 " );	// There was a ring among them. Unsightly in appearance, but possessing great power in the hands of a knowledgeable person!
 	AI_Output(other,self, " DIA_Xardas_Pirate_Start_00_08 " );	// And what about the pirates?
-	AI_Output(self,other, " DIA_Xardas_Pirate_Start_00_09 " );	// Listen further... (grouchily) Until now, I have not known anything about the fate of the ring.
+	AI_Output(self,other, " DIA_Xardas_Pirate_Start_00_09 " );	// Do you mind? Until now, I have not known anything about the fate of the ring.
 	AI_Output(self,other, " DIA_Xardas_Pirate_Start_00_10 " );	// But recently I found out that this ring was seen on a person in the city!
 	AI_Output(self,other, " DIA_Xardas_Pirate_Start_00_11 " );	// If you believe the rumors, then he just recently appeared in the city, and according to the description looks like a pirate.
 	AI_Output(self,other, " DIA_Xardas_Pirate_Start_00_12 " );	// He has a distinctive feature - an eye patch! So it will be difficult to confuse him with anyone else.
@@ -5860,7 +5860,7 @@ func void DIA_Xardas_Pirate_Start_info()
 	MIS_PirateRing = LOG_Running;
 	Log_CreateTopic(TOPIC_PirateRing,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_PirateRing,LOG_Running);
-	B_LogEntry(TOPIC_PirateRing, " Xardas is looking for a rare ring that the paladins once removed from the temple of Beliar they destroyed. Recently, the old man learned that this ring was seen on a person who, according to the description, resembles a pirate. Its distinguishing feature is an eye patch. Xardas asked me to find this person and find out from him about the ring. " );
+	B_LogEntry(TOPIC_PirateRing, " Xardas is looking for a rare ring that the paladins once removed from the temple of Beliar they destroyed. Recently, the old man learned that this ring was seen on a person who, according to the description, resembles a pirate. His distinguishing feature is an eye patch. Xardas asked me to find this person and find out from him about the ring. " );
 	AI_StopProcessInfos(self);
 };
 
