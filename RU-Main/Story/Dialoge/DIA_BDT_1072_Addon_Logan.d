@@ -119,8 +119,8 @@ func void DIA_Addon_Logan_How2_Info()
 	AI_Output(self,other, " DIA_Addon_Logan_How2_10_01 " );	// Well, at least I'm inside now. Lucia is making some nasty liquor.
 	AI_Output(self,other, " DIA_Addon_Logan_How2_10_02 " );	// But Esteban won't let me into the mine. Well, he doesn't want to. He gave me another job.
 	AI_Output(other,self, " DIA_Addon_Logan_How2_15_03 " );	// And? What does he want from you?
-	AI_Output(self,other, " DIA_Addon_Logan_How2_10_04 " );	// There was an attempt on his life. And he wants me to find out who's behind this.
-	AI_Output(self,other, " DIA_Addon_Logan_How2_10_05 " );	// (quietly) Esteban thinks Snaf is involved. I need to watch him...
+	AI_Output(self,other, " DIA_Addon_Logan_How2_10_04 " );	// There was an attempt on his life. And he wants me to find out who's behind it.
+	AI_Output(self,other, " DIA_Addon_Logan_How2_10_05 " );	// Esteban thinks Snaf is involved. I need to watch him...
 };
 
 
@@ -148,7 +148,7 @@ func void DIA_Addon_Logan_Attentat_Info()
 {
 	B_Say(other,self,"$ATTENTAT_ADDON_DESCRIPTION");
 	AI_Output(self,other, " DIA_Addon_Logan_Attentat_10_00 " );	// You're looking for whoever's behind this, right?
-	AI_Output(self,other, " DIA_Addon_Logan_Attentat_10_01 " );	// But I don't know anything about it. How should I know? Then I was still in the swamp ...
+	AI_Output(self,other, " DIA_Addon_Logan_Attentat_10_01 " );	// But I don't know anything about it. How should I know? I was still in the swamp when it happened...
 };
 
 
@@ -175,7 +175,7 @@ func int DIA_Addon_Logan_HI_Condition()
 func void DIA_Addon_Logan_HI_Info()
 {
 	AI_Output(self,other, " DIA_Addon_Logan_HI_10_00 " );	// Look, a new face.
-	AI_Output(self,other, " DIA_Addon_Logan_HI_10_01 " );	// Did you just come to stand beside me, or maybe you can still help?
+	AI_Output(self,other, " DIA_Addon_Logan_HI_10_01 " );	// Did you just come to stand beside me, or maybe you can help?
 	if(Npc_KnowsInfo(other,DIA_Addon_Franco_HI))
 	{
 		AI_Output(other,self, " DIA_Addon_Logan_HI_15_02 " );	// Franco sent me. He says you might need help. So that?
@@ -214,12 +214,12 @@ func int DIA_Addon_Logan_Why_Condition()
 func void DIA_Addon_Logan_Why_Info()
 {
 	AI_Output(other,self, " DIA_Addon_Logan_Why_15_00 " );	// What do I get for helping?
-	AI_Output(self,other, " DIA_Addon_Logan_Why_10_01 " );	// (growls) Franco will rot you here if you don't.
+	AI_Output(self,other, " DIA_Addon_Logan_Why_10_01 " );	// Franco will make sure you rot here if you don't.
 	AI_Output(self,other, " DIA_Addon_Logan_Why_10_02 " );	// If you want to get into the camp, you'll have to help others. Words alone won't get you far.
 	AI_Output(self,other, " DIA_Addon_Logan_Why_10_03 " );	// And besides, I can show you how to butcher these beasts.
 	AI_Output(self,other, " DIA_Addon_Logan_Why_10_04 " );	// But I don't think Franco will send you to the camp just because we're here to have some fun with the swamp eaters.
 	AI_Output(self,other, " DIA_Addon_Logan_Why_10_05 " );	// There are people here who have been waiting for a long time to get inside.
-	AI_Output(self,other, " DIA_Addon_Logan_Why_10_06 " );	// And the next one to get there will be me... (growls)... It better be like this...
+	AI_Output(self,other, " DIA_Addon_Logan_Why_10_06 " );	// And the next one to get there will be me... (growls)...
 	Log_CreateTopic(Topic_Addon_BDT_Teacher,LOG_NOTE);
 	B_LogEntry(Topic_Addon_BDT_Teacher, " Logan can teach me how to skin and pick teeth and claws. " );
 };
@@ -248,7 +248,7 @@ func int DIA_Addon_Logan_Lager_Condition()
 func void DIA_Addon_Logan_Lager_Info()
 {
 	AI_Output(other,self, " DIA_Addon_Logan_Lager_15_00 " );	// What's in the camp?
-	AI_Output(self,other, " DIA_Addon_Logan_Lager_10_01 " );	// (grouchily) The question is what is NOT in the camp. There are no swamp sharks, there are no swamp hummocks ... There is NO swamp at all.
+	AI_Output(self,other, " DIA_Addon_Logan_Lager_10_01 " );	// The question is what is NOT in the camp. There are no swamp sharks, there are no swamp hummocks ... There is NO swamp at all.
 	AI_Output(self,other, " DIA_Addon_Logan_Lager_10_02 " );	// But there is booze and gold. And as far as I know, there is even a woman there. Understood?
 };
 
@@ -276,9 +276,9 @@ func int DIA_Addon_Logan_MIS_Condition()
 func void DIA_Addon_Logan_MIS_Info()
 {
 	AI_Output(other,self, " DIA_Addon_Logan_MIS_15_00 " );	// Let's deal with the swamp eaters.
-	AI_Output(self,other, " DIA_Addon_Logan_MIS_10_01 " );	// You finally figured out how to behave here. Nice to hear. Shh... do you hear? Yes, I hear them.
+	AI_Output(self,other, " DIA_Addon_Logan_MIS_10_01 " );	// You finally figured out how to behave here. Nice. Shh... do you hear that?
 	AI_Output(other,self, " DIA_Addon_Logan_MIS_15_02 " );	// I see, so what do we do now?
-	AI_Output(self,other, " DIA_Addon_Logan_MIS_10_03 " );	// They're coming! They want to eat human flesh. Well, well, we'll see who eats whom... Let's go!
+	AI_Output(self,other, " DIA_Addon_Logan_MIS_10_03 " );	// They're coming! They definitely want to eat us. Well, well, we'll see who eats who... Let's go!
 	Snd_Play("SWA_WARN01");
 	self.aivar[ AIV_PARTYMEMBER ] = TRUE ;
 	MIS_HlpLogan = LOG_Running;
@@ -312,7 +312,7 @@ func int DIA_Addon_Logan_tot_Condition()
 
 func void DIA_Addon_Logan_tot_Info()
 {
-	AI_Output(self,other, " DIA_Addon_Logan_tot_10_00 " );	// A good swamp eater is a dead swamp eater. This will be a warning to her brethren!
+	AI_Output(self,other, " DIA_Addon_Logan_tot_10_00 " );	// A good swamp eater is a dead swamp eater. This will be a warning to the others!
 	AI_Output(other,self, " DIA_Addon_Logan_tot_15_01 " );	// Great, is there anything else I need to do? If not, I'll go...
 	AI_Output(self,other, " DIA_Addon_Logan_tot_10_02 " );	// Go. And if you want to learn anything else, you know where to find me.
 	self.aivar[ AIV_PARTYMEMBER ] = FALSE ;
@@ -378,15 +378,15 @@ func void DIA_Addon_Logan_Allg_Info()
 	Info_AddChoice(DIA_Addon_Logan_Allg,Dialog_Back,DIA_Addon_Logan_Allg_BACK);
 	if(PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_Teeth] == FALSE)
 	{
-		Info_AddChoice(DIA_Addon_Logan_Allg,b_buildlearnstringforsmithhunt("Вырывать клыки",B_GetLearnCostTalent(other,NPC_TALENT_TAKEANIMALTROPHY,TROPHY_Teeth)),DIA_Addon_Logan_Allg_Teeth);
+		Info_AddChoice(DIA_Addon_Logan_Allg,b_buildlearnstringforsmithhunt("Pull out fangs",B_GetLearnCostTalent(other,NPC_TALENT_TAKEANIMALTROPHY,TROPHY_Teeth)),DIA_Addon_Logan_Allg_Teeth);
 	};
 	if(PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_Claws] == FALSE)
 	{
-		Info_AddChoice(DIA_Addon_Logan_Allg,b_buildlearnstringforsmithhunt("Ломать когти",B_GetLearnCostTalent(other,NPC_TALENT_TAKEANIMALTROPHY,TROPHY_Claws)),DIA_Addon_Logan_Allg_Claws);
+		Info_AddChoice(DIA_Addon_Logan_Allg,b_buildlearnstringforsmithhunt("Break Claws",B_GetLearnCostTalent(other,NPC_TALENT_TAKEANIMALTROPHY,TROPHY_Claws)),DIA_Addon_Logan_Allg_Claws);
 	};
 	if(PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_Fur] == FALSE)
 	{
-		Info_AddChoice(DIA_Addon_Logan_Allg,b_buildlearnstringforsmithhunt("Сдирать шкуру",B_GetLearnCostTalent(other,NPC_TALENT_TAKEANIMALTROPHY,TROPHY_Fur)),DIA_Addon_Logan_Allg_Fur);
+		Info_AddChoice(DIA_Addon_Logan_Allg,b_buildlearnstringforsmithhunt("Skinning",B_GetLearnCostTalent(other,NPC_TALENT_TAKEANIMALTROPHY,TROPHY_Fur)),DIA_Addon_Logan_Allg_Fur);
 	};
 };
 
@@ -434,7 +434,7 @@ func int DIA_Addon_Logan_Hacker_Condition()
 
 func void DIA_Addon_Logan_Hacker_Info()
 {
-	AI_Output(other,self,"DIA_Addon_BDT_10004_Logan_Hacker_15_00");	//Как дела?
+	AI_Output(other,self,"DIA_Addon_BDT_10004_Logan_Hacker_15_00");	//How are you?
 	AI_Output(self,other, " DIA_Addon_BDT_10004_Logan_Hacker_10_01 " );	// Hey, thank you, I did it! I'm in the mine!
 	AI_Output(self,other, " DIA_Addon_BDT_10004_Logan_Hacker_10_02 " );	// I don't know much about how to mine gold yet, but it will come.
 	if(Logan_Lohn == FALSE)
