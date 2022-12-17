@@ -80,20 +80,20 @@ func void DAY_Addon_Carlos_HI_Info()
 {
 	AI_Output(self,other, " DIA_Addon_Carlos_HI_12_00 " );	// Hey, are you the guy that killed Franco?
 	Info_ClearChoices(DIA_Addon_Carlos_HI);
-	Info_AddChoice(DIA_Addon_Carlos_HI, " Что? Я? Нет! " ,DIA_Addon_Carlos_HI_No);
+	Info_AddChoice(DIA_Addon_Carlos_HI, " What? Me? " ,DIA_Addon_Carlos_HI_No);
 	Info_AddChoice(DIA_Addon_Carlos_HI, " Yes, why do you ask? " ,DIA_Addon_Carlos_HI_Yes);
 };
 
 func void DIA_Addon_Carlos_HI_Yes()
 {
 	AI_Output(other,self, " DIA_Addon_Carlos_HI_Yes_15_00 " );	// Yes, why do you ask?
-	AI_Output(self,other, " DIA_Addon_Carlos_HI_Yes_12_01 " );	// (angrily) Because now I have to do his job. Just great, well done! Thanks a lot!
+	AI_Output(self,other, " DIA_Addon_Carlos_HI_Yes_12_01 " );	// Because now I have to do his job. Just great, well done! Thanks a lot!
 	Info_ClearChoices(DIA_Addon_Carlos_HI);
 };
 
 func void DAY_Addon_Carlos_HI_No()
 {
-	AI_Output(other,self,"DIA_Addon_Carlos_HI_No_15_00");	//Что? Я? Нет!
+	AI_Output(other,self,"DIA_Addon_Carlos_HI_No_15_00");	//What? Me?
 	AI_Output(self,other, " DIA_Addon_Carlos_HI_No_12_01 " );	// Ah, nothing personal!
 	Info_ClearChoices(DIA_Addon_Carlos_HI);
 };
