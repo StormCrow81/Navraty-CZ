@@ -103,10 +103,10 @@ func int xbs_7513_darrion_hi_condition()
 func void xbs_7513_darrion_hi_info()
 {
 	AI_Output(other,self, " XBS_7513_Darrion_Hi_15_00 " );	// How are you, master?
-	AI_Output(self,other, " XBS_7513_Darrion_Hi_06_01 " );	// Everything is as usual.
+	AI_Output(self,other, " XBS_7513_Darrion_Hi_06_01 " );	// Everything is as it should be.
 	AI_Output(other,self, " XBS_7513_Darrion_Hi_15_02 " );	// You don't remember me?
-	AI_Output(self,other, " XBS_7513_Darrion_Hi_06_03 " );	// I remember something... (thoughtfully) However, it's not surprising - everyone here is friendly.
-	AI_Output(other,self, " XBS_7513_Darrion_Hi_15_04 " );	// Can I buy weapons or blacksmithing accessories from the master?
+	AI_Output(self,other, " XBS_7513_Darrion_Hi_06_03 " );	// You seem familiar... My mind is not what it used to be I suppose.
+	AI_Output(other,self, " XBS_7513_Darrion_Hi_15_04 " );	// Can I buy weapons or blacksmithing accessories from you?
 	AI_Output(self,other, " XBS_7513_Darrion_Hi_06_06 " );	// Of course. But only when I'm in the forge.
 	AI_Output(self,other, " XBS_7513_Darrion_Hi_06_07 " );	// In the evening I rest - we don't work too hard here.
 	Log_CreateTopic(TOPIC_XBS,LOG_NOTE);
@@ -137,11 +137,11 @@ func void xbs_7513_darrion_blitz_info()
 {
 	AI_Output(other,self, " XBS_7513_Darrion_Blitz_15_00 " );	// Tell me, how did you get into these mountains?
 	AI_Output(self,other, " XBS_7513_Darrion_Blitz_06_01 " );	// The day the Barrier fell, the camp fell into chaos.
-	AI_Output(self,other, " XBS_7513_Darrion_Blitz_06_02 " );	// Few have retained the remnants of the mind. Those who managed to do this are now mostly here.
+	AI_Output(self,other, " XBS_7513_Darrion_Blitz_06_02 " );	// Few have retained remnants of their minds. Those who managed to do that are now here for the most part.
 	AI_Output(other,self, " XBS_7513_Darrion_Blitz_15_03 " );	// What did you do?
 	AI_Output(self,other, " XBS_7513_Darrion_Blitz_06_04 " );	// For a while, like everyone else, I was running around, losing my mind. Until I came across Netback.
 	AI_Output(self,other, " XBS_7513_Darrion_Blitz_06_05 " );	// He was probably the only calm person in the valley. And I followed him.
-	AI_Output(self,other, " XBS_7513_Darrion_Blitz_06_06 " );	// But I am a blacksmith and far from his trees. That's why I'm doing my job here.
+	AI_Output(self,other, " XBS_7513_Darrion_Blitz_06_06 " );	// Now I am a blacksmith and far from his trees. That's why I'm here.
 };
 
 
@@ -209,7 +209,7 @@ func int dia_darrion_armorcanteach_condition()
 func void dia_darrion_armorcanteach_info()
 {
 	AI_Output(other,self, " DIA_Darrion_ArmorCanTeach_01_00 " );	// I heard you're the only one who can forge Guardian armor.
-	AI_Output(self,other, " DIA_Darrion_ArmorCanTeach_01_01 " );	// And that's true, since I was the only blacksmith in the swamps. I had to forge armor for all the brothers, and even for Kor-Angar himself.
+	AI_Output(self,other, " DIA_Darrion_ArmorCanTeach_01_01 " );	// That's true, since I was the only blacksmith in the swamps. I had to forge armor for all the brothers, and even for Kor-Angar himself.
 	AI_Output(other,self, " DIA_Darrion_ArmorCanTeach_01_02 " );	// Can you teach me this trade?
 	AI_Output(self,other, " DIA_Darrion_ArmorCanTeach_01_03 " );	// Well, why not. I could show you some ways to upgrade your armor.
 	AI_Output(self,other, " DIA_Darrion_ArmorCanTeach_01_04 " );	// But for this, you must have a good understanding of forging.
@@ -218,11 +218,11 @@ func void dia_darrion_armorcanteach_info()
 	{
 		AI_Output(other,self, " DIA_Darrion_ArmorCanTeach_01_05 " );	// I'm pretty good at forging.
 		AI_Output(self,other, " DIA_Darrion_ArmorCanTeach_01_06 " );	// Well, then we can start at least now.
-		AI_Output(self,other, " DIA_Darrion_ArmorCanTeach_01_07 " );	// But I'll tell you right away: not free.
+		AI_Output(self,other, " DIA_Darrion_ArmorCanTeach_01_07 " );	// But I'll tell you right away: nothing is free.
 	}
 	else
 	{
-		AI_Output(self,other, " DIA_Darrion_ArmorCanTeach_01_09 " );	// And as I see it, you are a real dilettante at this!
+		AI_Output(self,other, " DIA_Darrion_ArmorCanTeach_01_09 " );	// As I see it, you are a real natural at this!
 		AI_Output(self,other, " DIA_Darrion_ArmorCanTeach_01_10 " );	// Here's the thing, man. First, learn the basics of blacksmithing. And then we'll talk about your training.
 		AI_Output(self,other, " DIA_Darrion_ArmorCanTeach_01_11 " );	// And I’ll say right away: I won’t do this for free.
 	};
