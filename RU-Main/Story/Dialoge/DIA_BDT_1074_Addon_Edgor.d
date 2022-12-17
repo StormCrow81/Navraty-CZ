@@ -82,12 +82,12 @@ func int DIA_Addon_Edgor_Hi_Condition()
 
 func void DIA_Addon_Edgor_Hi_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Edgor_Hi_15_00");	//Как дела?
-	AI_Output(self,other, " DIA_Addon_Edgor_Hi_06_01 " );	// Do you want to know how I'm doing? I'll tell you how I'm doing.
-	AI_Output(self,other, " DIA_Addon_Edgor_Hi_06_02 " );	// First, some pirates brought me here in a storm. I vomited all over their dish.
-	AI_Output(self,other, " DIA_Addon_Edgor_Hi_06_03 " );	// Then Raven locked up the mine because some idiots wanted the gold too much.
-	AI_Output(self,other, " DIA_Addon_Edgor_Hi_06_04 " );	// And then Franco became the commander of the hunters and kills anyone who is against him.
-	AI_Output(self,other, " DIA_Addon_Edgor_Hi_06_05 " );	// I would say that things are going badly.
+	AI_Output(other,self,"DIA_Addon_Edgor_Hi_15_00");	//How are you?
+	AI_Output(self,other, " DIA_Addon_Edgor_Hi_06_01 " );	// You want to know how I'm doing? I'll tell you how I'm doing.
+	AI_Output(self,other, " DIA_Addon_Edgor_Hi_06_02 " );	// First, some pirates brought me here in a storm. I vomited all over their boat.
+	AI_Output(self,other, " DIA_Addon_Edgor_Hi_06_03 " );	// Then Raven locked up the mine because some idiots wanted the gold.
+	AI_Output(self,other, " DIA_Addon_Edgor_Hi_06_04 " );	// And then Franco became the commander of the hunters and is killing anyone who stands against him.
+	AI_Output(self,other, " DIA_Addon_Edgor_Hi_06_05 " );	// I would say that things are going fanfuckingtastic.
 	if(SC_KnowsRavensGoldmine == FALSE)
 	{
 		B_LogEntry(TOPIC_Addon_RavenKDW,LogText_Addon_RavensGoldmine);
@@ -120,9 +120,9 @@ func int DIA_Addon_Edgor_Franco_Condition()
 
 func void DIA_Addon_Edgor_Franco_Info()
 {
-	AI_Output(other,self, " DIA_Addon_Edgor_Franco_15_00 " );	// How did Franco become the elder?
-	AI_Output(self,other, " DIA_Addon_Edgor_Franco_06_01 " );	// Very simple. Killed Fletcher, who was the commander before him.
-	AI_Output(self,other, " DIA_Addon_Edgor_Franco_06_02 " );	// Fletcher was his boyfriend. And Franco just drove us.
+	AI_Output(other,self, " DIA_Addon_Edgor_Franco_15_00 " );	// How did Franco become the leader?
+	AI_Output(self,other, " DIA_Addon_Edgor_Franco_06_01 " );	// Very simple. He killed Fletcher, who was the commander before him.
+	AI_Output(self,other, " DIA_Addon_Edgor_Franco_06_02 " );	// Fletcher was his friend for Inno's sake.
 };
 
 
@@ -148,10 +148,10 @@ func int DIA_Addon_Edgor_MIS2_Condition()
 
 func void DIA_Addon_Edgor_MIS2_Info()
 {
-	AI_Output(other,self, " DIA_Addon_Edgor_MIS2_15_00 " );	// Franco sent me about this stone tablet. Did you find her?
-	AI_Output(self,other, " DIA_Addon_Edgor_MIS2_06_01 " );	// Buddy, I didn't even try to look for her. All I know is that it must be somewhere in that old building in the swamp.
-	AI_Output(self,other, " DIA_Addon_Edgor_MIS2_06_02 " );	// And my inner voice says to me: 'Edgor, stay away from the old buildings standing in the swamp'.
-	AI_Output(self,other, " DIA_Addon_Edgor_MIS2_06_03 " );	// I'm not going to risk my skin for that gouging Franco!
+	AI_Output(other,self, " DIA_Addon_Edgor_MIS2_15_00 " );	// Franco sent me about this stone tablet. Did you find it?
+	AI_Output(self,other, " DIA_Addon_Edgor_MIS2_06_01 " );	// Buddy, I didn't even try to look for it. All I know is that it must be somewhere in that old building in the swamp.
+	AI_Output(self,other, " DIA_Addon_Edgor_MIS2_06_02 " );	// And my inner voice says to me: 'Edgor, stay away from the old buildings in the swamp'.
+	AI_Output(self,other, " DIA_Addon_Edgor_MIS2_06_03 " );	// I'm not going to risk my skin for Franco or no one else.
 	B_LogEntry(Topic_Addon_Stoneplate, " Edgor isn't going to look for the stone tablet. He says it's in some old building in the swamps. " );
 };
 
@@ -208,9 +208,9 @@ func int DIA_Addon_Edgor_Found_Condition()
 
 func void DIA_Addon_Edgor_Found_Info()
 {
-	AI_Output(other,self, " DIA_Addon_Edgor_Found_15_00 " );	// (joyfully) I found the stone tablet!
-	AI_Output(self,other, " DIA_Addon_Edgor_Found_06_01 " );	// (bored) Really? You are a brave guy.
-	AI_Output(self,other, " DIA_Addon_Edgor_Found_06_02 " );	// (bored) Then you've probably earned yourself a camp pass. (yawns)
+	AI_Output(other,self, " DIA_Addon_Edgor_Found_15_00 " );	// I found the stone tablet!
+	AI_Output(self,other, " DIA_Addon_Edgor_Found_06_01 " );	// Really? You are a brave guy.
+	AI_Output(self,other, " DIA_Addon_Edgor_Found_06_02 " );	// Then you've probably earned yourself a camp pass. (yawns)
 };
 
 
@@ -238,8 +238,8 @@ func void DIA_Addon_Edgor_Teach_Info()
 {
 	AI_Output(other,self, " DIA_Addon_Edgor_Teach_15_00 " );	// Can you teach me something?
 	AI_Output(self,other, " DIA_Addon_Edgor_Teach_06_01 " );	// I know a lot about blood hornets. I hate those nasty creatures even more than I hate Franco!
-	AI_Output(self,other, " DIA_Addon_Edgor_Teach_06_02 " );	// But I know how to tear off their stingers and wings, from their dead carcasses. (with a hint of madness) Yes! Get away from them...
-	AI_Output(self,other, " DIA_Addon_Edgor_Teach_06_03 " );	// Also, I know how to extract the secret from torn stings.
+	AI_Output(self,other, " DIA_Addon_Edgor_Teach_06_02 " );	// But I know how to tear off their stingers and wings, from their dead carcasses. Yes! Oh yes...
+	AI_Output(self,other, " DIA_Addon_Edgor_Teach_06_03 " );	// Also, I know how to extract the secretions from torn off stingers.
 	AI_Output(self,other, " DIA_Addon_Edgor_Teach_06_04 " );	// If you want, I can teach you all this stuff.
 	AI_Output(self,other, " DIA_Addon_Edgor_Teach_06_05 " );	// Of course, I won't do anything for free...
 	Log_CreateTopic(Topic_Addon_BDT_Teacher,LOG_NOTE);
@@ -289,7 +289,7 @@ func void DIA_Addon_Edgor_Start_Info()
 	};
 	if(Knows_Bloodfly == FALSE)
 	{
-		Info_AddChoice(DIA_Addon_Edgor_TrainStart, " How to get the secret from the sting? (Training points: 1, Cost: 500 coins) " ,DIA_Addon_Edgor_TrainStart_GIFT);
+		Info_AddChoice(DIA_Addon_Edgor_TrainStart, " How to get the secretion from the sting? (Training points: 1, Cost: 500 coins) " ,DIA_Addon_Edgor_TrainStart_GIFT);
 	};
 };
 
@@ -323,7 +323,7 @@ func void DIA_Addon_Edgor_TrainStart_Wing()
 		if(B_TeachPlayerTalentTakeAnimalTrophy(self,other,TROPHY_BFWing))
 		{
 			AI_Output(other,self, " DIA_Addon_Edgor_TrainStart_Wing_15_00 " );	// And how to separate the wings?
-			AI_Output(self,other, " DIA_Addon_Edgor_TrainStart_Wing_06_01 " );	// Grab them with one hand. Another just cut them off on the outside of the skin.
+			AI_Output(self,other, " DIA_Addon_Edgor_TrainStart_Wing_06_01 " );	// Grab them with one hand. With the other just cut them off on the outside of the skin.
 		};
 	}
 	else
@@ -339,13 +339,13 @@ func void DIA_Addon_Edgor_TrainStart_GIFT()
 	{
 		if(other.lp >= 1)
 		{
-			AI_Output(other,self, " DIA_Addon_Edgor_TrainStart_GIFT_15_00 " );	// How to extract the secret from the sting of a bloodfly?
-			AI_Output(self,other, " DIA_Addon_Edgor_TrainStart_GIFT_06_01 " );	// Cut the top layer of the sting lengthwise - then the healing secret will flow out.
-			AI_Output(self,other, " DIA_Addon_Edgor_TrainStart_GIFT_06_02 " );	// This is a perfectly safe way to suck it out of the sting or use it for a healing potion.
+			AI_Output(other,self, " DIA_Addon_Edgor_TrainStart_GIFT_15_00 " );	// How to extract the secretion from the sting of a bloodfly?
+			AI_Output(self,other, " DIA_Addon_Edgor_TrainStart_GIFT_06_01 " );	// Cut the top layer of the sting lengthwise - then the healing goo will flow out.
+			AI_Output(self,other, " DIA_Addon_Edgor_TrainStart_GIFT_06_02 " );	// Its perfectly safe to suck it out of the stinger or use it for a healing potion.
 			other.lp = other.lp - 1;
 			RankPoints = RankPoints + 1;
 			Knows_Bloodfly = TRUE;
-			AI_Print( " Learned the skill of cutting prey - 'Extracting the secret from the sting' " );
+			AI_Print( " Learned the skill of cutting prey - 'Extracting the secretion from the sting' " );
 		}
 		else
 		{
