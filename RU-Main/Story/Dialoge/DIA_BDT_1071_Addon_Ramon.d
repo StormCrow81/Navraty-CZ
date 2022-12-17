@@ -60,7 +60,7 @@ func void DIA_Addon_Ramon_FirstWarn_Info()
 		AI_Output(self,other, " DIA_Addon_Ramon_FirstWarn_07_04 " );	// Forget it. You killed Franco - now you're the senior, so do your job.
 		AI_Output(other,self, " DIA_Addon_Ramon_FirstWarn_15_05 " );	// If I'm the eldest, then I decide who enters next.
 		AI_Output(other,self, " DIA_Addon_Ramon_FirstWarn_15_06 " );	// And I figured I'd be next in.
-		AI_Output(self,other, " DIA_Addon_Ramon_FirstWarn_07_07 " );	// (laughs) It's not that easy. We didn't ask for ANYONE, so NOBODY will come in.
+		AI_Output(self,other, " DIA_Addon_Ramon_FirstWarn_07_07 " );	// It's not that easy. We didn't ask for ANYONE, so NOBODY will come in.
 		AI_Output(other,self, " DIA_Addon_Ramon_FirstWarn_15_08 " );	// Torus can send a new hunter commander to make room for me.
 		AI_Output(self,other, " DIA_Addon_Ramon_FirstWarn_07_09 " );	// (laughs) You won't be left behind, right? Okay, then come here.
 		AI_Output(self,other, " DIA_Addon_Ramon_FirstWarn_07_10 " );	// Torus will make sure that the hunters are not left without a commander.
@@ -78,9 +78,9 @@ func void DIA_Addon_Ramon_FirstWarn_Info()
 		AI_Output(self,other, " DIA_Addon_Ramon_FirstWarn_07_12 " );	// Hey, what do you need? I can't imagine you have permission to enter the camp.
 		if(Npc_KnowsInfo(other,DIA_Addon_Franco_HI))
 		{
-			AI_Output(other,self, " DIA_Addon_Ramon_FirstWarn_15_13 " );	// Franco sent me. He wants to know if anyone is needed in the camp.
+			AI_Output(other,self, " DIA_Addon_Ramon_FirstWarn_15_13 " );	// Franco sent me. He wants to know if you need more men.
 		};
-		AI_Output(self,other, " DIA_Addon_Ramon_FirstWarn_07_14 " );	// Yes, needed. Yesterday another guy gave oak.
+		AI_Output(self,other, " DIA_Addon_Ramon_FirstWarn_07_14 " );	// Yes, needed. Yesterday another guy gave up the ghost.
 		AI_Output(self,other, " DIA_Addon_Ramon_FirstWarn_07_15 " );	// This idiot had a fight with Esteban.
 		AI_Output(other,self, " DIA_Addon_Ramon_FirstWarn_15_16 " );	// Who is Esteban?
 		AI_Output(self,other, " DIA_Addon_Ramon_FirstWarn_07_17 " );	// Commander of the lower camp. He determines who goes to the mine.
@@ -89,7 +89,7 @@ func void DIA_Addon_Ramon_FirstWarn_Info()
 		Log_SetTopicStatus(Topic_Addon_Franco,LOG_Running);
 		B_LogEntry(Topic_Addon_Franco, " Torus needs another person. Franco might be interested in this. " );
 		Info_ClearChoices(DIA_Addon_Ramon_FirstWarn);
-		Info_AddChoice(DIA_Addon_Ramon_FirstWarn, " Torus? Torus itself? " ,DIA_Addon_Ramon_FirstWarn_YES);
+		Info_AddChoice(DIA_Addon_Ramon_FirstWarn, " Torus? Torus himself? " ,DIA_Addon_Ramon_FirstWarn_YES);
 		Info_AddChoice(DIA_Addon_Ramon_FirstWarn, " Torus? Never heard of him... " ,DIA_Addon_Ramon_FirstWarn_NO);
 		Ramon_News = TRUE;
 	}
@@ -105,11 +105,11 @@ func void DIA_Addon_Ramon_FirstWarn_Info()
 func void DIA_Addon_Ramon_FirstWarn_YES()
 {
 	B_GivePlayerXP(100);
-	AI_Output(other,self, " DIA_Addon_Ramon_FirstWarn_YES_15_00 " );	// Torus? Thorus himself?
+	AI_Output(other,self, " DIA_Addon_Ramon_FirstWarn_YES_15_00 " );	// Torus? Torus himself?
 	AI_Output(self,other, " DIA_Addon_Ramon_FirstWarn_YES_07_01 " );	// Yes. SAM Torus. The one who accepts new people.
 	AI_Output(self,other, " DIA_Addon_Ramon_FirstWarn_YES_07_02 " );	// The one who decides when a new person leaves the swamp and comes to the camp.
-	AI_Output(self,other, " DIA_Addon_Ramon_FirstWarn_YES_07_03 " );	// Maybe you're saying that you've known Thorus before?
-	AI_Output(other,self,"DIA_Addon_Ramon_FirstWarn_YES_15_04");	//Ну... да...
+	AI_Output(self,other, " DIA_Addon_Ramon_FirstWarn_YES_07_03 " );	// Maybe you're saying that you've known Torus before?
+	AI_Output(other,self,"DIA_Addon_Ramon_FirstWarn_YES_15_04");	//Well... Yeah...
 	AI_Output(self,other, " DIA_Addon_Ramon_FirstWarn_YES_07_05 " );	// Look, EVERYONE knows Torus.
 	AI_Output(self,other, " DIA_Addon_Ramon_FirstWarn_YES_07_06 " );	// And that means you won't get in - and I won't even send word to him!
 	Info_ClearChoices(DIA_Addon_Ramon_FirstWarn);
@@ -119,8 +119,8 @@ func void DIA_Addon_Ramon_FirstWarn_NO()
 {
 	AI_Output(other,self, " DIA_Addon_Ramon_FirstWarn_NO_15_00 " );	// Torus? Never heard of him...
 	AI_Output(self,other, " DIA_Addon_Ramon_FirstWarn_NO_07_01 " );	// Oh boy, you don't know him? He was head of the guard at the Old Camp.
-	AI_Output(self,other, " DIA_Addon_Ramon_FirstWarn_NO_07_02 " );	// Everyone trusts this person.
-	AI_Output(self,other, " DIA_Addon_Ramon_FirstWarn_NO_07_03 " );	// He calls new people and decides when the newcomers should get into the camp.
+	AI_Output(self,other, " DIA_Addon_Ramon_FirstWarn_NO_07_02 " );	// Everyone trusts the man.
+	AI_Output(self,other, " DIA_Addon_Ramon_FirstWarn_NO_07_03 " );	// He calls new people in and decides who gets into the camp.
 	AI_Output(self,other, " DIA_Addon_Ramon_FirstWarn_NO_07_04 " );	// If you live long enough, you'll get to know him.
 	Info_ClearChoices(DIA_Addon_Ramon_FirstWarn);
 };
@@ -207,8 +207,8 @@ func int DIA_Addon_Ramon_News_Condition()
 
 func void DIA_Addon_Ramon_News_Info()
 {
-	AI_Output(other,self, " DIA_Addon_Ramon_News_15_00 " );	// I'm that new person.
-	AI_Output(self,other, " DIA_Addon_Ramon_News_07_01 " );	// Hey, don't try to fool me. Anyway, Franco decides which of you will go to the camp.
+	AI_Output(other,self, " DIA_Addon_Ramon_News_15_00 " );	// I'm the new guy.
+	AI_Output(self,other, " DIA_Addon_Ramon_News_07_01 " );	// Hey, don't try to fool me. Franco decides which of you will go to the camp.
 };
 
 
@@ -235,7 +235,7 @@ func int DIA_Addon_Ramon_Lie_Condition()
 func void DIA_Addon_Ramon_Lie_Info()
 {
 	AI_Output(other,self, " DIA_Addon_Ramon_Lie_15_00 " );	// Franco sent me...
-	AI_Output(self,other, " DIA_Addon_Ramon_Lie_07_01 " );	// Nope. Get out, or I'll break your bones...
+	AI_Output(self,other, " DIA_Addon_Ramon_Lie_07_01 " );	// Nope. Get out, or I'll break your face...
 	AI_StopProcessInfos(self);
 };
 
@@ -263,6 +263,6 @@ func int DIA_Addon_Ramon_Perm_Condition()
 func void DIA_Addon_Ramon_Perm_Info()
 {
 	AI_Output(other,self, " DIA_Addon_Ramon_Perm_15_00 " );	// Is the situation under control?
-	AI_Output(self,other, " DIA_Addon_Ramon_Perm_07_01 " );	// Everything is fine here until someone who is NOT SHOULD try to enter the camp.
+	AI_Output(self,other, " DIA_Addon_Ramon_Perm_07_01 " );	// Everything is fine here until someone who is not allowed tries to enter the camp. Then it gets fun.
 	AI_StopProcessInfos(self);
 };
