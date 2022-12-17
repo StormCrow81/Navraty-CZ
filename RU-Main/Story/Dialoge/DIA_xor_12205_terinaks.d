@@ -44,9 +44,9 @@ func int dia_xor_12205_terinaks_hallo_condition()
 func void dia_xor_12205_terinaks_hallo_info()
 {
 	AI_Output(self,other, " DIA_XOR_12205_Terinaks_HALLO_01_00 " );	// Hmmm. Your face is familiar to me, mortal!
-	AI_Output(self,other, " DIA_XOR_12205_Terinaks_HALLO_01_03 " );	// Oh yeah. You are the one sent by the Guardians to help me fight Lucian.
-	AI_Output(self,other, " DIA_XOR_12205_Terinaks_HALLO_01_05 " );	// Well... Since you're here now, this was done for a reason.
-	AI_Output(other,self, " DIA_XOR_12205_Terinaks_HALLO_01_06 " );	// This was one of the Guardians' trials.
+	AI_Output(self,other, " DIA_XOR_12205_Terinaks_HALLO_01_03 " );	// Oh, yes. You are the one sent by the Guardians to help me fight Lucian.
+	AI_Output(self,other, " DIA_XOR_12205_Terinaks_HALLO_01_05 " );	// Well... Since you're here now, you may know the truth.
+	AI_Output(other,self, " DIA_XOR_12205_Terinaks_HALLO_01_06 " );	// This is one of the Guardians' trials.
 	AI_Output(self,other, " DIA_XOR_12205_Terinaks_HALLO_01_07 " );	// And I assume you passed ALL of their tests?
 	AI_Output(other,self, " DIA_XOR_12205_Terinaks_HALLO_01_08 " );	// Yes! Guardian Stonnos has accepted me as an Adept of the Circle. Now I am one of you.
 	AI_Output(self,other, " DIA_XOR_12205_Terinaks_HALLO_01_11 " );	// I'm a bit surprised at what you've managed to achieve in such a short amount of time.
@@ -71,15 +71,15 @@ func int dia_xor_12205_terinaks_whoyou_condition()
 
 func void dia_xor_12205_terinaks_whoyou_info()
 {
-	AI_Output(other,self,"DIA_XOR_12205_Terinaks_WhoYou_01_00");	//Кто ты?
+	AI_Output(other,self,"DIA_XOR_12205_Terinaks_WhoYou_01_00");	//Who are you?
 	AI_Output(self,other, " DIA_XOR_12205_Terinaks_WhoYou_01_01 " );	// My name is Tarinax, and I am the mentor of the Asgardians, warriors of the elements.
 	AI_Output(other,self, " DIA_XOR_12205_Terinaks_WhoYou_01_02 " );	// And who are the Asgardians?
 	AI_Output(self,other, " DIA_XOR_12205_Terinaks_WhoYou_01_06 " );	// The main purpose of the Asgardians is to bring the divine wisdom of the Guardians into this world.
 	AI_Output(self,other, " DIA_XOR_12205_Terinaks_WhoYou_01_07 " );	// We are all their devoted and obedient servants, unquestioningly following their divine will...
-	AI_Output(self,other, " DIA_XOR_12205_Terinaks_WhoYou_01_08 " );	// ...and are ready to sacrifice their lives without hesitation for the sake of the goals they pursue.
-	AI_Output(self,other, " DIA_XOR_12205_Terinaks_WhoYou_01_09 " );	// The one who doubts their deeds is simply not worthy of being a warrior of the elements, for the meaning of our life is only in serving the Creators!
+	AI_Output(self,other, " DIA_XOR_12205_Terinaks_WhoYou_01_08 " );	// ...and are ready to sacrifice our lives without hesitation for the sake of the goals they pursue.
+	AI_Output(self,other, " DIA_XOR_12205_Terinaks_WhoYou_01_09 " );	// The one who doubts his devotion is simply not worthy of being a warrior of the elements, for the meaning of our life is only in serving the Creators!
 	AI_Output(self,other, " DIA_XOR_12205_Terinaks_WhoYou_01_10 " );	// Asgardians are also the personal guardians of the Keepers and keep their sacred rest in these halls.
-	AI_Output(self,other, " DIA_XOR_12205_Terinaks_WhoYou_01_12 " );	// Like all other deities, the Creators also have enemies ready to destroy them with joy.
+	AI_Output(self,other, " DIA_XOR_12205_Terinaks_WhoYou_01_12 " );	// Like all other deities, the Creators also have enemies looking to destroy them.
 };
 
 
@@ -167,7 +167,7 @@ func void dia_xor_12205_terinaks_teachme_info()
 	AI_Output(other,self, " DIA_XOR_12205_Terinaks_TeachMe_01_12 " );	// What can you teach me?
 	AI_Output(self,other, " DIA_XOR_12205_Terinaks_TeachMe_01_13 " );	// The art of combat.
 	AI_Output(self,other, " DIA_XOR_12205_Terinaks_TeachMe_01_14 " );	// For the Asgardians, this is a core discipline in which they have no equal among other mortals.
-	AI_Output(self,other, " DIA_XOR_12205_Terinaks_TeachMe_01_18 " );	// And when you're ready to join our ranks, I'll let you in on the secrets of forging the finest armor the world has to offer.
+	AI_Output(self,other, " DIA_XOR_12205_Terinaks_TeachMe_01_18 " );	// And when you're ready to join our ranks, I'll let you in on the secrets of forging the finest armor this reality has to offer.
 	B_LogEntry( TOPIC_GUARDIANS , " I have spoken to Master Tarinax. He will now be my mentor and can teach me the art of the warrior. " );
 	TARINAKSTEACHME = TRUE;
 };
@@ -196,7 +196,7 @@ func void dia_xor_12205_terinaks_bexor_info()
 {
 	AI_Output(other,self, " DIA_XOR_12205_Terinaks_BeXOR_01_00 " );	// How do I become Asgard?
 	AI_Output(self,other, " DIA_XOR_12205_Terinaks_BeXOR_01_01 " );	// To do this, you will have to defeat one of us in a fair fight.
-	AI_Output(self,other, " DIA_XOR_12205_Terinaks_BeXOR_01_03 " );	// But, as you know, it will be quite difficult to do this.
+	AI_Output(self,other, " DIA_XOR_12205_Terinaks_BeXOR_01_03 " );	// But, as you know, this will be no small feat.
 	AI_Output(self,other, " DIA_XOR_12205_Terinaks_BeXOR_01_04 " );	// However, if you suddenly feel the strength to challenge us, tell me about it.
 	B_LogEntry( TOPIC_GUARDIANS , " To become Asgard, the warrior of the Elements, I must challenge and defeat one of these warriors. " );
 };
@@ -252,13 +252,13 @@ func void dia_xor_12205_terinaks_battle_no()
 func void dia_xor_12205_terinaks_battle_ok()
 {
 	AI_Output(other,self, " DIA_XOR_12205_Terinaks_Battle_Ok_01_00 " );	// Yes, I'm ready.
-	AI_Output(self,other, " DIA_XOR_12205_Terinaks_Battle_Ok_01_01 " );	// Well, okay. In that case, one of my warriors is already waiting for you.
+	AI_Output(self,other, " DIA_XOR_12205_Terinaks_Battle_Ok_01_01 " );	// Well, okay. In that case, one of my warriors is waiting for you.
 	AI_Output(self,other, " DIA_XOR_12205_Terinaks_Battle_Ok_01_02 " );	// Defeat him and you will be accepted into our Sacred Circle!
 
 	if(CHALANGEHARADRIMFIRSTTIME == FALSE)
 	{
 		AI_Output(other,self, " DIA_XOR_12205_Terinaks_Battle_Ok_01_03 " );	// Where exactly should I fight him?
-		AI_Output(self,other, " DIA_XOR_12205_Terinaks_Battle_Ok_01_04 " );	// The teleportation stone at the center of these halls will lead you to the right place.
+		AI_Output(self,other, " DIA_XOR_12205_Terinaks_Battle_Ok_01_04 " );	// The teleportation stone at the center of these halls will lead you to the combat grounds.
 		AI_Output(self,other, " DIA_XOR_12205_Terinaks_Battle_Ok_01_05 " );	// Now go! The battle is waiting for you.
 		CHALANGEHARADRIMFIRSTTIME = TRUE;
 	};
@@ -288,13 +288,13 @@ func int dia_xor_12205_terinaks_battlewin_condition()
 func void dia_xor_12205_terinaks_battlewin_info()
 {
 	B_GivePlayerXP(2000);
-	AI_Output(other,self, " DIA_XOR_12205_Terinaks_BattleWin_01_00 " );	// I won this fight.
-	AI_Output(self,other, " DIA_XOR_12205_Terinaks_BattleWin_01_01 " );	// Well, my lessons have not been in vain for you.
-	AI_Output(self,other, " DIA_XOR_12205_Terinaks_BattleWin_01_03 " );	// Only another Asgard can defeat Asgard in a fair fight. And this means only one thing - you proved that you are ready to become one!
-	AI_Output(self,other, " DIA_XOR_12205_Terinaks_BattleWin_01_05 " );	// Now you're one of us.
-	AI_Output(self,other, " DIA_XOR_12205_Terinaks_BattleWin_01_06 " );	// And as a token of my recognition of your status, accept this sword from me. Sword of Asgard!
+	AI_Output(other,self, " DIA_XOR_12205_Terinaks_BattleWin_01_00 " );	// I won the fight.
+	AI_Output(self,other, " DIA_XOR_12205_Terinaks_BattleWin_01_01 " );	// Well, my lessons have not been in vain then.
+	AI_Output(self,other, " DIA_XOR_12205_Terinaks_BattleWin_01_03 " );	// Only another Asgard can defeat an Asgard in a fair fight. And this means only one thing - you proved that you have always been one of us.
+	AI_Output(self,other, " DIA_XOR_12205_Terinaks_BattleWin_01_05 " );	// Welcome home brother.
+	AI_Output(self,other, " DIA_XOR_12205_Terinaks_BattleWin_01_06 " );	// As a token of my recognition of your status, accept this sword from me. A Sword of Asgard!
 	AI_Output(self,other, " DIA_XOR_12205_Terinaks_BattleWin_01_07 " );	// This weapon is unmatched in combat and is the symbol of our Sacred Circle.
-	AI_Output(self,other, " DIA_XOR_12205_Terinaks_BattleWin_01_08 " );	// He will become a part of you, and on the edge of his blade you will carry the power and wisdom of the Creators into this world!
+	AI_Output(self,other, " DIA_XOR_12205_Terinaks_BattleWin_01_08 " );	// It will become a part of you, and from the edge of this blade you will carry the power and wisdom of the Creators into this world!
 	AI_Output(self,other, " DIA_XOR_12205_Terinaks_BattleWin_01_09 " );	// However, before I give it to you, you will have to answer one simple question.
 	AI_Output(self,other, " DIA_XOR_12205_Terinaks_BattleWin_01_10 " );	// What type of weapon do you prefer - one-handed or two-handed?
 	BEHARADRIM = TRUE ;
@@ -308,7 +308,7 @@ func void dia_xor_12205_terinaks_battlewin_info()
 func void dia_xor_12205_terinaks_battlewin_1h()
 {
 	AI_Output(other,self, " DIA_XOR_12205_Terinaks_BattleWin_1H_01_00 " );	// I prefer a one-handed sword.
-	AI_Output(self,other, " DIA_XOR_12205_Terinaks_BattleWin_1H_01_01 " );	// Good. Take this blade. Wear it with pride and honor, the honor of Asgard!
+	AI_Output(self,other, " DIA_XOR_12205_Terinaks_BattleWin_1H_01_01 " );	// Good. Take this blade. Wield it with pride and honor, the honor of Asgard!
 	CreateInvItems(self,itmw_1h_xaradrim, 1 );
 	B_GiveInvItems(self,other,itmw_1h_xaradrim, 1 );
 	Info_ClearChoices(dia_xor_12205_terinaks_battlewin);
@@ -317,7 +317,7 @@ func void dia_xor_12205_terinaks_battlewin_1h()
 func void dia_xor_12205_terinaks_battlewin_2h()
 {
 	AI_Output(other,self, " DIA_XOR_12205_Terinaks_BattleWin_2H_01_00 " );	// I prefer a two-handed sword.
-	AI_Output(self,other, " DIA_XOR_12205_Terinaks_BattleWin_2H_01_01 " );	// Good. Take this blade. Wear it with pride and honor, the honor of Asgard!
+	AI_Output(self,other, " DIA_XOR_12205_Terinaks_BattleWin_2H_01_01 " );	// Good. Take this blade. Wield it with pride and honor, the honor of Asgard!
 	CreateInvItems(self,itmw_2h_xaradrim,1);
 	B_GiveInvItems(self,other,itmw_2h_xaradrim,1);
 	Info_ClearChoices(dia_xor_12205_terinaks_battlewin);
@@ -346,7 +346,7 @@ func int dia_xor_12205_terinaks_armor_condition()
 func void dia_xor_12205_terinaks_armor_info()
 {
 	AI_Output(other,self, " DIA_XOR_12205_Terinaks_Armor_01_00 " );	// What about armor?
-	AI_Output(other,self, " DIA_XOR_12205_Terinaks_Armor_01_01 " );	// You said you could teach me the secret of forging them.
+	AI_Output(other,self, " DIA_XOR_12205_Terinaks_Armor_01_01 " );	// You said you could teach me the secret of forging it.
 	AI_Output(self,other, " DIA_XOR_12205_Terinaks_Armor_01_02 " );	// Of course. Every Asgard wears similar armor.
 	AI_Output(self,other, " DIA_XOR_12205_Terinaks_Armor_01_03 " );	// There are two types of armor that I can teach you how to forge.
 	AI_Output(self,other, " DIA_XOR_12205_Terinaks_Armor_01_04 " );	// However, you can only choose one. So think carefully before making your choice.
@@ -359,7 +359,7 @@ func void dia_xor_12205_terinaks_armor_info()
 func void dia_xor_12205_terinaks_armor_dark()
 {
 	AI_Output(other,self, " DIA_XOR_12205_Terinaks_Armor_Dark_01_00 " );	// I choose Dark Ore Armor.
-	AI_Output(self,other, " DIA_XOR_12205_Terinaks_Armor_Dark_01_01 " );	// Good. It's your choice! Now you can forge this armor yourself.
+	AI_Output(self,other, " DIA_XOR_12205_Terinaks_Armor_Dark_01_01 " );	// Good choice. Now you can forge this armor yourself.
 	AI_Output(self,other, " DIA_XOR_12205_Terinaks_Armor_Dark_01_02 " );	// This is a great honor that few get.
 	AI_Print( " Learned forging recipe - 'Dark Ore Armor' " );
 	Npc_SetTalentSkill(other,NPC_TALENT_SMITH,1);
@@ -373,7 +373,7 @@ func void dia_xor_12205_terinaks_armor_dark()
 func void dia_xor_12205_terinaks_armor_light()
 {
 	AI_Output(other,self, " DIA_XOR_12205_Terinaks_Armor_Light_01_00 " );	// I choose the ore armor of the Light.
-	AI_Output(self,other, " DIA_XOR_12205_Terinaks_Armor_Light_01_01 " );	// Good. It's your choice! Now you can forge this armor yourself.
+	AI_Output(self,other, " DIA_XOR_12205_Terinaks_Armor_Light_01_01 " );	// Good choice. Now you can forge this armor yourself.
 	AI_Output(self,other, " DIA_XOR_12205_Terinaks_Armor_Light_01_02 " );	// This is a great honor that few get.
 	AI_Print( " Learned crafting recipe - 'Ore Armor of Light' " );
 	Npc_SetTalentSkill(other,NPC_TALENT_SMITH,1);
@@ -406,7 +406,7 @@ func void dia_xor_12205_terinaks_ADAMANT_info()
 {
 	B_GivePlayerXP(100);
 	AI_Output(other,self, " DIA_XOR_12205_Terinaks_ADAMANT_01_00 " );	// About armor...
-	AI_Output(other,self, " DIA_XOR_12205_Terinaks_ADAMANT_01_01 " );	// Forging them requires some kind of adamant. What it is?
+	AI_Output(other,self, " DIA_XOR_12205_Terinaks_ADAMANT_01_01 " );	// Forging them requires something called adamant. What it is?
 	AI_Output(self,other, " DIA_XOR_12205_Terinaks_ADAMANT_01_02 " );	// This is a very rare metal of almost divine origin. All Asgardian armor is made from it.
 	AI_Output(other,self, " DIA_XOR_12205_Terinaks_ADAMANT_01_03 " );	// And where can I get it?
 	AI_Output(self,other, " DIA_XOR_12205_Terinaks_ADAMANT_01_04 " );	// Usually, its deposits are found only in places of huge accumulation of magical energy.
@@ -435,7 +435,7 @@ func int dia_xor_12205_terinaks_permtask_condition()
 func void dia_xor_12205_terinaks_permtask_info()
 {
 	AI_Output(other,self, " DIA_XOR_12205_Terinaks_PermTask_01_00 " );	// Do you have any errands for me?
-	AI_Output(self,other, " DIA_XOR_12205_Terinaks_PermTask_01_01 " );	// I'm afraid not. I think you should talk to the Guardians about this.
+	AI_Output(self,other, " DIA_XOR_12205_Terinaks_PermTask_01_01 " );	// I'm afraid not. I think you should talk to the Guardians if you wish for tasks to do.
 };
 
 
