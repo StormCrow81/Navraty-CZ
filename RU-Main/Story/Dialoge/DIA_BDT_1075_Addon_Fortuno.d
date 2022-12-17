@@ -106,7 +106,7 @@ func void DIA_Addon_Fortuno_Hi_Info()
 {
 	if (Fortuno_Once ==  FALSE )
 	{
-		AI_Output(self,other, " DIA_Addon_Fortuno_Hi_13_00 " );	// (anxious) A dark cloud has covered the house... HE is approaching...
+		AI_Output(self,other, " DIA_Addon_Fortuno_Hi_13_00 " );	// A dark cloud has covered the house... HE is approaching...
 		AI_Output(self,other, " DIA_Addon_Fortuno_Hi_13_01 " );	// With the blood... that is needed to call him... HE who sees me... he sees me... Oh no, go away, go away...
 		AI_Output(other,self, " DIA_Addon_Fortuno_Hi_15_02 " );	// Are you all right?
 		Fortune_Einmal = TRUE ;
@@ -157,7 +157,7 @@ func void DIA_Addon_Fortuno_Hi_GREEN()
 	{
 		AI_UseItem(self,ItMi_Addon_Joint_01);
 	};
-	AI_Output(self,other, " DIA_Addon_Fortuno_Hi_GREEN_13_01 " );	// (recovering) A-A-A-X...
+	AI_Output(self,other, " DIA_Addon_Fortuno_Hi_GREEN_13_01 " );	// (recovering) W.w.who...
 	AI_Output(self,other, " DIA_Addon_Fortuno_Hi_GREEN_13_02 " );	// My head... who... I... Fortuno... What happened?
 	Info_ClearChoices(DIA_Addon_Fortune_Hi);
 	Fortuno_Healed_01 = TRUE ;
@@ -187,15 +187,15 @@ func int DIA_Addon_Fortuno_wer_Condition()
 
 func void DIA_Addon_Fortuno_wer_Info()
 {
-	AI_Output(other,self, " DIA_Addon_Fortuno_wer_15_00 " );	// Yes, tell me what happened to you.
-	AI_Output(self,other, " DIA_Addon_Fortuno_wer_13_01 " );	// I once belonged to the Brotherhood of the Sleeper. Everything was fine then!
+	AI_Output(other,self, " DIA_Addon_Fortuno_wer_15_00 " );	// Tell me what happened to you.
+	AI_Output(self,other, " DIA_Addon_Fortuno_wer_13_01 " );	// I once belonged to the Brotherhood of the Sleeper.
 	AI_Output(self,other, " DIA_Addon_Fortuno_wer_13_02 " );	// Yes, we are all convicted criminals, but for us, novices, life was carefree...
 	AI_Output(other,self, " DIA_Addon_Fortuno_wer_15_03 " );	// Hey, I was also a prisoner in the Valley of Mines. Tell me something new.
-	AI_Output(self,other, " DIA_Addon_Fortuno_wer_13_04 " );	// I... I don't remember anything. Darkness covers my memory...
+	AI_Output(self,other, " DIA_Addon_Fortuno_wer_13_04 " );	// I... I don't remember anything else. Darkness covers my memory...
 	AI_Output(other,self, " DIA_Addon_Fortuno_wer_15_05 " );	// Come on, focus. What happened? When did you come to your senses?
 	AI_Output(self,other, " DIA_Addon_Fortuno_wer_13_06 " );	// Raven... I only remember Raven and... and dark halls.
 	AI_Output(other,self, " DIA_Addon_Fortuno_wer_15_07 " );	// What did Raven do? What did he do to you?
-	AI_Output(self,other, " DIA_Addon_Fortuno_wer_13_08 " );	// (sighs) I'm sorry. It feels like my mind is itself imprisoned. I don't understand it myself...
+	AI_Output(self,other, " DIA_Addon_Fortuno_wer_13_08 " );	// I'm sorry. It feels like my mind is itself imprisoned. I don't understand it myself...
 };
 
 
@@ -227,7 +227,7 @@ func void DIA_Addon_Fortuno_FREE_Info()
 	if(hero.guild != GIL_GUR)
 	{
 		AI_Output(other,self, " DIA_Addon_Fortuno_FREE_15_03 " );	// Do YOU ​​remember anything about this?
-		AI_Output(self,other, " DIA_Addon_Fortuno_FREE_13_04 " );	// No, I'm afraid this knowledge disappeared with the guru...
+		AI_Output(self,other, " DIA_Addon_Fortuno_FREE_13_04 " );	// No, I'm afraid that knowledge disappeared with the guru...
 	};
 
 	AI_Output(other,self, " DIA_Addon_Fortuno_FREE_15_05 " );	// Damn! Okay, if there's a way to free your mind, I'll find it.
@@ -409,19 +409,19 @@ func int DIA_Addon_Fortuno_more_Condition()
 
 func void DIA_Addon_Fortuno_more_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Fortuno_more_15_00");	//И?..
+	AI_Output(other,self,"DIA_Addon_Fortuno_more_15_00");	//And?
 	AI_Output(self,other, " DIA_Addon_Fortuno_more_13_01 " );	// Ah! I... I remember again! Now I understand... Oh, Adanos, what have I done?
 	AI_Output(other,self, " DIA_Addon_Fortuno_more_15_02 " );	// Yes, what have you done? And most importantly - what did Raven do?
 	AI_Output(self,other, " DIA_Addon_Fortuno_more_13_03 " );	// I helped him... make a contract. WITH HIM. He needed various potions... I brewed them for him.
 	AI_Output(self,other, " DIA_Addon_Fortuno_more_13_04 " );	// He tried to open the portal and get into the temple.
 	AI_Output(other,self, " DIA_Addon_Fortuno_more_15_05 " );	// Why? What does he want in the temple?
 	AI_Output(self,other, " DIA_Addon_Fortuno_more_13_06 " );	// A powerful artifact... It is buried along with the one who created it. A great warrior who fell before HIS might...
-	AI_Output(other,self,"DIA_Addon_Fortuno_more_15_07");	//А потом?
+	AI_Output(other,self,"DIA_Addon_Fortuno_more_15_07");	//And then?
 	AI_Output(self,other, " DIA_Addon_Fortuno_more_13_08 " );	// We couldn't open the portal...
 	AI_Output(self,other, " DIA_Addon_Fortuno_more_13_09 " );	// But Raven was SURE he could do it if he dug up the priest's tomb.
 	AI_Output(self,other, " DIA_Addon_Fortuno_more_13_10 " );	// That's why he brought the slaves here. Those he can force to unearth the ancient powers that lie here.
 	AI_Output(other,self, " DIA_Addon_Fortuno_more_15_11 " );	// Priest's tomb?
-	AI_Output(self,other, " DIA_Addon_Fortuno_more_13_12 " );	// The resting place of the priest Adanos. She is in the mine.
+	AI_Output(self,other, " DIA_Addon_Fortuno_more_13_12 " );	// The resting place of the priest Adanos. It is in the mine.
 	AI_Output(self,other, " DIA_Addon_Fortuno_more_13_13 " );	// I also remember the stone tablets. He believed that they would show him the way.
 	AI_Output(self,other, " DIA_Addon_Fortuno_more_13_14 " );	// And when he managed to decipher what is written on them, he no longer needed me.
 	AI_Output(self,other, " DIA_Addon_Fortuno_more_13_15 " );	// He cast an oblivion spell on me! And you freed me.
