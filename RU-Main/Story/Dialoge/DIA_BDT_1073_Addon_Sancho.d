@@ -74,9 +74,9 @@ func int DIA_Addon_Sancho_HI_Condition()
 
 func void DIA_Addon_Sancho_HI_Info()
 {
-	AI_Output(self,other, " DIA_Addon_Sancho_HI_06_00 " );	// Damn, another newbie. (laughs) Also for gold, right?
-	AI_Output(other,self,"DIA_Addon_Sancho_HI_15_01");	//За золотом?
-	AI_Output(self,other, " DIA_Addon_Sancho_HI_06_02 " );	// (laughs) Don't try to fool me!
+	AI_Output(self,other, " DIA_Addon_Sancho_HI_06_00 " );	// Damn, another newbie. (laughs) Here for gold, right?
+	AI_Output(other,self,"DIA_Addon_Sancho_HI_15_01");	//Gold?
+	AI_Output(self,other, " DIA_Addon_Sancho_HI_06_02 " );	// You can't fool me!
 	AI_Output(self,other, " DIA_Addon_Sancho_HI_06_03 " );	// Everyone who comes here wants to get into the mine.
 	AI_Output(self,other, " DIA_Addon_Sancho_HI_06_04 " );	// But don't think it will be easy!
 	if(SC_KnowsRavensGoldmine == FALSE)
@@ -174,8 +174,8 @@ func int DIA_Addon_Sancho_Franco_Condition()
 func void DIA_Addon_Sancho_Franco_Info()
 {
 	AI_Output(other,self, " DIA_Addon_Sancho_Franco_15_00 " );	// Where can I find Franco?
-	AI_Output(self,other, " DIA_Addon_Sancho_Franco_06_01 " );	// Usually he sticks out in the courtyard in front of the camp.
-	AI_Output(self,other, " DIA_Addon_Sancho_Franco_06_02 " );	// Be on good terms with him and you'll get a better job than I do!
+	AI_Output(self,other, " DIA_Addon_Sancho_Franco_06_01 " );	// Usually he hangs out in the courtyard in front of the camp.
+	AI_Output(self,other, " DIA_Addon_Sancho_Franco_06_02 " );	// Be on good terms with him and you'll get a better and better jobs.
 	B_LogEntry(Topic_Addon_Franco, " Franco can be found in front of the camp. " );
 };
 
@@ -241,11 +241,11 @@ func void DIA_Addon_Sancho_Perm_Info()
 		AI_Output(self,other, " DIA_Addon_Sancho_Perm_06_01 " );	// I heard you killed Franco. Good job...
 		if ( ! Npc_IsDead(Carlos))
 		{
-			AI_Output(self,other, " DIA_Addon_Sancho_Perm_06_02 " );	// ...but now this Carlos sat on our necks. He's bad jokes...
+			AI_Output(self,other, " DIA_Addon_Sancho_Perm_06_02 " );	// ...but now Carlos sits our necks. He's bad news...
 		}
 		else
 		{
-			AI_Output(self,other, " DIA_Addon_Sancho_Perm_06_03 " );	// Are you done with Carlos too? Buddy, you really are a dangerous killer, aren't you? Leave me alone.
+			AI_Output(self,other, " DIA_Addon_Sancho_Perm_06_03 " );	// Are you done with Carlos too? Buddy, you really are a dangerous killer, aren't you? Leave me alone if you don't mind.
 		};
 		Comment_Franco = TRUE;
 	}
