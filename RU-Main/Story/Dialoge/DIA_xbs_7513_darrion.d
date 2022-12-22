@@ -342,7 +342,7 @@ func void dia_darrion_armorteach_info()
 	else
 	{
 		AI_Output(self,other, " DIA_Darrion_ArmorTeach_01_02 " );	// I've already finished working at the forge for today...
-		AI_Output(self,other, " DIA_Darrion_ArmorTeach_01_03 " );	// Come tomorrow morning, then we'll talk about it.
+		AI_Output(self,other, " DIA_Darrion_ArmorTeach_01_03 " );	// Come back tomorrow morning, then we'll talk about it.
 	};
 };
 
@@ -459,7 +459,7 @@ func void xbs_7513_darrion_oresmithteach_info()
 	if(other.lp >= 20)
 	{
 		AI_Output(self,other, " XBS_7513_Darrion_OreSmithTeach_01_01 " );	// Okay, listen carefully. The process of creating an ore blade is quite simple.
-		AI_Output(self,other, " XBS_7513_Darrion_OreSmithTeach_01_02 " );	// Take the required amount of magic ore and heat them up to the right temperature.
+		AI_Output(self,other, " XBS_7513_Darrion_OreSmithTeach_01_02 " );	// Take the required amount of magic ore and heat it up to the right temperature.
 		AI_Output(self,other, " XBS_7513_Darrion_OreSmithTeach_01_03 " );	// Then you need to combine the pieces into a single alloy, giving it the shape of a blade, and then cool it sharply.
 		AI_Output(self,other, " XBS_7513_Darrion_OreSmithTeach_01_04 " );	// As a result, you will receive a weapon whose durability will know no equal.
 		AI_Output(other,self, " XBS_7513_Darrion_OreSmithTeach_01_05 " );	// Thanks, I got it.
@@ -502,9 +502,9 @@ func void xbs_7513_darrion_blackore_info()
 {
 	AI_Output(other,self, " XBS_7513_Darrion_BlackOre_01_00 " );	// Do you know where I can find black ore?
 	AI_Output(self,other, " XBS_7513_Darrion_BlackOre_01_01 " );	// Black ore? I am afraid no. In all my life, I only once held this treasure in my hands.
-	AI_Output(self,other, " XBS_7513_Darrion_BlackOre_01_02 " );	// However, I've heard rumors that the orcs knew where to look for her. Although, whether this is true or not, I can’t say for sure.
-	AI_Output(other,self,"XBS_7513_Darrion_BlackOre_01_03");	//Понятно.
-	B_LogEntry( TOPIC_GUARDIANS , " Blacksmith Darrion heard that orcs might know where to find black ore. " );
+	AI_Output(self,other, " XBS_7513_Darrion_BlackOre_01_02 " );	// However, I've heard rumors that the orcs knew where to look for it. Although, whether this is true or not, I can’t say for sure.
+	AI_Output(other,self,"XBS_7513_Darrion_BlackOre_01_03");	//I see.
+	B_LogEntry( TOPIC_GUARDIANS , " The blacksmith Darrion heard that orcs might know where to find black ore. " );
 };
 
 instance XBS_7513_DARRION_PrioratBlade(C_Info)
@@ -529,9 +529,9 @@ func void XBS_7513_DARRION_PrioratBlade_info()
 {
 	B_GivePlayerXP(300);
 	AI_Output(other,self, " XBS_7513_DARRION_PrioratBlade_01_01 " );	// I need your advice.
-	AI_Output(self,other, " XBS_7513_DARRION_PrioratBlade_01_02 " );	// Which one?
-	AI_Output(other,self, " XBS_7513_DARRION_PrioratBlade_01_03 " );	// One rare blade fell into my hands. And I'm looking for a blacksmith who could tell me about him.
-	AI_Output(self,other, " XBS_7513_DARRION_PrioratBlade_01_06 " );	// Well, then show what you have there.
+	AI_Output(self,other, " XBS_7513_DARRION_PrioratBlade_01_02 " );	// Yes?
+	AI_Output(other,self, " XBS_7513_DARRION_PrioratBlade_01_03 " );	// A rare blade fell into my hands. And I'm looking for a blacksmith who could tell me about it.
+	AI_Output(self,other, " XBS_7513_DARRION_PrioratBlade_01_06 " );	// Well, then show me what you have there.
 	AI_Output(other,self,"XBS_7513_DARRION_PrioratBlade_01_07");	//Вот.
 	CreateInvItems(self,ItMw_1H_AssBlade_View,1);
 	AI_UnequipWeapons(self);
@@ -542,19 +542,19 @@ func void XBS_7513_DARRION_PrioratBlade_info()
 	AI_UnequipWeapons(self);
 	AI_Output(self,other, " XBS_7513_DARRION_PrioratBlade_01_08 " );	// This is indeed a very rare blade for this area.
 	AI_Output(self,other, " XBS_7513_DARRION_PrioratBlade_01_11 " );	// But if you'd ever been to Varant... (snidely)
-	AI_Output(other,self,"XBS_7513_DARRION_PrioratBlade_01_12");	//То что?
-	AI_Output(self,other,"XBS_7513_DARRION_PrioratBlade_01_13");	//То знал бы, что для тамошних жителей это оружие абсолютно не представляет из себя никакой ценности!
-	AI_Output(other,self,"XBS_7513_DARRION_PrioratBlade_01_14");	//Значит, оно из Варанта? А что это вообще такое - Варант?
-	AI_Output(self,other,"XBS_7513_DARRION_PrioratBlade_01_15");	//Варант - это огромная пустыня, которая распологается на юге Миртаны. Его местные жители - ассасины, очень часто используют подобного рода клинки.
-	AI_Output(self,other,"XBS_7513_DARRION_PrioratBlade_01_16");	//Хотя это оружие немного отличается от того, что приходилось мне видеть раньше.
-	AI_Output(other,self,"XBS_7513_DARRION_PrioratBlade_01_17");	//В каком смысле?
-	AI_Output(self,other,"XBS_7513_DARRION_PrioratBlade_01_18");	//Меня очень заинтересовала гравировка в основании клинка. Символы, изображенные на ней, мне не особо знакомы.
-	AI_Output(self,other, " XBS_7513_DARRION_PrioratBlade_01_19 " );	// However, knowing what they mean, I could say for sure who the real owner of this weapon is.
-	AI_Output(other,self, " XBS_7513_DARRION_PrioratBlade_01_20 " );	// And who can know this?
-	AI_Output(self,other, " XBS_7513_DARRION_PrioratBlade_01_21 " );	// I have no idea. (puzzled) Perhaps the Assassins themselves would recognize his master.
+	AI_Output(other,self,"XBS_7513_DARRION_PrioratBlade_01_12");	//What?
+	AI_Output(self,other,"XBS_7513_DARRION_PrioratBlade_01_13");	//In Varant, these blades are a copper a dozen!
+	AI_Output(other,self,"XBS_7513_DARRION_PrioratBlade_01_14");	//Varant? That sounds familiar...
+	AI_Output(self,other,"XBS_7513_DARRION_PrioratBlade_01_15");	//Varant is a huge desert located in the south of Myrtana. Its locals - assassins, very often use these kinds of blades.
+	AI_Output(self,other,"XBS_7513_DARRION_PrioratBlade_01_16");	//Although this weapon is different in small, almost impercebtible ways.
+	AI_Output(other,self,"XBS_7513_DARRION_PrioratBlade_01_17");	//In what sense?
+	AI_Output(self,other,"XBS_7513_DARRION_PrioratBlade_01_18");	//The engravings at the base of the blade. I've never seen their like.
+	AI_Output(self,other, " XBS_7513_DARRION_PrioratBlade_01_19 " );	// If I knew their meaning I could say for sure who the real owner of this weapon is.
+	AI_Output(other,self, " XBS_7513_DARRION_PrioratBlade_01_20 " );	// Who might be able to read it?
+	AI_Output(self,other, " XBS_7513_DARRION_PrioratBlade_01_21 " );	// I have no idea. Perhaps the Assassins themselves would recognize it.
 	AI_Output(self,other, " XBS_7513_DARRION_PrioratBlade_01_22 " );	// But where can you find at least one of them?
-	AI_Output(self,other, " XBS_7513_DARRION_PrioratBlade_01_23 " );	// They like the hot sun of Varant, rather than the local climate.
-	AI_Output(other,self, " XBS_7513_DARRION_PrioratBlade_01_24 " );	// Okay, I understand you. Thanks for the help!
+	AI_Output(self,other, " XBS_7513_DARRION_PrioratBlade_01_23 " );	// They like the hot sun of Varant, this climate is too damp for their tastes.
+	AI_Output(other,self, " XBS_7513_DARRION_PrioratBlade_01_24 " );	// Okay, I understand. Thanks for the help!
 	B_LogEntry(TOPIC_PrioratStart, " Darrion told me that the blade I found is commonly used by Assassins living in the Varant Desert, which is located in the south of Myrtana. However, he was most interested in the engraving embossed at the base of the blade. The symbols depicted on it could give a more accurate answer to my question. But to my great regret, Darrion could not decipher them. According to him, the assassins themselves could do it. " );
 	BladePrioratKnowsAssasins = TRUE;
 };
@@ -581,10 +581,10 @@ func void DIA_Darrion_DoCrossBow_info()
 {
 	B_GivePlayerXP(100);
 	AI_Output(other,self, " DIA_Darrion_DoCrossBow_01_01 " );	// Can you make crossbows?
-	AI_Output(self,other, " DIA_Darrion_DoCrossBow_01_02 " );	// Crossbows? It's you who went to the wrong place, buddy.
+	AI_Output(self,other, " DIA_Darrion_DoCrossBow_01_02 " );	// Crossbows? You're barking up the wrong tree my friend.
 	AI_Output(self,other, " DIA_Darrion_DoCrossBow_01_03 " );	// You need a good carpenter or joiner.
-	AI_Output(self,other, " DIA_Darrion_DoCrossBow_01_04 " );	// Only he, perhaps, can help you in this matter.
-	AI_Output(other,self,"DIA_Darrion_DoCrossBow_01_05");	//Понял.
+	AI_Output(self,other, " DIA_Darrion_DoCrossBow_01_04 " );	// Only they can help you in that regard.
+	AI_Output(other,self,"DIA_Darrion_DoCrossBow_01_05");	//Understood.
 	CrossBowNeedPlotnik = TRUE;
 	B_LogEntry(TOPIC_TagNorGrHunWeap, " Only a carpenter or joiner can teach me how to make crossbows. " );
 };
@@ -611,10 +611,10 @@ func void XBS_7513_DARRION_CanSellArmor_info()
 {
 	AI_Output(other,self, " XBS_7513_DARRION_CanSellArmor_01_00 " );	// You don't care about well-worn armor, do you?
 	AI_Output(self,other, " XBS_7513_DARRION_CanSellArmor_01_01 " );	// Possibly. Why are you asking?
-	AI_Output(other,self, " XBS_7513_DARRION_CanSellArmor_01_02 " );	// I have a couple of unnecessary kits lying around here, and I have no idea what to do with them now.
+	AI_Output(other,self, " XBS_7513_DARRION_CanSellArmor_01_02 " );	// I have a couple of unnecessary kits lying around here, and I have no idea what to do with them.
 	AI_Output(self,other, " XBS_7513_DARRION_CanSellArmor_01_03 " );	// Well, if so, you can bring them to me.
-	AI_Output(self,other, " XBS_7513_DARRION_CanSellArmor_01_04 " );	// Some of them can be tried to fit one of the guys in the camp.
-	AI_Output(self,other, " XBS_7513_DARRION_CanSellArmor_01_05 " );	// The rest will go as improvised material for creating new ones. Steel, leather, fabric, drastva - everything will fit!
+	AI_Output(self,other, " XBS_7513_DARRION_CanSellArmor_01_04 " );	// Some of them can be retrofitted to one of the guys in the camp.
+	AI_Output(self,other, " XBS_7513_DARRION_CanSellArmor_01_05 " );	// The rest will go as improvised material for creating new ones. Steel, leather, fabric, magic ore - everything will fit!
 	AI_Output(other,self, " XBS_7513_DARRION_CanSellArmor_01_06 " );	// What do I get out of this?
 	AI_Output(self,other, " XBS_7513_DARRION_CanSellArmor_01_07 " );	// I don't have much gold. But to exchange them for ore is easy.
 	AI_Output(other,self, " XBS_7513_DARRION_CanSellArmor_01_09 " );	// Okay, I'll think about your suggestion.
