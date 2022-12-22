@@ -43,7 +43,7 @@ func int dia_ratford_hallo_condition()
 
 func void dia_ratford_hello_info()
 {
-	AI_Output(self,other, " DIA_Ratford_Hallo_01_00 " );	// (grouchily) Any questions to Drax.
+	AI_Output(self,other, " DIA_Ratford_Hallo_01_00 " );	// Any questions, speak to Drax.
 	AI_Output(self,other, " DIA_Ratford_Hallo_01_01 " );	// He is the talkative one.
 	AI_Output(other,self, " DIA_Ratford_Hallo_15_00 " );	// Hmmm...
 	AI_StopProcessInfos(self);
@@ -72,25 +72,25 @@ func void dia_ratford_fisk_info()
 {
 	AI_Output(self,other, " DIA_Ratford_Fisk_01_00 " );	// I see you can be trusted.
 	AI_Output(self,other, " DIA_Ratford_Fisk_01_01 " );	// Tell me, did you meet a guy named Fisk in the camp there?
-	AI_Output(other,self, " DIA_Ratford_Fisk_01_02 " );	// Fisk? Of course met. And what?
+	AI_Output(other,self, " DIA_Ratford_Fisk_01_02 " );	// Fisk? Of course. What of it?
 
 	if ( FISK_ISDEAD  ==  TRUE )
 	{
-		AI_Output(other,self, " DIA_Ratford_Fisk_15_07 " );	// Only he.... how to put it... in general...
-		AI_Output(self,other, " DIA_Ratford_Fisk_01_10 " );	// WHAT? Don't pull the cat's tail!
-		AI_Output(other,self, " DIA_Ratford_Fisk_15_08 " );	// In general, he died.
+		AI_Output(other,self, " DIA_Ratford_Fisk_15_07 " );	// Only he.... how to put it... in essence...
+		AI_Output(self,other, " DIA_Ratford_Fisk_01_10 " );	// WHAT? Out with it man!
+		AI_Output(other,self, " DIA_Ratford_Fisk_15_08 " );	// He died.
 		AI_Output(self,other, " DIA_Ratford_Fisk_01_11 " );	// Damn!
-		AI_Output(other,self, " DIA_Ratford_Fisk_15_09 " );	// What, bad news?
+		AI_Output(other,self, " DIA_Ratford_Fisk_15_09 " );	// You seem broken up about it?
 		AI_Output(self,other, " DIA_Ratford_Fisk_01_13 " );	// Ah, never mind - forget about it.
 	}
 	else
 	{
-		AI_Output(self,other, " DIA_Ratford_Fisk_01_03 " );	// And how is he? As always, well done.
-		AI_Output(other,self, " DIA_Ratford_Fisk_15_02 " );	// In general, yes, not bad. Trades in all sorts of junk.
-		AI_Output(self,other, " DIA_Ratford_Fisk_01_04 " );	// Then if you ever see him again, give him Ratford's regards.
-		AI_Output(other,self,"DIA_Ratford_Fisk_15_03");	//И все?
-		AI_Output(self,other, " DIA_Ratford_Fisk_01_05 " );	// And that's it. I think this will be enough.
-		AI_Output(other,self, " DIA_Ratford_Fisk_01_08 " );	// Okay, if I meet, I'll say hello from you.
+		AI_Output(self,other, " DIA_Ratford_Fisk_01_03 " );	// And how is he?
+		AI_Output(other,self, " DIA_Ratford_Fisk_15_02 " );	// He still trades in all sorts of junk.
+		AI_Output(self,other, " DIA_Ratford_Fisk_01_04 " );	// If you ever see him again, give him Ratford's regards.
+		AI_Output(other,self,"DIA_Ratford_Fisk_15_03");	//Will do. Anything else?
+		AI_Output(self,other, " DIA_Ratford_Fisk_01_05 " );	// Nope.
+		AI_Output(other,self, " DIA_Ratford_Fisk_01_08 " );	// Okay, if I see him I'll send your regards.
 		AI_Output(self,other, " DIA_Ratford_Fisk_15_05 " );	// Thanks man.
 		MIS_RATFORDFISK = LOG_Running;
 		Log_CreateTopic(TOPIC_RATFORDFISK,LOG_MISSION);
@@ -123,21 +123,21 @@ func int dia_ratford_fiskok_condition()
 func void dia_ratford_fiskok_info()
 {
 	AI_Output(other,self, " DIA_Ratford_FiskOk_01_00 " );	// I said hello to Fisk for you.
-	AI_Output(self,other,"DIA_Ratford_FiskOk_01_01");	//Да? И что?
+	AI_Output(self,other,"DIA_Ratford_FiskOk_01_01");	//What did he say?
 	AI_Output(other,self, " DIA_Ratford_FiskOk_01_02 " );	// He asked me to give you this package.
 	B_GiveInvItems(other,self,itmi_fiskpacket,1);
 	Npc_RemoveInvItems(self,itmi_fiskpacket,1);
 	AI_Output(self,other, " DIA_Ratford_FiskOk_01_03 " );	// Now that's another matter! Oh, he's an old rascal... (laughs)
 	AI_Output(other,self, " DIA_Ratford_FiskOk_01_04 " );	// What's your deal with Fisk?
-	AI_Output(self,other, " DIA_Ratford_FiskOk_01_05 " );	// Before the Barrier collapsed, I sold Fisk all sorts of junk - mostly hunting trophies, of course.
-	AI_Output(self,other, " DIA_Ratford_FiskOk_01_06 " );	// It so happened that Fisk did not have time to pay for the last batch of goods due to all these events here.
-	AI_Output(self,other, " DIA_Ratford_FiskOk_01_07 " );	// Well, he owes me some money. In general, the usual thing.
-	AI_Output(other,self, " DIA_Ratford_FiskOk_01_08 " );	// Well, then everything is clear. Apparently, that's why he had such a displeased face when I hinted about you.
-	AI_Output(self,other, " DIA_Ratford_FiskOk_01_09 " );	// M-yes, still the same miser - what do you want from a merchant.
+	AI_Output(self,other, " DIA_Ratford_FiskOk_01_05 " );	// Before the Barrier collapsed, I sold Fisk all sorts of junk - mostly hunting trophies.
+	AI_Output(self,other, " DIA_Ratford_FiskOk_01_06 " );	// It so happened that Fisk did not have time to pay for the last batch of goods due to all these recent events.
+	AI_Output(self,other, " DIA_Ratford_FiskOk_01_07 " );	// Well, he owes me some money. 
+	AI_Output(other,self, " DIA_Ratford_FiskOk_01_08 " );	// So that's why he had such a displeased face when I hinted about you.
+	AI_Output(self,other, " DIA_Ratford_FiskOk_01_09 " );	// M-yes, still the same old miser - what do you want from a merchant.
 	AI_Output(self,other, " DIA_Ratford_FiskOk_01_10 " );	// Oh well. I should probably thank you for your help...
 	if (Player_IsApprentice == APP_Bosper)
 	{
-		AI_Output(self,other, " DIA_Ratford_FiskOk_01_11 " );	// You're a hunter too, I see. Here, take these hunting trophies. Surely you will find someone to sell more expensive.
+		AI_Output(self,other, " DIA_Ratford_FiskOk_01_11 " );	// You're a hunter too, I see. Here, take these hunting trophies. Surely you will find someone to sell them to.
 		CreateInvItems(self,ItAt_ShadowHorn,5);
 		B_GiveInvItems(self,other,ItAt_ShadowHorn,5);
 	}
@@ -191,28 +191,28 @@ func void DIA_Ratford_Capitan_info()
 	AI_Output(other,self, " DIA_Ratford_Capitan_01_02 " );	// Don't you want to go on a little sea trip again?
 	AI_Output(self,other, " DIA_Ratford_Capitan_01_03 " );	// What? What are you talking about, boy?
 	AI_Output(other,self, " DIA_Ratford_Capitan_01_04 " );	// About the fact that I desperately need a captain who is ready to go to the open sea.
-	AI_Output(self,other, " DIA_Ratford_Capitan_01_05 " );	// Hmmm...(grinning) You need a ship to do that. You have it?
+	AI_Output(self,other, " DIA_Ratford_Capitan_01_05 " );	// Hmmm...(grinning) You need a ship to do that. You have one?
 	AI_Output(other,self, " DIA_Ratford_Capitan_01_06 " );	// Of course. And you can see it if you look down right now.
-	AI_Output(self,other, " DIA_Ratford_Capitan_01_07 " );	// Do you mean orc drakar?
-	AI_Output(other,self,"DIA_Ratford_Capitan_01_08");	//В точку!
-	AI_Output(self,other, " DIA_Ratford_Capitan_01_09 " );	// Are you crazy, mate! Orcs won't let you near him.
-	AI_Output(other,self, " DIA_Ratford_Capitan_01_10 " );	// They've all been dead for a long time.
+	AI_Output(self,other, " DIA_Ratford_Capitan_01_07 " );	// Do you mean that orc drakar?
+	AI_Output(other,self,"DIA_Ratford_Capitan_01_08");	//The same!
+	AI_Output(self,other, " DIA_Ratford_Capitan_01_09 " );	// Are you crazy, mate! The orcs won't let you near it?
+	AI_Output(other,self, " DIA_Ratford_Capitan_01_10 " );	// They're too dead to care.
 	AI_Output(other,self, " DIA_Ratford_Capitan_01_11 " );	// So right now the dracar is empty and waiting for someone to use it.
-	AI_Output(self,other, " DIA_Ratford_Capitan_01_12 " );	// Here is the news! Well, if so, then I'm certainly in business.
+	AI_Output(self,other, " DIA_Ratford_Capitan_01_12 " );	// Well, if so, then we're certainly in business.
 	AI_Output(other,self, " DIA_Ratford_Capitan_01_13 " );	// Are you sure you can handle it?
-	AI_Output(self,other, " DIA_Ratford_Capitan_01_14 " );	// I'll manage, don't hesitate! And where do you want to sail?
+	AI_Output(self,other, " DIA_Ratford_Capitan_01_14 " );	// I'll manage, don't you worry! And where do you want to sail?
 	AI_Output(other,self, " DIA_Ratford_Capitan_01_15 " );	// I'm not going anywhere yet. Your boss will be a mercenary named Silvio.
 	AI_Output(other,self, " DIA_Ratford_Capitan_01_16 " );	// And with him a dozen more thugs.
 	AI_Output(other,self, " DIA_Ratford_Capitan_01_17 " );	// And as far as I know, they planned to sail to the mainland.
-	AI_Output(self,other, " DIA_Ratford_Capitan_01_18 " );	// Then I need a map. Otherwise, we can easily go astray in big water.
+	AI_Output(self,other, " DIA_Ratford_Capitan_01_18 " );	// Then I need a map. Otherwise, we can easily go astray in open water.
 	AI_Output(self,other, " DIA_Ratford_Capitan_01_19 " );	// And another five hundred gold for the job. I won't help him for free.
 	AI_Output(other,self, " DIA_Ratford_Capitan_01_20 " );	// Good. I will arrange payment. What card do you need?
 	AI_Output(self,other, " DIA_Ratford_Capitan_01_21 " );	// Usual nautical chart showing the course to the mainland.
-	AI_Output(other,self, " DIA_Ratford_Capitan_01_22 " );	// And where can I get it?
-	AI_Output(self,other, " DIA_Ratford_Capitan_01_23 " );	// You can probably get it in the city. And without her, I will not go out to sea. Do not even ask.
+	AI_Output(other,self, " DIA_Ratford_Capitan_01_22 " );	// And where can I get one?
+	AI_Output(self,other, " DIA_Ratford_Capitan_01_23 " );	// You can probably get it in the city. And without one, I will not go out to sea. Do not even ask.
 	AI_Output(other,self, " DIA_Ratford_Capitan_01_24 " );	// Okay, I'll try to get it for you.
 	RatfordNeedMap = TRUE;
-	B_LogEntry(Topic_SylvioCrew, " Ratford has agreed to be captain. But to sail to the mainland, he needs a chart with a chart on his course. " );
+	B_LogEntry(Topic_SylvioCrew, " Ratford has agreed to be captain. But to sail to the mainland, he needs a chart with a map of his course. " );
 };
 
 instance DIA_Ratford_Capitan_Done(C_Info)
@@ -222,7 +222,7 @@ instance DIA_Ratford_Capitan_Done(C_Info)
 	condition = DIA_Ratford_Capitan_Done_condition;
 	information = DIA_Ratford_Capitan_Done_info;
 	permanent = FALSE;
-	description = " Here's your card. " ;
+	description = " Here's your map. " ;
 };
 
 func int DIA_Ratford_Capitan_Done_condition()
@@ -249,7 +249,7 @@ func void DIA_Ratford_Capitan_Done_info()
 	AI_Output(self,other, " DIA_Ratford_Capitan_Done_01_07 " );	// Then I'll go to the ship and wait for them there.
 	AI_Output(self,other, " DIA_Ratford_Capitan_Done_01_08 " );	// Drax, by the way, also expressed a desire to leave this island.
 	AI_Output(self,other, " DIA_Ratford_Capitan_Done_01_09 " );	// So he's coming with me.
-	AI_Output(other,self, " DIA_Ratford_Capitan_Done_01_10 " );	// Drakar is big. I think there is enough space for everyone.
+	AI_Output(other,self, " DIA_Ratford_Capitan_Done_01_10 " );	// The Drakar is big. I think there is enough space for everyone.
 	AI_Output(self,other, " DIA_Ratford_Capitan_Done_01_11 " );	// Okay, see you then.
 	RatfordAgree = TRUE;
 	AI_StopProcessInfos(self);
@@ -281,7 +281,7 @@ func void DIA_Ratford_SylvioDebts_info()
 	AI_Output(self,other, " DIA_Ratford_SylvioDebts_01_03 " );	// I think so. But it will take some time.
 	AI_Output(self,other, " DIA_Ratford_SylvioDebts_01_04 " );	// By the way, your buddy Silvio never paid me.
 	AI_Output(self,other, " DIA_Ratford_SylvioDebts_01_05 " );	// There was an agreement - five hundred coins!
-	AI_Output(self,other, " DIA_Ratford_SylvioDebts_01_06 " );	// And he constantly feeds me breakfast.
+	AI_Output(self,other, " DIA_Ratford_SylvioDebts_01_06 " );	// And he constantly asks me for breakfast.
 	AI_Output(other,self, " DIA_Ratford_SylvioDebts_01_07 " );	// I'll talk to him.
 	MIS_SylvioDebts = LOG_Running;
 	Log_CreateTopic(Topic_SylvioDebts,LOG_MISSION);
@@ -314,13 +314,13 @@ func void DIA_Ratford_SylvioDebts_Done_info()
 	AI_Output(other,self, " DIA_Ratford_SylvioDebts_Done_01_00 " );	// Here's your money.
 	B_GiveInvItems(other,self,ItMi_Gold,500);
 	Npc_RemoveInvItems(self,ItMi_Gold,500);
-	AI_Output(self,other, " DIA_Ratford_SylvioDebts_Done_01_01 " );	// Thank you. How did you manage to knock them out of it?
+	AI_Output(self,other, " DIA_Ratford_SylvioDebts_Done_01_01 " );	// Thank you. How did you manage to knock them out of him?
 	AI_Output(other,self, " DIA_Ratford_SylvioDebts_Done_01_02 " );	// I just finished off the bastard.
 	AI_Output(self,other, " DIA_Ratford_SylvioDebts_Done_01_03 " );	// (laughs) I see you are not to be trifled with.
-	AI_Output(other,self, " DIA_Ratford_SylvioDebts_Done_01_04 " );	// Yes - especially when they don't keep their word.
+	AI_Output(other,self, " DIA_Ratford_SylvioDebts_Done_01_04 " );	// Yes - especially when people don't keep their word.
 	AI_Output(self,other, " DIA_Ratford_SylvioDebts_Done_01_05 " );	// Okay. I hope you don't kill me.
-	AI_Output(other,self, " DIA_Ratford_SylvioDebts_Done_01_06 " );	// Well, you don't seem to owe me anything.
-	AI_Output(self,other, " DIA_Ratford_SylvioDebts_Done_01_07 " );	// That's right, mate. Nothing!
+	AI_Output(other,self, " DIA_Ratford_SylvioDebts_Done_01_06 " );	// Well, you haven't broken a promise to me, yet.
+	AI_Output(self,other, " DIA_Ratford_SylvioDebts_Done_01_07 " );	// That's right, mate. And I won't!
 	MIS_SylvioDebts = LOG_Success;
 	Log_SetTopicStatus(Topic_SylvioDebts,LOG_Success);
 	B_LogEntry(Topic_SylvioDebts, " I gave the money to Ratford. " );
@@ -347,7 +347,7 @@ func int DIA_Ratford_Drakar_Perm_condition()
 
 func void DIA_Ratford_Drakar_Perm_info()
 {
-	AI_Output(other,self, " DIA_Ratford_Drakar_Perm_01_00 " );	// How is the fix progressing?
+	AI_Output(other,self, " DIA_Ratford_Drakar_Perm_01_00 " );	// How are the repairs progressing?
 	AI_Output(self,other, " DIA_Ratford_Drakar_Perm_01_01 " );	// Doing what I can... (shrugging) It's not that simple!
-	AI_Output(other,self,"DIA_Ratford_Drakar_Perm_01_02");	//Понимаю.
+	AI_Output(other,self,"DIA_Ratford_Drakar_Perm_01_02");	//I see.
 };
