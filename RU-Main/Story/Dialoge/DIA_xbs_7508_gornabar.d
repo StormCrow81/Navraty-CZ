@@ -44,30 +44,30 @@ func int dia_gornabar_hallo_condition()
 func void dia_gornabar_hallo_info()
 {
 	B_TurnToNpc(other,self);
-	AI_Output(other,self, " DIA_GorNaBar_Hallo_15_00 " );	// Hey! Do I know you! You are the guard who mined the saliva of crawlers in the old mine. But...
+	AI_Output(other,self, " DIA_GorNaBar_Hallo_15_00 " );	// Hey! Do I know you? You are the guard who mined the saliva of crawlers in the old mine. But...
 	AI_Output(other,self, " DIA_GorNaBar_Hallo_15_01 " );	// How did you get out of the Old Mine? I remember it crashed...
-	AI_Output(self,other, " DIA_GorNaBar_Hallo_09_00 " );	// Ahh... I recognize you, crawler wrestler.
+	AI_Output(self,other, " DIA_GorNaBar_Hallo_09_00 " );	// Ahh... I recognize you, crawler wrangler.
 	AI_Output(self,other, " DIA_GorNaBar_Hallo_09_01 " );	// It's a long story. Basically only the passage collapsed. The lower levels remained practically intact.
-	AI_Output(self,other, " DIA_GorNaBar_Hallo_09_02 " );	// But the minds of many in the mine staggered so that it collapsed to the very foundation. I will not talk about the madness that gripped everyone at that moment.
-	AI_Output(self,other, " DIA_GorNaBar_Hallo_09_03 " );	// I hid in a dead corner and prayed - to all the gods, known and unknown to me.
+	AI_Output(self,other, " DIA_GorNaBar_Hallo_09_02 " );	// The miners feared the worst, basically went hysterical. It was crazy.
+	AI_Output(self,other, " DIA_GorNaBar_Hallo_09_03 " );	// I hid in a corner and prayed - to all the gods, known and unknown to me.
 	AI_Output(self,other, " DIA_GorNaBar_Hallo_09_04 " );	// And someone heard my prayers.
 	AI_Output(self,other, " DIA_GorNaBar_Hallo_09_05 " );	// After the earthquake subsided and I managed to recover a little, I suddenly felt that a cool wind was blowing over me, coming from a narrow crevice in the blockage.
-	AI_Output(self,other, " DIA_GorNaBar_Hallo_09_06 " );	// The scroll of transformation into a meat bug helped me get out of this damned mine through it.
+	AI_Output(self,other, " DIA_GorNaBar_Hallo_09_06 " );	// A scroll of transformation into a meat bug helped me get out of that damned mine through it.
 	AI_Output(self,other, " DIA_GorNaBar_Hallo_09_08 " );	// Where have you been all this time?
 	AI_Output(other,self, " DIA_GorNaBar_Hallo_15_02 " );	// Still on the run and fighting.
-	AI_Output(self,other, " DIA_GorNaBar_Hallo_09_09 " );	// Got it. In general, everything is the same as always.
+	AI_Output(self,other, " DIA_GorNaBar_Hallo_09_09 " );	// Got it. Everything is the same as always.
 	AI_Output(self,other, " DIA_GorNaBar_Hallo_09_10 " );	// If you need something - contact us.
 	AI_Output(other,self, " DIA_GorNaBar_Hallo_15_02A " );	// What exactly are you doing here?
 	AI_Output(self,other, " DIA_GorNaBar_Hallo_09_10A " );	// I'm in charge of the Guardians and keep order here in the camp. If you have any problems, come to me.
 	AI_Output(self,other, " DIA_GorNaBar_Hallo_09_10B " );	// I can also sell you some items from our inventory.
 	AI_Output(other,self, " DIA_GorNaBar_Hallo_15_03 " );	// Do you happen to have the scrolls of transforming into a meat bug? I did not see them in Khorinis.
-	AI_Output(self,other, " DIA_GorNaBar_Hallo_09_11 " );	// There are a couple of things.
+	AI_Output(self,other, " DIA_GorNaBar_Hallo_09_11 " );	// Among other things.
 	AI_Output(other,self, " DIA_GorNaBar_Hallo_15_04 " );	// Where can I sleep here?
 	AI_Output(self,other, " DIA_GorNaBar_Hallo_09_12 " );	// There is an empty bed in the far right tent.
 	AI_Output(self,other, " DIA_GorNaBar_Hallo_09_13 " );	// You can rest there.
 	b_heroknowforestbase();
 	Log_CreateTopic(TOPIC_XBS,LOG_NOTE);
-	B_LogEntry( TOPIC_XBS , " Gor Na Bar is the commander of the Guardians in the forest camp. You can buy various goods from him. " );
+	B_LogEntry( TOPIC_XBS , " Gor Na Bar is the commander of the Guardians in the forest camp. I can buy various goods from him. " );
 	AI_StopProcessInfos(self);
 };
 
@@ -145,8 +145,8 @@ func void dia_gornabar_pmschulden_info()
 			tsettext1 = ConcatStrings(IntToString(GLOBAL_COAST_MURDER),"");
 			tsettext2 = ConcatStrings(tsettext1,PRINT_MURDERCOUNT2_COAST);
 			tsettext3 = ConcatStrings(PRINT_MURDERCOUNT_COAST,tsettext2);
-			AI_Output(self,other, " DIA_GorNabar_PMSchulden_08_37 " );	// All the brothers in the camp are fed up with your cruel killers.
-			AI_Output(self,other, " DIA_GorNabar_PMSchulden_08_38 " );	// And the only option to stop your antics with impunity is to kill you...
+			AI_Output(self,other, " DIA_GorNabar_PMSchulden_08_37 " );	// All the brothers in the camp are fed up with your cruelty.
+			AI_Output(self,other, " DIA_GorNabar_PMSchulden_08_38 " );	// And the only option to stop your antics is to kill you...
 			AI_ReadyMeleeWeapon(self);
 			AI_Output(self,other, " DIA_GorNabar_PMSchulden_08_39 " );	// Prepare to die!
 		}
@@ -155,9 +155,9 @@ func void dia_gornabar_pmschulden_info()
 			tsettext1 = ConcatStrings(IntToString(GLOBAL_COAST_ATTACK),"");
 			tsettext2 = ConcatStrings(tsettext1,PRINT_ATTACKCOUNT2_COAST);
 			tsettext3 = ConcatStrings(PRINT_ATTACKCOUNT_COAST,tsettext2);
-			AI_Output(self,other, " DIA_GorNabar_PMSchulden_08_40 " );	// More precisely, he is alone... this question.
-			AI_Output(self,other, " DIA_GorNabar_PMSchulden_08_41 " );	// All the brothers in the camp are tired of your constant fights.
-			AI_Output(self,other, " DIA_GorNabar_PMSchulden_08_42 " );	// And the only option to stop your antics with impunity is to kill you...
+			AI_Output(self,other, " DIA_GorNabar_PMSchulden_08_40 " );	// He's alone.
+			AI_Output(self,other, " DIA_GorNabar_PMSchulden_08_41 " );	// All the brothers in the camp are tired of your constant fighting.
+			AI_Output(self,other, " DIA_GorNabar_PMSchulden_08_42 " );	// And the only option to stop your antics is to kill you...
 			AI_ReadyMeleeWeapon(self);
 			AI_Output(self,other, " DIA_GorNabar_PMSchulden_08_43 " );	// Prepare to die!
 		}
@@ -166,14 +166,14 @@ func void dia_gornabar_pmschulden_info()
 			tsettext1 = ConcatStrings(IntToString(GLOBAL_COAST_THEFT),"");
 			tsettext2 = ConcatStrings(tsettext1,PRINT_THEFTCOUNT2_COAST);
 			tsettext3 = ConcatStrings(PRINT_THEFTCOUNT_COAST,tsettext2);
-			AI_Output(self,other, " DIA_GorNabar_PMSchulden_08_44 " );	// More precisely, he is alone... this question.
+			AI_Output(self,other, " DIA_GorNabar_PMSchulden_08_44 " );	// He's alone.
 			AI_Output(self,other, " DIA_GorNabar_PMSchulden_08_45 " );	// There is no place for thieves in our camp!
-			AI_Output(self,other, " DIA_GorNabar_PMSchulden_08_46 " );	// And the only option to stop your antics with impunity is to kill you...
+			AI_Output(self,other, " DIA_GorNabar_PMSchulden_08_46 " );	// And the only option to stop your antics is to kill you...
 			AI_ReadyMeleeWeapon(self);
 			AI_Output(self,other, " DIA_GorNabar_PMSchulden_08_47 " );	// Prepare to die!
 		};
 		Log_CreateTopic(TOPIC_DIPLOM,LOG_NOTE);
-		B_LogEntry( TOPIC_DIPLOM , " I ruined my relationship with the forest brothers because of my constant outrages. Now they consider me a bandit there! " );
+		B_LogEntry( TOPIC_DIPLOM , " I ruined my relationship with the forest brothers. Now they consider me a bandit! " );
 		Info_ClearChoices(dia_gornabar_pmschulden);
 		Info_ClearChoices(dia_gornabar_petzmaster);
 		Info_AddChoice(dia_gornabar_pmschulden, " Wait...(it's time to leave) " ,dia_gornabar_pmschulden_attackmurder);
@@ -190,13 +190,13 @@ func void dia_gornabar_pmschulden_info()
 			};
 			if ( GORNABAR_DEBT  <  1000 )
 			{
-				AI_Output(self,other, " DIA_GorNabar_PMSchulden_10_03 " );	// But I hope you make up for them all! In general, this...
+				AI_Output(self,other, " DIA_GorNabar_PMSchulden_10_03 " );	// But I hope you make up for it all! 
 			}
 			else
 			{
 				AI_Output(self,other, " DIA_GorNabar_PMSchulden_10_04 " );	// I didn't expect this from you. The amount is...
 			};
-			AI_Output(other,self,"DIA_GorNaBar_PMAdd_15_00");	//Сколько?
+			AI_Output(other,self,"DIA_GorNaBar_PMAdd_15_00");	//How much?
 			if ( GORNABAR_DEBT  <=  1000 )
 			{
 				B_Say_Gold(self,other,GORNABAR_SCHULDEN);
@@ -214,7 +214,7 @@ func void dia_gornabar_pmschulden_info()
 			AI_Output(self,other, " DIA_GorNabar_PMSchulden_10_05 " );	// Found out a few new things.
 			if(GORNABAR_LASTPETZCRIME == CRIME_MURDER)
 			{
-				AI_Output(self,other, " DIA_GorNabar_PMSchulden_10_06 " );	// Somehow no one accuses you of murder anymore.
+				AI_Output(self,other, " DIA_GorNabar_PMSchulden_10_06 " );	// Somehow no one ps accusing you of murder anymore.
 				GLOBAL_COAST_MURDER = GLOBAL_COAST_MURDER - 1;
 				if(GLOBAL_COAST_MURDER < 0)
 				{
@@ -223,7 +223,7 @@ func void dia_gornabar_pmschulden_info()
 			};
 			if((GORNABAR_LASTPETZCRIME == CRIME_THEFT) || ((GORNABAR_LASTPETZCRIME > CRIME_THEFT) && (B_GetGreatestPetzCrime(self) < CRIME_THEFT)))
 			{
-				AI_Output(self,other, " DIA_GorNabar_PMSchulden_10_07 " );	// No one remembers seeing you while stealing.
+				AI_Output(self,other, " DIA_GorNabar_PMSchulden_10_07 " );	// No one remembers seeing you stealing.
 				GLOBAL_COAST_THEFT = GLOBAL_COAST_THEFT - 1;
 				if(GLOBAL_COAST_THEFT < 0)
 				{
@@ -243,11 +243,11 @@ func void dia_gornabar_pmschulden_info()
 			{
 				AI_Output(self,other, " DIA_GorNabar_PMSchulden_10_09 " );	// Apparently, the guys forgave you for everything you did.
 			};
-			AI_Output(self,other, " DIA_GorNabar_PMSchulden_10_10 " );	// Do not go so far in your affairs!
+			AI_Output(self,other, " DIA_GorNabar_PMSchulden_10_10 " );	// Be more discreet from now on?
 			if(B_GetGreatestPetzCrime(self) == CRIME_NONE)
 			{
-				AI_Output(self,other, " DIA_GorNabar_PMSchulden_10_11 " );	// And don't make trouble here!
-				AI_Output(self,other, " DIA_GorNabar_PMSchulden_10_12 " );	// We've had enough of them lately.
+				AI_Output(self,other, " DIA_GorNabar_PMSchulden_10_11 " );	// And don't make any more trouble here!
+				AI_Output(self,other, " DIA_GorNabar_PMSchulden_10_12 " );	// We've had enough of that.
 				GORNABAR_DEBT = 0 ;
 				GORNABAR_LASTPETZCOUNTER = 0;
 				GORNABAR_LASTPETZCRIME = CRIME_NONE;
@@ -255,7 +255,7 @@ func void dia_gornabar_pmschulden_info()
 			else
 			{
 				AI_Output(self,other, " DIA_GorNabar_PMSchulden_10_13 " );	// To be clear: you must pay the full compensation.
-				AI_Output(other,self,"DIA_GorNaBar_PMAdd_15_00A");	//Сколько?
+				AI_Output(other,self,"DIA_GorNaBar_PMAdd_15_00A");	//How much?
 				if ( GORNABAR_DEBT  <=  1000 )
 				{
 					B_Say_Gold(self,other,GORNABAR_SCHULDEN);
@@ -365,9 +365,9 @@ func void dia_gornabar_petzmaster_info()
 			tsettext1 = ConcatStrings(IntToString(GLOBAL_COAST_MURDER),"");
 			tsettext2 = ConcatStrings(tsettext1,PRINT_MURDERCOUNT2_COAST);
 			tsettext3 = ConcatStrings(PRINT_MURDERCOUNT_COAST,tsettext2);
-			AI_Output(self,other, " DIA_GorNabar_PETZMASTER_08_48 " );	// More precisely, he is alone... this question.
-			AI_Output(self,other, " DIA_GorNabar_PETZMASTER_08_49 " );	// All the brothers in the camp are fed up with your cruel killers.
-			AI_Output(self,other, " DIA_GorNabar_PETZMASTER_08_50 " );	// And the only option to stop your antics with impunity is to kill you...
+			AI_Output(self,other, " DIA_GorNabar_PETZMASTER_08_48 " );	// He's alone.
+			AI_Output(self,other, " DIA_GorNabar_PETZMASTER_08_49 " );	// All the brothers in the camp know you are a murderer.
+			AI_Output(self,other, " DIA_GorNabar_PETZMASTER_08_50 " );	// And the only option to stop you to kill you...
 			AI_ReadyMeleeWeapon(self);
 			AI_Output(self,other, " DIA_GorNabar_PETZMASTER_08_51 " );	// Prepare to die!
 		}
@@ -376,9 +376,9 @@ func void dia_gornabar_petzmaster_info()
 			tsettext1 = ConcatStrings(IntToString(GLOBAL_COAST_ATTACK),"");
 			tsettext2 = ConcatStrings(tsettext1,PRINT_ATTACKCOUNT2_COAST);
 			tsettext3 = ConcatStrings(PRINT_ATTACKCOUNT_COAST,tsettext2);
-			AI_Output(self,other, " DIA_GorNabar_PETZMASTER_08_52 " );	// More precisely, he is alone... this question.
-			AI_Output(self,other, " DIA_GorNabar_PETZMASTER_08_53 " );	// All the brothers in the camp are tired of your constant fights.
-			AI_Output(self,other, " DIA_GorNabar_PETZMASTER_08_54 " );	// And the only option to stop your antics with impunity is to kill you...
+			AI_Output(self,other, " DIA_GorNabar_PETZMASTER_08_52 " );	// He's alone.
+			AI_Output(self,other, " DIA_GorNabar_PETZMASTER_08_53 " );	// All the brothers in the camp are tired of your constant fighting.
+			AI_Output(self,other, " DIA_GorNabar_PETZMASTER_08_54 " );	// And the only option to stop you is to kill you...
 			AI_ReadyMeleeWeapon(self);
 			AI_Output(self,other, " DIA_GorNabar_PETZMASTER_08_55 " );	// Prepare to die!
 		}
@@ -387,14 +387,14 @@ func void dia_gornabar_petzmaster_info()
 			tsettext1 = ConcatStrings(IntToString(GLOBAL_COAST_THEFT),"");
 			tsettext2 = ConcatStrings(tsettext1,PRINT_THEFTCOUNT2_COAST);
 			tsettext3 = ConcatStrings(PRINT_THEFTCOUNT_COAST,tsettext2);
-			AI_Output(self,other, " DIA_GorNabar_PETZMASTER_08_56 " );	// More precisely, he is alone... this question.
+			AI_Output(self,other, " DIA_GorNabar_PETZMASTER_08_56 " );	// He's alone.
 			AI_Output(self,other, " DIA_GorNabar_PETZMASTER_08_57 " );	// There is no place for thieves in our camp!
-			AI_Output(self,other, " DIA_GorNabar_PETZMASTER_08_58 " );	// And the only option to stop your antics with impunity is to kill you...
+			AI_Output(self,other, " DIA_GorNabar_PETZMASTER_08_58 " );	// And the only option to stop you is to kill you...
 			AI_ReadyMeleeWeapon(self);
 			AI_Output(self,other, " DIA_GorNabar_PETZMASTER_08_59 " );	// Prepare to die!
 		};
 		Log_CreateTopic(TOPIC_DIPLOM,LOG_NOTE);
-		B_LogEntry( TOPIC_DIPLOM , " I ruined my relationship with the forest brothers because of my constant outrages. Now they consider me a bandit there! " );
+		B_LogEntry( TOPIC_DIPLOM , " I ruined my relationship with the forest brothers. Now they consider me a bandit! " );
 		Info_ClearChoices(dia_gornabar_pmschulden);
 		Info_ClearChoices(dia_gornabar_petzmaster);
 		Info_AddChoice(dia_gornabar_petzmaster, " Wait...(it's time to leave) " ,dia_gornabar_petzmaster_attackmurder);
@@ -403,24 +403,24 @@ func void dia_gornabar_petzmaster_info()
 	{
 		if(B_GetGreatestPetzCrime(self) == CRIME_MURDER)
 		{
-			AI_Output(self,other, " DIA_GorNabar_PETZMASTER_10_02 " );	// Murder is the last thing we'd like to see here!
+			AI_Output(self,other, " DIA_GorNabar_PETZMASTER_10_02 " );	// Cold blooded murder is the last thing we need here!
 			GORNABAR_DEBT = B_GetTotalPetzCounter(self) *  1500 ;
 			if((PETZCOUNTER_COAST_THEFT + PETZCOUNTER_COAST_ATTACK) > 0)
 			{
 				AI_Output(self,other, " DIA_GorNabar_PETZMASTER_10_04 " );	// I don't even remember the rest of the things you did.
 			};
-			AI_Output(self,other, " DIA_GorNabar_PETZMASTER_10_06 " );	// You'll pay for the funeral and the booze for the guys.
-			AI_Output(self,other, " DIA_GorNabar_PETZMASTER_10_07 " );	// This won't fix what you've done, and you'll have to answer to the gods for your crime.
+			AI_Output(self,other, " DIA_GorNabar_PETZMASTER_10_06 " );	// You'll pay for the funeral and the afterparty booze.
+			AI_Output(self,other, " DIA_GorNabar_PETZMASTER_10_07 " );	// It won't fix what you've done, though, and you'll still have to answer to the gods for your crime.
 			AI_Output(self,other, " DIA_GorNabar_PETZMASTER_10_08 " );	// But this will at least reconcile everyone with the fact that you are still hanging around here.
 		};
 		if(B_GetGreatestPetzCrime(self) == CRIME_THEFT)
 		{
-			AI_Output(self,other, " DIA_GorNabar_PETZMASTER_10_09 " );	// I heard you're into stealing?
+			AI_Output(self,other, " DIA_GorNabar_PETZMASTER_10_09 " );	// I heard you're into larceny?
 			if(PETZCOUNTER_COAST_ATTACK > 0)
 			{
 				AI_Output(self,other, " DIA_GorNabar_PETZMASTER_10_10 " );	// In addition to other unpleasant things.
 			};
-			AI_Output(self,other, " DIA_GorNabar_PETZMASTER_10_11 " );	// Shouldn't have done this.
+			AI_Output(self,other, " DIA_GorNabar_PETZMASTER_10_11 " );	// Shouldn't have done that.
 			AI_Output(self,other, " DIA_GorNabar_PETZMASTER_10_12 " );	// We need to pay the guys some compensation to make amends!
 			GORNABAR_SCHULDEN = B_GetTotalPetzCounter(self) *  500 ;
 		};
@@ -454,7 +454,7 @@ func void dia_gornabar_petzmaster_info()
 
 func void dia_gornabar_petzmaster_paynow()
 {
-	AI_Output(other,self,"DIA_GorNabar_PETZMASTER_PayNow_15_00");	//Я заплачу!
+	AI_Output(other,self,"DIA_GorNabar_PETZMASTER_PayNow_15_00");	//Fine!
 	B_GiveInvItems(other,self,ItMi_Gold, GORNABAR_DEBT );
 	AI_Output(self,other, " DIA_GorNabar_PETZMASTER_PayNow_10_01 " );	// Okay, then I'll calm the guys down. But don't do that again!
 	B_GrantAbsolution(LOC_COAST);
@@ -468,8 +468,8 @@ func void dia_gornabar_petzmaster_paynow()
 func void dia_gornabar_petzmaster_paylater()
 {
 	AI_Output(other,self, " DIA_GorNabar_PETZMASTER_PayLater_15_00 " );	// I don't have enough gold!
-	AI_Output(self,other, " DIA_GorNabar_PETZMASTER_PayLater_10_01 " );	// Then find him as soon as possible.
-	AI_Output(self,other, " DIA_GorNabar_PETZMASTER_PayLater_10_02 " );	// And don't create more trouble - we're not here to find them.
+	AI_Output(self,other, " DIA_GorNabar_PETZMASTER_PayLater_10_01 " );	// Then find some.
+	AI_Output(self,other, " DIA_GorNabar_PETZMASTER_PayLater_10_02 " );	// And don't create more trouble - or else.
 	GORNABAR_LASTPETZCOUNTER = B_GetTotalPetzCounter(self);
 	GORNABAR_LASTPETZCRIME = B_GetGreatestPetzCrime(self);
 	AI_StopProcessInfos(self);
@@ -500,9 +500,9 @@ func void dia_gornabar_smith_info()
 		AI_Output(self,other, " DIA_GorNaBar_Smith_01_01 " );	// Yes! Darrion from our camp.
 		if(Npc_GetDistToWP(darrion,"WP_COAST_BASE_23") < 500)
 		{
-			AI_Output(self,other, " DIA_GorNaBar_Smith_01_02 " );	// Here he sits.
+			AI_Output(self,other, " DIA_GorNaBar_Smith_01_02 " );	// He's over here.
 		};
-		AI_Output(self,other, " DIA_GorNaBar_Smith_01_03 " );	// He is here only in the evenings, but he lives and works in the mountains - he has a forge there.
+		AI_Output(self,other, " DIA_GorNaBar_Smith_01_03 " );	// He is here mostly in the evenings, but he lives and works in the mountains - he has a forge there.
 	}
 	else
 	{
@@ -533,9 +533,9 @@ func int dia_gornabar_headill_condition()
 func void dia_gornabar_headill_info()
 {
 	AI_Output(other,self, " DIA_GorNaBar_HeadIll_15_00 " );	// Did you have headaches?
-	AI_Output(self,other, " DIA_GorNaBar_HeadIll_01_00 " );	// At first, yes, and very strong. I attributed it to the consequences of being in the mine.
-	AI_Output(self,other, " DIA_GorNaBar_HeadIll_01_01 " );	// But Netbek explained to me that this is someone's dark sorcery.
-	AI_Output(self,other, " DIA_GorNaBar_HeadIll_01_02 " );	// Here, in the camp, they disappeared and did not bother me anymore.
+	AI_Output(self,other, " DIA_GorNaBar_HeadIll_01_00 " );	// At first, yes, bad ones. I attributed it to the consequences of working in the mine.
+	AI_Output(self,other, " DIA_GorNaBar_HeadIll_01_01 " );	// But Netbek explained to me that it wass someone's dark sorcery.
+	AI_Output(self,other, " DIA_GorNaBar_HeadIll_01_02 " );	// Here, in the camp, they disappeared and don't bother me anymore.
 	AI_StopProcessInfos(self);
 };
 
@@ -633,7 +633,7 @@ func void dia_gornabar_trade_info()
 		};
 	};
 
-	AI_Output(other,self, " DIA_GorNaBar_TRADE_15_00 " );	// Show your stocks.
+	AI_Output(other,self, " DIA_GorNaBar_TRADE_15_00 " );	// Show me your wares.
 
 	if(GORNABAR_OW_MAP == FALSE)
 	{
@@ -642,7 +642,7 @@ func void dia_gornabar_trade_info()
 	};
 	if(newscmeatbug == TRUE)
 	{
-		AI_Output(self,other, " DIA_GorNaBar_TRADE_09_01 " );	// Good news - I accidentally found another scroll of transformation into a meat bug.
+		AI_Output(self,other, " DIA_GorNaBar_TRADE_09_01 " );	// Good news - I stumbled upon another scroll of transformation into a meat bug.
 	};
 	if((TplBelt_01 == FALSE) && (hero.guild == GIL_TPL))
 	{
