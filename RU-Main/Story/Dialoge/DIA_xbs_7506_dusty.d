@@ -79,13 +79,13 @@ func int dia_dusty_hallo_condition()
 func void dia_dusty_hallo_info()
 {
 	AI_Output(self,other, " DIA_Dusty_Hallo_01_00 " );	// I think I know you.
-	AI_Output(self,other, " DIA_Dusty_Hallo_01_01 " );	// It was you who brought me to Swamp Camp. Do you remember?
-	AI_Output(other,self,"DIA_Dusty_Hallo_15_00");	//Ммм...
+	AI_Output(self,other, " DIA_Dusty_Hallo_01_01 " );	// It was you who brought me to the Swamp Camp. Do you remember?
+	AI_Output(other,self,"DIA_Dusty_Hallo_15_00");	//Hmmm...
 	AI_Output(self,other, " DIA_Dusty_Hallo_01_02 " );	// My name is Dusty! I was still a miner in the Old Camp then.
-	AI_Output(other,self, " DIA_Dusty_Hallo_15_01 " );	// I seem to remember. I hope you're not offended that I dragged you into this business?
-	AI_Output(self,other, " DIA_Dusty_Hallo_01_03 " );	// No. It's my own fault - I got into the case without finding out anything about it.
-	AI_Output(self,other, " DIA_Dusty_Hallo_01_04 " );	// True, I didn’t really delve into their stupidity.
-	AI_Output(self,other, " DIA_Dusty_Hallo_01_05 " );	// I slept more than I listened. After the mine is not up to high matters, you know.
+	AI_Output(other,self, " DIA_Dusty_Hallo_15_01 " );	// I seem to remember. I hope you're not offended that I dragged you into that crazy business?
+	AI_Output(self,other, " DIA_Dusty_Hallo_01_03 " );	// No. It's my own fault - I got into that mess myself.
+	AI_Output(self,other, " DIA_Dusty_Hallo_01_04 " );	// I didn’t really buy their bullshit anyway.
+	AI_Output(self,other, " DIA_Dusty_Hallo_01_05 " );	// I slept more than I listened. The weed was great though.
 	b_heroknowforestbase();
 	AI_StopProcessInfos(self);
 };
