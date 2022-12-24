@@ -40,13 +40,13 @@ func int dia_netbek_firsthallo_condition()
 func void dia_netbek_firsthallo_info()
 {
 	AI_Output(self,other, " DIA_Netbek_Hallo_01_00 " );	// Greetings, old friend.
-	AI_Output(other,self, " DIA_Netbek_Hallo_01_01 " );	// How?! Do you still remember me?
-	AI_Output(self,other, " DIA_Netbek_Hallo_01_02 " );	// (smiles) How about. Although I was then mostly occupied only with conversations with the trees around me, but it is difficult to forget a person like you!
+	AI_Output(other,self, " DIA_Netbek_Hallo_01_01 " );	// You still remember me?
+	AI_Output(self,other, " DIA_Netbek_Hallo_01_02 " );	// Of course. Although I was mostly concerned with the trees around me back then, someone like you is hard to forget!
 	AI_Output(other,self, " DIA_Netbek_Hallo_01_03 " );	// Well, that's nice. What happened here?
 	AI_Output(self,other, " DIA_Netbek_Hallo_01_04 " );	// Nothing. But if you're wondering how I was able to stay alive, then it's very simple.
 	AI_Output(self,other, " DIA_Netbek_Hallo_01_05 " );	// My trees gave me protection from the Sleeper's magic - they saved me from the madness and terrible death that befell my other brothers.
-	AI_Output(self,other, " DIA_Netbek_Hallo_01_06 " );	// And now they brought me to a deity that helps to gain wisdom and know the true meaning of this life.
-	AI_Output(self,other, " DIA_Netbek_Hallo_01_08 " );	// This is the spirit of nature, whose power you should surely feel around you right now. Is not it?
+	AI_Output(self,other, " DIA_Netbek_Hallo_01_06 " );	// And now they brought me to a deity that helps to gain wisdom and know the true meaning of all life.
+	AI_Output(self,other, " DIA_Netbek_Hallo_01_08 " );	// She is the spirit of nature, whose power you should surely feel around you right now. 
 };
 
 
@@ -98,32 +98,32 @@ func int dia_netbek_hallo4_condition()
 func void dia_netbek_hello_brothers()
 {
 	AI_Output(other,self, " DIA_Netbek_Hallo_15_05 " );	// What about the other deities?
-	AI_Output(self,other, " DIA_Netbek_Hallo_01_09 " );	// (arrogantly) You mean Innos and the others? What do I care about these brothers playing their games!
-	AI_Output(other,self, " DIA_Netbek_Hallo_15_06 " );	// Innos brings light to this world - is this a game?
-	AI_Output(self,other, " DIA_Netbek_Hallo_01_10 " );	// You mistook for the light the shine of the coins stacked near his statues.
+	AI_Output(self,other, " DIA_Netbek_Hallo_01_09 " );	// You mean Innos and the others? What should I care about selfish brothers playing their eternal games!
+	AI_Output(other,self, " DIA_Netbek_Hallo_15_06 " );	// Innos brings light to this world - is that a game?
+	AI_Output(self,other, " DIA_Netbek_Hallo_01_10 " );	// You have mistaken the "light" from the shimmering of gold coins piled on his shrines.
 	AI_Output(other,self, " DIA_Netbek_Hallo_15_07 " );	// And you're not tempted by the power that Beliar promises?
-	AI_Output(self,other, " DIA_Netbek_Hallo_01_11 " );	// Could he have created the forest that my God created here?
+	AI_Output(self,other, " DIA_Netbek_Hallo_01_11 " );	// Could he have created the forest that my Goddess created here? He knows only death.
 	AI_Output(other,self, " DIA_Netbek_Hallo_15_08 " );	// What about Adanos then?
-	AI_Output(self,other, " DIA_Netbek_Hallo_01_12 " );	// Perhaps only Adanos is worthy of respect. He is wise in his middle way.
-	AI_Output(self,other, " DIA_Netbek_Hallo_01_20 " );	// And its water brings life to my trees.
+	AI_Output(self,other, " DIA_Netbek_Hallo_01_12 " );	// Perhaps Adanos is worthy of respect, true. There is wisdom in his neutrality.
+	AI_Output(self,other, " DIA_Netbek_Hallo_01_20 " );	// And his water brings life to everything that grows.
 	NetBekIsDruid = TRUE;
 };
 
 func void dia_netbek_hello_orcs()
 {
-	AI_Output(other,self, " DIA_Netbek_Hallo_15_09 " );	// How does your god feel about orcs?
-	AI_Output(self,other, " DIA_Netbek_Hallo_01_13 " );	// He is the father of all living creatures.
+	AI_Output(other,self, " DIA_Netbek_Hallo_15_09 " );	// How does your goddess feel about orcs?
+	AI_Output(self,other, " DIA_Netbek_Hallo_01_13 " );	// She is the mother of all living creatures.
 	AI_Output(other,self, " DIA_Netbek_Hallo_15_10 " );	// So why did the orcs leave here?
-	AI_Output(self,other, " DIA_Netbek_Hallo_01_14 " );	// I thought these little animals loved my trees, but they wanted to CUT them down!
+	AI_Output(self,other, " DIA_Netbek_Hallo_01_14 " );	// I thought those animals loved my trees, but they wanted to cut them down!
 	AI_Output(self,other, " DIA_Netbek_Hallo_01_15 " );	// Now they're gone, and they won't enter my forest again.
 };
 
 func void dia_netbek_hello_runes()
 {
-	AI_Output(other,self, " DIA_Netbek_Hallo_15_12 " );	// Since your god is so powerful, does that mean he can give you the knowledge of new runes?
-	AI_Output(self,other, " DIA_Netbek_Hallo_01_16 " );	// Do you see these runes somewhere?
+	AI_Output(other,self, " DIA_Netbek_Hallo_15_12 " );	// Since your goddess is so powerful, does that mean she can give you the knowledge of new runes?
+	AI_Output(self,other, " DIA_Netbek_Hallo_01_16 " );	// Do you see any runes here?
 	AI_Output(self,other, " DIA_Netbek_Hallo_01_19 " );	// True, I sometimes use transformation stones to transform into various animals.
-	AI_Output(self,other, " DIA_Netbek_Hallo_01_21 " );	// But it's rather difficult to call them runes.
+	AI_Output(self,other, " DIA_Netbek_Hallo_01_21 " );	// But it's rather difficult to call them "runes".
 	NETBEK_HALLO4 = TRUE;
 };
 
@@ -148,12 +148,12 @@ func int dia_netbek_OrcFight_condition()
 func void dia_netbek_OrcFight_info()
 {
 	AI_Output(other,self, " DIA_Netbek_OrcFight_01_01 " );	// Is there any way you can help me fight the orcs?
-	AI_Output(self,other, " DIA_Netbek_OrcFight_01_02 " );	// Of course. But only if you help me solve one small problem.
+	AI_Output(self,other, " DIA_Netbek_OrcFight_01_02 " );	// Of course. But only if you help me solve a small problem.
 	AI_Output(self,other, " DIA_Netbek_OrcFight_01_03 " );	// Quite recently, a huge monster appeared in my forest - a cave troll.
-	AI_Output(self,other, " DIA_Netbek_OrcFight_01_04 " );	// This creature only brings destruction to my forest, trampling plants and breaking trees. He must be stopped before he causes more trouble!
+	AI_Output(self,other, " DIA_Netbek_OrcFight_01_04 " );	// This creature only brings destruction to my forest, trampling plants and breaking trees. He must be stopped!
 	AI_Output(other,self, " DIA_Netbek_OrcFight_01_05 " );	// Do you want me to kill him?
 	AI_Output(self,other, " DIA_Netbek_OrcFight_01_06 " );	// It's up to you to decide. The main thing is that it no longer harms my trees.
-	AI_Output(other,self, " DIA_Netbek_OrcFight_01_07 " );	// Okay, I'll talk to this guy.
+	AI_Output(other,self, " DIA_Netbek_OrcFight_01_07 " );	// Okay, I'll see what I can do.
 	MIS_EvilTroll = LOG_Running;
 	Log_CreateTopic(TOPIC_EvilTroll,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_EvilTroll,LOG_Running);
@@ -183,7 +183,7 @@ func void dia_netbek_OrcFight_Done_info()
 {
 	B_GivePlayerXP(500);
 	AI_Output(other,self, " DIA_Netbek_OrcFight_Done_01_01 " );	// I've dealt with your guest.
-	AI_Output(self,other, " DIA_Netbek_OrcFight_Done_01_02 " );	// Good. Now my creatures are not in danger.
+	AI_Output(self,other, " DIA_Netbek_OrcFight_Done_01_02 " );	// Good. Now safety will return to these woods.
 
 	if(other.attribute[ATR_DEXTERITY] > other.attribute[ATR_STRENGTH])
 	{
@@ -197,7 +197,7 @@ func void dia_netbek_OrcFight_Done_info()
 		{
 			AI_Output(self,other, " DIA_Netbek_OrcFight_Done_01_03 " );	// Take this bow as a token of my gratitude.
 			B_GiveInvItems(self,other, ITRW_KMR_KADAT_BOW_01 , 1 );
-			AI_Output(self,other, " DIA_Netbek_OrcFight_Done_01_04 " );	// It was created by nature itself! It will reliably protect you from your enemies.
+			AI_Output(self,other, " DIA_Netbek_OrcFight_Done_01_04 " );	// It was created by nature itself! It will always strive to protect you from your enemies.
 		};
 	}
 	else
@@ -241,14 +241,14 @@ func int dia_netbek_dragons_condition()
 
 func void dia_netbek_dragons_info()
 {
-	AI_Output(other,self, " DIA_Netbek_Dragons_15_00 " );	// I'm going to fight the dragons. Can't your god help me?
-	AI_Output(self,other, " DIA_Netbek_Dragons_01_00 " );	// He recognizes freedom not only for you, but also for dragons. Even though their thoughts are dark and full of destruction.
-	AI_Output(self,other, " DIA_Netbek_Dragons_01_01 " );	// But since this destruction has gone too far, it can help.
-	AI_Output(self,other, " DIA_Netbek_Dragons_01_02 " );	// Here, take this little gift from him - the force of nature will protect you.
+	AI_Output(other,self, " DIA_Netbek_Dragons_15_00 " );	// I'm going to fight the dragons. Can your goddess help me?
+	AI_Output(self,other, " DIA_Netbek_Dragons_01_00 " );	// She recognizes freedom not only for you, but also for dragons. Even though their thoughts are dark and full of destruction.
+	AI_Output(self,other, " DIA_Netbek_Dragons_01_01 " );	// But since this destruction has gone too far, she will help.
+	AI_Output(self,other, " DIA_Netbek_Dragons_01_02 " );	// Here, take this little gift from her - the force of nature will protect you.
 	B_GiveInvItems(self,other,ITRU_SUMTREANT,1);
 	AI_Output(other,self, " DIA_Netbek_Dragons_01_03 " );	// Hmmm... what is this?
 	AI_Output(self,other, " DIA_Netbek_Dragons_01_04 " );	// This is the magic stone of the druids.
-	AI_Output(self,other, " DIA_Netbek_Dragons_01_05 " );	// With it, you can summon the faithful servants of my God to help you.
+	AI_Output(self,other, " DIA_Netbek_Dragons_01_05 " );	// With it, you can summon the faithful servants of my Goddess to help you.
 	AI_Output(self,other, " DIA_Netbek_Dragons_01_06 " );	// Their wrath has helped me defend this place from enemies more than once.
 };
 
@@ -258,14 +258,14 @@ func void netbekaboutmoney()
 {
 	if(NETBEKSAYONETIMEMONEY == FALSE)
 	{
-		AI_Output(other,self,"DIA_Netbek_AboutMoney_15_00");	//И?
+		AI_Output(other,self,"DIA_Netbek_AboutMoney_15_00");	//And?
 		AI_Output(self,other, " DIA_Netbek_AboutMoney_01_01 " );	// Do you expect a reward from me?
 		AI_Output(self,other, " DIA_Netbek_AboutMoney_01_02 " );	// Do you do everything in your life for money?
-		AI_Output(self,other, " DIA_Netbek_AboutMoney_01_03 " );	// Don't expect them from me. You can see that I don't even have anywhere to put them.
-		AI_Output(self,other, " DIA_Netbek_AboutMoney_01_04 " );	// You need a wallet to deposit money. You have to put your wallet in your pants. There is no longer a need for a sword to protect these pants and purse.
-		AI_Output(self,other, " DIA_Netbek_AboutMoney_01_05 " );	// Where pants and a sword, there is a house. Where there is a house, there are many, many thoughts - how to save all this pile of junk that you bought with your gold.
-		AI_Output(self,other, " DIA_Netbek_AboutMoney_01_06 " );	// And with these thoughts, there will be no time left for my trees, nor for a conversation with my God.
-		AI_Output(self,other, " DIA_Netbek_AboutMoney_01_07 " );	// Then why should I? And don't ask me for more money.
+		AI_Output(self,other, " DIA_Netbek_AboutMoney_01_03 " );	// Don't expect that from me. I do not own a wallet.
+		AI_Output(self,other, " DIA_Netbek_AboutMoney_01_04 " );	// You need a wallet to deposit money. You have to put your wallet in your pants. There is no longer a need for a sword to protect these pants or purse.
+		AI_Output(self,other, " DIA_Netbek_AboutMoney_01_05 " );	// Where pants and a sword are stored, there is a house. Where there is a house, there are thoughts - thoughts of things and the gaining of more things.
+		AI_Output(self,other, " DIA_Netbek_AboutMoney_01_06 " );	// And with these thoughts, there will be no time left for my trees, nor for conversations with my Goddess.
+		AI_Output(self,other, " DIA_Netbek_AboutMoney_01_07 " );	// In short, I'm broke.
 		NETBEKSAYONETIMEMONEY = TRUE;
 	};
 };
@@ -321,15 +321,15 @@ func int dia_netbek_lastdragon_condition()
 func void dia_netbek_lastdragon_info()
 {
 	AI_Output(other,self, " DIA_Netbek_LastDragon_01_00 " );	// I'm going to the temple of Irdorath to fight the dark servants of Beliar there.
-	AI_Output(other,self, " DIA_Netbek_LastDragon_01_01 " );	// Can't your god help me with something?
-	AI_Output(self,other, " DIA_Netbek_LastDragon_01_02 " );	// He already warned me about your coming here.
-	AI_Output(self,other, " DIA_Netbek_LastDragon_01_03 " );	// And with his help, I made a special potion just for you.
+	AI_Output(other,self, " DIA_Netbek_LastDragon_01_01 " );	// Can't your goddess help me with something?
+	AI_Output(self,other, " DIA_Netbek_LastDragon_01_02 " );	// She already warned me about your coming here.
+	AI_Output(self,other, " DIA_Netbek_LastDragon_01_03 " );	// And with her help, I made a special potion just for you.
 	AI_Output(other,self, " DIA_Netbek_LastDragon_01_04 " );	// What is this potion?
 	AI_Output(self,other, " DIA_Netbek_LastDragon_01_05 " );	// Like I said, this is a very unusual potion. It grants you immortality!
 	AI_Output(self,other, " DIA_Netbek_LastDragon_01_06 " );	// True, only for a while and only once.
 	AI_Output(self,other, " DIA_Netbek_LastDragon_01_07 " );	// Use it only when absolutely necessary. Here, take it.
 	B_GiveInvItems(self,other,itpo_xmagicdef,1);
-	AI_Output(other,self, " DIA_Netbek_LastDragon_01_08 " );	// Well, thanks.
+	AI_Output(other,self, " DIA_Netbek_LastDragon_01_08 " );	// Immortality...
 	AI_Output(self,other, " DIA_Netbek_LastDragon_01_09 " );	// And remember, your main battle may not be what you imagine it to be.
 };
 
@@ -357,7 +357,7 @@ func void dia_netbek_dementors_info()
 {
 	AI_Output(other,self, " DIA_Netbek_Dementors_15_00 " );	// I need help to defeat the dark wanderers. Will you help me?
 	AI_Output(self,other, " DIA_Netbek_Dementors_01_00 " );	// You can handle it yourself.
-	AI_Output(self,other, " DIA_Netbek_Dementors_01_01 " );	// It's hard for me to kill my yesterday's brothers, even if they have already died!
+	AI_Output(self,other, " DIA_Netbek_Dementors_01_01 " );	// It's hard for me to kill erstwhile brothers, even if they are dead already!
 
 	if((hero.guild == GIL_PAL) || (hero.guild == GIL_KDF) || (hero.guild == GIL_NOV))
 	{
@@ -390,7 +390,7 @@ func void dia_netbek_headill_info()
 	AI_Output(other,self, " DIA_Netbek_HeadIll_15_00 " );	// Does anyone in the camp have headaches? Or bad dreams?
 	AI_Output(self,other, " DIA_Netbek_HeadIll_01_00 " );	// I sense dark magic circling this valley.
 	AI_Output(self,other, " DIA_Netbek_HeadIll_01_01 " );	// It's really dangerous to be here! Especially my former Swamp camp brethren.
-	AI_Output(self,other, " DIA_Netbek_HeadIll_01_02 " );	// But my God gives me the strength and ability to protect this place. Here they are completely safe.
+	AI_Output(self,other, " DIA_Netbek_HeadIll_01_02 " );	// But my Goddess gives me the strength and ability to protect this place. Here they are completely safe.
 };
 
 
@@ -424,18 +424,18 @@ func void dia_netbek_healing_info()
 		if(SC_ObsessionTimes < 1)
 		{
 			AI_Output(other,self, " DIA_Netbek_Healing_15_01 " );	// And I also have some discomfort after meeting with the dark wanderers.
-			AI_Output(self,other, " DIA_Netbek_Healing_01_00 " );	// They have infected your soul with obsession!
+			AI_Output(self,other, " DIA_Netbek_Healing_01_00 " );	// They have cursed your soul...
 			AI_Output(self,other, " DIA_Netbek_Healing_01_01 " );	// You must go to the mages of Innos.
-			AI_Output(self,other, " DIA_Netbek_Healing_01_02 " );	// However, you asked me to cure you - and my God taught me this.
+			AI_Output(self,other, " DIA_Netbek_Healing_01_02 " );	// However, you asked me to cure you - and my Goddess taught me how.
 			NETBEKHEALOBSESSION = TRUE;
 		}
 		else
 		{
-			AI_Output(other,self, " DIA_Netbek_Healing_15_02 " );	// And I'm obsessed again.
+			AI_Output(other,self, " DIA_Netbek_Healing_15_02 " );	// I'm cursed  again.
 			if(NETBEKHEALOBSESSION == FALSE)
 			{
 				AI_Output(self,other, " DIA_Netbek_Healing_01_03 " );	// You should go to the mages of Innos.
-				AI_Output(self,other, " DIA_Netbek_Healing_01_04 " );	// But you asked me to cure you - and my God taught me that.
+				AI_Output(self,other, " DIA_Netbek_Healing_01_04 " );	// But you asked me to cure you - and my Goddess taught me how.
 				NETBEKHEALOBSESSION = TRUE;
 			}
 			else if(MIS_OCGateOpen == TRUE)
@@ -444,7 +444,7 @@ func void dia_netbek_healing_info()
 			}
 			else
 			{
-				AI_Output(self,other,"DIA_Netbek_Healing_01_07");	//Хорошо.
+				AI_Output(self,other,"DIA_Netbek_Healing_01_07");	//Thanks.
 			};
 		};
 		AI_WaitTillEnd(self,other);
@@ -455,7 +455,7 @@ func void dia_netbek_healing_info()
 	}
 	else if(hero.attribute[ATR_HITPOINTS] >= hero.attribute[ATR_HITPOINTS_MAX])
 	{
-		AI_Output(self,other,"DIA_Netbek_Healing_01_05");	//Ты здоров.
+		AI_Output(self,other,"DIA_Netbek_Healing_01_05");	//You are healthy.
 		AI_StopProcessInfos(self);
 		return;
 	}
@@ -477,7 +477,7 @@ func void dia_netbek_healing_info()
 		AI_Print(PRINT_FullyHealed);
 	};
 	AI_Output(self,other, " DIA_Netbek_Healing_01_10 " );	// Here. Now you are healthy again.
-	AI_Output(other,self,"DIA_Netbek_Healing_15_03");	//Спасибо.
+	AI_Output(other,self,"DIA_Netbek_Healing_15_03");	//Thank you.
 };
 
 
@@ -506,8 +506,8 @@ func void dia_netbek_whathappened_info()
 	AI_Output(self,other, " DIA_Netbek_WhatHappened_01_02 " );	// Orcs tried to attack our camp a couple of days ago, but they didn't succeed.
 	AI_Output(self,other, " DIA_Netbek_WhatHappened_01_03 " );	// I'm sure they won't show up here again.
 	AI_Output(self,other, " DIA_Netbek_WhatHappened_01_05 " );	// Look around, and you will understand everything yourself.
-	AI_Output(other,self, " DIA_Netbek_WhatHappened_01_06 " );	// Was it your god that protected you?
-	AI_Output(self,other, " DIA_Netbek_WhatHappened_01_07 " );	// (smiles) Of course. He will always help us.
+	AI_Output(other,self, " DIA_Netbek_WhatHappened_01_06 " );	// Was it your goddess that protected you?
+	AI_Output(self,other, " DIA_Netbek_WhatHappened_01_07 " );	// (smiles) Of course. She will always help us.
 };
 
 instance DIA_NETBEK_GUARDIANSKNOW(C_Info)
@@ -517,7 +517,7 @@ instance DIA_NETBEK_GUARDIANSKNOW(C_Info)
 	condition = dia_netbek_guardiansknow_condition;
 	information = dia_netbek_guardiansknow_info;
 	permanent = FALSE;
-	description = " What does your god know about Guardians? " ;
+	description = " What does your goddess know about Guardians? " ;
 };
 
 func int dia_netbek_guardiansknow_condition()
@@ -531,23 +531,23 @@ func int dia_netbek_guardiansknow_condition()
 func void dia_netbek_guardiansknow_info()
 {
 	B_GivePlayerXP(400);
-	AI_Output(other,self, " DIA_Netbek_GuardiansKnow_01_01 " );	// What does your god know about Guardians?
-	AI_Output(self,other, " DIA_Netbek_GuardiansKnow_01_02 " );	// He knows everything. But it seems to me that you wanted to ask me something completely different. Is not it?
+	AI_Output(other,self, " DIA_Netbek_GuardiansKnow_01_01 " );	// What does your god know about the Guardians?
+	AI_Output(self,other, " DIA_Netbek_GuardiansKnow_01_02 " );	// She knows everything. But it seems to me that you wanted to ask me something completely different. Is not it?
 	AI_Output(other,self, " DIA_Netbek_GuardiansKnow_01_03 " );	// Yes, you're right. I really intended to ask you a very different question.
-	AI_Output(self,other, " DIA_Netbek_GuardiansKnow_01_04 " );	// Will my god be able to destroy these ancient creatures you call Guardians? I guess you wanted to know about it.
+	AI_Output(self,other, " DIA_Netbek_GuardiansKnow_01_04 " );	// Will my goddess be able to destroy these ancient creatures you call Guardians? Am I right?
 	AI_Output(other,self, " DIA_Netbek_GuardiansKnow_01_05 " );	// Apparently, nothing can be hidden from you.
-	AI_Output(self,other, " DIA_Netbek_GuardiansKnow_01_06 " );	// Well, then I'll answer your question. Unfortunately, his power in this world is not so great as to oppose the power of the Creators themselves.
-	AI_Output(self,other, " DIA_Netbek_GuardiansKnow_01_07 " );	// But despite this, he is quite capable of helping those who are destined by fate to challenge them.
+	AI_Output(self,other, " DIA_Netbek_GuardiansKnow_01_06 " );	// Well, then I'll answer your question. Unfortunately, her power in this world is not so great as to oppose the power of the Creators themselves.
+	AI_Output(self,other, " DIA_Netbek_GuardiansKnow_01_07 " );	// But despite this, she is quite capable of helping those who are destined by fate to challenge them.
 	AI_Output(other,self, " DIA_Netbek_GuardiansKnow_01_08 " );	// And who is capable of this?
-	AI_Output(self,other, " DIA_Netbek_GuardiansKnow_01_09 " );	// In this world, there is only one person on whose actions the fate of the gods depends - you yourself.
-	AI_Output(other,self,"DIA_Netbek_GuardiansKnow_01_10");	//Я?!
-	AI_Output(self,other, " DIA_Netbek_GuardiansKnow_01_11 " );	// (seriously) You're no mere mortal, and you should have figured that out by now. Ordinary people cannot perform deeds and actions like yours.
-	AI_Output(other,self, " DIA_Netbek_GuardiansKnow_01_15 " );	// Am I the chosen one of the gods?!
-	AI_Output(self,other, " DIA_Netbek_GuardiansKnow_01_16 " );	// Haven't you figured it out yet? Only you obey Innos, Beliar or Adanos differently than everyone else.
-	AI_Output(self,other, " DIA_Netbek_GuardiansKnow_01_17 " );	// This is what makes you different from others. You always chose your own path, you yourself chose which of them to serve and which not.
+	AI_Output(self,other, " DIA_Netbek_GuardiansKnow_01_09 " );	// In this world, there is only one person on whose actions the fate of the gods depends - you.
+	AI_Output(other,self,"DIA_Netbek_GuardiansKnow_01_10");	//Why am I not surprised?!
+	AI_Output(self,other, " DIA_Netbek_GuardiansKnow_01_11 " );	// You are no mere mortal, and you should have figured that out by now. Ordinary people could not have done the things you have done.
+	AI_Output(other,self, " DIA_Netbek_GuardiansKnow_01_15 " );	// What the fuck does that even mean? I'm just a man!
+	AI_Output(self,other, " DIA_Netbek_GuardiansKnow_01_16 " );	// Haven't you figured it out yet? You serve Innos, Beliar or Adanos differently than everyone else.
+	AI_Output(self,other, " DIA_Netbek_GuardiansKnow_01_17 " );	// You have always chosen your own path. You serve or disregard the gods as you see fit. They do not control you, quite the oppsite in fact.
 	AI_Output(self,other, " DIA_Netbek_GuardiansKnow_01_18 " );	// But now the time has come when you are required to stand up for everything that exists in this world.
 	AI_Output(self,other, " DIA_Netbek_GuardiansKnow_01_19 " );	// And only you can protect this world from the evil of the Guardians!
- 	B_LogEntry( TOPIC_GUARDIANS , " I turned to Netbek for help, believing that the deity he serves is quite capable of defeating the Guardians. However, his answer somewhat surprised me. According to him, only I can defeat the Guardians, and his god can only help me in this. Apparently, the fate of this world and its gods really lies only on my shoulders. However, as always ... " );
+ 	B_LogEntry( TOPIC_GUARDIANS , " I turned to Netbek for help, believing that the deity he serves is quite capable of defeating the Guardians. However, his answer somewhat surprised me. According to him, only I can defeat the Guardians, and his goddess can only help me in this. Apparently, the fate of this world and its gods really lies only on my shoulders. However, as always ... " );
 };
 
 instance DIA_NETBEK_GUARDIANSHOWHELP(C_Info)
@@ -557,7 +557,7 @@ instance DIA_NETBEK_GUARDIANSHOWHELP(C_Info)
 	condition = dia_netbek_guardianshowhelp_condition;
 	information = dia_netbek_guardianshowhelp_info;
 	permanent = FALSE;
-	description = " And how will your god help me? " ;
+	description = " And how will your goddess help me? " ;
 };
 
 func int dia_netbek_guardianshowhelp_condition()
@@ -571,8 +571,8 @@ func int dia_netbek_guardianshowhelp_condition()
 func void dia_netbek_guardianshowhelp_info()
 {
 	B_GivePlayerXP(200);
-	AI_Output(other,self, " DIA_Netbek_GuardiansHowHelp_01_01 " );	// And how will your god help me?
-	AI_Output(self,other, " DIA_Netbek_GuardiansHowHelp_01_02 " );	// He will tell you how to prepare to fight these ancient creatures.
+	AI_Output(other,self, " DIA_Netbek_GuardiansHowHelp_01_01 " );	// And how will your goddess help me?
+	AI_Output(self,other, " DIA_Netbek_GuardiansHowHelp_01_02 " );	// She will tell you how to prepare to fight these ancient creatures.
 	AI_Output(other,self, " DIA_Netbek_GuardiansHowHelp_01_04 " );	// Good. What exactly do I need to do?
 	AI_Output(self,other, " DIA_Netbek_GuardiansHowHelp_01_05 " );	// First, you should turn to the gods themselves. Ask them to endow you with their divine strength and power.
 	AI_Output(self,other, " DIA_Netbek_GuardiansHowHelp_01_06 " );	// I'm sure any of the altars, or any sacred place marked with their sign, would do just fine.
@@ -581,14 +581,14 @@ func void dia_netbek_guardianshowhelp_info()
 	AI_Output(self,other, " DIA_Netbek_GuardiansHowHelp_01_09 " );	// Since ordinary mortal weapons or rune magic are unlikely to harm them.
 	AI_Output(self,other, " DIA_Netbek_GuardiansHowHelp_01_12 " );	// Keepers, in addition to their divine essence, are also creatures of various forms of elements.
 	AI_Output(self,other, " DIA_Netbek_GuardiansHowHelp_01_13 " );	// So first you have to find some very rare artifacts that contain the true structure of each of them.
-	AI_Output(self,other, " DIA_Netbek_GuardiansHowHelp_01_14 " );	// Well, after that, you will have to somehow put all their power into the rune or blade of your choice.
+	AI_Output(self,other, " DIA_Netbek_GuardiansHowHelp_01_14 " );	// After that, you will have to somehow put all their power into the rune or blade of your choice.
 	AI_Output(self,other, " DIA_Netbek_GuardiansHowHelp_01_18 " );	// After you receive the blessing of the gods, I'll tell you exactly where to look for them.
-	AI_Output(other,self, " DIA_Netbek_GuardiansHowHelp_01_21 " );	// As you say. Anything else?
+	AI_Output(other,self, " DIA_Netbek_GuardiansHowHelp_01_21 " );	// Anything else?
 	AI_Output(self,other, " DIA_Netbek_GuardiansHowHelp_01_22 " );	// Well, the last thing you need is to find the way to the sacred abode of the Guardians!
-	AI_Output(self,other, " DIA_Netbek_GuardiansHowHelp_01_23 " );	// And with this, to tell the truth, I don't know what to do anymore.
-	AI_Output(other,self, " DIA_Netbek_GuardiansHowHelp_01_24 " );	// This is just not a problem. I think I had a teleportation rune somewhere leading straight to their lair.
-	AI_Output(self,other, " DIA_Netbek_GuardiansHowHelp_01_25 " );	// True? Well, if so, then you only have to fulfill the first two conditions.
-	B_LogEntry( TOPIC_GUARDIANS , " Netbek told me how to prepare myself to fight the Guardians. First, I must turn to the gods to get their strength and power. After that, I will need to create a special magic weapon that can defeat the Guardians. To create it, you will need several very rare artifacts, the power of which is capable of endowing him with unprecedented power. Apparently, the artifacts themselves will be quite difficult to find, but Netbek promised to help me with this as well. " );
+	AI_Output(self,other, " DIA_Netbek_GuardiansHowHelp_01_23 " );	// This is the end of my knowledge.
+	AI_Output(other,self, " DIA_Netbek_GuardiansHowHelp_01_24 " );	// No problem. I think I had a teleportation rune somewhere leading straight to their lair.
+	AI_Output(self,other, " DIA_Netbek_GuardiansHowHelp_01_25 " );	// Truly? Well, if so, then you only have to fulfill the first two conditions.
+	B_LogEntry( TOPIC_GUARDIANS , " Netbek told me how to prepare myself to fight the Guardians. First, I must turn to the gods to get their strength and power. After that, I will need to create a special magic weapon that can defeat the Guardians. To create it, you will need several very rare artifacts, the power of which is capable of endowing it with unprecedented power. Apparently, the artifacts themselves will be quite difficult to find, but Netbek promised to help me with this as well. " );
 };
 
 instance DIA_NETBEK_HOWGETBLESSED(C_Info)
@@ -598,7 +598,7 @@ instance DIA_NETBEK_HOWGETBLESSED(C_Info)
 	condition = DIA_NETBEK_HOWGETBLESSED_condition;
 	information = DIA_NETBEK_HOWGETBLESSED_info;
 	permanent = FALSE;
-	description = " And you think the gods are just giving me their power like that? " ;
+	description = " And you think the gods are just going to give me their power, just like that? " ;
 };
 
 func int DIA_NETBEK_HOWGETBLESSED_condition()
@@ -612,16 +612,16 @@ func int DIA_NETBEK_HOWGETBLESSED_condition()
 func void DIA_NETBEK_HOWGETBLESSED_info()
 {
 	B_GivePlayerXP(200);
-	AI_Output(other,self, " DIA_NETBEK_HOWGETBLESSED_01_01 " );	// And you think the gods just give me their power like that?
-	AI_Output(self,other, " DIA_NETBEK_HOWGETBLESSED_01_02 " );	// Believe me, they just have no other choice!
-	AI_Output(self,other, " DIA_NETBEK_HOWGETBLESSED_01_03 " );	// Now, no one but you is capable of becoming the one into whose hands they are ready to entrust their power.
-	AI_Output(self,other, " DIA_NETBEK_HOWGETBLESSED_01_04 " );	// (seriously) However, before doing this, the gods will probably want to re-convince themselves of the correctness of their decision.
+	AI_Output(other,self, " DIA_NETBEK_HOWGETBLESSED_01_01 " );	// And you think the gods are just going to give me their power, just like that?
+	AI_Output(self,other, " DIA_NETBEK_HOWGETBLESSED_01_02 " );	// Believe me, they have no other choice!
+	AI_Output(self,other, " DIA_NETBEK_HOWGETBLESSED_01_03 " );	// No one but you is capable of becoming the one into whose hands they must to entrust their power.
+	AI_Output(self,other, " DIA_NETBEK_HOWGETBLESSED_01_04 " );	// However, before doing this, the gods will probably want to break free from the strands of fate that ties you to them.
 	AI_Output(self,other, " DIA_NETBEK_HOWGETBLESSED_01_05 " );	// The fate of this world depends on their choice, and now they have no room for error. Same as you.
 	AI_Output(other,self, " DIA_NETBEK_HOWGETBLESSED_01_07 " );	// I understand this very well. But what will they need from me this time?
 	AI_Output(self,other, " DIA_NETBEK_HOWGETBLESSED_01_08 " );	// I'm sure they'll tell you about it themselves.
-	AI_Output(self,other, " DIA_NETBEK_HOWGETBLESSED_01_09 " );	// Just address them in prayer, and you will hear the will of the gods!
+	AI_Output(self,other, " DIA_NETBEK_HOWGETBLESSED_01_09 " );	// Just address them in prayer, and you will hear their will!
 	NETBEKLEADME_STEP1 = TRUE;
-	B_LogEntry( TOPIC_GUARDIANS , " Before the gods grant me their power, they will want to test me one more time. What will be their test, I will have to ask them themselves. " );
+	B_LogEntry( TOPIC_GUARDIANS , " Before the gods grant me their power, they will want to test me one more time. What that test may be, I will have to ask them themselves. " );
 };
 
 instance DIA_NETBEK_TITANS(C_Info)
@@ -647,20 +647,20 @@ func void DIA_NETBEK_TITANS_info()
 	B_GivePlayerXP(500);
 	AI_Output(other,self, " DIA_NETBEK_TITANS_01_01 " );	// It seems that the Guardians also patronize the orcs.
 	AI_Output(other,self, " DIA_NETBEK_TITANS_01_02 " );	// Do you know anything about this?
-	AI_Output(self,other, " DIA_NETBEK_TITANS_01_03 " );	// (seriously) We recently had to deal with them again.
-	AI_Output(self,other, " DIA_NETBEK_TITANS_01_04 " );	// It seemed to me that they were surrounded by some very powerful protective aura.
-	AI_Output(self,other, " DIA_NETBEK_TITANS_01_05 " );	// To tell you the truth, I don't know what this is about.
-	AI_Output(self,other, " DIA_NETBEK_TITANS_01_06 " );	// My god helped me deal with this threat this time as well.
-	AI_Output(self,other, " DIA_NETBEK_TITANS_01_07 " );	// However, I agree with you that the orcs themselves would never be able to use such magic.
-	AI_Output(self,other, " DIA_NETBEK_TITANS_01_08 " );	// Perhaps there really was some ancient forces intervening here.
-	AI_Output(other,self, " DIA_NETBEK_TITANS_01_09 " );	// We need to somehow find and destroy the source of this magic!
+	AI_Output(self,other, " DIA_NETBEK_TITANS_01_03 " );	// We recently had to deal with them again.
+	AI_Output(self,other, " DIA_NETBEK_TITANS_01_04 " );	// It seemed to me that they were surrounded by some powerful protective aura.
+	AI_Output(self,other, " DIA_NETBEK_TITANS_01_05 " );	// To tell you the truth, I don't know what that was about.
+	AI_Output(self,other, " DIA_NETBEK_TITANS_01_06 " );	// My goddess helped me deal with the threat this time as well.
+	AI_Output(self,other, " DIA_NETBEK_TITANS_01_07 " );	// However, I agree with you that the orcs should have never been able to use such magic.
+	AI_Output(self,other, " DIA_NETBEK_TITANS_01_08 " );	// Perhaps there really was some ancient force intervening here.
+	AI_Output(other,self, " DIA_NETBEK_TITANS_01_09 " );	// We need to find and destroy the source of this magic!
 	AI_Output(other,self, " DIA_NETBEK_TITANS_01_10 " );	// Otherwise, the humans won't stand a chance against the orcs.
-	AI_Output(other,self, " DIA_NETBEK_TITANS_01_11 " );	// Your god can't protect them all.
-	AI_Output(self,other, " DIA_NETBEK_TITANS_01_12 " );	// Yes, you're right. He is not as powerful as the rest of the deities of this world.
+	AI_Output(other,self, " DIA_NETBEK_TITANS_01_11 " );	// Your goddess can't protect them all.
+	AI_Output(self,other, " DIA_NETBEK_TITANS_01_12 " );	// Yes, you're right. she is not as powerful as the rest of the deities in this world.
 	AI_Output(other,self, " DIA_NETBEK_TITANS_01_13 " );	// Then at least help me find this ancient evil. If you can't do more.
-	AI_Output(self,other, " DIA_NETBEK_TITANS_01_14 " );	// I'll ask him to help. But this will take some time.
-	AI_Output(other,self, " DIA_NETBEK_TITANS_01_15 " );	// We don't have time right now! So you better hurry up your friend.
-	AI_Output(self,other, " DIA_NETBEK_TITANS_01_16 " );	// Come tomorrow. I will try to find out what caused the orcs' powerful magic.
+	AI_Output(self,other, " DIA_NETBEK_TITANS_01_14 " );	// I'll ask her to help. But that will take some time.
+	AI_Output(other,self, " DIA_NETBEK_TITANS_01_15 " );	// Time is the one thing we don't have.
+	AI_Output(self,other, " DIA_NETBEK_TITANS_01_16 " );	// Come back tomorrow. I will try to find out what caused the orcs' powerful magic.
 	NetBekWaitDay = Wld_GetDay();
 	; _ _ _ _ _ _
 	AI_StopProcessInfos(self);
@@ -673,7 +673,7 @@ instance DIA_NETBEK_TITANS_KNOW(C_Info)
 	condition = DIA_NETBEK_TITANS_KNOW_condition;
 	information = DIA_NETBEK_TITANS_KNOW_info;
 	permanent = FALSE;
-	description = " So what about magic that protects orcs? " ;
+	description = " So what about the magic that protects the orcs? " ;
 };
 
 func int DIA_NETBEK_TITANS_KNOW_condition()
@@ -691,19 +691,19 @@ func int DIA_NETBEK_TITANS_KNOW_condition()
 func void DIA_NETBEK_TITANS_KNOW_info()
 {
 	B_GivePlayerXP(500);
-	AI_Output(other,self, " DIA_NETBEK_TITANS_KNOW_01_01 " );	// So what about magic that protects orcs?
+	AI_Output(other,self, " DIA_NETBEK_TITANS_KNOW_01_01 " );	// So what about the magic that protects the orcs?
 	AI_Output(self,other, " DIA_NETBEK_TITANS_KNOW_01_02 " );	// It was caused by very ancient beings who only obey the will of the Guardians.
 	AI_Output(self,other, " DIA_NETBEK_TITANS_KNOW_01_03 " );	// They came into this world with their consent, and it is their magic that helps the orcs in the war against humans.
 	AI_Output(other,self, " DIA_NETBEK_TITANS_KNOW_01_04 " );	// What are these creatures?
 	AI_Output(self,other, " DIA_NETBEK_TITANS_KNOW_01_05 " );	// They are all products of the purest magic of this world.
 	AI_Output(self,other, " DIA_NETBEK_TITANS_KNOW_01_06 " );	// I am sure that the Keepers have invested in them a huge part of their strength and power.
-	AI_Output(self,other, " DIA_NETBEK_TITANS_KNOW_01_07 " );	// Assuming that each of the peacekeepers is the very embodiment of one of the elements...
+	AI_Output(self,other, " DIA_NETBEK_TITANS_KNOW_01_07 " );	// Assuming that each of the keepers is the very embodiment of one of the elements...
 	AI_Output(self,other, " DIA_NETBEK_TITANS_KNOW_01_08 " );	// ...then it is quite possible to assume that these creatures are their very essence.
 	AI_Output(self,other, " DIA_NETBEK_TITANS_KNOW_01_09 " );	// More, unfortunately, I can't tell you yet.
-	AI_Output(other,self, " DIA_NETBEK_TITANS_KNOW_01_10 " );	// Hmm, not a lot. You know, I should probably go.
+	AI_Output(other,self, " DIA_NETBEK_TITANS_KNOW_01_10 " );	// Hmm, I see. I should probably go.
 	AI_Output(other,self, " DIA_NETBEK_TITANS_KNOW_01_11 " );	// I don't want to waste any more time talking.
 	AI_Output(self,other, " DIA_NETBEK_TITANS_KNOW_01_12 " );	// Wait. That's not all I wanted to talk to you about.
-	B_LogEntry( TOPIC_ORCSECRET , " Netbek's god told him that the reason for everything was the ancient creatures that the Guardians themselves gave birth to. They put most of their power into them and it is their magic that allows the orcs to remain invulnerable. According to the druid, the creatures themselves are the essence of that from the elements, which are the Guardians themselves who created them. That's all Netback knows. " );
+	B_LogEntry( TOPIC_ORCSECRET , " Netbek's god told him that the reason for everything was the ancient creatures that the Guardians themselves gave birth to. They put most of their power into them and it is their magic that allows the orcs to remain invulnerable. According to the druid, the creatures themselves are the essence of elemental magic, and the Guardians themselves created them. That's all Netback knows. " );
 };
 
 instance DIA_NETBEK_TITANS_Sleeper(C_Info)
@@ -727,30 +727,30 @@ func int DIA_NETBEK_TITANS_Sleeper_condition()
 func void DIA_NETBEK_TITANS_Sleeper_info()
 {
 	AI_Output(other,self, " DIA_NETBEK_TITANS_Sleeper_01_01 " );	// Any news?
-	AI_Output(self,other, " DIA_NETBEK_TITANS_Sleeper_01_02 " );	// The fact is that lately I have been tormented by strange visions from my past.
+	AI_Output(self,other, " DIA_NETBEK_TITANS_Sleeper_01_02 " );	// The fact is that lately, I have been tormented by strange visions from my past.
 	AI_Output(self,other, " DIA_NETBEK_TITANS_Sleeper_01_03 " );	// This is very strange, considering that the magic of this place has always protected us from all sorts of nightmares.
-	AI_Output(self,other, " DIA_NETBEK_TITANS_Sleeper_01_04 " );	// In addition, many of the former acolytes of the Brotherhood now here have severe headaches again!
-	AI_Output(self,other, " DIA_NETBEK_TITANS_Sleeper_01_05 " );	// Approximately the same as they were then, during the destruction of the magical barrier.
-	AI_Output(self,other, " DIA_NETBEK_TITANS_Sleeper_01_06 " );	// Unfortunately, I can't explain what's going on yet, but I already have some sort of misgivings.
+	AI_Output(self,other, " DIA_NETBEK_TITANS_Sleeper_01_04 " );	// In addition, many of the former acolytes of the Brotherhood here are suffering severe headaches again!
+	AI_Output(self,other, " DIA_NETBEK_TITANS_Sleeper_01_05 " );	// The same as they were then, during the destruction of the magical barrier.
+	AI_Output(self,other, " DIA_NETBEK_TITANS_Sleeper_01_06 " );	// Unfortunately, I can't explain what's going on yet, but I already have some misgivings.
 	AI_Output(other,self, " DIA_NETBEK_TITANS_Sleeper_01_07 " );	// What are you implying?
-	AI_Output(self,other, " DIA_NETBEK_TITANS_Sleeper_01_08 " );	// It seems to me that the evil that was once banished by you could return to this world.
-	AI_Output(other,self, " DIA_NETBEK_TITANS_Sleeper_01_09 " );	// Do you mean Sleeper?
-	AI_Output(self,other, " DIA_NETBEK_TITANS_Sleeper_01_10 " );	// Yes... I'm talking about him.
+	AI_Output(self,other, " DIA_NETBEK_TITANS_Sleeper_01_08 " );	// It seems to me that the evil you once banished is seeping back into this reality.
+	AI_Output(other,self, " DIA_NETBEK_TITANS_Sleeper_01_09 " );	// Do you mean the Sleeper?
+	AI_Output(self,other, " DIA_NETBEK_TITANS_Sleeper_01_10 " );	// Yes...
 	AI_Output(self,other, " DIA_NETBEK_TITANS_Sleeper_01_11 " );	// I hate to think about it, but every day my worries grow more and more.
 	AI_Output(other,self, " DIA_NETBEK_TITANS_Sleeper_01_12 " );	// Then we should check the orc temple immediately! Perhaps you are right.
 	AI_Output(self,other, " DIA_NETBEK_TITANS_Sleeper_01_13 " );	// In what sense?
-	AI_Output(other,self, " DIA_NETBEK_TITANS_Sleeper_01_14 " );	// The dark mage I killed in the temple told me before he died that he had finished the demon summoning ritual.
-	AI_Output(other,self, " DIA_NETBEK_TITANS_Sleeper_01_15 " );	// Of course, then I did not attach much importance to his words.
-	AI_Output(other,self, " DIA_NETBEK_TITANS_Sleeper_01_16 " );	// But, apparently, this sorcerer could tell the truth!
+	AI_Output(other,self, " DIA_NETBEK_TITANS_Sleeper_01_14 " );	// The dark wizard I killed in the temple told me before he died that he had finished the demon summoning ritual.
+	AI_Output(other,self, " DIA_NETBEK_TITANS_Sleeper_01_15 " );	// I didn't attach much meaning to his words then.
+	AI_Output(other,self, " DIA_NETBEK_TITANS_Sleeper_01_16 " );	// But, apparently, I should have!
 	AI_Output(self,other, " DIA_NETBEK_TITANS_Sleeper_01_17 " );	// If so, then you need to go to the temple as soon as possible.
 	AI_Output(self,other, " DIA_NETBEK_TITANS_Sleeper_01_18 " );	// Before it's too late!
-	AI_Output(self,other, " DIA_NETBEK_TITANS_Sleeper_01_19 " );	// The return of the Sleeper to this world may not only negatively affect us all!
+	AI_Output(self,other, " DIA_NETBEK_TITANS_Sleeper_01_19 " );	// The return of the Sleeper to this world is the very last thing we need!
 	AI_Output(self,other, " DIA_NETBEK_TITANS_Sleeper_01_20 " );	// Plus, given the threat from the Guardians, the world could collapse overnight!
-	AI_Output(self,other, " DIA_NETBEK_TITANS_Sleeper_01_21 " );	// And neither Innos nor Beliar will be able to prevent this.
+	AI_Output(self,other, " DIA_NETBEK_TITANS_Sleeper_01_21 " );	// And neither Innos nor Beliar nor Adanos would be able to prevent it.
 	AI_Output(other,self, " DIA_NETBEK_TITANS_Sleeper_01_22 " );	// Okay, calm down. Consider me halfway to the temple.
 	AI_Output(other,self, " DIA_NETBEK_TITANS_Sleeper_01_23 " );	// And if necessary, return this uninvited guest to where he came from.
-	AI_Output(self,other, " DIA_NETBEK_TITANS_Sleeper_01_24 " );	// Then hurry up and go there! Now every minute counts.
-	B_LogEntry( TOPIC_SLEEPERBACK , " It looks like my fears about the Sleeper are beginning to be confirmed. Netback is having nightmares at night, and former acolytes of the Brotherhood are getting severe headaches. I need to visit the Temple as soon as possible and sort out this situation. " );
+	AI_Output(self,other, " DIA_NETBEK_TITANS_Sleeper_01_24 " );	// Then hurry up and go! Every minute counts.
+	B_LogEntry( TOPIC_SLEEPERBACK , " It looks like my fears about the Sleeper are beginning to be confirmed. Netback is having nightmares at night, and former acolytes of the Brotherhood are getting severe headaches. I need to visit the Temple as soon as possible and sort this out. " );
 	SLEEPERINSHRAM = TRUE;
 	AI_StopProcessInfos(self);
 };
@@ -777,23 +777,23 @@ func void DIA_NETBEK_TITANS_Sleeper_Find_info()
 {
 	B_GivePlayerXP(1000);
 	AI_Output(other,self, " DIA_NETBEK_TITANS_Sleeper_Find_01_01 " );	// The sleeper has returned to the human world!
-	AI_Output(self,other, " DIA_NETBEK_TITANS_Sleeper_Find_01_02 " );	// So, my fears were not in vain... (doomed) And now we are all in great danger!
-	AI_Output(self,other, " DIA_NETBEK_TITANS_Sleeper_Find_01_03 " );	// This demon is capable of destroying our world even without the intervention of the Guardians.
+	AI_Output(self,other, " DIA_NETBEK_TITANS_Sleeper_Find_01_02 " );	// So, my fears were not unwarrented... We are all in great danger!
+	AI_Output(self,other, " DIA_NETBEK_TITANS_Sleeper_Find_01_03 " );	// That demon is capable of destroying our world even without the intervention of the Guardians.
 	AI_Output(self,other, " DIA_NETBEK_TITANS_Sleeper_Find_01_04 " );	// We need to do something before it's too late.
 	AI_Output(other,self, " DIA_NETBEK_TITANS_Sleeper_Find_01_05 " );	// There is also another problem.
 	AI_Output(other,self, " DIA_NETBEK_TITANS_Sleeper_Find_01_06 " );	// I'm completely helpless against the Sleeper's magic!
 	AI_Output(other,self, " DIA_NETBEK_TITANS_Sleeper_Find_01_07 " );	// As soon as I get close to him, I fall into a deep sleep.
 	AI_Output(self,other, " DIA_NETBEK_TITANS_Sleeper_Find_01_08 " );	// The Sleeper's magic is very dangerous! He doesn't even have to cut you to pieces.
-	AI_Output(self,other, " DIA_NETBEK_TITANS_Sleeper_Find_01_09 " );	// It will be enough that he will just drive you crazy.
-	AI_Output(other,self, " DIA_NETBEK_TITANS_Sleeper_Find_01_10 " );	// And how can I be?
+	AI_Output(self,other, " DIA_NETBEK_TITANS_Sleeper_Find_01_09 " );	// He will simply drive you mad.
+	AI_Output(other,self, " DIA_NETBEK_TITANS_Sleeper_Find_01_10 " );	// What can I do?
 	AI_Output(self,other, " DIA_NETBEK_TITANS_Sleeper_Find_01_11 " );	// You need a powerful artifact that can protect you from his mental tentacles.
-	AI_Output(other,self, " DIA_NETBEK_TITANS_Sleeper_Find_01_12 " );	// Do you know about this?
-	AI_Output(self,other, " DIA_NETBEK_TITANS_Sleeper_Find_01_13 " );	// Unfortunately not. Apparently, only those who are well aware of the very essence of demons know about it.
-	AI_Output(other,self, " DIA_NETBEK_TITANS_Sleeper_Find_01_14 " );	// What about your god? Can't he help me?
-	AI_Output(self,other, " DIA_NETBEK_TITANS_Sleeper_Find_01_15 " );	// I'm afraid not. It is unlikely that his strength will be enough to resist the magic of an ancient demon.
-	AI_Output(self,other, " DIA_NETBEK_TITANS_Sleeper_Find_01_16 " );	// His gift is first of all the gift of healing and life! Here he is absolutely powerless.
+	AI_Output(other,self, " DIA_NETBEK_TITANS_Sleeper_Find_01_12 " );	// Do you know of any?
+	AI_Output(self,other, " DIA_NETBEK_TITANS_Sleeper_Find_01_13 " );	// Unfortunately not. I am no demonologist.
+	AI_Output(other,self, " DIA_NETBEK_TITANS_Sleeper_Find_01_14 " );	// What about your goddess? Can't she help me?
+	AI_Output(self,other, " DIA_NETBEK_TITANS_Sleeper_Find_01_15 " );	// I'm afraid not. It is unlikely that her strength will be enough to resist the magic of an ancient demon.
+	AI_Output(self,other, " DIA_NETBEK_TITANS_Sleeper_Find_01_16 " );	// Her gifts are the gifts of healing and life! Here she is absolutely powerless.
 	NeedDemonolog = TRUE;
-	B_LogEntry( TOPIC_SLEEPERBACK , " I will need a powerful artifact to counter the Sleeper's magic. But only those who are well versed in the essence of demons know which one. " );
+	B_LogEntry( TOPIC_SLEEPERBACK , " I will need a powerful artifact to counter the Sleeper's magic. But only those who are well versed in the essence of demons might know of such a thing. " );
 };
 
 instance DIA_NETBEK_TITANS_Sleeper_Dead(C_Info)
@@ -817,12 +817,12 @@ func int DIA_NETBEK_TITANS_Sleeper_Dead_condition()
 func void DIA_NETBEK_TITANS_Sleeper_Dead_info()
 {
 	B_GivePlayerXP(1500);
-	AI_Output(other,self, " DIA_NETBEK_TITANS_Sleeper_Dead_01_01 " );	// Sleeper is dead!
-	AI_Output(other,self, " DIA_NETBEK_TITANS_Sleeper_Dead_01_02 " );	// I have slain the evil demon, and he will never disturb you again.
-	AI_Output(self,other, " DIA_NETBEK_TITANS_Sleeper_Dead_01_03 " );	// I already know this. I felt it as soon as you killed him.
+	AI_Output(other,self, " DIA_NETBEK_TITANS_Sleeper_Dead_01_01 " );	// The Sleeper is dead!
+	AI_Output(other,self, " DIA_NETBEK_TITANS_Sleeper_Dead_01_02 " );	// I have slain the demon once more, and he will never disturb us again.
+	AI_Output(self,other, " DIA_NETBEK_TITANS_Sleeper_Dead_01_03 " );	// I already know. I felt it as soon as you killed him.
 	AI_Output(self,other, " DIA_NETBEK_TITANS_Sleeper_Dead_01_04 " );	// My nightmares have receded and no longer bother me or the other brothers.
-	AI_Output(self,other, " DIA_NETBEK_TITANS_Sleeper_Dead_01_05 " );	// I thank you for your help in ridding this world of great evil.
-	AI_Output(self,other, " DIA_NETBEK_TITANS_Sleeper_Dead_01_06 " );	// Please accept this award as my thanks.
+	AI_Output(self,other, " DIA_NETBEK_TITANS_Sleeper_Dead_01_05 " );	// I thank you for your help in ridding this world of such great evil again.
+	AI_Output(self,other, " DIA_NETBEK_TITANS_Sleeper_Dead_01_06 " );	// Please accept this as thanks.
 	Info_ClearChoices(DIA_NETBEK_TITANS_Sleeper_Dead);
 	Info_AddChoice(DIA_NETBEK_TITANS_Sleeper_Dead,"И где она?",DIA_NETBEK_TITANS_Sleeper_Dead_Prize);
 };
@@ -838,10 +838,10 @@ func void DIA_NETBEK_TITANS_Sleeper_Dead_Prize()
 	AI_PlayAni(hero,"T_HEASHOOT_2_STAND");
 	AI_Wait(hero,1);
 	AI_Output(other,self, " DIA_NETBEK_TITANS_Sleeper_Dead_Prize_01_01 " );	// What's going on?!
-	AI_Output(self,other, " DIA_NETBEK_TITANS_Sleeper_Dead_Prize_01_02 " );	// My god gave you life force!
+	AI_Output(self,other, " DIA_NETBEK_TITANS_Sleeper_Dead_Prize_01_02 " );	// My goddess has increased your life force!
 	AI_Output(self,other, " DIA_NETBEK_TITANS_Sleeper_Dead_Prize_01_03 " );	// This will help you to face the enemies and threats of this world more confidently in the future.
-	AI_Output(other,self, " DIA_NETBEK_TITANS_Sleeper_Dead_Prize_01_04 " );	// Thank you! You know, I even somehow began to feel better.
-	AI_Output(self,other, " DIA_NETBEK_TITANS_Sleeper_Dead_Prize_01_05 " );	// (smiling) No doubt.
+	AI_Output(other,self, " DIA_NETBEK_TITANS_Sleeper_Dead_Prize_01_04 " );	// Thank you! I feel so much healthier already!
+	AI_Output(self,other, " DIA_NETBEK_TITANS_Sleeper_Dead_Prize_01_05 " );	// No doubt.
 	Info_ClearChoices(DIA_NETBEK_TITANS_Sleeper_Dead);
 };
 
@@ -873,14 +873,14 @@ func void dia_netbek_leadmesteponedone_info()
 	AI_Output(self,other, " DIA_Netbek_LeadMeStepOneDone_01_05 " );	// Something special is needed here...
 	AI_Output(other,self, " DIA_Netbek_LeadMeStepOneDone_01_06 " );	// What do you mean?
 	AI_Output(self,other, " DIA_Netbek_LeadMeStepOneDone_01_07 " );	// All the power of the Guardians comes from the magical essences of the elements of this world - Fire, Water, Darkness and Stone!
-	AI_Output(self,other, " DIA_Netbek_LeadMeStepOneDone_01_08 " );	// And only a weapon that has all of these properties at once will be able to hit them.
-	AI_Output(self,other, " DIA_Netbek_LeadMeStepOneDone_01_09 " );	// It's unlikely to be found anywhere. But it can be created. And I will help you with this.
+	AI_Output(self,other, " DIA_Netbek_LeadMeStepOneDone_01_08 " );	// And only a weapon that has all of these properties at once will be able to touch them.
+	AI_Output(self,other, " DIA_Netbek_LeadMeStepOneDone_01_09 " );	// It's unlikely to be found, but it can be created. And I will help you with this.
 	AI_Output(other,self, " DIA_Netbek_LeadMeStepOneDone_01_10 " );	// Then I'm all ears.
 	AI_Output(self,other, " DIA_Netbek_LeadMeStepOneDone_01_11 " );	// Good. To begin with, you will need artifacts that contain the purest elemental magic.
-	AI_Output(self,other, " DIA_Netbek_LeadMeStepOneDone_01_12 " );	// They can only be contained in very ancient and powerful beings of this world.
+	AI_Output(self,other, " DIA_Netbek_LeadMeStepOneDone_01_12 " );	// They can only be contained in the very ancient and most powerful beings of this world.
 	AI_Output(self,other, " DIA_Netbek_LeadMeStepOneDone_01_13 " );	// I remember you asking about the unusual magic that protects the orcs.
 	AI_Output(self,other, " DIA_Netbek_LeadMeStepOneDone_01_14 " );	// So, those creatures, generated by the magic of the Guardians, may well contain the items we need.
-	AI_Output(self,other, " DIA_Netbek_LeadMeStepOneDone_01_15 " );	// Just don't ask me where to find them. I do not know this. And I can't know.
+	AI_Output(self,other, " DIA_Netbek_LeadMeStepOneDone_01_15 " );	// Just don't ask me where to find them. That is beyond my sight.
 	AI_Output(self,other, " DIA_Netbek_LeadMeStepOneDone_01_16 " );	// You'll have to find them yourself. But I'm sure it won't be difficult.
 	AI_Output(self,other, " DIA_Netbek_LeadMeStepOneDone_01_17 " );	// Especially considering the fact that they've probably already gathered around them a great many lesser beings spawned by their own magic.
 	AI_Output(other,self, " DIA_Netbek_LeadMeStepOneDone_01_18 " );	// Okay, what's next?
@@ -890,25 +890,25 @@ func void dia_netbek_leadmesteponedone_info()
 	{
 		AI_Output(self,other, " DIA_Netbek_LeadMeStepOneDone_01_20 " );	// Since you're a mage, you'll probably find it easier to deal with a magic rune than a sword.
 		AI_Output(self,other, " DIA_Netbek_LeadMeStepOneDone_01_21 " );	// However, in order to imbue it with the power of the artifacts you found, you'll need another rare item.
-		AI_Output(self,other, " DIA_Netbek_LeadMeStepOneDone_01_23 " );	// Focusing crystal. It is also called a uniter.
+		AI_Output(self,other, " DIA_Netbek_LeadMeStepOneDone_01_23 " );	// A focusing crystal, also known as a uniter.
 		AI_Output(self,other, " DIA_Netbek_LeadMeStepOneDone_01_24 " );	// These stones have almost all the magical properties needed to transfer artifact energy into your rune.
 		AI_Output(other,self, " DIA_Netbek_LeadMeStepOneDone_01_26 " );	// Where can I find this unit?
 		AI_Output(self,other, " DIA_Netbek_LeadMeStepOneDone_01_27 " );	// As far as I remember, Uberion, the supreme guru of the Brotherhood, once had a similar item.
 		AI_Output(self,other, " DIA_Netbek_LeadMeStepOneDone_01_29 " );	// So it is possible that this stone is still in our old camp in the swamps. Try looking for it there.
-		AI_Output(other,self, " DIA_Netbek_LeadMeStepOneDone_01_30 " );	// I'm afraid your advice won't help me much since I took this crystal to the Waterbenders.
+		AI_Output(other,self, " DIA_Netbek_LeadMeStepOneDone_01_30 " );	// I'm afraid your advice won't help me much since I took this crystal to the Hydromancers.
 		AI_Output(other,self, " DIA_Netbek_LeadMeStepOneDone_01_31 " );	// And they recently used it to activate portals in the forgotten part of the island, Jharkendar.
 		AI_Output(self,other, " DIA_Netbek_LeadMeStepOneDone_01_32 " );	// I'm afraid I can't help in that case. Try asking the mages themselves.
 		AI_Output(other,self, " DIA_Netbek_LeadMeStepOneDone_01_34 " );	// Okay. I'll think of something.
 		AI_Output(other,self, " DIA_Netbek_LeadMeStepOneDone_01_35 " );	// Better tell me how to transfer the power of the artifacts through it into the rune.
 		AI_Output(self,other, " DIA_Netbek_LeadMeStepOneDone_01_36 " );	// For this you will need to use the runic table.
 		AI_Output(self,other, " DIA_Netbek_LeadMeStepOneDone_01_37 " );	// Place the stone in the center of the sphere and use the uniter to focus the energy of each of the elements on it at the same time.
-		AI_Output(self,other, " DIA_Netbek_LeadMeStepOneDone_01_38 " );	// After that, the runestone itself will begin to glow with a bright light.
+		AI_Output(self,other, " DIA_Netbek_LeadMeStepOneDone_01_38 " );	// After that, the runestone will begin to glow with a bright light.
 		AI_Output(self,other, " DIA_Netbek_LeadMeStepOneDone_01_39 " );	// And the more it absorbs the energy directed at it, the stronger this glow will become.
 		AI_Output(self,other, " DIA_Netbek_LeadMeStepOneDone_01_40 " );	// In the end, the bright light will abruptly disappear - this will mean that the rune has completely absorbed all the power of the artifacts.
-		AI_Output(self,other, " DIA_Netbek_LeadMeStepOneDone_01_41 " );	// Well, everything else will depend only on you.
+		AI_Output(self,other, " DIA_Netbek_LeadMeStepOneDone_01_41 " );	// After that the rest is up to you.
 		AI_Output(self,other, " DIA_Netbek_LeadMeStepOneDone_01_43 " );	// The Guardian fight promises to be tough, but let's hope you succeed.
-		B_LogEntry(TOPIC_GUARDIANS,"After I completed Netbek's first errand, he revealed to me the secret of creating some kind of magical weapon with which I would have to defeat the Guardians. And since I am a magician, it would be easier for me to manage it as a magic rune than as a sword. For all this, I will need to find several artifacts, the power of which will give this weapon unprecedented power. According to him, all these items are part of the oldest creatures generated by the elements of this world. Netback suggested that those creatures that protect the orcs with their magic are quite may contain such artifacts. I will have to look for them myself.");
-		Log_AddEntry(TOPIC_GUARDIANS,"When the artifacts themselves are in my hands, I will need one more item - a focus unit stone. With it, I can transfer the energy of these artifacts I found into a runestone. The process of creating this magical rune is quite simple - just place it in the center of the sphere on the rune table and focus the energy of all objects on it through the uniter, after which the rune itself will completely absorb this energy and I will receive a weapon that, in its power, knows no equal in this world. Keepers and fight them.");
+		B_LogEntry(TOPIC_GUARDIANS,"After I completed Netbek's first errand, he revealed to me the secret of creating some kind of magical weapon with which I would have to defeat the Guardians. And since I am a magician, it would be easier for me to manage it as a magic rune than as a sword. For all this, I will need to find several artifacts, the power of which will give this weapon unprecedented power. According to him, all these items are part of the oldest creatures generated by the elements of this world. Netback suggested that those creatures that protect the orcs with their magic may contain such artifacts. I will have to look for them myself.");
+		Log_AddEntry(TOPIC_GUARDIANS,"When the artifacts are in my hands, I will need one more item - a focus unit stone. With it, I can transfer the energy of these artifacts I found into a runestone. The process of creating this magical rune is quite simple - just place it in the center of the sphere on the rune table and focus the energy of all objects on it through the uniter, after which the rune itself will completely absorb this energy and I will receive a weapon that, in its power, knows no equal in this world, not even the Guardians.");
 		HOWCANMAKERUNE = TRUE;
 	}
 	else
@@ -917,19 +917,19 @@ func void dia_netbek_leadmesteponedone_info()
 		AI_Output(self,other, " DIA_Netbek_LeadMeStepOneDone_01_46 " );	// Therefore, you will have to forge a special ore blade first.
 		AI_Output(self,other, " DIA_Netbek_LeadMeStepOneDone_01_48 " );	// But regular magic ore won't work here.
 		AI_Output(self,other, " DIA_Netbek_LeadMeStepOneDone_01_49 " );	// Only a very rare breed is suitable for crafting this sword. Namely, black ore.
-		AI_Output(other,self, " DIA_Netbek_LeadMeStepOneDone_01_50 " );	// Black ore? Yes, it's really hard to find.
-		AI_Output(self,other, " DIA_Netbek_LeadMeStepOneDone_01_52 " );	// Each piece of this rock is a real treasure; in its magical properties, it far exceeds the usual one.
+		AI_Output(other,self, " DIA_Netbek_LeadMeStepOneDone_01_50 " );	// Black ore? That's really hard to find.
+		AI_Output(self,other, " DIA_Netbek_LeadMeStepOneDone_01_52 " );	// Each piece of this rock is a real treasure; in its magical properties, it far exceeds the usual stuff.
 		AI_Output(self,other, " DIA_Netbek_LeadMeStepOneDone_01_53 " );	// You will need as many as five of these pieces in order to forge your sword.
-		AI_Output(other,self, " DIA_Netbek_LeadMeStepOneDone_01_54 " );	// Do you know where I can get it?
-		AI_Output(self,other, " DIA_Netbek_LeadMeStepOneDone_01_56 " );	// Honestly, no. You will have to look for her yourself.
+		AI_Output(other,self, " DIA_Netbek_LeadMeStepOneDone_01_54 " );	// Do you know where I can get some?
+		AI_Output(self,other, " DIA_Netbek_LeadMeStepOneDone_01_56 " );	// Honestly, no. You will have to look for it yourself.
 		AI_Output(self,other, " DIA_Netbek_LeadMeStepOneDone_01_58 " );	// When you have this sword in your hands, you will need to transfer the energy of the artifacts you found into it.
-		AI_Output(self,other, " DIA_Netbek_LeadMeStepOneDone_01_60 " );	// I'm sure the Firebenders can help you with this.
+		AI_Output(self,other, " DIA_Netbek_LeadMeStepOneDone_01_60 " );	// I'm sure the Pyromancers can help you with that.
 		AI_Output(self,other, " DIA_Netbek_LeadMeStepOneDone_01_61 " );	// They should be powerful enough to cast such a spell.
 		AI_Output(self,other, " DIA_Netbek_LeadMeStepOneDone_01_62 " );	// Use it to transfer the power of the artifacts into your sword, and you will end up with a weapon whose power is unparalleled!
-		AI_Output(self,other, " DIA_Netbek_LeadMeStepOneDone_01_63 " );	// Well, everything else will depend only on you.
+		AI_Output(self,other, " DIA_Netbek_LeadMeStepOneDone_01_63 " );	// After that, the rest is up to you.
 		AI_Output(self,other, " DIA_Netbek_LeadMeStepOneDone_01_64 " );	// The Guardian fight promises to be tough, but let's hope you succeed.
-		B_LogEntry(TOPIC_GUARDIANS,"After I completed Netbek's first errand, he revealed to me the secret of creating some kind of magical weapon with which I would have to defeat the Guardians. And since I am a warrior, it would be easier for me to handle it like a sword, rather than like a magic rune.To do all this, I will need to find a few artifacts, the power of which will give this weapon unprecedented power.According to him, all these items are part of the oldest creatures generated by the elements of this world.Netback suggested that those creatures that protect the orcs with their magic are quite may contain such artifacts. I will have to look for them myself.");
-		Log_AddEntry(TOPIC_GUARDIANS,"Next, I need to find five pieces of black ore for a one-handed sword and ten pieces for a two-handed sword, after which I can forge a black ore sword. According to Netbek, any piece of this rock is inherently a real treasure, and finding it will be "Extremely difficult. When the sword itself is in my hands, I will need to find another item - a spell that can transfer all the energy of the artifacts I found into it. According to Netbek, the Firebenders will be able to help me with this. Using this spell, I will get a weapon unparalleled in its power in this world. All that remains for me is to go to the Guardians' abode and fight them.");
+		B_LogEntry(TOPIC_GUARDIANS,"After I completed Netbek's first errand, he revealed to me the secret of creating some kind of magical weapon with which I would have to defeat the Guardians. And since I am a warrior, it would be easier for me to handle it like a sword, rather than like a magic rune. To do all this, I will need to find a few artifacts, the power of which will give this weapon unprecedented power. According to him, all these items are part of the oldest creatures generated by the elements of this world.Netback suggested that those creatures that protect the orcs with their magic may contain such artifacts. I will have to look for them myself.");
+		Log_AddEntry(TOPIC_GUARDIANS,"Next, I need to find five pieces of black ore for a one-handed sword and ten pieces for a two-handed sword, after which I can forge a black ore sword. According to Netbek, any piece of this rock is inherently a real treasure, and finding it will be extremely difficult. When the sword itself is in my hands, I will need to find another item - a spell that can transfer all the energy of the artifacts I found into it. According to Netbek, the Firebenders will be able to help me with this. Using this spell, I will get a weapon unparalleled in its power in this world. All that remains for me is to go to the Guardians' abode and finish them.");
 		HOWCANMAKEBLACKSWORD = TRUE;
 	};
 
@@ -1112,7 +1112,7 @@ func void dia_netbek_guarddefeat_info()
 	B_GivePlayerXP(500);
 	AI_Output(other,self, " DIA_Netbek_GuardDefeat_01_00 " );	// I destroyed the Guardians! We are no longer in danger.
 	AI_Output(self,other, " DIA_Netbek_GuardDefeat_01_01 " );	// Good. Although, to tell the truth, I was sure from the very beginning that you would be able to do it.
-	AI_Output(self,other, " DIA_Netbek_GuardDefeat_01_02 " );	// It's no coincidence that the choice of the gods fell on you. In the end, you yourself proved it.
+	AI_Output(self,other, " DIA_Netbek_GuardDefeat_01_02 " );	// It's no coincidence that the gods defer to you in all these major events. You are... something else entirely.
 };
 
 instance DIA_NETBEK_CALMYOU(C_Info)
@@ -1138,11 +1138,11 @@ func void dia_netbek_calmyou_info()
 	AI_Output(other,self, " DIA_Netbek_CalmYou_01_01 " );	// Your calmness is impressive.
 	AI_Output(self,other, " DIA_Netbek_CalmYou_01_02 " );	// What do you mean by that?
 	AI_Output(other,self, " DIA_Netbek_CalmYou_01_03 " );	// You act like nothing has happened in the past few days.
-	AI_Output(self,other, " DIA_Netbek_CalmYou_01_05 " );	// My god teaches me this.
-	AI_Output(self,other, " DIA_Netbek_CalmYou_01_06 " );	// His wisdom helps me to know the true meaning and understanding of various things in this world. All this applies to their perception.
-	AI_Output(self,other, " DIA_Netbek_CalmYou_01_07 " );	// In addition, thanks to you, our main enemy has already been defeated. So, there is no reason for special concern.
+	AI_Output(self,other, " DIA_Netbek_CalmYou_01_05 " );	// My goddess teaches me this serenity.
+	AI_Output(self,other, " DIA_Netbek_CalmYou_01_06 " );	// Her wisdom helps me to know the true meaning and understanding of various things in this world. 
+	AI_Output(self,other, " DIA_Netbek_CalmYou_01_07 " );	// In addition, thanks to you, our main enemy has already been defeated. So, there is no reason for concern anymore.
 	AI_Output(self,other, " DIA_Netbek_CalmYou_01_09 " );	// I'm sure you can handle the orcs too. Especially now that they have lost the help of the Guardians.
-	AI_Output(other,self, " DIA_Netbek_CalmYou_01_11 " );	// Hope you're right.
+	AI_Output(other,self, " DIA_Netbek_CalmYou_01_11 " );	// I hope you're right.
 };
 
 instance DIA_NETBEK_DRUID(C_Info)
@@ -1167,20 +1167,20 @@ func void dia_netbek_DRUID_info()
 {
 	B_GivePlayerXP(1000);
 	AI_Output(other,self, " DIA_Netbek_DRUID_01_01 " );	// You're a druid, aren't you?
-	AI_Output(self,other, " DIA_Netbek_DRUID_01_02 " );	// What do you mean by this word?
+	AI_Output(self,other, " DIA_Netbek_DRUID_01_02 " );	// What does that word mean?
 	AI_Output(other,self, " DIA_Netbek_DRUID_01_03 " );	// Well, you talk to the trees and use their magic power.
-	AI_Output(other,self, " DIA_Netbek_DRUID_01_04 " );	// As far as I know, only druids can do this.
+	AI_Output(other,self, " DIA_Netbek_DRUID_01_04 " );	// As far as I know, only druids can do that.
 	AI_Output(self,other, " DIA_Netbek_DRUID_01_05 " );	// Well, if so, then you're right. I am a druid.
 	AI_Output(other,self, " DIA_Netbek_DRUID_01_06 " );	// Then I need your help.
-	AI_Output(self,other, " DIA_Netbek_DRUID_01_07 " );	// Good. How can I help you?
-	AI_Output(other,self, " DIA_Netbek_DRUID_01_08 " );	// I need to bring one tree back to life. And I'm afraid I can't do it without your help.
-	AI_Output(self,other, " DIA_Netbek_DRUID_01_09 " );	// This is a good thing. Of course, I will help you with this. Wait a minute...
+	AI_Output(self,other, " DIA_Netbek_DRUID_01_07 " );	// How can I help you?
+	AI_Output(other,self, " DIA_Netbek_DRUID_01_08 " );	// I need to bring a tree back to life. And I'm afraid I can't do it without your help.
+	AI_Output(self,other, " DIA_Netbek_DRUID_01_09 " );	// Of course, I will help you with this. Wait a minute...
 	AI_PlayAni(self,"T_PRACTICEMAGIC4");
-	AI_Output(self,other, " DIA_Netbek_DRUID_01_10 " );	// Here, take this root. With it, you will breathe new life into dead tree flesh.
+	AI_Output(self,other, " DIA_Netbek_DRUID_01_10 " );	// Here, take this root. With it, you will breathe new life into dead wood.
 	B_GiveInvItems(self,other,ItPl_MagicRoot,1);
 	AI_Output(other,self, " DIA_Netbek_DRUID_01_11 " );	// Is it that simple?
 	AI_Output(self,other, " DIA_Netbek_DRUID_01_12 " );	// Do you want something more complicated? If so, then you better go to someone else.
-	AI_Output(other,self, " DIA_Netbek_DRUID_01_13 " );	// No, everything suits me.
+	AI_Output(other,self, " DIA_Netbek_DRUID_01_13 " );	// No, simplicity suits me.
 	AI_Output(self,other, " DIA_Netbek_DRUID_01_14 " );	// Then why all these questions?
 	AI_Output(other,self, " DIA_Netbek_DRUID_01_15 " );	// Ah, never mind!
 	B_LogEntry(TOPIC_AdanosCrone, " It turned out to be much easier. I asked Netback for help and he gave me a magical plant that can bring the great tree back to life. " );
@@ -1208,9 +1208,9 @@ func int dia_netbek_DRUID_TEACH_condition()
 func void dia_netbek_DRUID_TEACH_info()
 {
 	AI_Output(other,self, " DIA_Netbek_DRUID_TEACH_01_01 " );	// Can you teach me how to make these stones?
-	AI_Output(self,other, " DIA_Netbek_DRUID_TEACH_01_02 " );	// Hmmm... Why not.
+	AI_Output(self,other, " DIA_Netbek_DRUID_TEACH_01_02 " );	// Hmmm... Certainly.
 	AI_Output(self,other, " DIA_Netbek_DRUID_TEACH_01_03 " );	// However, you need some experience and knowledge of magic circles to master this knowledge.
-	AI_Output(self,other, " DIA_Netbek_DRUID_TEACH_01_04 " );	// And, of course, a rune table to craft these stones.
+	AI_Output(self,other, " DIA_Netbek_DRUID_TEACH_01_04 " );	// And, of course, a rune table to craft the stones.
 	Netbek_TeachRunes = TRUE;
 	Log_CreateTopic(TOPIC_NetbekTeacher,LOG_NOTE);
 	B_LogEntry(TOPIC_NetbekTeacher, " Netbek can teach me how to create transformation stones to transform into various animals. " );
