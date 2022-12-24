@@ -119,15 +119,15 @@ func void dia_xbs_1_standard_info()
 	};
 	if (chapter ==  2 )
 	{
-		AI_Output(self,other, " DIA_XBS_1_STANDARD_01_02 " );	// The wind sometimes carries screams from behind the fence even here. I wouldn't want to be in a castle right now!
+		AI_Output(self,other, " DIA_XBS_1_STANDARD_01_02 " );	// The wind sometimes carries screams from behind the fence. I wouldn't want to be in that castle right now!
 	};
 	if (chapter ==  3 )
 	{
-		AI_Output(self,other, " DIA_XBS_1_STANDARD_01_03 " );	// Some kind of sadness attacked all the guys. It seems that we have lost something or someone forever.
+		AI_Output(self,other, " DIA_XBS_1_STANDARD_01_03 " );	// Some kind of malaise has settled on all the guys. It feels that we have lost something or someone forever.
 	};
 	if (chapter ==  4 )
 	{
-		AI_Output(self,other, " DIA_XBS_1_STANDARD_01_04 " );	// A new group of orcs has recently arrived here. I think the defenders of the castle will soon have a very tight time!
+		AI_Output(self,other, " DIA_XBS_1_STANDARD_01_04 " );	// A new group of orcs has recently arrived here. I think the defenders of the castle will soon have a very hard time!
 	};
 	if (chapter ==  5 )
 	{
