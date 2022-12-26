@@ -125,11 +125,11 @@ func int dia_vlk_989_reign_hello_condition()
 
 func void day_vlk_989_reign_hello_info()
 {
-	AI_Output(other,self,"DIA_VLK_989_Reinar_Hello_01_00");	//Кто ты?
+	AI_Output(other,self,"DIA_VLK_989_Reinar_Hello_01_00");	//Who are you?
 	AI_Output(self,other, " DIA_VLK_989_Reinar_Hello_01_01 " );	// My name is Raynar and, as you may have guessed, I make a little extra money reselling weapons to paladins.
-	AI_Output(self,other, " DIA_VLK_989_Reinar_Hello_01_02 " );	// True, I only deal with extremely rare and extremely expensive items, and not with the rubbish that they sell on the marketplace.
+	AI_Output(self,other, " DIA_VLK_989_Reinar_Hello_01_02 " );	// True, I only deal with extremely rare and extremely expensive items, and not with the rubbish that they sell in the marketplace.
 	AI_Output(other,self, " DIA_VLK_989_Reinar_Hello_01_03 " );	// Do you buy weapons?
-	AI_Output(self,other, " DIA_VLK_989_Reinar_Hello_01_04 " );	// Of course! So if suddenly a young man finds some rare sword or dagger, please bring it to me.
+	AI_Output(self,other, " DIA_VLK_989_Reinar_Hello_01_04 " );	// Of course! So if you were to find some rare sword or dagger, please bring it to me.
 	AI_Output(self,other, " DIA_VLK_989_Reinar_Hello_01_05 " );	// Don't hesitate, I'll give you the best price for it!
 	Log_CreateTopic(TOPIC_CityTrader,LOG_NOTE);
 	B_LogEntry(TOPIC_CityTrader, " Raynar buys rare and unique melee weapons for paladins at a good price. " );
@@ -287,9 +287,9 @@ func void dia_vlk_989_reinar_sellweapon_Morgenstern()
 {
 	B_GivePlayerXP(100);
 	B_GiveInvItems(other,self,ItMw_Morgenstern,1);
-	AI_Output(other,self, " DIA_VLK_989_Reinar_SellWeapon_01_02 " );	// Well, how are you?
-	AI_Output(self,other, " DIA_VLK_989_Reinar_SellWeapon_01_03 " );	// Hmmm...(assessing) What a really beautiful and really rare weapon!
-	AI_Output(self,other, " DIA_VLK_989_Reinar_SellWeapon_01_04 " );	// So I'll probably take it from you. Here, take this gold!
+	AI_Output(other,self, " DIA_VLK_989_Reinar_SellWeapon_01_02 " );	// How are you?
+	AI_Output(self,other, " DIA_VLK_989_Reinar_SellWeapon_01_03 " );	// Hmmm... What a really beautiful and really rare weapon!
+	AI_Output(self,other, " DIA_VLK_989_Reinar_SellWeapon_01_04 " );	// I'll gladly take it from you. Here, take this gold!
 	B_GiveInvItems(self,other,ItMi_Gold,150);
 	Npc_RemoveInvItems(self,ItMw_Morgenstern,1);
 	AI_Output(self,other, " DIA_VLK_989_Reinar_SellWeapon_01_05 " );	// And rest assured, this is a good price. No merchant will give you more for it!
@@ -300,8 +300,8 @@ func void dia_vlk_989_reinar_sellweapon_Inquisitor()
 	B_GivePlayerXP(100);
 	B_GiveInvItems(other,self,ItMw_Inquisitor,1);
 	AI_Output(other,self, " DIA_VLK_989_Reinar_SellWeapon_01_02 " );	// Well, how are you?
-	AI_Output(self,other, " DIA_VLK_989_Reinar_SellWeapon_01_03 " );	// Hmmm...(assessing) What a really beautiful and really rare weapon!
-	AI_Output(self,other, " DIA_VLK_989_Reinar_SellWeapon_01_04 " );	// So I'll probably take it from you. Here, take this gold!
+	AI_Output(self,other, " DIA_VLK_989_Reinar_SellWeapon_01_03 " );	// Hmmm... What a really beautiful and really rare weapon!
+	AI_Output(self,other, " DIA_VLK_989_Reinar_SellWeapon_01_04 " );	// I'll gladly it from you. Here, take this gold!
 	B_GiveInvItems(self,other,ItMi_Gold,200);
 	Npc_RemoveInvItems(self,ItMw_Inquisitor,1);
 	AI_Output(self,other, " DIA_VLK_989_Reinar_SellWeapon_01_05 " );	// And rest assured, this is a good price. No merchant will give you more for it!
@@ -312,8 +312,8 @@ func void dia_vlk_989_reinar_sellweapon_Rabenschnabel()
 	B_GivePlayerXP(100);
 	B_GiveInvItems(other,self,ItMw_Rabenschnabel, 1 );
 	AI_Output(other,self, " DIA_VLK_989_Reinar_SellWeapon_01_02 " );	// Well, how are you?
-	AI_Output(self,other, " DIA_VLK_989_Reinar_SellWeapon_01_03 " );	// Hmmm...(assessing) What a really beautiful and really rare weapon!
-	AI_Output(self,other, " DIA_VLK_989_Reinar_SellWeapon_01_04 " );	// So I'll probably take it from you. Here, take this gold!
+	AI_Output(self,other, " DIA_VLK_989_Reinar_SellWeapon_01_03 " );	// Hmmm... What a really beautiful and really rare weapon!
+	AI_Output(self,other, " DIA_VLK_989_Reinar_SellWeapon_01_04 " );	// I'll gladly take it from you. Here, take this gold!
 	B_GiveInvItems(self,other,ItMi_Gold,200);
 	Npc_RemoveInvItems(self,ItMw_Rabenschnabel, 1 );
 	AI_Output(self,other, " DIA_VLK_989_Reinar_SellWeapon_01_05 " );	// And rest assured, this is a good price. No merchant will give you more for it!
@@ -324,8 +324,8 @@ func void dia_vlk_989_reinar_sellweapon_Crusher()
 	B_GivePlayerXP(100);
 	B_GiveInvItems(other,self,ITMW_2H_MACE_107,1);
 	AI_Output(other,self, " DIA_VLK_989_Reinar_SellWeapon_01_02 " );	// Well, how are you?
-	AI_Output(self,other, " DIA_VLK_989_Reinar_SellWeapon_01_03 " );	// Hmmm...(assessing) What a really beautiful and really rare weapon!
-	AI_Output(self,other, " DIA_VLK_989_Reinar_SellWeapon_01_04 " );	// So I'll probably take it from you. Here, take this gold!
+	AI_Output(self,other, " DIA_VLK_989_Reinar_SellWeapon_01_03 " );	// Hmmm... What a really beautiful and really rare weapon!
+	AI_Output(self,other, " DIA_VLK_989_Reinar_SellWeapon_01_04 " );	// I'll gladly take it from you. Here, take this gold!
 	B_GiveInvItems(self,other,ItMi_Gold,250);
 	Npc_RemoveInvItems(self,ITMW_2H_MACE_107,1);
 	AI_Output(self,other, " DIA_VLK_989_Reinar_SellWeapon_01_05 " );	// And rest assured, this is a good price. No merchant will give you more for it!
@@ -336,8 +336,8 @@ func void dia_vlk_989_reinar_sellweapon_Volebir()
 	B_GivePlayerXP(100);
 	B_GiveInvItems(other,self,ItMw_2H_Volebir,1);
 	AI_Output(other,self, " DIA_VLK_989_Reinar_SellWeapon_01_02 " );	// Well, how are you?
-	AI_Output(self,other, " DIA_VLK_989_Reinar_SellWeapon_01_03 " );	// Hmmm...(assessing) What a really beautiful and really rare weapon!
-	AI_Output(self,other, " DIA_VLK_989_Reinar_SellWeapon_01_04 " );	// So I'll probably take it from you. Here, take this gold!
+	AI_Output(self,other, " DIA_VLK_989_Reinar_SellWeapon_01_03 " );	// Hmmm... What a really beautiful and really rare weapon!
+	AI_Output(self,other, " DIA_VLK_989_Reinar_SellWeapon_01_04 " );	// I'll gladly take it from you. Here, take this gold!
 	B_GiveInvItems(self,other,ItMi_Gold,400);
 	Npc_RemoveInvItems(self,ItMw_2H_Volebir,1);
 	AI_Output(self,other, " DIA_VLK_989_Reinar_SellWeapon_01_05 " );	// And rest assured, this is a good price. No merchant will give you more for it!
@@ -348,8 +348,8 @@ func void dia_vlk_989_reinar_sellweapon_IceHammer()
 	B_GivePlayerXP(200);
 	B_GiveInvItems(other,self,ItMw_2H_IceHammer,1);
 	AI_Output(other,self, " DIA_VLK_989_Reinar_SellWeapon_01_02 " );	// Well, how are you?
-	AI_Output(self,other, " DIA_VLK_989_Reinar_SellWeapon_01_03 " );	// Hmmm...(assessing) What a really beautiful and really rare weapon!
-	AI_Output(self,other, " DIA_VLK_989_Reinar_SellWeapon_01_04 " );	// So I'll probably take it from you. Here, take this gold!
+	AI_Output(self,other, " DIA_VLK_989_Reinar_SellWeapon_01_03 " );	// Hmmm... What a really beautiful and really rare weapon!
+	AI_Output(self,other, " DIA_VLK_989_Reinar_SellWeapon_01_04 " );	// I'll gladly take it from you. Here, take this gold!
 	B_GiveInvItems(self,other,ItMi_Gold,700);
 	Npc_RemoveInvItems(self,ItMw_2H_IceHammer,1);
 	AI_Output(self,other, " DIA_VLK_989_Reinar_SellWeapon_01_05 " );	// And rest assured, this is a good price. No merchant will give you more for it!
@@ -360,8 +360,8 @@ func void dia_vlk_989_reinar_sellweapon_MolagBarMace()
 	B_GivePlayerXP(100);
 	B_GiveInvItems(other,self,ItMw_1H_MolagBarMace,1);
 	AI_Output(other,self, " DIA_VLK_989_Reinar_SellWeapon_01_02 " );	// Well, how are you?
-	AI_Output(self,other, " DIA_VLK_989_Reinar_SellWeapon_01_03 " );	// Hmmm...(assessing) What a really beautiful and really rare weapon!
-	AI_Output(self,other, " DIA_VLK_989_Reinar_SellWeapon_01_04 " );	// So I'll probably take it from you. Here, take this gold!
+	AI_Output(self,other, " DIA_VLK_989_Reinar_SellWeapon_01_03 " );	// Hmmm... What a really beautiful and really rare weapon!
+	AI_Output(self,other, " DIA_VLK_989_Reinar_SellWeapon_01_04 " );	// I'll gladly take it from you. Here, take this gold!
 	B_GiveInvItems(self,other,ItMi_Gold,250);
 	Npc_RemoveInvItems(self,ItMw_1H_MolagBarMace,1);
 	AI_Output(self,other, " DIA_VLK_989_Reinar_SellWeapon_01_05 " );	// And rest assured, this is a good price. No merchant will give you more for it!
@@ -372,8 +372,8 @@ func void dia_vlk_989_reinar_sellweapon_SharpTeeth()
 	B_GivePlayerXP(200);
 	B_GiveInvItems(other,self,ItMw_2H_SharpTeeth,1);
 	AI_Output(other,self, " DIA_VLK_989_Reinar_SellWeapon_01_02 " );	// Well, how are you?
-	AI_Output(self,other, " DIA_VLK_989_Reinar_SellWeapon_01_03 " );	// Hmmm...(assessing) What a really beautiful and really rare weapon!
-	AI_Output(self,other, " DIA_VLK_989_Reinar_SellWeapon_01_04 " );	// So I'll probably take it from you. Here, take this gold!
+	AI_Output(self,other, " DIA_VLK_989_Reinar_SellWeapon_01_03 " );	// Hmmm... What a really beautiful and really rare weapon!
+	AI_Output(self,other, " DIA_VLK_989_Reinar_SellWeapon_01_04 " );	// I'll gladly take it from you. Here, take this gold!
 	B_GiveInvItems(self,other,ItMi_Gold,500);
 	Npc_RemoveInvItems(self,ItMw_2H_SharpTeeth,1);
 	AI_Output(self,other, " DIA_VLK_989_Reinar_SellWeapon_01_05 " );	// And rest assured, this is a good price. No merchant will give you more for it!
@@ -384,8 +384,8 @@ func void dia_vlk_989_reinar_sellweapon_drake()
 	B_GivePlayerXP(100);
 	B_GiveInvItems(other,self,ItMw_Drakesaebel,1);
 	AI_Output(other,self, " DIA_VLK_989_Reinar_SellWeapon_01_02 " );	// Well, how are you?
-	AI_Output(self,other, " DIA_VLK_989_Reinar_SellWeapon_01_03 " );	// Hmmm...(assessing) What a really beautiful and really rare weapon!
-	AI_Output(self,other, " DIA_VLK_989_Reinar_SellWeapon_01_04 " );	// So I'll probably take it from you. Here, take this gold!
+	AI_Output(self,other, " DIA_VLK_989_Reinar_SellWeapon_01_03 " );	// Hmmm... What a really beautiful and really rare weapon!
+	AI_Output(self,other, " DIA_VLK_989_Reinar_SellWeapon_01_04 " );	// I'll gladly take it from you. Here, take this gold!
 	B_GiveInvItems(self,other,ItMi_Gold,300);
 	Npc_RemoveInvItems(self,ItMw_Drakesaebel,1);
 	AI_Output(self,other, " DIA_VLK_989_Reinar_SellWeapon_01_05 " );	// And rest assured, this is a good price. No merchant will give you more for it!
@@ -397,7 +397,7 @@ func void dia_vlk_989_reinar_sellweapon_Deathruff()
 	B_GiveInvItems(other,self,ITMW_1H_SWORD_LONG_05,1);
 	AI_Output(other,self, " DIA_VLK_989_Reinar_SellWeapon_01_02 " );	// Well, how are you?
 	AI_Output(self,other, " DIA_VLK_989_Reinar_SellWeapon_01_03 " );	// Hmmm...(assessing) What a really beautiful and really rare weapon!
-	AI_Output(self,other, " DIA_VLK_989_Reinar_SellWeapon_01_04 " );	// So I'll probably take it from you. Here, take this gold!
+	AI_Output(self,other, " DIA_VLK_989_Reinar_SellWeapon_01_04 " );	// I'll gladly take it from you. Here, take this gold!
 	B_GiveInvItems(self,other,ItMi_Gold,300);
 	Npc_RemoveInvItems(self,ITMW_1H_SWORD_LONG_05,1);
 	AI_Output(self,other, " DIA_VLK_989_Reinar_SellWeapon_01_05 " );	// And rest assured, this is a good price. No merchant will give you more for it!
@@ -409,7 +409,7 @@ func void dia_vlk_989_reinar_sellweapon_sturmbringer()
 	B_GiveInvItems(other,self,ItMw_Stormbringer, 1 );
 	AI_Output(other,self, " DIA_VLK_989_Reinar_SellWeapon_01_02 " );	// Well, how are you?
 	AI_Output(self,other, " DIA_VLK_989_Reinar_SellWeapon_01_03 " );	// Hmmm...(assessing) What a really beautiful and really rare weapon!
-	AI_Output(self,other, " DIA_VLK_989_Reinar_SellWeapon_01_04 " );	// So I'll probably take it from you. Here, take this gold!
+	AI_Output(self,other, " DIA_VLK_989_Reinar_SellWeapon_01_04 " );	// I'll gladly take it from you. Here, take this gold!
 	B_GiveInvItems(self,other,ItMi_Gold,200);
 	Npc_RemoveInvItems(self,ItMw_Sturmbringer, 1 );
 	AI_Output(self,other, " DIA_VLK_989_Reinar_SellWeapon_01_05 " );	// And rest assured, this is a good price. No merchant will give you more for it!
@@ -421,7 +421,7 @@ func void dia_vlk_989_reinar_sellweapon_Сrest()
 	B_GiveInvItems(other,self,itmw_1h_Сrest,1);
 	AI_Output(other,self, " DIA_VLK_989_Reinar_SellWeapon_01_02 " );	// Well, how are you?
 	AI_Output(self,other, " DIA_VLK_989_Reinar_SellWeapon_01_03 " );	// Hmmm...(assessing) What a really beautiful and really rare weapon!
-	AI_Output(self,other, " DIA_VLK_989_Reinar_SellWeapon_01_04 " );	// So I'll probably take it from you. Here, take this gold!
+	AI_Output(self,other, " DIA_VLK_989_Reinar_SellWeapon_01_04 " );	// I'll gladly take it from you. Here, take this gold!
 	B_GiveInvItems(self,other,ItMi_Gold,200);
 	Npc_RemoveInvItems(self,itmw_1h_Сrest,1);
 	AI_Output(self,other, " DIA_VLK_989_Reinar_SellWeapon_01_05 " );	// And rest assured, this is a good price. No merchant will give you more for it!
@@ -433,7 +433,7 @@ func void dia_vlk_989_reinar_sellweapon_orkschlaechter()
 	B_GiveInvItems(other,self,ItMw_Orkschlaechter,1);
 	AI_Output(other,self, " DIA_VLK_989_Reinar_SellWeapon_01_02 " );	// Well, how are you?
 	AI_Output(self,other, " DIA_VLK_989_Reinar_SellWeapon_01_03 " );	// Hmmm...(assessing) What a really beautiful and really rare weapon!
-	AI_Output(self,other, " DIA_VLK_989_Reinar_SellWeapon_01_04 " );	// So I'll probably take it from you. Here, take this gold!
+	AI_Output(self,other, " DIA_VLK_989_Reinar_SellWeapon_01_04 " );	// I'll gladly take it from you. Here, take this gold!
 	B_GiveInvItems(self,other,ItMi_Gold,250);
 	Npc_RemoveInvItems(self,ItMw_Orkschlaechter,1);
 	AI_Output(self,other, " DIA_VLK_989_Reinar_SellWeapon_01_05 " );	// And rest assured, this is a good price. No merchant will give you more for it!
@@ -445,7 +445,7 @@ func void dia_vlk_989_reinar_sellweapon_Fearund()
 	B_GiveInvItems(other,self,ITMW_FEARUND,1);
 	AI_Output(other,self, " DIA_VLK_989_Reinar_SellWeapon_01_02 " );	// Well, how are you?
 	AI_Output(self,other, " DIA_VLK_989_Reinar_SellWeapon_01_03 " );	// Hmmm...(assessing) What a really beautiful and really rare weapon!
-	AI_Output(self,other, " DIA_VLK_989_Reinar_SellWeapon_01_04 " );	// So I'll probably take it from you. Here, take this gold!
+	AI_Output(self,other, " DIA_VLK_989_Reinar_SellWeapon_01_04 " );	// I'll gladly take it from you. Here, take this gold!
 	B_GiveInvItems(self,other,ItMi_Gold,200);
 	Npc_RemoveInvItems(self,ITMW_FEARUND,1);
 	AI_Output(self,other, " DIA_VLK_989_Reinar_SellWeapon_01_05 " );	// And rest assured, this is a good price. No merchant will give you more for it!
@@ -457,7 +457,7 @@ func void dia_vlk_989_reinar_sellweapon_SnakeSword()
 	B_GiveInvItems(other,self,ITMW_1H_KMR_SNAKESWORD_01,1);
 	AI_Output(other,self, " DIA_VLK_989_Reinar_SellWeapon_01_02 " );	// Well, how are you?
 	AI_Output(self,other, " DIA_VLK_989_Reinar_SellWeapon_01_03 " );	// Hmmm...(assessing) What a really beautiful and really rare weapon!
-	AI_Output(self,other, " DIA_VLK_989_Reinar_SellWeapon_01_04 " );	// So I'll probably take it from you. Here, take this gold!
+	AI_Output(self,other, " DIA_VLK_989_Reinar_SellWeapon_01_04 " );	// I'll gladly take it from you. Here, take this gold!
 	B_GiveInvItems(self,other,ItMi_Gold,250);
 	Npc_RemoveInvItems(self,ITMW_1H_KMR_SNAKESWORD_01,1);
 	AI_Output(self,other, " DIA_VLK_989_Reinar_SellWeapon_01_05 " );	// And rest assured, this is a good price. No merchant will give you more for it!
@@ -469,7 +469,7 @@ func void dia_vlk_989_reinar_sellweapon_normardsword()
 	B_GiveInvItems(other,self,itmw_normardsword,1);
 	AI_Output(other,self, " DIA_VLK_989_Reinar_SellWeapon_01_02 " );	// Well, how are you?
 	AI_Output(self,other, " DIA_VLK_989_Reinar_SellWeapon_01_03 " );	// Hmmm...(assessing) What a really beautiful and really rare weapon!
-	AI_Output(self,other, " DIA_VLK_989_Reinar_SellWeapon_01_04 " );	// So I'll probably take it from you. Here, take this gold!
+	AI_Output(self,other, " DIA_VLK_989_Reinar_SellWeapon_01_04 " );	// I'll gladly take it from you. Here, take this gold!
 	B_GiveInvItems(self,other,ItMi_Gold,350);
 	Npc_RemoveInvItems(self,itmw_normardsword,1);
 	AI_Output(self,other, " DIA_VLK_989_Reinar_SellWeapon_01_05 " );	// And rest assured, this is a good price. No merchant will give you more for it!
@@ -481,7 +481,7 @@ func void dia_vlk_989_reinar_sellweapon_BlackHeart()
 	B_GiveInvItems(other,self,ITMW_1H_BLACKSWORD,1);
 	AI_Output(other,self, " DIA_VLK_989_Reinar_SellWeapon_01_02 " );	// Well, how are you?
 	AI_Output(self,other, " DIA_VLK_989_Reinar_SellWeapon_01_03 " );	// Hmmm...(assessing) What a really beautiful and really rare weapon!
-	AI_Output(self,other, " DIA_VLK_989_Reinar_SellWeapon_01_04 " );	// So I'll probably take it from you. Here, take this gold!
+	AI_Output(self,other, " DIA_VLK_989_Reinar_SellWeapon_01_04 " );	// I'll gladly take it from you. Here, take this gold!
 	B_GiveInvItems(self,other,ItMi_Gold,500);
 	Npc_RemoveInvItems(self,ITMW_1H_BLACKSWORD,1);
 	AI_Output(self,other, " DIA_VLK_989_Reinar_SellWeapon_01_05 " );	// And rest assured, this is a good price. No merchant will give you more for it!
@@ -493,7 +493,7 @@ func void dia_vlk_989_reinar_sellweapon_DemonBlade()
 	B_GiveInvItems(other,self,ITMW_1H_G3A_DAEMONBLADE_01,1);
 	AI_Output(other,self, " DIA_VLK_989_Reinar_SellWeapon_01_02 " );	// Well, how are you?
 	AI_Output(self,other, " DIA_VLK_989_Reinar_SellWeapon_01_03 " );	// Hmmm...(assessing) What a really beautiful and really rare weapon!
-	AI_Output(self,other, " DIA_VLK_989_Reinar_SellWeapon_01_04 " );	// So I'll probably take it from you. Here, take this gold!
+	AI_Output(self,other, " DIA_VLK_989_Reinar_SellWeapon_01_04 " );	// I'll gladly take it from you. Here, take this gold!
 	B_GiveInvItems(self,other,ItMi_Gold,700);
 	Npc_RemoveInvItems(self,ITMW_1H_G3A_DAEMONBLADE_01,1);
 	AI_Output(self,other, " DIA_VLK_989_Reinar_SellWeapon_01_05 " );	// And rest assured, this is a good price. No merchant will give you more for it!
@@ -505,7 +505,7 @@ func void dia_vlk_989_reinar_sellweapon_GinnokSword()
 	B_GiveInvItems(other,self,ItMw_1H_GinnokSword,1);
 	AI_Output(other,self, " DIA_VLK_989_Reinar_SellWeapon_01_02 " );	// Well, how are you?
 	AI_Output(self,other, " DIA_VLK_989_Reinar_SellWeapon_01_03 " );	// Hmmm...(assessing) What a really beautiful and really rare weapon!
-	AI_Output(self,other, " DIA_VLK_989_Reinar_SellWeapon_01_04 " );	// So I'll probably take it from you. Here, take this gold!
+	AI_Output(self,other, " DIA_VLK_989_Reinar_SellWeapon_01_04 " );	// I'll gladly take it from you. Here, take this gold!
 	B_GiveInvItems(self,other,ItMi_Gold,700);
 	Npc_RemoveInvItems(self,ItMw_1H_GinnokSword,1);
 	AI_Output(self,other, " DIA_VLK_989_Reinar_SellWeapon_01_05 " );	// And rest assured, this is a good price. No merchant will give you more for it!
@@ -517,7 +517,7 @@ func void dia_vlk_989_reinar_sellweapon_battleaxe()
 	B_GiveInvItems(other,self,ItMw_Battleaxe, 1 );
 	AI_Output(other,self, " DIA_VLK_989_Reinar_SellWeapon_01_02 " );	// Well, how are you?
 	AI_Output(self,other, " DIA_VLK_989_Reinar_SellWeapon_01_03 " );	// Hmmm...(assessing) What a really beautiful and really rare weapon!
-	AI_Output(self,other, " DIA_VLK_989_Reinar_SellWeapon_01_04 " );	// So I'll probably take it from you. Here, take this gold!
+	AI_Output(self,other, " DIA_VLK_989_Reinar_SellWeapon_01_04 " );	// I'll gladly take it from you. Here, take this gold!
 	B_GiveInvItems(self,other,ItMi_Gold,300);
 	Npc_RemoveInvItems(self,ItMw_Battleaxe, 1 );
 	AI_Output(self,other, " DIA_VLK_989_Reinar_SellWeapon_01_05 " );	// And rest assured, this is a good price. No merchant will give you more for it!
@@ -529,7 +529,7 @@ func void dia_vlk_989_reinar_sellweapon_SoulSword()
 	B_GiveInvItems(other,self,ITMW_2H_KMR_SOULSWORD_01,1);
 	AI_Output(other,self, " DIA_VLK_989_Reinar_SellWeapon_01_02 " );	// Well, how are you?
 	AI_Output(self,other, " DIA_VLK_989_Reinar_SellWeapon_01_03 " );	// Hmmm...(assessing) What a really beautiful and really rare weapon!
-	AI_Output(self,other, " DIA_VLK_989_Reinar_SellWeapon_01_04 " );	// So I'll probably take it from you. Here, take this gold!
+	AI_Output(self,other, " DIA_VLK_989_Reinar_SellWeapon_01_04 " );	// I'll gladly take it from you. Here, take this gold!
 	B_GiveInvItems(self,other,ItMi_Gold,250);
 	Npc_RemoveInvItems(self,ITMW_2H_KMR_SOULSWORD_01,1);
 	AI_Output(self,other, " DIA_VLK_989_Reinar_SellWeapon_01_05 " );	// And rest assured, this is a good price. No merchant will give you more for it!
@@ -541,7 +541,7 @@ func void dia_vlk_989_reinar_sellweapon_drachenschneide()
 	B_GiveInvItems(other,self,ItMw_Dragon's Edge, 1 );
 	AI_Output(other,self, " DIA_VLK_989_Reinar_SellWeapon_01_02 " );	// Well, how are you?
 	AI_Output(self,other, " DIA_VLK_989_Reinar_SellWeapon_01_03 " );	// Hmmm...(assessing) What a really beautiful and really rare weapon!
-	AI_Output(self,other, " DIA_VLK_989_Reinar_SellWeapon_01_04 " );	// So I'll probably take it from you. Here, take this gold!
+	AI_Output(self,other, " DIA_VLK_989_Reinar_SellWeapon_01_04 " );	// I'll gladly take it from you. Here, take this gold!
 	B_GiveInvItems(self,other,ItMi_Gold,500);
 	Npc_RemoveInvItems(self,ItMw_Drachenschneide,1);
 	AI_Output(self,other, " DIA_VLK_989_Reinar_SellWeapon_01_05 " );	// And rest assured, this is a good price. No merchant will give you more for it!
@@ -553,7 +553,7 @@ func void dia_vlk_989_reinar_sellweapon_RuneAxeAncient()
 	B_GiveInvItems(other,self,ItMw_RuneAxeAncient,1);
 	AI_Output(other,self, " DIA_VLK_989_Reinar_SellWeapon_01_02 " );	// Well, how are you?
 	AI_Output(self,other, " DIA_VLK_989_Reinar_SellWeapon_01_03 " );	// Hmmm...(assessing) What a really beautiful and really rare weapon!
-	AI_Output(self,other, " DIA_VLK_989_Reinar_SellWeapon_01_04 " );	// So I'll probably take it from you. Here, take this gold!
+	AI_Output(self,other, " DIA_VLK_989_Reinar_SellWeapon_01_04 " );	// I'll gladly take it from you. Here, take this gold!
 	B_GiveInvItems(self,other,ItMi_Gold,500);
 	Npc_RemoveInvItems(self,ItMw_RuneAxeAncient,1);
 	AI_Output(self,other, " DIA_VLK_989_Reinar_SellWeapon_01_05 " );	// And rest assured, this is a good price. No merchant will give you more for it!
@@ -565,7 +565,7 @@ func void dia_vlk_989_reinar_sellweapon_RobarWill()
 	B_GiveInvItems(other,self,ITMW_2H_KMR_RHOBAR_01,1);
 	AI_Output(other,self, " DIA_VLK_989_Reinar_SellWeapon_01_02 " );	// Well, how are you?
 	AI_Output(self,other, " DIA_VLK_989_Reinar_SellWeapon_01_03 " );	// Hmmm...(assessing) What a really beautiful and really rare weapon!
-	AI_Output(self,other, " DIA_VLK_989_Reinar_SellWeapon_01_04 " );	// So I'll probably take it from you. Here, take this gold!
+	AI_Output(self,other, " DIA_VLK_989_Reinar_SellWeapon_01_04 " );	// I'll gladly take it from you. Here, take this gold!
 	B_GiveInvItems(self,other,ItMi_Gold,700);
 	Npc_RemoveInvItems(self,ITMW_2H_KMR_RHOBAR_01,1);
 	AI_Output(self,other, " DIA_VLK_989_Reinar_SellWeapon_01_05 " );	// And rest assured, this is a good price. No merchant will give you more for it!
@@ -577,7 +577,7 @@ func void dia_vlk_989_reinar_sellweapon_DemonHand()
 	B_GiveInvItems(other,self,ItMw_DemonHand,1);
 	AI_Output(other,self, " DIA_VLK_989_Reinar_SellWeapon_01_02 " );	// Well, how are you?
 	AI_Output(self,other, " DIA_VLK_989_Reinar_SellWeapon_01_03 " );	// Hmmm...(assessing) What a really beautiful and really rare weapon!
-	AI_Output(self,other, " DIA_VLK_989_Reinar_SellWeapon_01_04 " );	// So I'll probably take it from you. Here, take this gold!
+	AI_Output(self,other, " DIA_VLK_989_Reinar_SellWeapon_01_04 " );	// I'll gladly take it from you. Here, take this gold!
 	B_GiveInvItems(self,other,ItMi_Gold,700);
 	Npc_RemoveInvItems(self,ItMw_DemonHand,1);
 	AI_Output(self,other, " DIA_VLK_989_Reinar_SellWeapon_01_05 " );	// And rest assured, this is a good price. No merchant will give you more for it!
@@ -589,7 +589,7 @@ func void dia_vlk_989_reinar_sellweapon_urizel()
 	B_GiveInvItems(other,self,itmw_2h_urizel,1);
 	AI_Output(other,self, " DIA_VLK_989_Reinar_SellWeapon_01_02 " );	// Well, how are you?
 	AI_Output(self,other, " DIA_VLK_989_Reinar_SellWeapon_01_03 " );	// Hmmm...(assessing) What a really beautiful and really rare weapon!
-	AI_Output(self,other, " DIA_VLK_989_Reinar_SellWeapon_01_04 " );	// So I'll probably take it from you. Here, take this gold!
+	AI_Output(self,other, " DIA_VLK_989_Reinar_SellWeapon_01_04 " );	// I'll gladly take it from you. Here, take this gold!
 	B_GiveInvItems(self,other,ItMi_Gold,700);
 	Npc_RemoveInvItems(self,itmw_2h_urizel,1);
 	AI_Output(self,other, " DIA_VLK_989_Reinar_SellWeapon_01_05 " );	// And rest assured, this is a good price. No merchant will give you more for it!
@@ -601,7 +601,7 @@ func void dia_vlk_989_reinar_sellweapon_urizel_nomagic()
 	B_GiveInvItems(other,self,itmw_2h_urizel_nomagic,1);
 	AI_Output(other,self, " DIA_VLK_989_Reinar_SellWeapon_01_02 " );	// Well, how are you?
 	AI_Output(self,other, " DIA_VLK_989_Reinar_SellWeapon_01_03 " );	// Hmmm...(assessing) What a really beautiful and really rare weapon!
-	AI_Output(self,other, " DIA_VLK_989_Reinar_SellWeapon_01_04 " );	// So I'll probably take it from you. Here, take this gold!
+	AI_Output(self,other, " DIA_VLK_989_Reinar_SellWeapon_01_04 " );	// I'll gladly take it from you. Here, take this gold!
 	B_GiveInvItems(self,other,ItMi_Gold,500);
 	Npc_RemoveInvItems(self,itmw_2h_urizel_nomagic,1);
 	AI_Output(self,other, " DIA_VLK_989_Reinar_SellWeapon_01_05 " );	// And rest assured, this is a good price. No merchant will give you more for it!
@@ -613,7 +613,7 @@ func void dia_vlk_989_reinar_sellweapon_weltenspalter()
 	B_GiveInvItems(other,self,itmw_2h_weltenspalter, 1 );
 	AI_Output(other,self, " DIA_VLK_989_Reinar_SellWeapon_01_02 " );	// Well, how are you?
 	AI_Output(self,other, " DIA_VLK_989_Reinar_SellWeapon_01_03 " );	// Hmmm...(assessing) What a really beautiful and really rare weapon!
-	AI_Output(self,other, " DIA_VLK_989_Reinar_SellWeapon_01_04 " );	// So I'll probably take it from you. Here, take this gold!
+	AI_Output(self,other, " DIA_VLK_989_Reinar_SellWeapon_01_04 " );	// I'll gladly take it from you. Here, take this gold!
 	B_GiveInvItems(self,other,ItMi_Gold,2000);
 	Npc_RemoveInvItems(self,itmw_2h_weltenspalter,1);
 	AI_Output(self,other, " DIA_VLK_989_Reinar_SellWeapon_01_05 " );	// And rest assured, this is a good price. No merchant will give you more for it!
