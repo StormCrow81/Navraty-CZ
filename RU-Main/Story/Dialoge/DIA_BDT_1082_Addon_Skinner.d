@@ -79,10 +79,10 @@ func int DIA_Addon_Skinner_Hi_Condition()
 
 func void DIA_Addon_Skinner_Hi_Info()
 {
-	AI_Output(self,other, " DIA_Addon_Skinner_Hi_08_00 " );	// Why did you wake me up, huh? I'm sure you don't really know...
+	AI_Output(self,other, " DIA_Addon_Skinner_Hi_08_00 " );	// Why did you wake me up, huh? I'm sure you don't even know...
 	AI_Output(self,other, " DIA_Addon_Skinner_Hi_08_01 " );	// No - no need to say anything. It's too late to make excuses.
 	AI_Output(self,other, " DIA_Addon_Skinner_Hi_08_02 " );	// You now have a choice. You can fight me and my Betty. Or you can try to run away.
-	AI_Output(self,other, " DIA_Addon_Skinner_Hi_08_03 " );	// And if I were you, I would start the run...
+	AI_Output(self,other, " DIA_Addon_Skinner_Hi_08_03 " );	// And if I were you, I would start to run...
 	AI_StopProcessInfos(self);
 	B_Attack(self,other,AR_NONE,1);
 };
@@ -120,7 +120,7 @@ func void DIA_Addon_Skinner_Attentat_Info()
 func void DIA_Addon_Skinner_ATTENTAT_ADDON_CONTRA()
 {
 	AI_Output(other,self, " DIA_Addon_Skinner_ATTENTAT_ADDON_CONTRA_15_00 " );	// I want to remove Esteban.
-	AI_Output(self,other,"DIA_Addon_Skinner_ATTENTAT_ADDON_CONTRA_08_01");	//Отлично.
+	AI_Output(self,other,"DIA_Addon_Skinner_ATTENTAT_ADDON_CONTRA_08_01");	//Fine.
 	Judas_Counter = Judas_Counter + 1;
 	Info_ClearChoices(DIA_Addon_Skinner_Attentat);
 };
@@ -128,7 +128,7 @@ func void DIA_Addon_Skinner_ATTENTAT_ADDON_CONTRA()
 func void DIA_Addon_Skinner_ATTENTAT_ADDON_PRO()
 {
 	AI_Output(other,self, " DIA_Addon_Skinner_ATTENTAT_ADDON_PRO_15_00 " );	// I want to find the traitor.
-	AI_Output(self,other,"DIA_Addon_Skinner_ATTENTAT_ADDON_PRO_08_01");	//Дерьмо.
+	AI_Output(self,other,"DIA_Addon_Skinner_ATTENTAT_ADDON_PRO_08_01");	//Shit.
 	Info_ClearChoices(DIA_Addon_Skinner_Attentat);
 };
 
