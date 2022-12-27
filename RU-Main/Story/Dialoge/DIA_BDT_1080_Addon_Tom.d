@@ -79,10 +79,10 @@ func void DIA_Addon_Tom_HI_Info()
 {
 	AI_Output(other,self, " DIA_Addon_Tom_HI_15_00 " );	// Why are you stuck here?
 	AI_Output(self,other, " DIA_Addon_Tom_HI_11_01 " );	// I'm in trouble. For now, I'd better not show up at the camp.
-	AI_Output(other,self,"DIA_Addon_Tom_HI_15_02");	//Что не так?
+	AI_Output(other,self,"DIA_Addon_Tom_HI_15_02");	//What's wrong?
 	AI_Output(self,other, " DIA_Addon_Tom_HI_11_03 " );	// I had a good relationship with the pirates, you know?
 	AI_Output(self,other, " DIA_Addon_Tom_HI_11_04 " );	// I always met the guys near the camp and traded with them.
-	AI_Output(self,other, " DIA_Addon_Tom_HI_11_05 " );	// I bought half of the camp! 'Tom bring me that, Tom bring me that'.
+	AI_Output(self,other, " DIA_Addon_Tom_HI_11_05 " );	// I bought half of the camp! 'Tom bring me this, Tom bring me that'.
 	AI_Output(self,other, " DIA_Addon_Tom_HI_11_06 " );	// And then that bastard Esteban intervened.
 };
 
@@ -112,7 +112,7 @@ func void DIA_Addon_Tom_Juan_Info()
 	AI_Output(other,self, " DIA_Addon_Tom_Juan_15_00 " );	// What happened?
 	AI_Output(self,other, " DIA_Addon_Tom_Juan_11_01 " );	// Esteban sent one of his guys - Juan. This bastard ambushed us.
 	AI_Output(self,other, " DIA_Addon_Tom_Juan_11_02 " );	// I was just about to make a deal with the pirates when he popped out of the darkness and knocked me down with two punches!
-	AI_Output(self,other, " DIA_Addon_Tom_Juan_11_03 " );	// This guy is very fast! But not fast enough. I managed to get away from him.
+	AI_Output(self,other, " DIA_Addon_Tom_Juan_11_03 " );	// That guy is so fast! But not fast enough. I managed to get away from him.
 	SC_Knows_JuanMurderedAngus = TRUE;
 	B_LogEntry(TOPIC_Addon_KillJuan, " Hank and Angus were waylaid and killed by Juan. " );
 };
@@ -143,7 +143,7 @@ func void DIA_Addon_Tom_Esteban_Info()
 	AI_Output(other,self, " DIA_Addon_Tom_Esteban_15_00 " );	// And since then you've been sitting here?
 	AI_Output(self,other, " DIA_Addon_Tom_Esteban_11_01 " );	// First I went to the camp and told Fisk, Huno and the others that they might forget their orders.
 	AI_Output(self,other, " DIA_Addon_Tom_Esteban_11_02 " );	// And that Esteban is to blame.
-	AI_Output(self,other, " DIA_Addon_Tom_Esteban_11_03 " );	// And if Esteban finds out that it was me who told everyone that HE was to blame, I can say goodbye to life.
+	AI_Output(self,other, " DIA_Addon_Tom_Esteban_11_03 " );	// But if Esteban finds out that it was me who told everyone that HE was to blame, I can say goodbye.
 	AI_Output(self,other, " DIA_Addon_Tom_Esteban_11_04 " );	// That's why I can't go back to the camp.
 	Tom_Tells = TRUE;
 };
@@ -172,10 +172,10 @@ func int DIA_Addon_Tom_Dead_Condition()
 func void DIA_Addon_Tom_Dead_Info()
 {
 	AI_Output(other,self, " DIA_Addon_Tom_Dead_15_00 " );	// Esteban is dead.
-	AI_Output(self,other, " DIA_Addon_Tom_Dead_11_01 " );	// True? Dude, this is GOOD LUCK!
-	AI_Output(self,other, " DIA_Addon_Tom_Dead_11_02 " );	// Who did this?
-	AI_Output(other,self, " DIA_Addon_Tom_Dead_15_03 " );	// (playfully) Well, let's say someone you know...
-	AI_Output(self,other, " DIA_Addon_Tom_Dead_11_04 " );	// Thank you for coming to me. Now I can go back to camp...
+	AI_Output(self,other, " DIA_Addon_Tom_Dead_11_01 " );	// What? My friend, I love you!
+	AI_Output(self,other, " DIA_Addon_Tom_Dead_11_02 " );	// Was it you?
+	AI_Output(other,self, " DIA_Addon_Tom_Dead_15_03 " );	// Maybe, maybe not...
+	AI_Output(self,other, " DIA_Addon_Tom_Dead_11_04 " );	// Thank you for telling me. Now I can go back to camp...
 	B_GivePlayerXP(XP_Ambient);
 	AI_StopProcessInfos(self);
 	Npc_ExchangeRoutine(self,"LAGER");
@@ -203,7 +203,7 @@ func int DIA_Addon_Tom_PERM_Condition()
 
 func void DIA_Addon_Tom_PERM_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Tom_PERM_15_00");	//Что еще?
+	AI_Output(other,self,"DIA_Addon_Tom_PERM_15_00");	//What else?
 	if(Npc_GetDistToWP(self,"BL_INN_05_B") <= 500)
 	{
 		AI_Output(self,other, " DIA_Addon_Tom_PERM_11_01 " );	// Now I can safely drink Lucia's brew.
@@ -214,7 +214,7 @@ func void DIA_Addon_Tom_PERM_Info()
 	}
 	else
 	{
-		AI_Output(self,other, " DIA_Addon_Tom_PERM_11_03 " );	// Otherwise, I'd be sitting here and counting the stones...
+		AI_Output(self,other, " DIA_Addon_Tom_PERM_11_03 " );	// Otherwise, I'd be sitting here and counting stones...
 	};
 };
 
@@ -241,22 +241,22 @@ func int dia_addon_tom_orcinvasion_condition()
 func void dia_addon_tom_orcinvasion_info()
 {
 	AI_Output(other,self, " DIA_Addon_Tom_OrcInvasion_01_01 " );	// I heard you helped the guys get out of the camp?
-	AI_Output(self,other, " DIA_Addon_Tom_OrcInvasion_01_02 " );	// Well, in general, yes. Although I don't see anything heroic in it.
+	AI_Output(self,other, " DIA_Addon_Tom_OrcInvasion_01_02 " );	// Well, yes. Although I don't see anything heroic in it.
 	AI_Output(other,self, " DIA_Addon_Tom_OrcInvasion_01_03 " );	// How did you find out about this move?
 	AI_Output(self,other, " DIA_Addon_Tom_OrcInvasion_01_04 " );	// A long time ago. And I stumbled across it quite by accident.
 	AI_Output(other,self, " DIA_Addon_Tom_OrcInvasion_01_05 " );	// Got it. Thorus said the orcs took you by surprise?
-	AI_Output(self,other, " DIA_Addon_Tom_OrcInvasion_01_06 " );	// Yes, everything happened so unexpectedly... These orcs fell on us like snow on our heads.
-	AI_Output(other,self, " DIA_Addon_Tom_OrcInvasion_01_07 " );	// Maybe they just came from that hidden passage?
+	AI_Output(self,other, " DIA_Addon_Tom_OrcInvasion_01_06 " );	// Yes, everything happened so fast... Those orcs fell on us like snow.
+	AI_Output(other,self, " DIA_Addon_Tom_OrcInvasion_01_07 " );	// Maybe they just came from the hidden passage?
 	AI_Output(self,other, " DIA_Addon_Tom_OrcInvasion_01_08 " );	// No, I don't think so. They attacked from the swamps.
 	AI_Output(other,self, " DIA_Addon_Tom_OrcInvasion_01_09 " );	// And what happened next?
-	AI_Output(self,other, " DIA_Addon_Tom_OrcInvasion_01_10 " );	// The camp is in such a mess! The only one who kept a cool head in this situation was Torus.
+	AI_Output(self,other, " DIA_Addon_Tom_OrcInvasion_01_10 " );	// The camp is in such a mess! The only one who kept a cool head in this situation was Thorus.
 	AI_Output(self,other, " DIA_Addon_Tom_OrcInvasion_01_11 " );	// He and his guys took up defensive positions at the entrance to the upper plateau of the camp. But there were too many orcs, and they were soon pushed back to the temple.
-	AI_Output(self,other, " DIA_Addon_Tom_OrcInvasion_01_12 " );	// Actually, then it already became clear that we could not hold the camp.
-	AI_Output(self,other, " DIA_Addon_Tom_OrcInvasion_01_13 " );	// Therefore, whoever could - followed me to the saving passage, while Thorus with the remnants of his guard covered our retreat.
+	AI_Output(self,other, " DIA_Addon_Tom_OrcInvasion_01_12 " );	// It quickly became clear that we could not hold the camp.
+	AI_Output(self,other, " DIA_Addon_Tom_OrcInvasion_01_13 " );	// Therefore, whoever could - followed me to the passage, while Thorus with the remnants of his guard covered our retreat.
 	AI_Output(self,other, " DIA_Addon_Tom_OrcInvasion_01_14 " );	// As it turned out later, only he managed to escape. All the rest died.
-	AI_Output(other,self, " DIA_Addon_Tom_OrcInvasion_01_15 " );	// Yes, all this is just terrible.
-	AI_Output(self,other, " DIA_Addon_Tom_OrcInvasion_01_16 " );	// It's good, of course, that we got out of this mess alive. Although it is not clear what we should do now?
-	AI_Output(self,other, " DIA_Addon_Tom_OrcInvasion_01_17 " );	// Our camp is the only one we had. We are bandits, people outside the law - where should we go now? And what will happen to us?
-	AI_Output(other,self, " DIA_Addon_Tom_OrcInvasion_01_18 " );	// Don't worry. I think Torus will come up with something.
+	AI_Output(other,self, " DIA_Addon_Tom_OrcInvasion_01_15 " );	// Terrible.
+	AI_Output(self,other, " DIA_Addon_Tom_OrcInvasion_01_16 " );	// It's good, of course, that we got out of that mess alive. Although I have no idea what we should do now...
+	AI_Output(self,other, " DIA_Addon_Tom_OrcInvasion_01_17 " );	// Our camp is the only home we had. We are bandits, people outside the law - where should we go now? And what will happen to us?
+	AI_Output(other,self, " DIA_Addon_Tom_OrcInvasion_01_18 " );	// Don't worry. I think Thorus will come up with something.
 };
 
