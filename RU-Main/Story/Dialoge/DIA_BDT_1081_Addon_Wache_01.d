@@ -75,7 +75,7 @@ func int DIA_Addon_Wache_01_Hi_Condition()
 func void DIA_Addon_Wache_01_Hi_Info()
 {
 	AI_Output(other,self, " DIA_Addon_Wache_01_Hi_15_00 " );	// Is everything okay?
-	AI_Output(self,other, " DIA_Addon_Wache_01_Hi_04_01 " );	// Just touch Esteban and I'll cut you into pieces.
+	AI_Output(self,other, " DIA_Addon_Wache_01_Hi_04_01 " );	// Touch Esteban and I'll cut you into pieces.
 	AI_StopProcessInfos(self);
 };
 
