@@ -85,7 +85,7 @@ func void DAY_Addon_Esteban_Hi_Info()
 	AI_Output(self,other, " DIA_Addon_Esteban_Hi_07_00 " );	// So you're the guy who fought his way into the camp.
 	AI_Output(other,self, " DIA_Addon_Esteban_Hi_15_01 " );	// Rumors spread fast...
 	AI_Output(self,other, " DIA_Addon_Esteban_Hi_07_02 " );	// Franco was a tough nut to crack. Nobody wanted to mess with him. Nobody - except you.
-	AI_Output(self,other, " DIA_Addon_Esteban_Hi_07_03 " );	// Just to make things clear right away - if you do the same to me, I'll kill you.
+	AI_Output(self,other, " DIA_Addon_Esteban_Hi_07_03 " );	// Just to make things clear right away - if you try to do the same to me, I'll kill you.
 };
 
 
@@ -112,7 +112,7 @@ func int DIA_Addon_Esteban_Mine_Condition()
 func void DIA_Addon_Esteban_Mine_Info()
 {
 	AI_Output(other,self, " DIA_Addon_Esteban_Mine_15_00 " );	// I want to get into the mine!
-	AI_Output(self,other, " DIA_Addon_Esteban_Mine_07_01 " );	// (grinning) Of course. Then you've come to the right place with the right person.
+	AI_Output(self,other, " DIA_Addon_Esteban_Mine_07_01 " );	// Of course. Then you've come to the right place with the right person.
 	AI_Output(self,other, " DIA_Addon_Esteban_Mine_07_02 " );	// Because everyone who digs in the mine keeps a fair share of the gold.
 	AI_Output(self,other, " DIA_Addon_Esteban_Mine_07_03 " );	// And I'm giving out red stones, one of which you'll need for Thorus to let you in.
 };
@@ -140,19 +140,19 @@ func int DIA_Addon_Esteban_Rot_Condition()
 
 func void DIA_Addon_Esteban_Rot_Info()
 {
-	AI_Output(other,self, " DIA_Addon_Esteban_Rot_15_00 " );	// Give me one of these red stones.
+	AI_Output(other,self, " DIA_Addon_Esteban_Rot_15_00 " );	// Give me one of the red stones.
 	AI_Output(self,other, " DIA_Addon_Esteban_Rot_07_01 " );	// Ok, but it's not free.
 	AI_Output(self,other, " DIA_Addon_Esteban_Rot_07_02 " );	// I usually ask for a portion of the gold the miner gets for his work.
-	AI_Output(self,other, " DIA_Addon_Esteban_Rot_07_03 " );	// (assessing) How much do you know about how to mine gold?
+	AI_Output(self,other, " DIA_Addon_Esteban_Rot_07_03 " );	// How much do you know about how to mine gold?
 	if(Hero_HackChance > 25)
 	{
 		AI_Output(self,other, " DIA_Addon_Esteban_Rot_07_04 " );	// You must have mastered a few tricks, right?
 	}
 	else
 	{
-		AI_Output(self,other, " DIA_Addon_Esteban_Rot_07_05 " );	// You don't seem to know anything about this.
+		AI_Output(self,other, " DIA_Addon_Esteban_Rot_07_05 " );	// You don't seem to know anything about mining.
 	};
-	AI_Output(self,other, " DIA_Addon_Esteban_Rot_07_06 " );	// (fake) If I give you a red stone, it won't be because you're such a good miner.
+	AI_Output(self,other, " DIA_Addon_Esteban_Rot_07_06 " );	// If I give you a red stone, it won't be because you're such a good miner.
 	AI_Output(self,other, " DIA_Addon_Esteban_Rot_07_07 " );	// No, I have another job for you...
 };
 
@@ -182,10 +182,10 @@ func void DIA_Addon_Esteban_MIS_Info()
 	AI_Output(other,self, " DIA_Addon_Esteban_MIS_15_00 " );	// What job?
 	AI_Output(self,other, " DIA_Addon_Esteban_MIS_07_01 " );	// One of the bandits wanted to kill me. But instead my guards killed HIM.
 	AI_Output(other,self, " DIA_Addon_Esteban_MIS_15_02 " );	// He wanted to take your place?
-	AI_Output(self,other, " DIA_Addon_Esteban_MIS_07_03 " );	// He was just a fool! Mindless killer. It would never have crossed his mind to attack me.
-	AI_Output(self,other, " DIA_Addon_Esteban_MIS_07_04 " );	// He was doing someone's job - someone sent him to do it...
-	AI_Output(other,self, " DIA_Addon_Esteban_MIS_15_05 " );	// So what do I need to find who's behind all this?
-	AI_Output(self,other, " DIA_Addon_Esteban_MIS_07_06 " );	// Whoever sent the killer will pay for this. Find him and I'll give you a pass to the mine.
+	AI_Output(self,other, " DIA_Addon_Esteban_MIS_07_03 " );	// He was just a fool! A mindless killer. It would never have crossed his mind to attack me.
+	AI_Output(self,other, " DIA_Addon_Esteban_MIS_07_04 " );	// He was doing it as a job - someone sent him to do it...
+	AI_Output(other,self, " DIA_Addon_Esteban_MIS_15_05 " );	// So I need to find who's behind all this?
+	AI_Output(self,other, " DIA_Addon_Esteban_MIS_07_06 " );	// Whoever sent the killer will pay. Find him and I'll give you a pass to the mine.
 	if ( ! Npc_IsDead( Senyan ) && Npc_KnowsInfo ( other , DIA_Addon_BDT_1084_Senyan_Hi )) .
 	{
 		AI_Output(other,self, " DIA_Addon_Esteban_MIS_15_07 " );	// Senyan sent me to you on this matter.
@@ -222,7 +222,7 @@ func void DIA_Addon_Esteban_Kerl_Info()
 	AI_Output(other,self, " DIA_Addon_Esteban_Kerl_15_00 " );	// And what should I do?
 	AI_Output(self,other, " DIA_Addon_Esteban_Kerl_07_01 " );	// Everyone in the camp knows about it. That's why you're playing open.
 	AI_Output(self,other, " DIA_Addon_Esteban_Kerl_07_02 " );	// Try to figure out who's on my side and who's against me, and don't let the guys fool you!
-	AI_Output(self,other, " DIA_Addon_Esteban_Kerl_07_03 " );	// Talk to Snaf. This fat cook knows a lot.
+	AI_Output(self,other, " DIA_Addon_Esteban_Kerl_07_03 " );	// Talk to Snaf. That fat fuck knows a lot.
 	B_LogEntry(Topic_Addon_Esteban, " To find the culprit, I have to talk to the people in the camp and find out which side they are on. Snaf can help me - he knows a lot. " );
 };
 
@@ -249,7 +249,7 @@ func int DIA_Addon_Esteban_Armor_Condition()
 func void DIA_Addon_Esteban_Armor_Info()
 {
 	AI_Output(other,self, " DIA_Addon_Esteban_Armor_15_00 " );	// I need better armor.
-	AI_Output(self,other, " DIA_Addon_Esteban_Armor_07_01 " );	// Why? You already have the armor, for now you can get by with it!
+	AI_Output(self,other, " DIA_Addon_Esteban_Armor_07_01 " );	// Why? You already have decent armor, its enough for now!
 	if(MIS_Judas == LOG_Running)
 	{
 		AI_Output(self,other, " DIA_Addon_Esteban_Armor_07_02 " );	// If you complete my task, we'll talk about it...
@@ -284,8 +284,8 @@ func void DIA_Addon_Esteban_Auftrag_Info()
 	if(MIS_Judas == LOG_SUCCESS)
 	{
 		AI_Output(other,self, " DIA_Addon_Esteban_Auftrag_15_02 " );	// I thought you'd be wondering who orchestrated the attack...
-		AI_Output(self,other, " DIA_Addon_Esteban_Auftrag_07_03 " );	// And who is this? Tell me his name and my guys will wring his neck...
-		AI_Output(other,self, " DIA_Addon_Esteban_Auftrag_15_04 " );	// Trader Fisk organized it. At the moment he is sitting in a bar, drinking and suspecting nothing...
+		AI_Output(self,other, " DIA_Addon_Esteban_Auftrag_07_03 " );	// And who was it Tell me his name and my guys will bring me his guts...
+		AI_Output(other,self, " DIA_Addon_Esteban_Auftrag_15_04 " );	// The trader Fisk organized it. At the moment he is sitting in a bar, drinking and suspecting nothing...
 		AI_Output(self,other, " DIA_Addon_Esteban_Auftrag_07_05 " );	// HA! Great job, son. My guards will take care of it.
 		AI_TurnToNPC(self,Wache_01);
 		AI_Output(self,other, " DIA_Addon_Esteban_Auftrag_07_06 " );	// You heard what he said guys. Go and grab Fisk.
@@ -322,10 +322,10 @@ func int DIA_Addon_Esteban_Away_Condition()
 
 func void DIA_Addon_Esteban_Away_Info()
 {
-	AI_Output(other,self, " DIA_Addon_Esteban_Away_15_00 " );	// And what will happen now?
-	AI_Output(self,other, " DIA_Addon_Esteban_Away_07_01 " );	// What will happen now? I'll tell you what will happen.
+	AI_Output(other,self, " DIA_Addon_Esteban_Away_15_00 " );	// What will happen now?
+	AI_Output(self,other, " DIA_Addon_Esteban_Away_07_01 " );	// What will happen now? I'll tell you what will happen now.
 	AI_Output(self,other, " DIA_Addon_Esteban_Away_07_02 " );	// Fisk will die a painful death. And the whole camp will know why.
-	AI_Output(self,other, " DIA_Addon_Esteban_Away_07_03 " );	// This will give them all a warning.
+	AI_Output(self,other, " DIA_Addon_Esteban_Away_07_03 " );	// I'tll send a clear message.
 };
 
 
@@ -380,8 +380,8 @@ func int DIA_Addon_Esteban_not_Condition()
 func void DIA_Addon_Esteban_not_Info()
 {
 	AI_Output(other,self, " DIA_Addon_Esteban_not_15_00 " );	// I'll think about it.
-	AI_Output(self,other, " DIA_Addon_Esteban_not_07_01 " );	// You forgot who you're talking to. I'm in charge here, and you'll have to do what I say.
-	AI_Output(self,other, " DIA_Addon_Esteban_not_07_02 " );	// And I said that you would work for me, not for anyone else. This is clear?
+	AI_Output(self,other, " DIA_Addon_Esteban_not_07_01 " );	// You forgot who you're talking to. I'm in charge here, and you'll to do what I say.
+	AI_Output(self,other, " DIA_Addon_Esteban_not_07_02 " );	// And I said that you would work for me, not for anyone else. Clear?
 };
 
 
@@ -406,12 +406,12 @@ func int DIA_Addon_Esteban_fight_Condition()
 
 func void DIA_Addon_Esteban_fight_Info()
 {
-	AI_Output(other,self, " DIA_Addon_Esteban_fight_15_00 " );	// Do you want to fool me? And there was no question of me working for you.
-	AI_Output(self,other, " DIA_Addon_Esteban_fight_07_01 " );	// Not everyone gets this offer. But if you don't like it, you are free to leave the camp.
+	AI_Output(other,self, " DIA_Addon_Esteban_fight_15_00 " );	// I never wanted to work for you.
+	AI_Output(self,other, " DIA_Addon_Esteban_fight_07_01 " );	// Not everyone gets an offer like this. But if you don't like it, you are free to leave the camp.
 	AI_Output(other,self, " DIA_Addon_Esteban_fight_15_02 " );	// Or maybe you will keep your word and give me a red stone?
-	AI_Output(self,other, " DIA_Addon_Esteban_fight_07_03 " );	// Hey! One more word and my guards will have to use force.
-	AI_Output(other,self, " DIA_Addon_Esteban_fight_15_04 " );	// What guards?...(smirking)
-	AI_Output(self,other, " DIA_Addon_Esteban_fight_07_05 " );	// What?! Oh, I see, you want to cheat on me. Wait for it!
+	AI_Output(self,other, " DIA_Addon_Esteban_fight_07_03 " );	// Hey! One more word and my guards will...
+	AI_Output(other,self, " DIA_Addon_Esteban_fight_15_04 " );	// What guards?...
+	AI_Output(self,other, " DIA_Addon_Esteban_fight_07_05 " );	// What?! What the fuck?!
 	Bodyguard_Killer = FALSE;
 	AI_StopProcessInfos(self);
 	B_KillNpc(BDT_10005_Addon_Wache_02);
@@ -441,8 +441,8 @@ func int DIA_Addon_Esteban_Duell_Condition()
 
 func void DIA_Addon_Esteban_Duell_Info()
 {
-	AI_Output(other,self, " DIA_Addon_Esteban_Duell_15_00 " );	// Get the rock here NOW, or I'll take it myself!
-	AI_Output(self,other, " DIA_Addon_Esteban_Duell_07_01 " );	// Oh, you have one last wish. How cute. I'll do you a favor and spare you your stupidity!
+	AI_Output(other,self, " DIA_Addon_Esteban_Duell_15_00 " );	// Get me that rock, or I take it!
+	AI_Output(self,other, " DIA_Addon_Esteban_Duell_07_01 " );	// Those were your last words? Very strange.
 	AI_StopProcessInfos(self);
 	B_Attack(self,other,AR_NONE,1);
 
