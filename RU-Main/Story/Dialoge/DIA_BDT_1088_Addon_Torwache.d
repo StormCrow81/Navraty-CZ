@@ -50,7 +50,7 @@ func int DIA_BDT_1088_Addon_Torwache_FirstWarn_Condition()
 
 func void DIA_BDT_1088_Addon_Torwache_FirstWarn_Info()
 {
-	AI_Output(self,other,"DIA_Addon_BDT_1088_Addon_Torwache_FirstWarn_06_00");	//СТОЙ!
+	AI_Output(self,other,"DIA_Addon_BDT_1088_Addon_Torwache_FirstWarn_06_00");	//STOP!
 	if(MIS_Send_Buddler == LOG_SUCCESS)
 	{
 		AI_Output(other,self, " DIA_Addon_BDT_1088_Torwache_FirstWarn_15_01 " );	// Get out of the way, guard.
@@ -61,22 +61,22 @@ func void DIA_BDT_1088_Addon_Torwache_FirstWarn_Info()
 	{
 		if(Torwache_Greetings == 0)
 		{
-			AI_Output(self,other, " DIA_Addon_BDT_1088_Addon_Torwache_FirstWarn_06_03 " );	// Until Thorus gives you the redstone, you're not welcome here.
+			AI_Output(self,other, " DIA_Addon_BDT_1088_Addon_Torwache_FirstWarn_06_03 " );	// Until Thorus gives you the red stone, you're not welcome here.
 			Torwache_Greetings = 1;
 		}
 		else if(Torwache_Greetings == 1)
 		{
-			AI_Output(self,other, " DIA_Addon_BDT_1088_Addon_Torwache_FirstWarn_06_04 " );	// Don't you understand? (with pressure) GET OUT OF HERE!
+			AI_Output(self,other, " DIA_Addon_BDT_1088_Addon_Torwache_FirstWarn_06_04 " );	// Don't you understand? FUCK OFF!
 			Torwache_Greetings = 2;
 		}
 		else
 		{
-			AI_Output(self,other, " DIA_Addon_BDT_1088_Addon_Torwache_FirstWarn_06_05 " );	// (forcefully) GET OUT OF HERE!
+			AI_Output(self,other, " DIA_Addon_BDT_1088_Addon_Torwache_FirstWarn_06_05 " );	// FUCK OFF!
 		};
 	}
 	else if(MIS_Send_Buddler == LOG_Running)
 	{
-		AI_Output(self,other, " DIA_Addon_BDT_1088_Addon_Torwache_FirstWarn_06_06 " );	// Hey, until Torus gives you a pass, you won't get through here.
+		AI_Output(self,other, " DIA_Addon_BDT_1088_Addon_Torwache_FirstWarn_06_06 " );	// Hey, until Thorus gives you a pass, you won't get through here.
 	};
 	AI_StopProcessInfos(self);
 	other.aivar[AIV_LastDistToWP] = Npc_GetDistToWP(other,BDT_1088_Checkpoint);
@@ -137,7 +137,7 @@ func void DIA_BDT_1088_Addon_Torwache_Attack_Info()
 {
 	other.aivar[AIV_LastDistToWP] = 0;
 	self.aivar[AIV_Guardpassage_Status] = GP_NONE ;
-	AI_Output(self,other, " DIA_Addon_BDT_1088_Addon_Torwache_Attack_06_00 " );	// (sighs) You think I'm joking? I'll show you...
+	AI_Output(self,other, " DIA_Addon_BDT_1088_Addon_Torwache_Attack_06_00 " );	// You think I'm joking? I'll show you...
 	AI_StopProcessInfos(self);
 	B_Attack(self,other,AR_GuardStopsIntruder,0);
 };
