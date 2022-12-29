@@ -79,7 +79,7 @@ func int DIA_Addon_Bloodwyn_Dead_Condition()
 func void DIA_Addon_Bloodwyn_Dead_Info()
 {
 	AI_Output(self,other, " DIA_Addon_Bloodwyn_Dead_04_00 " );	// Hey, how did you get here?
-	AI_Output(other,self, " DIA_Addon_Bloodwyn_Dead_15_01 " );	// Via input.
+	AI_Output(other,self, " DIA_Addon_Bloodwyn_Dead_15_01 " );	// with my feet?
 	AI_Output(self,other, " DIA_Addon_Bloodwyn_Dead_04_02 " );	// Funny... I HATE jokes.
 	AI_StopProcessInfos(self);
 	B_Attack(self,other,AR_NONE,1);
@@ -132,10 +132,10 @@ func int DIA_Addon_Bloodwyn_Wait_Condition()
 
 func void DIA_Addon_Bloodwyn_Wait_Info()
 {
-	AI_Output(self,other, " DIA_Addon_Bloodwyn_Wait_04_00 " );	// Did you kill the crawlers? Excellent. I'll do next! Get out.
+	AI_Output(self,other, " DIA_Addon_Bloodwyn_Wait_04_00 " );	// Did you kill the crawlers? Excellent. Now piss off.
 	AI_Output(other,self, " DIA_Addon_Bloodwyn_Wait_15_01 " );	// Wait a minute...
 	AI_Output(self,other, " DIA_Addon_Bloodwyn_Wait_04_02 " );	// Are you still here?
-	AI_Output(other,self, " DIA_Addon_Bloodwyn_Wait_15_03 " );	// We need to find out something.
+	AI_Output(other,self, " DIA_Addon_Bloodwyn_Wait_15_03 " );	// I need information.
 	Info_ClearChoices(DIA_Addon_Bloodwyn_Wait);
 	Info_AddChoice(DIA_Addon_Bloodwyn_Wait,PRINT_ADDON_ENOUGHTALK,DIA_Addon_Bloodwyn_Wait_FIGHT);
 	Info_AddChoice(DIA_Addon_Bloodwyn_Wait,"Я ищу Ворона.",DIA_Addon_Bloodwyn_Wait_Raven);
@@ -144,31 +144,31 @@ func void DIA_Addon_Bloodwyn_Wait_Info()
 func void DIA_Addon_Bloodwyn_Wait_Raven()
 {
 	AI_Output(other,self, " DIA_Addon_Bloodwyn_Wait_Raven_15_00 " );	// I'm looking for Raven.
-	AI_Output(self,other, " DIA_Addon_Bloodwyn_Wait_Raven_04_01 " );	// So, why do you think Raven would want to talk to you... wait, you don't... Is that YOU?
-	AI_Output(self,other, " DIA_Addon_Bloodwyn_Wait_Raven_04_02 " );	// You're the guy we've been looking for all this time. What are you doing here?! You've been dead for a long time!
-	AI_Output(other,self, " DIA_Addon_Bloodwyn_Wait_Raven_15_03 " );	// Everyone tells me about it.
-	AI_Output(self,other, " DIA_Addon_Bloodwyn_Wait_Raven_04_04 " );	// These sheep all missed, but you won't leave me. This time I will finish you!
-	AI_Output(other,self, " DIA_Addon_Bloodwyn_Wait_Raven_15_05 " );	// Like I said, I'm not interested in you, I'm looking for Raven.
+	AI_Output(self,other, " DIA_Addon_Bloodwyn_Wait_Raven_04_01 " );	// Why do you think Raven would want to talk to you... wait... YOU?
+	AI_Output(self,other, " DIA_Addon_Bloodwyn_Wait_Raven_04_02 " );	// You're the guy we've been looking for all this time. What are you doing here?! You're supposed to be dead!
+	AI_Output(other,self, " DIA_Addon_Bloodwyn_Wait_Raven_15_03 " );	// Everyone knows that.
+	AI_Output(self,other, " DIA_Addon_Bloodwyn_Wait_Raven_04_04 " );	// I'll just have to kill you myself!
+	AI_Output(other,self, " DIA_Addon_Bloodwyn_Wait_Raven_15_05 " );	// I'm not interested in you, I'm looking for Raven.
 	AI_Output(self,other, " DIA_Addon_Bloodwyn_Wait_Raven_04_06 " );	// I'll kill you, I haven't lost a fight yet!
 	Bloodwyn_Choices_1();
 };
 
 func void DIA_Addon_Bloodwyn_Wait_FIGHT()
 {
-	AI_Output(other,self, " DIA_Addon_Bloodwyn_Wait_Raven_FIGHT_15_00 " );	// Stop talking. Fight.
-	AI_Output(self,other, " DIA_Addon_Bloodwyn_Wait_Raven_FIGHT_04_01 " );	// (triumphantly) It's too late anyway! The raven is already opening the temple! Ha ha ha! Die, motherfucker!
+	AI_Output(other,self, " DIA_Addon_Bloodwyn_Wait_Raven_FIGHT_15_00 " );	// Stop talking then. Fight.
+	AI_Output(self,other, " DIA_Addon_Bloodwyn_Wait_Raven_FIGHT_04_01 " );	// It's too late anyway! The raven is already opening the temple! Ha ha ha! Die, motherfucker!
 	AI_StopProcessInfos(self);
 	B_Attack(self,other,AR_NONE,1);
 };
 
 func void Bloodwyn_Lach()
 {
-	AI_Output(self,other, " DIA_Addon_Bloodwyn_Lach_04_00 " );	// HA-HA-HA - I'll kill you anyway!
+	AI_Output(self,other, " DIA_Addon_Bloodwyn_Lach_04_00 " );	// HA-HA-HA - Now you die for real!
 };
 
 func void Bloodwyn_Wut()
 {
-	AI_Output(self,other, " DIA_Addon_Bloodwyn_Wut_04_00 " );	// A-AH! You pitiful creature!
+	AI_Output(self,other, " DIA_Addon_Bloodwyn_Wut_04_00 " );	// A-AH! You pitiful bastard!
 	self.attribute[ATR_STRENGTH] = self.attribute[ATR_STRENGTH] - 5;
 	self.attribute[ATR_HITPOINTS] = self.attribute[ATR_HITPOINTS] - 25;
 	self.attribute[ATR_HITPOINTS_MAX] = self.attribute[ATR_HITPOINTS_MAX] - 25;
@@ -181,7 +181,7 @@ func void Bloodwyn_Next_1()
 
 func void Bloodwyn_Next_2()
 {
-	AI_Output(self,other, " DIA_Addon_Bloodwyn_SayChoice_3_04_00 " );	// You can't beat me, I'm Raven's best friend! His right hand!
+	AI_Output(self,other, " DIA_Addon_Bloodwyn_SayChoice_3_04_00 " );	// You can't beat me, I'm Raven's most trusted lieutenant!
 };
 
 func void DIA_Addon_Bloodwyn_Wait_GOOD1()
@@ -194,7 +194,7 @@ func void DIA_Addon_Bloodwyn_Wait_GOOD1()
 
 func void DIA_Addon_Bloodwyn_Wait_BAD1()
 {
-	AI_Output(other,self, " DIA_Addon_Bloodwyn_Wait_Raven_BAD1_15_00 " );	// Everything comes to an end sometime.
+	AI_Output(other,self, " DIA_Addon_Bloodwyn_Wait_Raven_BAD1_15_00 " );	// Everything ends eventually.
 	Bloodwyn_Lach();
 	Bloodwyn_Next_1();
 	Bloodwyn_Choices_2();
