@@ -74,7 +74,7 @@ func int DIA_Addon_Lucia_Hi_Condition()
 
 func void DIA_Addon_Lucia_Hi_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Lucia_Hi_15_00");	//Как дела?
+	AI_Output(other,self,"DIA_Addon_Lucia_Hi_15_00");	//How are you?
 	AI_Output(self,other, " DIA_Addon_Lucia_Hi_16_01 " );	// Listen. If you need food, ask Snaf. And if you want a drink, then you've come to the right person.
 };
 
@@ -103,7 +103,7 @@ func void DIA_Addon_Lucia_was_Info()
 {
 	AI_Output(other,self, " DIA_Addon_Lucia_was_15_00 " );	// And what are you drinking here?
 	AI_Output(self,other, " DIA_Addon_Lucia_was_16_01 " );	// Well, we don't have much beer. Only paladins bring beer to the island.
-	AI_Output(self,other, " DIA_Addon_Lucia_was_16_02 " );	// And perhaps this is the only good thing they bring...
+	AI_Output(self,other, " DIA_Addon_Lucia_was_16_02 " );	// And perhaps that's the only good thing they bring...
 	AI_Output(self,other, " DIA_Addon_Lucia_was_16_03 " );	// So we usually drink strong drinks. I have moonshine, grog and white rum.
 	AI_Output(self,other, " DIA_Addon_Lucia_was_16_04 " );	// You should try this! I got the recipe from Samuel. You have to admit, he really knows his stuff.
 	Log_CreateTopic(Topic_Addon_BDT_Trader,LOG_NOTE);
@@ -134,13 +134,13 @@ func int DIA_Addon_Lucia_Khorinis_Condition()
 func void DIA_Addon_Lucia_Khorinis_Info()
 {
 	AI_Output(other,self, " DIA_Addon_Lucia_Khorinis_15_00 " );	// You're from Khorinis, right?
-	AI_Output(self,other, " DIA_Addon_Lucia_Khorinis_16_01 " );	// Oh, don't remind me. My life there was unenviable.
-	AI_Output(self,other, " DIA_Addon_Lucia_Khorinis_16_02 " );	// While ships with prisoners came to the city, it was still possible to live there somehow.
-	AI_Output(self,other, " DIA_Addon_Lucia_Khorinis_16_03 " );	// But then... (laughs) No thanks. Maybe it's because we're on an island... Okay, that life is over anyway.
+	AI_Output(self,other, " DIA_Addon_Lucia_Khorinis_16_01 " );	// Oh, don't remind me. My life there was horrible.
+	AI_Output(self,other, " DIA_Addon_Lucia_Khorinis_16_02 " );	// While ships with prisoners came to the city, it was still possible to live there.
+	AI_Output(self,other, " DIA_Addon_Lucia_Khorinis_16_03 " );	// But then... (laughs) No thanks. Maybe it's because we're on an island... Well, that life is over anyway.
 	if((MIS_LuciasLetter != 0) || (SC_KnowsLuciaCaughtByBandits != 0) || (Nadja_GaveLuciaInfo != 0))
 	{
 		AI_Output(self,other, " DIA_Addon_Lucia_Khorinis_16_06 " );	// I broke up with Elvrich!
-		AI_Output(other,self,"DIA_Addon_Lucia_Khorinis_15_04");	//Почему?
+		AI_Output(other,self,"DIA_Addon_Lucia_Khorinis_15_04");	//Why?
 		AI_Output(self,other, " DIA_Addon_Lucia_Khorinis_16_05 " );	// He's a coward! When the bandits dragged me away, he didn't even try to help me.
 		TOPIC_END_Lucia = TRUE;
 		B_GivePlayerXP(XP_Ambient);
@@ -172,9 +172,9 @@ func int DIA_Addon_Lucia_Now_Condition()
 func void DIA_Addon_Lucia_Now_Info()
 {
 	AI_Output(other,self, " DIA_Addon_Lucia_Jetzt_15_00 " );	// What are you going to do?
-	AI_Output(self,other, " DIA_Addon_Lucia_Jetzt_16_01 " );	// Let's see. As long as I stay here with Snaf and Fisk and the rest.
-	AI_Output(self,other, " DIA_Addon_Lucia_Jetzt_16_02 " );	// Have you seen Torus yet? Oh Innos, what a man!
-	AI_Output(self,other, " DIA_Addon_Lucia_Jetzt_16_03 " );	// (laughs) Sorry...let's get back to your question...I don't have a goal yet. I'm just going with the flow.
+	AI_Output(self,other, " DIA_Addon_Lucia_Jetzt_16_01 " );	// I'll stay here with Snaf and Fisk and the rest.
+	AI_Output(self,other, " DIA_Addon_Lucia_Jetzt_16_02 " );	// Have you seen Thorus yet? Oh Innos, what a man!
+	AI_Output(self,other, " DIA_Addon_Lucia_Jetzt_16_03 " );	// Sorry...let's get back to your question...I don't have a plan yet. I'm just going with the flow.
 };
 
 
@@ -201,14 +201,14 @@ func int DIA_Addon_Lucia_Paladine_Condition()
 func void DIA_Addon_Lucia_Paladine_Info()
 {
 	AI_Output(other,self, " DIA_Addon_Lucia_Paladine_15_00 " );	// You don't really like paladins, do you?
-	AI_Output(self,other, " DIA_Addon_Lucia_Paladine_16_01 " );	// Those fanatical assassins paid by Firebenders? No I do not like.
+	AI_Output(self,other, " DIA_Addon_Lucia_Paladine_16_01 " );	// Those fanatical assassins paid by Firebenders? No I do not like them.
 	AI_Output(self,other, " DIA_Addon_Lucia_Paladine_16_02 " );	// Lord Hagen and his thugs have occupied the city, and everyone is crawling on their belly before them.
 	AI_Output(self,other, " DIA_Addon_Lucia_Paladine_16_03 " );	// I don't like it. I wasn't going to wait for them to shut down the Red Lamp and put me behind bars.
 	if((other.guild != GIL_SLD) && (other.guild != GIL_DJG) && (other.guild != GIL_KDW) && (other.guild != GIL_KDM) && (other.guild != GIL_SEK) && (other.guild != GIL_TPL) && (other.guild != GIL_GUR))
 	{
 		Info_ClearChoices(DIA_Addon_Lucia_Paladine);
 		Info_AddChoice(DIA_Addon_Lucia_Paladine, " End conversation. " ,DIA_Addon_Lucia_Paladine_BACK);
-		Info_AddChoice(DIA_Addon_Lucia_Paladine, " But paladins fight for Innos, who chooses his warriors. " ,DIA_Addon_Lucia_Paladine_WAHL);
+		Info_AddChoice(DIA_Addon_Lucia_Paladine, " But paladins fight for Innos, who chooses his warriors personally. " ,DIA_Addon_Lucia_Paladine_WAHL);
 		Info_AddChoice(DIA_Addon_Lucia_Paladine, " Paladins are the warriors of Innos. They are not assassins. " ,DIA_Addon_Lucia_Paladine_MURDER);
 	};
 };
@@ -220,9 +220,9 @@ func void DIA_Addon_Lucia_Paladine_BACK()
 
 func void DIA_Addon_Lucia_Paladine_WAHL()
 {
-	AI_Output(other,self, " DIA_Addon_Lucia_Paladine_WAHL_15_00 " );	// But paladins fight in the name of Innos, who chooses his warriors.
+	AI_Output(other,self, " DIA_Addon_Lucia_Paladine_WAHL_15_00 " );	// But paladins fight in the name of Innos, who chooses his warriors personally.
 	AI_Output(self,other, " DIA_Addon_Lucia_Paladine_WAHL_16_01 " );	// I believe that people choose their own path.
-	AI_Output(self,other, " DIA_Addon_Lucia_Paladine_WAHL_16_02 " );	// And your words surprise me. You sound like one of them.
+	AI_Output(self,other, " DIA_Addon_Lucia_Paladine_WAHL_16_02 " );	// Your words surprise me. You sound like one of them.
 	Info_AddChoice(DIA_Addon_Lucia_Paladine, " Have you ever killed anyone? " ,DIA_Addon_Lucia_Paladine_KILL);
 };
 
@@ -230,16 +230,16 @@ func void DIA_Addon_Lucia_Paladine_KILL()
 {
 	AI_Output(other,self, " DIA_Addon_Lucia_Paladine_KILL_15_00 " );	// Have you ever killed anyone?
 	AI_Output(self,other, " DIA_Addon_Lucia_Paladine_KILL_16_01 " );	// No, and I'm very glad about it.
-	AI_Output(self,other, " DIA_Addon_Lucia_Paladine_KILL_16_02 " );	// Let's stop talking about such serious things.
-	AI_Output(self,other, " DIA_Addon_Lucia_Paladine_KILL_16_03 " );	// Better let's drink and enjoy every moment of the life given to us by the gods.
+	AI_Output(self,other, " DIA_Addon_Lucia_Paladine_KILL_16_02 " );	// Let's stop talking about such terrible things.
+	AI_Output(self,other, " DIA_Addon_Lucia_Paladine_KILL_16_03 " );	// Better to just drink and enjoy every moment of the short life given to us by the gods.
 	Info_ClearChoices(DIA_Addon_Lucia_Paladine);
 };
 
 func void DIA_Addon_Lucia_Paladine_WEIB()
 {
 	AI_Output(other,self, " DIA_Addon_Lucia_Paladine_WEIB_15_00 " );	// Do you reject Innos, fallen maiden?
-	AI_Output(self,other, " DIA_Addon_Lucia_Paladine_WEIB_16_01 " );	// No, what are you! It's just that some people misuse his name.
-	AI_Output(self,other, " DIA_Addon_Lucia_Paladine_WEIB_16_02 " );	// But I didn't doubt for a second the divine magnificence of Innos.
+	AI_Output(self,other, " DIA_Addon_Lucia_Paladine_WEIB_16_01 " );	// No, what are you talking about? It's just that some people misuse his name.
+	AI_Output(self,other, " DIA_Addon_Lucia_Paladine_WEIB_16_02 " );	// But I don't doubt for a second the divine magnificence of Innos.
 };
 
 func void DIA_Addon_Lucia_Paladine_MURDER()
@@ -274,7 +274,7 @@ func int DIA_Addon_Lucia_Attentat_Condition()
 func void DIA_Addon_Lucia_Attentat_Info()
 {
 	B_Say(other,self,"$ATTENTAT_ADDON_DESCRIPTION");
-	AI_Output(self,other,"DIA_Addon_Lucia_Attentat_16_00");	//Ничего.
+	AI_Output(self,other,"DIA_Addon_Lucia_Attentat_16_00");	//Nothing.
 };
 
 
@@ -335,7 +335,7 @@ func int DIA_Addon_Lucia_lernen_Condition()
 func void DIA_Addon_Lucia_lernen_Info()
 {
 	AI_Output(other,self, " DIA_Addon_Lucia_lernen_15_00 " );	// Can you teach me something?
-	AI_Output(self,other, " DIA_Addon_Lucia_lernen_16_01 " );	// (laughs) With joy. I can help you increase your agility.
+	AI_Output(self,other, " DIA_Addon_Lucia_lernen_16_01 " );	// With joy. I can help you increase your agility.
 	Log_CreateTopic(Topic_Addon_BDT_Teacher,LOG_NOTE);
 	B_LogEntry(Topic_Addon_BDT_Teacher, " Lucia can help me become more agile. " );
 };
