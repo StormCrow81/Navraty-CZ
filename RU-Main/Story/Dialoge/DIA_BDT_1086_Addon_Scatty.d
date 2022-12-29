@@ -147,11 +147,11 @@ func int DIA_Addon_Scatty_Gruft_Condition()
 func void DIA_Addon_Scatty_Crypt_Info()
 {
 	AI_Output(other,self, " DIA_Addon_Scatty_Gruft_15_00 " );	// What kind of tomb is this?
-	AI_Output(self,other, " DIA_Addon_Scatty_Gruft_01_01 " );	// Cursed, doomed tomb! Its keepers killed a lot of people!
+	AI_Output(self,other, " DIA_Addon_Scatty_Gruft_01_01 " );	// A cursed, doomed tomb! Its keepers killed a lot of people!
 	AI_Output(other,self, " DIA_Addon_Scatty_Gruft_15_02 " );	// Keepers? Do you mean such stone creatures? Flat and with a round head?
-	AI_Output(self,other, " DIA_Addon_Scatty_Gruft_01_03 " );	// Exactly! They emerge from the depths of the stone in dozens.
-	AI_Output(self,other, " DIA_Addon_Scatty_Gruft_01_04 " );	// I knew from the start that digging up the tomb was a bad idea.
-	AI_Output(self,other, " DIA_Addon_Scatty_Gruft_01_05 " );	// But Raven was just obsessed with digging here. And when the tomb was finally dug up, he went there with his guards.
+	AI_Output(self,other, " DIA_Addon_Scatty_Gruft_01_03 " );	// Exactly! They emerge from the depths in their dozens.
+	AI_Output(self,other, " DIA_Addon_Scatty_Gruft_01_04 " );	// I knew from the start that digging up that tomb was a bad idea.
+	AI_Output(self,other, " DIA_Addon_Scatty_Gruft_01_05 " );	// But Raven was just obsessed with digging there. And when the tomb was finally dug up, he went in there with his guards.
 };
 
 
@@ -178,16 +178,16 @@ func int DIA_Addon_Scatty_GruftAgain_Condition()
 func void DIA_Addon_Scatty_GruftAgain_Info()
 {
 	AI_Output(other,self, " DIA_Addon_Scatty_GruftAgain_15_00 " );	// What does Raven need in the tomb?
-	AI_Output(self,other, " DIA_Addon_Scatty_GruftAgain_01_01 " );	// (stops abruptly) Hmm... you're very curious. You remind me of a guy that I once knew.
-	AI_Output(self,other, " DIA_Addon_Scatty_GruftAgain_01_02 " );	// He was just as curious. And at some point it became the cause of his death.
+	AI_Output(self,other, " DIA_Addon_Scatty_GruftAgain_01_01 " );	// Hmm... you're very curious. You remind me of a guy that I once knew.
+	AI_Output(self,other, " DIA_Addon_Scatty_GruftAgain_01_02 " );	// He was just as curious and it became the cause of his death.
 	AI_Output(other,self, " DIA_Addon_Scatty_GruftAgain_15_03 " );	// Let's get down to business. What happened in the tomb?
-	AI_Output(self,other, " DIA_Addon_Scatty_GruftAgain_01_04 " );	// Well... Uh... Something in my throat is dry...
+	AI_Output(self,other, " DIA_Addon_Scatty_GruftAgain_01_04 " );	// Well... Uh... my throat is so dry...
 	AI_Output(other,self, " DIA_Addon_Scatty_GruftAgain_15_05 " );	// Hey Scutty, NOT NOW. It's important, so what does Raven need there?
-	AI_Output(self,other, " DIA_Addon_Scatty_GruftAgain_01_06 " );	// Okay. (deep breath) He... he was calling... calling for someone. He spoke words in a foreign language.
+	AI_Output(self,other, " DIA_Addon_Scatty_GruftAgain_01_06 " );	// Okay. He... he was calling... calling for someone. He spoke som words in a strange language.
 	AI_Output(self,other, " DIA_Addon_Scatty_GruftAgain_01_07 " );	// A bright light burst from the tomb, and I heard a scream that cut me to the bone - a demonic scream.
-	AI_Output(other,self,"DIA_Addon_Scatty_GruftAgain_15_08");	//А потом?
+	AI_Output(other,self,"DIA_Addon_Scatty_GruftAgain_15_08");	//And then?
 	AI_Output(self,other, " DIA_Addon_Scatty_GruftAgain_01_09 " );	// That's all I know. After that, Bloodwin came out of the tomb and told me to get out. Which is what I did.
-	AI_Output(self,other, " DIA_Addon_Scatty_GruftAgain_01_10 " );	// After a short time, Raven returned to the temple with his men. And no one has seen Raven since.
+	AI_Output(self,other, " DIA_Addon_Scatty_GruftAgain_01_10 " );	// After a short time, Raven returned to the temple with his men. And no one has seen him since.
 };
 
 
@@ -214,7 +214,7 @@ func int DIA_Addon_Scatty_Trinken_Condition()
 func void DIA_Addon_Scatty_Trinken_Info()
 {
 	AI_Output(other,self, " DIA_Addon_Scatty_Trinken_15_00 " );	// Would you like a drink?
-	AI_Output(self,other, " DIA_Addon_Scatty_Trinken_01_01 " );	// It would be nice...beer! But there is hardly any beer in the camp.
+	AI_Output(self,other, " DIA_Addon_Scatty_Trinken_01_01 " );	// I'd kill for a beer! But there is hardly any in the camp.
 	AI_Output(self,other, " DIA_Addon_Scatty_Trinken_01_02 " );	// But maybe Lucia has a bottle...
 };
 
@@ -240,12 +240,12 @@ func int DIA_Addon_Scatty_Bier_Condition()
 
 func void DIA_Addon_Scatty_Bier_Info()
 {
-	AI_Output(other,self, " DIA_Addon_Scatty_Bier_15_00 " );	// Here, your beer!
+	AI_Output(other,self, " DIA_Addon_Scatty_Bier_15_00 " );	// Heres your beer!
 	if(B_GiveInvItems(other,self,ItFo_Beer,1))
 	{
 		AI_UseItem(self,ItFo_Beer);
 	};
-	AI_Output(self,other, " DIA_Addon_Scatty_Bier_01_01 " );	// Oh, thanks. It is delicious. Thank you! You are my hero!
+	AI_Output(self,other, " DIA_Addon_Scatty_Bier_01_01 " );	// Thank you! You're my hero!
 	AI_Output(self,other, " DIA_Addon_Scatty_Bier_01_02 " );	// For that, I'll even sell you better armor.
 	SCATTY_CANTRADESHC = TRUE;
 	B_GivePlayerXP(XP_Ambient);
@@ -275,7 +275,7 @@ func void DIA_Addon_Scatty_Gold_Info()
 {
 	B_Say(other,self,"$ADDON_GOLD_DESCRIPTION");
 	AI_Output(self,other, " DIA_Addon_Scatty_Gold_01_00 " );	// Pick up a pickaxe and hit the gold mine - anyone can do it.
-	AI_Output(self,other, " DIA_Addon_Scatty_Gold_01_01 " );	// But if you do that, a lot of nuggets will scatter. Therefore, people who understand this matter should dig.
+	AI_Output(self,other, " DIA_Addon_Scatty_Gold_01_01 " );	// But if you do that, a lot of nuggets will scatter. Therefore, only people who understand that should dig.
 	AI_Output(self,other, " DIA_Addon_Scatty_Gold_01_02 " );	// I can tell you more when you have more experience.
 };
 
@@ -326,13 +326,13 @@ func void DIA_Addon_Scatty_teach_GOLDWORK()
 		{
 			AI_Output(self,other, " DIA_Addon_Scatty_teach_01_01 " );	// First of all, you should know that gold is not an ore. It's soft like butter. If you hit too hard, everything will fall apart!
 			AI_Output(self,other, " DIA_Addon_Scatty_teach_01_02 " );	// Every miner has his own techniques to separate the nuggets from the rock.
-			AI_Output(self,other, " DIA_Addon_Scatty_teach_01_03 " );	// Ultimately, these tricks separate a mere miner from a good miner.
+			AI_Output(self,other, " DIA_Addon_Scatty_teach_01_03 " );	// Ultimately, these tricks separate a miner from a good miner.
 			AI_Output(self,other, " DIA_Addon_Scatty_teach_01_04 " );	// Other than that, repetition is the mother of learning. Only by working will you become a good miner.
 			SCATTYTEACHMOREGOLD = TRUE;
 		}
 		else
 		{
-			AI_Output(self,other, " DIA_Addon_Scatty_teach_01_06 " );	// Good! I will tell. (tells)
+			AI_Output(self,other, " DIA_Addon_Scatty_teach_01_06 " );	// Good! I'll tell you.
 		};
 	};
 
@@ -362,7 +362,7 @@ func int DIA_Addon_Scatty_tot_Condition()
 func void DIA_Addon_Scatty_tot_Info()
 {
 	AI_Output(other,self, " DIA_Addon_Scatty_tot_15_00 " );	// Bloodwin is dead.
-	AI_Output(self,other, " DIA_Addon_Scatty_tot_01_01 " );	// Hmm, there aren't many people I wish I could die... but a dead Bloodwin is better than a living one.
+	AI_Output(self,other, " DIA_Addon_Scatty_tot_01_01 " );	// Hmm, there aren't many people I dead... but a dead Bloodwin is better than a living one.
 };
 
 
@@ -420,16 +420,16 @@ func int dia_addon_scatty_orcinvasion_condition()
 
 func void dia_addon_scatty_orcinvasion_info()
 {
-	AI_Output(other,self,"DIA_Addon_BDT_10014_Scatty_OrcInvasion_01_00");	//Как дела?
-	AI_Output(self,other, " DIA_Addon_BDT_10014_Scatty_OrcInvasion_01_01 " );	// How, how - you can't imagine better! And where did these orcs come from, I have no idea!
+	AI_Output(other,self,"DIA_Addon_BDT_10014_Scatty_OrcInvasion_01_00");	//How are you?
+	AI_Output(self,other, " DIA_Addon_BDT_10014_Scatty_OrcInvasion_01_01 " );	// Oh, just GREAT! Fanfuckingtastic! And where did these orcs come from, I have no idea!
 	AI_Output(self,other, " DIA_Addon_BDT_10014_Scatty_OrcInvasion_01_02 " );	// To be honest, kid, my knees are still shaking.
 	AI_Output(other,self, " DIA_Addon_BDT_10014_Scatty_OrcInvasion_01_03 " );	// Well, you're alive, what else do you need?
-	AI_Output(self,other, " DIA_Addon_BDT_10014_Scatty_OrcInvasion_01_04 " );	// Yes, it is. But in the camp I still had a good bunch of different junk, which I would not really want to part with.
-	AI_Output(self,other, " DIA_Addon_BDT_10014_Scatty_OrcInvasion_01_05 " );	// And now you can't stick your nose in there, otherwise you instantly risk losing your own head!
+	AI_Output(self,other, " DIA_Addon_BDT_10014_Scatty_OrcInvasion_01_04 " );	// Yes, I am. But in the camp I still had a good bunch of different junk, which I would not really want to part with.
+	AI_Output(self,other, " DIA_Addon_BDT_10014_Scatty_OrcInvasion_01_05 " );	// And now you can't stick your nose in there, otherwise you might lose it and the head it belongs to!
 	if(ORCSHAMAN4ISDEAD == TRUE)
 	{
 		B_GivePlayerXP(150);
-		AI_Output(other,self, " DIA_Addon_BDT_10014_Scatty_OrcInvasion_01_06 " );	// No, boy! It's not that I don't believe you, but I won't even take a step there.
+		AI_Output(other,self, " DIA_Addon_BDT_10014_Scatty_OrcInvasion_01_06 " );	// No, boy! It's not that I don't believe you, but I won't even take a step in there.
 	};
 };
 
@@ -456,26 +456,26 @@ func int dia_addon_scatty_chest_condition()
 func void dia_addon_scatty_chest_info()
 {
 	AI_Output(other,self, " DIA_Addon_BDT_10014_Scatty_Chest_01_00 " );	// What is this junk?
-	AI_Output(self,other, " DIA_Addon_BDT_10014_Scatty_Chest_01_01 " );	// Well, nothing special... (he hesitated)
+	AI_Output(self,other, " DIA_Addon_BDT_10014_Scatty_Chest_01_01 " );	// Well, nothing special...
 	AI_Output(other,self, " DIA_Addon_BDT_10014_Scatty_Chest_01_02 " );	// If it's nothing special, why are you so worried?
-	AI_Output(self,other, " DIA_Addon_BDT_10014_Scatty_Chest_01_03 " );	// Oh boy. Yes, don't put your finger in your mouth...
-	AI_Output(other,self, " DIA_Addon_BDT_10014_Scatty_Chest_01_04 " );	// Come on, Scutty, have a shot. What's there?
-	AI_Output(self,other, " DIA_Addon_BDT_10014_Scatty_Chest_01_05 " );	// Okay. In general, my chest remained there, which I entrust filled with gold bars.
-	AI_Output(self,other, " DIA_Addon_BDT_10014_Scatty_Chest_01_06 " );	// You yourself understand that when we were fleeing the camp, somehow it was not convenient for me to drag him with me.
-	AI_Output(other,self,"DIA_Addon_BDT_10014_Scatty_Chest_01_07");	//Золото?!
-	AI_Output(self,other, " DIA_Addon_BDT_10014_Scatty_Chest_01_08 " );	// Yes! My gold, mind you! But you still can’t open it if you intend to appropriate it for yourself.
-	AI_Output(self,other, " DIA_Addon_BDT_10014_Scatty_Chest_01_09 " );	// There is a very tricky lock, and you will never break it.
+	AI_Output(self,other, " DIA_Addon_BDT_10014_Scatty_Chest_01_03 " );	// Oh boy. You're like a dog with a bone aren't you...
+	AI_Output(other,self, " DIA_Addon_BDT_10014_Scatty_Chest_01_04 " );	// Come on, Scutty, talk to me. What's in there?
+	AI_Output(self,other, " DIA_Addon_BDT_10014_Scatty_Chest_01_05 " );	// Okay. Its my chest, and it was filled with gold bars.
+	AI_Output(self,other, " DIA_Addon_BDT_10014_Scatty_Chest_01_06 " );	// Only when we were fleeing the camp, I couldn't exactly carry it with me could I?
+	AI_Output(other,self,"DIA_Addon_BDT_10014_Scatty_Chest_01_07");	//Gold?!
+	AI_Output(self,other, " DIA_Addon_BDT_10014_Scatty_Chest_01_08 " );	// Yes! My gold! Don't even think about trying to steal it you bastard.
+	AI_Output(self,other, " DIA_Addon_BDT_10014_Scatty_Chest_01_09 " );	// It has a very tricky lock, and you will never break it.
 	AI_Output(self,other, " DIA_Addon_BDT_10014_Scatty_Chest_01_10 " );	// And I have the key!
-	AI_Output(other,self, " DIA_Addon_BDT_10014_Scatty_Chest_01_11 " );	// Okay, okay. What are you angry about? I'm not going to take your gold.
+	AI_Output(other,self, " DIA_Addon_BDT_10014_Scatty_Chest_01_11 " );	// Okay, okay. What are you so angry about? I'm not going to take your gold.
 	AI_Output(self,other, " DIA_Addon_BDT_10014_Scatty_Chest_01_12 " );	// Why are you interested then?
-	AI_Output(other,self, " DIA_Addon_BDT_10014_Scatty_Chest_01_13 " );	// Maybe I can help you? I'll go to the camp and bring you all your gold.
+	AI_Output(other,self, " DIA_Addon_BDT_10014_Scatty_Chest_01_13 " );	// Maybe I can help you? I'll go to the camp and bring you your gold.
 	AI_Output(self,other, " DIA_Addon_BDT_10014_Scatty_Chest_01_14 " );	// Are you really going to do this?
-	AI_Output(other,self, " DIA_Addon_BDT_10014_Scatty_Chest_01_15 " );	// Well, if we divide the contents of the chest in half, then, perhaps, easily.
-	AI_Output(self,other,"DIA_Addon_BDT_10014_Scatty_Chest_01_16");	//(гневно) ЧТО?!
-	AI_Output(other,self, " DIA_Addon_BDT_10014_Scatty_Chest_01_17 " );	// My job is to propose.
-	AI_Output(self,other, " DIA_Addon_BDT_10014_Scatty_Chest_01_18 " );	// Eh... I see I don't have much of a choice. At least half is also something.
-	AI_Output(self,other, " DIA_Addon_BDT_10014_Scatty_Chest_01_19 " );	// Okay, consider, agreed. But look, if you fool me... I'll find you and cut you to pieces!
-	AI_Output(other,self, " DIA_Addon_BDT_10014_Scatty_Chest_01_20 " );	// Don't worry like that! I won't deceive you.
+	AI_Output(other,self, " DIA_Addon_BDT_10014_Scatty_Chest_01_15 " );	// Well, if we divide the contents of the chest in half, then, perhaps.
+	AI_Output(self,other,"DIA_Addon_BDT_10014_Scatty_Chest_01_16");	//HALF?!
+	AI_Output(other,self, " DIA_Addon_BDT_10014_Scatty_Chest_01_17 " );	// It's better than nothing right?.
+	AI_Output(self,other, " DIA_Addon_BDT_10014_Scatty_Chest_01_18 " );	// Eh... I see I don't have much of a choice. At least half is something.
+	AI_Output(self,other, " DIA_Addon_BDT_10014_Scatty_Chest_01_19 " );	// Okay, agreed. But look, if you fool me... I'll find you and cut you to pieces!
+	AI_Output(other,self, " DIA_Addon_BDT_10014_Scatty_Chest_01_20 " );	// Don't worry, I won't deceive you.
 	B_GiveInvItems(self,other,itke_scattychest,1);
 	AI_Output(self,other, " DIA_Addon_BDT_10014_Scatty_Chest_01_21 " );	// Here, take the key. And hurry up!
 	AI_StopProcessInfos(self);
@@ -510,15 +510,15 @@ func void dia_addon_scatty_dochestit_info()
 	B_GivePlayerXP(200);
 	AI_Output(other,self, " DIA_Addon_BDT_10014_Scatty_DoChestIt_01_00 " );	// Here are your ingots.
 	B_GiveInvItems(other,self,ItMi_Addon_GoldNugget,500);
-	AI_Output(self,other, " DIA_Addon_BDT_10014_Scatty_DoChestIt_01_01 " );	// Well, let me see... (counts) Hmmm...
-	AI_Output(self,other, " DIA_Addon_BDT_10014_Scatty_DoChestIt_01_02 " );	// Yes, everything seems to be correct, as it should be.
-	AI_Output(self,other, " DIA_Addon_BDT_10014_Scatty_DoChestIt_01_03 " );	// And I see you're an honest guy. You can be trusted, unlike these bandit muzzles!
-	AI_Output(other,self, " DIA_Addon_BDT_10014_Scatty_DoChestIt_01_04 " );	// Have you ever doubted this?
-	AI_Output(self,other, " DIA_Addon_BDT_10014_Scatty_DoChestIt_01_05 " );	// Well, you understand - not small. Friendship is friendship, but gold is apart.
-	AI_Output(other,self, " DIA_Addon_BDT_10014_Scatty_DoChestIt_01_06 " );	// What about our contract?
-	AI_Output(self,other, " DIA_Addon_BDT_10014_Scatty_DoChestIt_01_07 " );	// The contract is more valuable than money... (laughs) Here, take your share.
+	AI_Output(self,other, " DIA_Addon_BDT_10014_Scatty_DoChestIt_01_01 " );	// Well, let me see... Hmmm...
+	AI_Output(self,other, " DIA_Addon_BDT_10014_Scatty_DoChestIt_01_02 " );	// Yes, everything seems to be here.
+	AI_Output(self,other, " DIA_Addon_BDT_10014_Scatty_DoChestIt_01_03 " );	// And I see you're an honest guy. You can be trusted, unlike these bandit dogs!
+	AI_Output(other,self, " DIA_Addon_BDT_10014_Scatty_DoChestIt_01_04 " );	// Thank you.
+	AI_Output(self,other, " DIA_Addon_BDT_10014_Scatty_DoChestIt_01_05 " );	// Friendship is friendship, but gold is gold, yeah?
+	AI_Output(other,self, " DIA_Addon_BDT_10014_Scatty_DoChestIt_01_06 " );	// What about our deal?
+	AI_Output(self,other, " DIA_Addon_BDT_10014_Scatty_DoChestIt_01_07 " );	// I believe friendship is more valuable than money... (laughs) Here, take your share.
 	B_GiveInvItems(self,other,ItMi_Addon_GoldNugget,250);
-	AI_Output(other,self,"DIA_Addon_BDT_10014_Scatty_DoChestIt_01_08");	//Отлично.
+	AI_Output(other,self,"DIA_Addon_BDT_10014_Scatty_DoChestIt_01_08");	//Thank you.
 	B_LogEntry( TOPIC_SCATTYCHEST , " I brought Scutty the gold. As we agreed, half is mine. " );
 	Log_SetTopicStatus(TOPIC_SCATTYCHEST,LOG_SUCCESS);
 	SCATTYCHESTDONE = TRUE;
@@ -546,11 +546,11 @@ func int dia_addon_scatty_cantradearmor_condition()
 func void dia_addon_scatty_cantradearmor_info()
 {
 	AI_Output(other,self, " DIA_Addon_BDT_10014_Scatty_CanTradeArmor_01_00 " );	// Do you sell armor?
-	AI_Output(self,other, " DIA_Addon_BDT_10014_Scatty_CanTradeArmor_01_05 " );	// Hmm... Of course, I could sell you the guard's armor as well, but Bloodwyn will blow my head off if he finds out!
-	AI_Output(self,other, " DIA_Addon_BDT_10014_Scatty_CanTradeArmor_01_06 " );	// I can only do this by his personal order. So I'm sorry, boy - I can't help you with this matter.
-	AI_Output(other,self, " DIA_Addon_BDT_10014_Scatty_CanTradeArmor_01_07 " );	// And if Bloodwin suddenly dies, for example? Then can you sell me this armor?
-	AI_Output(self,other, " DIA_Addon_BDT_10014_Scatty_CanTradeArmor_01_08 " );	// Well, if, of course, this happens then ... I think I can. Although, something I doubt it ... (laughs)
-	AI_Output(other,self,"DIA_Addon_BDT_10014_Scatty_CanTradeArmor_01_09");	//Понятно.
+	AI_Output(self,other, " DIA_Addon_BDT_10014_Scatty_CanTradeArmor_01_05 " );	// Hmm... Of course, I could sell you the guard's armor as well, but Bloodwyn will cut my head off if he finds out!
+	AI_Output(self,other, " DIA_Addon_BDT_10014_Scatty_CanTradeArmor_01_06 " );	// I can only do that by his personal order. So I'm sorry, boy - I can't help you.
+	AI_Output(other,self, " DIA_Addon_BDT_10014_Scatty_CanTradeArmor_01_07 " );	// And if Bloodwin suddenly dies, for example? Then can you sell me armor?
+	AI_Output(self,other, " DIA_Addon_BDT_10014_Scatty_CanTradeArmor_01_08 " );	// Well if that were to happen ... I can. Although I doubt it would...
+	AI_Output(other,self,"DIA_Addon_BDT_10014_Scatty_CanTradeArmor_01_09");	// I see.
 	SCATTY_CANTRADEARMOR = TRUE;
 };
 
@@ -577,11 +577,11 @@ func int dia_addon_scatty_armor_condition()
 func void dia_addon_scatty_armor_info()
 {
 	AI_Output(other,self, " DIA_Addon_Scatty_Armor_15_01 " );	// Bloodwin is dead! Now will you sell me the guard's armor?
-	AI_Output(self,other, " DIA_Addon_Scatty_Armor_15_02 " );	// Well, as promised.
+	AI_Output(self,other, " DIA_Addon_Scatty_Armor_15_02 " );	// Um... of course.
 
 	if(SCATTY_CANTRADESHC == TRUE)
 	{
-		AI_Output(self,other, " DIA_Addon_Scatty_Armor_15_03 " );	// And even more. I can offer you the best that I have!
+		AI_Output(self,other, " DIA_Addon_Scatty_Armor_15_03 " );	// I can even offer you the best that I have!
 	};
 
 	Info_AddChoice(dia_addon_scatty_armor,Dialog_Back,dia_addon_scatty_armor_back);
@@ -606,7 +606,7 @@ func void dia_addon_scatty_armor_buy3()
 	AI_Output(other,self, " DIA_Addon_Scatty_Armor_Buy3_15_00 " );	// Okay, I'll take this armor.
 	if(B_GiveInvItems(other,self,ItMi_Gold,1800))
 	{
-		AI_Output(self,other,"DIA_Addon_Scatty_Armor_Buy3_06_01");	//Отлично.
+		AI_Output(self,other,"DIA_Addon_Scatty_Armor_Buy3_06_01");	//Ok.
 		B_GiveInvItems(self,other,itar_grd_l,1);
 		SCATTY_ARMORPERM_THREE = TRUE;
 	}
@@ -622,7 +622,7 @@ func void dia_addon_scatty_armor_buy4()
 	AI_Output(other,self, " DIA_Addon_Scatty_Armor_Buy4_15_00 " );	// Okay, I'll take this armor.
 	if(B_GiveInvItems(other,self,ItMi_Gold,VALUE_ITAR_Bloodwyn_Addon))
 	{
-		AI_Output(self,other,"DIA_Addon_Scatty_Armor_Buy4_06_01");	//Отлично.
+		AI_Output(self,other,"DIA_Addon_Scatty_Armor_Buy4_06_01");	//Ok.
 		B_GiveInvItems(self,other,ITAR_Bloodwyn_Addon,1);
 		SCATTY_ARMORPERM_FOUR = TRUE;
 	}
