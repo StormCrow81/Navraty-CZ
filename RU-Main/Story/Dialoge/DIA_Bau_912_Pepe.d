@@ -40,7 +40,7 @@ func int DIA_Pepe_Hallo_Condition()
 func void DIA_Pepe_Hallo_Info()
 {
 	AI_Output(other,self, " DIA_Pepe_Hallo_15_00 " );	// What are you doing here?
-	AI_Output(self,other, " DIA_Pepe_Hallo_03_01 " );	// (missing) Keeping sheep! (sighs) And I try to stay out of trouble whenever possible.
+	AI_Output(self,other, " DIA_Pepe_Hallo_03_01 " );	// Keeping sheep! (sigh) I try to stay out of trouble whenever possible.
 	if((hero.guild != GIL_SLD) && (hero.guild != GIL_DJG))
 	{
 		AI_Output(other,self, " DIA_Pepe_Hallo_15_02 " );	// It's not always possible, right?
@@ -71,7 +71,7 @@ func int DIA_Pepe_Danger_Condition()
 func void DIA_Pepe_Danger_Info()
 {
 	AI_Output(other,self, " DIA_Pepe_Danger_15_00 " );	// And what is dangerous in the pasture?
-	AI_Output(self,other, " DIA_Pepe_Danger_03_01 " );	// A small pack of wolves roams nearby. Those damned creatures steal one of my sheep almost every day.
+	AI_Output(self,other, " DIA_Pepe_Danger_03_01 " );	// A small pack of wolves roam nearby. Those damned creatures steal one of my sheep almost every day.
 	AI_Output(self,other, " DIA_Pepe_Danger_03_02 " );	// A few days ago I had twice as many sheep. I don't even want to think what Onar will do to me when he finds out about this.
 };
 
@@ -98,10 +98,10 @@ func int DIA_Pepe_WhyNotSLD_Condition()
 func void DIA_Pepe_WhyNotSLD_Info()
 {
 	AI_Output(other,self, " DIA_Pepe_WhyNotSLD_15_00 " );	// Why don't you tell the mercenaries about the wolves? I thought it was their job.
-	AI_Output(self,other, " DIA_Pepe_WhyNotSLD_03_01 " );	// Yes, I know. I had to do it. But he didn't, damn it!
-	AI_Output(self,other, " DIA_Pepe_WhyNotSLD_03_02 " );	// And now that so many sheep are gone, I'm afraid to tell anyone about it.
+	AI_Output(self,other, " DIA_Pepe_WhyNotSLD_03_01 " );	// I did, when it started, but he didn't listen damn it!
+	AI_Output(self,other, " DIA_Pepe_WhyNotSLD_03_02 " );	// And now so many sheep are gone, I'm afraid to alert anyone to it.
 	AI_Output(other,self, " DIA_Pepe_WhyNotSLD_15_03 " );	// But you just told ME...
-	AI_Output(self,other, " DIA_Pepe_WhyNotSLD_03_04 " );	// (angrily) I already regretted it.
+	AI_Output(self,other, " DIA_Pepe_WhyNotSLD_03_04 " );	// (angrily) I already regret it.
 };
 
 
@@ -127,10 +127,10 @@ func int DIA_Pepe_KillWolves_Condition()
 func void DIA_Pepe_KillWolves_Info()
 {
 	AI_Output(other,self, " DIA_Pepe_KillWolves_15_00 " );	// What if I kill these wolves?
-	AI_Output(self,other, " DIA_Pepe_KillWolves_03_01 " );	// (mockingly) You, yourself? Ha ha. I do not believe in that. I would rather believe that my ram-leader will deal with them.
-	AI_Output(other,self, " DIA_Pepe_KillWolves_15_02 " );	// Forget it. It was just a guess. I'll go to the boys and see what THEY have to say about this...
-	AI_Output(self,other, " DIA_Pepe_KillWolves_03_03 " );	// (frightened) Wait a minute. Good good! Uh... you're the greatest warrior, and you can take down a hundred wolves with one left. No problem!
-	AI_Output(self,other, " DIA_Pepe_KillWolves_03_04 " );	// Usually they dart around in the woods near the pasture. (as if by the way) I think there are only four of them ...
+	AI_Output(self,other, " DIA_Pepe_KillWolves_03_01 " );	// You, alone? Ha ha. I don't see that happening anytime soon.
+	AI_Output(other,self, " DIA_Pepe_KillWolves_15_02 " );	// Forget it. I'll go to the boys and see what THEY have to say about this...
+	AI_Output(self,other, " DIA_Pepe_KillWolves_03_03 " );	// Wait a minute. Good good! Uh... you're the greatest warrior, and you can take down a hundred wolves with one arm. No problem!
+	AI_Output(self,other, " DIA_Pepe_KillWolves_03_04 " );	// Usually they dart around in the woods near the pasture. I think there are only four of them ...
 	AI_StopProcessInfos(self);
 	Wld_InsertNpc(PEPES_YWolf1,"FP_ROAM_NW_BIGFARM_PEPES_WOLFS_01");
 	Wld_InsertNpc(PEPES_YWolf2,"FP_ROAM_NW_BIGFARM_PEPES_WOLFS_02");
@@ -167,15 +167,15 @@ func void DIA_Pepe_KilledWolves_Info()
 	AI_Output(other,self, " DIA_Pepe_KilledWolves_15_00 " );	// I dealt with the wolves.
 	if (Npc_IsDead(PEPES_YWolf1) && Npc_IsDead(PEPES_YWolf2) && Npc_IsDead(PEPES_YWolf3) && Npc_IsDead(PEPES_YWolf4))
 	{
-		AI_Output(self,other, " DIA_Pepe_KilledWolves_03_01 " );	// (amazed) You did it! Glory to Innos!
+		AI_Output(self,other, " DIA_Pepe_KilledWolves_03_01 " );	// You did it! Glory to Innos!
 		AI_Output(self,other, " DIA_Pepe_KilledWolves_03_02 " );	// But I still don't know how to tell Onar that his sheep are gone.
-		AI_Output(self,other, " DIA_Pepe_KilledWolves_03_03 " );	// (under his breath) It's all this damn Bulko's fault!
+		AI_Output(self,other, " DIA_Pepe_KilledWolves_03_03 " );	// (under his breath) It's all that damn Bulko's fault!
 		MIS_Pepe_KillWolves = LOG_SUCCESS;
 		B_GivePlayerXP(XP_PepeWolves);
 	}
 	else
 	{
-		AI_Output(self,other, " DIA_Pepe_KilledWolves_03_04 " );	// do you think I'm an idiot? These beasts are not all dead yet.
+		AI_Output(self,other, " DIA_Pepe_KilledWolves_03_04 " );	// Do you think I'm an idiot? The beasts are not all dead yet.
 	};
 };
 
@@ -202,10 +202,10 @@ func int DIA_Pepe_Bullco_Condition()
 func void DIA_Pepe_Bullco_Info()
 {
 	AI_Output(other,self, " DIA_Pepe_Bullco_15_00 " );	// What did you say about Bulko?
-	AI_Output(self,other, " DIA_Pepe_Bullco_03_01 " );	// This is one of the mercenaries. It's his job to guard the pasture.
+	AI_Output(self,other, " DIA_Pepe_Bullco_03_01 " );	// One of the mercenaries. It's his job to guard the pasture.
 	AI_Output(self,other, " DIA_Pepe_Bullco_03_02 " );	// But instead, he and his friend Silvio hang out in Tecla's kitchen all day long.
 	AI_Output(self,other, " DIA_Pepe_Bullco_03_03 " );	// It's the bastard's fault if I don't get paid for many weeks of work because of the loss of sheep.
-	AI_Output(self,other, " DIA_Pepe_Bullco_03_04 " );	// How I'd like to punch him in the face. But no one can do it. This guy is a killer.
+	AI_Output(self,other, " DIA_Pepe_Bullco_03_04 " );	// How I'd like to punch him in the face. But no one can do it. The guy is a killer.
 	MIS_Pepe_KickBullco = LOG_Running;
 	Log_CreateTopic(TOPIC_KickBullco,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_KickBullco,LOG_Running);
@@ -238,7 +238,7 @@ func int DIA_Pepe_BullcoDefeated_Condition()
 func void DIA_Pepe_BullcoDefeated_Info()
 {
 	AI_Output(other,self, " DIA_Pepe_BullcoDefeated_15_00 " );	// Bulko got what he deserved. I taught him a lesson.
-	AI_Output(self,other, " DIA_Pepe_BullcoDefeated_03_01 " );	// This pig deserved it.
+	AI_Output(self,other, " DIA_Pepe_BullcoDefeated_03_01 " );	// The pig deserved it.
 	MIS_Pepe_KickBullco = LOG_SUCCESS;
 	B_GivePlayerXP(XP_KickBullco);
 };
@@ -272,11 +272,11 @@ func void DIA_Pepe_PERM_Info()
 	};
 	if (chapter ==  2 )
 	{
-		AI_Output(self,other, " DIA_Pepe_PERM_03_02 " );	// Good. But other wolves may come. And possibly more!
+		AI_Output(self,other, " DIA_Pepe_PERM_03_02 " );	// Good. But other wolves may come. And possibly even worse beasts!
 	};
 	if (chapter ==  3 )
 	{
-		AI_Output(self,other, " DIA_Pepe_PERM_03_03 " );	// I've heard strange things. They say that scary personalities have appeared on Sekoba's farm. They took over his house.
+		AI_Output(self,other, " DIA_Pepe_PERM_03_03 " );	// I've heard strange things. They say that scary people have appeared on Sekob's farm. They took over his house.
 	};
 	if (Chapter >=  4 )
 	{
@@ -341,16 +341,16 @@ func void DIA_Pepe_BuyLiesel_Info()
 		if (Pepe_SchafBought ==  0 )
 		{
 			AI_Output(self,other, " DIA_Pepe_BuyLiesel_03_01 " );	// Good. Take Betsy - you will find her in the pasture.
-			AI_Output(self,other, " DIA_Pepe_BuyLiesel_03_02 " );	// Just tell her to follow you. She is very smart for a sheep. Don't hate her!
+			AI_Output(self,other, " DIA_Pepe_BuyLiesel_03_02 " );	// Just tell her to follow you. She is very smart for a sheep. Don't hurt her!
 		}
 		else
 		{
 			AI_Output(self,other, " DIA_Pepe_BuyLiesel_03_03 " );	// Again? Good. Take Betsy.
 			AI_Output(other,self, " DIA_Pepe_BuyLiesel_15_04 " );	// Betsy? But the last sheep I took from you was also named Betsy...
-			AI_Output(self,other, " DIA_Pepe_BuyLiesel_03_05 " );	// All sheep are named Betsy.
-			AI_Output(self,other, " DIA_Pepe_BuyLiesel_03_06 " );	// Except for sheep, of course.
-			AI_Output(other,self, " DIA_Pepe_BuyLiesel_15_07 " );	// What are their names?
-			AI_Output(self,other,"DIA_Pepe_BuyLiesel_03_08");	//Брюс.
+			AI_Output(self,other, " DIA_Pepe_BuyLiesel_03_05 " );	// All my sheep are named Betsy.
+			AI_Output(self,other, " DIA_Pepe_BuyLiesel_03_06 " );	// Except for the rams, of course.
+			AI_Output(other,self, " DIA_Pepe_BuyLiesel_15_07 " );	// What are their names then?
+			AI_Output(self,other,"DIA_Pepe_BuyLiesel_03_08");	//Bruce.
 		};
 
 		Pepe_SchafBought = Pepe_SchafBought +  1 ;
@@ -416,26 +416,26 @@ func int dia_pepe_ogriob_condition()
 
 func void dia_pepe_ogriob_info()
 {
-	AI_Output(self,other, " DIA_Bau_912_Pepe_OGRIOB_01_01 " );	// Hey buddy...(pauses) Wait a minute.
+	AI_Output(self,other, " DIA_Bau_912_Pepe_OGRIOB_01_01 " );	// Hey buddy... Hold on a minute.
 	AI_Output(other,self, " DIA_Bau_912_Pepe_OGRIOB_01_02 " );	// What do you want?
-	AI_Output(self,other, " DIA_Bau_912_Pepe_OGRIOB_01_03 " );	// Look, I've got an unpleasant situation here. Onar will take off my head if he finds out.
+	AI_Output(self,other, " DIA_Bau_912_Pepe_OGRIOB_01_03 " );	// Look, I've got an unpleasant situation here. Onar will take my head if he finds out.
 	AI_Output(other,self, " DIA_Bau_912_Pepe_OGRIOB_01_04 " );	// Did the wolves steal your sheep again?
-	AI_Output(self,other, " DIA_Bau_912_Pepe_OGRIOB_01_05 " );	// Mmmm... well, yes. Someone again stole a sheep from me.
-	AI_Output(other,self, " DIA_Bau_912_Pepe_OGRIOB_01_06 " );	// And how did it happen?
-	AI_Output(self,other, " DIA_Bau_912_Pepe_OGRIOB_01_07 " );	// Yes, I decided to go into the woods out of need. He just approached the bushes, when suddenly something rustled there.
+	AI_Output(self,other, " DIA_Bau_912_Pepe_OGRIOB_01_05 " );	// Well, SOMEONE did.
+	AI_Output(other,self, " DIA_Bau_912_Pepe_OGRIOB_01_06 " );	// How did it happen?
+	AI_Output(self,other, " DIA_Bau_912_Pepe_OGRIOB_01_07 " );	// I decided to go into the woods out of need. I just approached the bushes, when something rustled there.
 	AI_Output(self,other, " DIA_Bau_912_Pepe_OGRIOB_01_08 " );	// And then I just feel... bam! It was as if Bennett's anvil had fallen on my foot.
-	AI_Output(self,other, " DIA_Bau_912_Pepe_OGRIOB_01_09 " );	// Looks like someone punched me in the leg like that.
-	AI_Output(self,other, " DIA_Bau_912_Pepe_OGRIOB_01_10 " );	// In short, I immediately passed out from the terrible pain, and when I woke up, I was missing one sheep.
-	AI_Output(other,self, " DIA_Bau_912_Pepe_OGRIOB_01_11 " );	// Who could do this?
-	AI_Output(self,other, " DIA_Bau_912_Pepe_OGRIOB_01_12 " );	// Unfortunately, I didn't really understand anything.
+	AI_Output(self,other, " DIA_Bau_912_Pepe_OGRIOB_01_09 " );	// Something hit me in the leg.
+	AI_Output(self,other, " DIA_Bau_912_Pepe_OGRIOB_01_10 " );	// In short, I immediately passed out from the terrible pain, and when I woke up, I was missing a sheep.
+	AI_Output(other,self, " DIA_Bau_912_Pepe_OGRIOB_01_11 " );	// Any suspects?
+	AI_Output(self,other, " DIA_Bau_912_Pepe_OGRIOB_01_12 " );	// Unfortunately, I didn't really see anything.
 	AI_Output(other,self, " DIA_Bau_912_Pepe_OGRIOB_01_13 " );	// What do you want from me?
 	AI_Output(self,other, " DIA_Bau_912_Pepe_OGRIOB_01_14 " );	// Please help me get that sheep back! Or just find the thing that stole her from me.
 	AI_Output(other,self, " DIA_Bau_912_Pepe_OGRIOB_01_15 " );	// Okay, I'll try.
-	AI_Output(self,other, " DIA_Bau_912_Pepe_OGRIOB_01_16 " );	// Just be careful, this beast seems to be very strong!
+	AI_Output(self,other, " DIA_Bau_912_Pepe_OGRIOB_01_16 " );	// Just be careful, the beast seems to be very strong!
 	MIS_GRIMGASH = LOG_Running;
 	Log_CreateTopic(TOPIC_GRIMGASH,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_GRIMGASH,LOG_Running);
-	B_LogEntry( TOPIC_GRIMGASH , " Someone kicked Pepe's leg and dragged one of the sheep away. He didn't see who it was, but it looks like someone is very smart and strong. We should deal with this and, if possible, return the sheep to Pepe . " );
+	B_LogEntry( TOPIC_GRIMGASH , " Someone kicked Pepe's leg and dragged one of his sheep away. He didn't see who it was, but it looks like something very strong. I should deal with this and, if possible, return the sheep to Pepe . " );
 	AI_StopProcessInfos(self);
 	Npc_ExchangeRoutine(self,"brokenleg");
 	Wld_InsertNpc(gobbo_grandwarrior_uniq,"FP_ROAM_NW_BIGFARMFORESTCAVE_02");
@@ -467,17 +467,17 @@ func void dia_bau_912_pepe_grimgash_info()
 	Npc_RemoveInvItems(self,itat_sheepgrimgash,1);
 	AI_Output(self,other, " DIA_Bau_912_Pepe_GRIMGASH_01_02 " );	// Damn! It turns out that Onar has one less sheep. Did you find the thief?
 	AI_Output(other,self, " DIA_Bau_912_Pepe_GRIMGASH_01_03 " );	// It turned out to be a huge black goblin. Looks like he kicked you in the leg.
-	AI_Output(self,other, " DIA_Bau_912_Pepe_GRIMGASH_01_04 " );	// O Innos! It doesn't get any easier from time to time. And you killed him?
+	AI_Output(self,other, " DIA_Bau_912_Pepe_GRIMGASH_01_04 " );	// O Innos! It doesn't get any easier does it. And you killed it?
 	AI_Output(other,self, " DIA_Bau_912_Pepe_GRIMGASH_01_05 " );	// Of course! Otherwise, how do you think I got this sheepskin?
-	AI_Output(self,other, " DIA_Bau_912_Pepe_GRIMGASH_01_06 " );	// Okay. At least he won't bother me and my sheep anymore.
-	AI_Output(self,other, " DIA_Bau_912_Pepe_GRIMGASH_01_07 " );	// Here, take sheep's cheese and goat's milk for this.
+	AI_Output(self,other, " DIA_Bau_912_Pepe_GRIMGASH_01_06 " );	// Okay. At least it won't bother me and my sheep anymore.
+	AI_Output(self,other, " DIA_Bau_912_Pepe_GRIMGASH_01_07 " );	// Here, take some sheep's cheese and goat's milk.
 	B_GiveInvItemsManyThings(self,other);
 	CreateInvItems(hero,ItFo_Cheese,3);
 	CreateInvItems(hero,ItFo_Milk,3);
 	AI_Output(self,other, " DIA_Bau_912_Pepe_GRIMGASH_01_08 " );	// Sorry, but that's all I have.
 	MIS_GRIMGASH = LOG_SUCCESS;
 	Log_SetTopicStatus(TOPIC_GRIMGASH,LOG_SUCCESS);
-	B_LogEntry( TOPIC_GRIMGASH , " I told Pepe about the goblin who stole his sheep. Pepe gave me some cheese and a few bottles of milk as a token of his gratitude. Okay, what else to take from the poor shepherd. " );
+	B_LogEntry( TOPIC_GRIMGASH , " I told Pepe about the goblin who stole his sheep. Pepe gave me some cheese and a few bottles of milk as a token of his gratitude. " );
 };
 
 DIA_PEPE_LECHENIE (C_Info) instances
@@ -501,13 +501,13 @@ func int dia_pepe_lechenie_condition()
 func void dia_pepe_lechenie_info()
 {
 	AI_Output(self,other, " DIA_Pepe_Lechenie_01_01 " );	// Hey, wait...
-	AI_Output(other,self, " DIA_Pepe_Lechenie_01_02 " );	// What else?
+	AI_Output(other,self, " DIA_Pepe_Lechenie_01_02 " );	// What?
 	AI_Output(self,other, " DIA_Pepe_Lechenie_01_03 " );	// Look, that filthy goblin hit my leg so hard that I can hardly move anymore!
-	AI_Output(self,other, " DIA_Pepe_Lechenie_01_04 " );	// Look, she's all blue. And every day I get worse and worse.
-	AI_Output(self,other, " DIA_Pepe_Lechenie_01_05 " );	// If things go on like this, then I will simply be left without a leg.
-	AI_Output(self,other, " DIA_Pepe_Lechenie_01_06 " );	// And then Onar, just look, just kick me out of your farm.
+	AI_Output(self,other, " DIA_Pepe_Lechenie_01_04 " );	// It's turned blue. Every day I get worse and worse.
+	AI_Output(self,other, " DIA_Pepe_Lechenie_01_05 " );	// If things go on like this, I'll be bedridden.
+	AI_Output(self,other, " DIA_Pepe_Lechenie_01_06 " );	// Which means no more job on the farm.
 	AI_Output(other,self, " DIA_Pepe_Lechenie_01_07 " );	// You just need good medicine.
-	AI_Output(self,other, " DIA_Pepe_Lechenie_01_08 " );	// Unfortunately, normal potions don't work for me. Something special is needed here.
+	AI_Output(self,other, " DIA_Pepe_Lechenie_01_08 " );	// Unfortunately, normal potions don't work. Something special is needed here.
 	AI_Output(self,other, " DIA_Pepe_Lechenie_01_09 " );	// Please help me. I have no one else to ask for help.
 	Info_ClearChoices(dia_pepe_lechenie);
 	Info_AddChoice(dia_pepe_lechenie, " I'll find a cure for you. " ,dia_pepe_lechenie_yes);
@@ -536,8 +536,8 @@ func void day_pepe_milk_yes()
 
 func void dia_pepe_lechenie_no()
 {
-	AI_Output(other,self, " DIA_Pepe_Lechenie_no_01_00 " );	// Take care of your leg yourself. I'm not up to you now.
-	AI_Output(self,other, " DIA_Pepe_Lechenie_no_01_01 " );	// (depressed) Okay, sorry to bother you.
+	AI_Output(other,self, " DIA_Pepe_Lechenie_no_01_00 " );	// Take care of your leg yourself. I'm not a healer.
+	AI_Output(self,other, " DIA_Pepe_Lechenie_no_01_01 " );	// Okay, sorry to bother you.
 	AI_StopProcessInfos(self);
 };
 
@@ -565,21 +565,21 @@ func void dia_pepe_placebo_info()
 	AI_Output(other,self, " DIA_Pepe_Placebo_01_01 " );	// I brought you medicine.
 	AI_Output(self,other, " DIA_Pepe_Placebo_01_02 " );	// Umm... where does it come from?
 	AI_Output(other,self, " DIA_Pepe_Placebo_01_03 " );	// This elixir was brewed by Healer Sagitta especially for you.
-	AI_Output(other,self, " DIA_Pepe_Placebo_01_04 " );	// The strongest potion that can revive even an old sick troll. And your sore will be cured instantly!
-	AI_Output(self,other, " DIA_Pepe_Placebo_01_06 " );	// Potion of Sagitta? Hmmm. It really can work.
-	AI_Output(self,other, " DIA_Pepe_Placebo_01_07 " );	// Come here faster than him. And then the leg aches, there is no rescue.
+	AI_Output(other,self, " DIA_Pepe_Placebo_01_04 " );	// The strongest potion that can revive even an old sick troll. And your leg will be cured instantly!
+	AI_Output(self,other, " DIA_Pepe_Placebo_01_06 " );	// The forest hag? If you say so...
+	AI_Output(self,other, " DIA_Pepe_Placebo_01_07 " );	// I'll drink demon piss if it means this pain goes away.
 	AI_Output(other,self, " DIA_Pepe_Placebo_01_08 " );	// Here, take this.
 	B_GiveInvItems(other,self,ItPo_Health_01,1);
 	B_UseItem(self,ItPo_Health_01);
-	AI_Output(self,other, " DIA_Pepe_Placebo_01_09 " );	// Mmmm... Great! I can already feel the pain go away.
+	AI_Output(self,other, " DIA_Pepe_Placebo_01_09 " );	// Mmmm... Great! I can already feel the pain lessening.
 	AI_Output(self,other, " DIA_Pepe_Placebo_01_10 " );	// Thanks for helping me again.
-	AI_Output(other,self, " DIA_Pepe_Placebo_01_11 " );	// Come on, come on! I couldn't just leave you to die.
+	AI_Output(other,self, " DIA_Pepe_Placebo_01_11 " );	// I couldn't just leave you to suffer could I?
 	AI_Output(self,other, " DIA_Pepe_Placebo_01_12 " );	// But be that as it may, here, take some gold.
 	B_GiveInvItems(self,other,ItMi_Gold,50);
-	AI_Output(self,other, " DIA_Pepe_Placebo_01_13 " );	// True, that's all I have.
+	AI_Output(self,other, " DIA_Pepe_Placebo_01_13 " );	// That's all I have.
 	MIS_LECHENIEPEPE = LOG_SUCCESS ;
 	Log_SetTopicStatus(TOPIC_LECHENIEPEPE,LOG_SUCCESS);
-	B_LogEntry( TOPIC_LECHENIEPEPE , " Sagitta's method helped. Pepe was cured by drinking a regular potion. It happens. " );
+	B_LogEntry( TOPIC_LECHENIEPEPE , " Sagitta's potion worked. Pepe was cured. " );
 	AI_StopProcessInfos(self);
 	Npc_ExchangeRoutine(self,"Start");
 };
