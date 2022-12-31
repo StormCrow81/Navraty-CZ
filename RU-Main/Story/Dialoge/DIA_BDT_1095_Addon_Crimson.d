@@ -76,7 +76,7 @@ func int DIA_Addon_Crimson_Hi_Condition()
 func void DIA_Addon_Crimson_Hi_Info()
 {
 	AI_Output(other,self, " DIA_Addon_Crimson_Hi_15_00 " );	// What are you doing? Are you melting our gold?
-	AI_Output(self,other, " DIA_Addon_Crimson_Hi_10_01 " );	// No, my vegetables. Of course, I melt gold. And I cast coins from it.
+	AI_Output(self,other, " DIA_Addon_Crimson_Hi_10_01 " );	// No, I'm making vegetable stew. Of course, I'm melting gold. I cast coins from it.
 	AI_Output(self,other, " DIA_Addon_Crimson_Hi_10_02 " );	// Imagine, one evening Raven came up to me and threw me a casting mold.
 	AI_Output(self,other, " DIA_Addon_Crimson_Hi_10_03 " );	// I can make a handful of coins out of one nugget. They are of such quality that you can't tell them from the real ones!
 };
@@ -105,10 +105,10 @@ func int DIA_Addon_Crimson_How_Condition()
 func void DIA_Addon_Crimson_How_Info()
 {
 	AI_Output(other,self, " DIA_Addon_Crimson_How_15_00 " );	// How many coins will you give me for a nugget?
-	AI_Output(self,other, " DIA_Addon_Crimson_How_10_01 " );	// Well, I don't know you at all, but I think I'll give you a special price. For one nugget I'll give you...
-	AI_Output(self,other, " DIA_Addon_Crimson_How_10_02 " );	// ...eight gold coins! And no more coins.
-	AI_Output(other,self, " DIA_Addon_Crimson_How_10_03 " );	// How?! Just eight gold pieces?
-	AI_Output(self,other, " DIA_Addon_Crimson_How_10_04 " );	// You heard me perfectly! And if that doesn't suit you, then you can keep your gold for yourself.
+	AI_Output(self,other, " DIA_Addon_Crimson_How_10_01 " );	// Well, I don't know you and all, but I like your spirit. For one nugget I'll give you...
+	AI_Output(self,other, " DIA_Addon_Crimson_How_10_02 " );	// ...eight gold coins?
+	AI_Output(other,self, " DIA_Addon_Crimson_How_10_03 " );	// Just eight gold pieces?
+	AI_Output(self,other, " DIA_Addon_Crimson_How_10_04 " );	// You heard me! If that doesn't suit you, then you can keep your gold for yourself.
 };
 
 var int CrimsonMoreGold;
@@ -138,7 +138,7 @@ func void DIA_Addon_Crimson_Feilsch_Info()
 
 	if(RhetorikSkillValue[1] >= 40)
 	{
-		AI_Output(self,other, " DIA_Addon_Crimson_Feilsch_10_50 " );	// Hmmm... (shaking head) You're good at talking people, right?
+		AI_Output(self,other, " DIA_Addon_Crimson_Feilsch_10_50 " );	// Hmmm... (shaking head) You're good at scamming people, am I right?
 		AI_Output(self,other, " DIA_Addon_Crimson_Feilsch_10_51 " );	// Okay, I'll give you ten coins for every gold nugget. Are you satisfied now?
 		AI_Output(other,self, " DIA_Addon_Crimson_Feilsch_10_52 " );	// Quite.
 		CrimsonMoreGold = TRUE;
@@ -147,7 +147,7 @@ func void DIA_Addon_Crimson_Feilsch_Info()
 	{
 		AI_Output(self,other, " DIA_Addon_Crimson_Feilsch_10_01 " );	// Hmmm... (thoughtfully) No! That's how much I give to every miner.
 		AI_Output(other,self, " DIA_Addon_Crimson_Feilsch_15_02 " );	// But you said it was a special price.
-		AI_Output(self,other, " DIA_Addon_Crimson_Feilsch_10_03 " );	// That's right! I pay a special price to everyone.
+		AI_Output(self,other, " DIA_Addon_Crimson_Feilsch_10_03 " );	// That's right! The special price everyone gets. Haha!
 	};
 };
 
@@ -311,12 +311,12 @@ func void DIA_Addon_Crimson_Raven_Info()
 {
 	AI_Output(other,self, " DIA_Addon_Crimson_Raven_15_00 " );	// What do you know about Raven?
 	AI_Output(self,other, " DIA_Addon_Crimson_Raven_10_01 " );	// You won't believe it! I was there. I saw what he was doing in the tomb!
-	AI_Output(self,other, " DIA_Addon_Crimson_Raven_10_02 " );	// (with fear) He mumbled and shouted some strange words. Again and again...
+	AI_Output(self,other, " DIA_Addon_Crimson_Raven_10_02 " );	// He mumbled and shouted some strange words. Over and over...
 	B_Say_CrimsonBeliar();
 	AI_Output(self,other, " DIA_Addon_Crimson_Raven_10_03 " );	// And then a column of light burst out of the grave, and I heard a terrible scream.
-	AI_Output(self,other, " DIA_Addon_Crimson_Raven_10_04 " );	// Oh gods... That voice... It sounded like the voice of a doomsday harbinger!
-	AI_Output(self,other, " DIA_Addon_Crimson_Raven_10_05 " );	// The raven spoke to him! They were talking - Raven and that voice!
-	AI_Output(self,other, " DIA_Addon_Crimson_Raven_10_06 " );	// I don't remember what they were talking about. But the trembling in the limbs I managed to calm down only after a few hours.
+	AI_Output(self,other, " DIA_Addon_Crimson_Raven_10_04 " );	// Oh gods... That voice... It sounded like the voice of the void itself!
+	AI_Output(self,other, " DIA_Addon_Crimson_Raven_10_05 " );	// Then Raven spoke to it! They were talking - Raven and that voice!
+	AI_Output(self,other, " DIA_Addon_Crimson_Raven_10_06 " );	// I don't remember what they were talking about. My head started hurting and my sight became blurry. I went outside to puke.
 };
 
 
@@ -346,7 +346,7 @@ func void DIA_Addon_Crimson_FATAGN_Info()
 	AI_Output(other,self, " DIA_Addon_Crimson_FATAGN_15_00 " );	// Can you repeat Raven's words?
 	if(Crimson_SayBeliar <= 3)
 	{
-		AI_Output(self,other, " DIA_Addon_Crimson_FATAGN_10_01 " );	// Of course. Are you ready?
+		AI_Output(self,other, " DIA_Addon_Crimson_FATAGN_10_01 " );	// I think so. Are you ready?
 		Info_ClearChoices(DIA_Addon_Crimson_FATAGN);
 		Info_AddChoice(DIA_Addon_Crimson_FATAGN,"Я готов.",DIA_Addon_Crimson_FATAGN_LOS);
 	}
@@ -392,26 +392,26 @@ func int dia_crimson_armorcanteach_condition()
 func void dia_crimson_armorcanteach_info()
 {
 	AI_Output(other,self, " DIA_Crimson_ArmorCanTeach_01_00 " );	// Can you forge armor?
-	AI_Output(self,other, " DIA_Crimson_ArmorCanTeach_01_01 " );	// Maybe I can. What about you?
-	AI_Output(other,self, " DIA_Crimson_ArmorCanTeach_01_02 " );	// Can you teach me this?
-	AI_Output(self,other, " DIA_Crimson_ArmorCanTeach_01_03 " );	// Hmm... Naivety itself! And why did you decide that I will teach you this?
-	AI_Output(other,self, " DIA_Crimson_ArmorCanTeach_01_06 " );	// I would pay you for your lessons.
-	AI_Output(self,other, " DIA_Crimson_ArmorCanTeach_01_07 " );	// This is where we should have started. It's a different story, man!
-	AI_Output(self,other, " DIA_Crimson_ArmorCanTeach_01_08 " );	// If you really have gold, I could show you some ways to improve your armor.
-	AI_Output(self,other, " DIA_Crimson_ArmorCanTeach_01_09 " );	// True, for starters, you need to understand a little about forging.
+	AI_Output(self,other, " DIA_Crimson_ArmorCanTeach_01_01 " );	// Maybe I can. Why do you ask?
+	AI_Output(other,self, " DIA_Crimson_ArmorCanTeach_01_02 " );	// Can you teach me how?
+	AI_Output(self,other, " DIA_Crimson_ArmorCanTeach_01_03 " );	// Hmm... the gall! Why did you think that I would teach you?
+	AI_Output(other,self, " DIA_Crimson_ArmorCanTeach_01_06 " );	// I will pay you for your lessons.
+	AI_Output(self,other, " DIA_Crimson_ArmorCanTeach_01_07 " );	// Well now, that changes everything!
+	AI_Output(self,other, " DIA_Crimson_ArmorCanTeach_01_08 " );	// For the right price I could show you some ways to improve your armor?
+	AI_Output(self,other, " DIA_Crimson_ArmorCanTeach_01_09 " );	// However, you need to understand a little about forging.
 	if(Npc_GetTalentSkill(other,NPC_TALENT_SMITH) > 0)
 	{
 		AI_Output(other,self, " DIA_Crimson_ArmorCanTeach_01_10 " );	// I'm pretty good at forging.
-		AI_Output(self,other, " DIA_Crimson_ArmorCanTeach_01_11 " );	// Let's see. Yes, you really understand. Well, what. This simplifies everything a bit.
-		AI_Output(self,other, " DIA_Crimson_ArmorCanTeach_01_12 " );	// I'll teach you what I know myself. And remember one thing - you will have to pay for your education. I don't do charity work!
+		AI_Output(self,other, " DIA_Crimson_ArmorCanTeach_01_11 " );	// I can see that...
+		AI_Output(self,other, " DIA_Crimson_ArmorCanTeach_01_12 " );	// I'll teach you what I know. And remember - you will have to pay for your education. I don't do charity work!
 		AI_Output(other,self, " DIA_Crimson_ArmorCanTeach_01_14 " );	// Okay, I got it.
 	}
 	else
 	{
-		AI_Output(self,other, " DIA_Crimson_ArmorCanTeach_01_15 " );	// And you, as I see it, have no idea what it is.
-		AI_Output(self,other, " DIA_Crimson_ArmorCanTeach_01_16 " );	// Here's the thing, man. Go learn how to forge first. After, we'll talk about your training.
-		AI_Output(self,other, " DIA_Crimson_ArmorCanTeach_01_17 " );	// And keep in mind one thing - you will have to pay for your training. I don't do charity work.
-		AI_Output(other,self, " DIA_Crimson_ArmorCanTeach_01_18 " );	// I already understood this.
+		AI_Output(self,other, " DIA_Crimson_ArmorCanTeach_01_15 " );	// You don't know your forge from your ass hole!
+		AI_Output(self,other, " DIA_Crimson_ArmorCanTeach_01_16 " );	// Here's the thing, man. Go learn how to forge first. After that we'll talk about your training.
+		AI_Output(self,other, " DIA_Crimson_ArmorCanTeach_01_17 " );	// I'll teach you what I know. And remember - you will have to pay for your education. I don't do charity work!
+		AI_Output(other,self, " DIA_Crimson_ArmorCanTeach_01_18 " );	// Understood.
 	};
 	CRIMSON_TEACHARMOR = TRUE;
 	Log_CreateTopic(TOPIC_ARMORTEACHER,LOG_NOTE);
@@ -429,10 +429,10 @@ func void b_crimson_teacharmor_1()
 		AI_UseMob(self,"BSANVIL",5);
 		AI_Output(self,other, " DIA_Crimson_TeachArmor_1_01_02 " );	// ...on the anvil, you add them in the desired sequence to the heated steel billet...
 		AI_Output(self,other, " DIA_Crimson_TeachArmor_1_01_03 " );	// ...after which you give it the necessary shape and fasten it with the existing armor...
-		AI_Output(self,other, " DIA_Crimson_TeachArmor_1_01_04 " );	// ...this is how I do it now...(shows)
+		AI_Output(self,other, " DIA_Crimson_TeachArmor_1_01_04 " );	// ...this is how I do it now...
 		AI_UseMob(self,"BSANVIL",-1);
 		B_TurnToNpc(self,other);
-		AI_Output(self,other,"DIA_Crimson_TeachArmor_1_01_05");	//...вот и все!
+		AI_Output(self,other,"DIA_Crimson_TeachArmor_1_01_05");	//...Tha's about it!
 		AI_Output(self,other, " DIA_Crimson_TeachArmor_1_01_06 " );	// Now you can try it yourself.
 	};
 };
@@ -448,7 +448,7 @@ func void b_crimson_teacharmor_2()
 		AI_UseMob(self,"BSANVIL",5);
 		AI_Output(self,other, " DIA_Crimson_TeachArmor_2_01_02 " );	// ...you take a hot steel billet and break it into several component parts...
 		AI_Output(self,other, " DIA_Crimson_TeachArmor_2_01_03 " );	// ...in a certain sequence, mixing each part with the next material...
-		AI_Output(self,other, " DIA_Crimson_TeachArmor_2_01_04 " );	// ...then you forge them into the frame of the existing armor, especially carefully forging the exit points. That's it, see? (shows)
+		AI_Output(self,other, " DIA_Crimson_TeachArmor_2_01_04 " );	// ...then you forge them into the frame of the existing armor, especially carefully forging the exit points. That's it, see?
 		AI_UseMob(self,"BSANVIL",-1);
 		B_TurnToNpc(self,other);
 		AI_Output(self,other, " DIA_Crimson_TeachArmor_2_01_05 " );	// ...and that's all!
@@ -647,7 +647,7 @@ func int DIA_Addon_Crimson_GoldStuck_Condition()
 func void DIA_Addon_Crimson_GoldStuck_Info()
 {
 	AI_Output(other,self, " DIA_Addon_Crimson_GoldStuck_01_00 " );	// Can you teach me how to smelt gold?
-	AI_Output(self,other, " DIA_Addon_Crimson_GoldStuck_01_01 " );	// I can, but not for thanks.
+	AI_Output(self,other, " DIA_Addon_Crimson_GoldStuck_01_01 " );	// I can, but not for free.
 	AI_Output(self,other, " DIA_Addon_Crimson_GoldStuck_01_02 " );	// The process isn't particularly difficult, but a little practice can't hurt.
 	B_LogEntry( TOPIC_STEELDRAW , " Crimson can teach me how to melt gold nuggets. " );
 };
@@ -692,9 +692,9 @@ func void DIA_Addon_Crimson_DoGoldStuck_info()
 	};
 	if((hero.lp >= kosten) && (Npc_HasItems(other,ItMi_Gold) >= money))
 	{
-		AI_Output(self,other, " DIA_Addon_Crimson_DoGoldStuck_01_01 " );	// Okay, look. Everything is simple here.
+		AI_Output(self,other, " DIA_Addon_Crimson_DoGoldStuck_01_01 " );	// Okay, look. It's actually quite simple.
 		AI_Output(self,other, " DIA_Addon_Crimson_DoGoldStuck_01_02 " );	// You take about a quarter of a hundred gold nuggets and throw them into the forge.
-		AI_Output(self,other, " DIA_Addon_Crimson_DoGoldStuck_01_03 " );	// You bring the alloy to the desired temperature and pour it into the mold through a sieve.
+		AI_Output(self,other, " DIA_Addon_Crimson_DoGoldStuck_01_03 " );	// You bring the alloy to the desired temperature and pour it into the mold, then let it cool.
 		AI_Output(self,other, " DIA_Addon_Crimson_DoGoldStuck_01_04 " );	// That's it. The gold bar is ready.
 		hero.lp = hero.lp - kosten;
 		RankPoints = RankPoints + cost;
