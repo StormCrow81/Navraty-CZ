@@ -169,8 +169,8 @@ func void DIA_Addon_Fisk_Attentat_Info()
 {
 	B_Say(other,self,"$ATTENTAT_ADDON_DESCRIPTION");
 	AI_Output(self,other, " DIA_Addon_Fisk_Attentat_12_00 " );	// Look, I have nothing to do with this, okay?
-	AI_Output(self,other, " DIA_Addon_Fisk_Attentat_12_01 " );	// I have my own concerns. Besides, I myself became a victim of atrocity.
-	AI_Output(other,self, " DIA_Addon_Fisk_Attentat_15_02 " );	// How?
+	AI_Output(self,other, " DIA_Addon_Fisk_Attentat_12_01 " );	// I have my own concerns. Besides, I myself became a victim of treachery.
+	AI_Output(other,self, " DIA_Addon_Fisk_Attentat_15_02 " );	// How so?
 	AI_Output(self,other, " DIA_Addon_Fisk_Attentat_12_03 " );	// For the last batch of goods, I paid a solid amount in gold.
 	AI_Output(self,other, " DIA_Addon_Fisk_Attentat_12_04 " );	// But I never received the goods! Some bastard stole it from me.
 	AI_Output(self,other, " DIA_Addon_Fisk_Attentat_12_05 " );	// I was robbed by some of my own people!
@@ -200,13 +200,13 @@ func int DIA_Addon_Fisk_delivery_condition()
 func void DIA_Addon_Fisk_delivery_info()
 {
 	AI_Output(other,self, " DIA_Addon_Fisk_Lieferung_15_00 " );	// What item were you supposed to receive?
-	AI_Output(self,other, " DIA_Addon_Fisk_Lieferung_12_01 " );	// Package with lockpicks. Someone had to bring it to me from the pirates.
-	AI_Output(self,other, " DIA_Addon_Fisk_Lieferung_12_02 " );	// But a guy named Juan stole both the lockpicks and the gold I paid!
-	AI_Output(self,other, " DIA_Addon_Fisk_Lieferung_12_03 " );	// This bastard is hiding somewhere in the swamp.
+	AI_Output(self,other, " DIA_Addon_Fisk_Lieferung_12_01 " );	// A package with lockpicks. Someone had to bring it to me from the pirates.
+	AI_Output(self,other, " DIA_Addon_Fisk_Lieferung_12_02 " );	// But a guy named Juan stole both the lockpicks and the gold!
+	AI_Output(self,other, " DIA_Addon_Fisk_Lieferung_12_03 " );	// The bastard is hiding somewhere in the swamp.
 	MIS_Lennar_Lockpick = LOG_Running;
 	Log_CreateTopic(Topic_Addon_Fisk,LOG_MISSION);
 	Log_SetTopicStatus(Topic_Addon_Fisk,LOG_Running);
-	B_LogEntry(TOPIC_Addon_KillJuan, " The guy named Juan was trading with the bandits. He's hiding somewhere in the swamps. " );
+	B_LogEntry(TOPIC_Addon_KillJuan, " Juan was trading with the bandits. He's hiding somewhere in the swamps. " );
 	B_LogEntry_Quiet(Topic_Addon_Fisk, " A guy named Juan intercepted Fisk's supply (a package of lock picks). He's hiding somewhere in the swamps. " );
 };
 
@@ -214,15 +214,15 @@ func void B_Addon_Fisk_AboutJuan()
 {
 	if (Npc_IsDead(Juan))
 	{
-		AI_Output(other,self,"DIA_Addon_Fisk_AboutJuan_15_00");	//Он мертв.
-		AI_Output(self,other, " DIA_Addon_Fisk_AboutJuan_12_01 " );	// Okay, so he won't be able to give me any more trouble!
+		AI_Output(other,self,"DIA_Addon_Fisk_AboutJuan_15_00");	//The thief Juan is dead.
+		AI_Output(self,other, " DIA_Addon_Fisk_AboutJuan_12_01 " );	// So he won't be able to give me any more trouble!
 	}
 	else
 	{
 		AI_Output(other,self, " DIA_Addon_Fisk_AboutJuan_15_02 " );	// He's still alive...
-		AI_Output(self,other, " DIA_Addon_Fisk_AboutJuan_12_03 " );	// Did you let this thing live?
+		AI_Output(self,other, " DIA_Addon_Fisk_AboutJuan_12_03 " );	// Did you let that bastard live?
 		AI_Output(other,self, " DIA_Addon_Fisk_AboutJuan_15_04 " );	// He wasn't alone...
-		AI_Output(self,other, " DIA_Addon_Fisk_AboutJuan_12_05 " );	// Okay. I'll deal with these thieves myself...
+		AI_Output(self,other, " DIA_Addon_Fisk_AboutJuan_12_05 " );	// Okay. I'll deal with those thieves myself...
 	};
 };
 
@@ -235,7 +235,7 @@ func void B_Addon_Fisk_Reward()
 	if((other.guild == GIL_KDF) || (other.guild == GIL_KDW) || (other.guild == GIL_KDM) || (other.guild == GIL_GUR))
 	{
 		AI_Output(self,other, " DIA_Addon_Fisk_Belohnung_12_03 " );	// Yes, and take this stone. I once received it from Corristo.
-		AI_Output(self,other, " DIA_Addon_Fisk_Belohnung_12_04 " );	// This is the only thing I have left after traveling through the Barrier. I think you will find a use for it.
+		AI_Output(self,other, " DIA_Addon_Fisk_Belohnung_12_04 " );	// It's the only thing I have left after traveling through the Barrier. I think you will find a use for it.
 		B_GiveInvItems(self,other,ItMi_RuneBlank,1);
 	}
 	else
@@ -310,7 +310,7 @@ func int DIA_Addon_Fisk_PaketOpen_Condition()
 func void DIA_Addon_Fisk_PaketOpen_Info()
 {
 	AI_Output(other,self, " DIA_Addon_Fisk_PaketOpen_15_00 " );	// I opened your package!
-	AI_Output(self,other, " DIA_Addon_Fisk_PaketOpen_12_01 " );	// Of course...(laughs) You were itching to find out what was inside, weren't you?
+	AI_Output(self,other, " DIA_Addon_Fisk_PaketOpen_12_01 " );	// Of course you did...(laughs) You were itching to find out what was inside, weren't you?
 	AI_Output(self,other, " DIA_Addon_Fisk_PaketOpen_12_02 " );	// Did you at least bring the lockpicks?
 	AI_Output(self,other, " DIA_Addon_Fisk_PaketOpen_12_03 " );	// And more importantly, what about Juan?
 	B_Addon_Fisk_AboutJuan();
@@ -349,7 +349,7 @@ func void DIA_Addon_Fisk_GivePicks_Info()
 	}
 	else
 	{
-		AI_Output(self,other, " DIA_Addon_Fisk_GivePicks_12_02 " );	// There aren't a dozen lockpicks here! You're not trying to fool me, are you?
+		AI_Output(self,other, " DIA_Addon_Fisk_GivePicks_12_02 " );	// There aren't a dozen lockpicks here! You're not trying to trick me, are you?
 	};
 };
 
@@ -379,9 +379,9 @@ func void DIA_Addon_Fisk_Inspektor_Info()
 	AI_Output(other,self, " DIA_Addon_Fisk_Inspektor_15_00 " );	// Juan worked for Esteban!
 	AI_Output(self,other,"DIA_Addon_Fisk_Inspektor_12_01");	//Что?
 	AI_Output(other,self, " DIA_Addon_Fisk_Inspektor_15_02 " );	// Don't play your games with me! You knew about it!
-	AI_Output(self,other, " DIA_Addon_Fisk_Inspektor_12_03 " );	// (calmly) Good. You're right. But I hope you understand why I didn't tell you about it.
+	AI_Output(self,other, " DIA_Addon_Fisk_Inspektor_12_03 " );	// You're right. But I hope you understand why I didn't tell you about it.
 	AI_Output(self,other, " DIA_Addon_Fisk_Inspektor_12_04 " );	// Everyone in this camp knows you work for Esteban too.
-	AI_Output(self,other, " DIA_Addon_Fisk_Inspektor_12_05 " );	// I have no desire to be drawn into this story because of your stupid enthusiasm.
+	AI_Output(self,other, " DIA_Addon_Fisk_Inspektor_12_05 " );	// I have no desire to be drawn into this mess because of your stupid enthusiasm.
 	Info_ClearChoices(DIA_Addon_Fisk_Inspektor);
 	Info_AddChoice(DIA_Addon_Fisk_Inspektor, " Actually, I don't work for Esteban. " ,DIA_Addon_Fisk_Inspektor_AntiEsteban);
 	Info_AddChoice(DIA_Addon_Fisk_Inspektor, " I don't believe you! " ,DIA_Addon_Fisk_Inspektor_DontBelieve);
@@ -391,24 +391,24 @@ func void DIA_Addon_Fisk_Inspektor_Info()
 func void DIA_Addon_Fisk_Inspektor_ISee()
 {
 	AI_Output(other,self, " DIA_Addon_Fisk_Inspektor_ISee_15_00 " );	// I understand!
-	AI_Output(self,other, " DIA_Addon_Fisk_Inspektor_ISee_12_01 " );	// Good! In that case, let's leave this question. I don't want to be overheard!
+	AI_Output(self,other, " DIA_Addon_Fisk_Inspektor_ISee_12_01 " );	// Good! In that case, let's leave this subject. I don't want to be overheard!
 	Info_ClearChoices(DIA_Addon_Fisk_Inspektor);
 };
 
 func void DIA_Addon_Fisk_Inspektor_DontBelieve()
 {
 	AI_Output(other,self, " DIA_Addon_Fisk_Inspektor_DontBelieve_15_00 " );	// I don't believe you!
-	AI_Output(self,other, " DIA_Addon_Fisk_Inspektor_DontBelieve_12_01 " );	// Do not believe, it's up to you! But I warn you, buddy, if you say a word about it to Esteban - you will not live!
+	AI_Output(self,other, " DIA_Addon_Fisk_Inspektor_DontBelieve_12_01 " );	// B elieve me, don't believe me, it's up to you! But I warn you, buddy, if you say a word about it to Esteban, you die!
 	Info_ClearChoices(DIA_Addon_Fisk_Inspektor);
 };
 
 func void DIA_Addon_Fisk_Inspektor_AntiEsteban()
 {
 	AI_Output(other,self, " DIA_Addon_Fisk_Inspektor_AntiEsteban_15_00 " );	// Actually, I don't work for Esteban.
-	AI_Output(self,other, " DIA_Addon_Fisk_Inspektor_AntiEsteban_12_01 " );	// Who do you want to fool here, burdock? Haven't matured yet.
-	AI_Output(self,other, " DIA_Addon_Fisk_Inspektor_AntiEsteban_12_02 " );	// My advice to you is don't waste your time.
+	AI_Output(self,other, " DIA_Addon_Fisk_Inspektor_AntiEsteban_12_01 " );	// What are you, a child?
+	AI_Output(self,other, " DIA_Addon_Fisk_Inspektor_AntiEsteban_12_02 " );	// My advice to you is: Don't waste your time.
 	AI_Output(self,other, " DIA_Addon_Fisk_Inspektor_AntiEsteban_12_03 " );	// When it comes to Esteban, don't trust anyone. Even me.
-	AI_Output(self,other, " DIA_Addon_Fisk_Inspektor_AntiEsteban_12_04 " );	// Enough about that. Look, they're still listening.
+	AI_Output(self,other, " DIA_Addon_Fisk_Inspektor_AntiEsteban_12_04 " );	// Enough about that. Look, they're listening.
 	Info_ClearChoices(DIA_Addon_Fisk_Inspektor);
 };
 
@@ -436,9 +436,9 @@ func int DIA_Addon_Fisk_Meeting_Condition()
 func void DIA_Addon_Fisk_Meeting_Info()
 {
 	AI_Output(other,self, " DIA_Addon_Fisk_Meeting_15_00 " );	// So you planned the attack!
-	AI_Output(self,other, " DIA_Addon_Fisk_Meeting_12_01 " );	// Yes. Esteban is in my way. And that's not good.
+	AI_Output(self,other, " DIA_Addon_Fisk_Meeting_12_01 " );	// Yes. Esteban is in my way. He needs to be removed.
 	AI_Output(self,other, " DIA_Addon_Fisk_Meeting_12_02 " );	// He won't let any bandits work for me at the mine. He wants everyone to work only for him.
-	AI_Output(self,other, " DIA_Addon_Fisk_Meeting_12_03 " );	// So he wants to get his share of every deal and hold the whole camp by the ass.
+	AI_Output(self,other, " DIA_Addon_Fisk_Meeting_12_03 " );	// So he wants to get his share of every deal and hold the whole camp by the throat.
 	Info_ClearChoices(DIA_Addon_Fisk_Meeting);
 	Info_AddChoice(DIA_Addon_Fisk_Meeting, " What are you going to do next? " ,DIA_Addon_Fisk_Meeting_now);
 	Info_AddChoice(DIA_Addon_Fisk_Meeting, " And I guess you want to control the camp yourself. " ,DIA_Addon_Fisk_Meeting_You);
@@ -456,22 +456,22 @@ func void DIA_Addon_Fisk_Meeting_You()
 
 func void DIA_Addon_Fisk_Meeting_sell()
 {
-	AI_Output(other,self, " DIA_Addon_Fisk_Meeting_sell_15_00 " );	// You know, I can betray you to Esteban.
-	AI_Output(self,other, " DIA_Addon_Fisk_Meeting_sell_12_01 " );	// So what? So what? Do you think he will give you everything you need? Ha!
-	AI_Output(self,other, " DIA_Addon_Fisk_Meeting_sell_12_02 " );	// Forget and listen to me. Do I have a better idea?
+	AI_Output(other,self, " DIA_Addon_Fisk_Meeting_sell_15_00 " );	// You know, I could easily betray you to Esteban.
+	AI_Output(self,other, " DIA_Addon_Fisk_Meeting_sell_12_01 " );	// Yeah you could. Fat load of good it'll do you though.
+	AI_Output(self,other, " DIA_Addon_Fisk_Meeting_sell_12_02 " );	// Forget that and listen to me. I have a better idea.
 };
 
 func void DIA_Addon_Fisk_Meeting_now()
 {
-	AI_Output(other,self,"DIA_Addon_Fisk_Meeting_now_15_00");	//Что за идея?
+	AI_Output(other,self,"DIA_Addon_Fisk_Meeting_now_15_00");	//I'm listening?
 	if ( ! Npc_IsDead(Esteban))
 	{
 		AI_Output(self,other, " DIA_Addon_Fisk_Meeting_now_12_01 " );	// We'll get Esteban out of our way. Which means you kill him and take his place.
 		AI_Output(other,self, " DIA_Addon_Fisk_Meeting_now_15_02 " );	// As long as his guards are with him, he is beyond my reach.
-		AI_Output(self,other, " DIA_Addon_Fisk_Meeting_now_12_03 " );	// Then we'll lure them out. True.
-		AI_Output(other,self,"DIA_Addon_Fisk_Meeting_now_15_04");	//Правдой?
+		AI_Output(self,other, " DIA_Addon_Fisk_Meeting_now_12_03 " );	// So we'll lure them out. Savvy?
+		AI_Output(other,self,"DIA_Addon_Fisk_Meeting_now_15_04");	//Savvy.
 		AI_Output(self,other, " DIA_Addon_Fisk_Meeting_now_12_05 " );	// You've done your job. You found out I was behind the attack.
-		AI_Output(self,other, " DIA_Addon_Fisk_Meeting_now_12_06 " );	// Say so to Esteban and he'll send his guys here to finish me off. Here I will wait for them.
+		AI_Output(self,other, " DIA_Addon_Fisk_Meeting_now_12_06 " );	// Say so to Esteban and he'll send his guys here to finish me off. I will ambush them.
 		AI_Output(self,other, " DIA_Addon_Fisk_Meeting_now_12_07 " );	// When they're gone, you'll take care of the bastard and I'll take care of the guards.
 	}
 	else
@@ -510,10 +510,10 @@ func int DIA_Addon_Fish_Fish_Condition()
 
 func void DIA_Addon_Fisk_Sieg_Info()
 {
-	AI_Output(other,self, " DIA_Addon_Fisk_Sieg_15_00 " );	// Esteban is no longer to be considered! He is dead.
+	AI_Output(other,self, " DIA_Addon_Fisk_Sieg_15_00 " );	// Esteban is no longer an issue! He is dead.
 	AI_Output(self,other, " DIA_Addon_Fisk_Sieg_12_01 " );	// I've been waiting for this for a long time.
-	AI_Output(self,other, " DIA_Addon_Fisk_Sieg_12_02 " );	// I guess you have a lot of things to do, and I have a lot, so let's part ways.
-	AI_Output(self,other, " DIA_Addon_Fisk_Sieg_12_03 " );	// And if you suddenly need something, you know where to look for me.
+	AI_Output(self,other, " DIA_Addon_Fisk_Sieg_12_02 " );	// I guess you have a lot of things to do. So do I. I'll see you later.
+	AI_Output(self,other, " DIA_Addon_Fisk_Sieg_12_03 " );	// If you need something, you know where to find me.
 	AI_StopProcessInfos(self);
 	Npc_ExchangeRoutine(self,"START");
 	B_GivePlayerXP(XP_Ambient);
@@ -540,18 +540,18 @@ func int dia_addon_fisk_retford_condition()
 func void dia_addon_fisk_retford_info()
 {
 	B_GivePlayerXP(XP_FISKRETFORD);
-	AI_Output(other,self, " DIA_Addon_Fisk_Retford_01_00 " );	// Ratford says hello to you!
-	AI_Output(self,other, " DIA_Addon_Fisk_Retford_01_03 " );	// Here's the devil! So this rogue is alive. And where is he?
-	AI_Output(other,self, " DIA_Addon_Fisk_Retford_01_04 " );	// I met him in the Valley of Mines. He settled well there.
-	AI_Output(self,other, " DIA_Addon_Fisk_Retford_01_05 " );	// That's all I needed...
-	AI_Output(other,self, " DIA_Addon_Fisk_Retford_01_06 " );	// Why are you so nervous?
-	AI_Output(self,other, " DIA_Addon_Fisk_Retford_01_07 " );	// What, what... Yes, nothing. Old debts!
+	AI_Output(other,self, " DIA_Addon_Fisk_Retford_01_00 " );	// Ratford sends greetings!
+	AI_Output(self,other, " DIA_Addon_Fisk_Retford_01_03 " );	// What the devil! So that old rogue is alive. Where is he?
+	AI_Output(other,self, " DIA_Addon_Fisk_Retford_01_04 " );	// I met him in the Valley of Mines. He settled there.
+	AI_Output(self,other, " DIA_Addon_Fisk_Retford_01_05 " );	// That's all I need...
+	AI_Output(other,self, " DIA_Addon_Fisk_Retford_01_06 " );	// Something wrong?
+	AI_Output(self,other, " DIA_Addon_Fisk_Retford_01_07 " );	// No, nothing. Old debts!
 	AI_Output(other,self, " DIA_Addon_Fisk_Retford_01_08 " );	// Do you owe something to Ratford?
-	AI_Output(self,other, " DIA_Addon_Fisk_Retford_01_09 " );	// None of your business! Better be a friend - if you see him again, give him this package from me.
-	AI_Output(self,other, " DIA_Addon_Fisk_Retford_01_11 " );	// I'll pay you for this.
-	AI_Output(self,other, " DIA_Addon_Fisk_Retford_01_13 " );	// Let's say a hundred coins. Well, agreed?
-	AI_Output(other,self, " DIA_Addon_Fisk_Retford_01_14 " );	// Okay, give me your bag and gold.
-	AI_Output(self,other, " DIA_Addon_Fisk_Retford_01_15 " );	// Here, take this. Just don't lose.
+	AI_Output(self,other, " DIA_Addon_Fisk_Retford_01_09 " );	// None of your business! Be a pal - if you see him again, give him this package from me.
+	AI_Output(self,other, " DIA_Addon_Fisk_Retford_01_11 " );	// I'll pay you for the delivery.
+	AI_Output(self,other, " DIA_Addon_Fisk_Retford_01_13 " );	// Let's say a hundred coins. Agreed?
+	AI_Output(other,self, " DIA_Addon_Fisk_Retford_01_14 " );	// Okay, give me the package and gold.
+	AI_Output(self,other, " DIA_Addon_Fisk_Retford_01_15 " );	// Here, take it. Just don't lose it.
 	AI_Wait(self,1);
 	B_GiveInvItemsManyThings(self,other);
 	CreateInvItems(hero,itmi_fiskpacket,1);
@@ -615,8 +615,8 @@ func void DIA_Addon_Fisk_WhereFingers_info()
 	AI_Output(other,self, " DIA_Addon_Fisk_WhereFingers_01_00 " );	// Do you know anything about Fingers?
 	AI_Output(self,other, " DIA_Addon_Fisk_WhereFingers_01_01 " );	// Hmmm... I haven't seen him since the barrier came down.
 	AI_Output(self,other, " DIA_Addon_Fisk_WhereFingers_01_02 " );	// Some say he died. Although I personally don't believe it.
-	AI_Output(other,self,"DIA_Addon_Fisk_WhereFingers_01_03");	//Почему?
-	AI_Output(self,other, " DIA_Addon_Fisk_WhereFingers_01_04 " );	// Yes, he was not such a person to take and disappear like that.
+	AI_Output(other,self,"DIA_Addon_Fisk_WhereFingers_01_03");	//Why not?
+	AI_Output(self,other, " DIA_Addon_Fisk_WhereFingers_01_04 " );	// He was not the type person to just up and disappear like that.
 	AI_Output(self,other, " DIA_Addon_Fisk_WhereFingers_01_05 " );	// But that's just my opinion.
 	FishABoutFingers = TRUE ;
 	B_LogEntry(TOPIC_WhereFingers, " Fisk thinks Fingers is still alive. But no one knows where he is. " );
@@ -704,25 +704,25 @@ func int DIA_NONE_1801_Fingers_Hi_Condition()
 func void DIA_NONE_1801_Fingers_Hi_Info()
 {
 	B_GivePlayerXP(500);
-	AI_Output(other,self, " DIA_NONE_1801_Fingers_Hi_01_00 " );	// That's the meeting!
-	AI_Output(self,other, " DIA_NONE_1801_Fingers_Hi_01_01 " );	// (roughly) Who are you? Wait though. I think I recognize your face...
-	AI_Output(self,other, " DIA_NONE_1801_Fingers_Hi_01_02 " );	// Well, yes, I remembered! You're the guy I taught thieving at the Old Camp.
+	AI_Output(other,self, " DIA_NONE_1801_Fingers_Hi_01_00 " );	// Fancy seeing you here!
+	AI_Output(self,other, " DIA_NONE_1801_Fingers_Hi_01_01 " );	// Who are you? Wait... I think I recognize your face...
+	AI_Output(self,other, " DIA_NONE_1801_Fingers_Hi_01_02 " );	// You're the guy I taught thieving skills to at the Old Camp.
 	AI_Output(other,self, " DIA_NONE_1801_Fingers_Hi_01_03 " );	// Fingers! I thought you were dead.
-	AI_Output(self,other, " DIA_NONE_1801_Fingers_Hi_01_04 " );	// It takes effort, buddy, to send me to the next world.
+	AI_Output(self,other, " DIA_NONE_1801_Fingers_Hi_01_04 " );	// It takes actual fucking effort to send me to the next world. Ha!
 	AI_Output(other,self, " DIA_NONE_1801_Fingers_Hi_01_05 " );	// How did you get here?
-	AI_Output(self,other, " DIA_NONE_1801_Fingers_Hi_01_06 " );	// I don't know myself. Sailed, probably - how else? The sea is all around.
+	AI_Output(self,other, " DIA_NONE_1801_Fingers_Hi_01_06 " );	// I barely recall actually. A... boat? I think?
 	AI_Output(other,self, " DIA_NONE_1801_Fingers_Hi_01_07 " );	// Don't you remember anything?
-	AI_Output(self,other, " DIA_NONE_1801_Fingers_Hi_01_08 " );	// Well, why, I remember something.
-	AI_Output(self,other, " DIA_NONE_1801_Fingers_Hi_01_09 " );	// When the barrier collapsed, everyone rushed out of this cursed colony as one.
-	AI_Output(self,other, " DIA_NONE_1801_Fingers_Hi_01_10 " );	// Most of the guards and ghosts left with Raven. He said something about the northwestern part of the island.
+	AI_Output(self,other, " DIA_NONE_1801_Fingers_Hi_01_08 " );	// Bits and pieces mostly.
+	AI_Output(self,other, " DIA_NONE_1801_Fingers_Hi_01_09 " );	// When the barrier collapsed, everyone rushed out of that cursed colony as one.
+	AI_Output(self,other, " DIA_NONE_1801_Fingers_Hi_01_10 " );	// Most of the guards and stragglers left with Raven. He said something about the northwestern part of the island.
 	AI_Output(other,self, " DIA_NONE_1801_Fingers_Hi_01_11 " );	// Why didn't you go with him?
-	AI_Output(self,other, " DIA_NONE_1801_Fingers_Hi_01_12 " );	// I didn't like his ways.
+	AI_Output(self,other, " DIA_NONE_1801_Fingers_Hi_01_12 " );	// I didn't like his way of doing things.
 	AI_Output(self,other, " DIA_NONE_1801_Fingers_Hi_01_13 " );	// Moreover, I wanted not just to get out of the Valley of Mines, but to get away from this island forever.
 	AI_Output(self,other, " DIA_NONE_1801_Fingers_Hi_01_14 " );	// On the east coast, I've stashed a boat just in case.
 	AI_Output(other,self, " DIA_NONE_1801_Fingers_Hi_01_15 " );	// And what did you do?
-	AI_Output(self,other, " DIA_NONE_1801_Fingers_Hi_01_16 " );	// Like what? Floated on her. It's really close, as you can see.
-	AI_Output(self,other, " DIA_NONE_1801_Fingers_Hi_01_17 " );	// There's a big storm! And then everything is in a fog.
-	AI_Output(self,other, " DIA_NONE_1801_Fingers_Hi_01_18 " );	// I woke up already here.
+	AI_Output(self,other, " DIA_NONE_1801_Fingers_Hi_01_16 " );	// Sailed her I suppose.
+	AI_Output(self,other, " DIA_NONE_1801_Fingers_Hi_01_17 " );	// But there was a storm... after that  everything is foggy.
+	AI_Output(self,other, " DIA_NONE_1801_Fingers_Hi_01_18 " );	// I woke up here.
 	FingersMeet = TRUE;
 	B_LogEntry(TOPIC_WhereFingers, " I found Fingers on the shore of Fort Azgan's island. This news will please Cassia. " );
 };
@@ -747,10 +747,10 @@ func int DIA_NONE_1801_Fingers_Place_Condition()
 
 func void DIA_NONE_1801_Fingers_Place_Info()
 {
-	AI_Output(other,self, " DIA_NONE_1801_Fingers_Place_01_00 " );	// Do you even know what this place is?
-	AI_Output(self,other, " DIA_NONE_1801_Fingers_Place_01_01 " );	// I didn't know this until recently.
-	AI_Output(self,other, " DIA_NONE_1801_Fingers_Place_01_02 " );	// But when the army of paladins came here, everything became clear to me!
-	AI_Output(self,other, " DIA_NONE_1801_Fingers_Place_01_03 " );	// So I won't go further than this place.
+	AI_Output(other,self, " DIA_NONE_1801_Fingers_Place_01_00 " );	// Do you even know where you are?
+	AI_Output(self,other, " DIA_NONE_1801_Fingers_Place_01_01 " );	// I didn't know until recently.
+	AI_Output(self,other, " DIA_NONE_1801_Fingers_Place_01_02 " );	// But when the army of paladins arrived, everything became clear.
+	AI_Output(self,other, " DIA_NONE_1801_Fingers_Place_01_03 " );	// So I won't go any further than here.
 };
 
 instance DIA_NONE_1801_Fingers_How(C_Info)
@@ -773,11 +773,11 @@ func int DIA_NONE_1801_Fingers_How_Condition()
 
 func void DIA_NONE_1801_Fingers_How_Info()
 {
-	AI_Output(other,self, " DIA_NONE_1801_Fingers_How_01_00 " );	// And how are you here?
-	AI_Output(self,other, " DIA_NONE_1801_Fingers_How_01_01 " );	// Nothing... It's better than it was in the colony!
+	AI_Output(other,self, " DIA_NONE_1801_Fingers_How_01_00 " );	// And how are you doing out here?
+	AI_Output(self,other, " DIA_NONE_1801_Fingers_How_01_01 " );	// It's better than it was in the colony!
 	AI_Output(other,self, " DIA_NONE_1801_Fingers_How_01_02 " );	// Orcs are in charge there now.
-	AI_Output(self,other, " DIA_NONE_1801_Fingers_How_01_03 " );	// I'm not surprised by this. But here they are unlikely to turn up.
-	AI_Output(self,other, " DIA_NONE_1801_Fingers_How_01_04 " );	// So here the place, although not rich, is calm.
+	AI_Output(self,other, " DIA_NONE_1801_Fingers_How_01_03 " );	// That's not surprising.
+	AI_Output(self,other, " DIA_NONE_1801_Fingers_How_01_04 " );	// So at the very least, this place is tranquil.
 };
 
 instance DIA_NONE_1801_Fingers_WhatNext(C_Info)
@@ -803,9 +803,9 @@ func void DIA_NONE_1801_Fingers_WhatNext_Info()
 	AI_Output(other,self, " DIA_NONE_1801_Fingers_WhatNext_01_00 " );	// What will you do next?
 	AI_Output(self,other, " DIA_NONE_1801_Fingers_WhatNext_01_02 " );	// What else can I do? Just sit here and wait for the right opportunity to get out of this hole.
 	AI_Output(other,self, " DIA_NONE_1801_Fingers_WhatNext_01_03 " );	// You could go to the fort.
-	AI_Output(self,other, " DIA_NONE_1801_Fingers_WhatNext_01_04 " );	// Are you kidding?! (laughs) Yes, it says on my face that I'm a criminal.
-	AI_Output(self,other, " DIA_NONE_1801_Fingers_WhatNext_01_05 " );	// And they will hang me up on the first bitch.
-	AI_Output(self,other, " DIA_NONE_1801_Fingers_WhatNext_01_06 " );	// No, mate! I won't take a step from here.
+	AI_Output(self,other, " DIA_NONE_1801_Fingers_WhatNext_01_04 " );	// Are you kidding?! Everyone knows ol' fingers the sneak thief.
+	AI_Output(self,other, " DIA_NONE_1801_Fingers_WhatNext_01_05 " );	// I don't feel like being hanged, ya know?
+	AI_Output(self,other, " DIA_NONE_1801_Fingers_WhatNext_01_06 " );	// I'm ok out here, thanks.
 };
 
 instance DIA_NONE_1801_Fingers_Stolen(C_Info)
@@ -828,19 +828,19 @@ func int DIA_NONE_1801_Fingers_Stolen_Condition()
 
 func void DIA_NONE_1801_Fingers_Stolen_Info()
 {
-	AI_Output(self,other, " DIA_NONE_1801_Fingers_Stolen_01_00 " );	// (laughing) Wow! Rob Fingers himself! Who would have thought...
-	AI_Output(self,other, " DIA_NONE_1801_Fingers_Stolen_01_01 " );	// Yeah, mate. You didn't waste any time. A true master of his craft!
+	AI_Output(self,other, " DIA_NONE_1801_Fingers_Stolen_01_00 " );	// (laughing) Wow! Robbing Fingers himself! Who would have thought...
+	AI_Output(self,other, " DIA_NONE_1801_Fingers_Stolen_01_01 " );	// Yeah, mate. You didn't waste any time. A true master of the craft!
 	AI_Output(self,other, " DIA_NONE_1801_Fingers_Stolen_01_02 " );	// And now, please, give me back my wallet.
 	Info_ClearChoices(DIA_NONE_1801_Fingers_Stolen);
-	Info_AddChoice(DIA_NONE_1801_Fingers_Stolen, " Нет, он мой. " ,DIA_NONE_1801_Fingers_Stolen_No);
+	Info_AddChoice(DIA_NONE_1801_Fingers_Stolen, " Nope, it's mine unfair and square. " ,DIA_NONE_1801_Fingers_Stolen_No);
 	Info_AddChoice(DIA_NONE_1801_Fingers_Stolen, " Of course, here it is. " ,DIA_NONE_1801_Fingers_Stolen_Yes);
-	Info_AddChoice(DIA_NONE_1801_Fingers_Stolen, " What do I get for this? " ,DIA_NONE_1801_Fingers_Stolen_What);
+	Info_AddChoice(DIA_NONE_1801_Fingers_Stolen, " What do I get for it? " ,DIA_NONE_1801_Fingers_Stolen_What);
 };
 
 func void DIA_NONE_1801_Fingers_Stolen_No()
 {
-	AI_Output(other,self,"DIA_NONE_1801_Fingers_Stolen_No_01_00");	//Нет, он мой.
-	AI_Output(self,other, " DIA_NONE_1801_Fingers_Stolen_No_01_01 " );	// Well, as you know.
+	AI_Output(other,self,"DIA_NONE_1801_Fingers_Stolen_No_01_00");	//Nope, it's mine unfair and square.
+	AI_Output(self,other, " DIA_NONE_1801_Fingers_Stolen_No_01_01 " );	// Dammit.
 	AI_StopProcessInfos(self);
 
 	if(FingersInFort == FALSE)
@@ -865,7 +865,7 @@ func void DIA_NONE_1801_Fingers_Stolen_Yes()
 func void DIA_NONE_1801_Fingers_Stolen_What()
 {
 	AI_Output(other,self, " DIA_NONE_1801_Fingers_Stolen_What_15_00 " );	// What do I get for this?
-	AI_Output(self,other,"DIA_NONE_1801_Fingers_Stolen_What_01_00");	//Сам увидишь!
+	AI_Output(self,other,"DIA_NONE_1801_Fingers_Stolen_What_01_00");	//You'll see soon enough!
 };
 
 instance DIA_NONE_1801_Fingers_Master(C_Info)
@@ -889,20 +889,20 @@ func int DIA_NONE_1801_Fingers_Master_Condition()
 func void DIA_NONE_1801_Fingers_Master_Info()
 {
 	B_GivePlayerXP(150);
-	AI_Output(other,self, " DIA_NONE_1801_Fingers_Master_01_00 " );	// You know locks, don't you?
-	AI_Output(self,other, " DIA_NONE_1801_Fingers_Master_01_01 " );	// (laughs) I'm the best at this!
-	AI_Output(self,other, " DIA_NONE_1801_Fingers_Master_01_02 " );	// And why did you suddenly decide to ask?
-	AI_Output(other,self, " DIA_NONE_1801_Fingers_Master_01_03 " );	// Paladins have lost the key to their warehouse. And the castle is too complicated.
+	AI_Output(other,self, " DIA_NONE_1801_Fingers_Master_01_00 " );	// You still remember your old skills?
+	AI_Output(self,other, " DIA_NONE_1801_Fingers_Master_01_01 " );	// Of course! thievery is in my blood.
+	AI_Output(self,other, " DIA_NONE_1801_Fingers_Master_01_02 " );	// Why do you ask?
+	AI_Output(other,self, " DIA_NONE_1801_Fingers_Master_01_03 " );	// The Paladins have lost the key to their warehouse. And the castle is too complicated.
 	AI_Output(other,self, " DIA_NONE_1801_Fingers_Master_01_04 " );	// So I thought: is it true that they say that no castle can resist you?
-	AI_Output(self,other, " DIA_NONE_1801_Fingers_Master_01_05 " );	// This is true. But they will have to solve this problem themselves.
+	AI_Output(self,other, " DIA_NONE_1801_Fingers_Master_01_05 " );	// It's true. But they will have to solve their problem themselves.
 	AI_Output(self,other, " DIA_NONE_1801_Fingers_Master_01_06 " );	// I won't get close to the fort!
-	AI_Output(other,self, " DIA_NONE_1801_Fingers_Master_01_07 " );	// What if I agree with the paladins not to touch you?
+	AI_Output(other,self, " DIA_NONE_1801_Fingers_Master_01_07 " );	// What if I arrange with the paladins not to touch you?
 	AI_Output(self,other, " DIA_NONE_1801_Fingers_Master_01_08 " );	// Do you think they can be trusted?
 	AI_Output(other,self, " DIA_NONE_1801_Fingers_Master_01_09 " );	// Do you have a choice? Or are you going to sit here for the rest of your life?
-	AI_Output(self,other, " DIA_NONE_1801_Fingers_Master_01_10 " );	// Eh... Okay! I will help them, but only on the condition that they spare my life.
+	AI_Output(self,other, " DIA_NONE_1801_Fingers_Master_01_10 " );	// Eh... Okay! I will help them, but only on the condition that they leave me be.
 	AI_Output(other,self, " DIA_NONE_1801_Fingers_Master_01_11 " );	// Okay, I'll talk to their leader.
 	FingersAgree = TRUE;
-	B_LogEntry(TOPIC_FingersOpenDoor, " Fingers agreed to help the paladins with the door on the condition that they did not touch him. " );
+	B_LogEntry(TOPIC_FingersOpenDoor, " Fingers agreed to help the paladins with the door on the condition that they do not touch him. " );
 };
 
 instance DIA_NONE_1801_Fingers_Master_Ok(C_Info)
@@ -927,16 +927,16 @@ func void DIA_NONE_1801_Fingers_Master_Ok_Info()
 {
 	B_GivePlayerXP(100);
 	AI_Output(other,self, " DIA_NONE_1801_Fingers_Master_Ok_01_00 " );	// I've spoken to the paladins.
-	AI_Output(self,other, " DIA_NONE_1801_Fingers_Master_Ok_01_01 " );	// (with interest) So what?
-	AI_Output(other,self, " DIA_NONE_1801_Fingers_Master_Ok_01_02 " );	// Lord Varus, their commander, has given his word that he will not harm you if you help them open this door.
+	AI_Output(self,other, " DIA_NONE_1801_Fingers_Master_Ok_01_01 " );	// (with interest) And?
+	AI_Output(other,self, " DIA_NONE_1801_Fingers_Master_Ok_01_02 " );	// Lord Varus, their commander, has given his word that he will not harm you if you help them open the door.
 	AI_Output(other,self, " DIA_NONE_1801_Fingers_Master_Ok_01_03 " );	// But don't try to steal from them! Otherwise I won't be able to help you.
 	AI_Output(self,other, " DIA_NONE_1801_Fingers_Master_Ok_01_04 " );	// Of course! Do I look like an idiot?
 	AI_Output(other,self, " DIA_NONE_1801_Fingers_Master_Ok_01_05 " );	// In that case, they're waiting for you at the fort.
 	AI_Output(self,other, " DIA_NONE_1801_Fingers_Master_Ok_01_06 " );	// Good. I'll just sit here for another day. I'll collect my thoughts, so to speak. And then I'll go to them.
-	AI_Output(other,self,"DIA_NONE_1801_Fingers_Master_Ok_01_07");	//Дело твое.
+	AI_Output(other,self,"DIA_NONE_1801_Fingers_Master_Ok_01_07");	//As you wish.
 	FingersCrack = TRUE;
 	FingersGoFort = Wld_GetDay();
-	B_LogEntry(TOPIC_FingersOpenDoor, " Fingers will be heading to the fort in about a day. I hope the paladins will appreciate his skill when he opens this door. " );
+	B_LogEntry(TOPIC_FingersOpenDoor, " Fingers will be heading to the fort in about a day. I hope the paladins will appreciate his skill when he opens the door. " );
 	AI_StopProcessInfos(self);
 };
 
@@ -961,13 +961,13 @@ func int DIA_NONE_1801_Fingers_Master_Finish_Condition()
 func void DIA_NONE_1801_Fingers_Master_Finish_Info()
 {
 	AI_Output(other,self, " DIA_NONE_1801_Fingers_Master_Finish_01_00 " );	// Well, how did it go?
-	AI_Output(self,other, " DIA_NONE_1801_Fingers_Master_Finish_01_01 " );	// The castle turned out to be really difficult!
-	AI_Output(self,other, " DIA_NONE_1801_Fingers_Master_Finish_01_02 " );	// The one who made it knows a lot about them.
-	AI_Output(self,other, " DIA_NONE_1801_Fingers_Master_Finish_01_03 " );	// But as you can see, that didn't stop me. I opened it without even sweating!
-	AI_Output(self,other, " DIA_NONE_1801_Fingers_Master_Finish_01_04 " );	// I'm in good standing with Lord Varus now. Which is weird even for me...
+	AI_Output(self,other, " DIA_NONE_1801_Fingers_Master_Finish_01_01 " );	// The job turned out to be really difficult!
+	AI_Output(self,other, " DIA_NONE_1801_Fingers_Master_Finish_01_02 " );	// The one who made that lock was a master of his craft.
+	AI_Output(self,other, " DIA_NONE_1801_Fingers_Master_Finish_01_03 " );	// Unfortunately for him, I'm a master of MINE. I opened it with only some slight cursing.
+	AI_Output(self,other, " DIA_NONE_1801_Fingers_Master_Finish_01_04 " );	// I'm in good standing with Lord Varus now. Which is very weird even for me...
 	AI_Output(other,self, " DIA_NONE_1801_Fingers_Master_Finish_01_05 " );	// So the old business is done?
 	AI_Output(self,other, " DIA_NONE_1801_Fingers_Master_Finish_01_06 " );	// It turns out that it is. I won't say that I really like it.
-	AI_Output(self,other, " DIA_NONE_1801_Fingers_Master_Finish_01_07 " );	// But the food here is good, and there is booze!
+	AI_Output(self,other, " DIA_NONE_1801_Fingers_Master_Finish_01_07 " );	// But the food here is good, and there is booze and broads!
 	AI_Output(self,other, " DIA_NONE_1801_Fingers_Master_Finish_01_08 " );	// And that's definitely better than hanging around with a rope around your neck! (laughs)
 	THIEF_REPUTATION = THIEF_REPUTATION + 15;
 
@@ -999,7 +999,7 @@ func void DIA_NONE_1801_Fingers_OpenSkald_Info()
 {
 	AI_Output(other,self, " DIA_NONE_1801_Fingers_OpenSkald_01_00 " );	// So the warehouse is now open?
 	AI_Output(self,other, " DIA_NONE_1801_Fingers_OpenSkald_01_01 " );	// No. I made a new key and gave it to Varus.
-	AI_Output(self,other, " DIA_NONE_1801_Fingers_OpenSkald_01_02 " );	// So it's under safe lock.
+	AI_Output(self,other, " DIA_NONE_1801_Fingers_OpenSkald_01_02 " );	// So it's under new lock and key, so to speak.
 	FingersTellKey = TRUE;
 };
 
@@ -1025,13 +1025,13 @@ func int DIA_NONE_1801_Fingers_GetKeySkald_Condition()
 
 func void DIA_NONE_1801_Fingers_GetKeySkald_Info()
 {
-	AI_Output(other,self, " DIA_NONE_1801_Fingers_GetKeySkald_01_00 " );	// Can you make another one like this?
+	AI_Output(other,self, " DIA_NONE_1801_Fingers_GetKeySkald_01_00 " );	// Can you make another one like it
 	AI_Output(self,other, " DIA_NONE_1801_Fingers_GetKeySkald_01_01 " );	// Hmmm... (squinting) What, you want to inspect their warehouse for yourself?
 	AI_Output(other,self, " DIA_NONE_1801_Fingers_GetKeySkald_01_02 " );	// You can say that.
-	AI_Output(self,other, " DIA_NONE_1801_Fingers_GetKeySkald_01_03 " );	// Hmmm... Of course I can do it. But it's too risky for me! After all, if they had something there, all the accusations would fall on me.
-	AI_Output(other,self, " DIA_NONE_1801_Fingers_GetKeySkald_01_04 " );	// I'll pay well. Plus, I'm sure paladins aren't that careful with their stuff.
+	AI_Output(self,other, " DIA_NONE_1801_Fingers_GetKeySkald_01_03 " );	// Hmmm... Of course I can do it. But it's too risky for me! After all, if they had something stolen from there, I'd be suspect number one!
+	AI_Output(other,self, " DIA_NONE_1801_Fingers_GetKeySkald_01_04 " );	// I'll pay well. Plus, I'm sure the paladins aren't that careful with their stuff.
 	AI_Output(other,self, " DIA_NONE_1801_Fingers_GetKeySkald_01_05 " );	// They have more important things to do now. For example, orcs!
-	AI_Output(self,other, " DIA_NONE_1801_Fingers_GetKeySkald_01_06 " );	// Well, okay. Think you've convinced me. But it will cost you at least two thousand gold coins.
+	AI_Output(self,other, " DIA_NONE_1801_Fingers_GetKeySkald_01_06 " );	// Well, okay, I see your point.But it will cost you at least two thousand gold coins.
 	Info_ClearChoices(DIA_NONE_1801_Fingers_GetKeySkald);
 	Info_AddChoice(DIA_NONE_1801_Fingers_GetKeySkald, " Then we better talk about it later. " ,DIA_NONE_1801_Fingers_GetKeySkald_No);
 
@@ -1056,8 +1056,8 @@ func void DIA_NONE_1801_Fingers_GetKeySkald_Yes()
 	Npc_RemoveInvItems(self,ItMi_Gold,2000);
 	AI_Output(self,other, " DIA_NONE_1801_Fingers_GetKeySkald_Yes_01_01 " );	// Great! And here is your key.
 	B_GiveInvItems(self,other,itke_varuskey,1);
-	AI_Output(other,self, " DIA_NONE_1801_Fingers_GetKeySkald_Yes_01_02 " );	// Here you are a rogue! Looks like you already had it. And you probably wanted to take care of this warehouse yourself.
-	AI_Output(self,other, " DIA_NONE_1801_Fingers_GetKeySkald_Yes_01_03 " );	// It doesn't matter what I wanted, boy. The main thing is that everyone got what they wanted.
+	AI_Output(other,self, " DIA_NONE_1801_Fingers_GetKeySkald_Yes_01_02 " );	// You rogue! Looks like you already had it. And you probably wanted to take care of the warehouse yourself.
+	AI_Output(self,other, " DIA_NONE_1801_Fingers_GetKeySkald_Yes_01_03 " );	// It doesn't matter what I wanted, man. The main thing is that everyone got what they wanted.
 	Info_ClearChoices(DIA_NONE_1801_Fingers_GetKeySkald);
 };
 
@@ -1106,8 +1106,8 @@ func void DIA_NONE_1801_Fingers_GetKeySkald_Again_Yes()
 	Npc_RemoveInvItems(self,ItMi_Gold,2000);
 	AI_Output(self,other, " DIA_NONE_1801_Fingers_GetKeySkald_Yes_01_01 " );	// Great! And here is your key.
 	B_GiveInvItems(self,other,itke_varuskey,1);
-	AI_Output(other,self, " DIA_NONE_1801_Fingers_GetKeySkald_Yes_01_02 " );	// Here you are a rogue! Looks like you already had it. And you probably wanted to take care of this warehouse yourself.
-	AI_Output(self,other, " DIA_NONE_1801_Fingers_GetKeySkald_Yes_01_03 " );	// It doesn't matter what I wanted, boy. The main thing is that everyone got what they wanted.
+	AI_Output(other,self, " DIA_NONE_1801_Fingers_GetKeySkald_Yes_01_02 " );	// You rogue! Looks like you already had it. And you probably wanted to take care of the warehouse yourself.
+	AI_Output(self,other, " DIA_NONE_1801_Fingers_GetKeySkald_Yes_01_03 " );	// It doesn't matter what I wanted, man. The main thing is that everyone got what they wanted.
 	HavePalSkladMeKey = TRUE ;
 	Info_ClearChoices(DIA_NONE_1801_Fingers_GetKeySkald_Again);
 };
