@@ -70,7 +70,7 @@ func void DAY_Onar_PERM_Info()
 	AI_Output(other,self, " DIA_Onar_PERM_15_00 " );	// Is everything all right here, on your farm?
 	if(other.guild == GIL_NONE)
 	{
-		AI_Output(self,other, " DIA_Onar_PERM_14_01 " );	// I don't see what you care about. You don't work here!
+		AI_Output(self,other, " DIA_Onar_PERM_14_01 " );	// I don't see why you should care. You don't work here!
 	};
 	if(other.guild == GIL_SLD)
 	{
@@ -86,8 +86,8 @@ func void DAY_Onar_PERM_Info()
 		AI_Output(self,other, " DIA_Onar_PERM_14_05 " );	// Your fake monastery henchmen are not welcome here!
 		if(other.guild == GIL_KDF)
 		{
-			AI_Output(other,self, " DIA_Onar_PERM_14_07 " );	// I think your tongue is unhealthy. It's TOO long.
-			AI_Output(other,self, " DIA_Onar_PERM_14_08 " );	// As the chosen one of Innos, I see this well.
+			AI_Output(other,self, " DIA_Onar_PERM_14_07 " );	// I think your tongue is getting you into trouble my friend.
+			AI_Output(other,self, " DIA_Onar_PERM_14_08 " );	// As the chosen one of Innos, I see that well.
 		};
 	};
 	if((other.guild == GIL_MIL) || (other.guild == GIL_PAL))
@@ -96,11 +96,11 @@ func void DAY_Onar_PERM_Info()
 	};
 	if((other.guild == GIL_SEK) || (other.guild == GIL_TPL) || (other.guild == GIL_GUR))
 	{
-		AI_Output(self,other, " DIA_Onar_PERM_14_07 " );	// I think your tongue is unhealthy. It's TOO long.
+		AI_Output(self,other, " DIA_Onar_PERM_14_07 " );	// I think your tongue is getting you into trouble my friend.
 	};
 	if((other.guild == GIL_NDW) || (other.guild == GIL_KDW))
 	{
-		AI_Output(self,other, " DIA_Onar_PERM_14_08 " );	// As the chosen one of Innos, I see this well.
+		AI_Output(self,other, " DIA_Onar_PERM_14_08 " );	// As the chosen one of Innos, I see that well.
 	};
 	if((other.guild == GIL_NDM) || (other.guild == GIL_KDM))
 	{
@@ -163,7 +163,7 @@ func void DIA_Onar_WorkAsSld_Info()
 {
 	AI_Output(other,self, " DIA_Onar_WorkAsSld_15_00 " );	// I want to work here as a mercenary!
 	AI_Output(self,other, " DIA_Onar_WorkAsSld_14_01 " );	// You? Mercenary? Do not make me laugh! If you could make a good mercenary, Lee would surely tell me about you.
-	AI_Output(self,other, " DIA_Onar_WorkAsSld_14_02 " );	// Now get out of here, and live!
+	AI_Output(self,other, " DIA_Onar_WorkAsSld_14_02 " );	// Now get out of here!
 	Onar_WegenSldWerden = TRUE ;
 };
 
@@ -186,7 +186,7 @@ func int DIA_Onar_Aufstand_Condition()
 func void DIA_Onar_Aufstand_Info()
 {
 	AI_Output(other,self, " DIA_Onar_Aufstand_15_00 " );	// You're opposing the city, I heard?
-	AI_Output(self,other, " DIA_Onar_Aufstand_14_01 " );	// And now listen to you. I inherited this farm and this land from my father.
+	AI_Output(self,other, " DIA_Onar_Aufstand_14_01 " );	// Listen to me. I inherited this farm and this land from my father.
 	AI_Output(self,other, " DIA_Onar_Aufstand_14_02 " );	// He inherited it from his father.
 	AI_Output(self,other, " DIA_Onar_Aufstand_14_03 " );	// I won't let that greedy idiot who calls himself king ruin me just to feed his useless armies.
 	AI_Output(self,other, " DIA_Onar_Aufstand_14_04 " );	// The war against the orcs has been going on for ages. And what have we come to? We are on the verge of defeat.
@@ -220,7 +220,7 @@ func void DIA_Onar_WegenPepe_Info()
 	AI_Output(self,other, " DIA_Onar_WegenPepe_14_01 " );	// What are you talking about? Who is Bulko?
 	AI_Output(other,self, " DIA_Onar_WegenPepe_15_02 " );	// One of the mercenaries.
 	AI_Output(self,other, " DIA_Onar_WegenPepe_14_03 " );	// What do I care? If he touches my sheep, he will answer to Lee.
-	AI_Output(self,other, " DIA_Onar_WegenPepe_14_04 " );	// Why are you distracting me with such trifles?
+	AI_Output(self,other, " DIA_Onar_WegenPepe_14_04 " );	// Why are you distracting me with such nonsense?
 	Onar_WegenPepe = TRUE ;
 };
 
@@ -254,14 +254,14 @@ func void DIA_Onar_WegenSekob_Info()
 	}
 	else
 	{
-		AI_Output(self,other, " DIA_Onar_WegenSekob_14_02 " );	// What the hell are you getting into?
+		AI_Output(self,other, " DIA_Onar_WegenSekob_14_02 " );	// What the hell are you getting at?
 		AI_Output(other,self, " DIA_Onar_WegenSekob_15_03 " );	// I want to become a mercenary. Collecting rent is my test.
 		Onar_WegenSldWerden = TRUE ;
 	};
-	AI_Output(other,self, " DIA_Onar_WegenSekob_15_04 " );	// But Sekob has no money. I even tried to beat them out of him.
+	AI_Output(other,self, " DIA_Onar_WegenSekob_15_04 " );	// But Sekob has no money. I even tried to beat some out of him.
 	AI_Output(other,self, " DIA_Onar_WegenSekob_15_05 " );	// He said it was because of the bad harvest...
-	AI_Output(self,other, " DIA_Onar_WegenSekob_14_06 " );	// (yells) You brainless cretin! Do you think he carries money with him? He hides them somewhere!
-	AI_Output(self,other, " DIA_Onar_WegenSekob_14_07 " );	// Do you know how much it rained this year? Bad harvest! Wow!
+	AI_Output(self,other, " DIA_Onar_WegenSekob_14_06 " );	// You brainless cretin! Do you think he carries his money with him? He hides it somewhere!
+	AI_Output(self,other, " DIA_Onar_WegenSekob_14_07 " );	// Do you know how much it rained this year? Bad harvest? Wow!
 	AI_Output(self,other, " DIA_Onar_WegenSekob_14_08 " );	// Go and find a way to get that money out of him.
 	Onar_WegenSekob = TRUE ;
 };
@@ -293,14 +293,14 @@ func int DIA_Onar_LeeSentMe_Condition()
 func void DIA_Onar_LeeSentMe_Info()
 {
 	AI_Output(other,self, " DIA_Onar_LeeSentMe_15_00 " );	// Lee sent me. I want to work as a mercenary!
-	AI_Output(self,other, " DIA_Onar_LeeSentMe_14_01 " );	// He already talked to me.
+	AI_Output(self,other, " DIA_Onar_LeeSentMe_14_01 " );	// He already spoke to me.
 	if (Onar_WegenSldWerden ==  TRUE )
 	{
 		AI_Output(self,other, " DIA_Onar_LeeSentMe_14_02 " );	// When we first met, I didn't have the best opinion of you.
 	};
-	AI_Output(self,other, " DIA_Onar_LeeSentMe_14_03 " );	// But since Lee thinks you can do it, I'll probably give you a chance.
-	AI_Output(self,other, " DIA_Onar_LeeSentMe_14_08 " );	// Come tomorrow at noon, I'll need you.
-	AI_Output(self,other, " DIA_Onar_LeeSentMe_14_09 " );	// In the meantime, you must clear the area around the crypt from the monsters.
+	AI_Output(self,other, " DIA_Onar_LeeSentMe_14_03 " );	// But since Lee thinks you can do it, I'll give you a chance.
+	AI_Output(self,other, " DIA_Onar_LeeSentMe_14_08 " );	// Come back tomorrow at noon, I'll need you.
+	AI_Output(self,other, " DIA_Onar_LeeSentMe_14_09 " );	// In the meantime, you must clear the area around the crypt of monsters.
 	AI_Output(self,other, " DIA_Onar_LeeSentMe_14_10 " );	// And then we'll see if you're good for something.
 	ONARTOMM = Wld_GetDay();
 	ONARTOMM1 = TRUE;
@@ -333,7 +333,7 @@ func void dia_onar_leesentmepass_info()
 {
 	AI_Output(self,other, " DIA_Onar_LeeSentMePass_14_01 " );	// Here you are! Almost on time.
 	AI_Output(self,other, " DIA_Onar_LeeSentMePass_14_02 " );	// Let's see what you're good for.
-	AI_Output(self,other, " DIA_Onar_LeeSentMePass_14_03 " );	// See my ladies, and God forbid something happens to them!
+	AI_Output(self,other, " DIA_Onar_LeeSentMePass_14_03 " );	// See to my ladies, and gods forbid something happens to them!
 	ONARTOMM1 = 5 ;
 	B_LogEntry(TOPIC_BecomeSLD, " Onar ordered to accompany and protect his ladies. " );
 	AI_StopProcessInfos(self);
@@ -384,7 +384,7 @@ func void dia_onar_leesentmepassgo_info()
 	{
 		AI_Output(self,other, " DIA_Onar_LeeSentMePassGo_14_02 " );	// Great! So there were no problems? You have fulfilled my conditions.
 		AI_Output(self,other, " DIA_Onar_LeeSentMe_14_06 " );	// As for everything else, talk to Lee.
-		AI_Output(self,other, " DIA_Onar_LeeSentMe_14_07 " );	// And you and I need to discuss only your salary.
+		AI_Output(self,other, " DIA_Onar_LeeSentMe_14_07 " );	// You and I need to discuss only your salary.
 		ONARTOMM1 = 20 ;
 		Onar_Approved = TRUE;
 		B_LogEntry(TOPIC_BecomeSLD, " Onar was very pleased and gave me his approval. Now there is nothing to prevent me from joining the ranks of the mercenaries. " );
@@ -425,7 +425,7 @@ func int dia_onar_leesentmepassno_condition()
 func void dia_onar_leesentmepassno_info()
 {
 	AI_Output(other,self, " DIA_Onar_LeeSentMePassNO_15_00 " );	// I'm here.
-	AI_Output(self,other, " DIA_Onar_LeeSentMePassNO_14_01 " );	// So what? You are late!
+	AI_Output(self,other, " DIA_Onar_LeeSentMePassNO_14_01 " );	// So what? You're late!
 	AI_Output(self,other, " DIA_Onar_LeeSentMePassNO_14_02 " );	// You can't even complete a simple task!
 	AI_Output(self,other, " DIA_Onar_LeeSentMe_14_03 " );	// But since Lee thinks you can do it, I'll probably give you a chance.
 	AI_Output(self,other, " DIA_Onar_LeeSentMe_14_04 " );	// After all, he's responsible for you. So get on with your duties.
@@ -497,7 +497,7 @@ func void DIA_Onar_HowMuch_Info()
 	if(ONARTOMM1 == 15)
 	{
 		AI_Output(self,other, " DIA_Onar_HowMuch_14_08 " );	// You are especially lazy and forgetful.
-		AI_Output(self,other, " DIA_Onar_HowMuch_14_09 " );	// Work for nothing for now.
+		AI_Output(self,other, " DIA_Onar_HowMuch_14_09 " );	// You'll get nothing for now.
 		SOLD = 0;
 	};
 	AI_Output(self,other, " DIA_Onar_HowMuch_14_06 " );	// Let me think...
@@ -535,18 +535,18 @@ func void DIA_Onar_HowMuch_Info()
 	Info_ClearChoices(DIA_Onar_HowMuch);
 	Info_AddChoice(DIA_Onar_HowMuch, " Good! " ,DIA_Onar_HowMuch_Ok);
 	Info_AddChoice(DIA_Onar_HowMuch, " Not everyone is here... " ,DIA_Onar_HowMuch_More);
-	Info_AddChoice(DIA_Onar_HowMuch, " В день? " ,DIA_Onar_HowMuch_PerDay);
+	Info_AddChoice(DIA_Onar_HowMuch, " In a day. " ,DIA_Onar_HowMuch_PerDay);
 };
 
 func void DIA_Onar_HowMuch_PerDay()
 {
-	AI_Output(other,self,"DIA_Onar_HowMuch_PerDay_15_00");	//В день?
-	AI_Output(self,other, " DIA_Onar_HowMuch_PerDay_14_01 " );	// Who do you think you are? In Week! Yes, and this is a lot for you.
+	AI_Output(other,self,"DIA_Onar_HowMuch_PerDay_15_00");	//In a day?
+	AI_Output(self,other, " DIA_Onar_HowMuch_PerDay_14_01 " );	// Who do you think you are? In a Week! 
 
 	if(RhetorikSkillValue[1] >= 30)
 	{
 		AI_Output(other,self, " DIA_Onar_HowMuch_New_00_02 " );	// It's just that I could be more useful to your farm, but I sometimes have problems with equipment.
-		AI_Output(self,other, " DIA_Onar_HowMuch_New_00_03 " );	// Beliar would take you! OK. You can get paid every day.
+		AI_Output(self,other, " DIA_Onar_HowMuch_New_00_03 " );	// Beliar take you! OK. You can get paid every day.
 		AI_Output(self,other, " DIA_Onar_HowMuch_New_00_04 " );	// But just don't talk nonsense anymore.
 		Log_CreateTopic(Topic_Bonus,LOG_NOTE);
 		B_LogEntry(Topic_Bonus, " I can collect my due reward from Onar whenever I feel like it. " );
@@ -556,7 +556,7 @@ func void DIA_Onar_HowMuch_PerDay()
 	else
 	{
 		AI_Output(self,other, " DIA_Onar_HowMuch_PerDay_14_02 " );	// Come on, come over here and get your money.
-		AI_Output(self,other, " DIA_Onar_HowMuch_PerDay_14_03 " );	// I'm not going to bring them to you.
+		AI_Output(self,other, " DIA_Onar_HowMuch_PerDay_14_03 " );	// I'm not going to bring it to you.
 	};
 };
 
@@ -572,7 +572,7 @@ func void DIA_Onar_HowMuch_More()
 
 func void DIA_Onar_HowMuch_Ok()
 {
-	AI_Output(other,self,"DIA_Onar_HowMuch_Ok_15_00");	//Хорошо!
+	AI_Output(other,self,"DIA_Onar_HowMuch_Ok_15_00");	//Okay!
 	AI_Output(self,other, " DIA_Onar_HowMuch_Ok_14_01 " );	// I think so too. Now go talk to Lee.
 	Log_CreateTopic(Topic_Bonus,LOG_NOTE);
 	B_LogEntry(Topic_Bonus, " I can collect my due reward from Onar whenever I feel like it. " );
@@ -613,7 +613,7 @@ func void DIA_Onar_CollectGold_Info()
 		AI_Output(self,other, " DIA_Onar_CollectGold_14_02 " );	// You're not doing your job well!
 		AI_Output(self,other, " DIA_Onar_CollectGold_14_03 " );	// I asked Torlof how you're doing. And he told me that it takes you forever to get the job done.
 		AI_Output(self,other, " DIA_Onar_CollectGold_14_04 " );	// I'm not going to pay slackers.
-		AI_Output(self,other, " DIA_Onar_CollectGold_14_05 " );	// Now you have to work a few weeks without pay! Maybe then you will learn this lesson.
+		AI_Output(self,other, " DIA_Onar_CollectGold_14_05 " );	// Now you have to work a few weeks without pay! Maybe then you will learn a lesson.
 	}
 	else if(B_GetGreatestPetzCrime(self) > CRIME_NONE)
 	{
@@ -628,14 +628,14 @@ func void DIA_Onar_CollectGold_Info()
 	{
 		if(other.exp > Onar_SOLD_XP)
 		{
-			AI_Output(self,other, " DIA_Onar_CollectGold_14_13 " );	// Oh, okay... (contritely) Here's your salary.
+			AI_Output(self,other, " DIA_Onar_CollectGold_14_13 " );	// Oh, okay... Here's your salary.
 			B_GiveInvItems(self,other,ItMi_Gold,SOLD);
 			B_Say_Gold(self,other,SOLD);
 		}
 		else
 		{
 			AI_Output(self,other, " DIA_Onar_CollectGold_14_14 " );	// What? But you didn’t do anything, just slept and wandered from corner to corner!
-			AI_Output(self,other, " DIA_Onar_CollectGold_14_15 " );	// I'm not going to pay for this!
+			AI_Output(self,other, " DIA_Onar_CollectGold_14_15 " );	// I'm not going to pay for that!
 		};
 		Honor_SOLD_Day = Wld_GetDay();
 		Onar_SOLD_XP = other.exp;
@@ -664,13 +664,13 @@ func int DIA_Onar_MariaGold_Condition()
 func void DIA_Onar_MariaGold_Info()
 {
 	AI_Output(other,self, " DIA_Onar_MariaGold_15_00 " );	// Maria thinks I'm not getting enough.
-	AI_Output(self,other,"DIA_Onar_MariaGold_14_01");	//Что?
+	AI_Output(self,other,"DIA_Onar_MariaGold_14_01");	//And?
 	AI_Output(other,self, " DIA_Onar_MariaGold_15_02 " );	// She said you should pay me more.
-	AI_Output(self,other, " DIA_Onar_MariaGold_14_03 " );	// This woman sticks her nose in all the cracks!
-	AI_Output(self,other, " DIA_Onar_MariaGold_14_04 " );	// She said how much?
-	AI_Output(other,self,"DIA_Onar_MariaGold_15_05");	//Нет.
+	AI_Output(self,other, " DIA_Onar_MariaGold_14_03 " );	// That woman sticks her nose in everything!
+	AI_Output(self,other, " DIA_Onar_MariaGold_14_04 " );	// She say how much?
+	AI_Output(other,self,"DIA_Onar_MariaGold_15_05");	//No.
 	AI_Output(self,other, " DIA_Onar_MariaGold_14_06 " );	// Okay, next time you'll get fifty more gold.
-	AI_Output(self,other, " DIA_Onar_MariaGold_14_07 " );	// But no more gold, okay?
+	AI_Output(self,other, " DIA_Onar_MariaGold_14_07 " );	// But no more!
 	SOLD = SOLD + 50;
 };
 
@@ -701,13 +701,13 @@ func void DIA_Onar_WannaSheep_Info()
 {
 	AI_Output(other,self, " DIA_Onar_WannaSheep_15_00 " );	// I want to buy a sheep!
 	AI_Output(self,other, " DIA_Onar_WannaSheep_14_01 " );	// What are you doing here then? Do you see a sheep around here somewhere?
-	AI_Output(other,self,"DIA_Onar_WannaSheep_15_02");	//Я...
+	AI_Output(other,self,"DIA_Onar_WannaSheep_15_02");	//Um...
 	AI_Output(self,other, " DIA_Onar_WannaSheep_14_03 " );	// If you want to buy a sheep, go to the pasture. It is located to the right of my house.
 	AI_Output(self,other, " DIA_Onar_WannaSheep_14_04 " );	// Pepe will sell you one.
 	if (Npc_IsDead(Pepe))
 	{
 		AI_Output(other,self, " DIA_Onar_WannaSheep_15_05 " );	// I'm afraid Pepe is dead.
-		AI_Output(self,other, " DIA_Onar_WannaSheep_14_06 " );	// Oh! In that case... (indifferent) Leave two hundred gold coins to me and choose your own sheep for pasture.
+		AI_Output(self,other, " DIA_Onar_WannaSheep_14_06 " );	// Oh! In that case... Leave two hundred gold coins to me and choose your own sheep.
 		Onar_SellSheep = TRUE;
 	};
 };
@@ -770,30 +770,30 @@ func int dia_onar_onarbusiness_condition()
 
 func void dia_onar_onarbusiness_info()
 {
-	AI_Output(other,self, " DIA_Onar_OnarBusiness_01_00 " );	// One merchant offers you a deal.
-	AI_Output(self,other, " DIA_Onar_OnarBusiness_01_01 " );	// What? And what is the name of that merchant?
+	AI_Output(other,self, " DIA_Onar_OnarBusiness_01_00 " );	// A merchant offers you a deal.
+	AI_Output(self,other, " DIA_Onar_OnarBusiness_01_01 " );	// What? And what is the name of this merchant?
 	AI_Output(other,self, " DIA_Onar_OnarBusiness_01_02 " );	// His name is Luthero. Do you know him?
-	AI_Output(self,other, " DIA_Onar_OnarBusiness_01_03 " );	// Yes, I know him - a large bird. What does he want from me?
+	AI_Output(self,other, " DIA_Onar_OnarBusiness_01_03 " );	// Yes, I know him. What does he want from me?
 	AI_Output(other,self, " DIA_Onar_OnarBusiness_01_04 " );	// He wants to conclude a contract with you for the supply of a large consignment of food.
 	AI_Output(self,other, " DIA_Onar_OnarBusiness_01_05 " );	// WHAT?! He should know I'm not selling anything to the city!
 	AI_Output(self,other, " DIA_Onar_OnarBusiness_01_06 " );	// Why did he think I'd make an exception for him?
 	AI_Output(other,self, " DIA_Onar_OnarBusiness_01_07 " );	// Because he's willing to offer you some pretty good deals!
-	AI_Output(self,other, " DIA_Onar_OnarBusiness_01_08 " );	// (with contempt) I have very good conditions without him.
+	AI_Output(self,other, " DIA_Onar_OnarBusiness_01_08 " );	// I have very good conditions without him.
 	AI_Output(self,other, " DIA_Onar_OnarBusiness_01_09 " );	// And I don't see much need to change anything.
 	Info_ClearChoices(dia_onar_onarbusiness);
 	Info_AddChoice(dia_onar_onarbusiness, " Okay, forget about it. " ,dia_onar_onarbusiness_forget);
 	Info_AddChoice(dia_onar_onarbusiness, " What are your terms? " ,dia_onar_onarbusiness_case);
 	Info_AddChoice(dia_onar_onarbusiness, " Luthero really needs this deal. " ,dia_onar_onarbusiness_need);
-	Info_AddChoice(dia_onar_onarbusiness, " Are you interested in extra gold? " ,dia_onar_onarbusiness_gold);
+	Info_AddChoice(dia_onar_onarbusiness, " Arn'te you interested in extra gold? " ,dia_onar_onarbusiness_gold);
 };
 
 func void dia_onar_onarbusiness_gold()
 {
-	AI_Output(other,self, " DIA_Onar_OnarBusiness_Gold_01_01 " );	// Are you interested in extra gold?
-	AI_Output(self,other, " DIA_Onar_OnarBusiness_Gold_01_02 " );	// Do you, insolent, consider me a dirty ragamuffin, ready to throw himself at any handout, like a dog on a bone?!
+	AI_Output(other,self, " DIA_Onar_OnarBusiness_Gold_01_01 " );	// Aren't you interested in extra gold?
+	AI_Output(self,other, " DIA_Onar_OnarBusiness_Gold_01_02 " );	// Do you consider me a dirty ragamuffin, ready to throw himself at any handout, like a dog on a bone?!
 	AI_Output(self,other, " DIA_Onar_OnarBusiness_Gold_01_03 " );	// I have as much gold as neither you nor your Luthero even dreamed of!
-	AI_Output(self,other, " DIA_Onar_OnarBusiness_Gold_01_04 " );	// It's even enough to buy your entire city and those snickering paladins with giblets. So know!
-	AI_Output(self,other, " DIA_Onar_OnarBusiness_Gold_01_05 " );	// Now get out of my yard! And so that your spirit is no longer here!
+	AI_Output(self,other, " DIA_Onar_OnarBusiness_Gold_01_04 " );	// It's even enough to buy your entire city and those snivelling paladins too. So piss off!
+	AI_Output(self,other, " DIA_Onar_OnarBusiness_Gold_01_05 " );	// Now get out of my yard! 
 	ONARNOTAGREED = TRUE;
 	B_LogEntry( TOPIC_ONARBUSINESS , " I couldn't negotiate with Onar about food supplies for the guild. " );
 	AI_StopProcessInfos(self);
@@ -802,14 +802,14 @@ func void dia_onar_onarbusiness_gold()
 func void dia_onar_onarbusiness_need()
 {
 	AI_Output(other,self, " DIA_Onar_OnarBusiness_Need_01_01 " );	// Luther really needs this deal.
-	AI_Output(self,other, " DIA_Onar_OnarBusiness_Need_01_02 " );	// These are his personal problems, and I have little interest in this.
+	AI_Output(self,other, " DIA_Onar_OnarBusiness_Need_01_02 " );	// Well that's his problem isn't it?
 	AI_Output(other,self, " DIA_Onar_OnarBusiness_Need_01_03 " );	// But all your barns are bursting with excess food!
-	AI_Output(other,self, " DIA_Onar_OnarBusiness_Need_01_04 " );	// Why should you sell him some food?
+	AI_Output(other,self, " DIA_Onar_OnarBusiness_Need_01_04 " );	// Why won't you sell him some food?
 	AI_Output(self,other, " DIA_Onar_OnarBusiness_Need_01_05 " );	// I told you I didn't intend to sell anything to him or the city. What's incomprehensible here?!
-	AI_Output(self,other, " DIA_Onar_OnarBusiness_Need_01_06 " );	// Maybe then all of you there will quickly rest from hunger!
-	AI_Output(self,other, " DIA_Onar_OnarBusiness_Need_01_07 " );	// This is especially true for your paladins, don't worry!
+	AI_Output(self,other, " DIA_Onar_OnarBusiness_Need_01_06 " );	// Maybe then all of you there will quickly die from hunger!
+	AI_Output(self,other, " DIA_Onar_OnarBusiness_Need_01_07 " );	// That's especially true for your paladins, don't worry!
 	AI_Output(self,other, " DIA_Onar_OnarBusiness_Need_01_08 " );	// So get the hell out of my yard and don't you dare ask me questions like that again.
-	AI_Output(self,other, " DIA_Onar_OnarBusiness_Need_01_09 " );	// Hurry up before my guys count your ribs!
+	AI_Output(self,other, " DIA_Onar_OnarBusiness_Need_01_09 " );	// Hurry up before my guys count your teeth!
 	ONARNOTAGREED = TRUE;
 	B_LogEntry( TOPIC_ONARBUSINESS , " I couldn't negotiate with Onar about food supplies for the guild. " );
 	AI_StopProcessInfos(self);
@@ -819,8 +819,8 @@ func void dia_onar_onarbusiness_case()
 {
 	AI_Output(other,self, " DIA_Onar_OnarBusiness_Case_01_01 " );	// Your conditions?
 	AI_Output(self,other, " DIA_Onar_OnarBusiness_Case_01_02 " );	// What?! What conditions? Did I negotiate something with you?
-	AI_Output(other,self, " DIA_Onar_OnarBusiness_Case_01_03 " );	// I was just asking on what terms you would be willing to sell this food to Luthero.
-	AI_Output(self,other, " DIA_Onar_OnarBusiness_Case_01_04 " );	// Yes, boy, don't be arrogant.
+	AI_Output(other,self, " DIA_Onar_OnarBusiness_Case_01_03 " );	// I was just asking on what terms you would be willing to sell food to Luthero.
+	AI_Output(self,other, " DIA_Onar_OnarBusiness_Case_01_04 " );	// Don't be arrogant.
 	AI_Output(self,other, " DIA_Onar_OnarBusiness_Case_01_05 " );	// So now listen to me - there will be no conditions!
 	AI_Output(self,other, " DIA_Onar_OnarBusiness_Case_01_06 " );	// I won't sell Luthero anything he wants!
 	AI_Output(self,other, " DIA_Onar_OnarBusiness_Case_01_07 " );	// So you can pass it on to him.
@@ -835,7 +835,7 @@ func void dia_onar_onarbusiness_forget()
 {
 	AI_Output(other,self, " DIA_Onar_OnarBusiness_Forget_01_01 " );	// Okay, forget about it.
 	AI_Output(self,other, " DIA_Onar_OnarBusiness_Forget_01_02 " );	// Wait! We haven't finished this conversation yet.
-	AI_Output(self,other, " DIA_Onar_OnarBusiness_Forget_01_03 " );	// Answer me: why did Luthero need so much food?
+	AI_Output(self,other, " DIA_Onar_OnarBusiness_Forget_01_03 " );	// Answer me: why does Luthero need so much food?
 	Info_ClearChoices(dia_onar_onarbusiness);
 	Info_AddChoice(dia_onar_onarbusiness, " I don't know that. " ,dia_onar_onarbusiness_dontknow);
 	Info_AddChoice(dia_onar_onarbusiness, " He just wants to make more money from the needs of the city. " ,dia_onar_onarbusiness_deal);
@@ -845,11 +845,11 @@ func void dia_onar_onarbusiness_forget()
 
 func void dia_onar_onarbusiness_paladin()
 {
-	AI_Output(other,self, " DIA_Onar_OnarBusiness_Paladin_01_01 " );	// This is paladin food.
-	AI_Output(self,other, " DIA_Onar_OnarBusiness_Paladin_01_02 " );	// (angrily) WHAT?! Yes, he's crazy!
+	AI_Output(other,self, " DIA_Onar_OnarBusiness_Paladin_01_01 " );	// It's for the paladins.
+	AI_Output(self,other, " DIA_Onar_OnarBusiness_Paladin_01_02 " );	// WHAT?! He's crazy!
 	AI_Output(self,other, " DIA_Onar_OnarBusiness_Paladin_01_03 " );	// And he thinks that after that I will sell him something?!
 	AI_Output(other,self, " DIA_Onar_OnarBusiness_Paladin_01_04 " );	// What's wrong with that?
-	AI_Output(self,other, " DIA_Onar_OnarBusiness_Paladin_01_05 " );	// You know, I'm not out of my mind yet to start selling food to my enemies.
+	AI_Output(self,other, " DIA_Onar_OnarBusiness_Paladin_01_05 " );	// You know, I'm not so out of my mind as to start selling food to my enemies.
 	AI_Output(self,other, " DIA_Onar_OnarBusiness_Paladin_01_06 " );	// Tell him so. Now get the hell out of my yard!
 	AI_Output(self,other, " DIA_Onar_OnarBusiness_Paladin_01_07 " );	// Get out, I said!
 	ONARNOTAGREED = TRUE;
@@ -861,11 +861,11 @@ func void dia_onar_onarbusiness_empty()
 {
 	AI_Output(other,self, " DIA_Onar_OnarBusiness_Empty_01_01 " );	// Because its warehouses are empty.
 	AI_Output(self,other, " DIA_Onar_OnarBusiness_Empty_01_02 " );	// Yes?! Hmmm. Somehow I hardly believe it.
-	AI_Output(self,other, " DIA_Onar_OnarBusiness_Empty_01_03 " );	// Especially considering that many other farms sell almost all food to him.
-	AI_Output(self,other, " DIA_Onar_OnarBusiness_Empty_01_04 " );	// You know, I think you're just fooling me and trying to cheat.
+	AI_Output(self,other, " DIA_Onar_OnarBusiness_Empty_01_03 " );	// Especially considering that many other farms sell almost all their food to him.
+	AI_Output(self,other, " DIA_Onar_OnarBusiness_Empty_01_04 " );	// You know, I think you're trying to scam me.
 	AI_Output(self,other, " DIA_Onar_OnarBusiness_Empty_01_05 " );	// And more than anything, I don't like liars.
 	AI_Output(self,other, " DIA_Onar_OnarBusiness_Empty_01_06 " );	// So get the hell out of my yard, you pathetic liar.
-	AI_Output(self,other, " DIA_Onar_OnarBusiness_Empty_01_07 " );	// Otherwise, my guys will count your ribs!
+	AI_Output(self,other, " DIA_Onar_OnarBusiness_Empty_01_07 " );	// Otherwise, my guys will count your teeth!
 	AI_Output(self,other, " DIA_Onar_OnarBusiness_Empty_01_08 " );	// Get out, I said!
 	ONARNOTAGREED = TRUE;
 	B_LogEntry( TOPIC_ONARBUSINESS , " I couldn't negotiate with Onar about food supplies for the guild. " );
@@ -874,13 +874,13 @@ func void dia_onar_onarbusiness_empty()
 
 func void dia_onar_onarbusiness_dontknow()
 {
-	AI_Output(other,self, " DIA_Onar_OnarBusiness_DontKnow_01_01 " );	// I don't know this.
+	AI_Output(other,self, " DIA_Onar_OnarBusiness_DontKnow_01_01 " );	// I don't know why.
 	AI_Output(self,other, " DIA_Onar_OnarBusiness_DontKnow_01_02 " );	// Yes?! Hmmm. Very strange!
 	AI_Output(self,other, " DIA_Onar_OnarBusiness_DontKnow_01_03 " );	// Send a man to me and don't tell him why.
 	AI_Output(self,other, " DIA_Onar_OnarBusiness_DontKnow_01_04 " );	// You know, I think you're just taking me for an idiot!
 	AI_Output(self,other, " DIA_Onar_OnarBusiness_DontKnow_01_05 " );	// And I really don't like it!
 	AI_Output(self,other, " DIA_Onar_OnarBusiness_DontKnow_01_06 " );	// So you better get out of my sight before I tell my guys to kick you out of here.
-	AI_Output(self,other, " DIA_Onar_OnarBusiness_DontKnow_01_07 " );	// I said everything!
+	AI_Output(self,other, " DIA_Onar_OnarBusiness_DontKnow_01_07 " );	// I have spoken!
 	ONARNOTAGREED = TRUE;
 	B_LogEntry( TOPIC_ONARBUSINESS , " I couldn't negotiate with Onar about food supplies for the guild. " );
 	AI_StopProcessInfos(self);
@@ -889,7 +889,7 @@ func void dia_onar_onarbusiness_dontknow()
 func void dia_onar_onarbusiness_deal()
 {
 	AI_Output(other,self, " DIA_Onar_OnarBusiness_Deal_01_01 " );	// He just wants to make more money on the needs of the city.
-	AI_Output(self,other, " DIA_Onar_OnarBusiness_Deal_01_02 " );	// Hmmm. And I'll take a look, this Luthero is still that businessman.
+	AI_Output(self,other, " DIA_Onar_OnarBusiness_Deal_01_02 " );	// Hmmm. I'll think about it. Luthero is still a businessman after all.
 	AI_Output(other,self, " DIA_Onar_OnarBusiness_Deal_01_03 " );	// Does that surprise you?
 	AI_Output(self,other, " DIA_Onar_OnarBusiness_Deal_01_04 " );	// Not at all! I would have done exactly the same.
 	AI_Output(self,other, " DIA_Onar_OnarBusiness_Deal_01_05 " );	// Okay, and the last question: tell me why he did not come here himself, but sent you to me?
@@ -916,17 +916,17 @@ func void dia_onar_onarbusiness_dntknw()
 func void dia_onar_onarbusiness_secret()
 {
 	AI_Output(other,self, " DIA_Onar_OnarBusiness_Secret_01_01 " );	// He's way too high profile for this sort of thing.
-	AI_Output(self,other, " DIA_Onar_OnarBusiness_Secret_01_02 " );	// That is? What do you mean?
+	AI_Output(self,other, " DIA_Onar_OnarBusiness_Secret_01_02 " );	// What do you mean?
 	AI_Output(other,self, " DIA_Onar_OnarBusiness_Secret_01_03 " );	// If the city militia or paladins find out he's doing business with you, they'll put him in jail right away.
-	AI_Output(other,self, " DIA_Onar_OnarBusiness_Secret_01_04 " );	// Therefore, in order not to give rise to any gossip once again, he sent me.
-	AI_Output(other,self, " DIA_Onar_OnarBusiness_Secret_01_05 " );	// Is there something you don't like?
+	AI_Output(other,self, " DIA_Onar_OnarBusiness_Secret_01_04 " );	// Therefore, in order not to give rise to any gossip once, he sent me.
+	AI_Output(other,self, " DIA_Onar_OnarBusiness_Secret_01_05 " );	// Does that bother you?
 	AI_Output(self,other, " DIA_Onar_OnarBusiness_Secret_01_06 " );	// Hmmm. Yes, there are some things I don't like.
-	AI_Output(other,self, " DIA_Onar_OnarBusiness_Secret_01_07 " );	// And what exactly?
+	AI_Output(other,self, " DIA_Onar_OnarBusiness_Secret_01_07 " );	// What exactly?
 	AI_Output(self,other, " DIA_Onar_OnarBusiness_Secret_01_08 " );	// Well, for starters, I'm usually used to negotiating with the owner himself, and not with his watchdog!
-	AI_Output(self,other, " DIA_Onar_OnarBusiness_Secret_01_09 " );	// Further, it turns out that he acts at his own peril and risk, and this is all too unreliable!
-	AI_Output(self,other, " DIA_Onar_OnarBusiness_Secret_01_10 " );	// I don't tend to give paladins an excuse to visit here again.
+	AI_Output(self,other, " DIA_Onar_OnarBusiness_Secret_01_09 " );	// Further, if this transaction is so risky, I'm taking a risk too.
+	AI_Output(self,other, " DIA_Onar_OnarBusiness_Secret_01_10 " );	// I don't tend to give the paladins an excuse to visit here.
 	AI_Output(self,other, " DIA_Onar_OnarBusiness_Secret_01_11 " );	// So tell Luthero I refuse his offer.
-	AI_Output(self,other, " DIA_Onar_OnarBusiness_Secret_01_12 " );	// And you and I, as you understand, have nothing more to discuss.
+	AI_Output(self,other, " DIA_Onar_OnarBusiness_Secret_01_12 " );	// And you and I have nothing more to discuss.
 	AI_Output(self,other, " DIA_Onar_OnarBusiness_Secret_01_13 " );	// Get lost!
 	ONARNOTAGREED = TRUE;
 	B_LogEntry( TOPIC_ONARBUSINESS , " I couldn't negotiate with Onar about food supplies for the guild. " );
@@ -936,18 +936,18 @@ func void dia_onar_onarbusiness_secret()
 func void dia_onar_onarbusiness_noneyou()
 {
 	B_GivePlayerXP(250);
-	AI_Output(other,self, " DIA_Onar_OnarBusiness_NoneYou_01_01 " );	// none of your business.
-	AI_Output(other,self, " DIA_Onar_OnarBusiness_NoneYou_01_02 " );	// And stop asking me all sorts of leading questions - I'm already tired of them.
-	AI_Output(other,self, " DIA_Onar_OnarBusiness_NoneYou_01_03 " );	// Just say: do you agree to this deal or not?
+	AI_Output(other,self, " DIA_Onar_OnarBusiness_NoneYou_01_01 " );	// None of your business.
+	AI_Output(other,self, " DIA_Onar_OnarBusiness_NoneYou_01_02 " );	// And stop asking me all sorts of leading questions - I'm tired of them.
+	AI_Output(other,self, " DIA_Onar_OnarBusiness_NoneYou_01_03 " );	// Do you agree to the deal or not?
 	AI_Output(self,other, " DIA_Onar_OnarBusiness_NoneYou_01_04 " );	// Okay, okay, don't get excited.
-	AI_Output(self,other, " DIA_Onar_OnarBusiness_NoneYou_01_05 " );	// You understand yourself, until you talk to a person, you will not understand what kind of dough he is made of.
-	AI_Output(self,other, " DIA_Onar_OnarBusiness_NoneYou_01_06 " );	// And I see that you are a guy like nothing. If Luthero has such people, I think it is possible to do business with him.
-	AI_Output(other,self, " DIA_Onar_OnarBusiness_NoneYou_01_07 " );	// So what to tell Luthero?
-	AI_Output(self,other, " DIA_Onar_OnarBusiness_NoneYou_01_08 " );	// Okay. Tell him that I gave the go-ahead.
-	AI_Output(self,other, " DIA_Onar_OnarBusiness_NoneYou_01_09 " );	// I think this will be a profitable business for us with him.
-	AI_Output(self,other, " DIA_Onar_OnarBusiness_NoneYou_01_10 " );	// And the extra gold won't hurt me at all now.
+	AI_Output(self,other, " DIA_Onar_OnarBusiness_NoneYou_01_05 " );	// You only get to know a man when you see him negotiate, and you are a tough nut to crack.
+	AI_Output(self,other, " DIA_Onar_OnarBusiness_NoneYou_01_06 " );	// If Luthero has such people, I think it is prudent to do business with him.
+	AI_Output(other,self, " DIA_Onar_OnarBusiness_NoneYou_01_07 " );	// So what do I tell Luthero?
+	AI_Output(self,other, " DIA_Onar_OnarBusiness_NoneYou_01_08 " );	// Tell him that I gave the go-ahead.
+	AI_Output(self,other, " DIA_Onar_OnarBusiness_NoneYou_01_09 " );	// I think this will be profitable for both of us.
+	AI_Output(self,other, " DIA_Onar_OnarBusiness_NoneYou_01_10 " );	// And the extra gold won't hurt me at all.
 	AI_Output(self,other, " DIA_Onar_OnarBusiness_NoneYou_01_11 " );	// However, warn him right away that this food will cost him dearly.
-	AI_Output(self,other, " DIA_Onar_OnarBusiness_NoneYou_01_12 " );	// Three times more expensive than I usually sell.
+	AI_Output(self,other, " DIA_Onar_OnarBusiness_NoneYou_01_12 " );	// Three times more expensive than what I usually sell for.
 	ONARAGREED = TRUE;
 	
 	if(RhetorikSkillValue[1] < 100)
@@ -984,13 +984,13 @@ func void day_onar_orcs_info()
 {
 	AI_Output(other,self, " DIA_Onar_Orcs_01_00 " );	// And how do you like this whole situation?
 	AI_Output(self,other, " DIA_Onar_Orcs_01_01 " );	// What are you talking about?
-	AI_Output(other,self, " DIA_Onar_Orcs_01_02 " );	// I'm talking about orcs! Are you not afraid that they may soon visit your farm?
-	AI_Output(self,other, " DIA_Onar_Orcs_01_03 " );	// (nervously) Maybe so. But I hope Lee doesn't let that happen.
-	AI_Output(self,other, " DIA_Onar_Orcs_01_04 " );	// Or maybe you think I'm paying his people for nothing for my own safety?
-	AI_Output(other,self, " DIA_Onar_Orcs_01_05 " );	// But there are far more orcs than mercenaries. I don't think they can stop a whole army of these creatures.
+	AI_Output(other,self, " DIA_Onar_Orcs_01_02 " );	// I'm talking about the orcs! Are you not afraid that they may soon visit your farm?
+	AI_Output(self,other, " DIA_Onar_Orcs_01_03 " );	// Maybe so. But I hope Lee doesn't let that happen.
+	AI_Output(self,other, " DIA_Onar_Orcs_01_04 " );	// Or maybe you think I'm paying his people for nothing?
+	AI_Output(other,self, " DIA_Onar_Orcs_01_05 " );	// But there are far more orcs than mercenaries. I don't think they can stop a whole army of the creatures.
 	AI_Output(self,other, " DIA_Onar_Orcs_01_06 " );	// In that case, we're all finished. However, I'm not going to sit and whine about it!
 	AI_Output(self,other, " DIA_Onar_Orcs_01_07 " );	// If I am destined to die, then at least it will happen here, on the land of my ancestors.
-	AI_Output(self,other, " DIA_Onar_Orcs_01_08 " );	// And trust me, I won't give myself to the orcs with my bare hands!
+	AI_Output(self,other, " DIA_Onar_Orcs_01_08 " );	// And trust me, I won't give up the ghost without greenskin blood on my blade!
 };
 
 
@@ -1016,16 +1016,16 @@ func int dia_onar_paladinhere_condition()
 func void dia_onar_paladinhere_info()
 {
 	AI_Output(other,self, " DIA_Onar_PaladinHere_01_00 " );	// Lord Hagen's paladins have arrived at the farm.
-	AI_Output(self,other, " DIA_Onar_PaladinHere_01_01 " );	// Yes, I already know this. And, to tell the truth, for the first time in my life I am glad of this fact!
-	AI_Output(self,other, " DIA_Onar_PaladinHere_01_02 " );	// Perhaps with their help we can really fight back against the orcs.
+	AI_Output(self,other, " DIA_Onar_PaladinHere_01_01 " );	// Yes, I know. And, to tell the truth, for the first time in my life I am glad to see those self righteous bastards!
+	AI_Output(self,other, " DIA_Onar_PaladinHere_01_02 " );	// Perhaps with their help we can actually fight back against the orcs.
 	AI_Output(self,other, " DIA_Onar_PaladinHere_01_03 " );	// However, it would be better if it happened much faster!
 	AI_Output(other,self, " DIA_Onar_PaladinHere_01_04 " );	// Why such a hurry?
-	AI_Output(self,other, " DIA_Onar_PaladinHere_01_05 " );	// To the fact that otherwise my food supply may soon turn into dust.
+	AI_Output(self,other, " DIA_Onar_PaladinHere_01_05 " );	// Due to the fact that otherwise my food supply may soon run out.
 	AI_Output(self,other, " DIA_Onar_PaladinHere_01_06 " );	// They eat, I tell you, no less than my mercenaries!
 	AI_Output(other,self, " DIA_Onar_PaladinHere_01_07 " );	// I think your barns can easily feed more people.
 	AI_Output(other,self, " DIA_Onar_PaladinHere_01_08 " );	// So don't complain. Rather, say thank you that someone else is ready to give their life for you.
-	AI_Output(other,self, " DIA_Onar_PaladinHere_01_09 " );	// Are you clear?
-	AI_Output(self,other,"DIA_Onar_PaladinHere_01_10");	//Хммм...(прикусив язык)
+	AI_Output(other,self, " DIA_Onar_PaladinHere_01_09 " );	// Are we clear?
+	AI_Output(self,other,"DIA_Onar_PaladinHere_01_10");	//Hmmm...(bites tongue)
 	AI_Output(other,self, " DIA_Onar_PaladinHere_01_11 " );	// Good! I see that you understand me.
 };
 
@@ -1049,21 +1049,21 @@ func int dia_onar_tower_app_good_condition()
 
 func void dia_onar_tower_app_good_info()
 {
-	AI_Output(other,self, " DIA_Onar_Tower_App_Good_15_00 " );	// South of your farm is an old tower. Have dark personalities from there bothered you lately?
-	AI_Output(self,other, " DIA_Onar_Tower_App_Good_14_01 " );	// What do you care? Well, the peasants complained about them, so what?
+	AI_Output(other,self, " DIA_Onar_Tower_App_Good_15_00 " );	// South of your farm is an old tower. Have weird, dark types from there bothered you lately?
+	AI_Output(self,other, " DIA_Onar_Tower_App_Good_14_01 " );	// Well, the peasants complained about them, so what?
 	AI_Output(other,self, " DIA_Onar_Tower_App_Good_15_02 " );	// Thanks to me, they won't bother you anymore.
-	AI_Output(self,other, " DIA_Onar_Tower_App_Good_14_03 " );	// Ahh, it's you. I have already been informed that someone managed to cut out all these gangsters.
-	AI_Output(self,other, " DIA_Onar_Tower_App_Good_14_04 " );	// Here, hold on to your work. Now get out, I've got a lot of work to do.
+	AI_Output(self,other, " DIA_Onar_Tower_App_Good_14_03 " );	// Ahh, so it was you. I have already been informed that someone managed to clear them out.
+	AI_Output(self,other, " DIA_Onar_Tower_App_Good_14_04 " );	// Here, for your trouble. Now get out, I've got a lot of work to do.
 	B_GiveInvItems(self,other,ItMi_Gold,25);
 	AI_Output(other,self, " DIA_Onar_Tower_App_Good_15_05 " );	// Wait, that's not all.
 	AI_Output(self,other, " DIA_Onar_Tower_App_Good_14_06 " );	// What else do you want from me?
-	AI_Output(other,self, " DIA_Onar_Tower_App_Good_15_07 " );	// I would like to live in this tower.
-	AI_Output(self,other, " DIA_Onar_Tower_App_Good_14_08 " );	// Ahh, so it's you. What are you, all my people on the ears raised? First, Lee reported about you, then Maria soared my brains.
+	AI_Output(other,self, " DIA_Onar_Tower_App_Good_15_07 " );	// I would like to live in the tower.
+	AI_Output(self,other, " DIA_Onar_Tower_App_Good_14_08 " );	// Who are you, to have all my people in such an uproar? First Lee, then Maria gushed about you.
 	AI_Output(self,other, " DIA_Onar_Tower_App_Good_14_09 " );	// I confess that what they told me interested me.
 	AI_Output(self,other, " DIA_Onar_Tower_App_Good_14_10 " );	// But not enough to just give you the tower.
-	AI_Output(self,other, " DIA_Onar_Tower_App_Good_14_11 " );	// You can live in it if you're willing to pay the rent. One hundred gold per day. I agree?
+	AI_Output(self,other, " DIA_Onar_Tower_App_Good_14_11 " );	// You can live in it if you're willing to pay the rent. One hundred gold per day. Agreed?
 	Info_ClearChoices(dia_onar_tower_app_good);
-	Info_AddChoice(dia_onar_tower_app_good, " One hundred coins is too much price. " ,dia_onar_tower_app_good_maybe);
+	Info_AddChoice(dia_onar_tower_app_good, " One hundred a day is absurd. " ,dia_onar_tower_app_good_maybe);
 	Info_AddChoice(dia_onar_tower_app_good, " Good! Deal. " ,dia_onar_tower_app_good_yes);
 	Info_AddChoice(dia_onar_tower_app_good, " Too expensive. " ,dia_onar_tower_app_good_no);
 };
@@ -1073,25 +1073,25 @@ func void dia_onar_tower_app_good_maybe()
 	if((RhetorikSkillValue[1] >= 50) || ((MARIA_APPROVES_TOWER == TRUE) && (LEE_APPROVES_TOWER == TRUE)))
 	{
 		B_GivePlayerXP(200);
-		AI_Output(other,self, " DIA_Onar_Tower_App_Good_maybe_15_00 " );	// One hundred coins is too high a price.
-		AI_Output(other,self, " DIA_Onar_Tower_App_Good_maybe_15_01 " );	// Your tower stands for years without bringing you a coin. A couple more years - and she will collapse from old age.
-		AI_Output(other,self, " DIA_Onar_Tower_App_Good_maybe_15_02 " );	// Only scum like bandits are ready to settle in it, from which your farm is nothing but problems.
+		AI_Output(other,self, " DIA_Onar_Tower_App_Good_maybe_15_00 " );	// One hundred a day is absurd!
+		AI_Output(other,self, " DIA_Onar_Tower_App_Good_maybe_15_01 " );	// Your tower stood for years without bringing you a coin. A couple more years - and it will collapse from neglect.
+		AI_Output(other,self, " DIA_Onar_Tower_App_Good_maybe_15_02 " );	// Only scum like bandits are ready to settle in it, which means endless problems for this farm.
 		AI_Output(other,self, " DIA_Onar_Tower_App_Good_maybe_15_03 " );	// I propose to rid you of them. Putting the tower in order will require huge expenses, which I propose to undertake.
-		AI_Output(other,self, " DIA_Onar_Tower_App_Good_maybe_15_04 " );	// You don't need to lift a finger to improve the situation in that area, you still want to charge me for this.
+		AI_Output(other,self, " DIA_Onar_Tower_App_Good_maybe_15_04 " );	// You don't need to lift a finger to improve the situation in that area, you still want to charge me?.
 		AI_Output(other,self, " DIA_Onar_Tower_App_Good_maybe_15_05 " );	// So no, I won't pay you a dime.
 		AI_Output(other,self, " DIA_Onar_Tower_App_Good_maybe_15_06 " );	// If you want more trouble with bandits, if you want to keep losing money, keep the tower! You can choke on it.
-		AI_Output(self,other, " DIA_Onar_Tower_App_Good_maybe_14_07 " );	// What?! What?! How dare you?! Yes I you...
-		AI_Output(self,other, " DIA_Onar_Tower_App_Good_maybe_14_08 " );	// Umm... hmmm... Ahh, okay! Get the damn tower! Still some problems because of her.
-		AI_Output(self,other, " DIA_Onar_Tower_App_Good_maybe_14_09 " );	// Well, since Lee and my wife vouch for you, then I will trust you too. But that I never hear of any bandits in that area again!
+		AI_Output(self,other, " DIA_Onar_Tower_App_Good_maybe_14_07 " );	// What?! What?! How dare you?! The impertinance...
+		AI_Output(self,other, " DIA_Onar_Tower_App_Good_maybe_14_08 " );	// Umm... hmmm... Ahh, okay! Take the damn tower! It's been nothing but trouble for me anyway!
+		AI_Output(self,other, " DIA_Onar_Tower_App_Good_maybe_14_09 " );	// Well, since Lee and my wife vouch for you, then I will trust you too. But make sure that I never hear of any bandits in that area again!
 		AI_Output(other,self, " DIA_Onar_Tower_App_Good_maybe_15_10 " );	// I promise you you won't regret your decision.
 		AI_Output(self,other, " DIA_Onar_We_Made_Deal_14_00 " );	// Good. So, we settled the issue with money.
 		AI_Output(self,other, " DIA_Onar_We_Made_Deal_14_01 " );	// Do you need anything else from me? If necessary, speak now and do not bother me again.
-		AI_Output(other,self, " DIA_Onar_We_Made_Deal_15_02 " );	// Must. To live properly in that tower, I'll have to find security for her.
-		AI_Output(other,self, " DIA_Onar_We_Made_Deal_15_03 " );	// I'll probably hire a few people to do this. I may also need someone else.
-		AI_Output(other,self, " DIA_Onar_We_Made_Deal_15_04 " );	// In a word, I don't want your mercenaries to somehow interfere with the people who come to me.
+		AI_Output(other,self, " DIA_Onar_We_Made_Deal_15_02 " );	// Yes To live properly in that tower, I'll have to find security for it.
+		AI_Output(other,self, " DIA_Onar_We_Made_Deal_15_03 " );	// I'll probably hire a few people to do this. People of my choosing.
+		AI_Output(other,self, " DIA_Onar_We_Made_Deal_15_04 " );	// In other words, I don't want your mercenaries to interfere with the people who come to me.
 		AI_Output(self,other, " DIA_Onar_We_Made_Deal_14_05 " );	// Good. You can invite anyone there, as long as they do not pull the tower apart brick by brick or in any way interfere with the work on my farm.
 		AI_Output(self,other, " DIA_Onar_We_Made_Deal_14_06 " );	// Any more requests?
-		AI_Output(other,self,"DIA_Onar_We_Made_Deal_15_07");	//Пока нет.
+		AI_Output(other,self,"DIA_Onar_We_Made_Deal_15_07");	//None.
 		AI_Output(self,other, " DIA_Onar_We_Made_Deal_14_08 " );	// Goodbye then. I hope you won't give me any problems and I won't regret my decision.
 		B_LogEntry( TOPIC_MYNEWMANSION , " Onar's problem is fixed, it remains to tell Hagen. " );
 		DECISION_TOWER_MADE = TRUE;
@@ -1101,7 +1101,7 @@ func void dia_onar_tower_app_good_maybe()
 	else
 	{
 		AI_Output(other,self, " DIA_Onar_Tower_App_Good_maybe_15_12 " );	// One hundred coins is too high a price. Maybe we can negotiate a discount?
-		AI_Output(self,other, " DIA_Onar_Tower_App_Good_maybe_14_13 " );	// WHAT? Are you still trading? Get out of here and I don't want to see your spirit here again.
+		AI_Output(self,other, " DIA_Onar_Tower_App_Good_maybe_14_13 " );	// No negotiation. You must not really be serious about the tower!
 	};
 };
 
@@ -1110,12 +1110,12 @@ func void dia_onar_tower_app_good_yes()
 	AI_Output(other,self, " DIA_Onar_Tower_App_Good_yes_15_00 " );	// Good! Deal.
 	AI_Output(self,other, " DIA_Onar_We_Made_Deal_14_00 " );	// That's nice. So, we settled the issue with money.
 	AI_Output(self,other, " DIA_Onar_We_Made_Deal_14_01 " );	// Do you need anything else from me? If necessary, speak now and do not bother me again.
-	AI_Output(other,self, " DIA_Onar_We_Made_Deal_15_02 " );	// Must. To live properly in that tower, I'll have to find security for her.
-	AI_Output(other,self, " DIA_Onar_We_Made_Deal_15_03 " );	// I'll probably hire a few people to do this. I may also need someone else.
-	AI_Output(other,self, " DIA_Onar_We_Made_Deal_15_04 " );	// In a word, I don't want your mercenaries to somehow interfere with the people who come to me.
+	AI_Output(other,self, " DIA_Onar_We_Made_Deal_15_02 " );	// Yes. To live properly in that tower, I'll have to find security for it.
+	AI_Output(other,self, " DIA_Onar_We_Made_Deal_15_03 " );	// I'll probably hire a few people to do this. People of my choosing.
+	AI_Output(other,self, " DIA_Onar_We_Made_Deal_15_04 " );	// In other words, I don't want your mercenaries to interfere with the people who come to me.
 	AI_Output(self,other, " DIA_Onar_We_Made_Deal_14_05 " );	// Good. You can invite anyone there, as long as they do not pull the tower apart brick by brick or in any way interfere with the work on my farm.
 	AI_Output(self,other, " DIA_Onar_We_Made_Deal_14_06 " );	// Any more requests?
-	AI_Output(other,self,"DIA_Onar_We_Made_Deal_15_07");	//Пока нет.
+	AI_Output(other,self,"DIA_Onar_We_Made_Deal_15_07");	//None.
 	AI_Output(self,other, " DIA_Onar_We_Made_Deal_14_08 " );	// Goodbye then. I hope you won't give me any problems and I won't regret my decision.
 	B_LogEntry( TOPIC_MYNEWMANSION , " Looks like I managed to convince Onar, though not for free. I should report this to Hagen. " );
 	DECISION_TOWER_MADE = TRUE;
@@ -1126,8 +1126,8 @@ func void dia_onar_tower_app_good_yes()
 func void dia_onar_tower_app_good_no()
 {
 	AI_Output(other,self, " DIA_Onar_Tower_App_Good_no_15_00 " );	// No, your price is too high. I refuse.
-	AI_Output(self,other, " DIA_Onar_Tower_App_Good_no_14_01 " );	// Since you can't afford such penny expenses, there's nothing to take up my time either. Get out.
-	B_LogEntry( TOPIC_MYNEWMANSION , " I failed to persuade Onar. Without his consent, attempts to settle in the tower turn into big problems. " );
+	AI_Output(self,other, " DIA_Onar_Tower_App_Good_no_14_01 " );	// Since you can't afford such puny expenses, there's nothing to take up my time either. Get out.
+	B_LogEntry( TOPIC_MYNEWMANSION , " I failed to persuade Onar. Without his consent, attempts to settle in the tower will be difficult. " );
 	MIS_MYNEWMANSION = LOG_FAILED;
 	MIS_DTOLDNEWMINE = LOG_FAILED;
 	AI_StopProcessInfos(self);
