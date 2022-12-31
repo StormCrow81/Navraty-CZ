@@ -74,9 +74,9 @@ func int DIA_Addon_Lennar_Hi_Condition()
 
 func void DIA_Addon_Lennar_Hi_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Lennar_Hi_15_00");	//Привет.
+	AI_Output(other,self,"DIA_Addon_Lennar_Hi_15_00");	//Hi.
 	AI_Output(self,other, " DIA_Addon_Lennar_Hi_01_01 " );	// Hello. My name is Lennar. Welcome to the miner's camp.
-	AI_Output(other,self, " DIA_Addon_Lennar_Hi_15_02 " );	// Rudokopov? I thought it was a bandit camp...
+	AI_Output(other,self, " DIA_Addon_Lennar_Hi_15_02 " );	// Miners? I thought it was a bandit camp...
 	AI_Output(self,other, " DIA_Addon_Lennar_Hi_01_03 " );	// True, but the bandits are only here to mine the ore. (shrugs) So...
 };
 
@@ -104,14 +104,14 @@ func int DIA_Addon_Lennar_Attentat_Condition()
 func void DIA_Addon_Lennar_Attentat_Info()
 {
 	B_Say(other,self,"$ATTENTAT_ADDON_DESCRIPTION2");
-	AI_Output(self,other,"DIA_Addon_Lennar_ATTENTAT_01_00");	//Слушаю?
+	AI_Output(self,other,"DIA_Addon_Lennar_ATTENTAT_01_00");	//I'm listening?
 	AI_Output(other,self, " DIA_Addon_Lennar_ATTENTAT_15_01 " );	// Do you have any idea who's behind this?
-	AI_Output(self,other,"DIA_Addon_Lennar_ATTENTAT_01_02");	//Конечно!
-	AI_Output(self,other, " DIA_Addon_Lennar_ATTENTAT_01_03 " );	// (excitedly) I'm pretty sure it's Emilio's fault!
-	AI_Output(self,other, " DIA_Addon_Lennar_ATTENTAT_01_04 " );	// (excitedly) He always rushed into the mine, as if stung, and dug to the point of exhaustion.
+	AI_Output(self,other,"DIA_Addon_Lennar_ATTENTAT_01_02");	//Of course!
+	AI_Output(self,other, " DIA_Addon_Lennar_ATTENTAT_01_03 " );	// I'm pretty sure it's Emilio's fault!
+	AI_Output(self,other, " DIA_Addon_Lennar_ATTENTAT_01_04 " );	// He always rushed into the mine, as if possessed, and dug to the point of exhaustion.
 	AI_Output(self,other, " DIA_Addon_Lennar_ATTENTAT_01_05 " );	// But since the attack, all he's been doing is sitting on the bench.
 	AI_Output(self,other, " DIA_Addon_Lennar_ATTENTAT_01_06 " );	// It's obvious! To get into the mine, he must get a red tablet from Esteban.
-	AI_Output(self,other, " DIA_Addon_Lennar_ATTENTAT_01_07 " );	// (whispers) I guess he just can't look him in the eyes.
+	AI_Output(self,other, " DIA_Addon_Lennar_ATTENTAT_01_07 " );	// I guess he just can't look him in the eyes again.
 	B_LogEntry(Topic_Addon_Esteban, " Lennar suspects Emilio because he doesn't go to Esteban anymore. " );
 };
 
@@ -139,7 +139,7 @@ func int DIA_Addon_Lennar_Inspektor_Condition()
 func void DIA_Addon_Lennar_Inspektor_Info()
 {
 	AI_Output(other,self, " DIA_Addon_Lennar_Inspektor_15_00 " );	// But what would Emilio gain from Esteban's death?
-	AI_Output(self,other, " DIA_Addon_Lennar_Inspektor_01_01 " );	// How should I know? Maybe he has a friend who would take Esteban's place.
+	AI_Output(self,other, " DIA_Addon_Lennar_Inspektor_01_01 " );	// How should I know? Maybe he has a friend who wants to take Esteban's place.
 	AI_Output(self,other, " DIA_Addon_Lennar_Inspektor_01_02 " );	// Yes, that sounds pretty logical...
 };
 
@@ -198,7 +198,7 @@ func int DIA_Addon_Lennar_Hacker_Condition()
 
 func void DIA_Addon_Lennar_Hacker_Info()
 {
-	AI_Output(other,self,"DIA_Addon_BDT_10004_Lennar_Hacker_15_00");	//Как дела?
+	AI_Output(other,self,"DIA_Addon_BDT_10004_Lennar_Hacker_15_00");	//How are things?
 	AI_Output(self,other, " DIA_Addon_BDT_10004_Lennar_Hacker_01_01 " );	// Everything is calm.
 };
 
