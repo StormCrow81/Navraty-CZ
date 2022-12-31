@@ -64,11 +64,11 @@ func void DIA_Bodo_Hello_Info()
 	};
 	if((other.guild == GIL_NDW) || (other.guild == GIL_KDW))
 	{
-		AI_Output(self,other, " DIA_Bodo_Hallo_12_08 " );	// All is well. Adanos with you!
+		AI_Output(self,other, " DIA_Bodo_Hallo_12_08 " );	// All is well. Adanos be with you!
 	};
 	if((other.guild == GIL_NDM) || (other.guild == GIL_KDM))
 	{
-		AI_Output(self,other, " DIA_Bodo_Hallo_12_09 " );	// (stuttering) All is well. All just great! Well, I'll go, okay?
+		AI_Output(self,other, " DIA_Bodo_Hallo_12_09 " );	// (stuttering) All is well. Just great! I'll go, okay?
 	};
 };
 
@@ -145,9 +145,9 @@ func void DIA_Bodo_Cipher_Info()
 	AI_Output(other,self, " DIA_Bodo_Cipher_15_00 " );	// Cypher told me that someone stole a bale of swamp grass from him.
 	AI_Output(self,other,"DIA_Bodo_Cipher_12_01");	//И?
 	AI_Output(other,self, " DIA_Bodo_Cipher_15_02 " );	// He thinks you did it.
-	AI_Output(self,other, " DIA_Bodo_Cipher_12_03 " );	// Oh, THIS is why this guy is staring at me like that all the time.
-	AI_Output(self,other, " DIA_Bodo_Cipher_12_04 " );	// I've been trying to be as friendly as possible with him lately, because it looks like he's got the reins under his tail.
-	AI_Output(self,other, " DIA_Bodo_Cipher_12_05 " );	// But I can't do anything. I try to smile at him, and in response, an looks as if he wants to kill me.
+	AI_Output(self,other, " DIA_Bodo_Cipher_12_03 " );	// Oh, THIS is why that guy is staring at me like that all the time.
+	AI_Output(self,other, " DIA_Bodo_Cipher_12_04 " );	// I've been trying to be as friendly as possible with him lately, because it looks like he's got murder on his mind.
+	AI_Output(self,other, " DIA_Bodo_Cipher_12_05 " );	// I try to smile at him, and in response, he looks as if he wants to kill me.
 };
 
 
@@ -172,7 +172,7 @@ func int DIA_Bodo_WeedOrElse_Condition()
 
 func void DIA_Bodo_WeedOrElse_Info()
 {
-	AI_Output(other,self, " DIA_Bodo_WeedOrElse_15_00 " );	// Give me this herb or.
+	AI_Output(other,self, " DIA_Bodo_WeedOrElse_15_00 " );	// Give me the herbs.
 	AI_Output(self,other, " DIA_Bodo_WeedOrElse_12_01 " );	// Look, all I have is one shoal of swamp grass. Take it and leave me alone.
 	B_GiveInvItems(self,other,ItMi_Joint,1);
 	if(other.guild == GIL_NONE)
