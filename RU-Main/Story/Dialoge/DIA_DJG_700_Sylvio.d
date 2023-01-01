@@ -43,16 +43,16 @@ func void DIA_SylvioDJG_HelloAgain_Info()
 {
 	if((other.guild == GIL_SLD) || (other.guild == GIL_DJG))
 	{
-		AI_Output(self,other, " DIA_SylvioDJG_HelloAgain_09_00 " );	// Oh, damn me! You also decided to earn extra money, huh? I knew it! You have the soul of a mercenary.
+		AI_Output(self,other, " DIA_SylvioDJG_HelloAgain_09_00 " );	// Well I'll be damned! You also decided to earn extra money, huh? I knew it! You have the soul of a mercenary.
 		AI_Output(self,other, " DIA_SylvioDJG_HelloAgain_09_01 " );	// Look, if you think you're going to rake in a lot of gold here, you're sorely mistaken. I was here first.
 	}
 	else if((other.guild == GIL_KDF) || (other.guild == GIL_KDW) || (other.guild == GIL_KDM))
 	{
-		AI_Output(self,other, " DIA_SylvioDJG_HelloAgain_09_02 " );	// Hey you! I'm sick of magicians! Go somewhere else! There is nothing here for you.
+		AI_Output(self,other, " DIA_SylvioDJG_HelloAgain_09_02 " );	// Hey you! I'm sick of mages! Go somewhere else! There is nothing here for you, stinking wizard!
 	}
 	else if((other.guild == GIL_SEK) || (other.guild == GIL_TPL) || (other.guild == GIL_GUR))
 	{
-		AI_Output(self,other, " DIA_SylvioDJG_HelloAgain_09_02A " );	// Hey you swamp! You never know what to expect from these guys. Take a walk somewhere else. There's nothing here.
+		AI_Output(self,other, " DIA_SylvioDJG_HelloAgain_09_02A " );	// Hey you, swamp scum! One never know what to expect from you guys. Take a walk somewhere else. There's nothing for you here.
 	}
 	else
 	{
@@ -109,7 +109,7 @@ func int DIA_Sylvio_DEINELEUTE_Condition()
 func void DIA_Sylvio_DEINELEUTE_Info()
 {
 	AI_Output(other,self, " DIA_Sylvio_DEINELEUTE_15_00 " );	// Are these your people?
-	AI_Output(self,other, " DIA_Sylvio_DEINELEUTE_09_01 " );	// No more. Not such a big loss. Those idiots weren't worth much anyway.
+	AI_Output(self,other, " DIA_Sylvio_DEINELEUTE_09_01 " );	// Not anymore. Not such a big loss. Those idiots weren't worth much anyway.
 };
 
 
@@ -135,7 +135,7 @@ func void DIA_Sylvio_WASISTPASSIERT_Info()
 {
 	AI_Output(other,self, " DIA_Sylvio_WASISTPASSIERT_15_00 " );	// What happened to them?
 	AI_Output(self,other, " DIA_Sylvio_WASISTPASSIERT_09_01 " );	// They couldn't get past those frost giants. They trampled them.
-	AI_Output(self,other, " DIA_Sylvio_WASISTPASSIERT_09_02 " );	// If you're so cool, maybe you could try?
+	AI_Output(self,other, " DIA_Sylvio_WASISTPASSIERT_09_02 " );	// If you're so powerful, maybe you could try?
 	Info_AddChoice(DIA_Sylvio_WASISTPASSIERT, " Okay. Why not? " ,DIA_Sylvio_WASISTPASSIERT_ok);
 	Info_AddChoice(DIA_Sylvio_WASISTPASSIERT, " How will it help you if I do this? " ,DIA_Sylvio_WASISTPASSIERT_washastdudavon);
 	Info_AddChoice(DIA_Sylvio_WASISTPASSIERT, " What will happen to me? " ,DIA_Sylvio_WASISTPASSIERT_warum);
@@ -183,14 +183,14 @@ func void DIA_Sylvio_WHAT HAPPENED_ice region()
 {
 	AI_Output(other,self, " DIA_Sylvio_WASISTPASSIERT_keinInteresse_15_00 " );	// What are you doing in this icy area?
 	AI_Output(self,other, " DIA_Sylvio_WASISTPASSIERT_keinInteresse_09_01 " );	// Will you ever stop asking questions, huh? Okay, I'll tell you.
-	AI_Output(self,other, " DIA_Sylvio_WASISTPASSIERT_keinInteresse_09_02 " );	// There, behind these cliffs, is an icy valley. You've never seen one like this before.
-	AI_Output(self,other, " DIA_Sylvio_WASISTPASSIERT_keinInteresse_09_03 " );	// The ice dragon lurks there with its horde.
-	AI_Output(self,other, " DIA_Sylvio_WASISTPASSIERT_keinInteresse_09_04 " );	// I need this. Because? Yes or no?
+	AI_Output(self,other, " DIA_Sylvio_WASISTPASSIERT_keinInteresse_09_02 " );	// There, behind these cliffs, is an icy valley. You've never seen one like it before.
+	AI_Output(self,other, " DIA_Sylvio_WASISTPASSIERT_keinInteresse_09_03 " );	// An ice dragon lurks there with its horde.
+	AI_Output(self,other, " DIA_Sylvio_WASISTPASSIERT_keinInteresse_09_04 " );	// I need this alright? Yes or no?
 };
 
 func void DIA_Sylvio_WASISTPASSIERT_ok()
 {
-	AI_Output(other,self, " DIA_Sylvio_WASISTPASSIERT_ok_15_00 " );	// Good. Why not?
+	AI_Output(other,self, " DIA_Sylvio_WASISTPASSIERT_ok_15_00 " );	// sure. Why not?
 	AI_Output(self,other, " DIA_Sylvio_WASISTPASSIERT_ok_09_01 " );	// Then hurry up. I can not wait long.
 	AI_StopProcessInfos(self);
 };
@@ -221,7 +221,7 @@ func void DIA_Sylvio_ICEGOLEMSKILLED_Info()
 	if(DJG_Sylvio_PromisedMoney == TRUE)
 	{
 		AI_Output(other,self, " DIA_Sylvio_ICEGOLEMSKILLED_15_02 " );	// Wait a minute. How about my money?
-		AI_Output(self,other, " DIA_Sylvio_ICEGOLEMSKILLED_09_03 " );	// Everything has its time.
+		AI_Output(self,other, " DIA_Sylvio_ICEGOLEMSKILLED_09_03 " );	// In due time.
 	};
 	AI_StopProcessInfos(self);
 	MIS_DJG_Sylvio_KillIceGolem = LOG_SUCCESS;
@@ -266,7 +266,7 @@ func void DIA_Sylvio_WASJETZT_Info()
 func void DIA_Sylvio_WASNOW_separate()
 {
 	AI_Output(other,self, " DIA_Sylvio_WASJETZT_trennen_15_00 " );	// Are you afraid?
-	AI_Output(self,other, " DIA_Sylvio_WASJETZT_trennen_09_01 " );	// Nonsense! Stop talking. Walk straight!
+	AI_Output(self,other, " DIA_Sylvio_WASJETZT_trennen_09_01 " );	// Stop talking, keep walking!
 };
 
 func void DIA_Sylvio_WASJETZT_ok()
@@ -346,7 +346,7 @@ func int DIA_Sylvio_DUHIER_Condition()
 func void DIA_Sylvio_DUHIER_Info()
 {
 	AI_Output(other,self, " DIA_Sylvio_DUHIER_15_00 " );	// I could use your help.
-	AI_Output(self,other, " DIA_Sylvio_DUHIER_09_01 " );	// Nonsense! You are doing such a great job.
+	AI_Output(self,other, " DIA_Sylvio_DUHIER_09_01 " );	// Nonsense! You are doing a great job.
 	AI_StopProcessInfos(self);
 };
 
@@ -372,9 +372,9 @@ func int DIA_SylvioDJG_WHATNEXT_Condition()
 func void DIA_SylvioDJG_WHATNEXT_Info()
 {
 	AI_Output(self,other, " DIA_SylvioDJG_WHATNEXT_09_00 " );	// The ice dragon is dead! And now you give me everything you have!
-	AI_Output(other,self,"DIA_SylvioDJG_WHATNEXT_15_01");	//Ни за что!
+	AI_Output(other,self,"DIA_SylvioDJG_WHATNEXT_15_01");	//Never!
 	AI_Output(self,other, " DIA_SylvioDJG_WHATNEXT_09_02 " );	// I'll get all the credit for killing the ice dragon.
-	AI_Output(self,other, " DIA_SylvioDJG_WHATNEXT_09_03 " );	// And your little part in this business is over!
+	AI_Output(self,other, " DIA_SylvioDJG_WHATNEXT_09_03 " );	// And your little part in this story is over!
 	TOPIC_END_SylvioKillIceGolem = TRUE;
 	B_GivePlayerXP(XP_Ambient);
 	Info_ClearChoices(DIA_SylvioDJG_WHATNEXT);
@@ -476,12 +476,12 @@ func void DIA_SylvioDJG_Camp_Hello_Info()
 {
 	AI_Output(self,other, " DIA_SylvioDJG_Camp_Hello_01_00 " );	// You again! You always get under my feet!
 	AI_Output(other,self, " DIA_SylvioDJG_Camp_Hello_01_01 " );	// And you didn't waste your time. Decided to appropriate the treasures of the ice dragon for yourself?!
-	AI_Output(self,other, " DIA_SylvioDJG_Camp_Hello_01_02 " );	// Now they are only mine. (threateningly) So stay away from them! Unless, of course, you value your life.
+	AI_Output(self,other, " DIA_SylvioDJG_Camp_Hello_01_02 " );	// It's all mine. Get close to it and die. Do you understand me?
 	AI_Output(other,self, " DIA_SylvioDJG_Camp_Hello_01_03 " );	// I thought you'd share with the rest of the guys.
-	AI_Output(self,other, " DIA_SylvioDJG_Camp_Hello_01_04 " );	// Of course. But so far we have not even decided what to do with this mountain of gold.
-	AI_Output(other,self, " DIA_SylvioDJG_Camp_Hello_01_05 " );	// You don't know what to do with gold?
-	AI_Output(self,other, " DIA_SylvioDJG_Camp_Hello_01_06 " );	// Imagine! It will make little sense here.
-	AI_Output(self,other, " DIA_SylvioDJG_Camp_Hello_01_07 " );	// Yes, and in Khorinis now the situation is also not pleasant.
+	AI_Output(self,other, " DIA_SylvioDJG_Camp_Hello_01_04 " );	// Why should I? This mountain of gold has only ever known one master.
+	AI_Output(other,self, " DIA_SylvioDJG_Camp_Hello_01_05 " );	// Do you even know what to do with so much gold?
+	AI_Output(self,other, " DIA_SylvioDJG_Camp_Hello_01_06 " );	// I'm sure i'll think of something.
+	AI_Output(self,other, " DIA_SylvioDJG_Camp_Hello_01_07 " );	// First, I must find a way to get it out of Khorinis...
 };
 
 instance DIA_SylvioDJG_Camp_Plan(C_Info)
@@ -504,13 +504,13 @@ func int DIA_SylvioDJG_Camp_Plan_Condition()
 func void DIA_SylvioDJG_Camp_Plan_Info()
 {
 	AI_Output(other,self, " DIA_SylvioDJG_Camp_Plan_01_00 " );	// Do you have a plan?
-	AI_Output(self,other, " DIA_SylvioDJG_Camp_Plan_01_01 " );	// Yes, I have a plan. That's why I'm in charge here!
+	AI_Output(self,other, " DIA_SylvioDJG_Camp_Plan_01_01 " );	// Yes, I have a plan. That's why I'm in charge!
 	AI_Output(other,self, " DIA_SylvioDJG_Camp_Plan_01_02 " );	// And what does it consist of?
 	AI_Output(self,other, " DIA_SylvioDJG_Camp_Plan_01_03 " );	// I want to get off this damned island and take all this gold with me.
 	AI_Output(other,self, " DIA_SylvioDJG_Camp_Plan_01_04 " );	// But for that, you'll need a ship.
-	AI_Output(self,other, " DIA_SylvioDJG_Camp_Plan_01_05 " );	// How smart you are! I know this even without you.
-	AI_Output(self,other, " DIA_SylvioDJG_Camp_Plan_01_06 " );	// But the only ship on the island is now in the harbor of Khorinis.
-	AI_Output(self,other, " DIA_SylvioDJG_Camp_Plan_01_07 " );	// And I doubt the paladins will let us ride it!
+	AI_Output(self,other, " DIA_SylvioDJG_Camp_Plan_01_05 " );	// Well aren't you smart! I never thought of that!
+	AI_Output(self,other, " DIA_SylvioDJG_Camp_Plan_01_06 " );	// The only ship on the island is now in the harbor of Khorinis.
+	AI_Output(self,other, " DIA_SylvioDJG_Camp_Plan_01_07 " );	// And I doubt the paladins will let us borrow it!
 };
 
 instance DIA_SylvioDJG_Camp_Bullco (C_Info)
@@ -533,8 +533,8 @@ func int DIA_SylvioDJG_Camp_Bullco_Condition()
 func void DIA_SylvioDJG_Camp_Bullco_Info()
 {
 	AI_Output(other,self, " DIA_SylvioDJG_Camp_Bullco_01_00 " );	// Where is your friend Bulko?
-	AI_Output(self,other, " DIA_SylvioDJG_Camp_Bullco_01_01 " );	// This bastard has escaped. He said that he had had enough of all these difficulties.
-	AI_Output(self,other, " DIA_SylvioDJG_Camp_Bullco_01_02 " );	// Hope it got eaten by the local critters!
+	AI_Output(self,other, " DIA_SylvioDJG_Camp_Bullco_01_01 " );	// The bastard has escaped. He said that he had had enough of all this bullshit.
+	AI_Output(self,other, " DIA_SylvioDJG_Camp_Bullco_01_02 " );	// I hope he got eaten by the local critters!
 };
 
 instance DIA_SylvioDJG_Camp_Drakar (C_Info)
@@ -557,23 +557,23 @@ func int DIA_SylvioDJG_Camp_Drakar_Condition()
 func void DIA_SylvioDJG_Camp_Drakar_Info()
 {
 	AI_Output(other,self, " DIA_SylvioDJG_Camp_Drakar_01_00 " );	// There's another ship!
-	AI_Output(self,other, " DIA_SylvioDJG_Camp_Drakar_01_02 " );	// Really?! And where is he?
+	AI_Output(self,other, " DIA_SylvioDJG_Camp_Drakar_01_02 " );	// Really?! And where is this imaginary boat?
 	AI_Output(other,self, " DIA_SylvioDJG_Camp_Drakar_01_03 " );	// On the other side of the valley is a huge orc drakar.
-	AI_Output(self,other, " DIA_SylvioDJG_Camp_Drakar_01_04 " );	// Hmmm... This is already interesting! But he must be well guarded.
+	AI_Output(self,other, " DIA_SylvioDJG_Camp_Drakar_01_04 " );	// Hmmm... Interesting... but it must be heavily guarded?
 	AI_Output(other,self, " DIA_SylvioDJG_Camp_Drakar_01_05 " );	// Most likely.
 	AI_Output(self,other, " DIA_SylvioDJG_Camp_Drakar_01_06 " );	// So we'll have to get the orcs out of there somehow.
 	AI_Output(other,self, " DIA_SylvioDJG_Camp_Drakar_01_07 " );	// Then go ahead, show them!
 	AI_Output(self,other, " DIA_SylvioDJG_Camp_Drakar_01_08 " );	// You don't understand. We can't give up our gold!
-	AI_Output(self,other, " DIA_SylvioDJG_Camp_Drakar_01_09 " );	// As soon as we're out of here, orc muzzles will surely come here.
-	AI_Output(self,other, " DIA_SylvioDJG_Camp_Drakar_01_10 " );	// And then we won't be able to see him!
+	AI_Output(self,other, " DIA_SylvioDJG_Camp_Drakar_01_09 " );	// As soon as we're out of here, the greenskins will surely come here.
+	AI_Output(self,other, " DIA_SylvioDJG_Camp_Drakar_01_10 " );	// And then we won't be able to see it!
 	AI_Output(other,self, " DIA_SylvioDJG_Camp_Drakar_01_11 " );	// What do you suggest?
-	AI_Output(self,other, " DIA_SylvioDJG_Camp_Drakar_01_12 " );	// (grinning) Well, you're our hero! Here, solve the problem.
-	AI_Output(other,self, " DIA_SylvioDJG_Camp_Drakar_01_13 " );	// Why should I do this?
-	AI_Output(self,other, " DIA_SylvioDJG_Camp_Drakar_01_14 " );	// (smiling) Well, we've had, let's say, a little disagreement up to this point.
+	AI_Output(self,other, " DIA_SylvioDJG_Camp_Drakar_01_12 " );	// Well, you're the big hero, solve the problem.
+	AI_Output(other,self, " DIA_SylvioDJG_Camp_Drakar_01_13 " );	// Why should I do that?
+	AI_Output(self,other, " DIA_SylvioDJG_Camp_Drakar_01_14 " );	// (smiling) Well, we've had, let's say, a little friction up to this point.
 	AI_Output(self,other, " DIA_SylvioDJG_Camp_Drakar_01_15 " );	// But if you help us now, I'm ready to share with you.
 	AI_Output(other,self, " DIA_SylvioDJG_Camp_Drakar_01_16 " );	// Are you offering me gold that is rightfully mine?
-	AI_Output(self,other, " DIA_SylvioDJG_Camp_Drakar_01_17 " );	// It's not yours anymore, mate. So, if you want to profit from them, you have to help us.
-	AI_Output(self,other, " DIA_SylvioDJG_Camp_Drakar_01_18 " );	// Well, agreed?
+	AI_Output(self,other, " DIA_SylvioDJG_Camp_Drakar_01_17 " );	// It's not yours anymore, mate. So, if you want some now, you have to help us.
+	AI_Output(self,other, " DIA_SylvioDJG_Camp_Drakar_01_18 " );	// Agreed?
 	AI_Output(other,self, " DIA_SylvioDJG_Camp_Drakar_01_19 " );	// Okay. I'll try to come up with something.
 	MIS_SylvioDrakar = LOG_Running;
 	Log_CreateTopic(Topic_SylvioDrakar,LOG_MISSION);
@@ -654,7 +654,7 @@ func void DIA_SylvioDJG_Camp_Orcs_Info()
 	AI_Output(other,self, " DIA_SylvioDJG_Camp_Orcs_01_00 " );	// Orcs have already tried to attack your camp?
 	AI_Output(self,other, " DIA_SylvioDJG_Camp_Orcs_01_01 " );	// Yes. But as you can see, they didn't succeed.
 	AI_Output(self,other, " DIA_SylvioDJG_Camp_Orcs_01_02 " );	// This place is perfect for holding the line.
-	AI_Output(self,other, " DIA_SylvioDJG_Camp_Orcs_01_03 " );	// Therefore, there is no reason for us to leave this camp now.
+	AI_Output(self,other, " DIA_SylvioDJG_Camp_Orcs_01_03 " );	// I see no reason for us to leave this camp now.
 };
 
 instance DIA_SylvioDJG_Camp_OthTre(C_Info)
@@ -702,23 +702,23 @@ func int DIA_SylvioDJG_Camp_Drakar_Done_Condition()
 func void DIA_SylvioDJG_Camp_Drakar_Done_Info()
 {
 	B_GivePlayerXP(1000);
-	AI_Output(other,self, " DIA_SylvioDJG_Camp_Drakar_Done_01_00 " );	// Orc drakar is clean!
+	AI_Output(other,self, " DIA_SylvioDJG_Camp_Drakar_Done_01_00 " );	// The Orc drakar is clear!
 	AI_Output(self,other, " DIA_SylvioDJG_Camp_Drakar_Done_01_01 " );	// Great. Now we need to think about how to transport our gold to the ship.
 	AI_Output(other,self, " DIA_SylvioDJG_Camp_Drakar_Done_01_02 " );	// What about my share?
 	AI_Output(self,other, " DIA_SylvioDJG_Camp_Drakar_Done_01_03 " );	// Don't rush! There is another small problem here.
 	AI_Output(other,self, " DIA_SylvioDJG_Camp_Drakar_Done_01_04 " );	// What?
-	AI_Output(self,other, " DIA_SylvioDJG_Camp_Drakar_Done_01_05 " );	// I've been talking to the guys here, and it turned out that none of them know how to handle the steering wheel.
+	AI_Output(self,other, " DIA_SylvioDJG_Camp_Drakar_Done_01_05 " );	// I've been talking to the guys, and it turned out that none of them know how to handle the steering wheel.
 	AI_Output(self,other, " DIA_SylvioDJG_Camp_Drakar_Done_01_06 " );	// In that case, we won't even be able to sail away from here.
 	AI_Output(other,self, " DIA_SylvioDJG_Camp_Drakar_Done_01_07 " );	// Do you want me to find you a captain?
-	AI_Output(self,other, " DIA_SylvioDJG_Camp_Drakar_Done_01_08 " );	// (smirking) You're not a fool after all, as far as I can see.
-	AI_Output(self,other, " DIA_SylvioDJG_Camp_Drakar_Done_01_09 " );	// Naturally, we need someone who could handle this vessel.
+	AI_Output(self,other, " DIA_SylvioDJG_Camp_Drakar_Done_01_08 " );	// (smirking) You're not a fool after all.
+	AI_Output(self,other, " DIA_SylvioDJG_Camp_Drakar_Done_01_09 " );	// Naturally, we need someone who can handle this kind of vessel.
 	AI_Output(self,other, " DIA_SylvioDJG_Camp_Drakar_Done_01_10 " );	// After all, it was your idea to take the ship from the orcs.
-	AI_Output(self,other, " DIA_SylvioDJG_Camp_Drakar_Done_01_11 " );	// Now get out as you want!
-	AI_Output(self,other, " DIA_SylvioDJG_Camp_Drakar_Done_01_12 " );	// Oh, and one more thing... (casually) We could also use a good cook there on the ship.
-	AI_Output(self,other, " DIA_SylvioDJG_Camp_Drakar_Done_01_13 " );	// I don't want to starve to death at sea before I can spend my gold.
+	AI_Output(self,other, " DIA_SylvioDJG_Camp_Drakar_Done_01_11 " );	// Now get us what we need!
+	AI_Output(self,other, " DIA_SylvioDJG_Camp_Drakar_Done_01_12 " );	// Oh, and one more thing... We could also use a good cook on the ship.
+	AI_Output(self,other, " DIA_SylvioDJG_Camp_Drakar_Done_01_13 " );	// We can't eat gold out at sea now can we?
 	AI_Output(self,other, " DIA_SylvioDJG_Camp_Drakar_Done_01_14 " );	// I hope I'm making myself clear?
-	AI_Output(other,self,"DIA_SylvioDJG_Camp_Drakar_Done_01_15");	//Вполне.
-	AI_Output(self,other, " DIA_SylvioDJG_Camp_Drakar_Done_01_16 " );	// Then get down to business. Come on, don't waste your time!
+	AI_Output(other,self,"DIA_SylvioDJG_Camp_Drakar_Done_01_15");	//Quite.
+	AI_Output(self,other, " DIA_SylvioDJG_Camp_Drakar_Done_01_16 " );	// Then get down to business, Mr. Hero!
 	MIS_SylvioDrakar = LOG_Success;
 	Log_SetTopicStatus(Topic_SylvioDrakar,LOG_Success);
 	B_LogEntry(Topic_SylvioDrakar, " Sylvio was glad that the orc drakar was no longer guarded. " );
@@ -752,16 +752,16 @@ func void DIA_SylvioDJG_Camp_Orcs_Up_Info()
 	AI_Output(self,other, " DIA_SylvioDJG_Camp_Orcs_Up_01_01 " );	// What do you mean?
 	AI_Output(other,self, " DIA_SylvioDJG_Camp_Orcs_Up_01_02 " );	// They had a small camp there. What, you didn't know about it?
 	AI_Output(self,other, " DIA_SylvioDJG_Camp_Orcs_Up_01_03 " );	// No, damn you! Why were you silent earlier?
-	AI_Output(other,self, " DIA_SylvioDJG_Camp_Orcs_Up_01_04 " );	// You didn't ask.
-	AI_Output(self,other, " DIA_SylvioDJG_Camp_Orcs_Up_01_05 " );	// (feverishly) We're all in big danger now! You must kill them! Kill them all!
+	AI_Output(other,self, " DIA_SylvioDJG_Camp_Orcs_Up_01_04 " );	// It never came up.
+	AI_Output(self,other, " DIA_SylvioDJG_Camp_Orcs_Up_01_05 " );	// We're all in danger now! You must kill them! Kill them all!
 	AI_Output(other,self, " DIA_SylvioDJG_Camp_Orcs_Up_01_06 " );	// What, me again?!
 	AI_Output(self,other, " DIA_SylvioDJG_Camp_Orcs_Up_01_07 " );	// But you're the one who told me about this camp. Besides, we can't leave now!
-	AI_Output(self,other, " DIA_SylvioDJG_Camp_Orcs_Up_01_08 " );	// So come on, legs in hands and forward.
-	AI_Output(self,other, " DIA_SylvioDJG_Camp_Orcs_Up_01_09 " );	// All orcs must be dead!
+	AI_Output(self,other, " DIA_SylvioDJG_Camp_Orcs_Up_01_08 " );	// So come on, do what you do best!
+	AI_Output(self,other, " DIA_SylvioDJG_Camp_Orcs_Up_01_09 " );	// Spill some greenskin blood!!
 	MIS_SylvioOrcs = LOG_Running;
 	Log_CreateTopic(Topic_SylvioOrcs,LOG_MISSION);
 	Log_SetTopicStatus(Topic_SylvioOrcs,LOG_Running);
-	B_LogEntry(Topic_SylvioOrcs, " Sylvio almost fainted when he learned about the orc camp above the Ice Dragon Cave. Now I have to make sure the orcs don't give him any more headaches. " );
+	B_LogEntry(Topic_SylvioOrcs, " Sylvio almost fainted when he learned about the orc camp above the Ice Dragon Cave. Now I have to make sure the orcs don't give him us future headaches. " );
 	AI_StopProcessInfos(self);
 };
 
@@ -786,10 +786,10 @@ func void DIA_SylvioDJG_Camp_Orcs_Up_Done_Info()
 {
 	B_GivePlayerXP(500);
 	AI_Output(other,self, " DIA_SylvioDJG_Camp_Orcs_Up_Done_01_00 " );	// You can forget about the orcs above the cave.
-	AI_Output(self,other, " DIA_SylvioDJG_Camp_Orcs_Up_Done_01_01 " );	// In what sense?
-	AI_Output(other,self, " DIA_SylvioDJG_Camp_Orcs_Up_Done_01_02 " );	// They are no longer there.
-	AI_Output(self,other, " DIA_SylvioDJG_Camp_Orcs_Up_Done_01_03 " );	// Good! This calms me down a bit.
-	AI_Output(self,other, " DIA_SylvioDJG_Camp_Orcs_Up_Done_01_04 " );	// Now get on with other things. You probably have them.
+	AI_Output(self,other, " DIA_SylvioDJG_Camp_Orcs_Up_Done_01_01 " );	// Tell me what I want to hear...
+	AI_Output(other,self, " DIA_SylvioDJG_Camp_Orcs_Up_Done_01_02 " );	// Because they are no longer there.
+	AI_Output(self,other, " DIA_SylvioDJG_Camp_Orcs_Up_Done_01_03 " );	// HA! You are truly a killer, my friend.
+	AI_Output(self,other, " DIA_SylvioDJG_Camp_Orcs_Up_Done_01_04 " );	// Now get on with other things. I'm sure there are many.
 	MIS_SylvioOrcs = LOG_Success;
 	Log_SetTopicStatus(Topic_SylvioOrcs,LOG_Success);
 	B_LogEntry(Topic_SylvioOrcs, " I reassured Silvio that there were no more orcs over the dragon's cave. " );
@@ -822,15 +822,15 @@ func void DIA_SylvioDJG_Camp_Drakar_Crew_Info()
 	if(Npc_IsDead(xbs_7510_ratford) == TRUE)
 	{
 		B_GivePlayerXP(500);
-		AI_Output(other,self, " DIA_SylvioDJG_Camp_Drakar_Crew_01_02 " );	// I'm afraid I can't find the captain here anymore.
-		AI_Output(other,self, " DIA_SylvioDJG_Camp_Drakar_Crew_01_03 " );	// And hardly anyone in Khorinis would agree to go here.
+		AI_Output(other,self, " DIA_SylvioDJG_Camp_Drakar_Crew_01_02 " );	// I'm afraid I can't find a captain anywhere.
+		AI_Output(other,self, " DIA_SylvioDJG_Camp_Drakar_Crew_01_03 " );	// And hardly anyone in Khorinis would agree to come here.
 		AI_Output(self,other, " DIA_SylvioDJG_Camp_Drakar_Crew_01_04 " );	// Damn! Okay, let's think of something ourselves.
-		AI_Output(self,other, " DIA_SylvioDJG_Camp_Drakar_Crew_01_05 " );	// (seriously) Now it's time for us to move out...
+		AI_Output(self,other, " DIA_SylvioDJG_Camp_Drakar_Crew_01_05 " );	// Now it's time for us to move out...
 		AI_Output(other,self, " DIA_SylvioDJG_Camp_Drakar_Crew_01_06 " );	// Have you forgotten about my share?
 		AI_Output(self,other, " DIA_SylvioDJG_Camp_Drakar_Crew_01_07 " );	// Later! Let's get to the ship, and there we'll talk about your reward.
 		MIS_SylvioCrew = LOG_Success;
 		Log_SetTopicStatus(Topic_SylvioCrew,LOG_Success);
-		B_LogEntry(Topic_SylvioCrew, " I informed Silvio that I couldn't find the captain in the valley. " );
+		B_LogEntry(Topic_SylvioCrew, " I informed Silvio that I couldn't find a captain in the valley. " );
 		AI_StopProcessInfos(self);
 	}
 	else
@@ -838,9 +838,9 @@ func void DIA_SylvioDJG_Camp_Drakar_Crew_Info()
 		if(RatfordAgree == TRUE)
 		{
 			B_GivePlayerXP(1000);
-			AI_Output(other,self, " DIA_SylvioDJG_Camp_Drakar_Crew_01_08 " );	// A guy named Ratford is ready to take on this job.
+			AI_Output(other,self, " DIA_SylvioDJG_Camp_Drakar_Crew_01_08 " );	// A guy named Ratford is ready to take on the job.
 			AI_Output(other,self, " DIA_SylvioDJG_Camp_Drakar_Crew_01_09 " );	// But first, you'll have to pay him at least five hundred coins.
-			AI_Output(self,other, " DIA_SylvioDJG_Camp_Drakar_Crew_01_10 " );	// (greedily) Five hundred coins?! Ah, okay! We still don't have a choice.
+			AI_Output(self,other, " DIA_SylvioDJG_Camp_Drakar_Crew_01_10 " );	// Five hundred coins?! Ah, okay! We don't have a choice.
 			AI_Output(other,self, " DIA_SylvioDJG_Camp_Drakar_Crew_01_11 " );	// He said he'll be waiting for you on the ship.
 			AI_Output(self,other, " DIA_SylvioDJG_Camp_Drakar_Crew_01_12 " );	// Good! We will be heading there soon too.
 			AI_Output(other,self, " DIA_SylvioDJG_Camp_Drakar_Crew_01_13 " );	// Have you forgotten about my share?
@@ -880,9 +880,9 @@ func void DIA_SylvioDJG_Camp_Drakar_Cook_Info()
 {
 	B_GivePlayerXP(500);
 	AI_Output(other,self, " DIA_SylvioDJG_Camp_Drakar_Cook_01_00 " );	// I found you a cook.
-	AI_Output(self,other, " DIA_SylvioDJG_Camp_Drakar_Cook_01_01 " );	// Okay...(sighing) I hope he can cook.
-	AI_Output(other,self, " DIA_SylvioDJG_Camp_Drakar_Cook_01_02 " );	// Paladins in the castle didn't seem to complain about him.
-	AI_Output(self,other, " DIA_SylvioDJG_Camp_Drakar_Cook_01_03 " );	// Well, if so, then everything is in order.
+	AI_Output(self,other, " DIA_SylvioDJG_Camp_Drakar_Cook_01_01 " );	// Okay... I hope he can cook.
+	AI_Output(other,self, " DIA_SylvioDJG_Camp_Drakar_Cook_01_02 " );	// The paladins in the castle didn't seem to complain about him.
+	AI_Output(self,other, " DIA_SylvioDJG_Camp_Drakar_Cook_01_03 " );	// Well, in that case everything is looking good.
 };
 
 instance DIA_DJG_700_Sylvio_FuckOff(C_Info)
@@ -930,9 +930,9 @@ func int DIA_SylvioDJG_Camp_Drakar_LastChance_Condition()
 func void DIA_SylvioDJG_Camp_Drakar_LastChance_Info()
 {
 	AI_Output(other,self, " DIA_SylvioDJG_Camp_Drakar_LastChance_01_00 " );	// You didn't pay Ratford.
-	AI_Output(self,other,"DIA_SylvioDJG_Camp_Drakar_LastChance_01_01");	//И что?
+	AI_Output(self,other,"DIA_SylvioDJG_Camp_Drakar_LastChance_01_01");	//So?
 	AI_Output(other,self, " DIA_SylvioDJG_Camp_Drakar_LastChance_01_02 " );	// But you promised you'd pay him!
-	AI_Output(self,other, " DIA_SylvioDJG_Camp_Drakar_LastChance_01_03 " );	// (carelessly) Why should I pay him?
+	AI_Output(self,other, " DIA_SylvioDJG_Camp_Drakar_LastChance_01_03 " );	// Why should I pay him?
 	AI_Output(self,other, " DIA_SylvioDJG_Camp_Drakar_LastChance_01_04 " );	// I thought we were going to sea right away! But instead we're stuck here because the ship's rudder is broken.
 	AI_Output(self,other, " DIA_SylvioDJG_Camp_Drakar_LastChance_01_05 " );	// So he won't get a penny from me until he fixes it.
 };
@@ -957,17 +957,17 @@ func int DIA_SylvioDJG_Camp_Drakar_LastChanceKill_Condition()
 func void DIA_SylvioDJG_Camp_Drakar_LastChanceKill_Info()
 {
 	AI_Output(other,self, " DIA_SylvioDJG_Camp_Drakar_LastChanceKill_01_00 " );	// It's time to talk about my share.
-	AI_Output(self,other, " DIA_SylvioDJG_Camp_Drakar_LastChanceKill_01_01 " );	// (grinning) All right, here you go.
+	AI_Output(self,other, " DIA_SylvioDJG_Camp_Drakar_LastChanceKill_01_01 " );	// All right, here you go.
 	B_GiveInvItems(self,other,ItMi_Gold,100);
-	AI_Output(other,self, " DIA_SylvioDJG_Camp_Drakar_LastChanceKill_01_02 " );	// What?! Some pathetic hundred coins?
-	AI_Output(self,other, " DIA_SylvioDJG_Camp_Drakar_LastChanceKill_01_03 " );	// You don't deserve this either.
-	AI_Output(self,other, " DIA_SylvioDJG_Camp_Drakar_LastChanceKill_01_04 " );	// And what did you want - the ship is broken, we are still here, and there are a lot of orcs around!
-	AI_Output(self,other, " DIA_SylvioDJG_Camp_Drakar_LastChanceKill_01_05 " );	// Say thank you for getting this too. Now get out!
+	AI_Output(other,self, " DIA_SylvioDJG_Camp_Drakar_LastChanceKill_01_02 " );	// What?! A pathetic hundred coins?
+	AI_Output(self,other, " DIA_SylvioDJG_Camp_Drakar_LastChanceKill_01_03 " );	// You don't deserve even that.
+	AI_Output(self,other, " DIA_SylvioDJG_Camp_Drakar_LastChanceKill_01_04 " );	// What do you want? The ship is broken, we are still here, and there are still a lot of orcs around!
+	AI_Output(self,other, " DIA_SylvioDJG_Camp_Drakar_LastChanceKill_01_05 " );	// You should be thankful. Now get out!
 	AI_Output(other,self, " DIA_SylvioDJG_Camp_Drakar_LastChanceKill_01_06 " );	// No, wait. That's not how things are done!
-	AI_Output(self,other, " DIA_SylvioDJG_Camp_Drakar_LastChanceKill_01_07 " );	// And what, did you think to teach me how to do things?!
+	AI_Output(self,other, " DIA_SylvioDJG_Camp_Drakar_LastChanceKill_01_07 " );	// Do you think to teach me how to do things?!
 	AI_Output(other,self, " DIA_SylvioDJG_Camp_Drakar_LastChanceKill_01_08 " );	// Yes! And either you give me exactly half of your booty right now...
-	AI_Output(other,self, " DIA_SylvioDJG_Camp_Drakar_LastChanceKill_01_09 " );	// ...or I'll have to give you a good beating, you greedy pig!
-	AI_Output(self,other, " DIA_SylvioDJG_Camp_Drakar_LastChanceKill_01_10 " );	// (laughs) Well, you can try, motherfucker!
+	AI_Output(other,self, " DIA_SylvioDJG_Camp_Drakar_LastChanceKill_01_09 " );	// ...or I'll have to kick your ass!
+	AI_Output(self,other, " DIA_SylvioDJG_Camp_Drakar_LastChanceKill_01_10 " );	// (laughs) Well, you can try, "Hero"!
 	self.aivar[AIV_DropDeadAndKill] = TRUE ;
 	self.guild = GIL_NONE;
 	CreateInvItems(self,ItMi_Gold,10000);
@@ -1044,24 +1044,24 @@ func int DIA_DJG_7312_ToterDrachenjaeger_HelloAgain_Condition()
 func void DIA_DJG_7312_ToterDrachenjaeger_HelloAgain_Info()
 {
 	AI_Output(self,other, " DIA_DJG_7312_ToterDrachenjaeger_HelloAgain_01_00 " );	// (threateningly) Hey buddy! Where are you going?
-	AI_Output(other,self,"DIA_DJG_7312_ToterDrachenjaeger_HelloAgain_01_01");	//Туда. А что?
-	AI_Output(self,other, " DIA_DJG_7312_ToterDrachenjaeger_HelloAgain_01_02 " );	// And the fact that you can't go there! Understood?
-	AI_Output(other,self, " DIA_DJG_7312_ToterDrachenjaeger_HelloAgain_01_03 " );	// Why else?
-	AI_Output(self,other, " DIA_DJG_7312_ToterDrachenjaeger_HelloAgain_01_04 " );	// Now this is our place and our camp! And we won't let anyone in.
+	AI_Output(other,self,"DIA_DJG_7312_ToterDrachenjaeger_HelloAgain_01_01");	//Over there. What of it?
+	AI_Output(self,other, " DIA_DJG_7312_ToterDrachenjaeger_HelloAgain_01_02 " );	// You can't go there! Understood?
+	AI_Output(other,self, " DIA_DJG_7312_ToterDrachenjaeger_HelloAgain_01_03 " );	// Why exactly?
+	AI_Output(self,other, " DIA_DJG_7312_ToterDrachenjaeger_HelloAgain_01_04 " );	// This is our place and our camp! And we won't let anyone in.
 	AI_Output(self,other, " DIA_DJG_7312_ToterDrachenjaeger_HelloAgain_01_05 " );	// So you better get the hell out of here!
-	AI_Output(other,self, " DIA_DJG_7312_ToterDrachenjaeger_HelloAgain_01_06 " );	// Interesting! So, do you have a camp here? And who is your boss?
+	AI_Output(other,self, " DIA_DJG_7312_ToterDrachenjaeger_HelloAgain_01_06 " );	// Interesting! So, do you have a camp here? Who is your boss?
 	AI_Output(self,other, " DIA_DJG_7312_ToterDrachenjaeger_HelloAgain_01_07 " );	// You don't know him. His name is Silvio.
-	AI_Output(other,self, " DIA_DJG_7312_ToterDrachenjaeger_HelloAgain_01_08 " );	// Silvio? I just know him. He was one of the mercenaries at Onar's farm.
+	AI_Output(other,self, " DIA_DJG_7312_ToterDrachenjaeger_HelloAgain_01_08 " );	// Silvio? I know him well. He was one of the mercenaries at Onar's farm.
 	AI_Output(other,self, " DIA_DJG_7312_ToterDrachenjaeger_HelloAgain_01_09 " );	// And, apparently, he finally got to the treasures of the ice dragon!
 	AI_PlayAni(self,"T_SEARCH");
-	AI_Output(self,other, " DIA_DJG_7312_ToterDrachenjaeger_HelloAgain_01_10 " );	// (frightened) What?! So, do you know about this too?
-	AI_Output(other,self,"DIA_DJG_7312_ToterDrachenjaeger_HelloAgain_01_11");	//Знаю о чем?
+	AI_Output(self,other, " DIA_DJG_7312_ToterDrachenjaeger_HelloAgain_01_10 " );	// (frightened) What?! So, you know about that too?
+	AI_Output(other,self,"DIA_DJG_7312_ToterDrachenjaeger_HelloAgain_01_11");	//Know what?
 	AI_Output(self,other, " DIA_DJG_7312_ToterDrachenjaeger_HelloAgain_01_12 " );	// Well, about the fact that there is a whole mountain of gold nearby!
 	AI_Output(other,self, " DIA_DJG_7312_ToterDrachenjaeger_HelloAgain_01_13 " );	// Of course. After all, it was I who killed the ice dragon.
-	AI_Output(self,other, " DIA_DJG_7312_ToterDrachenjaeger_HelloAgain_01_14 " );	// You?! (laughs) Well, you're a lot of fun, man.
-	AI_Output(self,other, " DIA_DJG_7312_ToterDrachenjaeger_HelloAgain_01_15 " );	// A whole army would not have coped with this dragon! Where are you alone.
-	AI_Output(self,other, " DIA_DJG_7312_ToterDrachenjaeger_HelloAgain_01_16 " );	// Oh, okay. Since you are already aware of everything that is happening, you can pass.
-	AI_Output(self,other, " DIA_DJG_7312_ToterDrachenjaeger_HelloAgain_01_17 " );	// If you want Silvio himself, he's in the big cave next to the treasure.
+	AI_Output(self,other, " DIA_DJG_7312_ToterDrachenjaeger_HelloAgain_01_14 " );	// You?! Either you are a liar, a madman, or...
+	AI_Output(self,other, " DIA_DJG_7312_ToterDrachenjaeger_HelloAgain_01_15 " );	// ... a man who killed a dragon...
+	AI_Output(self,other, " DIA_DJG_7312_ToterDrachenjaeger_HelloAgain_01_16 " );	// Um, okay. You may pass, sir.
+	AI_Output(self,other, " DIA_DJG_7312_ToterDrachenjaeger_HelloAgain_01_17 " );	// If you want to find Silvio, he's in the big cave next to the treasure.
 	AI_StopProcessInfos(self);
 };
 
@@ -1110,10 +1110,10 @@ func int DIA_DJG_7312_ToterDrachenjaeger_KillHim_Condition()
 func void DIA_DJG_7312_ToterDrachenjaeger_KillHim_Info()
 {
 	AI_Output(self,other, " DIA_DJG_7312_ToterDrachenjaeger_KillHim_01_00 " );	// You did the right thing by killing that bastard Silvio!
-	AI_Output(self,other, " DIA_DJG_7312_ToterDrachenjaeger_KillHim_01_01 " );	// We all didn't really like him.
+	AI_Output(self,other, " DIA_DJG_7312_ToterDrachenjaeger_KillHim_01_01 " );	// We all disliked him.
 	AI_Output(self,other, " DIA_DJG_7312_ToterDrachenjaeger_KillHim_01_02 " );	// So no one will miss him.
 	AI_Output(self,other, " DIA_DJG_7312_ToterDrachenjaeger_KillHim_01_03 " );	// Now the main thing is to quickly get out of here before the orcs remember about their ship.
 	AI_Output(other,self, " DIA_DJG_7312_ToterDrachenjaeger_KillHim_01_04 " );	// Then you better help Ratford deal with the broken steering wheel.
-	AI_Output(self,other, " DIA_DJG_7312_ToterDrachenjaeger_KillHim_01_05 " );	// Definitely help, buddy! Necessarily.
+	AI_Output(self,other, " DIA_DJG_7312_ToterDrachenjaeger_KillHim_01_05 " );	// Yes, definitely.
 	AI_StopProcessInfos(self);
 };
