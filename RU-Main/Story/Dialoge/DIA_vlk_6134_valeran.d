@@ -78,14 +78,14 @@ func void dia_vlk_6134_valeran_halloafter_info()
 	AI_Output(other,self, " DIA_VLK_6134_Valeran_Hallo_01_00 " );	// Hello. Who are you?
 	AI_Output(self,other, " DIA_VLK_6134_Valeran_Hallo_01_01 " );	// Greetings, stranger. My name is Valeran.
 	AI_Output(other,self, " DIA_VLK_6134_Valeran_HalloAfter_01_02 " );	// Your face looks familiar to me. Have I met you anywhere before?
-	AI_Output(self,other, " DIA_VLK_6134_Valeran_HalloAfter_01_03 " );	// Well, maybe we met in the upper quarter of Khorinis.
+	AI_Output(self,other, " DIA_VLK_6134_Valeran_HalloAfter_01_03 " );	// Well, maybe we met in the upper quarter of Khorinis?
 	AI_Output(self,other, " DIA_VLK_6134_Valeran_HalloAfter_01_04 " );	// I worked there as a manager for a merchant named Fernando.
 	AI_Output(other,self, " DIA_VLK_6134_Valeran_HalloAfter_01_05 " );	// Yes, I know Fernando. He seems to have been in some legal trouble lately.
 	AI_Output(self,other, " DIA_VLK_6134_Valeran_HalloAfter_01_06 " );	// Yes, he was recently arrested by the city militia for selling weapons to bandits.
-	AI_Output(self,other, " DIA_VLK_6134_Valeran_HalloAfter_01_07 " );	// I never would have thought that he would do such a thing. This surprised me greatly.
+	AI_Output(self,other, " DIA_VLK_6134_Valeran_HalloAfter_01_07 " );	// I never would have thought that he would do such a thing. That surprised me greatly.
 	AI_Output(other,self, " DIA_VLK_6134_Valeran_HalloAfter_01_08 " );	// What happened to you?
 	AI_Output(self,other, " DIA_VLK_6134_Valeran_HalloAfter_01_09 " );	// As for me, because of all this, I was left without a job.
-	AI_Output(self,other, " DIA_VLK_6134_Valeran_HalloAfter_01_10 " );	// Now I'm sitting here and waiting... I don't know why.
+	AI_Output(self,other, " DIA_VLK_6134_Valeran_HalloAfter_01_10 " );	// Now I'm sitting here and waiting... for what, I'm not sure.
 	CanHireValeran = TRUE;
 };
 
@@ -205,8 +205,8 @@ func void dia_vlk_6134_valeran_whatyoudo_info()
 	AI_Output(self,other, " DIA_VLK_6134_Valeran_WhatYouDo_01_01 " );	// Why, can't you see? Waiting for someone to give me a job.
 	AI_Output(self,other, " DIA_VLK_6134_Valeran_WhatYouDo_01_02 " );	// Now that Fernando has been arrested, I'm left with nothing to do.
 	AI_Output(other,self, " DIA_VLK_6134_Valeran_WhatYouDo_01_04 " );	// Why didn't you try to get a job in the city?
-	AI_Output(self,other, " DIA_VLK_6134_Valeran_WhatYouDo_01_05 " );	// Who will hire me? These dirty deeds of Fernando have also affected my reputation.
-	AI_Output(self,other, " DIA_VLK_6134_Valeran_WhatYouDo_01_07 " );	// And in our business, this is a very important point.
+	AI_Output(self,other, " DIA_VLK_6134_Valeran_WhatYouDo_01_05 " );	// Who will hire me? Those dirty deeds of Fernando's have also affected my reputation.
+	AI_Output(self,other, " DIA_VLK_6134_Valeran_WhatYouDo_01_07 " );	// And in our business, that is very important.
 	AI_Output(other,self, " DIA_VLK_6134_Valeran_WhatYouDo_01_08 " );	// Got it. And how is the progress?
 	AI_Output(self,other, " DIA_VLK_6134_Valeran_WhatYouDo_01_09 " );	// As you can see, there's not much to brag about.
 	CanHireValeran = TRUE;
@@ -234,8 +234,8 @@ func int dia_vlk_6134_valeran_perm_condition()
 
 func void dia_vlk_6134_valeran_perm_info()
 {
-	AI_Output(other,self, " DIA_VLK_6134_Valeran_Perm_01_00 " );	// Anything to please?
-	AI_Output(self,other, " DIA_VLK_6134_Valeran_Perm_01_01 " );	// I'm afraid there's nothing to please - I'm still doing nothing. I sit here with my pants all day, but there's no point.
+	AI_Output(other,self, " DIA_VLK_6134_Valeran_Perm_01_00 " );	// Anything happening now?
+	AI_Output(self,other, " DIA_VLK_6134_Valeran_Perm_01_01 " );	// I'm afraid there's nothing going on - I'm still doing nothing. I sit here with my thumb up my ass all day.
 };
 
 
