@@ -1743,11 +1743,11 @@ func void dia_valeran_igetthefoutofhere_info()
 	AI_Output(other,self, " DIA_Valeran_IGetTheFOutOfHere_15_00 " );	// I'm going to sail to the mainland. Can you watch the tower?
 	AI_Output(self,other, " DIA_Valeran_IGetTheFOutOfHere_10_01 " );	// This is unexpected news... are you sailing away forever, or do you intend to return after some time?
 	AI_Output(other,self, " DIA_Valeran_IGetTheFOutOfHere_15_02 " );	// I'm afraid not, I won't be returning to Khorinis. If you're willing to keep running the tower, I'll leave it to you.
-	AI_Output(self,other, " DIA_Valeran_IGetTheFOutOfHere_10_03 " );	// Uh... well, whatever you say. Thanks to your efforts, we are well settled here, so I think we can continue to support this camp.
-	AI_Output(self,other, " DIA_Valeran_IGetTheFOutOfHere_10_04 " );	// Now that your tower and Onar's farm have become the main center of resistance to the orcs, we can strengthen relations with the rest of the camps and continue to fight these creatures together.
+	AI_Output(self,other, " DIA_Valeran_IGetTheFOutOfHere_10_03 " );	// Uh... well, whatever you say. Thanks to your efforts, we are well settled here, so I think we can really build a home here.
+	AI_Output(self,other, " DIA_Valeran_IGetTheFOutOfHere_10_04 " );	// Now that your tower and Onar's farm have become the main center of resistance to the orcs, we can strengthen relations with the rest of the camps and continue to fight the creatures together.
 	AI_Output(self,other, " DIA_Valeran_IGetTheFOutOfHere_10_05 " );	// So I think you can sail away without worrying about the welfare of the camp.
 	AI_Output(self,other, " DIA_Valeran_IGetTheFOutOfHere_10_06 " );	// You've already done all you can for us, and now it's our turn to put in the effort. Happy sailing!
-	AI_Output(other,self,"DIA_Valeran_IGetTheFOutOfHere_15_07");	//Спасибо!
+	AI_Output(other,self,"DIA_Valeran_IGetTheFOutOfHere_15_07");	//Thank you, and good luck!
 	AI_StopProcessInfos(self);
 };
 
