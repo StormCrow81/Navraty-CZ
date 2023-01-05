@@ -87,10 +87,10 @@ func void dia_lemarguard_hallo_info()
 func void day_lemarguard_hallo_no()
 {
 	AI_Output(other,self, " DIA_LemarGuard_Hallo_No_01_00 " );	// No, I don't know you.
-	AI_Output(self,other, " DIA_LemarGuard_Hallo_No_01_01 " );	// Hmmm...(surprised) Strange! I have a good memory, and you will be confused with no one.
-	AI_Output(self,other, " DIA_LemarGuard_Hallo_No_01_03 " );	// Okay, whatever! I just want to give you advice - stay away from Lemar. He doesn't like being teased about trifles.
-	AI_Output(self,other, " DIA_LemarGuard_Hallo_No_01_04 " );	// truncated? Just try to give him problems - and then I will talk heart to heart with you! Hehe...
-	AI_Output(other,self,"DIA_LemarGuard_Hallo_No_01_05");	//Хорошо.
+	AI_Output(self,other, " DIA_LemarGuard_Hallo_No_01_01 " );	// Hmmm... Strange! I have a good memory, and you have one of those faces.
+	AI_Output(self,other, " DIA_LemarGuard_Hallo_No_01_03 " );	// Okay, whatever! I just want to give you advice - stay away from Lemar. He doesn't like being bothered about trifles.
+	AI_Output(self,other, " DIA_LemarGuard_Hallo_No_01_04 " );	// Give him shit and die? We good?
+	AI_Output(other,self,"DIA_LemarGuard_Hallo_No_01_05");	//Good.
 	AI_StopProcessInfos(self);
 };
 
@@ -102,9 +102,9 @@ func void dia_lemarguard_hallo_yes()
 	AI_Output(self,other, " DIA_LemarGuard_Hallo_Yes_01_01 " );	// Hehe... I see you recognize me too.
 	AI_Output(other,self, " DIA_LemarGuard_Hallo_Yes_01_02 " );	// What are you doing here?
 	AI_Output(self,other, " DIA_LemarGuard_Hallo_Yes_01_03 " );	// Lemar hired me as a bodyguard.
-	AI_Output(self,other, " DIA_LemarGuard_Hallo_Yes_01_04 " );	// I want to give you advice - stay away from him. He doesn't like being teased about trifles.
-	AI_Output(self,other, " DIA_LemarGuard_Hallo_Yes_01_05 " );	// truncated? Just try to give him problems - and then I will talk heart to heart with you! Hehe. Understood?
-	AI_Output(other,self,"DIA_LemarGuard_Hallo_Yes_01_06");	//Хорошо.
+	AI_Output(self,other, " DIA_LemarGuard_Hallo_Yes_01_04 " );	// I want to give you advice - stay away from him. He doesn't like being bothered about trifles.
+	AI_Output(self,other, " DIA_LemarGuard_Hallo_Yes_01_05 " );	// Give him shit and die? We good?
+	AI_Output(other,self,"DIA_LemarGuard_Hallo_Yes_01_06");	//Good.
 	AI_StopProcessInfos(self);
 };
 
@@ -127,6 +127,6 @@ func int dia_lemarguard_halloen_condition()
 func void dia_lemarguard_halloen_info()
 {
 	AI_Output(other,self, " DIA_LemarGuard_HalloEN_01_00 " );	// Well, how do you like your job?
-	AI_Output(self,other, " DIA_LemarGuard_HalloEN_01_01 " );	// Get lost while you're still alive! Hehe...
+	AI_Output(self,other, " DIA_LemarGuard_HalloEN_01_01 " );	// Get lost while you're still alive.
 	AI_StopProcessInfos(self);
 };
