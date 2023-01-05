@@ -44,9 +44,9 @@ func int dia_vlk_6130_benchel_missbrendi_condition()
 func void dia_vlk_6130_benchel_missbrendi_info()
 {
 	B_GivePlayerXP(100);
-	AI_Output(self,other, " DIA_VLK_6130_Benchel_MissBrendi_Info_01_01 " );	// (breathing) Thanks for helping me!
+	AI_Output(self,other, " DIA_VLK_6130_Benchel_MissBrendi_Info_01_01 " );	// Thanks for helping me!
 	AI_Output(self,other, " DIA_VLK_6130_Benchel_MissBrendi_Info_01_02 " );	// If it wasn't for you, these bastards would have sent me to the next world!
-	AI_Output(other,self, " DIA_VLK_6130_Benchel_MissBrendi_Info_01_04 " );	// Calm down, boy. Is your name Benchel?
+	AI_Output(other,self, " DIA_VLK_6130_Benchel_MissBrendi_Info_01_04 " );	// Calm down. Is your name Benchel?
 	AI_Output(self,other, " DIA_VLK_6130_Benchel_MissBrendi_Info_01_05 " );	// Yes, it's me Benchel.
 	AI_Output(other,self, " DIA_VLK_6130_Benchel_MissBrendi_Info_01_06 " );	// Then I want to tell you, Benchel, that Luthero has been waiting for you.
 	AI_Output(other,self, " DIA_VLK_6130_Benchel_MissBrendi_Info_01_08 " );	// You were supposed to take him the black brandy that Orlan gave you.
@@ -57,7 +57,7 @@ func void dia_vlk_6130_benchel_missbrendi_info()
 	AI_Output(other,self, " DIA_VLK_6130_Benchel_MissBrendi_Info_01_25 " );	// Let me guess - black brandy?
 	AI_Output(self,other, " DIA_VLK_6130_Benchel_MissBrendi_Info_01_28 " );	// Exactly. One bottle costs a fortune - to say the least!
 	AI_Output(self,other, " DIA_VLK_6130_Benchel_MissBrendi_Info_01_30 " );	// It used to be brought from the mainland, but after merchant ships stopped entering our harbor, new shipments stopped coming.
-	AI_Output(self,other, " DIA_VLK_6130_Benchel_MissBrendi_Info_01_31 " );	// That's why the price of this black brandy soared!
+	AI_Output(self,other, " DIA_VLK_6130_Benchel_MissBrendi_Info_01_31 " );	// That's why the price of this stuff soared!
 	B_LogEntry( TOPIC_BLACKBRENDI , " I helped Benchel deal with the bandits. " );
 };
 
@@ -89,7 +89,7 @@ func void dia_vlk_6130_benchel_missbrendifollow_info()
 	AI_Output(self,other, " DIA_VLK_6130_Benchel_MissBrendiFollow_Info_01_07 " );	// I don't want to risk my life for junk anymore.
 	AI_Output(other,self, " DIA_VLK_6130_Benchel_MissBrendiFollow_Info_01_11 " );	// What do you say if I help you get to the city gates?
 	AI_Output(self,other, " DIA_VLK_6130_Benchel_MissBrendiFollow_Info_01_12 " );	// Will you come with me?
-	AI_Output(self,other, " DIA_VLK_6130_Benchel_MissBrendiFollow_Info_01_18 " );	// (thinks) Alright, let's go!
+	AI_Output(self,other, " DIA_VLK_6130_Benchel_MissBrendiFollow_Info_01_18 " );	// Alright, let's go!
 	B_LogEntry( TOPIC_BLACKBRENDI , " I've agreed to escort Benchel to the city gates. Looks like he's not going anywhere alone. So I'll have to babysit him for a while. " );
 	AI_StopProcessInfos(self);
 	self.aivar[ AIV_PARTYMEMBER ] = TRUE ;
@@ -129,7 +129,7 @@ func void dia_vlk_6130_benchel_angekommen_info()
 	B_GiveInvItems(self,other,itmi_blackbrendi,5);
 	AI_Output(other,self, " DIA_VLK_6130_Benchel_ANGEKOMMEN_Info_01_12 " );	// And what are you going to do now?
 	AI_Output(self,other, " DIA_VLK_6130_Benchel_ANGEKOMMEN_Info_01_13 " );	// Absolutely nothing.
-	AI_Output(self,other, " DIA_VLK_6130_Benchel_ANGEKOMMEN_Info_01_14 " );	// I will sit all day in a tavern, drink beer and enjoy peace.
+	AI_Output(self,other, " DIA_VLK_6130_Benchel_ANGEKOMMEN_Info_01_14 " );	// I will sit all day in a tavern, drink beer and enjoy life.
 	AI_Output(other,self, " DIA_VLK_6130_Benchel_ANGEKOMMEN_Info_01_15 " );	// Well, as you know. I'll pass on your words to Luther.
 	AI_Output(self,other, " DIA_VLK_6130_Benchel_ANGEKOMMEN_Info_01_16 " );	// Then good luck, mate! We will surely see you again.
 	BENCHELLEAVEME = TRUE;
