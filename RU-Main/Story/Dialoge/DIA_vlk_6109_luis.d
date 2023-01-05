@@ -80,18 +80,18 @@ func void dia_luis_hello_info()
 {
 	B_GivePlayerXP(50);
 	AI_Output(other,self, " DIA_Luis_Hallo_01_00 " );	// Is that you Louis?
-	AI_Output(self,other, " DIA_Luis_Hallo_01_01 " );	// Yes, I am. What do you have to do with me?
-	AI_Output(other,self, " DIA_Luis_Hallo_01_03 " );	// They say that you talk too much about things that you should be silent about.
-	AI_Output(other,self, " DIA_Luis_Hallo_01_04 " );	// Some people really don't like it.
-	AI_Output(self,other, " DIA_Luis_Hallo_01_05 " );	// (indignantly) WHAT?! You know, if someone does not like something, then this is their personal problem!
-	AI_Output(self,other, " DIA_Luis_Hallo_01_06 " );	// And I will say what I want!
-	AI_Output(other,self, " DIA_Luis_Hallo_01_07 " );	// I see you didn't understand what I told you!
+	AI_Output(self,other, " DIA_Luis_Hallo_01_01 " );	// That's me. What do you want?
+	AI_Output(other,self, " DIA_Luis_Hallo_01_03 " );	// They say that you talk too much about things you really should be silent about.
+	AI_Output(other,self, " DIA_Luis_Hallo_01_04 " );	// Some people don't like it.
+	AI_Output(self,other, " DIA_Luis_Hallo_01_05 " );	// WHAT?! The fuck do I care who like what?!
+	AI_Output(self,other, " DIA_Luis_Hallo_01_06 " );	// I will say what I want!
+	AI_Output(other,self, " DIA_Luis_Hallo_01_07 " );	// I see you still don't understand!
 	AI_Output(self,other, " DIA_Luis_Hallo_01_08 " );	// Yes? And what will you do?
 	AI_Output(other,self, " DIA_Luis_Hallo_01_09 " );	// I'll just slit your throat right now to shut you up once and for all.
 	AI_Output(self,other, " DIA_Luis_Hallo_01_10 " );	// WHAT?! Are you serious?!
 	AI_ReadyMeleeWeapon(other);
 	AI_Output(self,other, " DIA_Luis_Hallo_01_12 " );	// Oh god! Yes, you're crazy!
-	AI_Output(self,other, " DIA_Luis_Hallo_01_13 " );	// Guard! Help someone... (in a panic) They want to kill me!
+	AI_Output(self,other, " DIA_Luis_Hallo_01_13 " );	// Guard! Help someone... They want to kill me!
 	AI_StopProcessInfos(self);
 	B_Attack(self,other,AR_ReactToWeapon,0);
 };
