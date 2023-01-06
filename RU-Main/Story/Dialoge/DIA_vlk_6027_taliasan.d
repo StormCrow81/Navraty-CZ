@@ -78,7 +78,7 @@ func int dia_taliasan_hi_condition()
 func void dia_check_hi_info()
 {
 	AI_Output(self,other, " DIA_Taliasan_Hi_01_00 " );	// (annoyed) What do you want here? What do you want?
-	AI_Output(other,self,"DIA_Taliasan_Hi_01_01");	//Ничего.
+	AI_Output(other,self,"DIA_Taliasan_Hi_01_01");	//Nothing.
 	AI_Output(self,other, " DIA_Taliasan_Hi_01_02 " );	// Then get out of here - you have nothing to do here!
 	AI_StopProcessInfos(self);
 };
@@ -134,7 +134,7 @@ func int dia_taliasan_wasistno_condition()
 
 func void dia_taliasan_wasistno_info()
 {
-	AI_Output(other,self,"DIA_Taliasan_WasIstNo_01_00");	//Кто ты?
+	AI_Output(other,self,"DIA_Taliasan_WasIstNo_01_00");	//Who are you?
 	AI_Output(self,other, " DIA_Taliasan_WasIstNo_01_02 " );	// My name is Gallahad. The rest is none of your business.
 	AI_Output(other,self, " DIA_Taliasan_WasIstNo_01_03 " );	// What are you doing here?
 	AI_Output(self,other, " DIA_Taliasan_WasIstNo_01_06 " );	// (annoyed) Leave me alone!
@@ -164,7 +164,7 @@ func int dia_taliasan_problem_condition()
 func void dia_taliasan_problem_info()
 {
 	AI_Output(other,self, " DIA_Taliasan_Problem_01_00 " );	// What's your problem?
-	AI_Output(self,other, " DIA_Taliasan_Problem_01_02 " );	// In people who pry into things that don't concern them... (annoyed) People like you!
+	AI_Output(self,other, " DIA_Taliasan_Problem_01_02 " );	// People who pry into things that don't concern them... People like you!
 	if ((Chapter <=  2 ) || (( TALIASANTELLWHOMAGE  ==  FALSE ) && ( MIS_XARDASNDMTASKSTWO  == LOG_Running)))
 	{
 		AI_Output(other,self, " DIA_Taliasan_Problem_01_06 " );	// Can you please tell me?
@@ -172,28 +172,28 @@ func void dia_taliasan_problem_info()
 		AI_Output(self,other, " DIA_Taliasan_Problem_01_08 " );	// ...once I had everything - honor, money, respect... Not like now...(sadly)
 		AI_Output(self,other, " DIA_Taliasan_Problem_01_11 " );	// In my best years, I was the head of the city guild of magicians of Khorinis and the first adviser to the head of our city.
 		AI_Output(other,self, " DIA_Taliasan_Problem_01_12 " );	// Are you a former mage?!
-		AI_Output(self,other, " DIA_Taliasan_Problem_01_13 " );	// Hell yeah, I was the best mage in Khorinis! What surprises you?
+		AI_Output(self,other, " DIA_Taliasan_Problem_01_13 " );	// Hell yeah, I was the best mage in Khorinis! That surprises you?
 		AI_Output(self,other, " DIA_Taliasan_Problem_01_17 " );	// It's all because of that damn Rister! He's gone to hell!
 		if(Npc_KnowsInfo(other,DIA_Richter_Hello))
 		{
-			AI_Output(other,self, " DIA_Taliasan_Problem_01_18 " );	// Rister? Is that the haughty idiot who donned the robes of judge?
-			AI_Output(self,other, " DIA_Taliasan_Problem_01_19 " );	// Yes, this is it. I see you got to know that fat pig.
+			AI_Output(other,self, " DIA_Taliasan_Problem_01_18 " );	// Rister? Is that the haughty idiot who donned the robes of a judge?
+			AI_Output(self,other, " DIA_Taliasan_Problem_01_19 " );	// Yes, I see you got to know that fat pig.
 		}
 		else
 		{
-			AI_Output(other,self, " DIA_Taliasan_Problem_01_20 " );	// Rister? And who is it?
-			AI_Output(self,other, " DIA_Taliasan_Problem_01_21 " );	// You don't know this bastard? Lucky you! (laughs)
-			AI_Output(self,other, " DIA_Taliasan_Problem_01_22 " );	// This bastard put on the robe of a judge and imagines himself to be who knows who!
-			AI_Output(self,other,"DIA_Taliasan_Problem_01_23");	//Болван!
+			AI_Output(other,self, " DIA_Taliasan_Problem_01_20 " );	// Rister? And who is that?
+			AI_Output(self,other, " DIA_Taliasan_Problem_01_21 " );	// You don't know the bastard? Lucky you! (laughs)
+			AI_Output(self,other, " DIA_Taliasan_Problem_01_22 " );	// Piece of shit put on the robe of a judge and imagines himself to be Innos knows who!
+			AI_Output(self,other,"DIA_Taliasan_Problem_01_23");	//Moron!
 		};
 		AI_Output(other,self, " DIA_Taliasan_Problem_01_25 " );	// Explain what happened?
-		AI_Output(self,other, " DIA_Taliasan_Problem_01_26 " );	// I got involved in some dark story. As I felt then - I should not have done this.
-		AI_Output(self,other, " DIA_Taliasan_Problem_01_27 " );	// 'No one will know anything... Everything will be in the best possible way... I am your friend...', - he said.
+		AI_Output(self,other, " DIA_Taliasan_Problem_01_26 " );	// I got involved in a dark story. 
+		AI_Output(self,other, " DIA_Taliasan_Problem_01_27 " );	// 'No one will know anything... Everything will be fine... I am your friend...', - he said.
 		AI_Output(self,other, " DIA_Taliasan_Problem_01_28 " );	// And when the case went bust - he took it and dumped all the blame on me!
 		AI_Output(self,other, " DIA_Taliasan_Problem_01_31 " );	// Larius, the head of the city, was so enraged by what had happened that he didn't even listen to me!
 		AI_Output(self,other, " DIA_Taliasan_Problem_01_32 " );	// And I lost my place, and everything else with it.
-		AI_Output(self,other, " DIA_Taliasan_Problem_01_35 " );	// Eh! I'd give anything to get even with that bastard. He, I suppose, is there, as always - covered in chocolate!
-		AI_Output(self,other, " DIA_Taliasan_Problem_01_36 " );	// Yes, there's only one problem - they won't let me into the upper quarter of the city.
+		AI_Output(self,other, " DIA_Taliasan_Problem_01_35 " );	// Eh! I'd give anything to get even with that bastard. He, I suppose, is there, as always - covered in splendor!
+		AI_Output(self,other, " DIA_Taliasan_Problem_01_36 " );	// There's only one problem - they won't let me into the upper quarter of the city.
 		TALIASANTELLWHOMAGE = TRUE;
 		if(MIS_XARDASNDMTASKSTWO == LOG_Running)
 		{
@@ -249,7 +249,7 @@ func void dia_taliasan_help_info()
 
 func void dia_taliasan_help_no()
 {
-	AI_Output(other,self, " DIA_Taliasan_Help_No_01_00 " );	// I think you want to involve me in some dark business. I won't work for you.
+	AI_Output(other,self, " DIA_Taliasan_Help_No_01_00 " );	// I think you want to involve me in some shady business. I won't work for you.
 	AI_Output(self,other, " DIA_Taliasan_Help_No_01_03 " );	// Then leave. And keep your mouth shut!
 	Info_ClearChoices(dia_taliasan_help);
 };
@@ -261,8 +261,8 @@ func void dia_taliasan_help_ok()
 	AI_Output(self,other, " DIA_Taliasan_Help_Ok_01_04 " );	// I promise you that you won't regret your decision.
 	Log_CreateTopic(TOPIC_TALIASANHELP,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_TALIASANHELP,LOG_Running);
-	B_LogEntry( TOPIC_TALIASANHELP , " In the waterfront, I met a man named Gallahad. He was once a respected man in Khorinis, until he got involved in one adventure. He was framed by Judge Rister, putting all the blame on the magician, although he himself was involved in the case After the incident, Gallahad lost everything - honor, respect, work ... " );
-	B_LogEntry_Quiet( TOPIC_TALIASANHELP , " I agreed to help Gallahad regain his former position as the city magician. Letters of recommendation from influential people of the city written to the mayor of Khorinis - Larius will help him. Perhaps after that Gallahad will be treated with condescension and turn a blind eye to past misunderstandings. " );
+	B_LogEntry( TOPIC_TALIASANHELP , " In the waterfront, I met a man named Gallahad. He was once a respected man in Khorinis, until he got involved in some  misadventure. He was framed by Judge Rister, putting all the blame on the magician, although he himself was involved. After the incident, Gallahad lost everything - honor, respect, work ... " );
+	B_LogEntry_Quiet( TOPIC_TALIASANHELP , " I agreed to help Gallahad regain his former position as the city magician. Letters of recommendation from influential people of the city written to the mayor of Khorinis - Larius will help him. Perhaps after that Gallahad will regain his former prominence. " );
 	MIS_TALIASANHELP = LOG_Running;
 	Info_ClearChoices(dia_taliasan_help);
 };
@@ -301,13 +301,13 @@ func int DIA_TALIASAN_FineFood_condition()
 func void DIA_TALIASAN_FineFood_info()
 {
 	AI_Output(other,self, " DIA_Taliasan_FineFood_01_00 " );	// Is there anything else I can help you with?
-	AI_Output(self,other, " DIA_Taliasan_FineFood_01_01 " );	// (carelessly) Yes, you can. Bring me something to eat.
+	AI_Output(self,other, " DIA_Taliasan_FineFood_01_01 " );	// Yes, you can. Bring me something to eat.
 	AI_Output(other,self, " DIA_Taliasan_FineFood_01_02 " );	// Are you hungry?
-	AI_Output(self,other, " DIA_Taliasan_FineFood_01_03 " );	// No, idiot! I'm just tired of rough food.
-	AI_Output(self,other, " DIA_Taliasan_FineFood_01_04 " );	// I'm used to eating delicious food! And it's very hard to get decent food in this hole.
+	AI_Output(self,other, " DIA_Taliasan_FineFood_01_03 " );	// No, idiot! I'm just tired of shitty food.
+	AI_Output(self,other, " DIA_Taliasan_FineFood_01_04 " );	// I'm used to eating the good stuff! And it's very hard to get decent food in this hole.
 	AI_Output(other,self, " DIA_Taliasan_FineFood_01_05 " );	// Okay, what can I bring you?
 	AI_Output(self,other, " DIA_Taliasan_FineFood_01_06 " );	// Well... I think it will be enough if you bring me three bottles of wine, a ham, a piece of cheese, a pot of honey and a bunch of grapes.
-	AI_Output(self,other, " DIA_Taliasan_FineFood_01_07 " );	// But don't you dare ask me for money for these products. Think of something yourself!
+	AI_Output(self,other, " DIA_Taliasan_FineFood_01_07 " );	// But don't you dare ask me for money for it. Think of something yourself!
 	MIS_TaliasanFineFood = LOG_Running;
 	Log_CreateTopic(TOPIC_TaliasanFineFood,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_TaliasanFineFood,LOG_Running);
@@ -342,10 +342,10 @@ func void DIA_TALIASAN_FineFood_Done_info()
 	Npc_RemoveInvItems(hero,ItFo_Bacon,1);
 	Npc_RemoveInvItems(hero,ITFO_WINEBERRYS,1);
 	Npc_RemoveInvItems(hero,ItFo_Wine,3);
-	AI_Output(self,other, " DIA_Taliasan_FineFood_Done_01_01 " );	// Great! Give it here... (greedily) Finally, my stomach will taste something other than rotten fish soup.
-	AI_Output(self,other, " DIA_Taliasan_FineFood_Done_01_02 " );	// You did a good job. Now you can go!
+	AI_Output(self,other, " DIA_Taliasan_FineFood_Done_01_01 " );	// Great! Give it here... (greedily) Finally, my stomach will experience something other than rotten fish "broth".
+	AI_Output(self,other, " DIA_Taliasan_FineFood_Done_01_02 " );	// You did a good job. You can go!
 	AI_Output(other,self, " DIA_Taliasan_FineFood_Done_01_03 " );	// What, you won't even say thank you?
-	AI_Output(self,other, " DIA_Taliasan_FineFood_Done_01_04 " );	// (carelessly) Thank you.
+	AI_Output(self,other, " DIA_Taliasan_FineFood_Done_01_04 " );	// Pfffft.
 	CreateInvItems(hero,ItSc_HarmUndead,1);
 	MIS_TaliasanFineFood = LOG_Success;
 	Log_SetTopicStatus(TOPIC_TaliasanFineFood,LOG_Success);
@@ -422,12 +422,12 @@ func void dia_taliasan_letterfromfernando_info()
 		else if(RECOMENDLETTER >= 1)
 		{
 			AI_Output(self,other, " DIA_Taliasan_LetterFromFernando_01_08 " );	// But I need more letters of recommendation!
-			AI_Output(self,other, " DIA_Taliasan_LetterFromFernando_01_09 " );	// We need at least a couple more of these recommendations.
+			AI_Output(self,other, " DIA_Taliasan_LetterFromFernando_01_09 " );	// We need at least a couple more of these.
 		};
 	}
 	else if((Fernando_ImKnast == TRUE) && (RECOMENDLETTER == 3))
 	{
-		AI_Output(self,other, " DIA_Taliasan_LetterFromFernando_01_10 " );	// (annoyed) And why do I need it?! The whole city already knows that Fernando supplied weapons to the bandits. And you bring me this letter from him!
+		AI_Output(self,other, " DIA_Taliasan_LetterFromFernando_01_10 " );	// Why do I need it?! The whole city already knows that Fernando supplied weapons to the bandits. And you bring me this letter from him!
 		AI_Output(self,other, " DIA_Taliasan_LetterFromFernando_01_12 " );	// Although... Considering that it was you who uncovered this crime, your request may be heeded.
 		AI_Output(self,other, " DIA_Taliasan_LetterFromFernando_01_04 " );	// I think the letters you brought me will be enough to impress Larius.
 		TALIASANHELP_STEP1 = TRUE;
@@ -435,7 +435,7 @@ func void dia_taliasan_letterfromfernando_info()
 	}
 	else
 	{
-		AI_Output(self,other, " DIA_Taliasan_LetterFromFernando_01_10 " );	// (annoyed) And why do I need it?! The whole city already knows that Fernando supplied weapons to the bandits. And you bring me this letter from him!
+		AI_Output(self,other, " DIA_Taliasan_LetterFromFernando_01_10 " );	// Why do I need it?! The whole city already knows that Fernando supplied weapons to the bandits. And you bring me this letter from him!
 		AI_Output(self,other, " DIA_Taliasan_LetterFromFernando_01_11 " );	// Better keep it to yourself - I definitely don't need it.
 		B_LogEntry( TOPIC_TALIASANHELP , " Gallahad did not want to take Fernando's letter of recommendation, believing that the opinion of the criminal is unlikely to be heeded. " );
 	};
@@ -484,7 +484,7 @@ func void dia_taliasan_letterfromlutero_info()
 	else if(RECOMENDLETTER >= 1)
 	{
 		AI_Output(self,other, " DIA_Taliasan_LetterFromLutero_01_08 " );	// But I need more letters of recommendation!
-		AI_Output(self,other, " DIA_Taliasan_LetterFromLutero_01_09 " );	// We need at least a couple more of these recommendations.
+		AI_Output(self,other, " DIA_Taliasan_LetterFromLutero_01_09 " );	// We need at least a couple more of these.
 	};
 };
 
@@ -532,7 +532,7 @@ func void dia_taliasan_letterfromgerbrant_info()
 	else if(RECOMENDLETTER >= 1)
 	{
 		AI_Output(self,other, " DIA_Taliasan_LetterFromGerbrant_01_09 " );	// But I need more letters of recommendation!
-		AI_Output(self,other, " DIA_Taliasan_LetterFromGerbrant_01_10 " );	// We need at least a couple more of these recommendations.
+		AI_Output(self,other, " DIA_Taliasan_LetterFromGerbrant_01_10 " );	// We need at least a couple more of these.
 	};
 };
 
@@ -558,14 +558,14 @@ func void dia_taliasan_letterfromsalandril_info()
 {
 	B_GivePlayerXP(50);
 	AI_Output(other,self, " DIA_Taliasan_LetterFromSalandril_01_00 " );	// Alchemist Salandril wrote a recommendation for you.
-	AI_Output(self,other, " DIA_Taliasan_LetterFromSalandril_01_01 " );	// Salandril? Hmmm. I didn't count on his voice.
+	AI_Output(self,other, " DIA_Taliasan_LetterFromSalandril_01_01 " );	// Salandril? Hmmm. I didn't count on his vote of confidence.
 	B_GiveInvItems(other,self,itwr_salandrilletter,1);
 	Npc_RemoveInvItems(self,itwr_salandrilletter,1);
 	B_UseFakeScroll();
 	AI_Output(self,other, " DIA_Taliasan_LetterFromSalandril_01_03 " );	// Hmmm, not bad! Although few people listen to his opinion in Khorinis.
 	AI_Output(self,other, " DIA_Taliasan_LetterFromSalandril_01_04 " );	// However, it can also be useful to us.
 	RECOMENDLETTER = RECOMENDLETTER + 1;
-	B_LogEntry( TOPIC_TALIASANHELP , " I gave Gallahad Salandril's letter of recommendation. Apparently, this letter will not have the effect that Gallahad expects. But he still kept it for himself. " );
+	B_LogEntry( TOPIC_TALIASANHELP , " I gave Gallahad Salandril's letter of recommendation. Apparently, this letter will not have the effect that Gallahad expects. But he still kept it. " );
 
 	if(RECOMENDLETTER >= 4)
 	{
@@ -580,7 +580,7 @@ func void dia_taliasan_letterfromsalandril_info()
 	else if(RECOMENDLETTER >= 1)
 	{
 		AI_Output(self,other, " DIA_Taliasan_LetterFromSalandril_01_09 " );	// But I need more letters of recommendation!
-		AI_Output(self,other, " DIA_Taliasan_LetterFromSalandril_01_10 " );	// We need at least a couple more of these recommendations.
+		AI_Output(self,other, " DIA_Taliasan_LetterFromSalandril_01_10 " );	// We need at least a couple more of these.
 	};
 };
 
@@ -607,8 +607,8 @@ func int dia_taliasan_letterfromvalentino_condition()
 func void dia_taliasan_letterfromvalentino_info()
 {
 	AI_Output(other,self, " DIA_Taliasan_LetterFromValentino_01_00 " );	// I have a letter of recommendation for you from Valentino.
-	AI_Output(self,other, " DIA_Taliasan_LetterFromValentino_01_01 " );	// WHAT?! From this brainless bastard?
-	AI_Output(self,other, " DIA_Taliasan_LetterFromValentino_01_03 " );	// Yes, no one in the city puts his opinion in a penny!
+	AI_Output(self,other, " DIA_Taliasan_LetterFromValentino_01_01 " );	// WHAT?! From that brainless bastard?
+	AI_Output(self,other, " DIA_Taliasan_LetterFromValentino_01_03 " );	// No one in the city values his opinion!
 	AI_Output(self,other, " DIA_Taliasan_LetterFromValentino_01_04 " );	// Better keep it to yourself.
 	B_LogEntry( TOPIC_TALIASANHELP , " Gallahad didn't even want to take a letter of recommendation from Valentino. Apparently, no one in town cares about his opinion. " );
 };
@@ -636,7 +636,7 @@ func int dia_taliasan_givemegiftok_condition()
 func void dia_taliasan_givemegiftok_info()
 {
 	AI_Output(other,self, " DIA_Taliasan_GiveMeGiftOK_01_00 " );	// I want my reward.
-	AI_Output(self,other, " DIA_Taliasan_GiveMeGiftOK_01_03 " );	// Only half done.
+	AI_Output(self,other, " DIA_Taliasan_GiveMeGiftOK_01_03 " );	// You are only half done.
 	AI_Output(self,other, " DIA_Taliasan_GiveMeGiftOK_01_04 " );	// So let's talk about your reward later.
 };
 
@@ -674,7 +674,7 @@ func void dia_taliasan_sendtolarius_info()
 	AI_Output(self,other, " DIA_Taliasan_SendToLarius_01_12 " );	// The fate of most decisions depends on his mood.
 	AI_Output(self,other, " DIA_Taliasan_SendToLarius_01_14 " );	// As far as I remember, the best time to make such a request to him is during the afternoon break.
 	AI_Output(self,other, " DIA_Taliasan_SendToLarius_01_15 " );	// Remember this well. Now go!
-	B_LogEntry( TOPIC_TALIASANHELP , " Now I need to take all the letters of recommendation to Larius, the head of Khorinis, asking him to show mercy to Gallahad in a case that broke his whole life. According to Gallahad, Larius is a peculiar person: he makes most decisions depending on his mood . Gallahad advised to turn to him in the afternoon break, when he is in the best mood. " );
+	B_LogEntry( TOPIC_TALIASANHELP , " Now I need to take all the letters of recommendation to Larius, the head of Khorinis, asking him to show mercy to Gallahad in a case that ruined his whole life. According to Gallahad, Larius is a peculiar person: he makes most decisions depending on his mood . Gallahad advised to turn to him in the afternoon break, when he is feeling friendly. " );
 	AI_StopProcessInfos(self);
 	B_StartOtherRoutine(VLK_400_Larius, " Dinner " );
 };
@@ -762,7 +762,7 @@ func int dia_taliasan_needbook_condition()
 func void dia_taliasan_needbook_info()
 {
 	AI_Output(other,self, " DIA_Taliasan_NeedBook_01_00 " );	// Trader Fernando needs a book called 'Fundamentals of Rhetoric'. He will write a letter only when I bring him this book.
-	AI_Output(self,other, " DIA_Taliasan_NeedBook_01_01 " );	// Ha! So he still needs her? Stubborn!
+	AI_Output(self,other, " DIA_Taliasan_NeedBook_01_01 " );	// Ha! So he still wants this? Fool!
 	AI_Output(self,other, " DIA_Taliasan_NeedBook_01_06 " );	// Find another way to get a letter from him!
 	B_LogEntry( TOPIC_FERNANDOHELP , " Gallahad doesn't want to part with his book. He's so distrustful that he won't even let me near his bookshelf. " );
 	AI_StopProcessInfos(self);
@@ -793,7 +793,7 @@ func void dia_taliasan_ignazhelp_info()
 	B_GivePlayerXP(50);
 	AI_Output(other,self, " DIA_Taliasan_IgnazHelp_01_00 " );	// Ignaz asked me to remind you...
 	AI_Output(other,self, " DIA_Taliasan_IgnazHelp_01_02 " );	// ...that you promised him a new batch of herbs for his experiments.
-	AI_Output(self,other, " DIA_Taliasan_IgnazHelp_01_03 " );	// Oh yes! I completely forgot about him. Now I will go to him.
+	AI_Output(self,other, " DIA_Taliasan_IgnazHelp_01_03 " );	// Oh yes! I completely forgot about him. I'll take care of it.
 	TALIASANAWAY = TRUE;
 	self.guild = GIL_NONE;
 	Npc_SetTrueGuild(self,GIL_NONE);
@@ -841,7 +841,7 @@ func int dia_taliasan_cancelhelp_condition()
 func void dia_taliasan_cancelhelp_info()
 {
 	AI_Output(self,other, " DIA_Taliasan_CancelHelp_01_00 " );	// Wait a minute...
-	AI_Output(self,other, " DIA_Taliasan_CancelHelp_01_02 " );	// There are many rumors about you in the city. And not very flattering!
+	AI_Output(self,other, " DIA_Taliasan_CancelHelp_01_02 " );	// There are many rumors about you in the city. And not all are very flattering!
 	AI_Output(self,other, " DIA_Taliasan_CancelHelp_01_03 " );	// I heard that you somehow managed to quarrel with some powerful people in this city.
 	AI_Output(self,other, " DIA_Taliasan_CancelHelp_01_06 " );	// I really counted on their support.
 	AI_Output(self,other, " DIA_Taliasan_CancelHelp_01_07 " );	// So forget our deal.
@@ -946,11 +946,11 @@ func void dia_taliasan_sendtolariusok_info()
 	{
 		B_GivePlayerXP(500);
 		AI_Output(other,self, " DIA_Taliasan_SendToLariusOk_01_18 " );	// He forgives you. It is done.
-		AI_Output(other,self, " DIA_Taliasan_SendToLariusOk_01_19 " );	// Letters of recommendation helped in many ways, which made an indelible impression on Larius.
+		AI_Output(other,self, " DIA_Taliasan_SendToLariusOk_01_19 " );	// The letters of recommendation helped in many ways, which made an indelible impression on Larius.
 		AI_Output(other,self, " DIA_Taliasan_SendToLariusOk_01_20 " );	// He said you can get to work immediately.
 		AI_Output(self,other, " DIA_Taliasan_SendToLariusOk_01_21 " );	// That's great news! Finally!
 		AI_Output(self,other, " DIA_Taliasan_SendToLariusOk_01_22 " );	// I won't have to stick around in this stinking sewer for the rest of my life. I just don't believe it!
-		AI_Output(self,other, " DIA_Taliasan_SendToLariusOk_01_29 " );	// I won't waste another minute and I'll go to Larius right away.
+		AI_Output(self,other, " DIA_Taliasan_SendToLariusOk_01_29 " );	// I won't waste another minute! I'll go to Larius right away.
 		self.guild = GIL_NONE;
 		MIS_TALIASANHELP = LOG_SUCCESS;
 		Log_SetTopicStatus(TOPIC_TALIASANHELP,LOG_SUCCESS);
@@ -988,7 +988,7 @@ func void dia_taliasan_givemegiftnext_info()
 	AI_Output(other,self, " DIA_Taliasan_GiveMeGiftNext_01_00 " );	// I want my reward.
 	AI_Output(self,other, " DIA_Taliasan_GiveMeGiftNext_01_03 " );	// Sorry, but I'm in a big hurry right now.
 	AI_Output(self,other, " DIA_Taliasan_GiveMeGiftNext_01_04 " );	// So let's talk about your reward tomorrow.
-	AI_Output(self,other, " DIA_Taliasan_GiveMeGiftNext_01_05 " );	// Come to the town hall this afternoon and we'll discuss your reward.
+	AI_Output(self,other, " DIA_Taliasan_GiveMeGiftNext_01_05 " );	// Come to the town hall this afternoon and we'll discuss it.
 	MIS_TALIASAN_GIFT_DAY = Wld_GetDay();
 	AI_StopProcessInfos(self);
 };
@@ -1065,12 +1065,12 @@ func void dia_taliasan_givemegiftnow_money()
 {
 	AI_Output(other,self, " DIA_Taliasan_GiveMeGiftNow_Money_01_00 " );	// I need money.
 	AI_Output(self,other, " DIA_Taliasan_GiveMeGiftNow_Money_01_01 " );	// I can give you five hundred gold coins for your efforts.
-	AI_Output(other,self, " DIA_Taliasan_GiveMeGiftNow_Money_01_03 " );	// How, so few?
+	AI_Output(other,self, " DIA_Taliasan_GiveMeGiftNow_Money_01_03 " );	// So few?
 	AI_Output(self,other, " DIA_Taliasan_GiveMeGiftNow_Money_01_04 " );	// Hmmm...(thinking) You're probably right.
 	AI_Output(self,other, " DIA_Taliasan_GiveMeGiftNow_Money_01_05 " );	// Good. How about a thousand gold coins?
 	AI_Output(self,other, " DIA_Taliasan_GiveMeGiftNow_Money_01_06 " );	// I don't have any more.
 	Info_ClearChoices(dia_taliasan_givemegiftnow);
-	Info_AddChoice(dia_taliasan_givemegiftnow,"Я согласен.",dia_taliasan_givemegiftnow_thousand);
+	Info_AddChoice(dia_taliasan_givemegiftnow,"Perfect.",dia_taliasan_givemegiftnow_thousand);
 	Info_AddChoice(dia_taliasan_givemegiftnow, " No, it's still not enough. " ,dia_taliasan_givemegiftnow_nomoney);
 };
 
@@ -1095,7 +1095,7 @@ func void dia_taliasan_givemegiftnow_nomoney()
 func void dia_taliasan_givemegiftnow_zelia()
 {
 	AI_Output(other,self, " DIA_Taliasan_GiveMeGiftNow_Zelia_01_00 " );	// Give me some of your potions.
-	AI_Output(self,other, " DIA_Taliasan_GiveMeGiftNow_Zelia_01_01 " );	// Which potion would you like to get?
+	AI_Output(self,other, " DIA_Taliasan_GiveMeGiftNow_Zelia_01_01 " );	// Which potion would you like?
 	Info_ClearChoices(dia_taliasan_givemegiftnow);
 	Info_AddChoice(dia_taliasan_givemegiftnow, " I want to take a strength potion. " ,dia_taliasan_givemegiftnow_str);
 	Info_AddChoice(dia_taliasan_givemegiftnow, " I want to take a potion of dexterity. " ,dia_taliasan_givemegiftnow_dex);
@@ -1133,8 +1133,8 @@ func void dia_taliasan_givemegiftnow_magic()
 {
 	AI_Output(other,self, " DIA_Taliasan_GiveMeGiftNow_Magic_01_00 " );	// Teach me how to use magic.
 	AI_Output(self,other, " DIA_Taliasan_GiveMeGiftNow_Magic_01_01 " );	// You have chosen the most valuable reward.
-	AI_Output(self,other, " DIA_Taliasan_GiveMeGiftNow_Magic_01_03 " );	// However, I must warn you that I won't be able to teach you Firebending or Waterbending. Not to mention necromancer magic!
-	AI_Output(self,other, " DIA_Taliasan_GiveMeGiftNow_Magic_01_04 " );	// These types of magic are available only to the followers of those gods who grant them this knowledge.
+	AI_Output(self,other, " DIA_Taliasan_GiveMeGiftNow_Magic_01_03 " );	// However, I must warn you that I won't be able to teach you Pyromancy or Hydromancy. Not to mention Necromancy!
+	AI_Output(self,other, " DIA_Taliasan_GiveMeGiftNow_Magic_01_04 " );	// Those types of magic are available only to the followers of those gods who grant them such knowledge.
 	AI_Output(self,other, " DIA_Taliasan_GiveMeGiftNow_Magic_01_05 " );	// I do true magic!
 	AI_Output(self,other, " DIA_Taliasan_GiveMeGiftNow_Magic_01_06 " );	// I'll teach you how to create runes, for this you need magic scrolls.
 	AI_Output(self,other, " DIA_Taliasan_GiveMeGiftNow_Magic_01_08 " );	// You can buy them from me.
@@ -1377,7 +1377,7 @@ func int dia_taliasan_teach_mana_condition()
 func void dia_taliasan_teach_mana_info()
 {
 	AI_Output(other,self, " DIA_Taliasan_TEACH_MANA_15_00 " );	// I want to increase my magical energy.
-	AI_Output(self,other, " DIA_Taliasan_TEACH_MANA_15_01 " );	// I can help you with this. How you use it is up to you.
+	AI_Output(self,other, " DIA_Taliasan_TEACH_MANA_15_01 " );	// I can help you with that. How you use it is up to you.
 	Info_ClearChoices(god_taliasan_teach_mana);
 	Info_AddChoice(dia_taliasan_teach_mana,Dialog_Back,dia_taliasan_teach_mana_back);
 	Info_AddChoice(dia_taliasan_teach_mana,b_buildlearnstringforskills(PRINT_LearnMANA1,B_GetLearnCostAttribute(other,ATR_MANA_MAX)),dia_taliasan_teach_mana_1);
@@ -1393,7 +1393,7 @@ func void dia_taliasan_teach_mana_back()
 {
 	if(other.attribute[ATR_MANA_MAX] >= T_MED)
 	{
-		AI_Output(self,other, " DIA_Taliasan_TEACH_MANA_05_00 " );	// I can't help you with this anymore.
+		AI_Output(self,other, " DIA_Taliasan_TEACH_MANA_05_00 " );	// I can't help you anymore.
 		AI_Output(self,other, " DIA_Taliasan_TEACH_MANA_05_01 " );	// You're at your limits!
 	};
 
@@ -1622,8 +1622,8 @@ func void dia_taliasan_bookseekxardas_info()
 {
 	B_GivePlayerXP(50);
 	AI_Output(other,self, " DIA_Taliasan_BookSeekXardas_01_01 " );	// I'm looking for one very rare book.
-	AI_Output(other,self, " DIA_Taliasan_BookSeekXardas_01_03 " );	// I think it's called 'The Wasted Way'. Have you heard anything about her?
-	AI_Output(self,other, " DIA_Taliasan_BookSeekXardas_01_05 " );	// Tell me, why are you interested in her?
+	AI_Output(other,self, " DIA_Taliasan_BookSeekXardas_01_03 " );	// I think it's called 'The Wasted Way'. Have you heard anything about it?
+	AI_Output(self,other, " DIA_Taliasan_BookSeekXardas_01_05 " );	// Tell me, why are you interested in it?
 	Info_ClearChoices(dia_taliasan_bookseekxardas);
 	Info_AddChoice(dia_taliasan_bookseekxardas, " This is a stupid game! " ,dia_taliasan_bookseekxardas_xardas);
 	Info_AddChoice(dia_taliasan_bookseekxardas, " I'm just interested in rare things. " ,dia_taliasan_bookseekxardas_nothng);
@@ -1631,9 +1631,9 @@ func void dia_taliasan_bookseekxardas_info()
 
 func void dia_taliasan_bookseekxardas_xardas()
 {
-	AI_Output(other,self, " DIA_Taliasan_BookSeekXardas_Xardas_01_01 " );	// Xardas needs her.
+	AI_Output(other,self, " DIA_Taliasan_BookSeekXardas_Xardas_01_01 " );	// Xardas needs it.
 	AI_Output(self,other, " DIA_Taliasan_BookSeekXardas_Xardas_01_02 " );	// (grins) I thought so...
-	AI_Output(self,other, " DIA_Taliasan_BookSeekXardas_Xardas_01_03 " );	// Apparently, he will never rest until he has her in his hands.
+	AI_Output(self,other, " DIA_Taliasan_BookSeekXardas_Xardas_01_03 " );	// Apparently, he will never rest until he has it in his hands.
 	AI_Output(self,other, " DIA_Taliasan_BookSeekXardas_Xardas_01_05 " );	// I'm afraid I'll disappoint you, but I don't have it.
 	AI_Output(self,other, " DIA_Taliasan_BookSeekXardas_Xardas_01_07 " );	// I sold it to a traveling merchant.
 	AI_Output(self,other, " DIA_Taliasan_BookSeekXardas_Xardas_01_09 " );	// Just don't ask about him. I do not remember. It was a long time ago...
@@ -1652,21 +1652,21 @@ func void dia_taliasan_bookseekxardas_nothng()
 		AI_Output(self,other, " DIA_Taliasan_BookSeekXardas_Nothng_01_05 " );	// I managed to get one copy of it. Although this is a rarity.
 		AI_Output(self,other, " DIA_Taliasan_BookSeekXardas_Nothng_01_09 " );	// But I won't give it to you - don't even hope!
 		AI_Output(other,self, " DIA_Taliasan_BookSeekXardas_Nothng_01_12 " );	// Is there anything I can do to change your mind?
-		AI_Output(self,other, " DIA_Taliasan_BookSeekXardas_Nothng_01_15 " );	// (thinks) You helped me with Larius... And I agree to give you this book, but only in exchange for the same valuable thing.
+		AI_Output(self,other, " DIA_Taliasan_BookSeekXardas_Nothng_01_15 " );	// You helped me with Larius... And I agree to give you this book, but only in exchange for some other valuable thing.
 		AI_Output(other,self, " DIA_Taliasan_BookSeekXardas_Nothng_01_16 " );	// What are you specifically interested in?
-		AI_Output(self,other, " DIA_Taliasan_BookSeekXardas_Nothng_01_18 " );	// Anything will do - elixirs, plants, magic scrolls. The main thing is that this thing should be rare.
+		AI_Output(self,other, " DIA_Taliasan_BookSeekXardas_Nothng_01_18 " );	// Anything will do - elixirs, plants, magic scrolls. The main thing is that the item should be rare.
 		AI_Output(other,self, " DIA_Taliasan_BookSeekXardas_Nothng_01_19 " );	// Okay, I'll see what I can do.
-		B_LogEntry( TOPIC_XARDASNDMTASKSTWO , " Gallahad agreed to give me this book in exchange for another rare item. It could be anything: an elixir, a plant, or a magic scroll. " );
+		B_LogEntry( TOPIC_XARDASNDMTASKSTWO , " Gallahad agreed to give me the book in exchange for another rare item. It could be anything: an elixir, a plant, or a magic scroll. " );
 		XARDASBRIGBOOKSPECIAL = TRUE;
 		Info_ClearChoices(dia_taliasan_bookseekxardas);
 	}
 	else
 	{
 		AI_Output(self,other, " DIA_Taliasan_BookSeekXardas_Nothng_01_20 " );	// Yes?! Hmmm...(surprised) You don't seem like the kind of person who would be interested in that.
-		AI_Output(self,other, " DIA_Taliasan_BookSeekXardas_Nothng_01_26 " );	// Hmmm... Okay, let's say I have one such instance.
+		AI_Output(self,other, " DIA_Taliasan_BookSeekXardas_Nothng_01_26 " );	// Hmmm... Okay, let's say I have such an item.
 		AI_Output(self,other, " DIA_Taliasan_BookSeekXardas_Nothng_01_27 " );	// But I won't give it to you - don't even hope!
 		AI_Output(other,self, " DIA_Taliasan_BookSeekXardas_Nothng_01_28 " );	// Is there anything I can do to change your mind?
-		AI_Output(self,other, " DIA_Taliasan_BookSeekXardas_Nothng_01_29 " );	// I don't see any reason why I should give this book to you.
+		AI_Output(self,other, " DIA_Taliasan_BookSeekXardas_Nothng_01_29 " );	// I don't see any reason why I should give the book to you.
 		B_LogEntry( TOPIC_XARDASNDMTASKSTWO , " Gallahad sees no reason to give me this book yet. I wonder what would make him change his mind? " );
 		XARDASMISSBOOK = TRUE;
 		AI_StopProcessInfos(self);
@@ -1701,7 +1701,7 @@ func void dia_taliasan_bookseekxardasafter_info()
 		AI_Output(other,self, " DIA_Taliasan_BookSeekXardasAfter_01_04 " );	// What are you specifically interested in?
 		AI_Output(self,other, " DIA_Taliasan_BookSeekXardasAfter_01_06 " );	// Anything will do - elixirs, plants, magic scrolls. The main thing is that this thing should be rare.
 		AI_Output(other,self, " DIA_Taliasan_BookSeekXardasAfter_01_07 " );	// Okay, I'll see what I can do.
-		B_LogEntry( TOPIC_XARDASNDMTASKSTWO , " Gallahad agreed to give me this book in exchange for another rare item. It could be anything: an elixir, a plant, or a magic scroll. " );
+		B_LogEntry( TOPIC_XARDASNDMTASKSTWO , " Gallahad agreed to give me the book in exchange for another rare item. It could be anything: an elixir, a plant, or a magic scroll. " );
 		XARDASBRIGBOOKSPECIAL = TRUE;
 	}
 	else
@@ -1765,7 +1765,7 @@ func void dia_taliasan_bookseekxardasgift_info()
 
 func void dia_taliasan_bookseekxardasgift_not()
 {
-	AI_Output(other,self,"DIA_Taliasan_BookSeekXardasGift_Not_01_00");	//Пока нет.
+	AI_Output(other,self,"DIA_Taliasan_BookSeekXardasGift_Not_01_00");	//Not yet.
 	AI_Output(self,other, " DIA_Taliasan_BookSeekXardasGift_Not_01_01 " );	// In that case, you and I have nothing to discuss yet either.
 	Info_ClearChoices(dia_taliasan_bookseekxardasgift);
 };
@@ -2169,23 +2169,25 @@ func int DIA_Taliasan_BuyBooks_condition()
 
 func void DIA_Review_BuyBooks_info()
 {
-	AI_Output(other,self,"DIA_Taliasan_BuyBooks_01_01");	//Тебя интересуют редкие книги?
-	AI_Output(self,other,"DIA_Taliasan_BuyBooks_01_02");	//Конечно. Это единственное, что меня по-настоящему интересует.
-	AI_Output(self,other,"DIA_Taliasan_BuyBooks_01_03");	//Ибо некоторые знания не купишь даже за все золото мира.
-	AI_Output(other,self,"DIA_Taliasan_BuyBooks_01_04");	//А что я получу взамен, если принесу тебе некоторые из них?
-	AI_Output(self,other,"DIA_Taliasan_BuyBooks_01_05");	//Хммм... Денег у меня сейчас мало, и мне нечем будет с тобой расплатиться.
+	AI_Output(other,self,"DIA_Taliasan_BuyBooks_01_01");	//Are you interested in rare books?
+	AI_Output(self,other,"DIA_Taliasan_BuyBooks_01_02");	//Of course. It's the only thing that really interests me.
+	AI_Output(self,other,"DIA_Taliasan_BuyBooks_01_03");	//For some knowledge cannot be bought even for all the gold in the world.
+	AI_Output(other,self,"DIA_Taliasan_BuyBooks_01_04");	//What do I get in return if I bring you some of them?
+	AI_Output(self,other,"DIA_Taliasan_BuyBooks_01_05");	//Hmmm... I don't have much money right now, and I won't be able to pay you back.
 
 	if((hero.guild == GIL_KDF) || (hero.guild == GIL_GUR) || (hero.guild == GIL_KDW) || (hero.guild == GIL_KDM))
 	{
-		AI_Output(self,other,"DIA_Taliasan_BuyBooks_01_06");	//Однако в качестве награды я могу помочь тебе увеличить магические знания и опыт.
+		AI_Output(self,other,"DIA_Taliasan_BuyBooks_01_06");	//However, as a reward, I can help you increase your magical knowledge and experience.
 		Log_CreateTopic(Topic_Bonus,LOG_NOTE);
-		B_LogEntry(Topic_Bonus,"Галлахад также собирает редкие книги. Я могу приносить ему некоторые из их, а взамен он повысит мои магические способности и опыт.");
+		B_LogEntry(Topic_Bonus,"
+Gallahad also collects rare books. I can bring him some of them, and in return he will increase my magical abilities and experience..");
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Taliasan_BuyBooks_01_07");	//Однако в качестве награды я помогу увеличить твою жизненную энергию.
+		AI_Output(self,other,"DIA_Taliasan_BuyBooks_01_07");	//However, as a reward, I will help increase your vitality.
 		Log_CreateTopic(Topic_Bonus,LOG_NOTE);
-		B_LogEntry(Topic_Bonus,"Галлахад также собирает редкие книги. Я могу приносить ему некоторые из их, а взамен он повысит мою жизненную энергию и опыт.");
+		B_LogEntry(Topic_Bonus,"
+Gallahad also collects rare books. I can bring him some of them, and in return he will increase my vitality and experience..");
 	};
 
 	AI_Output(self,other, " DIA_Taliasan_BuyBooks_01_08 " );	// If you're interested, of course.
@@ -2415,7 +2417,7 @@ func void DIA_Taliasan_BuyBooks_Done_info()
 
 	if(BookTalCount >= 1)
 	{
-		AI_Output(self,other, " DIA_Taliasan_BuyBooks_Done_01_05 " );	// Looks like you actually have some very interesting instances here!
+		AI_Output(self,other, " DIA_Taliasan_BuyBooks_Done_01_05 " );	// Looks like you actually have some very interesting items here!
 		AI_Output(self,other, " DIA_Taliasan_BuyBooks_Done_01_06 " );	// Perhaps I'll take them. Are you sure you don't need them anymore?
 		Info_ClearChoices(DIA_Taliasan_BuyBooks_Done);
 		Info_AddChoice(DIA_Taliasan_BuyBooks_Done, " Yes, pick them up! " ,DIA_Taliasan_BuyBooks_Done_Yes);
@@ -2423,7 +2425,7 @@ func void DIA_Taliasan_BuyBooks_Done_info()
 	}
 	else
 	{
-		AI_Output(self,other, " DIA_Taliasan_BuyBooks_Done_01_07 " );	// Unfortunately, you do not have those books that would really interest me.
+		AI_Output(self,other, " DIA_Taliasan_BuyBooks_Done_01_07 " );	// Unfortunately, you do not have any books that would really interest me.
 		AI_Output(self,other, " DIA_Taliasan_BuyBooks_Done_01_08 " );	// So you'd better sell this junk to the merchants in the square. They have the right place!
 	};
 };
@@ -2822,13 +2824,13 @@ func void DIA_Taliasan_TestCanone_info()
 {
 	AI_Output(other,self, " DIA_Taliasan_TestCanone_01_00 " );	// Any other work for me to do?
 	AI_Output(self,other, " DIA_Taliasan_TestCanone_01_01 " );	// Yes. It's good that you asked.
-	AI_Output(self,other, " DIA_Taliasan_TestCanone_01_02 " );	// I just had one very important business, in which your help would not hurt.
+	AI_Output(self,other, " DIA_Taliasan_TestCanone_01_02 " );	// I just had one very important piece of business, in which your help would not hurt.
 	AI_Output(self,other, " DIA_Taliasan_TestCanone_01_04 " );	// A couple of days ago, Lord Hagen placed an order with local alchemists to make magic powder for firing cannons.
 	AI_Output(self,other, " DIA_Taliasan_TestCanone_01_05 " );	// The supply of paladins is already low, and the situation with the orcs is getting more and more tense.
 	AI_Output(self,other, " DIA_Taliasan_TestCanone_01_06 " );	// However, the problem is that none of the craftsmen here have ever done anything like this.
 	AI_Output(self,other, " DIA_Taliasan_TestCanone_01_07 " );	// Simply put, none of them know how to do it.
 	AI_Output(other,self, " DIA_Taliasan_TestCanone_01_08 " );	// And what do you suggest?
-	AI_Output(self,other, " DIA_Taliasan_TestCanone_01_09 " );	// (annoyed) You haven't listened to the end yet, and you're already asking questions! I just know the recipe for this powder!
+	AI_Output(self,other, " DIA_Taliasan_TestCanone_01_09 " );	// (annoyed) You haven't listened to the end yet, and you're already asking questions! I know the recipe for this powder!
 	AI_Output(other,self, " DIA_Taliasan_TestCanone_01_10 " );	// Why don't you tell Lord Hagen himself about this?
 	AI_Output(self,other, " DIA_Taliasan_TestCanone_01_11 " );	// Because I'm not sure if it will work or not.
 	AI_Output(self,other, " DIA_Taliasan_TestCanone_01_12 " );	// And I don't want at all, in case of failure, to look like a complete fool in the eyes of the head of the paladins.
@@ -2841,7 +2843,7 @@ func void DIA_Taliasan_TestCanone_info()
 	B_GiveInvItems(self,other,ItMi_MagicPowder,1);
 	AI_Output(self,other, " DIA_Taliasan_TestCanone_01_19 " );	// Just don't try to do it in the city! We don't need any more noise.
 	AI_Output(self,other, " DIA_Taliasan_TestCanone_01_20 " );	// Find a quiet place and shy away to your heart's content. All clear?
-	AI_Output(other,self,"DIA_Taliasan_TestCanone_01_21");	//Вполне.
+	AI_Output(other,self,"DIA_Taliasan_TestCanone_01_21");	//Clear.
 	AI_Output(self,other, " DIA_Taliasan_TestCanone_01_22 " );	// Okay, I'll wait for your report then.
 	MIS_MagicPowder = LOG_Running;
 	Log_CreateTopic(TOPIC_MagicPowder,LOG_MISSION);
@@ -2874,9 +2876,9 @@ func void DIA_Taliasan_TestCanone_Done_info()
 	AI_Output(other,self, " DIA_Taliasan_TestCanone_Done_01_00 " );	// About your powder...
 	AI_Output(self,other, " DIA_Taliasan_TestCanone_Done_01_01 " );	// (with interest) Yes?
 	AI_Output(other,self, " DIA_Taliasan_TestCanone_Done_01_02 " );	// Apparently it works.
-	AI_Output(self,other, " DIA_Taliasan_TestCanone_Done_01_03 " );	// Were you able to fire the cannon with it?
-	AI_Output(other,self, " DIA_Taliasan_TestCanone_Done_01_04 " );	// Of course. He banged so that his ears were blocked.
-	AI_Output(self,other, " DIA_Taliasan_TestCanone_Done_01_05 " );	// Well, great news! Now this powder can be offered to Lord Hagen himself.
+	AI_Output(self,other, " DIA_Taliasan_TestCanone_Done_01_03 " );	// Were you able to fire a cannon with it?
+	AI_Output(other,self, " DIA_Taliasan_TestCanone_Done_01_04 " );	// Of course. My ears are still ringing.
+	AI_Output(self,other, " DIA_Taliasan_TestCanone_Done_01_05 " );	// That's great news! Now this powder can be offered to Lord Hagen!
 	AI_Output(self,other, " DIA_Taliasan_TestCanone_Done_01_06 " );	// Here, take your reward.
 	B_GiveInvItems(self,other,ItMi_Gold,500);
 	MIS_MagicPowder = LOG_Success;
