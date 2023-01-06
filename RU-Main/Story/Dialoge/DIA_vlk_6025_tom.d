@@ -76,17 +76,17 @@ func int dia_tom_nw_hi_condition()
 func void dia_tom_nw_hi_info()
 {
 	B_GivePlayerXP(500);
-	AI_Output(other,self,"DIA_Tom_NW_Hi_01_00");	//Привет.
-	AI_Output(self,other, " DIA_Tom_NW_Hi_01_01 " );	// Oh! And where are you from here?
+	AI_Output(other,self,"DIA_Tom_NW_Hi_01_00");	//Hey.
+	AI_Output(self,other, " DIA_Tom_NW_Hi_01_01 " );	// Oh! Where did you come from?
 	AI_Output(other,self, " DIA_Tom_NW_Hi_01_02 " );	// The question is not where I'm from. The question is, how did you get here?
 	AI_Output(other,self, " DIA_Tom_NW_Hi_01_03 " );	// You, like the other guys, came here with the pirates?
-	AI_Output(self,other, " DIA_Tom_NW_Hi_01_04 " );	// Yes, if you know everything yourself, why are you asking?
+	AI_Output(self,other, " DIA_Tom_NW_Hi_01_04 " );	// Yes, if you know that, why are you asking?
 	AI_Output(other,self, " DIA_Tom_NW_Hi_01_06 " );	// Well, how do you like Khorinis?
-	AI_Output(self,other, " DIA_Tom_NW_Hi_01_07 " );	// Better than where I used to be. At least, midges don’t eat you here every day, and there will always be a job so as not to die of boredom ...
+	AI_Output(self,other, " DIA_Tom_NW_Hi_01_07 " );	// Better than where I used to be. At least, midges don’t eat you alive, and there will always be a job so as not to die of boredom ...
 	AI_Output(other,self, " DIA_Tom_NW_Hi_01_08 " );	// What's the job?
 	AI_Output(self,other, " DIA_Tom_NW_Hi_01_09 " );	// I work for Matteo, a local merchant.
-	AI_Output(other,self, " DIA_Tom_NW_Hi_01_10 " );	// At Matteo?! Do you work for Matteo? How did he even take you?
-	AI_Output(self,other, " DIA_Tom_NW_Hi_01_11 " );	// Well, I'm pretty good at bookkeeping and everything. And he just needed such a person.
+	AI_Output(other,self, " DIA_Tom_NW_Hi_01_10 " );	// Matteo?! You work for Matteo? How did he even take you?
+	AI_Output(self,other, " DIA_Tom_NW_Hi_01_11 " );	// Well, I'm pretty good at bookkeeping and such. I'm just the type of person he needed.
 	AI_Output(self,other, " DIA_Tom_NW_Hi_01_12 " );	// Now stop talking, I've got to go.
 };
 
