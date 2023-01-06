@@ -319,7 +319,7 @@ func void dia_salentin_canpassagain_use()
 	Wld_PlayEffect("FX_EarthQuake",self,self,0,0,0,FALSE);
 	Wld_PlayEffect("spellFX_Innoseye",self,self,0,0,0,FALSE);
 	AI_PlayAni(other,"T_MAGRUN_2_HEASHOOT");
-	AI_Output(other,self, " DIA_Salentin_CanPass_Use_01_00 " );	// ...GVAR SAKH ESK SHATAR...!
+	AI_Output(other,self, " DIA_Salentin_CanPass_Use_01_00 " );	// ...GVAR SAKH ESK SHATAR...!!
 	AI_Output(other,self, " DIA_Salentin_CanPass_Use_01_01 " );	// Beliar, Lord of Darkness! Grant me your power to take on the form of this mortal worm!
 	AI_Output(other,self, " DIA_Salentin_CanPass_Use_01_02 " );	// And complete what I'm here for!
 	AI_PlayAni(other,"T_MAGRUN_2_HEASHOOT");
