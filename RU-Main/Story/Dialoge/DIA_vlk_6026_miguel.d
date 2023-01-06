@@ -97,7 +97,7 @@ func void dia_miguel_nw_hi_info()
 	}
 	else if(other.guild == GIL_KDM)
 	{
-		AI_Output(self,other, " DIA_Miguel_NW_Hi_01_0B " );	// ...then a demon caster!...(cautiously)
+		AI_Output(self,other, " DIA_Miguel_NW_Hi_01_0B " );	// ...then a demon caster!
 	}
 	else if((other.guild == GIL_SEK) || (other.guild == GIL_TPL) || (other.guild == GIL_GUR))
 	{
@@ -109,7 +109,7 @@ func void dia_miguel_nw_hi_info()
 
 	if(KILLHAPPENSMADE == FALSE)
 	{
-		AI_Output(self,other, " DIA_Miguel_NW_Hi_01_08 " );	// Now selling them here to Ignaz and Constantino. They stood up for me. The law is the law, and they need to take the goods somewhere.
+		AI_Output(self,other, " DIA_Miguel_NW_Hi_01_08 " );	// Now i'M selling them here to Ignaz and Constantino. They stood up for me. The law is the law, and they need to take the goods somewhere.
 		AI_Output(other,self, " DIA_Miguel_NW_Hi_01_09 " );	// Got it. So you're the only one selling your weed to them?
 		AI_Output(self,other, " DIA_Miguel_NW_Hi_01_10 " );	// I can do it for you as well... (laughs)
 	};
@@ -137,10 +137,10 @@ func int dia_miguel_nw_city_condition()
 func void dia_miguel_nw_city_info()
 {
 	AI_Output(other,self, " DIA_Miguel_NW_City_15_00 " );	// Well, how do you like the city? Have you lived here before?
-	AI_Output(self,other, " DIA_Miguel_NW_City_11_01 " );	// Yes, but now Khorinis is not the same anymore.
+	AI_Output(self,other, " DIA_Miguel_NW_City_11_01 " );	// Yes, Khorinis is not the same anymore.
 	AI_Output(self,other, " DIA_Miguel_NW_City_11_02 " );	// Can you imagine a noisy harbor, sailors from all over the world?
-	AI_Output(self,other, " DIA_Miguel_NW_City_11_03 " );	// Merchants, goods, glitter of gold. Ore smuggling worked wonders here.
-	AI_Output(self,other, " DIA_Miguel_NW_City_11_04 " );	// Eeeh... what kind of life was spinning here.
+	AI_Output(self,other, " DIA_Miguel_NW_City_11_03 " );	// Merchants, goods, THE glitter of gold. Ore smuggling worked wonders here.
+	AI_Output(self,other, " DIA_Miguel_NW_City_11_04 " );	// Eh, that was the life.
 };
 
 
