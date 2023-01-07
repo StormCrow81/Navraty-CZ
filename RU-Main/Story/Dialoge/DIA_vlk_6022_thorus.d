@@ -78,14 +78,14 @@ func int dia_thorus_nw_hi_condition()
 func void dia_thorus_nw_hi_info()
 {
 	B_GivePlayerXP(500);
-	AI_Output(self,other, " DIA_Thorus_NW_Hi_01_00 " );	// Hey man, I think I know you!
-	AI_Output(other,self, " DIA_Thorus_NW_Hi_01_01 " );	// Torus? It's you?
-	AI_Output(self,other, " DIA_Thorus_NW_Hi_01_02 " );	// Yes. Here we meet again! Small world...
+	AI_Output(self,other, " DIA_Thorus_NW_Hi_01_00 " );	// Hey man, Don't I know you?
+	AI_Output(other,self, " DIA_Thorus_NW_Hi_01_01 " );	// Thorus? That you?
+	AI_Output(self,other, " DIA_Thorus_NW_Hi_01_02 " );	// Yes. We meet again! Small world...
 	AI_Output(other,self, " DIA_Thorus_NW_Hi_01_03 " );	// What are you doing here?!
 	AI_Output(self,other, " DIA_Thorus_NW_Hi_01_04 " );	// I should ask you what YOU are doing here. And why do you look so strange...
 	if(other.guild == GIL_KDF)
 	{
-		AI_Output(self,other, " DIA_Thorus_NW_Hi_01_05 " );	// When did you become a Firebender?
+		AI_Output(self,other, " DIA_Thorus_NW_Hi_01_05 " );	// When did you become a Fire wizard?
 	}
 	else if(other.guild == GIL_PAL)
 	{
@@ -97,24 +97,24 @@ func void dia_thorus_nw_hi_info()
 	}
 	else if(other.guild == GIL_KDW)
 	{
-		AI_Output(self,other, " DIA_Thorus_NW_Hi_01_0A " );	// When did you become a Waterbender?
+		AI_Output(self,other, " DIA_Thorus_NW_Hi_01_0A " );	// When did you become a Water wizard?
 	}
 	else if(other.guild == GIL_KDM)
 	{
-		AI_Output(self,other, " DIA_Thorus_NW_Hi_01_0B " );	// When did you manage to become... and even what, a dark magician?!
+		AI_Output(self,other, " DIA_Thorus_NW_Hi_01_0B " );	// When did you become a corpse botherer?!
 	}
 	else if((other.guild == GIL_SEK) || (other.guild == GIL_TPL) || (other.guild == GIL_GUR))
 	{
 		AI_Output(self,other, " DIA_Thorus_NW_Hi_01_0C " );	// When did you manage to join the Brotherhood?
 	};
-	AI_Output(other,self, " DIA_Thorus_NW_Hi_01_08 " );	// How to tell you. In general, I'm not quite the one for whom I pretended to be there in the swamps.
+	AI_Output(other,self, " DIA_Thorus_NW_Hi_01_08 " );	// How to tell you. I'm not quite the person I pretended to be there in the swamps.
 	AI_Output(self,other, " DIA_Thorus_NW_Hi_01_09 " );	// Yes, it looks like you! You never know what you really are.
 	AI_Output(other,self, " DIA_Thorus_NW_Hi_01_10 " );	// And I see you joined the city guard? How did you manage that?
-	AI_Output(self,other, " DIA_Thorus_NW_Hi_01_11 " );	// Yes, everything is simple. You see, baby, all I can do is fight. And as I understand it, the city now just desperately needs people like me.
-	AI_Output(self,other, " DIA_Thorus_NW_Hi_01_12 " );	// Well, I got the nerve! Came to Lord Andre and expressed a desire to join the militia.
-	AI_Output(self,other, " DIA_Thorus_NW_Hi_01_13 " );	// He, of course, initially refused me, but then, after seeing how I fight, he quickly changed his point of view to a positive one.
-	AI_Output(self,other, " DIA_Thorus_NW_Hi_01_17 " );	// Work is not dusty. I've been standing here all day keeping order. Better, at least, than there, in the swamps.
-	AI_Output(other,self, " DIA_Thorus_NW_Hi_01_18 " );	// Lord Andre is really lucky to have you. You are a fighter!
+	AI_Output(self,other, " DIA_Thorus_NW_Hi_01_11 " );	// Hey, all I know is fighting. And as it happens that's exactly what the city needs right now.
+	AI_Output(self,other, " DIA_Thorus_NW_Hi_01_12 " );	// I just came to Lord Andre and expressed a desire to join the militia.
+	AI_Output(self,other, " DIA_Thorus_NW_Hi_01_13 " );	// He refused, at first. Then he saw me fight.
+	AI_Output(self,other, " DIA_Thorus_NW_Hi_01_17 " );	// Its boring work if I'm being honest. Better than that mosquito infested swamp tho.
+	AI_Output(other,self, " DIA_Thorus_NW_Hi_01_18 " );	// Lord Andre is really lucky to have you my friend.
 };
 
 
@@ -165,7 +165,7 @@ func void dia_thorus_nw_escapefromtown_info()
 {
 	AI_Output(self,other, " DIA_Thorus_NW_EscapeFromTown_01_00 " );	// I didn't think I'd meet you here!
 	AI_Output(self,other, " DIA_Thorus_NW_EscapeFromTown_01_01 " );	// It seemed to me that you should be far from these places by now.
-	AI_Output(other,self, " DIA_Thorus_NW_EscapeFromTown_01_02 " );	// Imagine, I'm as surprised as you. How did you manage to get out of the city?
+	AI_Output(other,self, " DIA_Thorus_NW_EscapeFromTown_01_02 " );	// I'm as surprised as you. How did you manage to get out of the city?
 	AI_Output(self,other, " DIA_Thorus_NW_EscapeFromTown_01_03 " );	// Cavalorn helped me. If it wasn't for him, I'd be dead already!
 	AI_Output(self,other, " DIA_Thorus_NW_EscapeFromTown_01_04 " );	// When it became clear to everyone that the city could no longer be held, he led us along a secret path leading out of the city across the coast.
 	AI_Output(self,other, " DIA_Thorus_NW_EscapeFromTown_01_05 " );	// And now we're here at Akila's farm! The orcs haven't gotten here yet.
@@ -174,7 +174,7 @@ func void dia_thorus_nw_escapefromtown_info()
 	{
 		AI_Output(other,self, " DIA_Thorus_NW_EscapeFromTown_01_06 " );	// It turns out that Cavalorn also survived. Well, well, that's good news.
 		AI_Output(self,other, " DIA_Thorus_NW_EscapeFromTown_01_07 " );	// You'll find him near the bridge leading towards the tavern.
-		AI_Output(self,other, " DIA_Thorus_NW_EscapeFromTown_01_08 " );	// From there, he watches the orc patrol stationed on the other side.
+		AI_Output(self,other, " DIA_Thorus_NW_EscapeFromTown_01_08 " );	// From there, he watches the orc patrols on the other side.
 	};
 
 	THORUSHERE = TRUE;
@@ -203,8 +203,8 @@ func void dia_thorus_nw_whatnext_info()
 {
 	AI_Output(other,self, " DIA_Thorus_NW_WhatNext_01_00 " );	// What are you going to do next?
 	AI_Output(self,other, " DIA_Thorus_NW_WhatNext_01_01 " );	// Don't know yet. But I think I'll have a good rest first.
-	AI_Output(self,other, " DIA_Thorus_NW_WhatNext_01_02 " );	// And then the last days were extremely nervous.
-	AI_Output(other,self, " DIA_Thorus_NW_WhatNext_01_03 " );	// This is understandable.
+	AI_Output(self,other, " DIA_Thorus_NW_WhatNext_01_02 " );	// The last few days were hell.
+	AI_Output(other,self, " DIA_Thorus_NW_WhatNext_01_03 " );	// Understandable.
 };
 
 instance DIA_THORUS_NW_OLDGUARDGOWAR(C_Info)
@@ -256,7 +256,7 @@ func int DIA_THORUS_NW_OLDGUARDGOWAR_DONE_condition()
 func void DIA_THORUS_NW_OLDGUARDGOWAR_DONE_info()
 {
 	B_GivePlayerXP(500);
-	AI_Output(other,self,"DIA_THORUS_NW_OLDGUARDGOWAR_DONE_01_00");	//Мы на месте!
+	AI_Output(other,self,"DIA_THORUS_NW_OLDGUARDGOWAR_DONE_01_00");	//We're here!
 	AI_Output(self,other, " DIA_THORUS_NW_OLDGUARDGOWAR_DONE_01_01 " );	// Okay...(sighing) At least there are no orcs in sight.
 	self.aivar[ AIV_PARTYMEMBER ] = FALSE ;
 	THORUSINSAFE = TRUE;
@@ -284,10 +284,10 @@ func int dia_thorus_nw_wherepeasant_condition()
 
 func void dia_thorus_nw_wherepeasant_info()
 {
-	AI_Output(other,self, " DIA_Thorus_NW_WherePeasant_01_00 " );	// And where are all the peasants from the yard?
-	AI_Output(self,other, " DIA_Thorus_NW_WherePeasant_01_01 " );	// I have no idea. They fled, probably, who where!
+	AI_Output(other,self, " DIA_Thorus_NW_WherePeasant_01_00 " );	// Where are all the peasants?
+	AI_Output(self,other, " DIA_Thorus_NW_WherePeasant_01_01 " );	// I have no idea. They fled, probably.
 	AI_Output(self,other, " DIA_Thorus_NW_WherePeasant_01_02 " );	// It's too dangerous to stay here now. This farm is too prominent a place for the orcs to ignore!
-	AI_Output(other,self,"DIA_Thorus_NW_WherePeasant_01_03");	//Ясно.
+	AI_Output(other,self,"DIA_Thorus_NW_WherePeasant_01_03");	//Agreed.
 	KNOWWHEREAKIL = TRUE;
 };
 
@@ -316,8 +316,8 @@ func void dia_thorus_nw_travelonbigland_info()
 	AI_Output(other,self, " DIA_Thorus_NW_TravelOnBigLand_01_01 " );	// There's room for you too!
 	AI_Output(self,other, " DIA_Thorus_NW_TravelOnBigLand_01_02 " );	// Heh, buddy...(joyfully) Thank you for not forgetting about me!
 	AI_Output(self,other, " DIA_Thorus_NW_TravelOnBigLand_01_03 " );	// I will gladly go to the mainland and try to start a new life there.
-	AI_Output(self,other, " DIA_Thorus_NW_TravelOnBigLand_01_04 " );	// Here, anyway, the past weighs too much on me.
-	AI_Output(other,self, " DIA_Thorus_NW_TravelOnBigLand_01_05 " );	// Then come aboard!
+	AI_Output(self,other, " DIA_Thorus_NW_TravelOnBigLand_01_04 " );	// This place has gotten... heavy as of late.
+	AI_Output(other,self, " DIA_Thorus_NW_TravelOnBigLand_01_05 " );	// Then hop aboard!
 	COUNTTRAVELONBIGLAND = COUNTTRAVELONBIGLAND + 1;
 	THORUSTOBIGLAND = TRUE;
 	B_LogEntry( TOPIC_SALETOBIGLAND , " I asked Thorus to go with me. He agreed. " );
