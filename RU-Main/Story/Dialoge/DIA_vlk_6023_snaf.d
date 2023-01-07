@@ -76,33 +76,33 @@ func void dia_snaf_nw_hi_info()
 {
 	B_GivePlayerXP(500);
 	AI_Output(self,other, " DIA_Snaf_NW_Hi_01_00 " );	// Well, well. Who do we have here?
-	AI_Output(other,self, " DIA_Snaf_NW_Hi_01_01 " );	// Snaf, isn't that you?
-	AI_Output(self,other, " DIA_Snaf_NW_Hi_01_02 " );	// In person! Surprised?
+	AI_Output(other,self, " DIA_Snaf_NW_Hi_01_01 " );	// Snaf, is that you?
+	AI_Output(self,other, " DIA_Snaf_NW_Hi_01_02 " );	// In the flesh! Surprised?
 	AI_Output(other,self, " DIA_Snaf_NW_Hi_01_03 " );	// Actually, I didn't expect to meet you here.
-	AI_Output(self,other, " DIA_Snaf_NW_Hi_01_04 " );	// Like I love you. And you, I see, managed to get far in this time.
+	AI_Output(self,other, " DIA_Snaf_NW_Hi_01_04 " );	// Well it's good to see you.
 	if(other.guild == GIL_KDF)
 	{
-		AI_Output(self,other, " DIA_Snaf_NW_Hi_01_05 " );	// Fire Mage! Well, who would have thought?
+		AI_Output(self,other, " DIA_Snaf_NW_Hi_01_05 " );	// A Fire Mage! Well, who would have thought?
 	}
 	else if(other.guild == GIL_PAL)
 	{
-		AI_Output(self,other, " DIA_Snaf_NW_Hi_01_06 " );	// King's paladin! Well, who would have thought?
+		AI_Output(self,other, " DIA_Snaf_NW_Hi_01_06 " );	// A Paladin of the King! Who would have thought?
 	}
 	else if(other.guild == GIL_DJG)
 	{
-		AI_Output(self,other, " DIA_Snaf_NW_Hi_01_07 " );	// Mercenary, so! Well, who would have thought?
+		AI_Output(self,other, " DIA_Snaf_NW_Hi_01_07 " );	// A Mercenary! Well, seems like you all right.
 	}
 	else if(other.guild == GIL_KDW)
 	{
-		AI_Output(self,other, " DIA_Snaf_NW_Hi_01_0A " );	// Water Mage! Well, who would have thought...
+		AI_Output(self,other, " DIA_Snaf_NW_Hi_01_0A " );	// A Water Mage! Well, who would have thought...
 	}
 	else if(other.guild == GIL_KDM)
 	{
-		AI_Output(self,other, " DIA_Snaf_NW_Hi_01_0B " );	// NECROMANCE! Well, who would have thought?
+		AI_Output(self,other, " DIA_Snaf_NW_Hi_01_0B " );	// Um... a Necromancer eh? Hehe how... nice...
 	}
 	else if((other.guild == GIL_SEK) || (other.guild == GIL_TPL) || (other.guild == GIL_GUR))
 	{
-		AI_Output(self,other, " DIA_Snaf_NW_Hi_01_0C " );	// Swamp! Well, who would have thought?
+		AI_Output(self,other, " DIA_Snaf_NW_Hi_01_0C " );	// A Swamp cultist? Ok I guess.
 	};
 	AI_Output(other,self, " DIA_Snaf_NW_Hi_01_08 " );	// What are you doing here?
 	AI_Output(self,other, " DIA_Snaf_NW_Hi_01_09 " );	// What, don't you see? I work here. (laughs)
@@ -112,9 +112,9 @@ func void dia_snaf_nw_hi_info()
 	AI_Output(self,other, " DIA_Snaf_NW_Hi_01_13 " );	// Looks like he doesn't really regret taking me in.
 	AI_Output(other,self, " DIA_Snaf_NW_Hi_01_14 " );	// Yes, you're doing well.
 	AI_Output(self,other, " DIA_Snaf_NW_Hi_01_15 " );	// Of course. Okay, man - I still have a lot to do, and I don't have much time for idle chatter. Even with an old friend!
-	AI_Output(other,self, " DIA_Snaf_NW_Hi_01_16 " );	// Okay, work. I will not distract.
-	AI_Output(self,other, " DIA_Snaf_NW_Hi_01_17 " );	// Thank you.
-	AI_Output(other,self,"DIA_Snaf_NW_Hi_01_18");	//Да не за что.
+	AI_Output(other,self, " DIA_Snaf_NW_Hi_01_16 " );	// Okay, I'll see you later.
+	AI_Output(self,other, " DIA_Snaf_NW_Hi_01_17 " );	// See you.
+	AI_Output(other,self,"DIA_Snaf_NW_Hi_01_18");	// Bye!
 };
 
 instance DIA_Snaf_NW_Booze(C_Info)
