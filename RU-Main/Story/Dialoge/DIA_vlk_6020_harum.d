@@ -293,7 +293,7 @@ func void dia_harum_hello_six_info()
 	AI_Output(self,other, " DIA_Harum_Hello_Six_01_10 " );	// I don't think this is needed anymore. Now that the evil is gone from these places, we can get along well here.
 	AI_Output(self,other, " DIA_Harum_Hello_Six_01_11 " );	// I'm sure all the other guys won't mind either!
 	AI_Output(other,self, " DIA_Harum_Hello_Six_01_12 " );	// What about orcs?
-	AI_Output(self,other,"DIA_Harum_Hello_Six_01_13");	//Орки?!
+	AI_Output(self,other,"DIA_Harum_Hello_Six_01_13");	//Orcs?!
 	if(MEETURGROM > 0)
 	{
 		AI_Output(other,self, " DIA_Harum_Hello_Six_01_14 " );	// The curse that hung on them has disappeared, and now the entire valley is at their disposal.
