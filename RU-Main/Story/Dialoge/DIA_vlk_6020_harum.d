@@ -46,40 +46,40 @@ func void dia_harum_hello_info()
 {
 	AI_Output(other,self, " DIA_Harum_Hello_01_00 " );	// Are you Elvais?
 	AI_Output(self,other, " DIA_Harum_Hello_01_01 " );	// Yes, my name is Elvais.
-	AI_Output(self,other, " DIA_Harum_Hello_01_03 " );	// And you, apparently, are the wanderer of fate who wandered into our region. Dugo has already told me about you.
-	AI_Output(self,other, " DIA_Harum_Hello_01_04 " );	// Everyone is talking about your appearance. For many, it has become a ray of light in pitch darkness.
-	AI_Output(self,other, " DIA_Harum_Hello_01_13 " );	// Besides, I can tell you that I even waited for your appearance. And who knows...
-	AI_Output(self,other, " DIA_Harum_Hello_01_14 " );	// ...possibly, it is you that is mentioned in the ancient tomes of Humgat.
+	AI_Output(self,other, " DIA_Harum_Hello_01_03 " );	// And you, apparently, are the wanderer who stumbled into our region. Dugo has already told me about you.
+	AI_Output(self,other, " DIA_Harum_Hello_01_04 " );	// Everyone is talking about you. For many, it has become a ray of light in pitch darkness.
+	AI_Output(self,other, " DIA_Harum_Hello_01_13 " );	// Besides, I can tell you that even I awaited you, because I suspect...
+	AI_Output(self,other, " DIA_Harum_Hello_01_14 " );	// ...that it is you mentioned in the Tomes of Humgat.
 	AI_Output(other,self, " DIA_Harum_Hello_01_15 " );	// Tomes of Humgat?
 	AI_Output(self,other, " DIA_Harum_Hello_01_16 " );	// Let me tell you about it.
-	AI_Output(self,other, " DIA_Harum_Hello_01_18 " );	// Once upon a time, this place was not like what you see around now.
-	AI_Output(self,other, " DIA_Harum_Hello_01_20 " );	// Then this place was known as Kalimdor - the sacred Halls of Humgath.
-	AI_Output(self,other, " DIA_Harum_Hello_01_21 " );	// We don't know much about those wonderful times and the people who lived here.
+	AI_Output(self,other, " DIA_Harum_Hello_01_18 " );	// Once upon a time, this place was not like what you see now.
+	AI_Output(self,other, " DIA_Harum_Hello_01_20 " );	// Back then this place was known as Kalimdor - the sacred Halls of Humgath.
+	AI_Output(self,other, " DIA_Harum_Hello_01_21 " );	// We don't know much about those bygone times and the people who lived here.
 	AI_Output(self,other, " DIA_Harum_Hello_01_22 " );	// But some information still survived to our time.
-	AI_Output(self,other, " DIA_Harum_Hello_01_23 " );	// Basically, these are small fragments of the chronicle of those times when a terrible evil invaded the valley, forever changing its appearance.
-	AI_Output(self,other, " DIA_Harum_Hello_01_26 " );	// One of the ancient manuscripts of Kalimdor mentioned a legend.
+	AI_Output(self,other, " DIA_Harum_Hello_01_23 " );	// Basically, these are small fragments of the chronicle of those times when a terrible evil invaded the valley, forever changing it.
+	AI_Output(self,other, " DIA_Harum_Hello_01_26 " );	// One of the ancient manuscripts of Kalimdor also mentioned a legend.
 	AI_Output(other,self, " DIA_Harum_Hello_01_28 " );	// And what is this legend?
 	AI_Output(self,other, " DIA_Harum_Hello_01_29 " );	// The legend of one powerful ancient artifact, whose appearance in this world could plunge it into eternal chaos.
 	AI_Output(self,other, " DIA_Harum_Hello_01_30 " );	// This artifact, according to the records, was called the Eye of Wrath.
-	AI_Output(self,other, " DIA_Harum_Hello_01_31 " );	// The legend said that if this Eye was awakened, some great evil would also awaken with it.
-	AI_Output(self,other, " DIA_Harum_Hello_01_32 " );	// (quotes) ...and the Great Shadow will cover this land with a cover of darkness, and the kingdom of evil will forever reign in the Halls of Humagat...
+	AI_Output(self,other, " DIA_Harum_Hello_01_31 " );	// The legend said that if this Eye was awakened, a great evil would also awaken with it.
+	AI_Output(self,other, " DIA_Harum_Hello_01_32 " );	// (quotes) ...and the Great Shadow will cover the land with a shield of darkness, and the kingdom of evil will forever reign in the Halls of Humagat...
 	AI_Output(self,other, " DIA_Harum_Hello_01_33 " );	// Perhaps it was by inexplicably awakening this Eye of Wrath that the people of Kalimdor brought all this misfortune upon themselves.
 	AI_Output(other,self, " DIA_Harum_Hello_01_34 " );	// And what happened to Kalimdor?
-	AI_Output(self,other, " DIA_Harum_Hello_01_35 " );	// Judging by the entries in the books, like an unstoppable hurricane, countless hordes of evil spirits and orcs swept through this land...
-	AI_Output(self,other, " DIA_Harum_Hello_01_36 " );	// ...turning everything in its path into cinders and ashes, sowing death and chaos around. And there was no number of them ... Few then managed to save their lives.
+	AI_Output(self,other, " DIA_Harum_Hello_01_35 " );	// Judging by the entries in the books, like an unstoppable hurricane, countless hordes of evil spirits, undead and orcs swept through this land...
+	AI_Output(self,other, " DIA_Harum_Hello_01_36 " );	// ...turning everything in its path into cinders and ashes, sowing death and chaos around. Very few lived to tell about it.
 	AI_Output(self,other, " DIA_Harum_Hello_01_38 " );	// Returning to the legend, there is one more interesting thing.
-	AI_Output(self,other, " DIA_Harum_Hello_01_40 " );	// So. Among other things, the legend also mentions a certain warrior who can put an end to the reign of darkness.
+	AI_Output(self,other, " DIA_Harum_Hello_01_40 " );	// Among other things, the legend also mentions a nameless warrior who can put an end to the reign of darkness.
 	AI_Output(self,other, " DIA_Harum_Hello_01_41 " );	// (quotes) ...and at the turn of the times, when the last hope for salvation will be lost...
-	AI_Output(self,other, " DIA_Harum_Hello_01_42 " );	// ...the human race will acquire a warrior-defender, and he will oppose the Darkness...
+	AI_Output(self,other, " DIA_Harum_Hello_01_42 " );	// ...the human race will produce a defender, and he will oppose the Darkness...
 	AI_Output(self,other, " DIA_Harum_Hello_01_43 " );	// ...and he will lead the survivors to fight evil and destroy the Great Shadow...
-	AI_Output(self,other, " DIA_Harum_Hello_01_44 " );	// ...there will be a name for him - the Arbiter of Fate.
-	AI_Output(self,other, " DIA_Harum_Hello_01_45 " );	// This, of course, does not mean that you are exactly who this legend is about.
-	AI_Output(other,self, " DIA_Harum_Hello_01_47 " );	// You may be right, Elvais.
-	AI_Output(self,other, " DIA_Harum_Hello_01_48 " );	// Why do you think so?
-	AI_Output(other,self, " DIA_Harum_Hello_01_49 " );	// The goal that brought me here is to destroy one of the creatures of evil.
-	AI_Output(other,self, " DIA_Harum_Hello_01_50 " );	// I heard that a very powerful black dragon lives in this valley. Does the name Azgalor mean anything to you?
-	AI_Output(self,other, " DIA_Harum_Hello_01_51 " );	// (horrified) Azgalore?! The legends about this creature go far into the past, to the dawn of mankind.
-	AI_Output(self,other, " DIA_Harum_Hello_01_52 " );	// The books of Kalimdor said it was a monster vomited up by hell itself.
+	AI_Output(self,other, " DIA_Harum_Hello_01_44 " );	// ...he will have but one name - the Arbiter of Fate.
+	AI_Output(self,other, " DIA_Harum_Hello_01_45 " );	// Perhaps you are he? Perhaps not.
+	AI_Output(other,self, " DIA_Harum_Hello_01_47 " );	// Well, I actually HAVE a name! It's...
+	AI_Output(self,other, " DIA_Harum_Hello_01_48 " );	// Tell me, what is your true goal here?
+	AI_Output(other,self, " DIA_Harum_Hello_01_49 " );	// I'm here for a dragon, actually. Seen one around?
+	AI_Output(other,self, " DIA_Harum_Hello_01_50 " );	// Does the name Azgalor mean anything to you? Word is it lives in this valley.
+	AI_Output(self,other, " DIA_Harum_Hello_01_51 " );	// Azgalore?! The legends about this creature go far into the past, to the dawn of mankind.
+	AI_Output(self,other, " DIA_Harum_Hello_01_52 " );	// The books of Kalimdor said it was a monster vomited up by the Void itself.
 	AI_Output(self,other, " DIA_Harum_Hello_01_53 " );	// But no one has ever seen him here. Although, perhaps because no one survived the meeting with him.
 	AI_Output(self,other, " DIA_Harum_Hello_01_54 " );	// Or maybe it's just a myth... I can't tell you for sure.
 	if(MIS_URNAZULRAGE == LOG_Running)
@@ -115,12 +115,12 @@ func void dia_harum_hello_two_info()
 	var C_Item heroweapon;
 	AI_Output(other,self, " DIA_Harum_Hello_Two_01_01 " );	// Apparently, this black dragon Azgalor isn't exactly a myth.
 	AI_Output(self,other, " DIA_Harum_Hello_Two_01_02 " );	// (surprised) How do you know that?
-	AI_Output(other,self, " DIA_Harum_Hello_Two_01_03 " );	// I met with someone who apparently witnessed those ominous events.
-	AI_Output(self,other, " DIA_Harum_Hello_Two_01_04 " );	// But how is this possible? More than one millennium has passed since these dark times passed!
+	AI_Output(other,self, " DIA_Harum_Hello_Two_01_03 " );	// I met with someone who apparently witnessed those bygone events.
+	AI_Output(self,other, " DIA_Harum_Hello_Two_01_04 " );	// But how is this possible? More than a millennium has passed since the dark times passed!
 	AI_Output(self,other, " DIA_Harum_Hello_Two_01_05 " );	// And who is this?
-	AI_Output(other,self,"DIA_Harum_Hello_Two_01_06");	//Орки!
-	AI_Output(self,other, " DIA_Harum_Hello_Two_01_07 " );	// (horrified) Orcs? But they have not been seen in this valley for a long time!
-	AI_Output(self,other, " DIA_Harum_Hello_Two_01_08 " );	// And as far as I know, orcs are not very friendly creatures! They wouldn't talk to a person.
+	AI_Output(other,self,"DIA_Harum_Hello_Two_01_06");	//Orcs!
+	AI_Output(self,other, " DIA_Harum_Hello_Two_01_07 " );	// Orcs? But they have not been seen in this valley for a long time!
+	AI_Output(self,other, " DIA_Harum_Hello_Two_01_08 " );	// And as far as I know, orcs are not very friendly creatures! They wouldn't talk to a person, would they?
 	if(Npc_HasItems(hero,itmw_2h_orcprestige) >= 1)
 	{
 		heroweapon = Npc_GetEquippedMeleeWeapon(hero);
@@ -135,8 +135,8 @@ func void dia_harum_hello_two_info()
 	AI_Output(other,self, " DIA_Harum_Hello_Two_01_12 " );	// The teleport I got here through leads straight to the orc underground city.
 	AI_Output(self,other, " DIA_Harum_Hello_Two_01_13 " );	// Yes, Dugo told me this sad news.
 	AI_Output(other,self, " DIA_Harum_Hello_Two_01_14 " );	// There I met an orc who told me what happened back then in Kalimdor.
-	AI_Output(other,self, " DIA_Harum_Hello_Two_01_22 " );	// It was Azgalor who called into this world one powerful demon - the Forge of Souls.
-	AI_Output(other,self, " DIA_Harum_Hello_Two_01_23 " );	// Under the demonic influence of this creature, the orcs went mad!
+	AI_Output(other,self, " DIA_Harum_Hello_Two_01_22 " );	// It was Azgalor who called into this world a powerful demon - the Forge of Souls.
+	AI_Output(other,self, " DIA_Harum_Hello_Two_01_23 " );	// Under the demonic influence of the creature, the orcs went mad!
 	AI_Output(other,self, " DIA_Harum_Hello_Two_01_24 " );	// Anger, insane rage and an irresistible desire to kill settled in their souls!
 	AI_Output(other,self, " DIA_Harum_Hello_Two_01_27 " );	// The Soulsmith made them an offer they couldn't refuse.
 	AI_Output(other,self, " DIA_Harum_Hello_Two_01_28 " );	// Giving them great power, he subjugated their mind and will at the same time.
@@ -145,15 +145,15 @@ func void dia_harum_hello_two_info()
 	AI_Output(other,self, " DIA_Harum_Hello_Two_01_31 " );	// Soulless bodies were turned into undead by the Forge of Souls, which filled the ranks of the army of Darkness.
 	AI_Output(other,self, " DIA_Harum_Hello_Two_01_32 " );	// Thus Kalimdor was forever forgotten.
 	AI_Output(self,other, " DIA_Harum_Hello_Two_01_33 " );	// Damned orcs!
-	AI_Output(other,self, " DIA_Harum_Hello_Two_01_34 " );	// They have only become a tool of evil. They simply could not resist the madness that had taken possession of them.
+	AI_Output(other,self, " DIA_Harum_Hello_Two_01_34 " );	// They were simply a tool of evil. They could not resist the madness that had taken possession of them.
 	AI_Output(other,self, " DIA_Harum_Hello_Two_01_35 " );	// But despite this, it was the orcs who broke the curse that fell on this valley and their people...
-	AI_Output(self,other, " DIA_Harum_Hello_Two_01_36 " );	// (uncomprehending) How?
+	AI_Output(self,other, " DIA_Harum_Hello_Two_01_36 " );	// How?
 	AI_Output(other,self, " DIA_Harum_Hello_Two_01_37 " );	// Tired of the killing and fed up with their bloodlust, the orcs no longer wanted to fight.
 	AI_Output(other,self, " DIA_Harum_Hello_Two_01_39 " );	// But the fire of the demon, burning their souls and tearing up their blood, forced them to kill again and again.
 	AI_Output(other,self, " DIA_Harum_Hello_Two_01_40 " );	// Not having the strength to endure such monstrous suffering, tearing apart their minds and souls, the orcs decided to get rid of the power of the demon.
 	AI_Output(other,self, " DIA_Harum_Hello_Two_01_42 " );	// Then Azgalor raised his army of Darkness.
-	AI_Output(other,self, " DIA_Harum_Hello_Two_01_45 " );	// Orcs fought desperately...
-	AI_Output(other,self, " DIA_Harum_Hello_Two_01_46 " );	// And in the end, the hordes of the undead were defeated, and the Forge of Souls was defeated.
+	AI_Output(other,self, " DIA_Harum_Hello_Two_01_45 " );	// The Orcs fought desperately...
+	AI_Output(other,self, " DIA_Harum_Hello_Two_01_46 " );	// And in the end, the hordes of the undead were defeated, and the Forge of Souls was crushed.
 	AI_Output(other,self, " DIA_Harum_Hello_Two_01_48 " );	// But the black dragon cursed all who drank the demon's blood. Over time, the curse turned them into lifeless ghosts, and Azgalor himself took possession of their souls.
 	AI_Output(other,self, " DIA_Harum_Hello_Two_01_49 " );	// Only Ur-Thrall made it out alive.
 	AI_Output(other,self, " DIA_Harum_Hello_Two_01_51 " );	// That's all he could tell me.
@@ -194,8 +194,8 @@ func void dia_harum_hello_three_info()
 {
 	AI_Output(other,self, " DIA_Harum_Hello_Three_01_01 " );	// And where did you get these ancient books from?
 	AI_Output(self,other, " DIA_Harum_Hello_Three_01_02 " );	// One day while hunting, Ruen stumbled upon an abandoned crypt, in which he discovered a small library.
-	AI_Output(self,other, " DIA_Harum_Hello_Three_01_03 " );	// True, he barely got his feet out of there, because the crypt, it turned out, was simply teeming with the undead.
-	AI_Output(self,other, " DIA_Harum_Hello_Three_01_04 " );	// To my great delight, he was smart enough to grab some old books from there.
+	AI_Output(self,other, " DIA_Harum_Hello_Three_01_03 " );	// True, he barely got his ass out of there, because the crypt, it turned out, was simply teeming with undead.
+	AI_Output(self,other, " DIA_Harum_Hello_Three_01_04 " );	// To my great delight, he was smart enough to grab some old books on his way out.
 	B_LogEntry( TOPIC_URNAZULRAGE , " Elvais mentioned a certain crypt with an abandoned library. Perhaps I can find some answers to my questions there. " );
 	MEETHARUMTWO = TRUE ;
 };
@@ -224,7 +224,7 @@ func int dia_harum_hello_four_condition()
 func void dia_harum_hello_four_info()
 {
 	AI_Output(other,self, " DIA_Harum_Hello_Four_01_01 " );	// What else do you know about this Eye of Wrath artifact?
-	AI_Output(self,other, " DIA_Harum_Hello_Four_01_02 " );	// In the records we have, other than what I told you, there is nothing else about him.
+	AI_Output(self,other, " DIA_Harum_Hello_Four_01_02 " );	// In the records we have, other than what I told you, there is nothing else about it.
 	AI_Output(self,other, " DIA_Harum_Hello_Four_01_04 " );	// Perhaps you should seek answers to your questions outside of this cave.
 	AI_Output(self,other, " DIA_Harum_Hello_Four_01_05 " );	// Or ask around.
 	MEETHARUMTHREE = TRUE ;
@@ -254,7 +254,7 @@ func int dia_harum_hello_five_condition()
 func void dia_harum_hello_five_info()
 {
 	AI_Output(other,self, " DIA_Harum_Hello_Five_01_01 " );	// You said you saw something like orcs here.
-	AI_Output(self,other, " DIA_Harum_Hello_Five_01_02 " );	// You'd better ask Emnol about it. He seems to have encountered these creatures.
+	AI_Output(self,other, " DIA_Harum_Hello_Five_01_02 " );	// You'd better ask Emnol about it. He claims to have encountered a big green monster.
 	AI_Output(self,other, " DIA_Harum_Hello_Five_01_03 " );	// Whether it was orcs or something, I don't know.
 	MEETHARUMFOUR = TRUE;
 };
@@ -286,7 +286,7 @@ func void dia_harum_hello_six_info()
 	AI_Output(other,self, " DIA_Harum_Hello_Six_01_01 " );	// The black dragon is dead.
 	AI_Output(self,other, " DIA_Harum_Hello_Six_01_02 " );	// Truly, this is the best news you could bring.
 	AI_Output(self,other, " DIA_Harum_Hello_Six_01_03 " );	// That hellish scream that swept over the valley... we thought it was the end!
-	AI_Output(self,other, " DIA_Harum_Hello_Six_01_05 " );	// I knew... I knew you were the warrior the legend was about.
+	AI_Output(self,other, " DIA_Harum_Hello_Six_01_05 " );	// I knew... I knew you were the warrior the legend spoke of.
 	AI_Output(self,other, " DIA_Harum_Hello_Six_01_07 " );	// Now we're all saved!
 	AI_Output(self,other, " DIA_Harum_Hello_Six_01_08 " );	// What are you going to do now?
 	AI_Output(other,self, " DIA_Harum_Hello_Six_01_09 " );	// I'm on my way back and I can help you get out of the valley.
