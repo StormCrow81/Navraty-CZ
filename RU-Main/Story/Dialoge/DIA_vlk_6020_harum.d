@@ -301,7 +301,7 @@ func void dia_harum_hello_six_info()
 		AI_Output(other,self, " DIA_Harum_Hello_Six_01_16 " );	// I could arrange with their leader not to touch you.
 		AI_Output(self,other, " DIA_Harum_Hello_Six_01_19 " );	// (in disbelief) Okay, you put my mind at ease...
 		AI_Output(self,other, " DIA_Harum_Hello_Six_01_23 " );	// Have a good trip, wanderer!
-		B_LogEntry( TOPIC_HUMANINVALLEY , " Elvais and the rest of the humans did not want to leave this valley. I think this is the right decision. However, in light of the new circumstances, there is a threat of conflict with the orcs. I think I should talk to Ur-Grom about this, he because now the leader of the local horde. " );
+		B_LogEntry( TOPIC_HUMANINVALLEY , " Elvais and the rest of the humans do not want to leave this valley. I think this is the right decision. However, in light of the new circumstances, there is a threat of conflict with the orcs. I think I should talk to Ur-Grom about this, the leader of the local horde. " );
 	}
 	else
 	{
@@ -339,10 +339,10 @@ func int dia_harum_hello_seven_condition()
 func void dia_harum_hello_seven_info()
 {
 	B_GivePlayerXP(300);
-	AI_Output(other,self, " DIA_Harum_Hello_Seven_01_01 " );	// Orcs won't touch you! I made a deal with their leader. You can live in peace.
+	AI_Output(other,self, " DIA_Harum_Hello_Seven_01_01 " );	// The Orcs won't touch you! I made a deal with their leader. You can live in peace.
 	AI_Output(self,other, " DIA_Harum_Hello_Seven_01_02 " );	// You have done so much for us, and we have nothing to thank you, wanderer.
 	AI_Output(self,other, " DIA_Harum_Hello_Seven_01_03 " );	// Wait, though... a couple of days ago, Bagrus found this stone tablet during another hunt.
-	AI_Output(self,other, " DIA_Harum_Hello_Seven_01_04 " );	// It looks like some kind of magical thing, but I still don't understand how to use it.
+	AI_Output(self,other, " DIA_Harum_Hello_Seven_01_04 " );	// It looks like some kind of magical object, but I still don't understand how to use it.
 	AI_Output(self,other, " DIA_Harum_Hello_Seven_01_05 " );	// Take it for yourself as our recognition of your exploits!
 	B_GiveInvItems(self,other,ItWr_DexStonePlate3_Addon,1);
 	SAVEHUMANEND = TRUE;
@@ -378,8 +378,8 @@ func void dia_harum_seekazgolor_info()
 	AI_Output(other,self, " DIA_Harum_SeekAzgolor_01_01 " );	// Can you read this book?
 	AI_Output(self,other, " DIA_Harum_SeekAzgolor_01_02 " );	// Let me take a look... very interesting!
 	B_UseFakeScroll();
-	AI_Output(self,other, " DIA_Harum_SeekAzgolor_01_03 " );	// What a strange book, and the language is somehow unusual. Something like an orc, but definitely not theirs.
+	AI_Output(self,other, " DIA_Harum_SeekAzgolor_01_03 " );	// What a strange book, and the language is quite unusual. Something like orcish, but definitely not theirs.
 	AI_Output(self,other, " DIA_Harum_SeekAzgolor_01_04 " );	// Hmm... I'm afraid I can't help you.
-	B_LogEntry( TOPIC_URNAZULRAGE , " Elvais couldn't decipher the characters in the book I found in the underground temple, but said that the language is somewhat like Orc. Maybe we should look for an Orc who can read these entries? " );
+	B_LogEntry( TOPIC_URNAZULRAGE , " Elvais couldn't decipher the characters in the book I found in the underground temple, but said that the language is somewhat like Orcish. Maybe I should look for an Orc who can read it? " );
 	SEEKAZGOLOR = FALSE;
 };
