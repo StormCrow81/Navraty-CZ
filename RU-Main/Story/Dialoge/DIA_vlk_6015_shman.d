@@ -17,6 +17,6 @@ func int dia_shman_6015_exit_condition()
 
 func void dia_shman_6015_exit_info()
 {
-	AI_StopProcessInfos(self);
+	AI_StopProcessInfos(self); 
 };
 
