@@ -53,7 +53,7 @@ func void DIA_RodDJG_HALLO_Info()
 func void DIA_RodDJG_HELLO_Where from()
 {
 	AI_Output(other,self, " DIA_RodDJG_HALLO_Woher_15_00 " );	// Where did you get those boots?
-	AI_Output(self,other, " DIA_RodDJG_HALLO_Woher_06_01 " );	// Hardworking old Bennet made them for us dragon hunters and made us pay well for those crappy boots.
+	AI_Output(self,other, " DIA_RodDJG_HALLO_Woher_06_01 " );	// Hardworking old Bennet made them for us dragon hunters and made us pay well.
 	AI_Output(self,other, " DIA_RodDJG_HALLO_Woher_06_02 " );	// If I ever get to him, I'll make him eat them first and then beat my money back out of him.
 };
 
@@ -69,7 +69,7 @@ func void DIA_RodDJG_HELLO_wait()
 	else
 	{
 		AI_Output(self,other, " DIA_RodDJG_HALLO_warten_06_02 " );	// I want to explore that swampy area over there.
-		AI_Output(self,other, " DIA_RodDJG_HALLO_warten_06_03 " );	// Do you think we can go there together? Let's see what is there?
+		AI_Output(self,other, " DIA_RodDJG_HALLO_warten_06_03 " );	// Do you think we can go there together? Let's see what's over there?
 		Info_AddChoice(DIA_RodDJG_HALLO, " I'll go alone. " ,DIA_RodDJG_HALLO_warten_allein);
 		Info_AddChoice(DIA_RodDJG_HALLO, " What do you know about this marshland? " ,DIA_RodDJG_HALLO_warten_wasweisstdu);
 		Info_AddChoice(DIA_RodDJG_HALLO, " Let's go together. " ,DIA_RodDJG_HALLO_warten_zusammen);
@@ -88,7 +88,7 @@ func void DIA_RodDJG_HELLO_wait_together()
 func void DIA_RodDJG_HELLO_wait_whatdoyouknow()
 {
 	AI_Output(other,self, " DIA_RodDJG_HALLO_warten_wasweisstdu_15_00 " );	// What do you know about this swampy area?
-	AI_Output(self,other, " DIA_RodDJG_HALLO_warten_wasweisstdu_06_01 " );	// Just now the stench of it rises to the skies and that there is probably a pile of gold hidden there. Is this not enough?
+	AI_Output(self,other, " DIA_RodDJG_HALLO_warten_wasweisstdu_06_01 " );	// The stench of it rises to the skies and that there is probably a pile of gold hidden there. Is that not enough?
 };
 
 func void DIA_RodDJG_HELLO_waiting_alone()
@@ -130,12 +130,12 @@ func void DIA_RodDJG_WARTEMAL_Info()
 	}
 	else
 	{
-		AI_Output(self,other, " DIA_RodDJG_WARTEMAL_06_02 " );	// (cursing) Those boots! Those damn boots!
+		AI_Output(self,other, " DIA_RodDJG_WARTEMAL_06_02 " );	// (cursing) These boots! These damn boots!
 	};
 	if (Npc_IsDead(SwampDragon))
 	{
 		AI_Output(other,self, " DIA_RodDJG_WARTEMAL_15_03 " );	// And what are you going to do next?
-		AI_Output(self,other, " DIA_RodDJG_WARTEMAL_06_04 " );	// You're still asking! First of all, I will buy myself new boots!
+		AI_Output(self,other, " DIA_RodDJG_WARTEMAL_06_04 " );	// Well, first of all, I will buy myself new boots!
 		self.aivar[ AIV_PARTYMEMBER ] = FALSE ;
 		AI_StopProcessInfos(self);
 		Npc_ExchangeRoutine(self,"Start");
