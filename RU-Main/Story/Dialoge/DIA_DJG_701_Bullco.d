@@ -42,8 +42,8 @@ func int DIA_BullcoDJG_HELLO_Condition()
 func void DIA_BullcoDJG_HALLO_Info()
 {
 	AI_Output(other,self, " DIA_BullcoDJG_HALLO_15_00 " );	// What's wrong???
-	AI_Output(self,other, " DIA_BullcoDJG_HALLO_06_01 " );	// It's so cold in here! I don't understand why Silvio insisted that we go here.
-	AI_Output(self,other, " DIA_BullcoDJG_HALLO_06_02 " );	// There are plenty of other places to look here!
+	AI_Output(self,other, " DIA_BullcoDJG_HALLO_06_01 " );	// It's so cold in here! I don't understand why Silvio insisted that we come here.
+	AI_Output(self,other, " DIA_BullcoDJG_HALLO_06_02 " );	// There are plenty of other places to look!
 	AI_StopProcessInfos(self);
 };
 
@@ -158,7 +158,7 @@ func void DIA_Bullco_WASNUN_Info()
 func void DIA_Bullco_WASNUN_woandere()
 {
 	AI_Output(other,self, " DIA_Bullco_WASNUN_woandere_15_00 " );	// Do you know where the others are?
-	AI_Output(self,other, " DIA_Bullco_WASNUN_woandere_06_01 " );	// I think so. At least I saw one of them by the river over there.
+	AI_Output(self,other, " DIA_Bullco_WASNUN_woandere_06_01 " );	// I think so. I saw one of them by the river over there.
 	Info_AddChoice(DIA_Bullco_WASNUN, " Take me to other dragon hunters. " ,DIA_Bullco_WASNUN_woandere_zuihnen);
 };
 
@@ -167,7 +167,7 @@ func void DIA_Bullco_WASNUN_woandere_zuyoun()
 	AI_Output(other,self, " DIA_Bullco_WASNUN_woandere_zuihnen_15_00 " );	// Take me to the other dragon hunters.
 	AI_Output(self,other, " DIA_Bullco_WASNUN_woandere_zuihnen_06_01 " );	// Hey, I'm not your lackey.
 	Info_ClearChoices(DAY_Bullco_WASNUN);
-	Info_AddChoice(DIA_Bullco_WASNUN, " Как знаешь! " ,DIA_Bullco_WASNUN_where else_to_you_alone);
+	Info_AddChoice(DIA_Bullco_WASNUN, " How do you know? " ,DIA_Bullco_WASNUN_where else_to_you_alone);
 	Info_AddChoice(DIA_Bullco_WASNUN, " Rejoice if I let you live. " ,DIA_Bullco_WASNUN_woandere_zuihnen_lebenlassen);
 	Info_AddChoice(DIA_Bullco_WASNUN, " I'll pay you fifty gold pieces for this! " ,DIA_Bullco_WASNUN_woandere_zuihnen_Geld);
 };
